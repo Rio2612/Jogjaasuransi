@@ -35,6 +35,15 @@ const clusters = [
     tags: ["Gedung Kantor", "Hotel & Vila", "Pabrik & Gudang"],
   },
   {
+    href: "/asuransi-properti/hotel-vila",
+    icon: "🏨",
+    batik: "❁",
+    title: "Hotel & Vila Wisata",
+    subtitle: "Properti Pariwisata Yogyakarta",
+    desc: "Solusi asuransi lengkap untuk hotel, vila, guest house, dan homestay di destinasi wisata Yogyakarta.",
+    tags: ["Hotel Bintang", "Vila & Resort", "Guest House", "Homestay"],
+  },
+  {
     href: "/asuransi-properti/banjir-gempa",
     icon: "🌋",
     batik: "❋",
@@ -185,6 +194,34 @@ export default function AsuransiPropertiPage() {
               <p className="text-sm leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
             </details>
           ))}
+        </div>
+      </section>
+
+      {/* KAITAN LIABILITY */}
+      <section className="py-12 px-[5vw] bg-white">
+        <div className="max-w-4xl mx-auto bg-gold/6 border border-gold/25 rounded-[20px] p-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Sinergi Produk</div>
+            <h2 className="font-heading text-navy text-[1.5rem] mb-3">Properti + Liability =<br />Proteksi Bisnis Lengkap</h2>
+            <p className="text-sm leading-relaxed text-[#64748B]">Asuransi properti melindungi bangunan dari kerusakan fisik. Asuransi liability melindungi dari tuntutan hukum tamu, karyawan, dan pihak ketiga. Keduanya saling melengkapi untuk pemilik hotel, ruko, dan properti komersial.</p>
+          </div>
+          <div className="flex flex-col gap-3">
+            <Link href="/asuransi-liability/public-liability" className="bg-white border border-black/8 rounded-xl p-4 flex items-center gap-3 no-underline hover:border-gold/40 transition-all group">
+              <span className="text-2xl">🤝</span>
+              <div><div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors">Public Liability</div><div className="text-xs text-[#64748B]">Perlindungan jika tamu cedera di properti Anda</div></div>
+              <span className="ml-auto text-gold text-sm">→</span>
+            </Link>
+            <Link href="/asuransi-properti/hotel-vila" className="bg-white border border-black/8 rounded-xl p-4 flex items-center gap-3 no-underline hover:border-gold/40 transition-all group">
+              <span className="text-2xl">🏨</span>
+              <div><div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors">Asuransi Hotel & Vila Wisata</div><div className="text-xs text-[#64748B]">Solusi khusus properti pariwisata Yogyakarta</div></div>
+              <span className="ml-auto text-gold text-sm">→</span>
+            </Link>
+            <Link href="/asuransi-liability" className="bg-white border border-black/8 rounded-xl p-4 flex items-center gap-3 no-underline hover:border-gold/40 transition-all group">
+              <span className="text-2xl">⚖️</span>
+              <div><div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors">Semua Asuransi Liability</div><div className="text-xs text-[#64748B]">Public, Employer, dan Environmental Liability</div></div>
+              <span className="ml-auto text-gold text-sm">→</span>
+            </Link>
+          </div>
         </div>
       </section>
 
