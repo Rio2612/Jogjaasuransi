@@ -21,5 +21,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/asuransi-liability/public-liability`,         lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/asuransi-liability/employer-liability`,       lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/asuransi-liability/limbah-b3`,                lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    // Kargo
+    { url: `${base}/asuransi-kargo`,                              lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/asuransi-kargo/pengiriman-barang`,            lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/asuransi-kargo/kargo-udara-laut`,             lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/asuransi-kargo/ekspedisi-umkm`,               lastModified: now, changeFrequency: "monthly", priority: 0.8 },
   ];
 }
