@@ -1,4 +1,6 @@
 import { KONTAK } from "@/lib/data";
+import Image from "next/image";
+<Image src="/rio-mardiansyah.jpg" alt="Rio Mardiansyah" fill className="object-cover" />
 
 export default function About() {
   return (
