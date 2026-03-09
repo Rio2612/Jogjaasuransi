@@ -84,7 +84,7 @@ export default function KalkulatorProperti() {
         <div className="mt-5">
           <label className={labelCls}>Nilai Bangunan (Rp)</label>
           <input type="number" placeholder="Contoh: 500000000" className={inputCls} value={nilai} onChange={e => setNilaiStr(e.target.value)} />
-          <span className="text-white/40 text-xs mt-1 block">Nilai penggantian bangunan (bukan harga tanah)</span>
+          <span className="text-white/65 text-xs mt-1 block">Nilai penggantian bangunan (bukan harga tanah)</span>
         </div>
 
         <div className="mt-5">
@@ -114,7 +114,7 @@ export default function KalkulatorProperti() {
               <span className="text-gold2 font-semibold text-sm">Estimasi Premi / Tahun</span>
               <span className="text-gold text-[1.1rem] font-bold">{formatRp(hasil.premi)}</span>
             </div>
-            <p className="text-white/40 text-xs mt-3 leading-relaxed">
+            <p className="text-white/65 text-xs mt-3 leading-relaxed">
               * Estimasi berdasarkan tarif referensi pasar. Premi final ditentukan perusahaan asuransi setelah survei lokasi. Hubungi kami untuk penawaran resmi.
             </p>
             <a href={`https://wa.me/${KONTAK.wa}?text=${hasil.waMsg}`} className="block text-center mt-4 bg-[#25D366] text-white py-3 rounded-lg font-bold text-sm no-underline hover:opacity-90 transition-opacity">

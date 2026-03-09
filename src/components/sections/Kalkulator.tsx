@@ -127,7 +127,7 @@ export default function Kalkulator() {
               onChange={e => setHargaStr(e.target.value)}
               className="bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[0.88rem] outline-none focus:border-gold placeholder-white/40"
             />
-            <span className="text-white/40 text-xs">Masukkan harga pasar kendaraan saat ini</span>
+            <span className="text-white/65 text-xs">Masukkan harga pasar kendaraan saat ini</span>
           </div>
         </div>
 
@@ -170,7 +170,7 @@ export default function Kalkulator() {
                 <span className="text-white font-semibold">{formatRp(hasil.or)} / kejadian</span>
               </div>
             </div>
-            <p className="text-white/40 text-xs mt-4 leading-relaxed">
+            <p className="text-white/65 text-xs mt-4 leading-relaxed">
               * Estimasi berdasarkan tarif referensi OJK (SE No.6/SEOJK.05/2017) sesuai wilayah plat kendaraan. Premi final ditentukan perusahaan asuransi dan dapat berbeda. Hubungi kami untuk penawaran resmi terbaik.
             </p>
             <a href={`https://wa.me/${KONTAK.wa}?text=${hasil.waMsg}`} className="block text-center mt-4 bg-[#25D366] text-white py-3 rounded-lg font-bold text-[0.88rem] no-underline hover:opacity-90 transition-opacity">
