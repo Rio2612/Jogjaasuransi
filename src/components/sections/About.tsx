@@ -44,7 +44,7 @@ export default function About() {
             {[
               "Pengalaman 10+ tahun di industri asuransi kerugian",
               "Melayani klien personal, UMKM, hingga korporasi di Yogyakarta",
-              "Menguasai seluruh lini produk asuransi kerugian (kecuali Marine Hull)",
+              "Menguasai seluruh lini produk asuransi kerugian",
               "Konsultasi jujur dan transparan, termasuk penjelasan klausul pengecualian",
               "Pendampingan purna jual dan monitoring polis aktif sepanjang periode",
             ].map(li => (
