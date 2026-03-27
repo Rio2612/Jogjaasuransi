@@ -7,9 +7,10 @@ export const metadata: Metadata = {
   title: "Asuransi Machinery Breakdown Jogja – Kerusakan Mesin Industri | Asuransi Jogja",
   description: "Asuransi Machinery Breakdown di Yogyakarta untuk mesin produksi, kompresor, genset, dan peralatan industri. Perlindungan dari kerusakan mendadak saat beroperasi. Konsultasi gratis.",
   keywords: "machinery breakdown jogja, asuransi mesin rusak yogyakarta, asuransi kerusakan mesin jogja, machine breakdown insurance DIY, asuransi genset yogyakarta, asuransi mesin pabrik jogja",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-engineering/machinery-breakdown" },
   openGraph: {
     title: "Asuransi Machinery Breakdown Jogja – Kerusakan Mesin Industri",
-    url: "https://asuransijogja.com/asuransi-engineering/machinery-breakdown",
+    url: "https://asuransijogja.biz.id/asuransi-engineering/machinery-breakdown",
   },
 };
 
@@ -91,7 +92,7 @@ export default function MachineryBreakdownPage() {
         <div className="text-center mb-10">
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Kenapa Perlu MB?</div>
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">Asuransi Kebakaran Tidak Cukup —<br />Ini Bedanya dengan MB</h2>
-          <p className="text-sm text-[#64748B] max-w-[500px] mx-auto mt-3">Banyak pemilik pabrik mengira mesinnya sudah terlindungi karena ada asuransi kebakaran. Kenyataannya, 90% kerusakan mesin bukan disebabkan kebakaran.</p>
+          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">Banyak pemilik pabrik mengira mesinnya sudah terlindungi karena ada asuransi kebakaran. Kenyataannya, 90% kerusakan mesin bukan disebabkan kebakaran.</p>
         </div>
         <div className="max-w-4xl mx-auto overflow-x-auto">
           <table className="w-full border-collapse text-sm">
@@ -106,8 +107,8 @@ export default function MachineryBreakdownPage() {
               {bedaMBvsKebakaran.map((b, i)=>(
                 <tr key={b.aspek} className={i % 2 === 0 ? "bg-white" : "bg-cream"}>
                   <td className="p-4 font-semibold text-navy text-xs">{b.aspek}</td>
-                  <td className="p-4 text-[#64748B] text-xs leading-relaxed">{b.kebakaran}</td>
-                  <td className="p-4 text-navy2 text-xs leading-relaxed font-medium">{b.mb}</td>
+                  <td className="p-4 text-[#64748B] text-sm leading-relaxed">{b.kebakaran}</td>
+                  <td className="p-4 text-navy2 text-sm leading-relaxed font-medium">{b.mb}</td>
                 </tr>
               ))}
             </tbody>
@@ -129,7 +130,7 @@ export default function MachineryBreakdownPage() {
             <div key={p.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{p.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{p.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{p.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -146,7 +147,7 @@ export default function MachineryBreakdownPage() {
             <div key={d.title} className="bg-white rounded-card p-6 border border-black/5 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{d.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{d.title}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{d.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{d.desc}</p>
             </div>
           ))}
         </div>
@@ -163,7 +164,7 @@ export default function MachineryBreakdownPage() {
             <div key={m.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{m.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{m.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{m.contoh}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{m.contoh}</p>
             </div>
           ))}
         </div>
@@ -174,7 +175,7 @@ export default function MachineryBreakdownPage() {
         <div className="text-center mb-8">
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Referensi Biaya</div>
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">Estimasi Biaya Perbaikan<br />Mesin Industri Umum</h2>
-          <p className="text-sm text-[#64748B] max-w-[460px] mx-auto mt-2">Angka di bawah adalah estimasi pasar — biaya aktual sangat bergantung pada kondisi dan ketersediaan suku cadang</p>
+          <p className="text-base text-[#64748B] max-w-[460px] mx-auto mt-2">Angka di bawah adalah estimasi pasar — biaya aktual sangat bergantung pada kondisi dan ketersediaan suku cadang</p>
         </div>
         <div className="flex flex-col gap-4 max-w-3xl mx-auto">
           {biayaOverhaulTipikal.map(b=>(

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Asuransi Kebakaran Jogja – Rumah, Kos, Ruko | Asuransi Jogja",
   description: "Asuransi kebakaran di Yogyakarta untuk rumah tinggal, kos-kosan, dan ruko. Premi terjangkau, klaim mudah, pendampingan penuh. Konsultasi gratis.",
   keywords: "asuransi kebakaran jogja, asuransi kebakaran rumah yogyakarta, asuransi kebakaran kos jogja, asuransi kebakaran ruko yogyakarta",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-properti/kebakaran" },
 };
 
 const produkItems = [
@@ -99,7 +100,7 @@ export default function KebakeranPage() {
           <div className="text-center mb-8">
             <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Jaminan Dasar</div>
             <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">Standar FLEXAS —<br />5 Risiko yang Selalu Dijamin</h2>
-            <p className="text-sm text-[#64748B] max-w-[480px] mx-auto mt-3">Setiap polis asuransi kebakaran minimal menjamin 5 risiko utama ini sesuai standar AAUI</p>
+            <p className="text-base text-[#64748B] max-w-[480px] mx-auto mt-3">Setiap polis asuransi kebakaran minimal menjamin 5 risiko utama ini sesuai standar AAUI</p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
             {flexasItems.map(f => (
@@ -111,7 +112,7 @@ export default function KebakeranPage() {
             ))}
           </div>
           <div className="mt-6 bg-gold/8 border border-gold/20 rounded-xl p-5">
-            <p className="text-sm text-navy2 leading-relaxed">
+            <p className="text-base text-navy2 leading-relaxed">
               <strong className="text-gold">💡 Tips Pak Rio:</strong> Jaminan dasar FLEXAS sering belum mencakup risiko banjir dan gempa yang relevan di Yogyakarta. Kami selalu rekomendasikan analisis risiko lokasi sebelum memilih produk.
             </p>
           </div>
@@ -135,7 +136,7 @@ export default function KebakeranPage() {
                 <p className="text-sm leading-relaxed text-[#64748B] mb-4">{p.desc}</p>
                 <ul className="flex flex-col gap-2 mb-4">
                   {p.manfaat.map(m => (
-                    <li key={m} className="flex gap-2 text-sm text-navy2"><span className="text-gold flex-shrink-0 font-bold">✓</span>{m}</li>
+                    <li key={m} className="flex gap-2 text-base text-navy2"><span className="text-gold flex-shrink-0 font-bold">✓</span>{m}</li>
                   ))}
                 </ul>
                 <div className="bg-white rounded-lg px-4 py-2.5 text-xs text-[#64748B] border border-black/5">
@@ -159,7 +160,7 @@ export default function KebakeranPage() {
               <div className="absolute top-4 right-5 font-heading text-[2rem] font-bold text-navy/8">{p.step}</div>
               <div className="text-3xl mb-3">{p.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{p.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{p.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{p.desc}</p>
             </div>
           ))}
         </div>

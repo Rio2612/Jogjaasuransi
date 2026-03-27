@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: "Jaminan Pelaksanaan (Performance Bond) Jogja – Garansi Kontrak | Asuransi Jogja",
   description: "Jaminan Pelaksanaan (Performance Bond) di Yogyakarta. Garansi kontraktor menyelesaikan proyek sesuai kontrak. Nilai 5% dari kontrak. Untuk proyek APBN, APBD DIY, dan swasta.",
   keywords: "jaminan pelaksanaan jogja, performance bond yogyakarta, jaminan kontrak konstruksi jogja, performance bond kontraktor DIY, surety bond pelaksanaan proyek yogyakarta",
-  openGraph: { title: "Jaminan Pelaksanaan (Performance Bond) Jogja", url: "https://asuransijogja.com/asuransi-surety-bond/jaminan-pelaksanaan" },
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-pelaksanaan" },
+  openGraph: { title: "Jaminan Pelaksanaan (Performance Bond) Jogja", url: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-pelaksanaan" },
 };
 
 const fungsiPB = [
@@ -74,7 +75,7 @@ export default function JaminanPelaksanaanPage() {
             <div key={f.label} className="bg-white rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{f.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{f.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{f.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -104,7 +105,7 @@ export default function JaminanPelaksanaanPage() {
           {kondisiKlaim.map((k, i)=>(
             <div key={i} className="bg-white rounded-card p-4 border border-black/5 flex gap-3 items-start">
               <div className="bg-red-100 text-red-700 font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">{i+1}</div>
-              <p className="text-sm text-navy2 leading-relaxed">{k.kondisi}</p>
+              <p className="text-base text-navy2 leading-relaxed">{k.kondisi}</p>
             </div>
           ))}
         </div>

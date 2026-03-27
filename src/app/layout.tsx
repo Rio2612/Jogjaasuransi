@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const BASE_URL = "https://asuransijogja.com";
+const BASE_URL = "https://asuransijogja.biz.id";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],

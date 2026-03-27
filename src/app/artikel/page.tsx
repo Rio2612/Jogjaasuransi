@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   title: "Artikel Edukasi Asuransi – Tips & Panduan untuk Anda",
   description: "Artikel dan panduan asuransi dari konsultan Yogyakarta. Pelajari cara klaim, bengkel rekanan, cara menghitung nilai asuransi, dan pentingnya asuransi untuk dunia usaha.",
   keywords: "artikel asuransi jogja, edukasi asuransi yogyakarta, tips asuransi, cara klaim asuransi mobil, nilai asuransi, asuransi usaha yogyakarta",
-  alternates: { canonical: "https://asuransijogja.com/artikel" },
+  alternates: { canonical: "https://asuransijogja.biz.id/artikel" },
   openGraph: {
     title: "Artikel Edukasi Asuransi – Asuransi Jogja",
     description: "Panduan dan tips asuransi dari konsultan berpengalaman di Yogyakarta.",
-    url: "https://asuransijogja.com/artikel",
+    url: "https://asuransijogja.biz.id/artikel",
   },
 };
 
@@ -53,9 +53,9 @@ const schemaArtikelList = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Artikel Edukasi Asuransi – Asuransi Jogja",
-  "url": "https://asuransijogja.com/artikel",
+  "url": "https://asuransijogja.biz.id/artikel",
   "description": "Kumpulan artikel dan panduan asuransi dari konsultan asuransi kerugian di Yogyakarta.",
-  "publisher": { "@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.com" },
+  "publisher": { "@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id" },
 };
 
 export default function ArtikelIndexPage() {
@@ -95,7 +95,7 @@ export default function ArtikelIndexPage() {
                 <div className="absolute top-0 left-0 right-0 h-[3px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 <div className="flex items-start justify-between mb-4">
                   <span className="text-3xl">{a.icon}</span>
-                  <span className="bg-gold/10 border border-gold/20 text-gold text-[0.68rem] font-bold px-2.5 py-1 rounded-full">{a.kategori}</span>
+                  <span className="bg-gold/10 border border-gold/20 text-gold text-[0.78rem] font-bold px-2.5 py-1 rounded-full">{a.kategori}</span>
                 </div>
                 <h2 className="font-heading text-navy font-bold text-[1.05rem] leading-[1.35] mb-3 group-hover:text-gold transition-colors">{a.judul}</h2>
                 <p className="text-sm leading-relaxed text-[#64748B] mb-4">{a.ringkasan}</p>
@@ -112,7 +112,7 @@ export default function ArtikelIndexPage() {
       {/* CTA */}
       <section className="py-16 px-[5vw] bg-cream text-center">
         <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.2rem)] text-navy mb-3">Masih Ada Pertanyaan?</h2>
-        <p className="text-sm text-[#64748B] max-w-[440px] mx-auto mb-6">Konsultasi langsung dengan Pak Rio — gratis, tanpa tekanan, dan mendapat rekomendasi yang benar-benar sesuai kebutuhan Anda.</p>
+        <p className="text-base text-[#64748B] max-w-[440px] mx-auto mb-6">Konsultasi langsung dengan Pak Rio — gratis, tanpa tekanan, dan mendapat rekomendasi yang benar-benar sesuai kebutuhan Anda.</p>
         <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Konsultasi Gratis via WhatsApp</a>
       </section>
     </>

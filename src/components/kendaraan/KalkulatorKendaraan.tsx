@@ -27,9 +27,9 @@ export default function KalkulatorKendaraan() {
     setHasil({ premi, premiPeriode: periode!==12 ? premi*periode/12 : null, periodeLabel: periode===6?"6 Bulan":periode===3?"3 Bulan":null, or, kategoriLabel: kat.label, waMsg });
   };
 
-  const sel = "bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[0.88rem] outline-none focus:border-gold appearance-none cursor-pointer w-full";
-  const inp = "bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[0.88rem] outline-none focus:border-gold placeholder-white/40 w-full";
-  const lbl = "text-[0.82rem] font-semibold text-white/75 mb-1.5 block";
+  const sel = "bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold appearance-none cursor-pointer w-full";
+  const inp = "bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold placeholder-white/40 w-full";
+  const lbl = "text-[0.95rem] font-semibold text-white/75 mb-1.5 block";
 
   return (
     <section id="kalkulator" className="py-20 px-[5vw] bg-navy">
@@ -77,7 +77,7 @@ export default function KalkulatorKendaraan() {
         <div className="mt-5">
           <label className={lbl}>Harga Kendaraan (Rp)</label>
           <input type="number" placeholder="Contoh: 250000000" className={inp} value={hargaStr} onChange={e=>setHargaStr(e.target.value)} />
-          <span className="text-white/65 text-xs mt-1 block">Masukkan harga pasar kendaraan saat ini</span>
+          <span className="text-white/40 text-xs mt-1 block">Masukkan harga pasar kendaraan saat ini</span>
         </div>
         {error && <p className="text-red-400 text-sm mt-3">{error}</p>}
         <button onClick={hitung} className="w-full bg-gold text-navy py-3.5 rounded-lg font-bold text-[0.95rem] mt-6 hover:bg-gold2 hover:-translate-y-px transition-all cursor-pointer border-none">
@@ -94,7 +94,7 @@ export default function KalkulatorKendaraan() {
               {hasil.premiPeriode && <div className="flex justify-between text-sm"><span className="text-white/65">Estimasi ({hasil.periodeLabel})</span><span className="text-white font-semibold">{formatRp(hasil.premiPeriode)}</span></div>}
               <div className="flex justify-between text-sm"><span className="text-white/65">Own Risk / Kejadian</span><span className="text-white font-semibold">{formatRp(hasil.or)}</span></div>
             </div>
-            <p className="text-white/65 text-xs mt-4 leading-relaxed">* Estimasi berdasarkan tarif referensi OJK. Premi final ditentukan perusahaan asuransi.</p>
+            <p className="text-white/40 text-xs mt-4 leading-relaxed">* Estimasi berdasarkan tarif referensi OJK. Premi final ditentukan perusahaan asuransi.</p>
             <a href={`https://wa.me/${KONTAK.wa}?text=${hasil.waMsg}`} className="block text-center mt-4 bg-[#25D366] text-white py-3 rounded-lg font-bold text-sm no-underline hover:opacity-90 transition-opacity">
               💬 Dapatkan Penawaran Resmi via WhatsApp
             </a>

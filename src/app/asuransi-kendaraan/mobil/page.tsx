@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Asuransi Mobil Jogja – All Risk & TLO, Mobil Listrik | Asuransi Jogja",
   description: "Asuransi mobil di Yogyakarta. All Risk dan TLO untuk mobil BBM maupun listrik (EV). Tarif resmi OJK, klaim mudah, pendampingan penuh. Hitung premi online gratis.",
   keywords: "asuransi mobil jogja, asuransi all risk yogyakarta, asuransi TLO jogja, asuransi mobil listrik yogyakarta, premi asuransi mobil OJK jogja",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-kendaraan/mobil" },
 };
 
 const perbedaan = [
@@ -120,7 +121,7 @@ export default function AsuransiMobilPage() {
             </div>
             <ul className="flex flex-col gap-2.5">
               {manfaatAllRisk.map(m=>(
-                <li key={m} className="flex gap-2 text-sm text-navy2"><span className="text-gold font-bold flex-shrink-0">✓</span>{m}</li>
+                <li key={m} className="flex gap-2 text-base text-navy2"><span className="text-gold font-bold flex-shrink-0">✓</span>{m}</li>
               ))}
             </ul>
           </div>
@@ -131,7 +132,7 @@ export default function AsuransiMobilPage() {
             </div>
             <ul className="flex flex-col gap-2.5">
               {manfaatTLO.map(m=>(
-                <li key={m} className="flex gap-2 text-sm text-navy2"><span className="text-gold font-bold flex-shrink-0">✓</span>{m}</li>
+                <li key={m} className="flex gap-2 text-base text-navy2"><span className="text-gold font-bold flex-shrink-0">✓</span>{m}</li>
               ))}
             </ul>
           </div>
@@ -150,7 +151,7 @@ export default function AsuransiMobilPage() {
               <span className="text-2xl flex-shrink-0">{t.icon}</span>
               <div>
                 <div className="text-sm font-semibold text-navy mb-1">{t.tip}</div>
-                <div className="text-xs leading-relaxed text-[#64748B]"><span className="text-gold font-semibold">→</span> {t.rekomendasi}</div>
+                <div className="text-base leading-relaxed text-[#64748B]"><span className="text-gold font-semibold">→</span> {t.rekomendasi}</div>
               </div>
             </div>
           ))}
@@ -173,7 +174,7 @@ export default function AsuransiMobilPage() {
               <div className="absolute top-4 right-5 font-heading text-[2rem] font-bold text-navy/8">{p.step}</div>
               <div className="text-3xl mb-3">{p.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{p.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{p.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{p.desc}</p>
             </div>
           ))}
         </div>

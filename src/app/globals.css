@@ -13,16 +13,89 @@
 
 html {
   scroll-behavior: smooth;
+  /* Base font size naik: 16px default → efektif lebih besar di mobile */
+  font-size: 16px;
+}
+
+/* Mobile-first: semua teks naik ~1 step */
+@media (max-width: 767px) {
+  html {
+    font-size: 17px;
+  }
 }
 
 body {
   font-family: var(--font-jakarta), sans-serif;
   color: var(--navy);
   overflow-x: hidden;
+  /* Line-height lebih longgar untuk keterbacaan mobile */
+  line-height: 1.75;
 }
 
 h1, h2, h3, h4 {
   font-family: var(--font-cormorant), serif;
+  line-height: 1.22;
+}
+
+/* Override Tailwind text-xs dan text-sm agar lebih besar */
+/* text-xs: 12px → 13.5px */
+.text-xs {
+  font-size: 0.8438rem !important; /* ~13.5px */
+  line-height: 1.6 !important;
+}
+
+/* text-sm: 14px → 15.5px */
+.text-sm {
+  font-size: 0.9375rem !important; /* ~15px */
+  line-height: 1.75 !important;
+}
+
+/* text-base: 16px → 17px */
+.text-base {
+  font-size: 1.0625rem !important; /* 17px */
+  line-height: 1.85 !important;
+}
+
+/* Khusus mobile — label kecil uppercase tetap proporsional */
+@media (max-width: 767px) {
+  .text-xs {
+    font-size: 0.875rem !important; /* 14px di mobile */
+    line-height: 1.65 !important;
+  }
+  .text-sm {
+    font-size: 1rem !important; /* 16px di mobile */
+    line-height: 1.78 !important;
+  }
+  .text-base {
+    font-size: 1.0625rem !important; /* 17px */
+    line-height: 1.85 !important;
+  }
+}
+
+/* Tabel konten: pastikan terbaca di mobile */
+table {
+  font-size: 0.9rem;
+}
+@media (max-width: 767px) {
+  table {
+    font-size: 0.9375rem;
+  }
+}
+
+/* FAQ details/summary */
+details summary {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+@media (max-width: 767px) {
+  details summary {
+    font-size: 1rem;
+  }
+}
+
+/* Tombol & badge — sedikit lebih besar */
+button, .btn {
+  font-size: inherit;
 }
 
 @keyframes fadeUp {

@@ -25,7 +25,7 @@ export default function ProblemSolution() {
           <h3 className="text-xs font-bold tracking-[1.5px] uppercase text-red-600 mb-5">✗ Masalah Umum</h3>
           <ul className="flex flex-col gap-3.5">
             {masalah.map(m => (
-              <li key={m.ico} className="flex gap-3 items-start bg-red-600/7 border border-red-600/12 rounded-lg p-4 text-[0.88rem] leading-[1.65] text-navy2">
+              <li key={m.ico} className="flex gap-3 items-start bg-red-600/7 border border-red-600/12 rounded-lg p-4 text-[1rem] leading-[1.65] text-navy2">
                 <span className="flex-shrink-0">{m.ico}</span>{m.teks}
               </li>
             ))}
@@ -35,7 +35,7 @@ export default function ProblemSolution() {
           <h3 className="text-xs font-bold tracking-[1.5px] uppercase text-green-700 mb-5">✓ Solusi Asuransi Jogja</h3>
           <ul className="flex flex-col gap-3.5">
             {solusi.map(s => (
-              <li key={s.ico} className="flex gap-3 items-start bg-green-700/7 border border-green-700/12 rounded-lg p-4 text-[0.88rem] leading-[1.65] text-navy2">
+              <li key={s.ico} className="flex gap-3 items-start bg-green-700/7 border border-green-700/12 rounded-lg p-4 text-[1rem] leading-[1.65] text-navy2">
                 <span className="flex-shrink-0">{s.ico}</span>{s.teks}
               </li>
             ))}

@@ -7,9 +7,10 @@ export const metadata: Metadata = {
   title: "Asuransi Pengiriman Barang Darat Jogja – Inland Transit | Asuransi Jogja",
   description: "Asuransi pengiriman barang via darat di Yogyakarta. Inland transit untuk truk, pickup, dan kereta api. Proteksi dari gudang pengirim hingga tangan penerima. Cocok untuk UMKM dan bisnis logistik.",
   keywords: "asuransi pengiriman barang jogja, inland transit yogyakarta, asuransi kargo darat jogja, asuransi truk barang yogyakarta, asuransi kereta barang jogja",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-kargo/pengiriman-barang" },
   openGraph: {
     title: "Asuransi Pengiriman Barang Darat Jogja – Inland Transit",
-    url: "https://asuransijogja.com/asuransi-kargo/pengiriman-barang",
+    url: "https://asuransijogja.biz.id/asuransi-kargo/pengiriman-barang",
   },
 };
 
@@ -91,7 +92,7 @@ export default function PengirimanBarangPage() {
             <div key={r.label} className="bg-white rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{r.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{r.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{r.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{r.desc}</p>
             </div>
           ))}
         </div>
@@ -102,14 +103,14 @@ export default function PengirimanBarangPage() {
         <div className="text-center mb-10">
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Produk UMKM Jogja</div>
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">Jenis Barang yang Sering<br />Dikirim dari Yogyakarta</h2>
-          <p className="text-sm text-[#64748B] max-w-[460px] mx-auto mt-3">Semua jenis barang di bawah ini dapat diasuransikan dengan polis inland transit — termasuk barang rapuh dan bernilai tinggi</p>
+          <p className="text-base text-[#64748B] max-w-[460px] mx-auto mt-3">Semua jenis barang di bawah ini dapat diasuransikan dengan polis inland transit — termasuk barang rapuh dan bernilai tinggi</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
           {jenisBarang.map(j=>(
             <div key={j.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{j.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{j.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{j.detail}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{j.detail}</p>
             </div>
           ))}
         </div>
@@ -123,7 +124,7 @@ export default function PengirimanBarangPage() {
             <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy mb-4">Agar Klaim Lancar<br />Jika Terjadi Masalah</h2>
             <ul className="flex flex-col gap-3">
               {tipsPengiriman.map(t=>(
-                <li key={t} className="flex gap-2.5 text-sm text-navy2 leading-relaxed">
+                <li key={t} className="flex gap-2.5 text-base text-navy2 leading-relaxed">
                   <span className="text-gold font-bold flex-shrink-0 mt-0.5">✓</span>{t}
                 </li>
               ))}
@@ -154,7 +155,7 @@ export default function PengirimanBarangPage() {
               <div className="absolute top-4 right-5 font-heading text-[2rem] font-bold text-navy/8">{p.step}</div>
               <div className="text-3xl mb-3">{p.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{p.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{p.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{p.desc}</p>
             </div>
           ))}
         </div>

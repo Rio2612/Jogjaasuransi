@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Asuransi Armada Fleet Jogja – Kendaraan Perusahaan | Asuransi Jogja",
   description: "Asuransi fleet / armada kendaraan perusahaan di Yogyakarta. Satu polis untuk banyak unit, premi lebih efisien, pengelolaan terpusat. Untuk bisnis logistik, kontraktor, dan korporasi.",
   keywords: "asuransi fleet jogja, asuransi armada kendaraan yogyakarta, asuransi kendaraan perusahaan jogja, fleet insurance yogyakarta, asuransi operasional bisnis jogja",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-kendaraan/armada-fleet" },
 };
 
 const keunggulanFleet = [
@@ -73,14 +74,14 @@ export default function ArmadaFleetPage() {
         <div className="text-center mb-10">
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Keunggulan</div>
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">Mengapa Pilih<br />Asuransi Fleet?</h2>
-          <p className="text-sm text-[#64748B] max-w-[480px] mx-auto mt-3">Dibanding mengurus polis satuan satu per satu, asuransi fleet menawarkan efisiensi waktu, biaya, dan pengelolaan yang jauh lebih baik</p>
+          <p className="text-base text-[#64748B] max-w-[480px] mx-auto mt-3">Dibanding mengurus polis satuan satu per satu, asuransi fleet menawarkan efisiensi waktu, biaya, dan pengelolaan yang jauh lebih baik</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
           {keunggulanFleet.map(k=>(
             <div key={k.title} className="bg-white rounded-card p-6 border border-black/5 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{k.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{k.title}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{k.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{k.desc}</p>
             </div>
           ))}
         </div>
@@ -97,7 +98,7 @@ export default function ArmadaFleetPage() {
             <div key={s.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{s.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{s.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{s.detail}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{s.detail}</p>
             </div>
           ))}
         </div>
@@ -115,7 +116,7 @@ export default function ArmadaFleetPage() {
               <div className="absolute top-4 right-5 font-heading text-[2rem] font-bold text-navy/8">{p.step}</div>
               <div className="text-3xl mb-3">{p.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{p.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{p.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{p.desc}</p>
             </div>
           ))}
         </div>

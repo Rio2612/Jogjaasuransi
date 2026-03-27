@@ -7,9 +7,10 @@ export const metadata: Metadata = {
   title: "Asuransi Contractor All Risk (CAR) Jogja – Proyek Konstruksi DIY | Asuransi Jogja",
   description: "Asuransi Contractor All Risk (CAR) di Yogyakarta untuk proyek gedung, hotel, kampus, jalan, dan infrastruktur. Wajib tender pemerintah DIY. Section I & II tersedia. Konsultasi gratis.",
   keywords: "contractor all risk jogja, asuransi CAR yogyakarta, asuransi konstruksi jogja, asuransi proyek gedung yogyakarta, asuransi kontraktor DIY, CAR pemerintah yogyakarta",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-engineering/contractor-all-risk" },
   openGraph: {
     title: "Asuransi Contractor All Risk (CAR) Jogja",
-    url: "https://asuransijogja.com/asuransi-engineering/contractor-all-risk",
+    url: "https://asuransijogja.biz.id/asuransi-engineering/contractor-all-risk",
   },
 };
 
@@ -119,7 +120,7 @@ export default function ContractorAllRiskPage() {
               </div>
               <ul className="flex flex-col gap-2.5">
                 {s.isi.map(i=>(
-                  <li key={i} className="flex gap-2 text-sm text-navy2"><span className="text-gold font-bold flex-shrink-0">✓</span>{i}</li>
+                  <li key={i} className="flex gap-2 text-base text-navy2"><span className="text-gold font-bold flex-shrink-0">✓</span>{i}</li>
                 ))}
               </ul>
             </div>
@@ -141,7 +142,7 @@ export default function ContractorAllRiskPage() {
             <div key={r.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{r.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{r.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{r.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{r.desc}</p>
             </div>
           ))}
         </div>
@@ -179,7 +180,7 @@ export default function ContractorAllRiskPage() {
               <div className="bg-navy text-gold font-heading font-bold text-sm w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">{i+1}</div>
               <div>
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1">{t.tahap}</div>
-                <p className="text-xs leading-relaxed text-[#64748B]">{t.cover}</p>
+                <p className="text-base leading-relaxed text-[#64748B]">{t.cover}</p>
               </div>
             </div>
           ))}
@@ -195,7 +196,7 @@ export default function ContractorAllRiskPage() {
             <p className="text-sm leading-relaxed text-[#64748B] mb-5">Tender pemerintah DIY dan proyek swasta besar umumnya mensyaratkan dokumen asuransi berikut:</p>
             <ul className="flex flex-col gap-3">
               {dokumenTender.map(d=>(
-                <li key={d} className="flex gap-2.5 text-sm text-navy2 leading-relaxed">
+                <li key={d} className="flex gap-2.5 text-base text-navy2 leading-relaxed">
                   <span className="text-gold font-bold flex-shrink-0 mt-0.5">✓</span>{d}
                 </li>
               ))}

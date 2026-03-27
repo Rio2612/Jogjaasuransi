@@ -33,7 +33,7 @@ export default function Produk() {
           <button
             key={c.id}
             onClick={() => setActiveId(c.id)}
-            className={`px-[18px] py-2 rounded-full border text-[0.82rem] font-semibold cursor-pointer transition-all ${
+            className={`px-[18px] py-2 rounded-full border text-[0.92rem] font-semibold cursor-pointer transition-all ${
               activeId === c.id ? "bg-navy text-white border-navy" : "bg-white text-[#64748B] border-black/10 hover:bg-navy hover:text-white hover:border-navy"
             }`}
           >
@@ -49,8 +49,8 @@ export default function Produk() {
             <div className="absolute top-0 left-0 right-0 h-[3px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             <div className="text-[1.6rem] mb-3">{p.icon}</div>
             <div className="font-heading text-[1.05rem] font-bold text-navy mb-2">{p.name}</div>
-            <p className="text-[0.85rem] leading-[1.65] text-[#64748B]">{p.desc}</p>
-            <a href={p.href} className="inline-flex items-center gap-1 text-gold text-[0.82rem] font-semibold mt-3 hover:gap-2 transition-all no-underline">
+            <p className="text-[1rem] leading-[1.7] text-[#64748B]">{p.desc}</p>
+            <a href={p.href} className="inline-flex items-center gap-1 text-gold text-[0.92rem] font-semibold mt-3 hover:gap-2 transition-all no-underline">
               {p.href.startsWith("#") ? "Hitung premi →" : "Konsultasi →"}
             </a>
           </div>
@@ -61,7 +61,7 @@ export default function Produk() {
       <div className="flex justify-end">
         <Link
           href={pillarHref}
-          className="inline-flex items-center gap-2 bg-cream border border-gold/30 text-navy font-semibold text-[0.85rem] px-5 py-2.5 rounded-full hover:bg-gold/10 hover:border-gold transition-all no-underline group"
+          className="inline-flex items-center gap-2 bg-cream border border-gold/30 text-navy font-semibold text-[0.95rem] px-5 py-2.5 rounded-full hover:bg-gold/10 hover:border-gold transition-all no-underline group"
         >
           Lihat semua produk {active.icon} {active.label}
           <span className="text-gold group-hover:translate-x-1 transition-transform inline-block">→</span>

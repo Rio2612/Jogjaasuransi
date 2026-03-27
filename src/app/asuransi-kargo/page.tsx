@@ -7,10 +7,11 @@ export const metadata: Metadata = {
   title: "Asuransi Kargo Jogja – Pengiriman Barang, Ekspor Impor & UMKM | Asuransi Jogja",
   description: "Konsultan asuransi kargo dan pengiriman barang di Yogyakarta. Lindungi kiriman Anda via darat, laut, dan udara. Marine cargo, inland transit, asuransi ekspedisi UMKM. Konsultasi gratis.",
   keywords: "asuransi kargo jogja, asuransi pengiriman barang yogyakarta, marine cargo jogja, asuransi ekspedisi yogyakarta, asuransi kargo UMKM jogja, inland transit insurance yogyakarta",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-kargo" },
   openGraph: {
     title: "Asuransi Kargo Jogja – Darat, Laut & Udara",
     description: "Proteksi pengiriman barang Anda dari risiko kerusakan, kehilangan, dan keterlambatan. Melayani UMKM hingga perusahaan ekspor-impor di Yogyakarta.",
-    url: "https://asuransijogja.com/asuransi-kargo",
+    url: "https://asuransijogja.biz.id/asuransi-kargo",
   },
 };
 
@@ -138,7 +139,7 @@ export default function AsuransiKargoPage() {
               <div className="text-3xl mb-2">{f.icon}</div>
               <div className="font-heading text-gold text-xl font-bold mb-1">{f.angka}</div>
               <div className="font-heading text-navy font-bold text-sm mb-2">{f.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{f.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -181,7 +182,7 @@ export default function AsuransiKargoPage() {
             <div key={m.label} className="bg-white rounded-card p-6 text-center border border-black/5 hover:-translate-y-1 transition-all">
               <div className="text-4xl mb-3">{m.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{m.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{m.detail}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{m.detail}</p>
             </div>
           ))}
         </div>
@@ -192,7 +193,7 @@ export default function AsuransiKargoPage() {
         <div className="text-center mb-10">
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Standar Internasional</div>
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-navy leading-[1.22]">Mengenal Klausul ICC —<br />Standar Polis Kargo Dunia</h2>
-          <p className="text-sm text-[#64748B] max-w-[500px] mx-auto mt-3">Institute Cargo Clauses (ICC) adalah standar internasional yang digunakan hampir seluruh perusahaan asuransi kargo di dunia</p>
+          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">Institute Cargo Clauses (ICC) adalah standar internasional yang digunakan hampir seluruh perusahaan asuransi kargo di dunia</p>
         </div>
         <div className="flex flex-col gap-5 max-w-3xl mx-auto">
           {klausulJaminan.map(k=>(
@@ -223,7 +224,7 @@ export default function AsuransiKargoPage() {
           <div>
             <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Produk Sinergi</div>
             <h2 className="font-heading text-navy text-[1.5rem] mb-3">Kargo + Kendaraan +<br />Liability = Proteksi Logistik</h2>
-            <p className="text-sm leading-relaxed text-[#64748B]">Bisnis pengiriman dan logistik membutuhkan proteksi berlapis — kendaraan pengangkut, muatan di dalam, dan tanggung jawab terhadap pihak ketiga jika terjadi kecelakaan.</p>
+            <p className="text-base leading-relaxed text-[#64748B]">Bisnis pengiriman dan logistik membutuhkan proteksi berlapis — kendaraan pengangkut, muatan di dalam, dan tanggung jawab terhadap pihak ketiga jika terjadi kecelakaan.</p>
           </div>
           <div className="flex flex-col gap-3">
             {[
@@ -254,7 +255,7 @@ export default function AsuransiKargoPage() {
               <summary className="py-4 cursor-pointer font-semibold text-[0.92rem] text-navy flex justify-between items-center list-none">
                 {f.q}<span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
               </summary>
-              <p className="text-sm leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
             </details>
           ))}
         </div>

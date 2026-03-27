@@ -6,10 +6,10 @@ export const metadata: Metadata = {
   title: "Cara Menghitung Nilai Asuransi yang Tepat – Hindari Underinsurance",
   description: "Panduan lengkap cara menghitung nilai pertanggungan asuransi yang benar. Pelajari apa itu underinsurance, cara menghitung nilai kendaraan, properti, dan aset bisnis untuk klaim yang optimal.",
   keywords: "cara menghitung nilai asuransi, nilai pertanggungan asuransi, underinsurance adalah, harga pertanggungan kendaraan, nilai properti untuk asuransi, menghitung premi asuransi jogja",
-  alternates: { canonical: "https://asuransijogja.com/artikel/cara-menghitung-nilai-asuransi" },
+  alternates: { canonical: "https://asuransijogja.biz.id/artikel/cara-menghitung-nilai-asuransi" },
   openGraph: {
     title: "Cara Menghitung Nilai Asuransi yang Tepat – Hindari Underinsurance",
-    url: "https://asuransijogja.com/artikel/cara-menghitung-nilai-asuransi",
+    url: "https://asuransijogja.biz.id/artikel/cara-menghitung-nilai-asuransi",
   },
 };
 
@@ -63,9 +63,9 @@ const schemaArtikel = {
   "@type": "Article",
   "headline": "Cara Menghitung Nilai Asuransi yang Tepat – Hindari Underinsurance",
   "description": "Panduan lengkap cara menghitung nilai pertanggungan asuransi yang benar untuk kendaraan, properti, dan aset bisnis.",
-  "url": "https://asuransijogja.com/artikel/cara-menghitung-nilai-asuransi",
+  "url": "https://asuransijogja.biz.id/artikel/cara-menghitung-nilai-asuransi",
   "author": { "@type": "Person", "name": "Rio Mardiansyah" },
-  "publisher": { "@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.com" },
+  "publisher": { "@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id" },
   "inLanguage": "id-ID",
 };
 
@@ -106,7 +106,7 @@ export default function CaraMenghitungNilaiPage() {
           <h1 className="font-heading text-[clamp(1.8rem,3.5vw,2.8rem)] text-navy leading-[1.2] mb-4">
             Cara Menghitung Nilai Asuransi<br />yang Tepat (Avoid Underinsurance)
           </h1>
-          <p className="text-[#64748B] text-base leading-[1.85]">
+          <p className="text-[#64748B] text-lg leading-[1.85]">
             Salah satu kesalahan paling umum dalam berasuransi adalah menetapkan nilai pertanggungan yang terlalu rendah untuk menghemat premi. Hasilnya: saat klaim terjadi, ganti rugi yang diterima jauh lebih kecil dari yang diharapkan. Fenomena ini disebut <strong className="text-navy">underinsurance</strong>.
           </p>
         </div>
@@ -174,7 +174,7 @@ export default function CaraMenghitungNilaiPage() {
                   <tr key={n.tahun} className={i % 2 === 0 ? "bg-white" : "bg-cream"}>
                     <td className="p-3.5 font-semibold text-navy text-xs">{n.tahun}</td>
                     <td className="p-3.5 text-gold font-bold text-sm">{n.persentase}</td>
-                    <td className="p-3.5 text-[#64748B] text-xs">{n.keterangan}</td>
+                    <td className="p-3.5 text-[#64748B] text-sm">{n.keterangan}</td>
                   </tr>
                 ))}
               </tbody>
@@ -191,7 +191,7 @@ export default function CaraMenghitungNilaiPage() {
                 <summary className="py-4 cursor-pointer font-semibold text-[0.92rem] text-navy flex justify-between items-center list-none">
                   {f.q}<span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+                <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
               </details>
             ))}
           </div>

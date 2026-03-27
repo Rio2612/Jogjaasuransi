@@ -8,10 +8,11 @@ export const metadata: Metadata = {
   title: "Asuransi Properti Jogja – Perlindungan Rumah, Ruko & Gedung | Asuransi Jogja",
   description: "Konsultan asuransi properti di Yogyakarta. Lindungi rumah, kos, ruko, dan aset properti Anda dari kebakaran, banjir, gempa, hingga risiko kejahatan. Konsultasi gratis.",
   keywords: "asuransi properti jogja, asuransi kebakaran yogyakarta, asuransi rumah jogja, property all risk jogja, asuransi kos yogyakarta",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-properti" },
   openGraph: {
     title: "Asuransi Properti Jogja – Lindungi Aset Anda",
     description: "Solusi perlindungan properti lengkap di Yogyakarta. Kebakaran, PAR, banjir, gempa, hingga risiko kejahatan.",
-    url: "https://asuransijogja.com/asuransi-properti",
+    url: "https://asuransijogja.biz.id/asuransi-properti",
   },
 };
 
@@ -117,7 +118,7 @@ export default function AsuransiPropertiPage() {
               <div key={r.label} className="bg-white rounded-card p-6 border border-black/6">
                 <div className="text-3xl mb-3">{r.icon}</div>
                 <div className="font-heading text-navy font-bold text-[1.1rem] mb-2">{r.label}</div>
-                <p className="text-sm leading-relaxed text-[#64748B]">{r.desc}</p>
+                <p className="text-base leading-relaxed text-[#64748B]">{r.desc}</p>
               </div>
             ))}
           </div>
@@ -172,7 +173,7 @@ export default function AsuransiPropertiPage() {
             <div key={w.title} className="bg-white rounded-card p-6 text-center hover:-translate-y-1 hover:shadow-lg transition-all border border-black/5">
               <div className="text-3xl mb-3">{w.icon}</div>
               <div className="font-heading text-navy font-bold text-[1.05rem] mb-2">{w.title}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{w.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{w.desc}</p>
             </div>
           ))}
         </div>
@@ -191,7 +192,7 @@ export default function AsuransiPropertiPage() {
                 {f.q}
                 <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
               </summary>
-              <p className="text-sm leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
             </details>
           ))}
         </div>
@@ -203,7 +204,7 @@ export default function AsuransiPropertiPage() {
           <div>
             <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Sinergi Produk</div>
             <h2 className="font-heading text-navy text-[1.5rem] mb-3">Properti + Liability =<br />Proteksi Bisnis Lengkap</h2>
-            <p className="text-sm leading-relaxed text-[#64748B]">Asuransi properti melindungi bangunan dari kerusakan fisik. Asuransi liability melindungi dari tuntutan hukum tamu, karyawan, dan pihak ketiga. Keduanya saling melengkapi untuk pemilik hotel, ruko, dan properti komersial.</p>
+            <p className="text-base leading-relaxed text-[#64748B]">Asuransi properti melindungi bangunan dari kerusakan fisik. Asuransi liability melindungi dari tuntutan hukum tamu, karyawan, dan pihak ketiga. Keduanya saling melengkapi untuk pemilik hotel, ruko, dan properti komersial.</p>
           </div>
           <div className="flex flex-col gap-3">
             <Link href="/asuransi-liability/public-liability" className="bg-white border border-black/8 rounded-xl p-4 flex items-center gap-3 no-underline hover:border-gold/40 transition-all group">

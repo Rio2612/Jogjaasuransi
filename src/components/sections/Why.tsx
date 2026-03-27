@@ -17,7 +17,7 @@ export default function Why() {
           <div key={c.title} className="bg-[#EEF3F9] rounded-card p-7 text-center hover:-translate-y-1 hover:shadow-[0_8px_28px_rgba(13,33,55,0.08)] transition-all">
             <div className="text-[2rem] mb-3">{c.ico}</div>
             <div className="font-heading text-[1.05rem] font-bold text-navy mb-2">{c.title}</div>
-            <p className="text-[0.85rem] leading-[1.65] text-[#64748B]">{c.desc}</p>
+            <p className="text-[1rem] leading-[1.7] text-[#64748B]">{c.desc}</p>
           </div>
         ))}
       </div>

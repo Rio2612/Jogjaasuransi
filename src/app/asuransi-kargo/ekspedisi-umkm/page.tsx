@@ -7,9 +7,10 @@ export const metadata: Metadata = {
   title: "Asuransi Kargo UMKM & Ekspedisi Jogja – Penjual Online | Asuransi Jogja",
   description: "Asuransi kargo khusus UMKM dan penjual online di Yogyakarta. Lindungi produk batik, kerajinan, makanan, dan kiriman marketplace dari kerusakan dan kehilangan. Premi terjangkau.",
   keywords: "asuransi kargo UMKM jogja, asuransi pengiriman online yogyakarta, asuransi penjual marketplace jogja, asuransi toko online yogyakarta, asuransi kiriman batik jogja",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-kargo/ekspedisi-umkm" },
   openGraph: {
     title: "Asuransi Kargo UMKM Jogja – Penjual Online & Pengrajin",
-    url: "https://asuransijogja.com/asuransi-kargo/ekspedisi-umkm",
+    url: "https://asuransijogja.biz.id/asuransi-kargo/ekspedisi-umkm",
   },
 };
 
@@ -124,7 +125,7 @@ export default function EkspedisiUmkmPage() {
           {platformMarketplace.map(p=>(
             <div key={p.nama} className="bg-white rounded-card p-5 border border-black/5 flex gap-4">
               <span className="text-2xl flex-shrink-0">{p.icon}</span>
-              <div><div className="font-heading text-navy font-bold text-sm mb-1">{p.nama}</div><p className="text-xs leading-relaxed text-[#64748B]">{p.tip}</p></div>
+              <div><div className="font-heading text-navy font-bold text-sm mb-1">{p.nama}</div><p className="text-base leading-relaxed text-[#64748B]">{p.tip}</p></div>
             </div>
           ))}
         </div>
@@ -142,7 +143,7 @@ export default function EkspedisiUmkmPage() {
               <div className="absolute top-4 right-5 font-heading text-[2rem] font-bold text-navy/8">{c.step}</div>
               <div className="text-3xl mb-3">{c.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{c.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{c.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{c.desc}</p>
             </div>
           ))}
         </div>

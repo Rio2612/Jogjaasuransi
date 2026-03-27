@@ -7,10 +7,11 @@ export const metadata: Metadata = {
   title: "Asuransi Engineering Jogja – CAR, EAR & Machinery Breakdown | Asuransi Jogja",
   description: "Konsultan asuransi engineering di Yogyakarta. Contractor All Risk (CAR), Erection All Risk (EAR), dan Machinery Breakdown untuk proyek konstruksi, industri, dan pabrik di DIY.",
   keywords: "asuransi engineering jogja, contractor all risk yogyakarta, erection all risk jogja, machinery breakdown yogyakarta, asuransi proyek konstruksi jogja, asuransi kontraktor DIY",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-engineering" },
   openGraph: {
     title: "Asuransi Engineering Jogja – CAR, EAR & Machinery Breakdown",
     description: "Proteksi proyek konstruksi, pemasangan mesin, dan kerusakan mesin industri di Yogyakarta. Konsultasi gratis.",
-    url: "https://asuransijogja.com/asuransi-engineering",
+    url: "https://asuransijogja.biz.id/asuransi-engineering",
   },
 };
 
@@ -117,7 +118,7 @@ export default function AsuransiEngineeringPage() {
             <div key={m.title} className="bg-white rounded-card p-6 border border-black/5 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{m.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{m.title}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{m.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{m.desc}</p>
             </div>
           ))}
         </div>
@@ -154,14 +155,14 @@ export default function AsuransiEngineeringPage() {
         <div className="text-center mb-10">
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Konteks Lokal</div>
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-navy leading-[1.22]">Sektor Konstruksi &<br />Industri yang Tumbuh di DIY</h2>
-          <p className="text-sm text-[#64748B] max-w-[500px] mx-auto mt-3">Yogyakarta mengalami pertumbuhan infrastruktur pesat dalam 10 tahun terakhir — semua sektor ini membutuhkan asuransi engineering yang memadai</p>
+          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">Yogyakarta mengalami pertumbuhan infrastruktur pesat dalam 10 tahun terakhir — semua sektor ini membutuhkan asuransi engineering yang memadai</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
           {proyekDIY.map(p=>(
             <div key={p.label} className="bg-white rounded-card p-6 border border-black/5 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{p.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{p.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{p.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -173,7 +174,7 @@ export default function AsuransiEngineeringPage() {
           <div>
             <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Proteksi Berlapis</div>
             <h2 className="font-heading text-navy text-[1.5rem] mb-3">Engineering + Liability +<br />Kendaraan = Proyek Aman</h2>
-            <p className="text-sm leading-relaxed text-[#64748B]">Kontraktor yang bijak melindungi proyek dari tiga sisi: pekerjaan fisik (CAR/EAR), mesin dan kendaraan proyek, serta tanggung jawab hukum terhadap pekerja dan pihak ketiga.</p>
+            <p className="text-base leading-relaxed text-[#64748B]">Kontraktor yang bijak melindungi proyek dari tiga sisi: pekerjaan fisik (CAR/EAR), mesin dan kendaraan proyek, serta tanggung jawab hukum terhadap pekerja dan pihak ketiga.</p>
           </div>
           <div className="flex flex-col gap-3">
             {[
@@ -204,7 +205,7 @@ export default function AsuransiEngineeringPage() {
               <summary className="py-4 cursor-pointer font-semibold text-[0.92rem] text-navy flex justify-between items-center list-none">
                 {f.q}<span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
               </summary>
-              <p className="text-sm leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
             </details>
           ))}
         </div>

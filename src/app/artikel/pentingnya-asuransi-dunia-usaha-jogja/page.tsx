@@ -6,10 +6,10 @@ export const metadata: Metadata = {
   title: "Pentingnya Asuransi di Dunia Usaha Yogyakarta – Panduan UMKM & Korporasi",
   description: "Mengapa asuransi bisnis penting untuk usaha di Yogyakarta? Risiko yang mengancam UMKM, jenis asuransi wajib untuk usaha, dan cara memulai proteksi bisnis Anda.",
   keywords: "asuransi bisnis jogja, asuransi usaha yogyakarta, asuransi UMKM jogja, pentingnya asuransi perusahaan, proteksi bisnis yogyakarta, asuransi kerugian usaha jogja",
-  alternates: { canonical: "https://asuransijogja.com/artikel/pentingnya-asuransi-dunia-usaha-jogja" },
+  alternates: { canonical: "https://asuransijogja.biz.id/artikel/pentingnya-asuransi-dunia-usaha-jogja" },
   openGraph: {
     title: "Pentingnya Asuransi di Dunia Usaha Yogyakarta",
-    url: "https://asuransijogja.com/artikel/pentingnya-asuransi-dunia-usaha-jogja",
+    url: "https://asuransijogja.biz.id/artikel/pentingnya-asuransi-dunia-usaha-jogja",
   },
 };
 
@@ -43,9 +43,9 @@ const schemaArtikel = {
   "@type": "Article",
   "headline": "Pentingnya Asuransi di Dunia Usaha Yogyakarta",
   "description": "Panduan risiko usaha di Yogyakarta dan jenis asuransi bisnis yang dibutuhkan UMKM dan korporasi.",
-  "url": "https://asuransijogja.com/artikel/pentingnya-asuransi-dunia-usaha-jogja",
+  "url": "https://asuransijogja.biz.id/artikel/pentingnya-asuransi-dunia-usaha-jogja",
   "author": { "@type": "Person", "name": "Rio Mardiansyah" },
-  "publisher": { "@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.com" },
+  "publisher": { "@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id" },
   "inLanguage": "id-ID",
 };
 
@@ -73,7 +73,7 @@ export default function PentingnyaAsuransiUsahaPage() {
           <h1 className="font-heading text-[clamp(1.8rem,3.5vw,2.8rem)] text-navy leading-[1.2] mb-4">
             Pentingnya Asuransi di<br />Dunia Usaha Yogyakarta
           </h1>
-          <p className="text-[#64748B] text-base leading-[1.85]">
+          <p className="text-[#64748B] text-lg leading-[1.85]">
             Yogyakarta adalah salah satu kota dengan ekosistem bisnis paling dinamis di Indonesia — dari warung makan hingga hotel bintang, dari kontraktor lokal hingga pabrik manufaktur. Namun di balik pertumbuhan itu, banyak pelaku usaha belum memiliki proteksi memadai terhadap risiko yang bisa datang kapan saja.
           </p>
         </div>

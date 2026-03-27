@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Asuransi Employer Liability Jogja – Perlindungan Karyawan | Asuransi Jogja",
   description: "Asuransi Employer Liability di Yogyakarta. Perlindungan hukum pengusaha atas kecelakaan dan penyakit akibat kerja yang dialami karyawan. Konsultasi gratis.",
   keywords: "employer liability jogja, asuransi kecelakaan kerja yogyakarta, tanggung jawab pengusaha karyawan jogja, workmen compensation yogyakarta",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-liability/employer-liability" },
 };
 
 const kewajibanHukum = [
@@ -72,7 +73,7 @@ export default function EmployerLiabilityPage() {
           {kewajibanHukum.map(k=>(
             <div key={k.no} className="bg-white rounded-card p-6 border border-black/6 grid grid-cols-[80px_1fr] gap-4 items-start">
               <div className="bg-navy rounded-lg p-2 text-center"><div className="font-heading text-gold text-xs font-bold leading-tight">{k.no}</div></div>
-              <div><div className="font-heading text-navy font-bold text-[1rem] mb-1">UU {k.judul}</div><p className="text-xs leading-relaxed text-[#64748B]">{k.isi}</p></div>
+              <div><div className="font-heading text-navy font-bold text-[1rem] mb-1">UU {k.judul}</div><p className="text-base leading-relaxed text-[#64748B]">{k.isi}</p></div>
             </div>
           ))}
         </div>
@@ -92,7 +93,7 @@ export default function EmployerLiabilityPage() {
             <div key={c.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{c.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{c.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{c.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{c.desc}</p>
             </div>
           ))}
         </div>
@@ -111,7 +112,7 @@ export default function EmployerLiabilityPage() {
                 <div className="flex items-center gap-3"><span className="text-3xl">{s.icon}</span><div className="font-heading text-navy font-bold text-[1rem]">{s.label}</div></div>
                 <span className={`text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0 ${s.color}`}>{s.level}</span>
               </div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{s.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{s.desc}</p>
             </div>
           ))}
         </div>

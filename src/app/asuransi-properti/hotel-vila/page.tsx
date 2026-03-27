@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: "Asuransi Hotel & Vila Jogja – Properti Wisata DIY | Asuransi Jogja",
   description: "Asuransi properti untuk hotel, vila, guest house, dan homestay di Yogyakarta. PAR, kebakaran, banjir, gempa, hingga asuransi liability tamu. Konsultasi gratis.",
   keywords: "asuransi hotel jogja, asuransi vila yogyakarta, asuransi penginapan jogja, asuransi guest house yogyakarta, asuransi properti wisata jogja",
-  openGraph: { title: "Asuransi Hotel & Vila Jogja – Properti Wisata DIY", url: "https://asuransijogja.com/asuransi-properti/hotel-vila" },
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-properti/hotel-vila" },
+  openGraph: { title: "Asuransi Hotel & Vila Jogja – Properti Wisata DIY", url: "https://asuransijogja.biz.id/asuransi-properti/hotel-vila" },
 };
 
 const risikoHotel = [
@@ -85,14 +86,14 @@ export default function HotelVilaPage() {
         <div className="text-center mb-10">
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Risiko Spesifik</div>
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">Risiko Unik yang<br />Dihadapi Properti Wisata</h2>
-          <p className="text-sm text-[#64748B] max-w-[480px] mx-auto mt-3">Hotel dan vila memiliki profil risiko berbeda dari properti biasa karena ada faktor tamu, operasional 24 jam, dan fasilitas kompleks</p>
+          <p className="text-base text-[#64748B] max-w-[480px] mx-auto mt-3">Hotel dan vila memiliki profil risiko berbeda dari properti biasa karena ada faktor tamu, operasional 24 jam, dan fasilitas kompleks</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
           {risikoHotel.map(r=>(
             <div key={r.label} className="bg-white rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{r.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{r.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{r.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{r.desc}</p>
             </div>
           ))}
         </div>
@@ -112,7 +113,7 @@ export default function HotelVilaPage() {
                 <div className="font-heading text-navy font-bold text-[1.2rem] mb-3">{p.title}</div>
                 <ul className="flex flex-col gap-2 mb-4">
                   {p.produk.map(pr=>(
-                    <li key={pr} className="flex gap-2 text-sm text-navy2"><span className="text-gold font-bold flex-shrink-0">✓</span>{pr}</li>
+                    <li key={pr} className="flex gap-2 text-base text-navy2"><span className="text-gold font-bold flex-shrink-0">✓</span>{pr}</li>
                   ))}
                 </ul>
                 <div className="bg-white rounded-lg px-4 py-2.5 text-xs text-[#64748B] border border-black/5">

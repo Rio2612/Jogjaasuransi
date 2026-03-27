@@ -11,7 +11,7 @@ export default function KendaraanLayout({ children, breadcrumbs }: Props) {
       <Header />
       <div className="pt-[68px]">
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-xs text-[#64748B]">
+          <div className="flex items-center gap-2 text-sm text-[#64748B]">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             {breadcrumbs.map((b, i) => (
               <span key={i} className="flex items-center gap-2">

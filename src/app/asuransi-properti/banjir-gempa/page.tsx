@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Asuransi Banjir & Gempa Bumi Jogja – Perluasan Properti | Asuransi Jogja",
   description: "Asuransi perluasan banjir dan gempa bumi untuk properti di Yogyakarta. Proteksi dari risiko Merapi, gempa, dan banjir Kali Code. Sangat relevan untuk kawasan DIY. Konsultasi gratis.",
   keywords: "asuransi banjir jogja, asuransi gempa yogyakarta, perluasan banjir properti, asuransi merapi yogyakarta, asuransi bencana alam jogja",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-properti/banjir-gempa" },
 };
 
 const risikoLokal = [
@@ -95,7 +96,7 @@ export default function BanjirGempaPage() {
         <div className="text-center mb-10">
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Risiko Nyata</div>
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">Mengapa Yogyakarta<br />Butuh Perlindungan Lebih?</h2>
-          <p className="text-sm text-[#64748B] max-w-[500px] mx-auto mt-3">Data historis membuktikan bahwa Yogyakarta adalah salah satu provinsi dengan kerugian bencana alam tertinggi di Indonesia</p>
+          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">Data historis membuktikan bahwa Yogyakarta adalah salah satu provinsi dengan kerugian bencana alam tertinggi di Indonesia</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
           {risikoLokal.map(r => (
@@ -107,7 +108,7 @@ export default function BanjirGempaPage() {
                 </div>
                 <span className={`text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0 ${r.levelColor}`}>{r.level}</span>
               </div>
-              <p className="text-sm leading-relaxed text-[#64748B]">{r.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{r.desc}</p>
             </div>
           ))}
         </div>
@@ -124,7 +125,7 @@ export default function BanjirGempaPage() {
             <div key={j.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{j.icon}</div>
               <div className="font-heading text-navy font-bold text-sm mb-1.5">{j.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{j.detail}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{j.detail}</p>
             </div>
           ))}
         </div>

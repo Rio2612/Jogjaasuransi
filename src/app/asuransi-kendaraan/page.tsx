@@ -8,7 +8,8 @@ export const metadata: Metadata = {
   title: "Asuransi Kendaraan Jogja – Mobil, Truk & Armada | Asuransi Jogja",
   description: "Konsultan asuransi kendaraan bermotor di Yogyakarta. All Risk, TLO, kendaraan niaga, dump truk, hingga armada fleet. Tarif OJK, klaim mudah. Konsultasi gratis.",
   keywords: "asuransi kendaraan jogja, asuransi mobil yogyakarta, asuransi truk jogja, asuransi armada fleet yogyakarta, asuransi motor vehicle jogja",
-  openGraph: { title: "Asuransi Kendaraan Jogja – Mobil, Truk & Armada", url: "https://asuransijogja.com/asuransi-kendaraan" },
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-kendaraan" },
+  openGraph: { title: "Asuransi Kendaraan Jogja – Mobil, Truk & Armada", url: "https://asuransijogja.biz.id/asuransi-kendaraan" },
 };
 
 const clusters = [
@@ -116,7 +117,7 @@ export default function AsuransiKendaraanPage() {
             <div key={w.title} className="bg-white rounded-card p-6 text-center hover:-translate-y-1 hover:shadow-lg transition-all border border-black/5">
               <div className="text-3xl mb-3">{w.icon}</div>
               <div className="font-heading text-navy font-bold text-[1.05rem] mb-2">{w.title}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{w.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{w.desc}</p>
             </div>
           ))}
         </div>
@@ -134,7 +135,7 @@ export default function AsuransiKendaraanPage() {
               <summary className="py-4 cursor-pointer font-semibold text-[0.92rem] text-navy flex justify-between items-center list-none">
                 {f.q}<span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
               </summary>
-              <p className="text-sm leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
             </details>
           ))}
         </div>

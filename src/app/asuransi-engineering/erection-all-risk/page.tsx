@@ -7,9 +7,10 @@ export const metadata: Metadata = {
   title: "Asuransi Erection All Risk (EAR) Jogja – Pemasangan Mesin & Struktur | Asuransi Jogja",
   description: "Asuransi Erection All Risk (EAR) di Yogyakarta untuk pemasangan mesin industri, struktur baja, panel listrik, dan instalasi peralatan berat. Komisioning & testing cover. Konsultasi gratis.",
   keywords: "erection all risk jogja, asuransi EAR yogyakarta, asuransi pemasangan mesin jogja, asuransi struktur baja yogyakarta, erection insurance DIY, asuransi instalasi industri jogja",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-engineering/erection-all-risk" },
   openGraph: {
     title: "Asuransi Erection All Risk (EAR) Jogja – Mesin & Struktur",
-    url: "https://asuransijogja.com/asuransi-engineering/erection-all-risk",
+    url: "https://asuransijogja.biz.id/asuransi-engineering/erection-all-risk",
   },
 };
 
@@ -103,8 +104,8 @@ export default function ErectionAllRiskPage() {
               {bedaCARvsEAR.map((b, i)=>(
                 <tr key={b.aspek} className={i % 2 === 0 ? "bg-white" : "bg-cream"}>
                   <td className="p-4 font-semibold text-navy text-xs">{b.aspek}</td>
-                  <td className="p-4 text-[#64748B] text-xs leading-relaxed">{b.car}</td>
-                  <td className="p-4 text-navy2 text-xs leading-relaxed font-medium">{b.ear}</td>
+                  <td className="p-4 text-[#64748B] text-sm leading-relaxed">{b.car}</td>
+                  <td className="p-4 text-navy2 text-sm leading-relaxed font-medium">{b.ear}</td>
                 </tr>
               ))}
             </tbody>
@@ -127,7 +128,7 @@ export default function ErectionAllRiskPage() {
               <div className="absolute top-4 right-4 font-heading text-[2rem] font-bold text-navy/8">{i+1}</div>
               <div className="text-3xl mb-3">{t.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{t.tahap}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{t.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{t.desc}</p>
             </div>
           ))}
         </div>
@@ -144,7 +145,7 @@ export default function ErectionAllRiskPage() {
             <div key={r.label} className="bg-white rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{r.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{r.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{r.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{r.desc}</p>
             </div>
           ))}
         </div>
@@ -161,7 +162,7 @@ export default function ErectionAllRiskPage() {
             <div key={j.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{j.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{j.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{j.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{j.desc}</p>
             </div>
           ))}
         </div>
@@ -179,7 +180,7 @@ export default function ErectionAllRiskPage() {
               <span className="text-3xl">{ind.icon}</span>
               <div>
                 <div className="font-heading text-navy font-bold text-[1rem] mb-1">{ind.sektor}</div>
-                <p className="text-xs leading-relaxed text-[#64748B]">{ind.contoh}</p>
+                <p className="text-base leading-relaxed text-[#64748B]">{ind.contoh}</p>
               </div>
             </div>
           ))}

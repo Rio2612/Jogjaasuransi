@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: "Jaminan Penawaran (Bid Bond) Jogja – Syarat Tender LPSE DIY | Asuransi Jogja",
   description: "Jaminan Penawaran (Bid Bond) di Yogyakarta untuk tender pemerintah LPSE DIY, Kota Yogyakarta, Sleman, Bantul. Proses cepat 1 hari. Nilai 1–3% dari penawaran. Konsultasi gratis.",
   keywords: "jaminan penawaran jogja, bid bond yogyakarta, surety bond tender LPSE DIY, jaminan penawaran tender pemerintah yogyakarta, bid bond kontraktor jogja, jaminan ikut tender DIY",
-  openGraph: { title: "Jaminan Penawaran (Bid Bond) Jogja – LPSE DIY", url: "https://asuransijogja.com/asuransi-surety-bond/jaminan-penawaran" },
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-penawaran" },
+  openGraph: { title: "Jaminan Penawaran (Bid Bond) Jogja – LPSE DIY", url: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-penawaran" },
 };
 
 const fungsiUtama = [
@@ -81,7 +82,7 @@ export default function JaminanPenawaranPage() {
             <div key={f.label} className="bg-white rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{f.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{f.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{f.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -113,7 +114,7 @@ export default function JaminanPenawaranPage() {
             <h2 className="font-heading text-[clamp(1.5rem,2.2vw,2rem)] text-navy mb-4">Dokumen yang<br />Perlu Disiapkan</h2>
             <ul className="flex flex-col gap-3">
               {dokumenDiperlukan.map(d=>(
-                <li key={d} className="flex gap-2.5 text-sm text-navy2 leading-relaxed">
+                <li key={d} className="flex gap-2.5 text-base text-navy2 leading-relaxed">
                   <span className="text-gold font-bold flex-shrink-0 mt-0.5">✓</span>{d}
                 </li>
               ))}

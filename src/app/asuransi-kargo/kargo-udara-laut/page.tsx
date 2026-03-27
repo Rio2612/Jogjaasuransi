@@ -7,9 +7,10 @@ export const metadata: Metadata = {
   title: "Asuransi Kargo Udara & Laut Jogja – Marine Cargo & Air Freight | Asuransi Jogja",
   description: "Asuransi marine cargo dan air freight di Yogyakarta. Proteksi ekspor impor, kargo kapal antarpulau, dan pengiriman udara internasional. Klausul ICC-A tersedia. Konsultasi gratis.",
   keywords: "marine cargo jogja, asuransi kargo laut yogyakarta, air freight insurance jogja, asuransi ekspor impor yogyakarta, asuransi kargo kapal jogja, ICC-A marine cargo",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-kargo/kargo-udara-laut" },
   openGraph: {
     title: "Asuransi Kargo Udara & Laut Jogja – Marine Cargo & Air Freight",
-    url: "https://asuransijogja.com/asuransi-kargo/kargo-udara-laut",
+    url: "https://asuransijogja.biz.id/asuransi-kargo/kargo-udara-laut",
   },
 };
 
@@ -81,7 +82,7 @@ export default function KargoUdaraLautPage() {
             <div key={r.label} className="bg-white rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{r.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{r.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{r.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{r.desc}</p>
             </div>
           ))}
         </div>
@@ -98,7 +99,7 @@ export default function KargoUdaraLautPage() {
             <div key={r.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{r.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{r.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{r.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{r.desc}</p>
             </div>
           ))}
         </div>

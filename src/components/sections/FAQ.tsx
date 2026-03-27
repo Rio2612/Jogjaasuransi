@@ -15,12 +15,12 @@ export default function FAQ() {
           <div key={i} className="border-b border-black/8">
             <button
               onClick={() => setOpenIdx(openIdx === i ? null : i)}
-              className="w-full flex justify-between items-center py-4 cursor-pointer font-semibold text-[0.92rem] text-navy gap-4 text-left bg-transparent border-none"
+              className="w-full flex justify-between items-center py-4 cursor-pointer font-semibold text-[1rem] text-navy gap-4 text-left bg-transparent border-none"
             >
               {faq.q}
               <span className={`text-gold text-[1.1rem] flex-shrink-0 transition-transform duration-300 ${openIdx === i ? "rotate-45" : ""}`}>+</span>
             </button>
-            <div className={`text-[0.88rem] leading-[1.78] text-[#64748B] overflow-hidden transition-all duration-400 ${openIdx === i ? "max-h-[300px] pb-4" : "max-h-0"}`}>
+            <div className={`text-[1rem] leading-[1.78] text-[#64748B] overflow-hidden transition-all duration-400 ${openIdx === i ? "max-h-[300px] pb-4" : "max-h-0"}`}>
               {faq.a}
             </div>
           </div>

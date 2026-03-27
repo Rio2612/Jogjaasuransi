@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Property All Risk (PAR) Jogja – Perlindungan Properti Komersial | Asuransi Jogja",
   description: "Asuransi Property All Risk (PAR) di Yogyakarta untuk gedung kantor, hotel, pabrik, dan fasilitas komersial. Perlindungan komprehensif dari semua risiko fisik. Konsultasi gratis.",
   keywords: "property all risk jogja, PAR asuransi yogyakarta, asuransi gedung komersial jogja, asuransi pabrik yogyakarta, asuransi hotel jogja",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-properti/property-all-risk" },
 };
 
 const coverageItems = [
@@ -113,14 +114,14 @@ export default function PropertyAllRiskPage() {
         <div className="text-center mb-10">
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Cakupan Jaminan</div>
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">Apa Saja yang<br />Dijamin PAR?</h2>
-          <p className="text-sm text-[#64748B] max-w-[480px] mx-auto mt-3">Cakupan berikut umumnya tersedia dalam polis PAR standard — detail pengecualian tergantung perusahaan asuransi</p>
+          <p className="text-base text-[#64748B] max-w-[480px] mx-auto mt-3">Cakupan berikut umumnya tersedia dalam polis PAR standard — detail pengecualian tergantung perusahaan asuransi</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
           {coverageItems.map(c => (
             <div key={c.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 hover:shadow-md transition-all">
               <div className="text-3xl mb-3">{c.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{c.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{c.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{c.desc}</p>
             </div>
           ))}
         </div>
@@ -142,7 +143,7 @@ export default function PropertyAllRiskPage() {
             <div key={t.label} className="bg-white rounded-card p-6 border border-black/5 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{t.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{t.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{t.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{t.desc}</p>
             </div>
           ))}
         </div>

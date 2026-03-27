@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   title: "Cara Klaim Asuransi Mobil: Panduan Lengkap Step-by-Step",
   description: "Panduan lengkap cara klaim asuransi mobil di Yogyakarta. Dokumen yang diperlukan, langkah-langkah klaim kecelakaan vs kehilangan, tips agar klaim tidak ditolak. Konsultasi gratis.",
   keywords: "cara klaim asuransi mobil, klaim asuransi kendaraan jogja, prosedur klaim asuransi mobil yogyakarta, dokumen klaim asuransi mobil, tips klaim asuransi",
-  alternates: { canonical: "https://asuransijogja.com/artikel/cara-klaim-asuransi-mobil" },
+  alternates: { canonical: "https://asuransijogja.biz.id/artikel/cara-klaim-asuransi-mobil" },
   openGraph: {
     title: "Cara Klaim Asuransi Mobil: Panduan Lengkap Step-by-Step",
     description: "Panduan lengkap prosedur klaim asuransi kendaraan agar proses ganti rugi lancar dan cepat.",
-    url: "https://asuransijogja.com/artikel/cara-klaim-asuransi-mobil",
+    url: "https://asuransijogja.biz.id/artikel/cara-klaim-asuransi-mobil",
   },
 };
 
@@ -95,11 +95,11 @@ const schemaArtikel = {
   "@type": "Article",
   "headline": "Cara Klaim Asuransi Mobil: Panduan Lengkap Step-by-Step",
   "description": "Panduan lengkap cara klaim asuransi kendaraan di Yogyakarta — dokumen, langkah, dan tips agar klaim tidak ditolak.",
-  "url": "https://asuransijogja.com/artikel/cara-klaim-asuransi-mobil",
+  "url": "https://asuransijogja.biz.id/artikel/cara-klaim-asuransi-mobil",
   "author": { "@type": "Person", "name": "Rio Mardiansyah" },
-  "publisher": { "@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.com" },
+  "publisher": { "@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id" },
   "inLanguage": "id-ID",
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://asuransijogja.com/artikel/cara-klaim-asuransi-mobil" },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://asuransijogja.biz.id/artikel/cara-klaim-asuransi-mobil" },
 };
 
 const schemaFAQ = {
@@ -140,7 +140,7 @@ export default function CaraKlaimMobilPage() {
           <h1 className="font-heading text-[clamp(1.8rem,3.5vw,2.8rem)] text-navy leading-[1.2] mb-4">
             Cara Klaim Asuransi Mobil:<br />Panduan Lengkap Step-by-Step
           </h1>
-          <p className="text-[#64748B] text-base leading-[1.85]">
+          <p className="text-[#64748B] text-lg leading-[1.85]">
             Mengajukan klaim asuransi tidak harus membingungkan. Dengan mengetahui prosedur yang benar sejak awal, proses ganti rugi bisa berjalan lebih lancar — dan Anda terhindar dari risiko klaim ditolak karena kesalahan teknis yang sebenarnya bisa dihindari.
           </p>
           <div className="mt-5 p-4 bg-gold/8 border-l-4 border-gold rounded-r-xl">
@@ -159,7 +159,7 @@ export default function CaraKlaimMobilPage() {
                 </div>
                 <div>
                   <div className="font-heading text-navy font-bold text-[1.05rem] mb-2 flex items-center gap-2">{l.icon} {l.judul}</div>
-                  <p className="text-sm leading-[1.8] text-[#64748B]">{l.isi}</p>
+                  <p className="text-base leading-[1.8] text-[#64748B]">{l.isi}</p>
                 </div>
               </div>
             ))}
@@ -174,7 +174,7 @@ export default function CaraKlaimMobilPage() {
               <div className="font-heading text-navy font-bold mb-3 flex items-center gap-2">🚗 Klaim Kecelakaan / Kerusakan</div>
               <ul className="flex flex-col gap-2">
                 {dokumenKecelakaan.map(d => (
-                  <li key={d} className="flex gap-2.5 text-sm text-navy2 leading-relaxed">
+                  <li key={d} className="flex gap-2.5 text-base text-navy2 leading-relaxed">
                     <span className="text-gold font-bold flex-shrink-0">✓</span>{d}
                   </li>
                 ))}
@@ -184,7 +184,7 @@ export default function CaraKlaimMobilPage() {
               <div className="font-heading text-navy font-bold mb-3 flex items-center gap-2">🚨 Klaim Kehilangan / Pencurian</div>
               <ul className="flex flex-col gap-2">
                 {dokumenKehilangan.map(d => (
-                  <li key={d} className="flex gap-2.5 text-sm text-navy2 leading-relaxed">
+                  <li key={d} className="flex gap-2.5 text-base text-navy2 leading-relaxed">
                     <span className="text-gold font-bold flex-shrink-0">✓</span>{d}
                   </li>
                 ))}
@@ -202,7 +202,7 @@ export default function CaraKlaimMobilPage() {
               <div key={a.alasan} className="bg-cream rounded-xl p-5 border border-black/5">
                 <div className="text-2xl mb-2">{a.icon}</div>
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1.5">{a.alasan}</div>
-                <p className="text-xs leading-relaxed text-[#64748B]"><strong className="text-gold">Solusi:</strong> {a.solusi}</p>
+                <p className="text-base leading-relaxed text-[#64748B]"><strong className="text-gold">Solusi:</strong> {a.solusi}</p>
               </div>
             ))}
           </div>
@@ -217,7 +217,7 @@ export default function CaraKlaimMobilPage() {
                 <summary className="py-4 cursor-pointer font-semibold text-[0.92rem] text-navy flex justify-between items-center list-none">
                   {f.q}<span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+                <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
               </details>
             ))}
           </div>

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Asuransi Dump Truk & Kendaraan Niaga Jogja | Asuransi Jogja",
   description: "Asuransi kendaraan niaga berat di Yogyakarta. Dump truk, tronton, truk mixer, truk ekspedisi. All Risk & TLO untuk kendaraan proyek dan logistik. Konsultasi gratis.",
   keywords: "asuransi dump truk jogja, asuransi truk yogyakarta, asuransi kendaraan niaga jogja, asuransi tronton yogyakarta, asuransi kendaraan proyek jogja",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-kendaraan/dump-truk-niaga" },
 };
 
 const jenisKendaraan = [
@@ -78,7 +79,7 @@ export default function DumpTrukPage() {
             <div key={j.label} className="bg-white rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{j.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{j.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{j.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{j.desc}</p>
             </div>
           ))}
         </div>
@@ -95,7 +96,7 @@ export default function DumpTrukPage() {
             <div key={r.label} className="bg-cream rounded-card p-6 border border-black/6">
               <div className="text-2xl mb-2">{r.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{r.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{r.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{r.desc}</p>
             </div>
           ))}
         </div>

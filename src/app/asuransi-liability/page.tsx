@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: "Asuransi Liability Jogja – Tanggung Jawab Hukum Bisnis | Asuransi Jogja",
   description: "Asuransi liability di Yogyakarta untuk hotel, restoran, tempat wisata, dan industri. Public Liability, Employer Liability, hingga Pencemaran Limbah B3. Konsultasi gratis.",
   keywords: "asuransi liability jogja, public liability yogyakarta, asuransi tanggung jawab hukum jogja, employer liability yogyakarta, asuransi limbah b3 jogja",
-  openGraph: { title: "Asuransi Liability Jogja – Tanggung Jawab Hukum Bisnis", url: "https://asuransijogja.com/asuransi-liability" },
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-liability" },
+  openGraph: { title: "Asuransi Liability Jogja – Tanggung Jawab Hukum Bisnis", url: "https://asuransijogja.biz.id/asuransi-liability" },
 };
 
 const clusters = [
@@ -95,7 +96,7 @@ export default function AsuransiLiabilityPage() {
             <div key={m.title} className="bg-white rounded-card p-6 border border-black/5 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{m.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{m.title}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{m.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{m.desc}</p>
             </div>
           ))}
         </div>
@@ -138,7 +139,7 @@ export default function AsuransiLiabilityPage() {
             <div key={s.label} className="bg-white rounded-card p-6 border border-black/5 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{s.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{s.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{s.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{s.desc}</p>
             </div>
           ))}
         </div>
@@ -150,7 +151,7 @@ export default function AsuransiLiabilityPage() {
           <div>
             <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Sinergi Produk</div>
             <h2 className="font-heading text-navy text-[1.5rem] mb-3">Liability + Properti =<br />Proteksi Bisnis yang Lengkap</h2>
-            <p className="text-sm leading-relaxed text-[#64748B]">Asuransi properti melindungi bangunan Anda. Asuransi liability melindungi bisnis Anda dari tuntutan pihak luar. Keduanya bekerja bersama untuk perlindungan total.</p>
+            <p className="text-base leading-relaxed text-[#64748B]">Asuransi properti melindungi bangunan Anda. Asuransi liability melindungi bisnis Anda dari tuntutan pihak luar. Keduanya bekerja bersama untuk perlindungan total.</p>
           </div>
           <div className="flex flex-col gap-3">
             <Link href="/asuransi-properti/hotel-vila" className="bg-white border border-black/8 rounded-xl p-4 flex items-center gap-3 no-underline hover:border-gold/40 transition-all group">
@@ -184,7 +185,7 @@ export default function AsuransiLiabilityPage() {
               <summary className="py-4 cursor-pointer font-semibold text-[0.92rem] text-navy flex justify-between items-center list-none">
                 {f.q}<span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
               </summary>
-              <p className="text-sm leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
             </details>
           ))}
         </div>

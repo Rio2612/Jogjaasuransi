@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: "Jaminan Uang Muka (Advance Payment Bond) Jogja – Kontraktor DIY | Asuransi Jogja",
   description: "Jaminan Uang Muka (Advance Payment Bond) di Yogyakarta. Syarat pencairan uang muka proyek pemerintah DIY. Nilai sesuai uang muka diterima. Proses cepat. Konsultasi gratis.",
   keywords: "jaminan uang muka jogja, advance payment bond yogyakarta, jaminan UM proyek pemerintah DIY, surety bond uang muka kontraktor jogja, APB tender yogyakarta",
-  openGraph: { title: "Jaminan Uang Muka (Advance Payment Bond) Jogja", url: "https://asuransijogja.com/asuransi-surety-bond/jaminan-uang-muka" },
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-uang-muka" },
+  openGraph: { title: "Jaminan Uang Muka (Advance Payment Bond) Jogja", url: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-uang-muka" },
 };
 
 const mekanismeUM = [
@@ -68,7 +69,7 @@ export default function JaminanUangMukaPage() {
               <div className="bg-navy text-gold font-heading font-bold text-sm w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">{m.step}</div>
               <div>
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1 flex items-center gap-2">{m.icon} {m.label}</div>
-                <p className="text-xs leading-relaxed text-[#64748B]">{m.desc}</p>
+                <p className="text-base leading-relaxed text-[#64748B]">{m.desc}</p>
               </div>
             </div>
           ))}
@@ -85,7 +86,7 @@ export default function JaminanUangMukaPage() {
             <div key={i.label} className="bg-cream rounded-card p-6 border border-black/6">
               <div className="text-3xl mb-3">{i.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{i.label}</div>
-              <p className="text-sm leading-relaxed text-[#64748B]">{i.detail}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{i.detail}</p>
             </div>
           ))}
         </div>

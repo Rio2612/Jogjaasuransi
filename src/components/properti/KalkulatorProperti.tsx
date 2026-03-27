@@ -43,9 +43,9 @@ export default function KalkulatorProperti() {
     setHasil({ premi, waMsg });
   };
 
-  const selectCls = "bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[0.88rem] outline-none focus:border-gold appearance-none cursor-pointer w-full";
-  const inputCls  = "bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[0.88rem] outline-none focus:border-gold placeholder-white/40 w-full";
-  const labelCls  = "text-[0.82rem] font-semibold text-white/75 mb-1.5 block";
+  const selectCls = "bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold appearance-none cursor-pointer w-full";
+  const inputCls  = "bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold placeholder-white/40 w-full";
+  const labelCls  = "text-[0.95rem] font-semibold text-white/75 mb-1.5 block";
 
   return (
     <section id="kalkulator" className="py-20 px-[5vw] bg-navy">
@@ -84,7 +84,7 @@ export default function KalkulatorProperti() {
         <div className="mt-5">
           <label className={labelCls}>Nilai Bangunan (Rp)</label>
           <input type="number" placeholder="Contoh: 500000000" className={inputCls} value={nilai} onChange={e => setNilaiStr(e.target.value)} />
-          <span className="text-white/65 text-xs mt-1 block">Nilai penggantian bangunan (bukan harga tanah)</span>
+          <span className="text-white/40 text-xs mt-1 block">Nilai penggantian bangunan (bukan harga tanah)</span>
         </div>
 
         <div className="mt-5">
@@ -114,7 +114,7 @@ export default function KalkulatorProperti() {
               <span className="text-gold2 font-semibold text-sm">Estimasi Premi / Tahun</span>
               <span className="text-gold text-[1.1rem] font-bold">{formatRp(hasil.premi)}</span>
             </div>
-            <p className="text-white/65 text-xs mt-3 leading-relaxed">
+            <p className="text-white/40 text-xs mt-3 leading-relaxed">
               * Estimasi berdasarkan tarif referensi pasar. Premi final ditentukan perusahaan asuransi setelah survei lokasi. Hubungi kami untuk penawaran resmi.
             </p>
             <a href={`https://wa.me/${KONTAK.wa}?text=${hasil.waMsg}`} className="block text-center mt-4 bg-[#25D366] text-white py-3 rounded-lg font-bold text-sm no-underline hover:opacity-90 transition-opacity">

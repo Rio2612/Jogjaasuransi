@@ -7,10 +7,11 @@ export const metadata: Metadata = {
   title: "Surety Bond Jogja – Jaminan Tender, Pelaksanaan & Uang Muka | Asuransi Jogja",
   description: "Konsultan Surety Bond di Yogyakarta. Jaminan Penawaran, Jaminan Pelaksanaan, Jaminan Uang Muka, dan Jaminan Pemeliharaan untuk tender pemerintah dan swasta DIY. Proses cepat 1–2 hari.",
   keywords: "surety bond jogja, jaminan penawaran yogyakarta, jaminan pelaksanaan jogja, jaminan uang muka yogyakarta, surety bond tender pemerintah DIY, bank garansi jogja",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-surety-bond" },
   openGraph: {
     title: "Surety Bond Jogja – Jaminan Tender & Kontrak Konstruksi",
     description: "Proses cepat 1–2 hari kerja. Jaminan Penawaran, Pelaksanaan, Uang Muka, dan Pemeliharaan untuk kontraktor dan vendor di Yogyakarta.",
-    url: "https://asuransijogja.com/asuransi-surety-bond",
+    url: "https://asuransijogja.biz.id/asuransi-surety-bond",
   },
 };
 
@@ -149,7 +150,7 @@ export default function AsuransiSuretyBondPage() {
             <div key={m.title} className="bg-white rounded-card p-6 border border-black/5 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{m.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{m.title}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{m.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{m.desc}</p>
             </div>
           ))}
         </div>
@@ -170,7 +171,7 @@ export default function AsuransiSuretyBondPage() {
                 <div className="flex items-start gap-4 mb-4">
                   <span className="text-[2rem]">{c.icon}</span>
                   <div>
-                    <div className="bg-gold/10 border border-gold/20 text-gold text-[0.65rem] font-bold px-2 py-0.5 rounded-full tracking-wider inline-block mb-1">{c.kode}</div>
+                    <div className="bg-gold/10 border border-gold/20 text-gold text-[0.75rem] font-bold px-2 py-0.5 rounded-full tracking-wider inline-block mb-1">{c.kode}</div>
                     <div className="font-heading text-navy font-bold text-[1.15rem] leading-tight">{c.title}</div>
                     <div className="text-[#64748B] text-xs mt-0.5">{c.subtitle}</div>
                   </div>
@@ -201,7 +202,7 @@ export default function AsuransiSuretyBondPage() {
               <div className="absolute top-4 right-4 font-heading text-[2rem] font-bold text-navy/6">{a.step}</div>
               <div className="text-2xl mb-2">{a.icon}</div>
               <div className="font-heading text-navy font-bold text-[0.9rem] mb-1.5">{a.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{a.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{a.desc}</p>
             </div>
           ))}
         </div>
@@ -216,10 +217,10 @@ export default function AsuransiSuretyBondPage() {
         <div className="flex flex-col gap-4 max-w-3xl mx-auto">
           {regulasiAcuan.map(r=>(
             <div key={r.kode} className="bg-cream rounded-card p-6 border border-black/5 grid grid-cols-[90px_1fr] gap-4 items-start">
-              <div className="bg-navy rounded-lg p-2 text-center"><div className="font-heading text-gold text-[0.65rem] font-bold leading-tight">{r.kode}</div></div>
+              <div className="bg-navy rounded-lg p-2 text-center"><div className="font-heading text-gold text-[0.75rem] font-bold leading-tight">{r.kode}</div></div>
               <div>
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1">{r.topik}</div>
-                <p className="text-xs leading-relaxed text-[#64748B]">{r.poin}</p>
+                <p className="text-base leading-relaxed text-[#64748B]">{r.poin}</p>
               </div>
             </div>
           ))}
@@ -232,7 +233,7 @@ export default function AsuransiSuretyBondPage() {
           <div>
             <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Paket Kontraktor Lengkap</div>
             <h2 className="font-heading text-navy text-[1.5rem] mb-3">Surety Bond + CAR +<br />Liability = Kontraktor Siap</h2>
-            <p className="text-sm leading-relaxed text-[#64748B]">Kontraktor profesional tidak hanya butuh jaminan tender — proyek juga perlu dilindungi dari risiko konstruksi, kecelakaan pekerja, dan tuntutan pihak ketiga. Kami layani semua kebutuhan asuransi kontraktor dalam satu pintu.</p>
+            <p className="text-base leading-relaxed text-[#64748B]">Kontraktor profesional tidak hanya butuh jaminan tender — proyek juga perlu dilindungi dari risiko konstruksi, kecelakaan pekerja, dan tuntutan pihak ketiga. Kami layani semua kebutuhan asuransi kontraktor dalam satu pintu.</p>
           </div>
           <div className="flex flex-col gap-3">
             {[
@@ -263,7 +264,7 @@ export default function AsuransiSuretyBondPage() {
               <summary className="py-4 cursor-pointer font-semibold text-[0.92rem] text-navy flex justify-between items-center list-none">
                 {f.q}<span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
               </summary>
-              <p className="text-sm leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
             </details>
           ))}
         </div>

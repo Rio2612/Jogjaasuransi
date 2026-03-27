@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://asuransijogja.com";
+  const base = "https://asuransijogja.biz.id";
   const now = new Date();
   return [
     // Beranda

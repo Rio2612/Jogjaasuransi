@@ -47,7 +47,7 @@ export default function Hero() {
               ].map(s => (
                 <div key={s.lbl} className="text-center">
                   <div className="font-heading text-gold text-[1.6rem] font-bold">{s.num}</div>
-                  <div className="text-white/45 text-[0.7rem] mt-0.5">{s.lbl}</div>
+                  <div className="text-white/45 text-[0.78rem] mt-0.5">{s.lbl}</div>
                 </div>
               ))}
             </div>

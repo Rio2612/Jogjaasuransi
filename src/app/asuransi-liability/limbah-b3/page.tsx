@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Asuransi Liability Limbah B3 & Pencemaran Lingkungan Jogja | Asuransi Jogja",
   description: "Asuransi environmental liability dan limbah B3 di Yogyakarta. Perlindungan dari tuntutan pencemaran lingkungan, kebocoran bahan kimia, dan kewajiban pemulihan. Konsultasi gratis.",
   keywords: "asuransi limbah b3 jogja, environmental liability yogyakarta, asuransi pencemaran lingkungan jogja, pollution liability yogyakarta, asuransi industri kimia jogja",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-liability/limbah-b3" },
 };
 
 const definisiB3 = [
@@ -74,14 +75,14 @@ export default function LimbahB3Page() {
         <div className="text-center mb-8">
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Definisi</div>
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">Apa itu Limbah B3?</h2>
-          <p className="text-sm text-[#64748B] max-w-[500px] mx-auto mt-3">B3 = Bahan Berbahaya dan Beracun. Sesuai PP 22/2021, limbah yang mengandung sifat-sifat berikut dikategorikan sebagai limbah B3 dan diatur secara ketat</p>
+          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">B3 = Bahan Berbahaya dan Beracun. Sesuai PP 22/2021, limbah yang mengandung sifat-sifat berikut dikategorikan sebagai limbah B3 dan diatur secara ketat</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
           {definisiB3.map(d=>(
             <div key={d.label} className="bg-white rounded-card p-5 text-center border border-black/6">
               <div className="text-3xl mb-2">{d.icon}</div>
               <div className="font-heading text-navy font-bold text-sm mb-2">{d.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{d.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{d.desc}</p>
             </div>
           ))}
         </div>
@@ -98,7 +99,7 @@ export default function LimbahB3Page() {
             <div key={r.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{r.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{r.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{r.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{r.desc}</p>
             </div>
           ))}
         </div>
@@ -113,8 +114,8 @@ export default function LimbahB3Page() {
         <div className="flex flex-col gap-4 max-w-3xl mx-auto">
           {regulasiTerkait.map(r=>(
             <div key={r.kode} className="bg-white rounded-card p-6 border border-black/6 grid grid-cols-[90px_1fr] gap-4 items-start">
-              <div className="bg-navy rounded-lg p-2 text-center"><div className="font-heading text-gold text-[0.7rem] font-bold leading-tight">{r.kode}</div></div>
-              <div><div className="font-heading text-navy font-bold text-[0.95rem] mb-1">{r.nama}</div><p className="text-xs leading-relaxed text-[#64748B]">{r.poin}</p></div>
+              <div className="bg-navy rounded-lg p-2 text-center"><div className="font-heading text-gold text-[0.78rem] font-bold leading-tight">{r.kode}</div></div>
+              <div><div className="font-heading text-navy font-bold text-[0.95rem] mb-1">{r.nama}</div><p className="text-base leading-relaxed text-[#64748B]">{r.poin}</p></div>
             </div>
           ))}
         </div>
@@ -131,7 +132,7 @@ export default function LimbahB3Page() {
             <div key={i.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{i.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{i.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{i.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{i.desc}</p>
             </div>
           ))}
         </div>

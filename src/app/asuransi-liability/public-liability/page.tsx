@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Asuransi Public Liability Jogja – Hotel, Restoran & Wisata | Asuransi Jogja",
   description: "Asuransi Public Liability di Yogyakarta untuk hotel, restoran, tempat wisata, dan bisnis publik. Lindungi bisnis Anda dari tuntutan cedera tamu dan kerugian pihak ketiga.",
   keywords: "public liability jogja, asuransi tanggung jawab publik yogyakarta, asuransi tamu hotel jogja, asuransi restoran yogyakarta, liability wisata jogja",
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-liability/public-liability" },
 };
 
 const skenarioKlaim = [
@@ -79,7 +80,7 @@ export default function PublicLiabilityPage() {
             <div key={y.label} className="bg-white rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{y.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{y.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{y.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{y.desc}</p>
             </div>
           ))}
         </div>
@@ -90,7 +91,7 @@ export default function PublicLiabilityPage() {
         <div className="text-center mb-10">
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Contoh Kasus</div>
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">Skenario Nyata yang<br />Bisa Menimpa Bisnis Anda</h2>
-          <p className="text-sm text-[#64748B] max-w-[480px] mx-auto mt-3">Semua skenario ini adalah kejadian riil yang telah menyebabkan gugatan hukum terhadap pelaku usaha di Indonesia</p>
+          <p className="text-base text-[#64748B] max-w-[480px] mx-auto mt-3">Semua skenario ini adalah kejadian riil yang telah menyebabkan gugatan hukum terhadap pelaku usaha di Indonesia</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
           {skenarioKlaim.map(s=>(
@@ -119,7 +120,7 @@ export default function PublicLiabilityPage() {
             <div key={s.label} className="bg-white rounded-card p-6 border border-black/5 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{s.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{s.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{s.detail}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{s.detail}</p>
             </div>
           ))}
         </div>

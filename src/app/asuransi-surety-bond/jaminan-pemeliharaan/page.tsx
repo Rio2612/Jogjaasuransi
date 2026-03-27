@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: "Jaminan Pemeliharaan (Maintenance Bond) Jogja – Garansi Pascaproyek | Asuransi Jogja",
   description: "Jaminan Pemeliharaan (Maintenance Bond) di Yogyakarta. Garansi perbaikan cacat setelah serah terima proyek. Nilai 5% dari kontrak. Masa berlaku hingga FHO. Konsultasi gratis.",
   keywords: "jaminan pemeliharaan jogja, maintenance bond yogyakarta, jaminan garansi proyek DIY, defect liability bond jogja, surety bond pemeliharaan kontraktor yogyakarta",
-  openGraph: { title: "Jaminan Pemeliharaan (Maintenance Bond) Jogja", url: "https://asuransijogja.com/asuransi-surety-bond/jaminan-pemeliharaan" },
+  alternates: { canonical: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-pemeliharaan" },
+  openGraph: { title: "Jaminan Pemeliharaan (Maintenance Bond) Jogja", url: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-pemeliharaan" },
 };
 
 const fungsiMB = [
@@ -74,7 +75,7 @@ export default function JaminanPemeliharaanPage() {
             <div key={f.label} className="bg-white rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{f.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{f.label}</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">{f.desc}</p>
+              <p className="text-base leading-relaxed text-[#64748B]">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -91,7 +92,7 @@ export default function JaminanPemeliharaanPage() {
               <div className="bg-navy text-gold font-heading font-bold text-sm w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">{i+1}</div>
               <div>
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1">{b.tahap}</div>
-                <p className="text-xs leading-relaxed text-[#64748B]">{b.desc}</p>
+                <p className="text-base leading-relaxed text-[#64748B]">{b.desc}</p>
               </div>
             </div>
           ))}
@@ -107,7 +108,7 @@ export default function JaminanPemeliharaanPage() {
           {jenisDefect.map((j, i)=>(
             <div key={i} className="bg-white rounded-xl p-4 border border-black/5 flex gap-3">
               <span className="text-gold font-bold flex-shrink-0">✓</span>
-              <p className="text-sm text-navy2 leading-relaxed">{j}</p>
+              <p className="text-base text-navy2 leading-relaxed">{j}</p>
             </div>
           ))}
         </div>

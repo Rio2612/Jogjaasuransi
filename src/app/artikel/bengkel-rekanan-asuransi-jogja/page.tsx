@@ -6,10 +6,10 @@ export const metadata: Metadata = {
   title: "Bengkel Rekanan Asuransi di Jogja: Panduan Memilih yang Tepat",
   description: "Panduan lengkap memilih bengkel rekanan asuransi di Yogyakarta. Perbedaan bengkel rekanan resmi vs umum, tips memastikan kualitas perbaikan, dan hal yang perlu diketahui saat klaim.",
   keywords: "bengkel rekanan asuransi jogja, bengkel asuransi yogyakarta, bengkel klaim asuransi mobil jogja, bengkel resmi asuransi DIY, klaim asuransi bengkel jogja",
-  alternates: { canonical: "https://asuransijogja.com/artikel/bengkel-rekanan-asuransi-jogja" },
+  alternates: { canonical: "https://asuransijogja.biz.id/artikel/bengkel-rekanan-asuransi-jogja" },
   openGraph: {
     title: "Bengkel Rekanan Asuransi di Jogja: Panduan Memilih yang Tepat",
-    url: "https://asuransijogja.com/artikel/bengkel-rekanan-asuransi-jogja",
+    url: "https://asuransijogja.biz.id/artikel/bengkel-rekanan-asuransi-jogja",
   },
 };
 
@@ -43,9 +43,9 @@ const schemaArtikel = {
   "@type": "Article",
   "headline": "Bengkel Rekanan Asuransi di Jogja: Panduan Memilih yang Tepat",
   "description": "Panduan memilih bengkel rekanan asuransi yang tepat di Yogyakarta untuk proses klaim yang lancar.",
-  "url": "https://asuransijogja.com/artikel/bengkel-rekanan-asuransi-jogja",
+  "url": "https://asuransijogja.biz.id/artikel/bengkel-rekanan-asuransi-jogja",
   "author": { "@type": "Person", "name": "Rio Mardiansyah" },
-  "publisher": { "@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.com" },
+  "publisher": { "@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id" },
   "inLanguage": "id-ID",
 };
 
@@ -73,7 +73,7 @@ export default function BengkelRekananPage() {
           <h1 className="font-heading text-[clamp(1.8rem,3.5vw,2.8rem)] text-navy leading-[1.2] mb-4">
             Bengkel Rekanan Asuransi di Jogja:<br />Panduan Memilih yang Tepat
           </h1>
-          <p className="text-[#64748B] text-base leading-[1.85]">
+          <p className="text-[#64748B] text-lg leading-[1.85]">
             Saat kendaraan rusak dan Anda mengajukan klaim, salah satu keputusan penting adalah memilih bengkel untuk perbaikan. Memahami perbedaan bengkel rekanan resmi dan bengkel umum bisa membuat proses klaim jauh lebih mudah dan memuaskan.
           </p>
         </div>
@@ -93,8 +93,8 @@ export default function BengkelRekananPage() {
                 {bedaBengkel.map((b, i) => (
                   <tr key={b.aspek} className={i % 2 === 0 ? "bg-white" : "bg-cream"}>
                     <td className="p-4 font-semibold text-navy text-xs">{b.aspek}</td>
-                    <td className="p-4 text-navy2 text-xs leading-relaxed font-medium">{b.rekanan}</td>
-                    <td className="p-4 text-[#64748B] text-xs leading-relaxed">{b.umum}</td>
+                    <td className="p-4 text-navy2 text-sm leading-relaxed font-medium">{b.rekanan}</td>
+                    <td className="p-4 text-[#64748B] text-sm leading-relaxed">{b.umum}</td>
                   </tr>
                 ))}
               </tbody>
@@ -127,7 +127,7 @@ export default function BengkelRekananPage() {
               <div key={t.tip} className="bg-cream rounded-xl p-5 border border-black/5">
                 <div className="text-2xl mb-2">{t.icon}</div>
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1.5">{t.tip}</div>
-                <p className="text-xs leading-relaxed text-[#64748B]">{t.detail}</p>
+                <p className="text-base leading-relaxed text-[#64748B]">{t.detail}</p>
               </div>
             ))}
           </div>
