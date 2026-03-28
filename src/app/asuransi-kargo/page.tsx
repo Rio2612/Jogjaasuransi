@@ -112,7 +112,7 @@ export default function AsuransiKargoPage() {
           <h1 className="font-heading text-[clamp(2.4rem,4vw,3.8rem)] text-white leading-[1.15] mb-5">
             Asuransi Kargo Jogja<br /><em className="not-italic text-gold">Darat, Laut & Udara</em><br />Aman Sampai Tujuan
           </h1>
-          <p className="text-white/65 text-base leading-[1.85] max-w-[530px] mb-8">
+          <p className="text-white/85 text-base leading-[1.85] max-w-[530px] mb-8">
             Dari batik Malioboro hingga mesin industri — setiap barang yang dikirim mengandung risiko. Kerusakan, kehilangan, dan pencurian bisa terjadi di mana saja dalam perjalanan. Asuransi kargo memastikan nilai bisnis Anda tetap terlindungi.
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -267,7 +267,7 @@ export default function AsuransiKargoPage() {
         <div className="absolute bottom-4 right-[5vw] text-gold/6 font-heading text-[6rem] leading-none select-none hidden lg:block">꧁꧂</div>
         <div className="relative z-10">
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-white leading-[1.22] mb-4">Setiap Kiriman Berharga<br />Layak Mendapat Perlindungan</h2>
-          <p className="text-white/60 text-sm max-w-[480px] mx-auto mb-8">Konsultasi gratis — kami bantu pilih klausul, hitung premi, dan urus polis kargo terbaik untuk bisnis Anda di Yogyakarta.</p>
+          <p className="text-white/80 text-sm max-w-[480px] mx-auto mb-8">Konsultasi gratis — kami bantu pilih klausul, hitung premi, dan urus polis kargo terbaik untuk bisnis Anda di Yogyakarta.</p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Chat WhatsApp Sekarang</a>
             <a href={`mailto:${KONTAK.email}`} className="bg-white/8 border border-white/20 text-white px-7 py-3 rounded-lg text-sm no-underline hover:bg-white/12 transition-all">✉️ Kirim Email</a>

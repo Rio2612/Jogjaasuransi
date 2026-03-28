@@ -15,7 +15,7 @@ export default function Hero() {
             <em className="not-italic text-gold">Aset & Bisnis</em><br />
             Anda di Jogja
           </h1>
-          <p className="animate-fadeUp-d3 text-white/65 text-base leading-[1.8] max-w-[460px] mb-8">
+          <p className="animate-fadeUp-d3 text-white/85 text-base leading-[1.8] max-w-[460px] mb-8">
             Kami membantu Anda memilih perlindungan asuransi kerugian yang paling sesuai — kendaraan, properti, kargo, engineering, hingga liability — dengan analisis risiko yang jujur dan pendampingan klaim penuh.
           </p>
           <div className="animate-fadeUp-d4 flex gap-4 flex-wrap">

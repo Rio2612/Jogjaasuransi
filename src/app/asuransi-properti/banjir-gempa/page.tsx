@@ -76,7 +76,7 @@ export default function BanjirGempaPage() {
           <h1 className="font-heading text-[clamp(2.2rem,4vw,3.6rem)] text-white leading-[1.15] mb-5">
             Perluasan Banjir<br /><em className="not-italic text-gold">& Gempa Bumi</em><br />Khusus Yogyakarta
           </h1>
-          <p className="text-white/65 text-base leading-[1.85] max-w-[520px] mb-8">
+          <p className="text-white/85 text-base leading-[1.85] max-w-[520px] mb-8">
             Yogyakarta berdiri di atas tanah aktif secara geologi — 30 km dari Merapi, dilintasi patahan Opak, dan dikelilingi sungai-sungai yang rentan banjir. Perluasan jaminan bencana alam bukan sekadar pilihan, melainkan keharusan.
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -191,7 +191,7 @@ export default function BanjirGempaPage() {
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-white leading-[1.22] mb-4">
             Yogyakarta Indah,<br />tapi Risikonya Nyata
           </h2>
-          <p className="text-white/60 text-sm max-w-[460px] mx-auto mb-8">
+          <p className="text-white/80 text-sm max-w-[460px] mx-auto mb-8">
             Jangan tunggu bencana untuk baru memikirkan asuransi. Analisis risiko lokasi properti Anda sekarang — gratis dan tanpa tekanan.
           </p>
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">

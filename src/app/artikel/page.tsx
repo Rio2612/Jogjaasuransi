@@ -71,7 +71,7 @@ export default function ArtikelIndexPage() {
           <h1 className="font-heading text-[clamp(2rem,3.5vw,3rem)] text-white leading-[1.2] mb-4">
             Artikel &amp; Panduan<br /><em className="not-italic text-gold">Asuransi untuk Anda</em>
           </h1>
-          <p className="text-white/65 text-sm leading-[1.85] max-w-[480px]">
+          <p className="text-white/85 text-sm leading-[1.85] max-w-[480px]">
             Pahami asuransi sebelum membeli. Artikel berikut ditulis berdasarkan pengalaman 10+ tahun konsultan asuransi kerugian di Yogyakarta.
           </p>
         </div>

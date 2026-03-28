@@ -139,7 +139,7 @@ export default function PentingnyaAsuransiUsahaPage() {
 
         <div className="bg-navy rounded-[20px] p-8 text-center">
           <h3 className="font-heading text-white text-[1.4rem] mb-3">Audit Proteksi Bisnis Anda — Gratis</h3>
-          <p className="text-white/65 text-sm mb-6 max-w-[420px] mx-auto">Pak Rio siap membantu mengidentifikasi risiko bisnis Anda dan merekomendasikan proteksi yang tepat dan efisien secara biaya.</p>
+          <p className="text-white/85 text-sm mb-6 max-w-[420px] mx-auto">Pak Rio siap membantu mengidentifikasi risiko bisnis Anda dan merekomendasikan proteksi yang tepat dan efisien secara biaya.</p>
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Konsultasi Bisnis via WhatsApp</a>
         </div>
       </article>

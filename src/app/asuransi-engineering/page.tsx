@@ -92,7 +92,7 @@ export default function AsuransiEngineeringPage() {
           <h1 className="font-heading text-[clamp(2.4rem,4vw,3.8rem)] text-white leading-[1.15] mb-5">
             Asuransi Engineering<br /><em className="not-italic text-gold">Proyek & Industri</em><br />Yogyakarta
           </h1>
-          <p className="text-white/65 text-base leading-[1.85] max-w-[530px] mb-8">
+          <p className="text-white/85 text-base leading-[1.85] max-w-[530px] mb-8">
             Yogyakarta terus bertumbuh — hotel baru, kampus baru, kawasan industri baru. Di balik setiap proyek besar tersimpan risiko besar. Asuransi engineering memastikan proyek dan mesin industri Anda terlindungi dari awal hingga selesai.
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -217,7 +217,7 @@ export default function AsuransiEngineeringPage() {
         <div className="absolute bottom-4 left-[5vw] text-gold/6 font-heading text-[6rem] leading-none select-none hidden lg:block">꧁꧂</div>
         <div className="relative z-10">
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-white leading-[1.22] mb-4">Proyek Besar Butuh<br />Perlindungan yang Lebih Besar</h2>
-          <p className="text-white/60 text-sm max-w-[480px] mx-auto mb-8">Konsultasi gratis — kami bantu review kebutuhan asuransi engineering proyek Anda dan siapkan polis sesuai nilai kontrak.</p>
+          <p className="text-white/80 text-sm max-w-[480px] mx-auto mb-8">Konsultasi gratis — kami bantu review kebutuhan asuransi engineering proyek Anda dan siapkan polis sesuai nilai kontrak.</p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Chat WhatsApp Sekarang</a>
             <a href={`mailto:${KONTAK.email}`} className="bg-white/8 border border-white/20 text-white px-7 py-3 rounded-lg text-sm no-underline hover:bg-white/12 transition-all">✉️ Kirim Email</a>

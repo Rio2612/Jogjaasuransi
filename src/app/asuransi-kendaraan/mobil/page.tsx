@@ -68,7 +68,7 @@ export default function AsuransiMobilPage() {
           <h1 className="font-heading text-[clamp(2.2rem,4vw,3.6rem)] text-white leading-[1.15] mb-5">
             Asuransi Mobil Jogja<br /><em className="not-italic text-gold">All Risk & TLO</em><br />Konvensional & Listrik
           </h1>
-          <p className="text-white/65 text-base leading-[1.85] max-w-[520px] mb-8">
+          <p className="text-white/85 text-base leading-[1.85] max-w-[520px] mb-8">
             Kecelakaan bisa terjadi kapan saja — di jalan Malioboro yang ramai, parkiran mal, atau jalanan Sleman yang berlubang. Dengan asuransi mobil yang tepat, Anda tidak perlu pusing soal biaya perbaikan.
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -197,7 +197,7 @@ export default function AsuransiMobilPage() {
         <div className="absolute inset-0" style={{background:"radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)"}} />
         <div className="relative z-10">
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-white leading-[1.22] mb-4">Mobil Anda Aman,<br />Pikiran Anda Tenang</h2>
-          <p className="text-white/60 text-sm max-w-[460px] mx-auto mb-8">Dapatkan penawaran terbaik dari berbagai perusahaan asuransi — gratis, transparan, tanpa tekanan.</p>
+          <p className="text-white/80 text-sm max-w-[460px] mx-auto mb-8">Dapatkan penawaran terbaik dari berbagai perusahaan asuransi — gratis, transparan, tanpa tekanan.</p>
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 WhatsApp Pak Rio Sekarang</a>
         </div>
       </section>

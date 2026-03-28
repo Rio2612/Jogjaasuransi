@@ -53,7 +53,7 @@ export default function DumpTrukPage() {
           <h1 className="font-heading text-[clamp(2.2rem,4vw,3.6rem)] text-white leading-[1.15] mb-5">
             Asuransi Dump Truk<br /><em className="not-italic text-gold">& Kendaraan Niaga</em><br />di Yogyakarta
           </h1>
-          <p className="text-white/65 text-base leading-[1.85] max-w-[520px] mb-8">
+          <p className="text-white/85 text-base leading-[1.85] max-w-[520px] mb-8">
             Kendaraan niaga adalah aset utama bisnis Anda. Satu unit dump truk rusak bisa menghentikan seluruh operasional proyek. Lindungi armada niaga Anda dengan polis yang tepat dan premi yang kompetitif.
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -149,7 +149,7 @@ export default function DumpTrukPage() {
         <div className="absolute inset-0" style={{background:"radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)"}} />
         <div className="relative z-10">
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-white leading-[1.22] mb-4">Armada Berjalan,<br />Bisnis Tidak Boleh Berhenti</h2>
-          <p className="text-white/60 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis soal asuransi kendaraan niaga — kami bantu pilih produk terbaik sesuai jenis kendaraan dan anggaran Anda.</p>
+          <p className="text-white/80 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis soal asuransi kendaraan niaga — kami bantu pilih produk terbaik sesuai jenis kendaraan dan anggaran Anda.</p>
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Konsultasi Kendaraan Niaga</a>
         </div>
       </section>

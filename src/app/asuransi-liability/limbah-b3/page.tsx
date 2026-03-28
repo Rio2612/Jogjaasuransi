@@ -60,7 +60,7 @@ export default function LimbahB3Page() {
           <h1 className="font-heading text-[clamp(2.2rem,4vw,3.6rem)] text-white leading-[1.15] mb-5">
             Asuransi Liability<br /><em className="not-italic text-gold">Limbah B3 & Pencemaran</em><br />Lingkungan
           </h1>
-          <p className="text-white/65 text-base leading-[1.85] max-w-[520px] mb-8">
+          <p className="text-white/85 text-base leading-[1.85] max-w-[520px] mb-8">
             Satu insiden kebocoran bahan kimia atau pembuangan limbah B3 yang tidak sesuai prosedur bisa menimbulkan tuntutan miliaran rupiah — dari warga sekitar, pemerintah, maupun KLHK. Asuransi environmental liability adalah proteksi terakhir Anda.
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -156,7 +156,7 @@ export default function LimbahB3Page() {
         <div className="absolute inset-0" style={{background:"radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)"}} />
         <div className="relative z-10">
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-white leading-[1.22] mb-4">Kelola Limbah B3 dengan Aman,<br />Bisnis Anda Terlindungi Penuh</h2>
-          <p className="text-white/60 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis analisis risiko lingkungan — kami bantu identifikasi potensi liabilitas dan produk yang paling sesuai.</p>
+          <p className="text-white/80 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis analisis risiko lingkungan — kami bantu identifikasi potensi liabilitas dan produk yang paling sesuai.</p>
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Konsultasi Environmental Liability</a>
         </div>
       </section>

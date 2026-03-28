@@ -39,8 +39,8 @@ export default function Footer() {
         </div>
       </div>
       <div className="pt-5 flex justify-between items-center flex-wrap gap-3">
-        <div className="text-[0.88rem] text-white/30">© 2025 Asuransi Jogja – Rio Mardiansyah. Seluruh hak cipta dilindungi.</div>
-        <div className="text-[0.88rem] text-white/30">Konsultan Asuransi Kerugian Independen · Yogyakarta</div>
+        <div className="text-[0.88rem] text-white/55">© 2025 Asuransi Jogja – Rio Mardiansyah. Seluruh hak cipta dilindungi.</div>
+        <div className="text-[0.88rem] text-white/55">Konsultan Asuransi Kerugian Independen · Yogyakarta</div>
       </div>
     </footer>
   );

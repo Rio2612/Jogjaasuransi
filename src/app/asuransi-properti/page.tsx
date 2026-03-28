@@ -88,7 +88,7 @@ export default function AsuransiPropertiPage() {
             <em className="not-italic text-gold">dari Segala Risiko</em><br />
             di Yogyakarta
           </h1>
-          <p className="text-white/65 text-base leading-[1.85] max-w-[520px] mb-8">
+          <p className="text-white/85 text-base leading-[1.85] max-w-[520px] mb-8">
             Rumah, kos, ruko, hingga gedung komersial — semua aset properti Anda layak mendapat perlindungan yang tepat. Konsultan kami membantu memilih produk terbaik sesuai risiko nyata di lokasi Anda.
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -235,7 +235,7 @@ export default function AsuransiPropertiPage() {
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-white leading-[1.22] mb-4">
             Properti Anda Terlalu Berharga<br />untuk Tidak Dilindungi
           </h2>
-          <p className="text-white/60 text-sm leading-relaxed max-w-[480px] mx-auto mb-8">
+          <p className="text-white/85 text-sm leading-relaxed max-w-[480px] mx-auto mb-8">
             Konsultasi gratis, analisis risiko lokasi, dan penawaran dari perusahaan asuransi terpercaya — semua tanpa biaya.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">

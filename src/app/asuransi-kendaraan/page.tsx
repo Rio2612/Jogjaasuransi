@@ -62,7 +62,7 @@ export default function AsuransiKendaraanPage() {
           <h1 className="font-heading text-[clamp(2.4rem,4vw,3.8rem)] text-white leading-[1.15] mb-5">
             Proteksi Kendaraan Anda<br /><em className="not-italic text-gold">di Jalan & di Garasi</em><br />Yogyakarta
           </h1>
-          <p className="text-white/65 text-base leading-[1.85] max-w-[520px] mb-8">
+          <p className="text-white/85 text-base leading-[1.85] max-w-[520px] mb-8">
             Dari mobil pribadi hingga armada puluhan unit — kami melayani seluruh kebutuhan asuransi kendaraan bermotor dengan tarif transparan sesuai OJK dan pendampingan klaim penuh.
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -146,7 +146,7 @@ export default function AsuransiKendaraanPage() {
         <div className="absolute inset-0" style={{background:"radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)"}} />
         <div className="relative z-10">
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-white leading-[1.22] mb-4">Kendaraan Anda Terlalu Berharga<br />untuk Tidak Dilindungi</h2>
-          <p className="text-white/60 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis, perbandingan premi transparan, dan pendampingan klaim penuh — untuk semua jenis kendaraan Anda.</p>
+          <p className="text-white/80 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis, perbandingan premi transparan, dan pendampingan klaim penuh — untuk semua jenis kendaraan Anda.</p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Chat WhatsApp Sekarang</a>
             <a href={`mailto:${KONTAK.email}`} className="bg-white/8 border border-white/20 text-white px-7 py-3 rounded-lg text-sm no-underline hover:bg-white/12 transition-all">✉️ Kirim Email</a>

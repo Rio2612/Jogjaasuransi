@@ -53,7 +53,7 @@ export default function EmployerLiabilityPage() {
           <h1 className="font-heading text-[clamp(2.2rem,4vw,3.6rem)] text-white leading-[1.15] mb-5">
             Employer Liability<br /><em className="not-italic text-gold">Tanggung Jawab Pengusaha</em><br />terhadap Karyawan
           </h1>
-          <p className="text-white/65 text-base leading-[1.85] max-w-[520px] mb-8">
+          <p className="text-white/85 text-base leading-[1.85] max-w-[520px] mb-8">
             BPJS Ketenagakerjaan memiliki limit yang sering tidak cukup menutupi kerugian karyawan yang kecelakaan parah. Kelebihan tanggung jawab jatuh pada pengusaha — dan bisa berujung gugatan hukum jutaan hingga miliaran rupiah.
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -136,7 +136,7 @@ export default function EmployerLiabilityPage() {
         <div className="absolute inset-0" style={{background:"radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)"}} />
         <div className="relative z-10">
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-white leading-[1.22] mb-4">Karyawan adalah Aset Terbesar<br />Bisnis Anda — Lindungi Mereka</h2>
-          <p className="text-white/60 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis Employer Liability — kami bantu analisis gap antara BPJS dan kebutuhan perlindungan nyata karyawan Anda.</p>
+          <p className="text-white/80 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis Employer Liability — kami bantu analisis gap antara BPJS dan kebutuhan perlindungan nyata karyawan Anda.</p>
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Konsultasi Employer Liability</a>
         </div>
       </section>

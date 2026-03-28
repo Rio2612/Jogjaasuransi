@@ -66,7 +66,7 @@ export default function PengirimanBarangPage() {
           <h1 className="font-heading text-[clamp(2.2rem,4vw,3.6rem)] text-white leading-[1.15] mb-5">
             Asuransi Pengiriman<br /><em className="not-italic text-gold">Barang Darat</em><br />dari Jogja ke Seluruh Indonesia
           </h1>
-          <p className="text-white/65 text-base leading-[1.85] max-w-[520px] mb-8">
+          <p className="text-white/85 text-base leading-[1.85] max-w-[520px] mb-8">
             Produk UMKM Jogja — batik, kerajinan, makanan, dan furniture — setiap hari dikirim ke ribuan pembeli di seluruh Indonesia. Setiap perjalanan membawa risiko yang hanya bisa diselesaikan dengan asuransi kargo yang tepat.
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -179,7 +179,7 @@ export default function PengirimanBarangPage() {
         <div className="absolute inset-0" style={{background:"radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)"}} />
         <div className="relative z-10">
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-white leading-[1.22] mb-4">Produk Jogja Anda<br />Layak Terlindungi Sampai Tujuan</h2>
-          <p className="text-white/60 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis — kami bantu pilih klausul, hitung premi, dan urus polis pengiriman barang terbaik untuk bisnis Anda.</p>
+          <p className="text-white/80 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis — kami bantu pilih klausul, hitung premi, dan urus polis pengiriman barang terbaik untuk bisnis Anda.</p>
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 WhatsApp Pak Rio Sekarang</a>
         </div>
       </section>

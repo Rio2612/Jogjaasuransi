@@ -236,7 +236,7 @@ export default function CaraKlaimMobilPage() {
         {/* CTA BOX */}
         <div className="bg-navy rounded-[20px] p-8 text-center">
           <h3 className="font-heading text-white text-[1.4rem] mb-3">Butuh Bantuan Proses Klaim?</h3>
-          <p className="text-white/65 text-sm mb-6 max-w-[400px] mx-auto">Pak Rio siap mendampingi proses klaim Anda — dari persiapan dokumen hingga dana ganti rugi cair. Gratis, tanpa biaya tambahan.</p>
+          <p className="text-white/85 text-sm mb-6 max-w-[400px] mx-auto">Pak Rio siap mendampingi proses klaim Anda — dari persiapan dokumen hingga dana ganti rugi cair. Gratis, tanpa biaya tambahan.</p>
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Minta Bantuan via WhatsApp</a>
         </div>
       </article>

@@ -209,7 +209,7 @@ export default function CaraMenghitungNilaiPage() {
 
         <div className="bg-navy rounded-[20px] p-8 text-center">
           <h3 className="font-heading text-white text-[1.4rem] mb-3">Bingung Menentukan Nilai Pertanggungan?</h3>
-          <p className="text-white/65 text-sm mb-6 max-w-[420px] mx-auto">Pak Rio siap membantu menghitung nilai pertanggungan yang tepat — gratis, tanpa tekanan, pastikan Anda tidak rugi saat klaim.</p>
+          <p className="text-white/85 text-sm mb-6 max-w-[420px] mx-auto">Pak Rio siap membantu menghitung nilai pertanggungan yang tepat — gratis, tanpa tekanan, pastikan Anda tidak rugi saat klaim.</p>
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Konsultasi Nilai Asuransi</a>
         </div>
       </article>

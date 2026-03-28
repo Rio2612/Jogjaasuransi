@@ -86,7 +86,7 @@ export default function ContractorAllRiskPage() {
           <h1 className="font-heading text-[clamp(2.2rem,4vw,3.6rem)] text-white leading-[1.15] mb-5">
             Contractor All Risk<br /><em className="not-italic text-gold">(CAR) Yogyakarta</em><br />Proyek Aman, Tender Lancar
           </h1>
-          <p className="text-white/65 text-base leading-[1.85] max-w-[520px] mb-8">
+          <p className="text-white/85 text-base leading-[1.85] max-w-[520px] mb-8">
             Dari hotel bintang di Malioboro hingga gedung kampus di Sleman — setiap proyek konstruksi di Yogyakarta menghadapi risiko yang sama: cuaca ekstrem, gempa, kecelakaan pekerja, dan tuntutan pihak ketiga. CAR melindungi semuanya dalam satu polis.
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -231,7 +231,7 @@ export default function ContractorAllRiskPage() {
         <div className="absolute inset-0" style={{background:"radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)"}} />
         <div className="relative z-10">
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-white leading-[1.22] mb-4">Proyek Berjalan, Tender Menang,<br />Polis CAR Sudah Siap</h2>
-          <p className="text-white/60 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis CAR untuk proyek Anda di Yogyakarta — dari review nilai pertanggungan hingga dokumen tender siap pakai.</p>
+          <p className="text-white/80 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis CAR untuk proyek Anda di Yogyakarta — dari review nilai pertanggungan hingga dokumen tender siap pakai.</p>
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Konsultasi CAR via WhatsApp</a>
         </div>
       </section>

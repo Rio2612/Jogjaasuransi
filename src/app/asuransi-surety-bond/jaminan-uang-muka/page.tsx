@@ -43,7 +43,7 @@ export default function JaminanUangMukaPage() {
           <h1 className="font-heading text-[clamp(2.2rem,4vw,3.6rem)] text-white leading-[1.15] mb-5">
             Jaminan Uang Muka<br /><em className="not-italic text-gold">(Advance Payment Bond)</em><br />Syarat Cairkan Uang Muka Proyek
           </h1>
-          <p className="text-white/65 text-base leading-[1.85] max-w-[520px] mb-8">
+          <p className="text-white/85 text-base leading-[1.85] max-w-[520px] mb-8">
             Pemilik proyek tidak akan mencairkan uang muka tanpa Jaminan Uang Muka yang valid. Dokumen ini adalah kunci untuk mendapatkan modal awal yang dibutuhkan kontraktor memulai pekerjaan di lapangan.
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -108,7 +108,7 @@ export default function JaminanUangMukaPage() {
         <div className="absolute inset-0" style={{background:"radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)"}} />
         <div className="relative z-10">
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-white leading-[1.22] mb-4">Uang Muka Proyek<br />Cair Lebih Cepat dengan APB</h2>
-          <p className="text-white/60 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis — kami bantu proses APB dengan cepat agar modal proyek segera cair dan pekerjaan bisa dimulai.</p>
+          <p className="text-white/80 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis — kami bantu proses APB dengan cepat agar modal proyek segera cair dan pekerjaan bisa dimulai.</p>
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Proses APB via WhatsApp</a>
         </div>
       </section>

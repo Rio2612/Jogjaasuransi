@@ -54,7 +54,7 @@ export default function ArmadaFleetPage() {
           <h1 className="font-heading text-[clamp(2.2rem,4vw,3.6rem)] text-white leading-[1.15] mb-5">
             Asuransi Armada<br /><em className="not-italic text-gold">Fleet Kendaraan</em><br />Perusahaan Anda
           </h1>
-          <p className="text-white/65 text-base leading-[1.85] max-w-[520px] mb-8">
+          <p className="text-white/85 text-base leading-[1.85] max-w-[520px] mb-8">
             Punya 5 unit atau lebih kendaraan operasional? Saatnya beralih ke asuransi fleet — satu polis, lebih hemat, lebih mudah dikelola, dan klaim ditangani prioritas.
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -140,7 +140,7 @@ export default function ArmadaFleetPage() {
         <div className="relative z-10">
           <div className="text-5xl mb-4">🚐</div>
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-white leading-[1.22] mb-4">Kelola Armada Lebih Cerdas<br />dengan Satu Polis Fleet</h2>
-          <p className="text-white/60 text-sm max-w-[480px] mx-auto mb-8">Hubungi Pak Rio sekarang. Kirimkan data armada Anda dan kami siapkan penawaran fleet terbaik dalam 1 hari kerja.</p>
+          <p className="text-white/80 text-sm max-w-[480px] mx-auto mb-8">Hubungi Pak Rio sekarang. Kirimkan data armada Anda dan kami siapkan penawaran fleet terbaik dalam 1 hari kerja.</p>
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Diskusi Fleet via WhatsApp</a>
         </div>
       </section>

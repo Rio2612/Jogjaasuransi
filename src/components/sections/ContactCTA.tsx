@@ -7,7 +7,7 @@ export default function ContactCTA() {
       <div className="relative z-10">
         <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold2 mb-3">Hubungi Kami</div>
         <h2 className="font-heading text-[clamp(1.9rem,3vw,2.9rem)] leading-[1.22] text-white">Siap Mendapat<br />Perlindungan yang Tepat?</h2>
-        <p className="text-white/62 text-base leading-[1.78] max-w-[540px] mx-auto mt-3 mb-10">
+        <p className="text-white/90 text-base leading-[1.78] max-w-[540px] mx-auto mt-3 mb-10">
           Konsultasikan kebutuhan asuransi kerugian Anda sekarang. Gratis, tanpa tekanan, dan kami bantu temukan solusi terbaik — untuk pribadi maupun bisnis Anda di Yogyakarta.
         </p>
         <div className="flex gap-4 justify-center flex-wrap">

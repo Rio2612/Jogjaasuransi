@@ -70,7 +70,7 @@ export default function AsuransiLiabilityPage() {
           <h1 className="font-heading text-[clamp(2.4rem,4vw,3.8rem)] text-white leading-[1.15] mb-5">
             Lindungi Bisnis Anda<br /><em className="not-italic text-gold">dari Tuntutan Hukum</em><br />Pihak Ketiga
           </h1>
-          <p className="text-white/65 text-base leading-[1.85] max-w-[540px] mb-8">
+          <p className="text-white/85 text-base leading-[1.85] max-w-[540px] mb-8">
             Yogyakarta dikunjungi jutaan wisatawan setiap tahun. Hotel, restoran, tempat wisata, dan bisnis apa pun yang berinteraksi dengan publik menanggung risiko tanggung jawab hukum yang nyata — satu insiden bisa berujung gugatan miliaran rupiah.
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -197,7 +197,7 @@ export default function AsuransiLiabilityPage() {
         <div className="absolute bottom-4 left-[5vw] text-gold/6 font-heading text-[6rem] leading-none select-none hidden lg:block">꧁꧂</div>
         <div className="relative z-10">
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-white leading-[1.22] mb-4">Bisnis Terlindungi,<br />Tamu & Karyawan Terjamin</h2>
-          <p className="text-white/60 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis analisis risiko liability bisnis Anda di Yogyakarta — bersama konsultan berpengalaman 10+ tahun.</p>
+          <p className="text-white/80 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis analisis risiko liability bisnis Anda di Yogyakarta — bersama konsultan berpengalaman 10+ tahun.</p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Chat WhatsApp Sekarang</a>
             <a href={`mailto:${KONTAK.email}`} className="bg-white/8 border border-white/20 text-white px-7 py-3 rounded-lg text-sm no-underline hover:bg-white/12 transition-all">✉️ Kirim Email</a>

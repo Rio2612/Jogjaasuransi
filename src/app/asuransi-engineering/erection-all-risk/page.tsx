@@ -70,7 +70,7 @@ export default function ErectionAllRiskPage() {
           <h1 className="font-heading text-[clamp(2.2rem,4vw,3.6rem)] text-white leading-[1.15] mb-5">
             Erection All Risk<br /><em className="not-italic text-gold">(EAR) Yogyakarta</em><br />Mesin & Instalasi Terlindungi
           </h1>
-          <p className="text-white/65 text-base leading-[1.85] max-w-[520px] mb-8">
+          <p className="text-white/85 text-base leading-[1.85] max-w-[520px] mb-8">
             Proses pemasangan mesin dan struktur baja adalah fase paling rentan dalam proyek industri. Satu komponen jatuh saat pengangkatan atau satu kegagalan saat uji coba bisa menghancurkan investasi senilai miliaran rupiah.
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -206,7 +206,7 @@ export default function ErectionAllRiskPage() {
         <div className="absolute inset-0" style={{background:"radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)"}} />
         <div className="relative z-10">
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-white leading-[1.22] mb-4">Mesin Miliaran Rupiah<br />Layak Dilindungi Saat Dipasang</h2>
-          <p className="text-white/60 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis EAR — kami review nilai instalasi, fase erection, dan siapkan polis yang menanggung risiko dari awal hingga komisioning.</p>
+          <p className="text-white/80 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis EAR — kami review nilai instalasi, fase erection, dan siapkan polis yang menanggung risiko dari awal hingga komisioning.</p>
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Konsultasi EAR via WhatsApp</a>
         </div>
       </section>
