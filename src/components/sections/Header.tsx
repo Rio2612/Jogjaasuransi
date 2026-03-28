@@ -89,7 +89,7 @@ export default function Header() {
         <div ref={produkRef} className="relative">
           <button
             onClick={() => setProdukOpen(!produkOpen)}
-            className={`flex items-center gap-1.5 text-[0.95rem] font-medium transition-colors bg-transparent border-none cursor-pointer ${produkOpen ? "text-gold2" : "text-white/75 hover:text-gold2"}`}
+            className={`flex items-center gap-1.5 text-sm font-medium transition-colors bg-transparent border-none cursor-pointer ${produkOpen ? "text-gold2" : "text-white/75 hover:text-gold2"}`}
           >
             Produk
             <span className={`text-[0.55rem] transition-transform duration-200 inline-block ${produkOpen ? "rotate-180" : ""}`}>▼</span>
@@ -133,24 +133,24 @@ export default function Header() {
         </div>
 
         {isHome && homeLinks.map(l => (
-          <a key={l.href} href={l.href} className="text-white/75 text-[0.95rem] font-medium hover:text-gold2 transition-colors no-underline">
+          <a key={l.href} href={l.href} className="text-white/75 text-sm font-medium hover:text-gold2 transition-colors no-underline">
             {l.label}
           </a>
         ))}
 
-        <Link href="/artikel" className="text-white/75 text-[0.95rem] font-medium hover:text-gold2 transition-colors no-underline">
+        <Link href="/artikel" className="text-white/75 text-sm font-medium hover:text-gold2 transition-colors no-underline">
           Artikel
         </Link>
 
         {isHome && (
-          <a href="#faq" className="text-white/75 text-[0.95rem] font-medium hover:text-gold2 transition-colors no-underline">
+          <a href="#faq" className="text-white/75 text-sm font-medium hover:text-gold2 transition-colors no-underline">
             FAQ
           </a>
         )}
       </nav>
 
       {/* CTA Desktop */}
-      <a href={`https://wa.me/${KONTAK.wa}`} className="hidden md:inline-block bg-gold text-navy px-5 py-[9px] rounded-lg text-[0.95rem] font-bold hover:bg-gold2 transition-all hover:-translate-y-px no-underline">
+      <a href={`https://wa.me/${KONTAK.wa}`} className="hidden md:inline-block bg-gold text-navy px-5 py-[9px] rounded-lg text-sm font-bold hover:bg-gold2 transition-all hover:-translate-y-px no-underline">
         Konsultasi Gratis
       </a>
 
@@ -179,7 +179,7 @@ export default function Header() {
                   <Link
                     href={c.href}
                     onClick={() => setMenuOpen(false)}
-                    className="flex items-center gap-2.5 px-[6vw] py-2.5 text-[0.95rem] font-bold text-gold no-underline"
+                    className="flex items-center gap-2.5 px-[6vw] py-2.5 text-sm font-bold text-gold no-underline"
                   >
                     <span>{c.icon}</span>{c.label}
                   </Link>

@@ -13,96 +13,58 @@
 
 html {
   scroll-behavior: smooth;
-  /* Base font size naik: 16px default → efektif lebih besar di mobile */
-  font-size: 16px;
-}
-
-/* Mobile-first: semua teks naik ~1 step */
-@media (max-width: 767px) {
-  html {
-    font-size: 17px;
-  }
+  font-size: 16px; /* Tailwind default: 1rem = 16px */
 }
 
 body {
-  font-family: var(--font-jakarta), sans-serif;
+  font-family: var(--font-body), sans-serif; /* DM Sans */
   color: var(--navy);
   overflow-x: hidden;
-  /* Line-height lebih longgar untuk keterbacaan mobile */
+  font-size: 1rem;       /* 16px */
   line-height: 1.75;
 }
 
+/* Heading: Syne */
 h1, h2, h3, h4 {
-  font-family: var(--font-cormorant), serif;
+  font-family: var(--font-heading), sans-serif;
   line-height: 1.22;
 }
 
-/* Override Tailwind text-xs dan text-sm agar lebih besar */
-/* text-xs: 12px → 13.5px */
-.text-xs {
-  font-size: 0.8438rem !important; /* ~13.5px */
-  line-height: 1.6 !important;
-}
+/* ============================================================
+   TYPOGRAPHY SCALE — sesuai spesifikasi Pak Rio
+   ============================================================
+   text-xs   = 12px / lh 16px  → label badge, catatan kaki kalkulator, sub-label card
+   text-sm   = 14px / lh 20px  → deskripsi card, FAQ jawaban, footer body, nav sub-menu
+   text-base = 16px / lh 24px  → default browser (tidak dipakai eksplisit)
+   text-lg   = 18px / lh 28px  → deskripsi hero/about, subtitle section
+   text-xl   = 20px / lh 28px  → hasil kalkulator (premi)
+   text-2xl  = 24px / lh 32px  → sub-heading produk
+   text-3xl  = 30px / lh 36px  → heading section (h2)
+   text-4xl  = 36px / lh 40px  → hero heading desktop
+   text-5xl  = 48px / lh 52px  → hero heading (md:text-5xl)
+   ============================================================ */
 
-/* text-sm: 14px → 15.5px */
-.text-sm {
-  font-size: 0.9375rem !important; /* ~15px */
-  line-height: 1.75 !important;
-}
-
-/* text-base: 16px → 17px */
-.text-base {
-  font-size: 1.0625rem !important; /* 17px */
-  line-height: 1.85 !important;
-}
-
-/* Khusus mobile — label kecil uppercase tetap proporsional */
-@media (max-width: 767px) {
-  .text-xs {
-    font-size: 0.875rem !important; /* 14px di mobile */
-    line-height: 1.65 !important;
-  }
-  .text-sm {
-    font-size: 1rem !important; /* 16px di mobile */
-    line-height: 1.78 !important;
-  }
-  .text-base {
-    font-size: 1.0625rem !important; /* 17px */
-    line-height: 1.85 !important;
-  }
-}
-
-/* Tabel konten: pastikan terbaca di mobile */
-table {
-  font-size: 0.9rem;
-}
-@media (max-width: 767px) {
-  table {
-    font-size: 0.9375rem;
-  }
-}
+/* Kembalikan ke nilai Tailwind default yang murni — tanpa override */
+/* Semua ukuran di atas sudah sesuai default Tailwind dengan 1rem=16px */
 
 /* FAQ details/summary */
 details summary {
-  font-size: 0.9375rem;
+  font-size: 1rem;      /* 16px */
   line-height: 1.55;
 }
-@media (max-width: 767px) {
-  details summary {
-    font-size: 1rem;
-  }
+
+/* Tabel */
+table {
+  font-size: 0.875rem;  /* 14px — text-sm */
 }
 
-/* Tombol & badge — sedikit lebih besar */
-button, .btn {
-  font-size: inherit;
-}
+/* Artikel body — prose-lg = 18px otomatis dari Tailwind Typography */
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.animate-fadeUp { animation: fadeUp 0.6s ease both; }
+.animate-fadeUp    { animation: fadeUp 0.6s ease both; }
 .animate-fadeUp-d1 { animation: fadeUp 0.6s ease both 0.1s; }
 .animate-fadeUp-d2 { animation: fadeUp 0.6s ease both 0.25s; }
 .animate-fadeUp-d3 { animation: fadeUp 0.6s ease both 0.4s; }

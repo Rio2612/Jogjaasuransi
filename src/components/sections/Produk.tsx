@@ -48,7 +48,7 @@ export default function Produk() {
           <div key={p.name} className="border border-black/7 rounded-card p-6 hover:shadow-[0_10px_35px_rgba(13,33,55,0.1)] hover:-translate-y-1 hover:border-gold/25 transition-all relative overflow-hidden group bg-white">
             <div className="absolute top-0 left-0 right-0 h-[3px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             <div className="text-[1.6rem] mb-3">{p.icon}</div>
-            <div className="font-heading text-[1.05rem] font-bold text-navy mb-2">{p.name}</div>
+            <div className="font-heading text-lg font-bold text-navy mb-2">{p.name}</div>
             <p className="text-[1rem] leading-[1.7] text-[#64748B]">{p.desc}</p>
             <a href={p.href} className="inline-flex items-center gap-1 text-gold text-[0.92rem] font-semibold mt-3 hover:gap-2 transition-all no-underline">
               {p.href.startsWith("#") ? "Hitung premi →" : "Konsultasi →"}

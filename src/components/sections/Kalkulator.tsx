@@ -76,7 +76,7 @@ export default function Kalkulator() {
         {/* Row 1 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div className="flex flex-col gap-1.5">
-            <label className="text-[0.95rem] font-semibold text-white/90">Plat Kendaraan (Asal Daerah)</label>
+            <label className="text-sm font-semibold text-white/90">Plat Kendaraan (Asal Daerah)</label>
             <select
               className="bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold appearance-none cursor-pointer"
               onChange={e => {
@@ -100,7 +100,7 @@ export default function Kalkulator() {
             </select>
           </div>
           <div className="flex flex-col gap-1.5">
-            <label className="text-[0.95rem] font-semibold text-white/90">Jenis Kendaraan</label>
+            <label className="text-sm font-semibold text-white/90">Jenis Kendaraan</label>
             <select className="bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold appearance-none cursor-pointer" value={jenis} onChange={e => setJenis(e.target.value as JenisKendaraan)}>
               <option value="konvensional" style={{background:"#163352"}}>Mobil Konvensional (BBM)</option>
               <option value="listrik" style={{background:"#163352"}}>Mobil Listrik (EV)</option>
@@ -111,14 +111,14 @@ export default function Kalkulator() {
         {/* Row 2 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
           <div className="flex flex-col gap-1.5">
-            <label className="text-[0.95rem] font-semibold text-white/90">Jenis Perlindungan</label>
+            <label className="text-sm font-semibold text-white/90">Jenis Perlindungan</label>
             <select className="bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold appearance-none cursor-pointer" value={tipe} onChange={e => setTipe(e.target.value as TipePerlindungan)}>
               <option value="allrisk" style={{background:"#163352"}}>Comprehensive / All Risk</option>
               <option value="tlo" style={{background:"#163352"}}>TLO (Total Loss Only)</option>
             </select>
           </div>
           <div className="flex flex-col gap-1.5">
-            <label className="text-[0.95rem] font-semibold text-white/90">Periode Asuransi</label>
+            <label className="text-sm font-semibold text-white/90">Periode Asuransi</label>
             <select className="bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold appearance-none cursor-pointer" value={periode} onChange={e => setPeriode(Number(e.target.value))}>
               <option value={12} style={{background:"#163352"}}>1 Tahun (12 bulan)</option>
               <option value={6} style={{background:"#163352"}}>6 Bulan</option>
@@ -130,7 +130,7 @@ export default function Kalkulator() {
         {/* Row 3 */}
         <div className="mt-5">
           <div className="flex flex-col gap-1.5">
-            <label className="text-[0.95rem] font-semibold text-white/90">Harga Kendaraan (Rp)</label>
+            <label className="text-sm font-semibold text-white/90">Harga Kendaraan (Rp)</label>
             <input
               type="number"
               placeholder="Contoh: 250000000"
@@ -169,7 +169,7 @@ export default function Kalkulator() {
             {/* Estimasi premi — highlight box */}
             <div className="mt-3 bg-gold/15 border border-gold/40 rounded-lg p-4">
               <div className="text-gold2 text-sm font-semibold mb-1">Estimasi Premi / Tahun</div>
-              <div className="text-gold font-heading text-[1.6rem] font-bold leading-tight">{formatRp(hasil.premi)}</div>
+              <div className="text-gold font-heading text-xl font-bold leading-tight">{formatRp(hasil.premi)}</div>
               <div className="text-gold2/80 text-sm mt-0.5">per tahun</div>
             </div>
 
