@@ -46,6 +46,20 @@ export const metadata: Metadata = {
     title: "Asuransi Jogja – Konsultan Asuransi Kerugian Yogyakarta",
     description: "Konsultasi asuransi kerugian gratis. Kendaraan, properti, kargo, engineering, liability, surety bond.",
   },
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    other: [
+      { rel: "manifest", url: "/site.webmanifest" },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
