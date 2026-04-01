@@ -25,7 +25,7 @@ export default function About() {
             <div className="font-heading text-white text-[1.3rem] font-bold leading-tight">Rio MD</div>
             <div className="text-gold2 text-sm font-medium mt-0.5">Konsultan Asuransi Kerugian</div>
             <div className="flex items-center gap-2 mt-2 flex-wrap">
-              <span className="bg-gold text-navy text-xs font-bold px-3 py-1 rounded-full">📍 Yogyakarta, DIY</span>
+              <span className="bg-gold text-navy text-xs font-bold px-3 py-1 rounded-full">📍 , DIY</span>
               <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">11 Tahun</span>
             </div>
           </div>
@@ -42,7 +42,7 @@ export default function About() {
           </p>
           <ul className="flex flex-col gap-3 mt-5">
             {[
-              "11 tahun pengalaman langsung di lini asuransi kerugian Yogyakarta",
+              "11 tahun pengalaman langsung di lini asuransi kerugian",
               "Klien dari kalangan pribadi, pelaku usaha kecil, hingga perusahaan skala menengah",
               "Familiar dengan hampir semua produk asuransi kerugian — dari kendaraan hingga surety bond",
               "Setiap konsultasi disampaikan apa adanya, termasuk hal-hal yang sering disembunyikan agen lain",
