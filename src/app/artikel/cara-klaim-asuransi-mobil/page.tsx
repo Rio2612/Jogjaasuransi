@@ -96,7 +96,7 @@ const schemaArtikel = {
   "headline": "Cara Klaim Asuransi Mobil: Panduan Lengkap Step-by-Step",
   "description": "Panduan lengkap cara klaim asuransi kendaraan di Yogyakarta — dokumen, langkah, dan tips agar klaim tidak ditolak.",
   "url": "https://asuransijogja.biz.id/artikel/cara-klaim-asuransi-mobil",
-  "author": { "@type": "Person", "name": "Rio Mardiansyah" },
+  "author": { "@type": "Person", "name": "Rio MD" },
   "publisher": { "@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id" },
   "inLanguage": "id-ID",
   "mainEntityOfPage": { "@type": "WebPage", "@id": "https://asuransijogja.biz.id/artikel/cara-klaim-asuransi-mobil" },
@@ -158,7 +158,7 @@ export default function CaraKlaimMobilPage() {
                   <div className="bg-navy text-gold font-heading font-bold text-sm w-10 h-10 rounded-full flex items-center justify-center">{l.no}</div>
                 </div>
                 <div>
-                  <div className="font-heading text-navy font-bold text-[1.05rem] mb-2 flex items-center gap-2">{l.icon} {l.judul}</div>
+                  <div className="font-heading text-navy font-bold text-lg mb-2 flex items-center gap-2">{l.icon} {l.judul}</div>
                   <p className="text-base leading-[1.8] text-[#64748B]">{l.isi}</p>
                 </div>
               </div>

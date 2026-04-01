@@ -64,7 +64,7 @@ const schemaArtikel = {
   "headline": "Cara Menghitung Nilai Asuransi yang Tepat – Hindari Underinsurance",
   "description": "Panduan lengkap cara menghitung nilai pertanggungan asuransi yang benar untuk kendaraan, properti, dan aset bisnis.",
   "url": "https://asuransijogja.biz.id/artikel/cara-menghitung-nilai-asuransi",
-  "author": { "@type": "Person", "name": "Rio Mardiansyah" },
+  "author": { "@type": "Person", "name": "Rio MD" },
   "publisher": { "@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id" },
   "inLanguage": "id-ID",
 };

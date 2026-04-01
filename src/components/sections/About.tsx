@@ -13,7 +13,7 @@ export default function About() {
 
           <Image
             src="/rio-mardiansyah.jpg"
-            alt="Rio Mardiansyah – Konsultan Asuransi Kerugian Yogyakarta"
+            alt="Rio MD – Konsultan Asuransi Kerugian Yogyakarta"
             fill
             className="object-cover object-top"
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -22,7 +22,7 @@ export default function About() {
 
           {/* Badge nama di atas foto */}
           <div className="absolute bottom-0 left-0 right-0 z-20 px-6 pb-6 pt-10">
-            <div className="font-heading text-white text-[1.3rem] font-bold leading-tight">Rio Mardiansyah</div>
+            <div className="font-heading text-white text-[1.3rem] font-bold leading-tight">Rio MD</div>
             <div className="text-gold2 text-sm font-medium mt-0.5">Konsultan Asuransi Kerugian</div>
             <div className="flex items-center gap-2 mt-2 flex-wrap">
               <span className="bg-gold text-navy text-xs font-bold px-3 py-1 rounded-full">📍 Yogyakarta, DIY</span>
@@ -35,10 +35,10 @@ export default function About() {
         <div>
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Tentang Konsultan</div>
           <h2 className="font-heading text-[clamp(1.9rem,3vw,2.9rem)] leading-[1.22] text-navy">
-            Kenali Rio Mardiansyah,<br />Konsultan Anda
+            Kenali Rio MD,<br />Konsultan Anda
           </h2>
           <p className="text-lg leading-[1.85] text-[#64748B] max-w-[560px] mt-3">
-            Dengan pengalaman lebih dari 10 tahun di bidang asuransi kerugian, Rio Mardiansyah hadir sebagai konsultan independen yang berkomitmen memberikan solusi perlindungan terbaik — bukan sekadar menjual polis.
+            Dengan pengalaman lebih dari 10 tahun di bidang asuransi kerugian, Rio MD hadir sebagai konsultan independen yang berkomitmen memberikan solusi perlindungan terbaik — bukan sekadar menjual polis.
           </p>
           <ul className="flex flex-col gap-3 mt-5">
             {[

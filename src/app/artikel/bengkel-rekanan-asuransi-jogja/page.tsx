@@ -44,7 +44,7 @@ const schemaArtikel = {
   "headline": "Bengkel Rekanan Asuransi di Jogja: Panduan Memilih yang Tepat",
   "description": "Panduan memilih bengkel rekanan asuransi yang tepat di Yogyakarta untuk proses klaim yang lancar.",
   "url": "https://asuransijogja.biz.id/artikel/bengkel-rekanan-asuransi-jogja",
-  "author": { "@type": "Person", "name": "Rio Mardiansyah" },
+  "author": { "@type": "Person", "name": "Rio MD" },
   "publisher": { "@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id" },
   "inLanguage": "id-ID",
 };
