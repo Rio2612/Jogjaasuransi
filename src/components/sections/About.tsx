@@ -26,7 +26,7 @@ export default function About() {
             <div className="text-gold2 text-sm font-medium mt-0.5">Konsultan Asuransi Kerugian</div>
             <div className="flex items-center gap-2 mt-2 flex-wrap">
               <span className="bg-gold text-navy text-xs font-bold px-3 py-1 rounded-full">📍 Yogyakarta, DIY</span>
-              <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">10+ Tahun</span>
+              <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">11 Tahun</span>
             </div>
           </div>
         </div>
@@ -38,15 +38,15 @@ export default function About() {
             Kenali Rio MD,<br />Konsultan Anda
           </h2>
           <p className="text-lg leading-[1.85] text-[#64748B] max-w-[560px] mt-3">
-            Dengan pengalaman lebih dari 10 tahun di bidang asuransi kerugian, Rio MD hadir sebagai konsultan independen yang berkomitmen memberikan solusi perlindungan terbaik — bukan sekadar menjual polis.
+            Sebelas tahun berkecimpung di dunia asuransi kerugian mengajarkan Rio MD satu hal: klien butuh konsultan yang berpihak pada mereka — bukan agen yang sekadar mengejar komisi penjualan polis.
           </p>
           <ul className="flex flex-col gap-3 mt-5">
             {[
-              "Pengalaman 10+ tahun di industri asuransi kerugian",
-              "Melayani klien personal, UMKM, hingga korporasi di Yogyakarta",
-              "Menguasai seluruh lini produk asuransi kerugian (kecuali Marine Hull)",
-              "Konsultasi jujur dan transparan, termasuk penjelasan klausul pengecualian",
-              "Pendampingan purna jual dan monitoring polis aktif sepanjang periode",
+              "11 tahun pengalaman langsung di lini asuransi kerugian Yogyakarta",
+              "Klien dari kalangan pribadi, pelaku usaha kecil, hingga perusahaan skala menengah",
+              "Familiar dengan hampir semua produk asuransi kerugian — dari kendaraan hingga surety bond",
+              "Setiap konsultasi disampaikan apa adanya, termasuk hal-hal yang sering disembunyikan agen lain",
+              "Hadir mendampingi klien tidak hanya saat membeli, tapi juga saat proses klaim berlangsung",
             ].map(li => (
               <li key={li} className="flex gap-2.5 items-start text-[1rem] leading-[1.75] text-[#64748B]">
                 <span className="text-gold font-bold flex-shrink-0 mt-0.5">✓</span>{li}
