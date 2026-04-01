@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "Asuransi Jogja – Konsultan asuransi kerugian independen di Yogyakarta. Melayani asuransi kendaraan, properti, engineering, kargo, liability, dan surety bond untuk personal dan korporasi.",
   keywords:
     "asuransi jogja, asuransi kerugian yogyakarta, konsultan asuransi jogja, asuransi mobil jogja, asuransi kebakaran jogja, asuransi properti jogja, asuransi kos jogja",
-  authors: [{ name: "Rio Mardiansyah" }],
+  authors: [{ name: "Rio MD" }],
   alternates: { canonical: BASE_URL },
   openGraph: {
     title: "Asuransi Jogja – Konsultan Asuransi Kerugian Terpercaya",
@@ -79,9 +79,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         "alternateName": "AsuransiJogja.biz.id",
         "description": "Konsultan asuransi kerugian independen di Yogyakarta dengan pengalaman 10+ tahun.",
         "url": BASE_URL,
-        "telephone": "+6208131556592",
-        "email": "marketing.btm@gmail.com",
-        "founder": { "@type": "Person", "name": "Rio Mardiansyah" },
+        "telephone": "+628778165823",
+        "email": "rio@asuransijogja.biz.id",
+        "founder": { "@type": "Person", "name": "Rio MD" },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Yogyakarta",
@@ -107,7 +107,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Surety Bond", "url": `${BASE_URL}/asuransi-surety-bond` } },
           ],
         },
-        "sameAs": [`https://wa.me/6208131556592`],
+        "sameAs": [`https://wa.me/628778165823`],
       },
       {
         "@type": "WebSite",

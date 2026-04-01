@@ -1,8 +1,8 @@
 // ─── KONTAK ───────────────────────────────────────────────────────────────────
 export const KONTAK = {
-  wa: "6208131556592",
-  waDisplay: "0813-1556-592",
-  email: "marketing.btm@gmail.com",
+  wa: "628778165823",
+  waDisplay: "0877-8165-8231",
+  email: "rio@asuransijogja.biz.id",
   kota: "Yogyakarta, Daerah Istimewa Yogyakarta",
 } as const;
 
