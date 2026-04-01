@@ -80,7 +80,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         "description": "Konsultan asuransi kerugian independen di Yogyakarta dengan pengalaman 10+ tahun.",
         "url": BASE_URL,
         "telephone": "+628778165823",
-        "email": "marketing.btm@gmail.com",
+        "email": "rio@asuransijogja.biz.id",
         "founder": { "@type": "Person", "name": "Rio MD" },
         "address": {
           "@type": "PostalAddress",

@@ -2,7 +2,7 @@
 export const KONTAK = {
   wa: "628778165823",
   waDisplay: "0877-8165-8231",
-  email: "marketing.btm@gmail.com",
+  email: "rio@asuransijogja.biz.id",
   kota: "Yogyakarta, Daerah Istimewa Yogyakarta",
 } as const;
 
