@@ -1,6 +1,6 @@
 // ─── KONTAK ───────────────────────────────────────────────────────────────────
 export const KONTAK = {
-  wa: "628778165823",
+  wa: "6287781658231",
   waDisplay: "0877-8165-8231",
   email: "rio@asuransijogja.biz.id",
   kota: "Yogyakarta, Daerah Istimewa Yogyakarta",
