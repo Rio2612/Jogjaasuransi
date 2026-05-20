@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/asuransi-properti/property-all-risk`,      lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/asuransi-properti/hotel-vila`,             lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/asuransi-properti/banjir-gempa`,           lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/asuransi-properti/vila-homestay`,          lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     // Kendaraan
     { url: `${base}/asuransi-kendaraan`,                       lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/asuransi-kendaraan/mobil`,                 lastModified: now, changeFrequency: "monthly", priority: 0.8 },
@@ -46,5 +47,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/artikel/cara-menghitung-nilai-asuransi`,               lastModified: now, changeFrequency: "monthly",  priority: 0.7 },
     { url: `${base}/artikel/asuransi-kos-jogja`,                                 lastModified: now, changeFrequency: "monthly",  priority: 0.75 },
     { url: `${base}/artikel/asuransi-rumah-tinggal-jogja`,                       lastModified: now, changeFrequency: "monthly",  priority: 0.75 },
+    { url: `${base}/artikel/asuransi-vila-homestay-jogja`,                 lastModified: now, changeFrequency: "monthly",  priority: 0.8 },
   ];
 }
