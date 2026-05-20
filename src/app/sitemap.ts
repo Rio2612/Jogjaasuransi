@@ -44,5 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/artikel/bengkel-rekanan-asuransi-jogja`,               lastModified: now, changeFrequency: "monthly",  priority: 0.7 },
     { url: `${base}/artikel/pentingnya-asuransi-dunia-usaha-jogja`,        lastModified: now, changeFrequency: "monthly",  priority: 0.7 },
     { url: `${base}/artikel/cara-menghitung-nilai-asuransi`,               lastModified: now, changeFrequency: "monthly",  priority: 0.7 },
+    { url: `${base}/artikel/asuransi-kos-jogja`,                                 lastModified: now, changeFrequency: "monthly",  priority: 0.75 },
+    { url: `${base}/artikel/asuransi-rumah-tinggal-jogja`,                       lastModified: now, changeFrequency: "monthly",  priority: 0.75 },
   ];
 }
