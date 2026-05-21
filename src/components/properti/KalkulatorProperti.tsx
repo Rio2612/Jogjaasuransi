@@ -202,8 +202,8 @@ export default function KalkulatorProperti() {
   const gempaBisaDipilih = kelas === 'kelas1';
 
   const selectCls = "bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold appearance-none cursor-pointer w-full";
-  const inputCls  = "bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold placeholder-white/40 w-full";
-  const labelCls  = "text-[0.95rem] font-semibold text-white/75 mb-1.5 block";
+  const inputCls  = "bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold placeholder-white/50 w-full";
+  const labelCls  = "text-[0.95rem] font-semibold text-white mb-1.5 block";
 
   return (
     <section id="kalkulator" className="py-20 px-[5vw] bg-navy">
@@ -253,7 +253,7 @@ export default function KalkulatorProperti() {
               value={nilai}
               onChange={e => setNilai(formatInput(e.target.value))}
             />
-            <span className="text-white/40 text-xs mt-1 block">Nilai penggantian bangunan (bukan harga tanah)</span>
+            <span className="text-white/65 text-xs mt-1 block">Nilai penggantian bangunan (bukan harga tanah)</span>
           </div>
           <div>
             <label className={labelCls}>Nilai Perabotan (Rp) <span className="text-white/35 font-normal text-xs">— opsional</span></label>
@@ -265,7 +265,7 @@ export default function KalkulatorProperti() {
               value={prabotan}
               onChange={e => setPrabotan(formatInput(e.target.value))}
             />
-            <span className="text-white/40 text-xs mt-1 block">Perabot, elektronik, isi bangunan</span>
+            <span className="text-white/65 text-xs mt-1 block">Perabot, elektronik, isi bangunan</span>
           </div>
         </div>
 
@@ -273,7 +273,7 @@ export default function KalkulatorProperti() {
         <div className="mt-5">
           <label className={labelCls}>Perluasan Jaminan (opsional)</label>
           <div className="flex gap-4 flex-wrap mt-1">
-            <label className="flex items-center gap-2 cursor-pointer text-white/80 text-sm">
+            <label className="flex items-center gap-2 cursor-pointer text-white text-sm">
               <input
                 type="checkbox"
                 checked={banjir}
@@ -283,20 +283,20 @@ export default function KalkulatorProperti() {
               🌊 Banjir
             </label>
 
-            <label className={`flex items-center gap-2 text-sm ${gempaBisaDipilih ? "cursor-pointer text-white/80" : "cursor-not-allowed text-white/35"}`}>
+            <label className={`flex items-center gap-2 text-sm ${gempaBisaDipilih ? "cursor-pointer text-white" : "cursor-not-allowed text-white/55"}`}>
               <input
                 type="checkbox"
                 checked={gempa}
                 disabled={!gempaBisaDipilih}
                 onChange={e => setGempa(e.target.checked)}
-                className="accent-gold w-4 h-4 disabled:opacity-30"
+                className="accent-gold w-4 h-4 disabled:opacity-40"
               />
               🌋 Gempa Bumi
               {gempa && gempaBisaDipilih && (
-                <span className="text-gold/70 text-xs">(polis terpisah)</span>
+                <span className="text-gold text-xs">(polis terpisah)</span>
               )}
               {!gempaBisaDipilih && (
-                <span className="text-white/30 text-xs">(hanya Kelas 1)</span>
+                <span className="text-white/55 text-xs">(hanya Kelas 1)</span>
               )}
             </label>
           </div>
@@ -316,14 +316,14 @@ export default function KalkulatorProperti() {
                   </option>
                 ))}
               </select>
-              <span className="text-white/40 text-xs mt-1 block">
+              <span className="text-white/65 text-xs mt-1 block">
                 Bantul = Zona 5 · Sleman, Gunungkidul, Kulon Progo, Kota Yogyakarta = Zona 4
               </span>
             </div>
           )}
 
           {gempa && gempaBisaDipilih && (
-            <p className="text-gold/60 text-xs mt-3 leading-relaxed">
+            <p className="text-gold text-xs mt-3 leading-relaxed">
               ℹ️ Gempa bumi diterbitkan sebagai polis tersendiri — biaya admin dihitung per polis.
             </p>
           )}
@@ -348,24 +348,24 @@ export default function KalkulatorProperti() {
             {/* Total Pertanggungan */}
             {parseInput(prabotan) > 0 && (
               <div className="flex justify-between items-center py-1.5 border-b border-gold/15 mb-3">
-                <span className="text-white/50 text-xs">Total Pertanggungan (Bangunan + Perabotan)</span>
-                <span className="text-white/70 text-xs font-semibold">{formatRp(hasil.totalPertanggungan)}</span>
+                <span className="text-white/80 text-xs">Total Pertanggungan (Bangunan + Perabotan)</span>
+                <span className="text-white text-xs font-semibold">{formatRp(hasil.totalPertanggungan)}</span>
               </div>
             )}
 
             {/* POLIS 1 */}
             <div className={hasil.duaPolis ? "mb-4" : ""}>
               {hasil.duaPolis && (
-                <div className="text-white/45 text-[0.7rem] font-bold tracking-widest uppercase mb-2">
+                <div className="text-white/75 text-[0.7rem] font-bold tracking-widest uppercase mb-2">
                   Polis 1 — Kebakaran{banjir ? " + Banjir" : ""}
                 </div>
               )}
               <div className="flex justify-between items-center py-1.5 border-t border-gold/15">
-                <span className="text-white/70 text-sm">Premi / Tahun</span>
+                <span className="text-white/90 text-sm">Premi / Tahun</span>
                 <span className="text-white font-semibold">{formatRp(hasil.premiKebakaran)}</span>
               </div>
               <div className="flex justify-between items-center py-1.5 border-t border-gold/15">
-                <span className="text-white/70 text-sm">Biaya Administrasi</span>
+                <span className="text-white/90 text-sm">Biaya Administrasi</span>
                 <span className="text-white font-semibold">{formatRp(hasil.adminPolis1)}</span>
               </div>
               {hasil.duaPolis && (
@@ -379,19 +379,19 @@ export default function KalkulatorProperti() {
             {/* POLIS 2 — Gempa */}
             {hasil.duaPolis && (
               <div className="mb-2 mt-2">
-                <div className="text-white/45 text-[0.7rem] font-bold tracking-widest uppercase mb-2">
+                <div className="text-white/75 text-[0.7rem] font-bold tracking-widest uppercase mb-2">
                   Polis 2 — Gempa Bumi · {WILAYAH_OPTIONS.find(w => w.value === wilayah)?.label}
                   {" "}
-                  <span className="text-gold/50 normal-case">
+                  <span className="text-gold normal-case">
                     ({WILAYAH_OPTIONS.find(w => w.value === wilayah)?.zona === "zona5" ? "Zona 5" : "Zona 4"})
                   </span>
                 </div>
                 <div className="flex justify-between items-center py-1.5 border-t border-gold/15">
-                  <span className="text-white/70 text-sm">Premi / Tahun</span>
+                  <span className="text-white/90 text-sm">Premi / Tahun</span>
                   <span className="text-white font-semibold">{formatRp(hasil.premiGempa)}</span>
                 </div>
                 <div className="flex justify-between items-center py-1.5 border-t border-gold/15">
-                  <span className="text-white/70 text-sm">Biaya Administrasi</span>
+                  <span className="text-white/90 text-sm">Biaya Administrasi</span>
                   <span className="text-white font-semibold">{formatRp(hasil.adminPolis2)}</span>
                 </div>
                 <div className="flex justify-between items-center py-1.5 border-t border-gold/20">
@@ -409,7 +409,7 @@ export default function KalkulatorProperti() {
               <span className="text-gold text-[1.15rem] font-bold">{formatRp(hasil.totalPremiAkhir)}</span>
             </div>
 
-            <p className="text-white/40 text-xs mt-3 leading-relaxed">
+            <p className="text-white/70 text-xs mt-3 leading-relaxed">
               * Estimasi berdasarkan tarif referensi pasar. Premi final ditentukan perusahaan asuransi setelah survei lokasi.
             </p>
 
@@ -430,7 +430,7 @@ export default function KalkulatorProperti() {
             <div className="font-heading text-white text-base font-semibold mb-1">
               Lengkapi Data Anda
             </div>
-            <p className="text-white/45 text-xs mb-5 leading-relaxed">
+            <p className="text-white/75 text-xs mb-5 leading-relaxed">
               Isi data di bawah agar kami bisa menyiapkan penawaran yang tepat untuk properti Anda.
             </p>
 
@@ -456,7 +456,7 @@ export default function KalkulatorProperti() {
                 value={alamat}
                 onChange={e => setAlamat(e.target.value)}
               />
-              <span className="text-white/35 text-xs mt-1 block">
+              <span className="text-white/65 text-xs mt-1 block">
                 Isi dengan alamat lengkap bangunan yang akan diasuransikan
               </span>
             </div>
@@ -475,7 +475,7 @@ export default function KalkulatorProperti() {
             </a>
 
             {!formValid && (
-              <p className="text-white/35 text-xs text-center mt-2">
+              <p className="text-white/65 text-xs text-center mt-2">
                 Lengkapi nama dan alamat pertanggungan terlebih dahulu
               </p>
             )}
