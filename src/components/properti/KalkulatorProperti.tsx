@@ -2,6 +2,18 @@
 import { useState, useRef } from "react";
 import { KONTAK, formatRp } from "@/lib/data";
 
+// ─── INPUT FORMAT HELPERS ────────────────────────────────────────────────────
+// Format angka dengan titik sebagai pemisah ribuan: 100000000 → "100.000.000"
+function formatInput(val: string): string {
+  const digits = val.replace(/\D/g, "");
+  if (!digits) return "";
+  return parseInt(digits, 10).toLocaleString("id-ID");
+}
+// Strip titik lalu parse ke number
+function parseInput(val: string): number {
+  return parseFloat(val.replace(/\./g, "")) || 0;
+}
+
 // ─── RATE TABLES ────────────────────────────────────────────────────────────
 const RATE_PROPERTI_ALL: Record<string, Record<string, number>> = {
   rumah:  { kelas1: 0.0764, kelas2: 0.084,  kelas3: 0.420 },
@@ -103,8 +115,8 @@ export default function KalkulatorProperti() {
   };
 
   const hitung = () => {
-    const nilaiBangunan  = parseFloat(nilai);
-    const nilaiPerabotan = parseFloat(prabotan) || 0;
+    const nilaiBangunan  = parseInput(nilai);
+    const nilaiPerabotan = parseInput(prabotan);
 
     if (!nilaiBangunan || nilaiBangunan < 10_000_000) {
       setError("Masukkan nilai bangunan minimal Rp 10.000.000");
@@ -145,7 +157,7 @@ export default function KalkulatorProperti() {
     if (!hasil) return "";
     const jenisLabel   = { rumah:"Rumah Tinggal", kos:"Kos-kosan", ruko:"Ruko / Toko", gudang:"Gudang", kantor:"Kantor" }[jenis] ?? jenis;
     const kelasLabel   = { kelas1:"Kelas 1 (Beton/Bata)", kelas2:"Kelas 2 (Semi Permanen)", kelas3:"Kelas 3 (Kayu/Bambu)" }[kelas] ?? kelas;
-    const nilaiPrabot  = parseFloat(prabotan) || 0;
+    const nilaiPrabot  = parseInput(prabotan);
     const perluasanList = [banjir && "Banjir", gempa && hasil.duaPolis && "Gempa Bumi (Polis Terpisah)"].filter(Boolean).join(" + ") || "Tidak ada";
 
     let msg = `Halo Pak Rio, saya ingin konsultasi asuransi properti.\n\n`;
@@ -154,7 +166,7 @@ export default function KalkulatorProperti() {
     msg += `- Alamat Pertanggungan: ${alamat}\n`;
     msg += `- Jenis: ${jenisLabel}\n`;
     msg += `- Konstruksi: ${kelasLabel}\n`;
-    msg += `- Nilai Bangunan: ${formatRp(parseFloat(nilai))}\n`;
+    msg += `- Nilai Bangunan: ${formatRp(parseInput(nilai))}\n`;
     if (nilaiPrabot > 0) msg += `- Nilai Perabotan: ${formatRp(nilaiPrabot)}\n`;
     msg += `- Total Pertanggungan: ${formatRp(hasil.totalPertanggungan)}\n`;
     msg += `- Perluasan: ${perluasanList}\n\n`;
@@ -226,22 +238,24 @@ export default function KalkulatorProperti() {
           <div>
             <label className={labelCls}>Nilai Bangunan (Rp)</label>
             <input
-              type="number"
-              placeholder="Contoh: 500000000"
+              type="text"
+              inputMode="numeric"
+              placeholder="Contoh: 500.000.000"
               className={inputCls}
               value={nilai}
-              onChange={e => setNilai(e.target.value)}
+              onChange={e => setNilai(formatInput(e.target.value))}
             />
             <span className="text-white/40 text-xs mt-1 block">Nilai penggantian bangunan (bukan harga tanah)</span>
           </div>
           <div>
             <label className={labelCls}>Nilai Perabotan (Rp) <span className="text-white/35 font-normal text-xs">— opsional</span></label>
             <input
-              type="number"
-              placeholder="Contoh: 50000000"
+              type="text"
+              inputMode="numeric"
+              placeholder="Contoh: 50.000.000"
               className={inputCls}
               value={prabotan}
-              onChange={e => setPrabotan(e.target.value)}
+              onChange={e => setPrabotan(formatInput(e.target.value))}
             />
             <span className="text-white/40 text-xs mt-1 block">Perabot, elektronik, isi bangunan</span>
           </div>
