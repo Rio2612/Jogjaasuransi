@@ -5,11 +5,11 @@ import { KONTAK, formatRp } from "@/lib/data";
 // Tarif kebakaran estimasi berdasarkan zona risiko & konstruksi
 // Kelas konstruksi: 1 = beton/bata (permanen), 2 = semi permanen, 3 = kayu/bambu
 const RATE_PROPERTI: Record<string, Record<string, number>> = {
-  rumah:  { kelas1: 0.105, kelas2: 0.189, kelas3: 0.340 },
-  kos:    { kelas1: 0.120, kelas2: 0.210, kelas3: 0.380 },
-  ruko:   { kelas1: 0.135, kelas2: 0.225, kelas3: 0.400 },
-  gudang: { kelas1: 0.145, kelas2: 0.240, kelas3: 0.420 },
-  kantor: { kelas1: 0.110, kelas2: 0.195, kelas3: 0.355 },
+rumah:  { kelas1: 0.059, kelas2: 0.084, kelas3: 0.420 },
+  kos:    { kelas1: 0.063, kelas2: 0.089, kelas3: 0.445 },
+  ruko:   { kelas1: 0.069, kelas2: 0.098, kelas3: 0.490 },
+  gudang: { kelas1: 0.075, kelas2: 0.105, kelas3: 0.525 },
+  kantor: { kelas1: 0.055, kelas2: 0.078, kelas3: 0.390 },
 };
 
 const SURCHARGE_BANJIR = 0.075;
