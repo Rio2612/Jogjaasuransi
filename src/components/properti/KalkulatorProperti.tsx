@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { KONTAK, formatRp } from "@/lib/data";
 
 // ─── INPUT FORMAT HELPERS ────────────────────────────────────────────────────
@@ -122,12 +122,6 @@ export default function KalkulatorProperti() {
   // Lead form states
   const [nama,         setNama]         = useState("");
   const [alamat,       setAlamat]       = useState("");
-  const [fotoPreview,  setFotoPreview]  = useState<string | null>(null);
-  const [fotoBase64,   setFotoBase64]   = useState<string | null>(null);
-  const [fotoNama,     setFotoNama]     = useState("");
-
-  const fileInputRef   = useRef<HTMLInputElement>(null);
-  const cameraInputRef = useRef<HTMLInputElement>(null);
 
   // Gempa hanya tersedia untuk kelas 1 — auto-uncheck jika ganti konstruksi
   const handleKelasChange = (val: string) => {
@@ -164,21 +158,6 @@ export default function KalkulatorProperti() {
     setShowForm(false);
     setNama("");
     setAlamat("");
-    setFotoPreview(null);
-    setFotoBase64(null);
-    setFotoNama("");
-  };
-
-  const handleFotoChange = (file: File | undefined) => {
-    if (!file) return;
-    setFotoNama(file.name);
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const result = e.target?.result as string;
-      setFotoPreview(result);
-      setFotoBase64(result.split(",")[1] ?? null);
-    };
-    reader.readAsDataURL(file);
   };
 
   const buildWaMsg = () => {
@@ -213,7 +192,7 @@ export default function KalkulatorProperti() {
     }
 
     msg += `\n*Total Estimasi${hasil.duaPolis ? " (2 Polis)" : ""}: ${formatRp(hasil.totalPremiAkhir)}*\n\n`;
-    if (fotoNama) msg += `_(Foto objek sudah dilampirkan)_\n\n`;
+    msg += `_(Mohon kirim foto tampak depan bangunan setelah chat ini terbuka)_\n\n`;
     msg += `Mohon info penawaran resminya. Terima kasih.`;
 
     return encodeURIComponent(msg);
@@ -480,50 +459,6 @@ export default function KalkulatorProperti() {
               <span className="text-white/35 text-xs mt-1 block">
                 Isi dengan alamat lengkap bangunan yang akan diasuransikan
               </span>
-            </div>
-
-            {/* Upload Foto */}
-            <div className="mb-5">
-              <label className={labelCls}>Foto Objek <span className="text-white/35 font-normal text-xs">— opsional</span></label>
-              <div className="flex gap-3 flex-wrap">
-                <button
-                  type="button"
-                  onClick={() => fileInputRef.current?.click()}
-                  className="flex items-center gap-2 bg-navy2 border border-white/20 text-white/80 px-4 py-2.5 rounded-lg text-sm font-medium hover:border-gold/50 hover:text-white transition-all cursor-pointer"
-                >
-                  📎 Upload Foto
-                </button>
-                <button
-                  type="button"
-                  onClick={() => cameraInputRef.current?.click()}
-                  className="flex items-center gap-2 bg-navy2 border border-white/20 text-white/80 px-4 py-2.5 rounded-lg text-sm font-medium hover:border-gold/50 hover:text-white transition-all cursor-pointer"
-                >
-                  📷 Ambil Foto
-                </button>
-              </div>
-
-              <input ref={fileInputRef} type="file" accept="image/*" className="hidden"
-                onChange={e => handleFotoChange(e.target.files?.[0])} />
-              <input ref={cameraInputRef} type="file" accept="image/*" capture="environment" className="hidden"
-                onChange={e => handleFotoChange(e.target.files?.[0])} />
-
-              {fotoPreview ? (
-                <div className="mt-3 relative inline-block">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={fotoPreview} alt="Preview"
-                    className="w-full max-w-[280px] h-40 object-cover rounded-lg border border-gold/30" />
-                  <button
-                    type="button"
-                    onClick={() => { setFotoPreview(null); setFotoBase64(null); setFotoNama(""); }}
-                    className="absolute top-1.5 right-1.5 bg-black/60 text-white w-6 h-6 rounded-full text-xs flex items-center justify-center hover:bg-black/80 transition-colors cursor-pointer border-none"
-                  >✕</button>
-                  <p className="text-white/40 text-xs mt-1 truncate max-w-[280px]">{fotoNama}</p>
-                </div>
-              ) : (
-                <p className="text-white/35 text-xs mt-2">
-                  Foto tampak depan bangunan membantu proses penawaran lebih cepat
-                </p>
-              )}
             </div>
 
             {/* CTA WhatsApp */}
