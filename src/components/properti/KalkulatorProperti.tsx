@@ -23,22 +23,32 @@ const RATE_PROPERTI_ALL: Record<string, Record<string, number>> = {
   kantor: { kelas1: 0.055,  kelas2: 0.078,  kelas3: 0.390 },
 };
 
-// Rate gempa per wilayah/kabupaten (dalam persen %)
-// bantul=0.05, gunungkidul/sleman/kulonprogo/kota=0.04
-const RATE_GEMPA_WILAYAH: Record<string, number> = {
-  bantul:          0.05,
-  gunungkidul:     0.04,
-  sleman:          0.04,
-  kulonprogo:      0.04,
-  kota_yogyakarta: 0.04,
+// Rate gempa per zona dan jenis properti (dalam persen %)
+// Zona 4: Gunungkidul, Sleman, Kulon Progo, Kota Yogyakarta
+// Zona 5: Bantul
+const RATE_GEMPA_ZONA: Record<string, Record<string, number>> = {
+  zona4: {
+    rumah:   0.135, // 1.35‰
+    kos:     0.143, // 1.43‰
+    ruko:    0.143, // 1.43‰
+    gudang:  0.143, // 1.43‰
+    kantor:  0.143, // 1.43‰
+  },
+  zona5: {
+    rumah:   0.160, // 1.60‰
+    kos:     0.190, // 1.90‰
+    ruko:    0.190, // 1.90‰
+    gudang:  0.190, // 1.90‰
+    kantor:  0.190, // 1.90‰
+  },
 };
 
 const WILAYAH_OPTIONS = [
-  { value: "bantul",          label: "Bantul" },
-  { value: "gunungkidul",     label: "Gunungkidul" },
-  { value: "sleman",          label: "Sleman" },
-  { value: "kulonprogo",      label: "Kulon Progo" },
-  { value: "kota_yogyakarta", label: "Kota Yogyakarta" },
+  { value: "bantul",          label: "Bantul",          zona: "zona5" },
+  { value: "gunungkidul",     label: "Gunungkidul",     zona: "zona4" },
+  { value: "sleman",          label: "Sleman",          zona: "zona4" },
+  { value: "kulonprogo",      label: "Kulon Progo",     zona: "zona4" },
+  { value: "kota_yogyakarta", label: "Kota Yogyakarta", zona: "zona4" },
 ];
 
 // ─── CORE CALCULATION FUNCTION ───────────────────────────────────────────────
@@ -66,7 +76,8 @@ function hitungEstimasiFinal(params: ParamsKalkulator) {
   let premiGempa = 0;
   let adminPolis2 = 0;
   if (pilihGempa && gempaTersedia && wilayahGempa) {
-    const rateGempa = RATE_GEMPA_WILAYAH[wilayahGempa] ?? 0;
+    const zona = WILAYAH_OPTIONS.find(w => w.value === wilayahGempa)?.zona ?? "zona4";
+    const rateGempa = RATE_GEMPA_ZONA[zona][jenisProperti] ?? 0;
     premiGempa = (totalPertanggungan * rateGempa) / 100;
     adminPolis2 = premiGempa < 5_000_000 ? 30_000 : 40_000;
   }
@@ -321,11 +332,13 @@ export default function KalkulatorProperti() {
               >
                 <option value="" style={{background:"#163352"}}>— Pilih wilayah —</option>
                 {WILAYAH_OPTIONS.map(w => (
-                  <option key={w.value} value={w.value} style={{background:"#163352"}}>{w.label}</option>
+                  <option key={w.value} value={w.value} style={{background:"#163352"}}>
+                    {w.label} {w.zona === "zona5" ? "(Zona 5)" : "(Zona 4)"}
+                  </option>
                 ))}
               </select>
               <span className="text-white/40 text-xs mt-1 block">
-                Rate gempa berbeda per wilayah sesuai zona risiko
+                Bantul = Zona 5 · Sleman, Gunungkidul, Kulon Progo, Kota Yogyakarta = Zona 4
               </span>
             </div>
           )}
@@ -389,6 +402,10 @@ export default function KalkulatorProperti() {
               <div className="mb-2 mt-2">
                 <div className="text-white/45 text-[0.7rem] font-bold tracking-widest uppercase mb-2">
                   Polis 2 — Gempa Bumi · {WILAYAH_OPTIONS.find(w => w.value === wilayah)?.label}
+                  {" "}
+                  <span className="text-gold/50 normal-case">
+                    ({WILAYAH_OPTIONS.find(w => w.value === wilayah)?.zona === "zona5" ? "Zona 5" : "Zona 4"})
+                  </span>
                 </div>
                 <div className="flex justify-between items-center py-1.5 border-t border-gold/15">
                   <span className="text-white/70 text-sm">Premi / Tahun</span>
