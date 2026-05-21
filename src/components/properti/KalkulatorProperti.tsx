@@ -23,13 +23,23 @@ const RATE_PROPERTI_ALL: Record<string, Record<string, number>> = {
   kantor: { kelas1: 0.055,  kelas2: 0.078,  kelas3: 0.390 },
 };
 
-const RATE_GEMPA_ALL: Record<string, Record<string, number>> = {
-  rumah:  { kelas1: 0.1350, kelas2: 0.1350, kelas3: 0.1400 },
-  kos:    { kelas1: 0.1100, kelas2: 0.1100, kelas3: 0.1300 },
-  ruko:   { kelas1: 0.1150, kelas2: 0.1150, kelas3: 0.1350 },
-  gudang: { kelas1: 0.1200, kelas2: 0.1200, kelas3: 0.1400 },
-  kantor: { kelas1: 0.0950, kelas2: 0.0950, kelas3: 0.1150 },
+// Rate gempa per wilayah/kabupaten (dalam persen %)
+// bantul=0.05, gunungkidul/sleman/kulonprogo/kota=0.04
+const RATE_GEMPA_WILAYAH: Record<string, number> = {
+  bantul:          0.05,
+  gunungkidul:     0.04,
+  sleman:          0.04,
+  kulonprogo:      0.04,
+  kota_yogyakarta: 0.04,
 };
+
+const WILAYAH_OPTIONS = [
+  { value: "bantul",          label: "Bantul" },
+  { value: "gunungkidul",     label: "Gunungkidul" },
+  { value: "sleman",          label: "Sleman" },
+  { value: "kulonprogo",      label: "Kulon Progo" },
+  { value: "kota_yogyakarta", label: "Kota Yogyakarta" },
+];
 
 // ─── CORE CALCULATION FUNCTION ───────────────────────────────────────────────
 interface ParamsKalkulator {
@@ -38,10 +48,11 @@ interface ParamsKalkulator {
   nilaiBangunan: number;
   nilaiPerabotan: number;
   pilihGempa: boolean;
+  wilayahGempa: string;
 }
 
 function hitungEstimasiFinal(params: ParamsKalkulator) {
-  const { jenisProperti, kelasKonstruksi, nilaiBangunan, nilaiPerabotan, pilihGempa } = params;
+  const { jenisProperti, kelasKonstruksi, nilaiBangunan, nilaiPerabotan, pilihGempa, wilayahGempa } = params;
 
   const totalPertanggungan = nilaiBangunan + nilaiPerabotan;
 
@@ -50,12 +61,12 @@ function hitungEstimasiFinal(params: ParamsKalkulator) {
   const premiKebakaran = (totalPertanggungan * rateKebakaran) / 100;
   const adminPolis1 = premiKebakaran < 5_000_000 ? 30_000 : 40_000;
 
-  // POLIS 2: Gempa Bumi (hanya jika dicentang DAN kelas 1)
+  // POLIS 2: Gempa Bumi (hanya jika dicentang DAN kelas 1 DAN wilayah dipilih)
   const gempaTersedia = kelasKonstruksi === 'kelas1';
   let premiGempa = 0;
   let adminPolis2 = 0;
-  if (pilihGempa && gempaTersedia) {
-    const rateGempa = RATE_GEMPA_ALL[jenisProperti][kelasKonstruksi];
+  if (pilihGempa && gempaTersedia && wilayahGempa) {
+    const rateGempa = RATE_GEMPA_WILAYAH[wilayahGempa] ?? 0;
     premiGempa = (totalPertanggungan * rateGempa) / 100;
     adminPolis2 = premiGempa < 5_000_000 ? 30_000 : 40_000;
   }
@@ -90,6 +101,7 @@ export default function KalkulatorProperti() {
   const [prabotan,  setPrabotan]  = useState("");
   const [banjir,    setBanjir]    = useState(false);
   const [gempa,     setGempa]     = useState(false);
+  const [wilayah,   setWilayah]   = useState("");
 
   // Result & UI states
   const [hasil,     setHasil]     = useState<HasilHitung | null>(null);
@@ -109,7 +121,7 @@ export default function KalkulatorProperti() {
   // Gempa hanya tersedia untuk kelas 1 — auto-uncheck jika ganti konstruksi
   const handleKelasChange = (val: string) => {
     setKelas(val);
-    if (val !== 'kelas1') setGempa(false);
+    if (val !== 'kelas1') { setGempa(false); setWilayah(""); }
     setHasil(null);
     setShowForm(false);
   };
@@ -122,6 +134,10 @@ export default function KalkulatorProperti() {
       setError("Masukkan nilai bangunan minimal Rp 10.000.000");
       return;
     }
+    if (gempa && !wilayah) {
+      setError("Pilih wilayah/kabupaten untuk jaminan gempa bumi");
+      return;
+    }
     setError("");
 
     const result = hitungEstimasiFinal({
@@ -130,6 +146,7 @@ export default function KalkulatorProperti() {
       nilaiBangunan,
       nilaiPerabotan,
       pilihGempa:      gempa,
+      wilayahGempa:    wilayah,
     });
 
     setHasil(result);
@@ -157,8 +174,9 @@ export default function KalkulatorProperti() {
     if (!hasil) return "";
     const jenisLabel   = { rumah:"Rumah Tinggal", kos:"Kos-kosan", ruko:"Ruko / Toko", gudang:"Gudang", kantor:"Kantor" }[jenis] ?? jenis;
     const kelasLabel   = { kelas1:"Kelas 1 (Beton/Bata)", kelas2:"Kelas 2 (Semi Permanen)", kelas3:"Kelas 3 (Kayu/Bambu)" }[kelas] ?? kelas;
+    const wilayahLabel = WILAYAH_OPTIONS.find(w => w.value === wilayah)?.label ?? "";
     const nilaiPrabot  = parseInput(prabotan);
-    const perluasanList = [banjir && "Banjir", gempa && hasil.duaPolis && "Gempa Bumi (Polis Terpisah)"].filter(Boolean).join(" + ") || "Tidak ada";
+    const perluasanList = [banjir && "Banjir", gempa && hasil.duaPolis && `Gempa Bumi - ${wilayahLabel} (Polis Terpisah)`].filter(Boolean).join(" + ") || "Tidak ada";
 
     let msg = `Halo Pak Rio, saya ingin konsultasi asuransi properti.\n\n`;
     msg += `*Data Properti:*\n`;
@@ -294,7 +312,26 @@ export default function KalkulatorProperti() {
           </div>
 
           {gempa && gempaBisaDipilih && (
-            <p className="text-gold/60 text-xs mt-2 leading-relaxed">
+            <div className="mt-4">
+              <label className={labelCls}>Wilayah / Kabupaten</label>
+              <select
+                className={selectCls}
+                value={wilayah}
+                onChange={e => setWilayah(e.target.value)}
+              >
+                <option value="" style={{background:"#163352"}}>— Pilih wilayah —</option>
+                {WILAYAH_OPTIONS.map(w => (
+                  <option key={w.value} value={w.value} style={{background:"#163352"}}>{w.label}</option>
+                ))}
+              </select>
+              <span className="text-white/40 text-xs mt-1 block">
+                Rate gempa berbeda per wilayah sesuai zona risiko
+              </span>
+            </div>
+          )}
+
+          {gempa && gempaBisaDipilih && (
+            <p className="text-gold/60 text-xs mt-3 leading-relaxed">
               ℹ️ Gempa bumi diterbitkan sebagai polis tersendiri — biaya admin dihitung per polis.
             </p>
           )}
@@ -317,7 +354,7 @@ export default function KalkulatorProperti() {
             </div>
 
             {/* Total Pertanggungan */}
-            {parseFloat(prabotan) > 0 && (
+            {parseInput(prabotan) > 0 && (
               <div className="flex justify-between items-center py-1.5 border-b border-gold/15 mb-3">
                 <span className="text-white/50 text-xs">Total Pertanggungan (Bangunan + Perabotan)</span>
                 <span className="text-white/70 text-xs font-semibold">{formatRp(hasil.totalPertanggungan)}</span>
@@ -351,7 +388,7 @@ export default function KalkulatorProperti() {
             {hasil.duaPolis && (
               <div className="mb-2 mt-2">
                 <div className="text-white/45 text-[0.7rem] font-bold tracking-widest uppercase mb-2">
-                  Polis 2 — Gempa Bumi
+                  Polis 2 — Gempa Bumi · {WILAYAH_OPTIONS.find(w => w.value === wilayah)?.label}
                 </div>
                 <div className="flex justify-between items-center py-1.5 border-t border-gold/15">
                   <span className="text-white/70 text-sm">Premi / Tahun</span>
