@@ -19,10 +19,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/asuransi-kendaraan/dump-truk-niaga`,       lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/asuransi-kendaraan/armada-fleet`,          lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     // Liability
-    { url: `${base}/asuransi-liability`,                       lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/asuransi-liability/public-liability`,      lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/asuransi-liability/employer-liability`,    lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/asuransi-liability/limbah-b3`,             lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/asuransi-liability`,                          lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/asuransi-liability/public-liability`,         lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/asuransi-liability/employer-liability`,       lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/asuransi-liability/product-liability`,        lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/asuransi-liability/limbah-b3`,                lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     // Kargo
     { url: `${base}/asuransi-kargo`,                           lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/asuransi-kargo/pengiriman-barang`,         lastModified: now, changeFrequency: "monthly", priority: 0.8 },
@@ -48,5 +49,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/artikel/asuransi-kos-jogja`,                                 lastModified: now, changeFrequency: "monthly",  priority: 0.75 },
     { url: `${base}/artikel/asuransi-rumah-tinggal-jogja`,                       lastModified: now, changeFrequency: "monthly",  priority: 0.75 },
     { url: `${base}/artikel/asuransi-vila-homestay-jogja`,                 lastModified: now, changeFrequency: "monthly",  priority: 0.8 },
+    { url: `${base}/artikel/cara-klaim-asuransi-liability`,          lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/artikel/perbedaan-jenis-asuransi-liability`,     lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/artikel/asuransi-umkm-jogja`,                    lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/artikel/asuransi-kontraktor-proyek-jogja`,       lastModified: now, changeFrequency: "monthly", priority: 0.85 },
   ];
 }
