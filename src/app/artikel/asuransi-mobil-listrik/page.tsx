@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "asuransi mobil listrik, asuransi EV Indonesia, premi asuransi kendaraan listrik OJK, asuransi Wuling EV, asuransi BYD, asuransi mobil listrik Jogja",
   alternates: { canonical: "https://asuransijogja.biz.id/artikel/asuransi-mobil-listrik" },
   openGraph: {
-    title: "Asuransi Mobil Listrik (EV) — Panduan Lengkap 2025",
+    title: "Asuransi Mobil Listrik (EV) — Panduan Lengkap 2026",
     description:
       "Tarif OJK khusus EV, cakupan baterai, own risk, dan panduan memilih asuransi kendaraan listrik yang tepat.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-mobil-listrik",
@@ -24,8 +24,8 @@ const schemaArticle = {
   description:
     "Panduan lengkap asuransi kendaraan listrik di Yogyakarta berdasarkan tarif OJK terbaru.",
   url: "https://asuransijogja.biz.id/artikel/asuransi-mobil-listrik",
-  datePublished: "2025-05-01",
-  dateModified: "2025-05-01",
+  datePublished: "2026-05-01",
+  dateModified: "2026-05-01",
   author: { "@type": "Person", name: "Rio MD", url: "https://asuransijogja.biz.id" },
   publisher: {
     "@type": "Organization",
@@ -291,7 +291,7 @@ export default function AsuransiMobilListrikPage() {
             ))}
           </div>
           <p className="text-xs text-[#64748B] mt-4 leading-relaxed">
-            * Estimasi mengacu tarif OJK Wilayah III. Harga kendaraan berdasarkan kisaran pasar 2025.
+            * Estimasi mengacu tarif OJK Wilayah III. Harga kendaraan berdasarkan kisaran pasar 2026.
             Premi final tergantung perusahaan asuransi dan kondisi kendaraan.{" "}
             <Link href="/asuransi-kendaraan" className="text-gold hover:underline">
               Gunakan kalkulator kami
