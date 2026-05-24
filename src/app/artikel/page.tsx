@@ -4,8 +4,8 @@ import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Artikel Edukasi Asuransi – Tips & Panduan untuk Anda",
-  description: "Artikel dan panduan asuransi dari konsultan Yogyakarta. Pelajari cara klaim, bengkel rekanan, cara menghitung nilai asuransi, dan pentingnya asuransi untuk dunia usaha.",
-  keywords: "artikel asuransi jogja, edukasi asuransi yogyakarta, tips asuransi, cara klaim asuransi mobil, nilai asuransi, asuransi usaha yogyakarta",
+  description: "Artikel dan panduan asuransi dari konsultan Yogyakarta. Pelajari cara klaim, asuransi kendaraan, properti, engineering, liability, surety bond, dan tips asuransi bisnis.",
+  keywords: "artikel asuransi jogja, edukasi asuransi yogyakarta, tips asuransi, cara klaim asuransi mobil, asuransi kendaraan jogja, asuransi properti jogja, asuransi engineering, surety bond jogja",
   alternates: { canonical: "https://asuransijogja.biz.id/artikel" },
   openGraph: {
     title: "Artikel Edukasi Asuransi – Asuransi Jogja",
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 };
 
 const ARTIKEL = [
+  // ── Kendaraan ──────────────────────────────────────────────────────────────
   {
     slug: "cara-klaim-asuransi-mobil",
     icon: "🚗",
@@ -24,12 +25,182 @@ const ARTIKEL = [
     menit: "8 menit",
   },
   {
+    slug: "perbedaan-all-risk-tlo",
+    icon: "⚖️",
+    kategori: "Kendaraan",
+    judul: "Perbedaan All Risk dan TLO: Mana yang Tepat untuk Mobil Anda?",
+    ringkasan: "All Risk menanggung kerusakan ringan hingga berat, TLO hanya menanggung kehilangan atau kerusakan parah. Pahami perbedaannya sebelum memilih produk asuransi kendaraan.",
+    menit: "7 menit",
+  },
+  {
+    slug: "cara-menghitung-premi-asuransi-mobil",
+    icon: "🧮",
+    kategori: "Kendaraan",
+    judul: "Cara Menghitung Premi Asuransi Mobil Berdasarkan Tarif OJK",
+    ringkasan: "Premi asuransi mobil dihitung berdasarkan tarif referensi OJK, wilayah plat, dan harga kendaraan. Pelajari cara menghitungnya sendiri agar tidak kaget saat membeli polis.",
+    menit: "8 menit",
+  },
+  {
+    slug: "asuransi-kendaraan-jogja",
+    icon: "🏙️",
+    kategori: "Kendaraan",
+    judul: "Panduan Asuransi Kendaraan di Jogja: Pilihan, Tarif, dan Tips",
+    ringkasan: "Memilih asuransi kendaraan di Yogyakarta perlu mempertimbangkan wilayah, jenis kendaraan, dan produk yang tersedia. Panduan lengkap khusus untuk warga Jogja.",
+    menit: "9 menit",
+  },
+  {
+    slug: "asuransi-mobil-listrik",
+    icon: "⚡",
+    kategori: "Kendaraan",
+    judul: "Asuransi Mobil Listrik: Apa Bedanya dengan Mobil Konvensional?",
+    ringkasan: "Mobil listrik memiliki risiko yang berbeda dari mobil BBM — baterai, charging port, dan komponen elektronik perlu perlindungan khusus. Ketahui cara asuransinya.",
+    menit: "7 menit",
+  },
+  {
+    slug: "asuransi-mobil-bekas",
+    icon: "🔑",
+    kategori: "Kendaraan",
+    judul: "Asuransi Mobil Bekas: Apakah Layak dan Bagaimana Caranya?",
+    ringkasan: "Banyak yang ragu mengasuransikan mobil bekas. Padahal mobil second justru lebih berisiko. Pelajari syarat, tips, dan produk yang tepat untuk kendaraan bekas Anda.",
+    menit: "6 menit",
+  },
+  {
+    slug: "asuransi-mobil-banjir",
+    icon: "🌊",
+    kategori: "Kendaraan",
+    judul: "Asuransi Mobil Banjir: Ditanggung atau Tidak? Ini Faktanya",
+    ringkasan: "Tidak semua polis asuransi otomatis menanggung kerusakan akibat banjir. Pahami klausul perluasan banjir dan cara memastikan kendaraan Anda terlindungi dari risiko ini.",
+    menit: "6 menit",
+  },
+  {
     slug: "bengkel-rekanan-asuransi-jogja",
     icon: "🔧",
     kategori: "Kendaraan",
     judul: "Bengkel Rekanan Asuransi di Jogja: Panduan Memilih & Daftar Lengkap",
     ringkasan: "Salah satu penentu kepuasan klaim kendaraan adalah bengkel rekanan. Pelajari cara memilih bengkel rekanan yang tepat dan apa yang perlu diketahui sebelum membawa kendaraan.",
     menit: "6 menit",
+  },
+  {
+    slug: "artikel_rental_mobil_wisata",
+    icon: "🚌",
+    kategori: "Kendaraan",
+    judul: "Asuransi Kendaraan untuk Rental & Wisata: Panduan Pemilik Armada",
+    ringkasan: "Pemilik usaha rental mobil dan kendaraan wisata di Jogja wajib memiliki proteksi yang tepat. Pelajari jenis asuransi yang sesuai untuk armada komersial Anda.",
+    menit: "7 menit",
+  },
+
+  // ── Properti ───────────────────────────────────────────────────────────────
+  {
+    slug: "asuransi-rumah-tinggal-jogja",
+    icon: "🏡",
+    kategori: "Properti",
+    judul: "Asuransi Rumah Tinggal di Jogja: Panduan Lengkap untuk Pemilik Hunian",
+    ringkasan: "Rumah adalah aset terbesar bagi kebanyakan orang. Ketahui cara melindungi hunian Anda di Yogyakarta dari kebakaran, banjir, gempa bumi, dan risiko lainnya.",
+    menit: "8 menit",
+  },
+  {
+    slug: "asuransi-kos-jogja",
+    icon: "🏘️",
+    kategori: "Properti",
+    judul: "Asuransi Kos-kosan Jogja: Proteksi Aset Investasi Properti Anda",
+    ringkasan: "Kos-kosan adalah investasi populer di Yogyakarta. Namun banyak pemilik kos belum mengasuransikan bangunannya. Pelajari cara melindungi aset properti Anda.",
+    menit: "7 menit",
+  },
+  {
+    slug: "asuransi-vila-homestay-jogja",
+    icon: "🏖️",
+    kategori: "Properti",
+    judul: "Asuransi Vila & Homestay di Jogja: Proteksi untuk Bisnis Hospitality",
+    ringkasan: "Vila dan homestay di sekitar Yogyakarta membutuhkan perlindungan khusus. Pelajari jenis risiko dan produk asuransi yang tepat untuk bisnis penginapan Anda.",
+    menit: "8 menit",
+  },
+
+  // ── Engineering ────────────────────────────────────────────────────────────
+  {
+    slug: "perbedaan-car-ear-asuransi-engineering",
+    icon: "🏗️",
+    kategori: "Engineering",
+    judul: "Perbedaan CAR dan EAR: Panduan Memilih Asuransi Engineering yang Tepat",
+    ringkasan: "Contractor All Risk (CAR) dan Erection All Risk (EAR) seringkali tertukar. Padahal keduanya punya cakupan berbeda. Pahami perbedaannya sebelum mengajukan polis proyek.",
+    menit: "9 menit",
+  },
+  {
+    slug: "asuransi-mesin-pabrik-jogja",
+    icon: "⚙️",
+    kategori: "Engineering",
+    judul: "Asuransi Mesin & Peralatan Pabrik di Jogja: Panduan Machinery Breakdown",
+    ringkasan: "Kerusakan mesin bisa menghentikan seluruh operasional pabrik. Machinery Breakdown Insurance hadir untuk melindungi aset produksi dari kerusakan mendadak yang tidak terduga.",
+    menit: "8 menit",
+  },
+  {
+    slug: "asuransi-kontraktor-proyek-jogja",
+    icon: "👷",
+    kategori: "Engineering",
+    judul: "Asuransi Kontraktor & Proyek di Jogja: Apa Saja yang Perlu Dilindungi?",
+    ringkasan: "Proyek konstruksi penuh dengan risiko — dari kecelakaan kerja hingga kerusakan material. Pelajari jenis asuransi yang wajib dimiliki kontraktor di Yogyakarta.",
+    menit: "10 menit",
+  },
+  {
+    slug: "premi-asuransi-car-jogja",
+    icon: "💰",
+    kategori: "Engineering",
+    judul: "Berapa Premi Asuransi CAR di Jogja? Panduan Estimasi Biaya Proyek",
+    ringkasan: "Premi Contractor All Risk dipengaruhi oleh nilai kontrak, durasi proyek, dan jenis pekerjaan. Pelajari cara mengestimasi biaya asuransi CAR untuk proyek konstruksi Anda.",
+    menit: "8 menit",
+  },
+
+  // ── Liability ──────────────────────────────────────────────────────────────
+  {
+    slug: "perbedaan-jenis-asuransi-liability",
+    icon: "🛡️",
+    kategori: "Liability",
+    judul: "Jenis-Jenis Asuransi Liability: Public, Product, Employer, dan Limbah B3",
+    ringkasan: "Asuransi liability punya banyak varian. Masing-masing menanggung risiko yang berbeda. Pahami perbedaannya agar bisnis Anda terlindungi dari tuntutan hukum yang tepat.",
+    menit: "9 menit",
+  },
+  {
+    slug: "cara-klaim-asuransi-liability",
+    icon: "📋",
+    kategori: "Liability",
+    judul: "Cara Klaim Asuransi Liability: Langkah-Langkah saat Menghadapi Gugatan",
+    ringkasan: "Menghadapi gugatan pihak ketiga bisa sangat menegangkan. Ketahui langkah-langkah yang harus dilakukan saat terjadi insiden dan bagaimana mengajukan klaim liability.",
+    menit: "8 menit",
+  },
+  {
+    slug: "contoh-kasus-gugatan-liability-bisnis",
+    icon: "⚖️",
+    kategori: "Liability",
+    judul: "Contoh Kasus Gugatan Liability Bisnis dan Bagaimana Asuransi Membantu",
+    ringkasan: "Dari toko yang menyebabkan cedera pengunjung hingga produk cacat yang merugikan konsumen — inilah contoh nyata kasus liability dan bagaimana asuransi menyelamatkan bisnis.",
+    menit: "9 menit",
+  },
+
+  // ── Surety Bond ────────────────────────────────────────────────────────────
+  {
+    slug: "cara-mengurus-jaminan-penawaran-jogja",
+    icon: "📄",
+    kategori: "Surety Bond",
+    judul: "Cara Mengurus Jaminan Penawaran (Bid Bond) untuk Tender di Jogja",
+    ringkasan: "Jaminan penawaran wajib untuk mengikuti lelang proyek pemerintah maupun swasta. Pelajari syarat, dokumen, dan proses pengurusannya agar tender Anda berjalan lancar.",
+    menit: "7 menit",
+  },
+  {
+    slug: "syarat-asuransi-tender-pemerintah-diy",
+    icon: "🏛️",
+    kategori: "Surety Bond",
+    judul: "Syarat Asuransi & Surety Bond untuk Tender Pemerintah DIY",
+    ringkasan: "Proyek pemerintah di Daerah Istimewa Yogyakarta memiliki persyaratan jaminan yang ketat. Ketahui jenis-jenis bond yang diperlukan dan cara mengurusnya dengan benar.",
+    menit: "8 menit",
+  },
+
+  // ── Bisnis & Panduan Umum ──────────────────────────────────────────────────
+  {
+    slug: "asuransi-umkm-jogja",
+    icon: "🏪",
+    kategori: "Bisnis",
+    judul: "Panduan Asuransi untuk UMKM di Jogja: Proteksi Tepat, Premi Efisien",
+    ringkasan: "UMKM Yogyakarta punya risiko yang unik — dari kebakaran toko hingga kerusakan stok barang. Pelajari produk asuransi yang tepat dan terjangkau untuk usaha kecil menengah.",
+    menit: "9 menit",
   },
   {
     slug: "pentingnya-asuransi-dunia-usaha-jogja",
@@ -49,6 +220,8 @@ const ARTIKEL = [
   },
 ];
 
+const KATEGORI_LIST = ["Semua", "Kendaraan", "Properti", "Engineering", "Liability", "Surety Bond", "Bisnis", "Panduan"];
+
 const schemaArtikelList = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -56,6 +229,26 @@ const schemaArtikelList = {
   "url": "https://asuransijogja.biz.id/artikel",
   "description": "Kumpulan artikel dan panduan asuransi dari konsultan asuransi kerugian di Yogyakarta.",
   "publisher": { "@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id" },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": ARTIKEL.map((a, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "url": `https://asuransijogja.biz.id/artikel/${a.slug}`,
+      "name": a.judul,
+    })),
+  },
+};
+
+// Internal links per kategori produk (untuk SEO internal linking)
+const INTERNAL_LINKS: Record<string, { href: string; label: string }[]> = {
+  Kendaraan:   [{ href: "/asuransi-kendaraan", label: "Asuransi Kendaraan" }, { href: "/asuransi-kendaraan/mobil", label: "Asuransi Mobil" }, { href: "/asuransi-kendaraan/armada-fleet", label: "Armada & Fleet" }],
+  Properti:    [{ href: "/asuransi-properti", label: "Asuransi Properti" }, { href: "/asuransi-properti/kebakaran", label: "Kebakaran" }, { href: "/asuransi-properti/banjir-gempa", label: "Banjir & Gempa" }],
+  Engineering: [{ href: "/asuransi-engineering", label: "Engineering Insurance" }, { href: "/asuransi-engineering/contractor-all-risk", label: "Contractor All Risk" }, { href: "/asuransi-engineering/machinery-breakdown", label: "Machinery Breakdown" }],
+  Liability:   [{ href: "/asuransi-liability", label: "Liability Insurance" }, { href: "/asuransi-liability/public-liability", label: "Public Liability" }, { href: "/asuransi-liability/limbah-b3", label: "Limbah B3" }],
+  "Surety Bond":[{ href: "/asuransi-surety-bond", label: "Surety Bond" }, { href: "/asuransi-surety-bond/jaminan-penawaran", label: "Jaminan Penawaran" }, { href: "/asuransi-surety-bond/jaminan-pelaksanaan", label: "Jaminan Pelaksanaan" }],
+  Bisnis:      [{ href: "/asuransi-properti", label: "Asuransi Properti" }, { href: "/asuransi-kargo", label: "Asuransi Kargo" }, { href: "/asuransi-liability", label: "Liability Insurance" }],
+  Panduan:     [{ href: "/asuransi-kendaraan", label: "Asuransi Kendaraan" }, { href: "/asuransi-properti", label: "Asuransi Properti" }, { href: "/asuransi-engineering", label: "Engineering Insurance" }],
 };
 
 export default function ArtikelIndexPage() {
@@ -74,6 +267,10 @@ export default function ArtikelIndexPage() {
           <p className="text-white/85 text-sm leading-[1.85] max-w-[480px]">
             Pahami asuransi sebelum membeli. Artikel berikut ditulis berdasarkan pengalaman 10+ tahun konsultan asuransi kerugian di Yogyakarta.
           </p>
+          <div className="flex gap-3 mt-6 flex-wrap">
+            <span className="bg-gold/15 border border-gold/30 text-gold2 text-xs font-semibold px-3 py-1.5 rounded-full">{ARTIKEL.length} Artikel</span>
+            <span className="bg-white/8 border border-white/15 text-white/65 text-xs font-semibold px-3 py-1.5 rounded-full">Kendaraan · Properti · Engineering · Liability · Surety Bond</span>
+          </div>
         </div>
       </section>
 
@@ -86,28 +283,74 @@ export default function ArtikelIndexPage() {
         </div>
       </div>
 
-      {/* ARTIKEL GRID */}
-      <section className="py-16 px-[5vw] bg-white">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          {ARTIKEL.map(a => (
-            <Link key={a.slug} href={`/artikel/${a.slug}`} className="no-underline group">
-              <article className="border border-black/8 rounded-card p-7 h-full hover:shadow-[0_12px_40px_rgba(13,33,55,0.1)] hover:-translate-y-1.5 hover:border-gold/30 transition-all relative overflow-hidden bg-white">
-                <div className="absolute top-0 left-0 right-0 h-[3px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                <div className="flex items-start justify-between mb-4">
-                  <span className="text-3xl">{a.icon}</span>
-                  <span className="bg-gold/10 border border-gold/20 text-gold text-[0.78rem] font-bold px-2.5 py-1 rounded-full">{a.kategori}</span>
-                </div>
-                <h2 className="font-heading text-navy font-bold text-[1.05rem] leading-[1.35] mb-3 group-hover:text-gold transition-colors">{a.judul}</h2>
-                <p className="text-sm leading-relaxed text-[#64748B] mb-4">{a.ringkasan}</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-[#94A3B8]">⏱ {a.menit} baca</span>
-                  <span className="text-gold text-sm font-semibold group-hover:translate-x-1 transition-transform inline-block">Baca →</span>
-                </div>
-              </article>
-            </Link>
+      {/* KATEGORI TABS — static, rendered server-side untuk SEO */}
+      <div className="bg-white border-b border-black/6 px-[5vw] py-4 overflow-x-auto">
+        <div className="flex gap-2 min-w-max">
+          {KATEGORI_LIST.map(k => (
+            <span
+              key={k}
+              className={`px-4 py-1.5 rounded-full border text-[0.82rem] font-semibold whitespace-nowrap ${
+                k === "Semua"
+                  ? "bg-navy text-white border-navy"
+                  : "bg-white text-[#64748B] border-black/10"
+              }`}
+            >
+              {k}
+            </span>
           ))}
         </div>
-      </section>
+      </div>
+
+      {/* ARTIKEL GRID — grouped by kategori */}
+      {KATEGORI_LIST.filter(k => k !== "Semua").map(kat => {
+        const items = ARTIKEL.filter(a => a.kategori === kat);
+        if (items.length === 0) return null;
+        const links = INTERNAL_LINKS[kat] ?? [];
+        return (
+          <section key={kat} className="py-12 px-[5vw] bg-white border-b border-black/5">
+            <div className="max-w-5xl mx-auto">
+              {/* Section header */}
+              <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
+                <h2 className="font-heading text-navy text-xl font-bold">{kat}</h2>
+                {links.length > 0 && (
+                  <div className="flex gap-2 flex-wrap">
+                    {links.map(l => (
+                      <Link
+                        key={l.href}
+                        href={l.href}
+                        className="text-[0.75rem] font-semibold text-gold border border-gold/30 bg-gold/5 px-3 py-1 rounded-full hover:bg-gold/15 transition-colors no-underline"
+                      >
+                        {l.label} →
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {items.map(a => (
+                  <Link key={a.slug} href={`/artikel/${a.slug}`} className="no-underline group">
+                    <article className="border border-black/8 rounded-card p-6 h-full hover:shadow-[0_12px_40px_rgba(13,33,55,0.1)] hover:-translate-y-1.5 hover:border-gold/30 transition-all relative overflow-hidden bg-white">
+                      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                      <div className="flex items-start justify-between mb-3">
+                        <span className="text-2xl">{a.icon}</span>
+                        <span className="bg-gold/10 border border-gold/20 text-gold text-[0.72rem] font-bold px-2 py-0.5 rounded-full">{a.kategori}</span>
+                      </div>
+                      <h3 className="font-heading text-navy font-bold text-[0.98rem] leading-[1.35] mb-2 group-hover:text-gold transition-colors">{a.judul}</h3>
+                      <p className="text-[0.82rem] leading-relaxed text-[#64748B] mb-4 line-clamp-3">{a.ringkasan}</p>
+                      <div className="flex items-center justify-between mt-auto">
+                        <span className="text-xs text-[#94A3B8]">⏱ {a.menit} baca</span>
+                        <span className="text-gold text-sm font-semibold group-hover:translate-x-1 transition-transform inline-block">Baca →</span>
+                      </div>
+                    </article>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })}
 
       {/* CTA */}
       <section className="py-16 px-[5vw] bg-cream text-center">
