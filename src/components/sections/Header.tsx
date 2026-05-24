@@ -15,6 +15,7 @@ const NAV_CLUSTERS = [
     { href: "/asuransi-properti/property-all-risk", label: "Property All Risk" },
     { href: "/asuransi-properti/hotel-vila", label: "Hotel & Vila" },
     { href: "/asuransi-properti/banjir-gempa", label: "Banjir & Gempa" },
+    { href: "/asuransi-properti/vila-homestay", label: "Vila & Homestay" },
   ]},
   { href: "/asuransi-engineering", icon: "⚙️", label: "Engineering", sub: [
     { href: "/asuransi-engineering/contractor-all-risk", label: "Contractor All Risk" },
@@ -29,6 +30,7 @@ const NAV_CLUSTERS = [
   { href: "/asuransi-liability", icon: "🛡️", label: "Liability", sub: [
     { href: "/asuransi-liability/public-liability", label: "Public Liability" },
     { href: "/asuransi-liability/employer-liability", label: "Employer Liability" },
+    { href: "/asuransi-liability/product-liability", label: "Product Liability" },
     { href: "/asuransi-liability/limbah-b3", label: "Limbah B3" },
   ]},
   { href: "/asuransi-surety-bond", icon: "📋", label: "Surety Bond", sub: [
