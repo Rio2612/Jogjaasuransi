@@ -398,7 +398,7 @@ export default function ArtikelPremiCAR() {
           </div>
         </section>
       </div>
-      <Footer />
+    
     </>
   );
 }
