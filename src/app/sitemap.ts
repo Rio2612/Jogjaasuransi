@@ -53,5 +53,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/artikel/perbedaan-jenis-asuransi-liability`,     lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/artikel/asuransi-umkm-jogja`,                    lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/artikel/asuransi-kontraktor-proyek-jogja`,       lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+        { url: `${base}/artikel/premi-asuransi-car-jogja`,      lastModified: now,      changeFrequency: "monthly",      priority: 0.88   },
+    { url: `${base}/artikel/syarat-asuransi-tender-pemerintah-diy`,      lastModified: now,      changeFrequency: "monthly",      priority: 0.88    },
+    {      url: `${base}/artikel/perbedaan-car-ear-asuransi-engineering`,      lastModified: now,      changeFrequency: "monthly",      priority: 0.85   },
+    {      url: `${base}/artikel/asuransi-mesin-pabrik-jogja`,      lastModified: now,      changeFrequency: "monthly",      priority: 0.87   },
+
   ];
 }
