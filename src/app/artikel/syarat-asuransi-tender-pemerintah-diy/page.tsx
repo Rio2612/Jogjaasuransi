@@ -10,16 +10,16 @@ import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Syarat Asuransi Tender Pemerintah DIY 2025 – Dokumen CAR yang Wajib Ada | Asuransi Jogja",
+  title: "Syarat Asuransi Tender Pemerintah DIY 2026 – Dokumen CAR yang Wajib Ada | Asuransi Jogja",
   description:
-    "Panduan lengkap dokumen asuransi yang wajib dilampirkan dalam tender pemerintah DIY 2025. Contractor All Risk (CAR), Surety Bond, dan endorsement khusus. Proses cepat 1–3 hari kerja.",
+    "Panduan lengkap dokumen asuransi yang wajib dilampirkan dalam tender pemerintah DIY 2026. Contractor All Risk (CAR), Surety Bond, dan endorsement khusus. Proses cepat 1–3 hari kerja.",
   keywords:
     "syarat asuransi tender pemerintah DIY, dokumen CAR tender yogyakarta, asuransi wajib kontraktor pemerintah, certificate of insurance tender DIY, asuransi CAR APBD yogyakarta",
   alternates: {
     canonical: "https://asuransijogja.biz.id/artikel/syarat-asuransi-tender-pemerintah-diy",
   },
   openGraph: {
-    title: "Syarat Asuransi Tender Pemerintah DIY 2025",
+    title: "Syarat Asuransi Tender Pemerintah DIY 2026",
     description: "Dokumen asuransi CAR dan Surety Bond yang wajib ada saat mengikuti tender APBN/APBD di Yogyakarta.",
     url: "https://asuransijogja.biz.id/artikel/syarat-asuransi-tender-pemerintah-diy",
     type: "article",
@@ -39,12 +39,12 @@ const schemaArtikel = {
     },
     {
       "@type": "Article",
-      headline: "Syarat Asuransi Tender Pemerintah DIY 2025",
+      headline: "Syarat Asuransi Tender Pemerintah DIY 2026",
       description: "Dokumen asuransi yang wajib dilampirkan dalam tender pemerintah DIY — CAR, Surety Bond, dan endorsement khusus.",
       author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
-      datePublished: "2025-02-01",
-      dateModified: "2025-06-01",
+      datePublished: "2026-02-01",
+      dateModified: "2026-06-01",
       mainEntityOfPage: "https://asuransijogja.biz.id/artikel/syarat-asuransi-tender-pemerintah-diy",
     },
     {
@@ -266,7 +266,7 @@ export default function ArtikelSyaratTender() {
               <span className="text-white/40 text-xs">Panduan Tender</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
-              Syarat Asuransi Tender<br /><em className="not-italic text-gold">Pemerintah DIY 2025</em> —<br />Dokumen yang Wajib Disiapkan
+              Syarat Asuransi Tender<br /><em className="not-italic text-gold">Pemerintah DIY 2026</em> —<br />Dokumen yang Wajib Disiapkan
             </h1>
             <p className="text-white/80 text-base leading-[1.85] max-w-[540px] mb-6">
               Tidak sedikit kontraktor yang gugur di tahap administrasi tender hanya karena dokumen asuransi tidak lengkap atau tidak sesuai. Panduan ini membantu Anda menyiapkan semua dokumen asuransi yang benar sebelum batas waktu.
@@ -274,7 +274,7 @@ export default function ArtikelSyaratTender() {
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
               <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
               <span>·</span>
-              <span>📅 Diperbarui Juni 2025</span>
+              <span>📅 Diperbarui Juni 2026</span>
               <span>·</span>
               <span>⏱️ Baca 7 menit</span>
             </div>
