@@ -76,5 +76,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/artikel/perbedaan-jenis-asuransi-liability`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/artikel/premi-asuransi-car-jogja`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/artikel/syarat-asuransi-tender-pemerintah-diy`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/artikel/perbedaan-surety-bond-bank-garansi`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/artikel/asuransi-kargo-umkm-jogja`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${base}/artikel/cara-klaim-asuransi-kargo`, lastModified: now, changeFrequency: "monthly", priority: 0.88 },
+
+    
   ];
 }
