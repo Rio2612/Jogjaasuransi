@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: "https://asuransijogja.biz.id/asuransi-surety-bond",
   },
 };
-
+<CTAPenawaran produk="surety" size="lg" label="Minta Penjelasan Rinci" />
 const clusters = [
   {
     href: "/asuransi-surety-bond/jaminan-penawaran",
