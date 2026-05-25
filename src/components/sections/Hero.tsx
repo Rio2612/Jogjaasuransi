@@ -6,6 +6,7 @@ export default function Hero() {
       <div className="absolute inset-0" style={{background:"radial-gradient(ellipse 70% 70% at 75% 55%, rgba(200,150,62,0.13) 0%, transparent 65%), radial-gradient(ellipse 30% 30% at 10% 80%, rgba(200,150,62,0.06) 0%, transparent 60%)"}} />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center w-full relative z-10 pt-[68px]">
         <div>
+          
           <div className="animate-fadeUp-d1 inline-flex items-center gap-2 bg-gold/10 border border-gold/35 text-gold3 text-xs font-semibold px-4 py-[5px] rounded-full mb-5 tracking-widest uppercase">
             <span className="text-[0.55rem] text-gold">◆</span>
             Konsultan Asuransi Kerugian · Yogyakarta
@@ -27,6 +28,8 @@ export default function Hero() {
             </a>
           </div>
         </div>
+        <CTAPenawaran produk="kendaraan" variant="gold" size="lg" />
+<CTAPenawaran produk="kendaraan" variant="white" label="Minta Detail PDF" />
         <div className="animate-fadeUp-d5">
           <div className="bg-white/5 border border-gold/20 rounded-[20px] p-8 backdrop-blur-sm">
             <div className="font-heading text-gold2 text-base font-semibold mb-4 pb-3 border-b border-gold/18">
