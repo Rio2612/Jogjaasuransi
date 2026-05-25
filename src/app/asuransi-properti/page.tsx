@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: "https://asuransijogja.biz.id/asuransi-properti",
   },
 };
-
+<CTAPenawaran produk="properti" variant="gold" />
 // ─── FAQ SCHEMA ──────────────────────────────────────────────────────────────
 const schemaFAQ = {
   "@context": "https://schema.org",
