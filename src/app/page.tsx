@@ -11,6 +11,7 @@ import Testimonial from "@/components/sections/Testimonial";
 import FAQ from "@/components/sections/FAQ";
 import ContactCTA from "@/components/sections/ContactCTA";
 import Footer from "@/components/sections/Footer";
+import CTAPenawaran from "@/components/ui/CTAPenawaran";
 
 export const metadata: Metadata = {
   title: "Asuransi Jogja – Konsultan Asuransi Kerugian Terpercaya di Yogyakarta",
