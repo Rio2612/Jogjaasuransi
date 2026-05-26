@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SuretyLayout from "@/components/surety/SuretyLayout";
 import { KONTAK } from "@/lib/data";
+import CTAPenawaran from "@/components/ui/CTAPenawaran";
 
 export const metadata: Metadata = {
   title: "Surety Bond Jogja – Jaminan Tender, Pelaksanaan & Uang Muka | Asuransi Jogja",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     url: "https://asuransijogja.biz.id/asuransi-surety-bond",
   },
 };
-<CTAPenawaran produk="surety" size="lg" label="Minta Penjelasan Rinci" />
+
 const clusters = [
   {
     href: "/asuransi-surety-bond/jaminan-penawaran",
@@ -134,6 +135,7 @@ export default function AsuransiSuretyBondPage() {
               {num:"Gratis",lbl:"Konsultasi & Review"},
             ].map(s=>(
               <div key={s.lbl}><div className="font-heading text-gold text-lg font-bold">{s.num}</div><div className="text-white/45 text-xs mt-0.5">{s.lbl}</div></div>
+              <CTAPenawaran produk="surety" size="lg" label="Minta Penjelasan Rinci" />
             ))}
           </div>
         </div>
