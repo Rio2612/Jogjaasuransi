@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PropertyLayout from "@/components/properti/PropertyLayout";
 import KalkulatorProperti from "@/components/properti/KalkulatorProperti";
-import { KONTAK } from "@/lib/data";
 import CTAPenawaran from "@/components/ui/CTAPenawaran";
+import { KONTAK } from "@/lib/data";
+
 
 export const metadata: Metadata = {
   title: "Asuransi Properti Jogja – Rumah, Kos, Ruko, Vila & Gedung Komersial | Asuransi Jogja",
