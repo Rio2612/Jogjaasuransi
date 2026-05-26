@@ -63,7 +63,7 @@ function generatePDFContent(sub: Submission): string {
 <html lang="id">
 <head>
 <meta charset="UTF-8"/>
-<title>Penjelasan Rinci ${produkLabel} — ${sub.nama}</title>
+<title>Simulasi & Estimasi Premi ${produkLabel} — ${sub.nama}</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap');
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -101,8 +101,8 @@ function generatePDFContent(sub: Submission): string {
   <!-- HEADER -->
   <div class="header">
     <div class="brand">Asuransi<span>Jogja</span></div>
-    <div class="doc-type">Dokumen Penjelasan Rinci</div>
-    <div class="doc-title">Penjelasan Rinci<br/>${produkLabel}</div>
+    <div class="doc-type">Simulasi & Estimasi Premi</div>
+    <div class="doc-title">Simulasi & Estimasi Premi<br/>${produkLabel}</div>
     <div class="meta-row">
       <div class="meta-item">
         <span class="meta-label">Untuk</span>
@@ -138,7 +138,7 @@ function generatePDFContent(sub: Submission): string {
   <div class="disclaimer-box">
     <div class="disclaimer-title">Catatan Penting</div>
     <div class="disclaimer-text">
-      Dokumen ini merupakan <strong>penjelasan rinci awal</strong> berdasarkan data yang Anda input dan bukan merupakan
+      Dokumen ini merupakan <strong>simulasi &amp; estimasi premi awal</strong> berdasarkan data yang Anda input dan bukan merupakan
       penawaran resmi (quotation) maupun polis asuransi. Estimasi premi dan ketentuan pertanggungan bersifat indikatif
       dan akan ditentukan secara final oleh perusahaan asuransi setelah proses <em>underwriting</em> lengkap.<br/><br/>
       Sebagai konsultan asuransi independen, kami akan membantu Anda membandingkan penawaran dari berbagai
@@ -167,10 +167,19 @@ function downloadPDF(sub: Submission) {
   const html = generatePDFContent(sub);
   const win = window.open("", "_blank");
   if (!win) return alert("Pop-up diblokir browser. Izinkan pop-up dan coba lagi.");
+
+  // Format nama file: Simulasi-dan-Estimasi-Premi-[NamaNasabah].pdf
+  const safeNama = sub.nama.replace(/\s+/g, "-").replace(/[^a-zA-Z0-9-]/g, "");
+  const fileName = `Simulasi-dan-Estimasi-Premi-${safeNama}.pdf`;
+
   win.document.write(html);
   win.document.close();
-  // Delay sedikit agar font Google Fonts ter-load
-  setTimeout(() => win.print(), 800);
+
+  // Set document title agar browser memakai nama file yang benar saat Save/Print to PDF
+  setTimeout(() => {
+    win.document.title = fileName;
+    win.print();
+  }, 800);
 }
 
 // ─── Component ────────────────────────────────────────────────────────────────
