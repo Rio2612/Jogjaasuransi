@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SuretyLayout from "@/components/surety/SuretyLayout";
-import { KONTAK } from "@/lib/data";
 import CTAPenawaran from "@/components/ui/CTAPenawaran";
+import { KONTAK } from "@/lib/data";
+
 
 export const metadata: Metadata = {
   title: "Surety Bond Jogja – Jaminan Tender, Pelaksanaan & Uang Muka | Asuransi Jogja",
