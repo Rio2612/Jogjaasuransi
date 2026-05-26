@@ -29,7 +29,7 @@ export default function Hero() {
             </a>
           </div>
           <div className="animate-fadeUp-d4">
-            <CTAPenawaran produk="kendaraan" variant="white" size="md" label="📄 Minta Penjelasan Rinci" />
+            <CTAPenawaran produk="kendaraan" variant="white" size="md" label="📄 Dapatkan Simulasi Gratis" />
           </div>
         </div>
         <div className="animate-fadeUp-d5">

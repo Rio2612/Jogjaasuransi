@@ -364,7 +364,7 @@ function SPPAFormInner() {
             Halo <strong>{nama}</strong>, data permintaan <strong>{produkLabel}</strong> Anda telah kami terima.
           </p>
           <p className="text-sm text-[#64748B] leading-relaxed mb-6">
-            Kami akan menyiapkan <em>Penjelasan Rinci</em> dan mengirimkannya segera. Notifikasi akan masuk ke WhatsApp Anda.
+            Kami akan menyiapkan <em>Simulasi & Estimasi Premi</em> dan mengirimkannya segera. Notifikasi akan masuk ke WhatsApp Anda.
           </p>
           <a
             href={`https://wa.me/${waNumber}`}
@@ -397,10 +397,10 @@ function SPPAFormInner() {
             SPPA Online
           </span>
           <h1 className="font-heading text-[clamp(1.7rem,3vw,2.3rem)] font-bold text-navy leading-tight mb-2">
-            Permintaan Penjelasan Rinci Asuransi
+            Permintaan Simulasi & Estimasi Premi
           </h1>
           <p className="text-sm text-[#64748B] max-w-[480px] mx-auto leading-relaxed">
-            Isi form ini untuk mendapatkan <strong className="text-navy">dokumen penjelasan rinci</strong> yang akan kami kirimkan via WhatsApp. Gratis, tanpa tekanan.
+            Isi form ini untuk mendapatkan <strong className="text-navy">simulasi & estimasi premi</strong> yang akan kami kirimkan via WhatsApp. Gratis, tanpa tekanan.
           </p>
         </div>
 
@@ -538,7 +538,7 @@ function SPPAFormInner() {
                     Mengirim...
                   </>
                 ) : (
-                  <>📄 Kirim & Minta Penjelasan Rinci</>
+                  <>📄 Kirim & Dapatkan Simulasi Gratis</>
                 )}
               </button>
               <p className="text-center text-[0.68rem] text-[#94A3B8] mt-2.5">
