@@ -4,6 +4,7 @@ import PropertyLayout from "@/components/properti/PropertyLayout";
 import KalkulatorProperti from "@/components/properti/KalkulatorProperti";
 import { KONTAK } from "@/lib/data";
 import CTAPenawaran from "@/components/ui/CTAPenawaran";
+
 export const metadata: Metadata = {
   title: "Asuransi Properti Jogja – Rumah, Kos, Ruko, Vila & Gedung Komersial | Asuransi Jogja",
   description:
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     url: "https://asuransijogja.biz.id/asuransi-properti",
   },
 };
-<CTAPenawaran produk="properti" variant="gold" />
+
 // ─── FAQ SCHEMA ──────────────────────────────────────────────────────────────
 const schemaFAQ = {
   "@context": "https://schema.org",
@@ -278,6 +279,7 @@ export default function AsuransiPropertiPage() {
               <div key={s.lbl}>
                 <div className="font-heading text-gold text-xl font-bold">{s.num}</div>
                 <div className="text-white/45 text-xs mt-0.5">{s.lbl}</div>
+                <CTAPenawaran produk="properti" variant="gold" />
               </div>
             ))}
           </div>
