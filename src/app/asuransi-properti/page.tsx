@@ -280,7 +280,7 @@ export default function AsuransiPropertiPage() {
               <div key={s.lbl}>
                 <div className="font-heading text-gold text-xl font-bold">{s.num}</div>
                 <div className="text-white/45 text-xs mt-0.5">{s.lbl}</div>
-                <CTAPenawaran produk="properti" variant="gold" />
+                
               </div>
             ))}
           </div>
@@ -637,6 +637,7 @@ export default function AsuransiPropertiPage() {
             asuransi berlisensi OJK — semua tanpa biaya.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
+            <CTAPenawaran produk="properti" variant="gold" />
             <a
               href={`https://wa.me/${KONTAK.wa}`}
               className="bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm flex items-center gap-2 no-underline hover:opacity-90 transition-all"
