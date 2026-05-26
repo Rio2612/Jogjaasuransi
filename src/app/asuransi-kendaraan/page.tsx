@@ -3,6 +3,7 @@ import Link from "next/link";
 import KendaraanLayout from "@/components/kendaraan/KendaraanLayout";
 import KalkulatorKendaraan from "@/components/kendaraan/KalkulatorKendaraan";
 import { KONTAK } from "@/lib/data";
+import CTAPenawaran from "@/components/ui/CTAPenawaran";
 
 export const metadata: Metadata = {
   title: "Asuransi Kendaraan Jogja – Mobil, Truk & Armada | Asuransi Jogja",
@@ -72,6 +73,8 @@ export default function AsuransiKendaraanPage() {
           <div className="flex gap-8 mt-10 pt-8 border-t border-white/10">
             {[{num:"Tarif OJK",lbl:"Transparan & Resmi"},{num:"All Risk",lbl:"Perlindungan Terluas"},{num:"Gratis",lbl:"Konsultasi & Analisis"}].map(s=>(
               <div key={s.lbl}><div className="font-heading text-gold text-lg font-bold">{s.num}</div><div className="text-white/45 text-xs mt-0.5">{s.lbl}</div></div>
+      <CTAPenawaran produk="kendaraan" variant="gold" size="lg" />
+<CTAPenawaran produk="kendaraan" variant="white" label="Minta Detail PDF" />
             ))}
           </div>
         </div>
