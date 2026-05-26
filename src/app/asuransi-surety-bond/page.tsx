@@ -4,7 +4,6 @@ import SuretyLayout from "@/components/surety/SuretyLayout";
 import CTAPenawaran from "@/components/ui/CTAPenawaran";
 import { KONTAK } from "@/lib/data";
 
-
 export const metadata: Metadata = {
   title: "Surety Bond Jogja – Jaminan Tender, Pelaksanaan & Uang Muka | Asuransi Jogja",
   description: "Konsultan Surety Bond di Yogyakarta. Jaminan Penawaran, Jaminan Pelaksanaan, Jaminan Uang Muka, dan Jaminan Pemeliharaan untuk tender pemerintah dan swasta DIY. Proses cepat 1–2 hari.",
@@ -20,40 +19,32 @@ export const metadata: Metadata = {
 const clusters = [
   {
     href: "/asuransi-surety-bond/jaminan-penawaran",
-    icon: "📋", batik: "◈",
-    kode: "Bid Bond",
-    title: "Jaminan Penawaran",
-    subtitle: "Bid Bond · Syarat Ikut Tender",
+    icon: "📋", batik: "◈", kode: "Bid Bond",
+    title: "Jaminan Penawaran", subtitle: "Bid Bond · Syarat Ikut Tender",
     desc: "Jaminan bahwa peserta tender serius dan siap melaksanakan kontrak jika memenangkan lelang. Wajib dilampirkan pada dokumen penawaran tender pemerintah maupun swasta.",
     tags: ["Tender APBN/APBD", "Lelang Swasta", "e-Procurement", "LPSE DIY"],
     nilai: "1–3% dari nilai penawaran",
   },
   {
     href: "/asuransi-surety-bond/jaminan-pelaksanaan",
-    icon: "🏗️", batik: "❖",
-    kode: "Performance Bond",
-    title: "Jaminan Pelaksanaan",
-    subtitle: "Performance Bond · Garansi Kontrak",
+    icon: "🏗️", batik: "❖", kode: "Performance Bond",
+    title: "Jaminan Pelaksanaan", subtitle: "Performance Bond · Garansi Kontrak",
     desc: "Perlindungan bagi pemilik proyek bahwa kontraktor akan menyelesaikan pekerjaan sesuai spesifikasi, mutu, dan tenggat waktu yang telah disepakati dalam kontrak.",
     tags: ["Konstruksi Gedung", "Infrastruktur", "Pengadaan Barang", "Jasa Konsultansi"],
     nilai: "5% dari nilai kontrak",
   },
   {
     href: "/asuransi-surety-bond/jaminan-uang-muka",
-    icon: "💰", batik: "⬡",
-    kode: "Advance Payment Bond",
-    title: "Jaminan Uang Muka",
-    subtitle: "Advance Payment Bond",
+    icon: "💰", batik: "⬡", kode: "Advance Payment Bond",
+    title: "Jaminan Uang Muka", subtitle: "Advance Payment Bond",
     desc: "Jaminan pengembalian uang muka kepada pemilik proyek apabila kontraktor gagal melaksanakan pekerjaan setelah menerima pembayaran uang muka dari kontrak.",
     tags: ["Uang Muka Kontrak", "Proyek Pemerintah", "Proyek EPC", "Infrastruktur"],
     nilai: "Senilai uang muka diterima",
   },
   {
     href: "/asuransi-surety-bond/jaminan-pemeliharaan",
-    icon: "🛡️", batik: "✦",
-    kode: "Maintenance Bond",
-    title: "Jaminan Pemeliharaan",
-    subtitle: "Maintenance Bond · Masa Garansi",
+    icon: "🛡️", batik: "✦", kode: "Maintenance Bond",
+    title: "Jaminan Pemeliharaan", subtitle: "Maintenance Bond · Masa Garansi",
     desc: "Jaminan bahwa kontraktor akan memperbaiki cacat atau kerusakan yang ditemukan dalam masa pemeliharaan setelah pekerjaan selesai dan diserahterimakan.",
     tags: ["Masa Pemeliharaan", "Serah Terima", "Garansi Pekerjaan", "Defect Liability"],
     nilai: "5% dari nilai kontrak",
@@ -85,26 +76,11 @@ const regulasiAcuan = [
 ];
 
 const faqItems = [
-  {
-    q: "Apa bedanya surety bond dan bank garansi?",
-    a: "Keduanya adalah instrumen jaminan untuk pengadaan, tapi berbeda mekanisme. Bank garansi diterbitkan bank dan umumnya memerlukan setoran tunai (cash collateral) sebagai agunan. Surety bond diterbitkan perusahaan asuransi berdasarkan analisis kapasitas kontraktor — tanpa blokir modal. Keduanya diterima di proyek pemerintah sesuai Perpres 16/2018."
-  },
-  {
-    q: "Berapa lama proses penerbitan surety bond?",
-    a: "Dengan dokumen lengkap, surety bond bisa terbit dalam 1–2 hari kerja. Dokumen yang dibutuhkan: akta perusahaan, NPWP, laporan keuangan terakhir, dan dokumen kontrak atau undangan tender. Hubungi Pak Rio segera untuk proses yang lebih cepat."
-  },
-  {
-    q: "Apakah surety bond bisa dipakai untuk tender LPSE Yogyakarta?",
-    a: "Ya, surety bond dari perusahaan asuransi yang terdaftar dan berizin OJK diterima di semua LPSE termasuk LPSE Pemerintah Provinsi DIY, Kota Yogyakarta, Kabupaten Sleman, Bantul, Kulon Progo, dan Gunung Kidul."
-  },
-  {
-    q: "Berapa nilai jaminan yang harus disiapkan untuk tender?",
-    a: "Jaminan Penawaran (Bid Bond) umumnya 1–3% dari nilai penawaran. Jaminan Pelaksanaan (Performance Bond) 5% dari nilai kontrak. Jaminan Uang Muka senilai uang muka yang diterima. Jaminan Pemeliharaan 5% dari nilai kontrak. Nilai pasti mengacu pada dokumen pengadaan masing-masing proyek."
-  },
-  {
-    q: "Kontraktor kecil/UMKM apakah bisa menggunakan surety bond?",
-    a: "Ya, surety bond tersedia untuk semua skala kontraktor — dari kontraktor kecil kualifikasi K1/K2 hingga kontraktor besar. Limit dan persyaratan disesuaikan dengan kualifikasi dan kapasitas finansial kontraktor."
-  },
+  { q: "Apa bedanya surety bond dan bank garansi?", a: "Keduanya adalah instrumen jaminan untuk pengadaan, tapi berbeda mekanisme. Bank garansi diterbitkan bank dan umumnya memerlukan setoran tunai (cash collateral) sebagai agunan. Surety bond diterbitkan perusahaan asuransi berdasarkan analisis kapasitas kontraktor — tanpa blokir modal. Keduanya diterima di proyek pemerintah sesuai Perpres 16/2018." },
+  { q: "Berapa lama proses penerbitan surety bond?", a: "Dengan dokumen lengkap, surety bond bisa terbit dalam 1–2 hari kerja. Dokumen yang dibutuhkan: akta perusahaan, NPWP, laporan keuangan terakhir, dan dokumen kontrak atau undangan tender. Hubungi Pak Rio segera untuk proses yang lebih cepat." },
+  { q: "Apakah surety bond bisa dipakai untuk tender LPSE Yogyakarta?", a: "Ya, surety bond dari perusahaan asuransi yang terdaftar dan berizin OJK diterima di semua LPSE termasuk LPSE Pemerintah Provinsi DIY, Kota Yogyakarta, Kabupaten Sleman, Bantul, Kulon Progo, dan Gunung Kidul." },
+  { q: "Berapa nilai jaminan yang harus disiapkan untuk tender?", a: "Jaminan Penawaran (Bid Bond) umumnya 1–3% dari nilai penawaran. Jaminan Pelaksanaan (Performance Bond) 5% dari nilai kontrak. Jaminan Uang Muka senilai uang muka yang diterima. Jaminan Pemeliharaan 5% dari nilai kontrak. Nilai pasti mengacu pada dokumen pengadaan masing-masing proyek." },
+  { q: "Kontraktor kecil/UMKM apakah bisa menggunakan surety bond?", a: "Ya, surety bond tersedia untuk semua skala kontraktor — dari kontraktor kecil kualifikasi K1/K2 hingga kontraktor besar. Limit dan persyaratan disesuaikan dengan kualifikasi dan kapasitas finansial kontraktor." },
 ];
 
 export default function AsuransiSuretyBondPage() {
@@ -125,18 +101,22 @@ export default function AsuransiSuretyBondPage() {
           <p className="text-white/85 text-base leading-[1.85] max-w-[530px] mb-8">
             Tender pemerintah di DIY mensyaratkan jaminan di setiap tahapnya. Tanpa surety bond yang tepat waktu, kesempatan proyek bisa hilang begitu saja. Kami bantu kontraktor Yogyakarta mendapatkan semua jenis jaminan dengan proses cepat dan tanpa blokir modal.
           </p>
-          <div className="flex gap-4 flex-wrap">
+          {/* CTA Buttons */}
+          <div className="flex gap-4 flex-wrap mb-6">
             <a href={`https://wa.me/${KONTAK.wa}`} className="bg-gold text-navy px-7 py-3 rounded-lg font-bold text-sm hover:bg-gold2 hover:-translate-y-px transition-all no-underline">💬 Konsultasi Gratis</a>
             <a href="#jenis" className="border border-white/25 text-white px-7 py-3 rounded-lg text-sm hover:border-gold/60 transition-all no-underline">4 Jenis Jaminan →</a>
           </div>
-          <div className="flex gap-8 mt-10 pt-8 border-t border-white/10">
+          {/* CTA Penawaran PDF */}
+          <div className="mb-10">
+            <CTAPenawaran produk="surety" variant="white" size="md" label="📄 Minta Penjelasan Rinci" />
+          </div>
+          <div className="flex gap-8 pt-8 border-t border-white/10">
             {[
               {num:"4 Jenis",lbl:"Bid · Performance · AP · Maintenance"},
               {num:"1–2 Hari",lbl:"Proses Penerbitan"},
               {num:"Gratis",lbl:"Konsultasi & Review"},
             ].map(s=>(
               <div key={s.lbl}><div className="font-heading text-gold text-lg font-bold">{s.num}</div><div className="text-white/45 text-xs mt-0.5">{s.lbl}</div></div>
-              <CTAPenawaran produk="surety" size="lg" label="Minta Penjelasan Rinci" />
             ))}
           </div>
         </div>
@@ -282,7 +262,7 @@ export default function AsuransiSuretyBondPage() {
           <p className="text-white/80 text-sm max-w-[480px] mx-auto mb-8">Konsultasi gratis surety bond — kami bantu tentukan jenis jaminan, nilai, dan proses penerbitan paling cepat untuk proyek Anda di Yogyakarta.</p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Chat WhatsApp Sekarang</a>
-            <a href={`mailto:${KONTAK.email}`} className="bg-white/8 border border-white/20 text-white px-7 py-3 rounded-lg text-sm no-underline hover:bg-white/12 transition-all">✉️ Kirim Email</a>
+            <CTAPenawaran produk="surety" variant="white" size="md" label="📄 Minta Penjelasan Rinci" />
           </div>
         </div>
       </section>
