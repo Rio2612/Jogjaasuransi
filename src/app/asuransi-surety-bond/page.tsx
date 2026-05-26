@@ -108,7 +108,7 @@ export default function AsuransiSuretyBondPage() {
           </div>
           {/* CTA Penawaran PDF */}
           <div className="mb-10">
-            <CTAPenawaran produk="surety" variant="white" size="md" label="📄 Minta Penjelasan Rinci" />
+            <CTAPenawaran produk="surety" variant="white" size="md" label="📄 Dapatkan Simulasi Gratis" />
           </div>
           <div className="flex gap-8 pt-8 border-t border-white/10">
             {[
@@ -262,7 +262,7 @@ export default function AsuransiSuretyBondPage() {
           <p className="text-white/80 text-sm max-w-[480px] mx-auto mb-8">Konsultasi gratis surety bond — kami bantu tentukan jenis jaminan, nilai, dan proses penerbitan paling cepat untuk proyek Anda di Yogyakarta.</p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Chat WhatsApp Sekarang</a>
-            <CTAPenawaran produk="surety" variant="white" size="md" label="📄 Minta Penjelasan Rinci" />
+            <CTAPenawaran produk="surety" variant="white" size="md" label="📄 Dapatkan Simulasi Gratis" />
           </div>
         </div>
       </section>
