@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import KendaraanLayout from "@/components/kendaraan/KendaraanLayout";
 import KalkulatorKendaraan from "@/components/kendaraan/KalkulatorKendaraan";
-import { KONTAK } from "@/lib/data";
 import CTAPenawaran from "@/components/ui/CTAPenawaran";
+import { KONTAK } from "@/lib/data";
+
 
 export const metadata: Metadata = {
   title: "Asuransi Kendaraan Jogja – Mobil, Truk & Armada | Asuransi Jogja",
