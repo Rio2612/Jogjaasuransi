@@ -10,7 +10,7 @@ import {
 async function sendWA(target: string, message: string): Promise<boolean> {
   const token = process.env.FONNTE_TOKEN;
   if (!token) {
-    console.warn("[send-sppa] FONNTE_TOKEN tidak di-set — WA tidak dikirim");
+    console.warn("[send-sppa] FONNTE_TOKEN tidak di-set");
     return false;
   }
   try {
@@ -20,13 +20,23 @@ async function sendWA(target: string, message: string): Promise<boolean> {
         Authorization: token,
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: new URLSearchParams({ target, message, countryCode: "62" }),
+      body: new URLSearchParams({
+        target,
+        message,
+        countryCode: "62",
+      }),
     });
-    const json = await res.json();
-    if (!json.status) {
-      console.error("[send-sppa] Fonnte error:", json);
+
+    const text = await res.text();
+    let json: Record<string, unknown> = {};
+    try { json = JSON.parse(text); } catch { /* bukan JSON */ }
+
+    if (!res.ok || json.status === false) {
+      console.error("[send-sppa] Fonnte gagal:", text);
       return false;
     }
+
+    console.log("[send-sppa] WA terkirim ke:", target);
     return true;
   } catch (err) {
     console.error("[send-sppa] Fonnte fetch error:", err);
@@ -49,7 +59,7 @@ function buildAdminMessage(sub: SPPASubmission): string {
 
   Object.entries(sub.fields).forEach(([key, val]) => {
     if (!val || (Array.isArray(val) && val.length === 0)) return;
-    const label = sub.fieldLabels[key] || key;
+    const label   = sub.fieldLabels[key] || key;
     const display = Array.isArray(val) ? val.join(", ") : String(val);
     msg += `• *${label}:* ${display}\n`;
   });
@@ -64,22 +74,22 @@ function buildClientMessage(sub: SPPASubmission): string {
   const garis = "─────────────────────";
   let msg = `Halo *${sub.nama}*! 👋\n\n`;
   msg += `Terima kasih telah menghubungi *Asuransi Jogja*.\n\n`;
-  msg += `Kami telah menerima permintaan penjelasan rinci untuk:\n`;
+  msg += `Kami telah menerima permintaan *Simulasi & Estimasi Premi* untuk:\n`;
   msg += `📦 *${sub.productLabel}*\n\n`;
   msg += `${garis}\n`;
   msg += `*Ringkasan data yang Anda input:*\n`;
 
   Object.entries(sub.fields).forEach(([key, val]) => {
     if (!val || (Array.isArray(val) && val.length === 0)) return;
-    const label = sub.fieldLabels[key] || key;
+    const label   = sub.fieldLabels[key] || key;
     const display = Array.isArray(val) ? val.join(", ") : String(val);
     msg += `• ${label}: ${display}\n`;
   });
 
   msg += `${garis}\n\n`;
-  msg += `Tim kami sedang menyiapkan dokumen *Penjelasan Rinci* khusus untuk kebutuhan Anda.\n\n`;
+  msg += `Tim kami sedang menyiapkan dokumen *Simulasi & Estimasi Premi* khusus untuk kebutuhan Anda.\n\n`;
   msg += `⏱ Estimasi pengiriman: *dalam 1×24 jam kerja*\n\n`;
-  msg += `Jika ada pertanyaan mendesak, balas pesan ini atau hubungi:\n`;
+  msg += `Jika ada pertanyaan, balas pesan ini atau hubungi:\n`;
   msg += `📞 *0877-8165-8231* (Rio MD)\n\n`;
   msg += `_Asuransi Jogja — Konsultan Asuransi Kerugian Independen Yogyakarta_`;
   return msg;
@@ -94,7 +104,16 @@ function generateId(): string {
   return `SPPA-${dateStr}-${rand}`;
 }
 
-// ─── POST ─────────────────────────────────────────────────────────────────────
+// ─── Normalize WA number ──────────────────────────────────────────────────────
+function normalizeWA(num: string): string {
+  let clean = num.replace(/\D/g, "");
+  if (clean.startsWith("08")) clean = "628" + clean.slice(1);
+  else if (clean.startsWith("8")) clean = "62" + clean;
+  else if (!clean.startsWith("62")) clean = "62" + clean;
+  return clean;
+}
+
+// ─── POST: Terima submission ──────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -104,68 +123,90 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Data tidak lengkap" }, { status: 400 });
     }
 
-    const normalizeWA = (num: string) =>
-      num.replace(/\D/g, "").replace(/^08/, "628").replace(/^(?!62)8/, "628");
-
     const submission: SPPASubmission = {
-      id: generateId(),
+      id:           generateId(),
       product,
       productLabel: productLabel || product,
       nama,
-      whatsapp: normalizeWA(String(whatsapp)),
-      email: email || null,
-      fields: fields || {},
-      fieldLabels: fieldLabels || {},
-      submittedAt: submittedAt || new Date().toISOString(),
-      status: "baru",
+      whatsapp:     normalizeWA(String(whatsapp)),
+      email:        email || null,
+      fields:       fields || {},
+      fieldLabels:  fieldLabels || {},
+      submittedAt:  submittedAt || new Date().toISOString(),
+      status:       "baru",
     };
 
-    addSubmission(submission);
+    // 1. Simpan ke Supabase dulu — ini harus berhasil
+    await addSubmission(submission);
+    console.log("[send-sppa] Tersimpan ke Supabase:", submission.id);
 
+    // 2. Kirim WA — await keduanya agar tidak mati di Vercel serverless
     const adminWA = process.env.ADMIN_WA || "6287781658231";
-    Promise.all([
+    const [adminSent, clientSent] = await Promise.all([
       sendWA(adminWA, buildAdminMessage(submission)),
       sendWA(submission.whatsapp, buildClientMessage(submission)),
-    ]).catch((err) => console.error("[send-sppa] WA error:", err));
+    ]);
 
-    return NextResponse.json({ success: true, id: submission.id });
+    console.log("[send-sppa] WA admin:", adminSent, "| WA client:", clientSent);
+
+    return NextResponse.json({
+      success: true,
+      id: submission.id,
+      wa: { admin: adminSent, client: clientSent },
+    });
   } catch (err) {
     console.error("[send-sppa] POST error:", err);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Internal server error" },
+      { status: 500 }
+    );
   }
 }
 
-// ─── GET ──────────────────────────────────────────────────────────────────────
+// ─── GET: Ambil semua submission untuk dashboard ──────────────────────────────
 export async function GET(req: NextRequest) {
   const secret = req.headers.get("x-admin-secret");
   if (!secret || secret !== process.env.ADMIN_SECRET) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const subs = getSubmissions().sort(
-    (a, b) => new Date(b.submittedAt).getTime() - new Date(a.submittedAt).getTime()
-  );
-
-  return NextResponse.json({ submissions: subs, total: subs.length });
+  try {
+    const subs = await getSubmissions();
+    return NextResponse.json({ submissions: subs, total: subs.length });
+  } catch (err) {
+    console.error("[send-sppa] GET error:", err);
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Gagal mengambil data" },
+      { status: 500 }
+    );
+  }
 }
 
-// ─── PATCH ────────────────────────────────────────────────────────────────────
+// ─── PATCH: Update status ─────────────────────────────────────────────────────
 export async function PATCH(req: NextRequest) {
   const secret = req.headers.get("x-admin-secret");
   if (!secret || secret !== process.env.ADMIN_SECRET) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { id, status } = await req.json();
+  try {
+    const { id, status } = await req.json();
 
-  if (!id || !["baru", "diproses", "selesai"].includes(status)) {
-    return NextResponse.json({ error: "Parameter tidak valid" }, { status: 400 });
+    if (!id || !["baru", "diproses", "selesai"].includes(status)) {
+      return NextResponse.json({ error: "Parameter tidak valid" }, { status: 400 });
+    }
+
+    const updated = await updateSubmissionStatus(id, status);
+    if (!updated) {
+      return NextResponse.json({ error: "Submission tidak ditemukan" }, { status: 404 });
+    }
+
+    return NextResponse.json({ success: true, submission: updated });
+  } catch (err) {
+    console.error("[send-sppa] PATCH error:", err);
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Gagal update status" },
+      { status: 500 }
+    );
   }
-
-  const updated = updateSubmissionStatus(id, status);
-  if (!updated) {
-    return NextResponse.json({ error: "Submission tidak ditemukan" }, { status: 404 });
-  }
-
-  return NextResponse.json({ success: true, submission: updated });
 }
