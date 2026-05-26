@@ -5,7 +5,6 @@ import KalkulatorKendaraan from "@/components/kendaraan/KalkulatorKendaraan";
 import CTAPenawaran from "@/components/ui/CTAPenawaran";
 import { KONTAK } from "@/lib/data";
 
-
 export const metadata: Metadata = {
   title: "Asuransi Kendaraan Jogja – Mobil, Truk & Armada | Asuransi Jogja",
   description: "Konsultan asuransi kendaraan bermotor di Yogyakarta. All Risk, TLO, kendaraan niaga, dump truk, hingga armada fleet. Tarif OJK, klaim mudah. Konsultasi gratis.",
@@ -67,15 +66,18 @@ export default function AsuransiKendaraanPage() {
           <p className="text-white/85 text-base leading-[1.85] max-w-[520px] mb-8">
             Dari mobil pribadi hingga armada puluhan unit — kami melayani seluruh kebutuhan asuransi kendaraan bermotor dengan tarif transparan sesuai OJK dan pendampingan klaim penuh.
           </p>
-          <div className="flex gap-4 flex-wrap">
+          {/* CTA Buttons */}
+          <div className="flex gap-4 flex-wrap mb-8">
             <a href={`https://wa.me/${KONTAK.wa}`} className="bg-gold text-navy px-7 py-3 rounded-lg font-bold text-sm hover:bg-gold2 hover:-translate-y-px transition-all no-underline">💬 Konsultasi Gratis</a>
             <a href="#kalkulator" className="border border-white/25 text-white px-7 py-3 rounded-lg text-sm hover:border-gold/60 transition-all no-underline">🧮 Hitung Premi Sekarang</a>
           </div>
-          <div className="flex gap-8 mt-10 pt-8 border-t border-white/10">
+          {/* CTA Penawaran PDF */}
+          <div className="flex gap-3 flex-wrap mb-10">
+            <CTAPenawaran produk="kendaraan" variant="white" size="md" label="📄 Minta Penjelasan Rinci" />
+          </div>
+          <div className="flex gap-8 pt-8 border-t border-white/10">
             {[{num:"Tarif OJK",lbl:"Transparan & Resmi"},{num:"All Risk",lbl:"Perlindungan Terluas"},{num:"Gratis",lbl:"Konsultasi & Analisis"}].map(s=>(
               <div key={s.lbl}><div className="font-heading text-gold text-lg font-bold">{s.num}</div><div className="text-white/45 text-xs mt-0.5">{s.lbl}</div></div>
-      <CTAPenawaran produk="kendaraan" variant="gold" size="lg" />
-<CTAPenawaran produk="kendaraan" variant="white" label="Minta Detail PDF" />
             ))}
           </div>
         </div>
@@ -153,7 +155,7 @@ export default function AsuransiKendaraanPage() {
           <p className="text-white/80 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis, perbandingan premi transparan, dan pendampingan klaim penuh — untuk semua jenis kendaraan Anda.</p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Chat WhatsApp Sekarang</a>
-            <a href={`mailto:${KONTAK.email}`} className="bg-white/8 border border-white/20 text-white px-7 py-3 rounded-lg text-sm no-underline hover:bg-white/12 transition-all">✉️ Kirim Email</a>
+            <CTAPenawaran produk="kendaraan" variant="white" size="md" label="📄 Minta Penjelasan Rinci" />
           </div>
         </div>
       </section>
