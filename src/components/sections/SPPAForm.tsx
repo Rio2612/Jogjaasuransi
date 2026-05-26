@@ -18,7 +18,7 @@ interface Product {
   icon: string;
 }
 
-type FieldType = "text" | "number" | "select" | "textarea" | "radio" | "multicheck";
+type FieldType = "text" | "number" | "select" | "textarea" | "radio" | "multicheck" | "currency";
 
 interface FieldConfig {
   id: string;
@@ -122,7 +122,7 @@ const FIELD_CONFIGS: Record<ProductId, FieldConfig[]> = {
     { id: "jenisKendaraan", label: "Jenis Kendaraan", type: "select",
       options: ["Mobil Pribadi", "Sepeda Motor", "Truk / Niaga", "Bus / Minibus", "Alat Berat", "Armada / Fleet"] },
     { id: "tahunKendaraan", label: "Tahun Kendaraan", type: "number", placeholder: "cth: 2021" },
-    { id: "nilaiKendaraan", label: "Estimasi Nilai Kendaraan (Rp)", type: "text", placeholder: "cth: 200.000.000" },
+    { id: "nilaiKendaraan", label: "Estimasi Nilai Kendaraan (Rp)", type: "currency", placeholder: "cth: 200.000.000" },
     { id: "tipeProteksi", label: "Tipe Proteksi", type: "select",
       options: ["All Risk / Comprehensive", "Total Loss Only (TLO)", "Belum tahu, minta rekomendasi"] },
     { id: "platKendaraan", label: "Plat / Asal Daerah", type: "text", placeholder: "cth: AB – Yogyakarta" },
@@ -133,8 +133,8 @@ const FIELD_CONFIGS: Record<ProductId, FieldConfig[]> = {
       options: ["Rumah Tinggal", "Kantor", "Gudang / Pabrik", "Hotel / Vila / Homestay", "Ruko / Pertokoan", "Kos-kosan"] },
     { id: "kelasKonstruksi", label: "Kelas Konstruksi", type: "select",
       options: ["Kelas 1 (Beton / Bata — permanen)", "Kelas 2 (Semi Permanen)", "Kelas 3 (Kayu / Bambu)"] },
-    { id: "nilaiBangunan", label: "Nilai Bangunan (Rp)", type: "text", placeholder: "cth: 500.000.000" },
-    { id: "nilaiIsi", label: "Nilai Isi / Perabot (Rp)", type: "text", placeholder: "Kosongkan jika tidak dipertanggungkan" },
+    { id: "nilaiBangunan", label: "Nilai Bangunan (Rp)", type: "currency", placeholder: "cth: 500.000.000" },
+    { id: "nilaiIsi", label: "Nilai Isi / Perabot (Rp)", type: "currency", placeholder: "Kosongkan jika tidak dipertanggungkan" },
     { id: "risikoTambahan", label: "Perluasan Risiko", type: "multicheck",
       options: ["Banjir", "Gempa Bumi", "Huru-hara (RSMD)", "Tanah Longsor"] },
   ],
@@ -143,14 +143,14 @@ const FIELD_CONFIGS: Record<ProductId, FieldConfig[]> = {
       options: ["Public Liability", "Employer Liability", "Product Liability", "Limbah B3 / Environmental Liability"] },
     { id: "deskripsiUsaha", label: "Deskripsi Singkat Usaha", type: "textarea",
       placeholder: "Jelaskan kegiatan bisnis Anda secara singkat..." },
-    { id: "batasPertanggungan", label: "Batas Pertanggungan / Limit (Rp)", type: "text", placeholder: "cth: 1.000.000.000" },
+    { id: "batasPertanggungan", label: "Batas Pertanggungan / Limit (Rp)", type: "currency", placeholder: "cth: 1.000.000.000" },
     { id: "jumlahKaryawan", label: "Jumlah Karyawan", type: "number", placeholder: "cth: 25" },
   ],
   engineering: [
     { id: "jenisProyek", label: "Jenis Produk / Proyek", type: "select",
       options: ["Contractor All Risk (CAR)", "Erection All Risk (EAR)", "Machinery Breakdown (MB)", "Belum tahu, minta rekomendasi"] },
     { id: "lokasiProyek", label: "Lokasi Proyek", type: "text", placeholder: "Kecamatan / Kota / Provinsi" },
-    { id: "nilaiKontrak", label: "Nilai Kontrak / Proyek (Rp)", type: "text", placeholder: "cth: 2.000.000.000" },
+    { id: "nilaiKontrak", label: "Nilai Kontrak / Proyek (Rp)", type: "currency", placeholder: "cth: 2.000.000.000" },
     { id: "durasiProyek", label: "Durasi Proyek", type: "text", placeholder: "cth: 12 bulan" },
     { id: "deskripsiProyek", label: "Deskripsi Singkat Proyek", type: "textarea",
       placeholder: "Jenis konstruksi, scope pekerjaan..." },
@@ -159,7 +159,7 @@ const FIELD_CONFIGS: Record<ProductId, FieldConfig[]> = {
     { id: "jenisJaminan", label: "Jenis Jaminan", type: "select",
       options: ["Jaminan Penawaran (Bid Bond)", "Jaminan Pelaksanaan (Performance Bond)",
         "Jaminan Uang Muka (Advance Payment Bond)", "Jaminan Pemeliharaan (Maintenance Bond)"] },
-    { id: "nilaiJaminan", label: "Nilai Jaminan (Rp)", type: "text", placeholder: "cth: 500.000.000" },
+    { id: "nilaiJaminan", label: "Nilai Jaminan (Rp)", type: "currency", placeholder: "cth: 500.000.000" },
     { id: "namaObligee", label: "Nama Obligee (Penerima Jaminan)", type: "text",
       placeholder: "Nama instansi / perusahaan pemberi kerja" },
     { id: "jenisProyekSurety", label: "Jenis Proyek", type: "radio",
@@ -172,7 +172,7 @@ const FIELD_CONFIGS: Record<ProductId, FieldConfig[]> = {
     { id: "rutePengiriman", label: "Rute Pengiriman", type: "text", placeholder: "cth: Yogyakarta → Jakarta" },
     { id: "armadaAngkutan", label: "Armada / Moda Angkutan", type: "select",
       options: ["Truk Darat", "Kapal Laut", "Pesawat Udara", "Kereta Api", "Kombinasi / Multimodal"] },
-    { id: "nilaiBarang", label: "Nilai Barang per Pengiriman (Rp)", type: "text", placeholder: "cth: 150.000.000" },
+    { id: "nilaiBarang", label: "Nilai Barang per Pengiriman (Rp)", type: "currency", placeholder: "cth: 150.000.000" },
     { id: "frekuensiPengiriman", label: "Frekuensi Pengiriman", type: "select",
       options: ["Sekali kirim (open policy)", "Rutin harian", "Rutin mingguan", "Rutin bulanan"] },
   ],
@@ -182,6 +182,58 @@ const FIELD_CONFIGS: Record<ProductId, FieldConfig[]> = {
 const inputBase =
   "w-full bg-white border border-[#D4C9B8] rounded-lg px-3.5 py-2.5 text-sm text-navy " +
   "placeholder-[#94A3B8] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/15 transition-all";
+
+
+/* ─── Currency Input Mask ────────────────────────────────── */
+function formatRibuan(val: string): string {
+  // Hanya ambil angka
+  const digits = val.replace(/\D/g, "");
+  if (!digits) return "";
+  // Format ribuan dengan titik
+  return parseInt(digits, 10).toLocaleString("id-ID");
+}
+
+function parseRibuan(formatted: string): string {
+  return formatted.replace(/\./g, "").replace(/,/g, "");
+}
+
+function CurrencyInput({
+  field,
+  value,
+  onChange,
+  inputBase,
+}: {
+  field: { id: string; placeholder?: string };
+  value: string;
+  onChange: (id: string, val: string) => void;
+  inputBase: string;
+}) {
+  // value disimpan sebagai angka murni (tanpa titik), display pakai format ribuan
+  const displayValue = value ? formatRibuan(value) : "";
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const raw = parseRibuan(e.target.value);
+    // Tolak non-angka
+    if (raw && !/^\d+$/.test(raw)) return;
+    onChange(field.id, raw);
+  };
+
+  return (
+    <div className="relative">
+      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-xs font-semibold text-[#94A3B8] select-none pointer-events-none">
+        Rp
+      </span>
+      <input
+        type="text"
+        inputMode="numeric"
+        value={displayValue}
+        onChange={handleChange}
+        placeholder={field.placeholder?.replace(/^cth: /, "") || "0"}
+        className={inputBase + " pl-9"}
+      />
+    </div>
+  );
+}
 
 function InputField({
   field,
@@ -256,6 +308,16 @@ function InputField({
           </label>
         ))}
       </div>
+    );
+  }
+  if (field.type === "currency") {
+    return (
+      <CurrencyInput
+        field={field}
+        value={(value as string) || ""}
+        onChange={onChange}
+        inputBase={inputBase}
+      />
     );
   }
   return (
