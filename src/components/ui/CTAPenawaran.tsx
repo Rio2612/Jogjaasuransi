@@ -15,7 +15,7 @@ interface CTAPenawaranProps {
   variant?: "gold" | "white" | "green";
   /** Ukuran tombol */
   size?: "sm" | "md" | "lg";
-  /** Label kustom — default: "Minta Penjelasan Rinci" */
+  /** Label kustom — default: "Dapatkan Simulasi Gratis" */
   label?: string;
   className?: string;
 }
@@ -53,7 +53,7 @@ export default function CTAPenawaran({
   produk,
   variant = "gold",
   size = "md",
-  label = "Minta Penjelasan Rinci",
+  label = "Dapatkan Simulasi Gratis",
   className = "",
 }: CTAPenawaranProps) {
   return (
@@ -72,4 +72,3 @@ export default function CTAPenawaran({
     </Link>
   );
 }
-
