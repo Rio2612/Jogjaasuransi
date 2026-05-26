@@ -1,38 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-
-/**
- * POST /api/send-sppa
- *
- * Alur:
- * 1. Terima payload dari SPPAForm
- * 2. Simpan ke in-memory store (bisa diganti DB)
- * 3. Kirim notif WA ke admin (Fonnte)
- * 4. Kirim WA konfirmasi ke klien (Fonnte)
- */
-
-export interface SPPASubmission {
-  id: string;
-  product: string;
-  productLabel: string;
-  nama: string;
-  whatsapp: string;
-  email: string | null;
-  fields: Record<string, string | string[]>;
-  fieldLabels: Record<string, string>;
-  submittedAt: string;
-  status: "baru" | "diproses" | "selesai";
-}
-
-// ─── In-memory store (untuk production, ganti dengan DB / file sistem) ────────
-// Gunakan global agar tidak hilang antar request di development
-declare global {
-  // eslint-disable-next-line no-var
-  var __sppaSubmissions: SPPASubmission[] | undefined;
-}
-if (!global.__sppaSubmissions) global.__sppaSubmissions = [];
-
-export const getSubmissions = (): SPPASubmission[] =>
-  global.__sppaSubmissions ?? [];
+import {
+  getSubmissions,
+  addSubmission,
+  updateSubmissionStatus,
+  type SPPASubmission,
+} from "@/lib/sppaStore";
 
 // ─── Fonnte WA Sender ─────────────────────────────────────────────────────────
 async function sendWA(target: string, message: string): Promise<boolean> {
@@ -66,7 +38,10 @@ async function sendWA(target: string, message: string): Promise<boolean> {
 function buildAdminMessage(sub: SPPASubmission): string {
   const garis = "━━━━━━━━━━━━━━━━━━━━━━";
   let msg = `📋 *SPPA BARU MASUK*\n${garis}\n`;
-  msg += `🕐 ${new Date(sub.submittedAt).toLocaleString("id-ID", { dateStyle: "medium", timeStyle: "short" })}\n\n`;
+  msg += `🕐 ${new Date(sub.submittedAt).toLocaleString("id-ID", {
+    dateStyle: "medium",
+    timeStyle: "short",
+  })}\n\n`;
   msg += `👤 *Nama:* ${sub.nama}\n`;
   msg += `📱 *WA:* ${sub.whatsapp}\n`;
   if (sub.email) msg += `✉️ *Email:* ${sub.email}\n`;
@@ -119,27 +94,25 @@ function generateId(): string {
   return `SPPA-${dateStr}-${rand}`;
 }
 
-// ─── Route Handler ────────────────────────────────────────────────────────────
+// ─── POST ─────────────────────────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const { product, productLabel, nama, whatsapp, email, fields, fieldLabels, submittedAt } = body;
 
-    // Validasi minimal
     if (!product || !nama || !whatsapp) {
       return NextResponse.json({ error: "Data tidak lengkap" }, { status: 400 });
     }
 
-    // Normalisasi nomor WA: 08xxx → 628xxx
     const normalizeWA = (num: string) =>
-      num.replace(/\D/g, "").replace(/^08/, "628").replace(/^8/, "628");
+      num.replace(/\D/g, "").replace(/^08/, "628").replace(/^(?!62)8/, "628");
 
     const submission: SPPASubmission = {
       id: generateId(),
       product,
       productLabel: productLabel || product,
       nama,
-      whatsapp: normalizeWA(whatsapp),
+      whatsapp: normalizeWA(String(whatsapp)),
       email: email || null,
       fields: fields || {},
       fieldLabels: fieldLabels || {},
@@ -147,16 +120,13 @@ export async function POST(req: NextRequest) {
       status: "baru",
     };
 
-    // Simpan ke store
-    global.__sppaSubmissions!.push(submission);
+    addSubmission(submission);
 
-    // Kirim WA (parallel, tidak await untuk tidak memblok response)
     const adminWA = process.env.ADMIN_WA || "6287781658231";
-
     Promise.all([
       sendWA(adminWA, buildAdminMessage(submission)),
       sendWA(submission.whatsapp, buildClientMessage(submission)),
-    ]).catch(err => console.error("[send-sppa] WA parallel error:", err));
+    ]).catch((err) => console.error("[send-sppa] WA error:", err));
 
     return NextResponse.json({ success: true, id: submission.id });
   } catch (err) {
@@ -165,29 +135,37 @@ export async function POST(req: NextRequest) {
   }
 }
 
-// ─── GET: untuk dashboard admin ───────────────────────────────────────────────
+// ─── GET ──────────────────────────────────────────────────────────────────────
 export async function GET(req: NextRequest) {
-  // Proteksi sederhana via secret header
   const secret = req.headers.get("x-admin-secret");
-  if (secret !== process.env.ADMIN_SECRET) {
+  if (!secret || secret !== process.env.ADMIN_SECRET) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
+
   const subs = getSubmissions().sort(
     (a, b) => new Date(b.submittedAt).getTime() - new Date(a.submittedAt).getTime()
   );
+
   return NextResponse.json({ submissions: subs, total: subs.length });
 }
 
-// ─── PATCH: update status dari dashboard ─────────────────────────────────────
+// ─── PATCH ────────────────────────────────────────────────────────────────────
 export async function PATCH(req: NextRequest) {
   const secret = req.headers.get("x-admin-secret");
-  if (secret !== process.env.ADMIN_SECRET) {
+  if (!secret || secret !== process.env.ADMIN_SECRET) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
+
   const { id, status } = await req.json();
-  const subs = global.__sppaSubmissions ?? [];
-  const idx = subs.findIndex(s => s.id === id);
-  if (idx === -1) return NextResponse.json({ error: "Not found" }, { status: 404 });
-  subs[idx].status = status;
-  return NextResponse.json({ success: true, submission: subs[idx] });
+
+  if (!id || !["baru", "diproses", "selesai"].includes(status)) {
+    return NextResponse.json({ error: "Parameter tidak valid" }, { status: 400 });
+  }
+
+  const updated = updateSubmissionStatus(id, status);
+  if (!updated) {
+    return NextResponse.json({ error: "Submission tidak ditemukan" }, { status: 404 });
+  }
+
+  return NextResponse.json({ success: true, submission: updated });
 }
