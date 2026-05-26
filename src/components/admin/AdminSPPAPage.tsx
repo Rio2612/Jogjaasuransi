@@ -39,12 +39,27 @@ function formatRp(n: number) {
 }
 
 // ─── PDF Generator (client-side, print-to-PDF via browser) ────────────────────
-// ─── Helper: format angka ke Rupiah ──────────────────────────────────────────
-function fRp(val: string | undefined): string {
-  if (!val) return "—";
-  const num = parseInt(String(val).replace(/\D/g, ""), 10);
-  if (isNaN(num)) return val;
+// ─── Helpers ─────────────────────────────────────────────────────────────────
+// Safely get string from field (may be string | string[])
+function fStr(val: string | string[] | undefined, fallback = "—"): string {
+  if (!val || (Array.isArray(val) && val.length === 0)) return fallback;
+  return Array.isArray(val) ? val.join(", ") : String(val);
+}
+
+// Format angka ke Rupiah
+function fRp(val: string | string[] | undefined): string {
+  if (!val || (Array.isArray(val) && val.length === 0)) return "—";
+  const raw = Array.isArray(val) ? val[0] : val;
+  const num = parseInt(String(raw).replace(/\D/g, ""), 10);
+  if (isNaN(num)) return String(raw);
   return "Rp " + num.toLocaleString("id-ID");
+}
+
+// Safely parse number from field
+function fNum(val: string | string[] | undefined): number {
+  if (!val) return 0;
+  const raw = Array.isArray(val) ? val[0] : val;
+  return parseInt(String(raw).replace(/\D/g, ""), 10) || 0;
 }
 
 // ─── Template PDF per produk ──────────────────────────────────────────────────
@@ -54,10 +69,11 @@ function buildProductSections(sub: Submission): string {
 
   /* ── Kendaraan ── */
   if (product === "kendaraan") {
-    const nilaiRaw   = parseInt(String(f.nilaiKendaraan || "0").replace(/\D/g, ""), 10) || 0;
+    const nilaiRaw   = fNum(f.nilaiKendaraan);
     const rateAR     = 1.05; // % estimasi (kategori menengah)
     const rateTLO    = 0.20;
-    const isAR       = !f.tipeProteksi || String(f.tipeProteksi).includes("All Risk");
+    const tipeStr    = fStr(f.tipeProteksi);
+    const isAR       = !tipeStr || tipeStr === "—" || tipeStr.includes("All Risk");
     const rateUsed   = isAR ? rateAR : rateTLO;
     const rateLabel  = isAR ? "1,05% (estimasi All Risk)" : "0,20% (estimasi TLO)";
     const premiDasar = Math.round(nilaiRaw * rateUsed / 100);
@@ -80,10 +96,10 @@ function buildProductSections(sub: Submission): string {
     <table>
       <tbody>
         <tr><td class="td-label">Nama Tertanggung</td><td class="td-val">${sub.nama}</td></tr>
-        <tr><td class="td-label">Jenis Kendaraan</td><td class="td-val">${f.jenisKendaraan || "—"}</td></tr>
-        <tr><td class="td-label">Tahun Kendaraan</td><td class="td-val">${f.tahunKendaraan || "—"}</td></tr>
-        <tr><td class="td-label">Plat / Wilayah</td><td class="td-val">${f.platKendaraan || "—"}</td></tr>
-        <tr><td class="td-label">Tipe Proteksi</td><td class="td-val">${f.tipeProteksi || "All Risk / Comprehensive"}</td></tr>
+        <tr><td class="td-label">Jenis Kendaraan</td><td class="td-val">${fStr(f.jenisKendaraan)}</td></tr>
+        <tr><td class="td-label">Tahun Kendaraan</td><td class="td-val">${fStr(f.tahunKendaraan)}</td></tr>
+        <tr><td class="td-label">Plat / Wilayah</td><td class="td-val">${fStr(f.platKendaraan)}</td></tr>
+        <tr><td class="td-label">Tipe Proteksi</td><td class="td-val">${fStr(f.tipeProteksi, "All Risk / Comprehensive")}</td></tr>
         <tr><td class="td-label">Nilai Pertanggungan</td><td class="td-val highlight">${fRp(f.nilaiKendaraan)}</td></tr>
       </tbody>
     </table>
@@ -199,16 +215,17 @@ function buildProductSections(sub: Submission): string {
   /* ── Properti ── */
   if (product === "properti") {
     const nilaiRaw   = parseInt(String(f.nilaiBangunan || "0").replace(/\D/g, ""), 10) || 0;
-    const nilaiIsiRaw= parseInt(String(f.nilaiIsi || "0").replace(/\D/g, ""), 10) || 0;
+    const nilaiIsiRaw= fNum(f.nilaiIsi);
     const totalNilai = nilaiRaw + nilaiIsiRaw;
-    const rateKelas  = f.kelasKonstruksi?.includes("1") ? 0.08 : f.kelasKonstruksi?.includes("2") ? 0.15 : 0.25;
-    const rateLabel  = f.kelasKonstruksi?.includes("1") ? "0,08% (Kelas 1 — Beton/Bata)" : f.kelasKonstruksi?.includes("2") ? "0,15% (Kelas 2 — Semi Permanen)" : "0,25% (Kelas 3 — Kayu/Bambu)";
+    const kkStr      = fStr(f.kelasKonstruksi);
+    const rateKelas  = kkStr.includes("1") ? 0.08 : kkStr.includes("2") ? 0.15 : 0.25;
+    const rateLabel  = kkStr.includes("1") ? "0,08% (Kelas 1 — Beton/Bata)" : kkStr.includes("2") ? "0,15% (Kelas 2 — Semi Permanen)" : "0,25% (Kelas 3 — Kayu/Bambu)";
     const premiDasar = Math.round(totalNilai * rateKelas / 100);
     const biayaAdmin = 75000;
     const biayaPolis = 100000;
     const total      = premiDasar + biayaAdmin + biayaPolis;
 
-    const risikoTambahan = Array.isArray(f.risikoTambahan) ? f.risikoTambahan : [];
+    const risikoTambahan: string[] = Array.isArray(f.risikoTambahan) ? f.risikoTambahan as string[] : (f.risikoTambahan ? [String(f.risikoTambahan)] : []);
 
     const perluasanRows = [
       ["Perluasan Banjir & Genangan Air", "± 0,10% – 0,15% dari nilai pertanggungan"],
@@ -222,9 +239,9 @@ function buildProductSections(sub: Submission): string {
     <div class="section-title">🏠 A. Informasi Objek Pertanggungan</div>
     <table><tbody>
       <tr><td class="td-label">Nama Tertanggung</td><td class="td-val">${sub.nama}</td></tr>
-      <tr><td class="td-label">Lokasi / Alamat</td><td class="td-val">${f.lokasiProperti || "—"}</td></tr>
-      <tr><td class="td-label">Jenis / Okupasi</td><td class="td-val">${f.okupasi || "—"}</td></tr>
-      <tr><td class="td-label">Kelas Konstruksi</td><td class="td-val">${f.kelasKonstruksi || "—"}</td></tr>
+      <tr><td class="td-label">Lokasi / Alamat</td><td class="td-val">${fStr(f.lokasiProperti)}</td></tr>
+      <tr><td class="td-label">Jenis / Okupasi</td><td class="td-val">${fStr(f.okupasi)}</td></tr>
+      <tr><td class="td-label">Kelas Konstruksi</td><td class="td-val">${fStr(f.kelasKonstruksi)}</td></tr>
       <tr><td class="td-label">Nilai Bangunan</td><td class="td-val highlight">${fRp(f.nilaiBangunan)}</td></tr>
       <tr><td class="td-label">Nilai Isi / Perabot</td><td class="td-val">${fRp(f.nilaiIsi)}</td></tr>
       ${risikoTambahan.length ? `<tr><td class="td-label">Perluasan Risiko</td><td class="td-val">${risikoTambahan.join(", ")}</td></tr>` : ""}
