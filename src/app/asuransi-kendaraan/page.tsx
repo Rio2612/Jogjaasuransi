@@ -73,7 +73,7 @@ export default function AsuransiKendaraanPage() {
           </div>
           {/* CTA Penawaran PDF */}
           <div className="flex gap-3 flex-wrap mb-10">
-            <CTAPenawaran produk="kendaraan" variant="white" size="md" label="📄 Minta Penjelasan Rinci" />
+            <CTAPenawaran produk="kendaraan" variant="white" size="md" label="📄 Dapatkan Simulasi Gratis" />
           </div>
           <div className="flex gap-8 pt-8 border-t border-white/10">
             {[{num:"Tarif OJK",lbl:"Transparan & Resmi"},{num:"All Risk",lbl:"Perlindungan Terluas"},{num:"Gratis",lbl:"Konsultasi & Analisis"}].map(s=>(
@@ -155,7 +155,7 @@ export default function AsuransiKendaraanPage() {
           <p className="text-white/80 text-sm max-w-[460px] mx-auto mb-8">Konsultasi gratis, perbandingan premi transparan, dan pendampingan klaim penuh — untuk semua jenis kendaraan Anda.</p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Chat WhatsApp Sekarang</a>
-            <CTAPenawaran produk="kendaraan" variant="white" size="md" label="📄 Minta Penjelasan Rinci" />
+            <CTAPenawaran produk="kendaraan" variant="white" size="md" label="📄 Dapatkan Simulasi Gratis" />
           </div>
         </div>
       </section>
