@@ -237,18 +237,17 @@ function buildProductSections(sub: Submission): string {
     const rateKelas   = kkStr.includes("1") ? 0.08 : kkStr.includes("2") ? 0.15 : 0.25;
     const rateLabel   = kkStr.includes("1") ? "0,08% (Kelas 1 — Beton/Bata)" : kkStr.includes("2") ? "0,15% (Kelas 2 — Semi Permanen)" : "0,25% (Kelas 3 — Kayu/Bambu)";
     const premiDasar  = Math.round(totalNilai * rateKelas / 100);
-
-    // Biaya administrasi: <5 juta = Rp 30.000, ≥5 juta = Rp 40.000 (berdasarkan premi dasar)
+    // Biaya administrasi: <5 juta = Rp 30.000, ≥5 juta = Rp 40.000
     const biayaAdmin  = premiDasar < 5_000_000 ? 30_000 : 40_000;
     const totalPolis  = premiDasar + biayaAdmin;
 
     // Gempa bumi — polis tersendiri
-    const wGempa      = fStr(f.wilayahGempa);
-    const rGempa      = ZONA_GEMPA_RATE[wGempa] || 0;
-    const pGempa      = rGempa && totalNilai ? Math.round(totalNilai * rGempa / 1000) : 0;
+    const wGempa          = fStr(f.wilayahGempa);
+    const rGempa          = ZONA_GEMPA_RATE[wGempa] || 0;
+    const pGempa          = rGempa && totalNilai ? Math.round(totalNilai * rGempa / 1000) : 0;
     const biayaAdminGempa = pGempa < 5_000_000 ? 30_000 : 40_000;
     const totalPolisGempa = pGempa + biayaAdminGempa;
-    const adaGempa    = pGempa > 0;
+    const adaGempa        = pGempa > 0;
 
     const risikoTambahan: string[] = Array.isArray(f.risikoTambahan) ? f.risikoTambahan as string[] : (f.risikoTambahan ? [String(f.risikoTambahan)] : []);
 
@@ -340,7 +339,7 @@ function buildProductSections(sub: Submission): string {
   ` : ""}
 
   <div class="section">
-    <div class="section-title">✅ D. Jaminan Utama (PSAKI / PAR)</div>
+    <div class="section-title">✅ ${adaGempa ? "D" : "C"}. Jaminan Utama (PSAKI / PAR)</div>
     <ul class="list-check">
       <li>Kebakaran akibat api yang timbul secara tiba-tiba (termasuk sambaran petir)</li>
       <li>Ledakan yang berasal dari dalam bangunan</li>
@@ -352,12 +351,12 @@ function buildProductSections(sub: Submission): string {
   </div>
 
   <div class="section">
-    <div class="section-title">➕ E. Perluasan Jaminan (Opsional — Selain Gempa)</div>
+    <div class="section-title">➕ ${adaGempa ? "E" : "D"}. Perluasan Jaminan (Opsional — Selain Gempa)</div>
     <table><tbody>${perluasanRows}</tbody></table>
   </div>
 
   <div class="section">
-    <div class="section-title">🚫 F. Pengecualian — Tidak Dijamin</div>
+    <div class="section-title">🚫 ${adaGempa ? "F" : "E"}. Pengecualian — Tidak Dijamin</div>
     <ul class="list-cross">
       <li>Kerusakan yang disebabkan oleh tindakan disengaja oleh tertanggung atau keluarga</li>
       <li>Bangunan kosong tidak berpenghuni lebih dari 30 hari berturut-turut tanpa pemberitahuan</li>
@@ -370,7 +369,7 @@ function buildProductSections(sub: Submission): string {
   </div>
 
   <div class="section">
-    <div class="section-title">📞 G. Prosedur Klaim &amp; Langkah Selanjutnya</div>
+    <div class="section-title">📞 ${adaGempa ? "G" : "F"}. Prosedur Klaim &amp; Langkah Selanjutnya</div>
     <div class="claim-box">
       <div class="claim-title">Dokumen Klaim yang Diperlukan</div>
       <ul class="list-check" style="margin-top:8px;">
