@@ -39,6 +39,23 @@ function formatRp(n: number) {
 }
 
 // ─── PDF Generator (client-side, print-to-PDF via browser) ────────────────────
+// ─── Data Zona Gempa (sync dengan SPPAForm) ──────────────────────────────────
+const ZONA_GEMPA_RATE: Record<string, number> = {
+  "Kota Yogyakarta":       0.240,
+  "Kabupaten Sleman":      0.240,
+  "Kabupaten Gunung Kidul":0.240,
+  "Kabupaten Kulon Progo": 0.240,
+  "Kabupaten Bantul":      0.360,
+};
+
+const ZONA_GEMPA_NOMOR: Record<string, number> = {
+  "Kota Yogyakarta":       4,
+  "Kabupaten Sleman":      4,
+  "Kabupaten Gunung Kidul":4,
+  "Kabupaten Kulon Progo": 4,
+  "Kabupaten Bantul":      5,
+};
+
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 // Safely get string from field (may be string | string[])
 function fStr(val: string | string[] | undefined, fallback = "—"): string {
@@ -245,6 +262,7 @@ function buildProductSections(sub: Submission): string {
       <tr><td class="td-label">Nilai Bangunan</td><td class="td-val highlight">${fRp(f.nilaiBangunan)}</td></tr>
       <tr><td class="td-label">Nilai Isi / Perabot</td><td class="td-val">${fRp(f.nilaiIsi)}</td></tr>
       ${risikoTambahan.length ? `<tr><td class="td-label">Perluasan Risiko</td><td class="td-val">${risikoTambahan.join(", ")}</td></tr>` : ""}
+      ${fStr(f.wilayahGempa) !== "—" ? `<tr><td class="td-label">Wilayah Gempa</td><td class="td-val">` + fStr(f.wilayahGempa) + ` (Zona ` + (ZONA_GEMPA_NOMOR[fStr(f.wilayahGempa)] || "—") + `)</td></tr>` : ""}
     </tbody></table>
   </div>
 
@@ -262,13 +280,26 @@ function buildProductSections(sub: Submission): string {
         <tr><td class="td-premi">Premi Dasar (estimasi)</td><td class="td-premi-val">${totalNilai ? "Rp " + premiDasar.toLocaleString("id-ID") : "—"}</td></tr>
         <tr><td class="td-premi">Biaya Administrasi</td><td class="td-premi-val">Rp ${biayaAdmin.toLocaleString("id-ID")}</td></tr>
         <tr><td class="td-premi">Biaya Penerbitan Polis</td><td class="td-premi-val">Rp ${biayaPolis.toLocaleString("id-ID")}</td></tr>
-        <tr style="background:#FDF9F3;">
-          <td style="padding:12px;font-weight:700;color:#0D2137;font-size:13px;border-top:2px solid #C8963E;">TOTAL ESTIMASI PREMI / TAHUN</td>
-          <td style="padding:12px;font-weight:800;color:#C8963E;font-size:15px;text-align:right;border-top:2px solid #C8963E;">${totalNilai ? "Rp " + total.toLocaleString("id-ID") : "—"}</td>
-        </tr>
+        ${(() => {
+          const wGempa = fStr(f.wilayahGempa);
+          const rGempa = ZONA_GEMPA_RATE[wGempa] || 0;
+          const pGempa = rGempa && totalNilai ? Math.round(totalNilai * rGempa / 1000) : 0;
+          const biayaAdm = (premiDasar + pGempa) < 5_000_000 ? 30_000 : 40_000;
+          const grandTotal = premiDasar + pGempa + biayaAdm + biayaPolis;
+          return pGempa > 0 ? `
+            <tr><td class="td-premi">Premi Gempa Bumi (Zona ${ZONA_GEMPA_NOMOR[wGempa]} — ${rGempa}‰)</td><td class="td-premi-val">Rp ${pGempa.toLocaleString("id-ID")}</td></tr>
+            <tr><td class="td-premi">Biaya Administrasi</td><td class="td-premi-val">Rp ${biayaAdm.toLocaleString("id-ID")}</td></tr>
+            <tr><td class="td-premi">Biaya Penerbitan Polis</td><td class="td-premi-val">Rp ${biayaPolis.toLocaleString("id-ID")}</td></tr>
+            <tr style="background:#FDF9F3;"><td style="padding:12px;font-weight:700;color:#0D2137;font-size:13px;border-top:2px solid #C8963E;">TOTAL ESTIMASI PREMI / TAHUN</td><td style="padding:12px;font-weight:800;color:#C8963E;font-size:15px;text-align:right;border-top:2px solid #C8963E;">Rp ${grandTotal.toLocaleString("id-ID")}</td></tr>
+          ` : `
+            <tr><td class="td-premi">Biaya Administrasi</td><td class="td-premi-val">Rp ${biayaAdm.toLocaleString("id-ID")}</td></tr>
+            <tr><td class="td-premi">Biaya Penerbitan Polis</td><td class="td-premi-val">Rp ${biayaPolis.toLocaleString("id-ID")}</td></tr>
+            <tr style="background:#FDF9F3;"><td style="padding:12px;font-weight:700;color:#0D2137;font-size:13px;border-top:2px solid #C8963E;">TOTAL ESTIMASI PREMI / TAHUN</td><td style="padding:12px;font-weight:800;color:#C8963E;font-size:15px;text-align:right;border-top:2px solid #C8963E;">${totalNilai ? "Rp " + grandTotal.toLocaleString("id-ID") : "—"}</td></tr>
+          `;
+        })()}
       </tbody>
     </table>
-    <p style="font-size:11px;color:#94A3B8;margin-top:8px;line-height:1.6;">* Rate estimasi mengacu pada tarif PAR/kebakaran standar. Survei properti dapat mempengaruhi rate final.</p>
+    <p style="font-size:11px;color:#94A3B8;margin-top:8px;line-height:1.6;">* Rate estimasi mengacu pada tarif PAR/kebakaran standar. Biaya admin: &lt;Rp 5 juta = Rp 30.000, &ge;Rp 5 juta = Rp 40.000. Survei properti dapat mempengaruhi rate final.</p>
   </div>
 
   <div class="section">
