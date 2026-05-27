@@ -91,24 +91,27 @@ function buildProductSections(sub: Submission): string {
     const isAR     = !tipeStr || tipeStr === "—" || tipeStr.includes("All Risk");
 
     // ── Rate OJK SE No.6/SEOJK.05/2017 — Wilayah 3 (Yogyakarta) ──
-    // Menggunakan titik tengah dari range min–max resmi OJK.
-    // All Risk: Kat1=2,655% | Kat2=2,825% | Kat3=1,880% | Kat4=1,195% | Kat5=1,105%
-    // TLO     : Kat1=0,535% | Kat2=0,460% | Kat3=0,320% | Kat4=0,250% | Kat5=0,220%
+    // Menggunakan batas BAWAH dari range min–max resmi OJK.
+    // All Risk: Kat1=2,53% | Kat2=2,69% | Kat3=1,79% | Kat4=1,14% | Kat5=1,05%
+    // TLO     : Kat1=0,51% | Kat2=0,44% | Kat3=0,29% | Kat4=0,23% | Kat5=0,20%
     type RateEntry = { max: number; ar: number; tlo: number; labelAR: string; labelTLO: string };
     const OJK_RATES: RateEntry[] = [
-      { max: 125_000_000,   ar: 2.655, tlo: 0.535, labelAR: "2,655% (Kat.1 ≤125 jt, range 2,53–2,78%)",     labelTLO: "0,535% (Kat.1 ≤125 jt, range 0,51–0,56%)"     },
-      { max: 200_000_000,   ar: 2.825, tlo: 0.460, labelAR: "2,825% (Kat.2 >125–200 jt, range 2,69–2,96%)", labelTLO: "0,460% (Kat.2 >125–200 jt, range 0,44–0,48%)" },
-      { max: 400_000_000,   ar: 1.880, tlo: 0.320, labelAR: "1,880% (Kat.3 >200–400 jt, range 1,79–1,97%)", labelTLO: "0,320% (Kat.3 >200–400 jt, range 0,29–0,35%)" },
-      { max: 800_000_000,   ar: 1.195, tlo: 0.250, labelAR: "1,195% (Kat.4 >400–800 jt, range 1,14–1,25%)", labelTLO: "0,250% (Kat.4 >400–800 jt, range 0,23–0,27%)" },
-      { max: Infinity,      ar: 1.105, tlo: 0.220, labelAR: "1,105% (Kat.5 >800 jt, range 1,05–1,16%)",     labelTLO: "0,220% (Kat.5 >800 jt, range 0,20–0,24%)"     },
+      { max: 125_000_000, ar: 2.53, tlo: 0.51, labelAR: "2,53% (Kat.1 ≤125 jt)",     labelTLO: "0,51% (Kat.1 ≤125 jt)"     },
+      { max: 200_000_000, ar: 2.69, tlo: 0.44, labelAR: "2,69% (Kat.2 >125–200 jt)", labelTLO: "0,44% (Kat.2 >125–200 jt)" },
+      { max: 400_000_000, ar: 1.79, tlo: 0.29, labelAR: "1,79% (Kat.3 >200–400 jt)", labelTLO: "0,29% (Kat.3 >200–400 jt)" },
+      { max: 800_000_000, ar: 1.14, tlo: 0.23, labelAR: "1,14% (Kat.4 >400–800 jt)", labelTLO: "0,23% (Kat.4 >400–800 jt)" },
+      { max: Infinity,    ar: 1.05, tlo: 0.20, labelAR: "1,05% (Kat.5 >800 jt)",     labelTLO: "0,20% (Kat.5 >800 jt)"     },
     ];
     const rateEntry  = OJK_RATES.find(r => nilaiRaw <= r.max) ?? OJK_RATES[OJK_RATES.length - 1];
     const rateUsed   = isAR ? rateEntry.ar  : rateEntry.tlo;
     const rateLabel  = isAR ? rateEntry.labelAR : rateEntry.labelTLO;
     const premiDasar = Math.round(nilaiRaw * rateUsed / 100);
+    // Diskon (ditampilkan sebagai nominal saja, tanpa %)
+    const diskon     = Math.round(premiDasar * 0.11);
+    const premiSetelahDiskon = premiDasar - diskon;
     // Biaya administrasi: <5 juta = Rp 30.000, ≥5 juta = Rp 40.000
     const biayaAdmin = premiDasar < 5_000_000 ? 30_000 : 40_000;
-    const total      = premiDasar + biayaAdmin;
+    const total      = premiSetelahDiskon + biayaAdmin;
 
     const perluasanRows = [
       ["Tanggung Jawab Hukum Pihak Ketiga (TJH III)", "± Rp 150.000 – Rp 350.000 / tahun"],
@@ -149,6 +152,8 @@ function buildProductSections(sub: Submission): string {
         <tr><td class="td-premi">Nilai Pertanggungan</td><td class="td-premi-val">${nilaiRaw ? fRp(f.nilaiKendaraan) : "—"}</td></tr>
         <tr><td class="td-premi">Rate Premi Dasar (estimasi)</td><td class="td-premi-val">${rateLabel}</td></tr>
         <tr><td class="td-premi">Premi Dasar (estimasi)</td><td class="td-premi-val">${nilaiRaw ? "Rp " + premiDasar.toLocaleString("id-ID") : "—"}</td></tr>
+        <tr><td class="td-premi" style="color:#16A34A;">Diskon</td><td class="td-premi-val" style="color:#16A34A;">${nilaiRaw && diskon > 0 ? "– Rp " + diskon.toLocaleString("id-ID") : "—"}</td></tr>
+        <tr><td class="td-premi">Premi Setelah Diskon</td><td class="td-premi-val">${nilaiRaw ? "Rp " + premiSetelahDiskon.toLocaleString("id-ID") : "—"}</td></tr>
         <tr><td class="td-premi">Biaya Administrasi</td><td class="td-premi-val">Rp ${biayaAdmin.toLocaleString("id-ID")}</td></tr>
         <tr style="background:#FDF9F3;">
           <td style="padding:12px;font-weight:700;color:#0D2137;font-size:13px;border-top:2px solid #C8963E;">TOTAL ESTIMASI PREMI / TAHUN</td>
