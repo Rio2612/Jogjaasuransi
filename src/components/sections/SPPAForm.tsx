@@ -178,6 +178,21 @@ const FIELD_CONFIGS: Record<ProductId, FieldConfig[]> = {
   ],
 };
 
+
+/* ─── Data Zona Gempa DIY ────────────────────────────────── */
+const ZONA_GEMPA: { label: string; zona: number; rate: number }[] = [
+  { label: "Kota Yogyakarta",     zona: 4, rate: 0.240 },
+  { label: "Kabupaten Sleman",    zona: 4, rate: 0.240 },
+  { label: "Kabupaten Gunung Kidul", zona: 4, rate: 0.240 },
+  { label: "Kabupaten Kulon Progo",  zona: 4, rate: 0.240 },
+  { label: "Kabupaten Bantul",    zona: 5, rate: 0.360 },
+];
+
+// Biaya admin properti berdasarkan total premi
+function biayaAdminProperti(totalPremi: number): number {
+  return totalPremi < 5_000_000 ? 30_000 : 40_000;
+}
+
 /* ─── Helpers ────────────────────────────────────────────── */
 const inputBase =
   "w-full bg-white border border-[#D4C9B8] rounded-lg px-3.5 py-2.5 text-sm text-navy " +
@@ -341,6 +356,139 @@ function SectionDivider({ label }: { label: string }) {
   );
 }
 
+
+/* ─── Komponen khusus Properti (dengan logika gempa + zona) ─────────────────── */
+function PropertiFields({
+  form,
+  onChange,
+}: {
+  form: FormState;
+  onChange: (id: string, val: string | string[] | boolean) => void;
+}) {
+  const risikoTambahan = (form.risikoTambahan as string[]) || [];
+  const gempaChecked   = risikoTambahan.includes("Gempa Bumi");
+  const wilayahGempa   = (form.wilayahGempa as string) || "";
+
+  // Temukan data zona yang dipilih
+  const zonaData = ZONA_GEMPA.find(z => z.label === wilayahGempa);
+
+  // Hitung estimasi premi gempa jika nilai bangunan diisi
+  const nilaiBangunan = parseInt((form.nilaiBangunan as string) || "0", 10) || 0;
+  const nilaiIsi      = parseInt((form.nilaiIsi as string) || "0", 10) || 0;
+  const totalNilai    = nilaiBangunan + nilaiIsi;
+  const premiGempa    = zonaData && totalNilai > 0
+    ? Math.round(totalNilai * zonaData.rate / 1000) // rate dalam ‰ (per mil)
+    : 0;
+
+  const handleRisikoChange = (opt: string) => {
+    const next = risikoTambahan.includes(opt)
+      ? risikoTambahan.filter(x => x !== opt)
+      : [...risikoTambahan, opt];
+    onChange("risikoTambahan", next);
+    // Reset wilayah gempa jika gempa di-uncheck
+    if (opt === "Gempa Bumi" && risikoTambahan.includes("Gempa Bumi")) {
+      onChange("wilayahGempa", "");
+    }
+  };
+
+  const fields = FIELD_CONFIGS.properti;
+
+  return (
+    <div className="space-y-4">
+      {fields.map(field => {
+        // Field risikoTambahan — render manual dengan logika gempa
+        if (field.id === "risikoTambahan") {
+          return (
+            <div key={field.id}>
+              <label className="block text-xs font-semibold text-navy/60 mb-1.5">
+                {field.label}
+              </label>
+              {/* Multicheck manual */}
+              <div className="flex gap-4 flex-wrap pt-1">
+                {field.options!.map(opt => (
+                  <label key={opt} className="flex items-center gap-2 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      checked={risikoTambahan.includes(opt)}
+                      onChange={() => handleRisikoChange(opt)}
+                      className="accent-gold w-4 h-4 rounded"
+                    />
+                    <span className="text-sm text-navy/80 group-hover:text-navy transition-colors">{opt}</span>
+                  </label>
+                ))}
+              </div>
+
+              {/* Conditional: pilihan wilayah muncul jika Gempa Bumi dicentang */}
+              {gempaChecked && (
+                <div className="mt-3 p-4 bg-amber-50 border border-amber-200 rounded-xl space-y-3">
+                  <div className="flex items-center gap-2 text-amber-700 text-xs font-bold">
+                    <span>🌏</span>
+                    <span>Pilih Wilayah untuk Menentukan Zona & Tarif Gempa</span>
+                  </div>
+                  <select
+                    value={wilayahGempa}
+                    onChange={e => onChange("wilayahGempa", e.target.value)}
+                    className={inputBase + " border-amber-200 focus:border-amber-400 focus:ring-amber-100"}
+                  >
+                    <option value="">— Pilih Wilayah —</option>
+                    {ZONA_GEMPA.map(z => (
+                      <option key={z.label} value={z.label}>
+                        {z.label} — Zona {z.zona} (Rate {z.rate}‰)
+                      </option>
+                    ))}
+                  </select>
+
+                  {/* Info zona & estimasi premi gempa */}
+                  {zonaData && (
+                    <div className="bg-white border border-amber-200 rounded-lg p-3 space-y-1.5">
+                      <div className="flex justify-between text-xs">
+                        <span className="text-[#64748B]">Zona Gempa</span>
+                        <span className="font-bold text-navy">Zona {zonaData.zona}</span>
+                      </div>
+                      <div className="flex justify-between text-xs">
+                        <span className="text-[#64748B]">Tarif Gempa</span>
+                        <span className="font-bold text-navy">{zonaData.rate}‰ dari nilai pertanggungan</span>
+                      </div>
+                      {premiGempa > 0 && (
+                        <>
+                          <div className="h-px bg-amber-100 my-1" />
+                          <div className="flex justify-between text-xs">
+                            <span className="text-amber-700 font-semibold">Est. Premi Gempa / Tahun</span>
+                            <span className="font-bold text-amber-700">
+                              Rp {premiGempa.toLocaleString("id-ID")}
+                            </span>
+                          </div>
+                          <p className="text-[0.65rem] text-[#94A3B8] leading-relaxed">
+                            * Estimasi dari nilai pertanggungan Rp {totalNilai.toLocaleString("id-ID")} × {zonaData.rate}‰
+                          </p>
+                        </>
+                      )}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          );
+        }
+
+        // Field lainnya — render normal
+        return (
+          <div key={field.id}>
+            <label className="block text-xs font-semibold text-navy/60 mb-1.5">
+              {field.label}
+            </label>
+            <InputField
+              field={field}
+              value={(form[field.id] as string | string[]) || ""}
+              onChange={onChange}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 /* ─── Inner Form (needs useSearchParams) ─────────────────── */
 function SPPAFormInner() {
   const searchParams = useSearchParams();
@@ -388,12 +536,17 @@ function SPPAFormInner() {
         nama: form.nama,
         whatsapp: form.whatsapp,
         email: form.email || null,
-        fields: Object.fromEntries(
-          fields.map(f => [f.id, form[f.id] ?? ""])
-        ),
-        fieldLabels: Object.fromEntries(
-          fields.map(f => [f.id, f.label])
-        ),
+        fields: Object.fromEntries([
+          ...fields.map(f => [f.id, form[f.id] ?? ""]),
+          // Sertakan wilayah gempa jika properti & gempa dicentang
+          ...(product === "properti" && (form.risikoTambahan as string[])?.includes("Gempa Bumi")
+            ? [["wilayahGempa", form.wilayahGempa ?? ""]]
+            : []),
+        ]),
+        fieldLabels: Object.fromEntries([
+          ...fields.map(f => [f.id, f.label]),
+          ...(product === "properti" ? [["wilayahGempa", "Wilayah Gempa"]] : []),
+        ]),
         submittedAt: new Date().toISOString(),
       };
 
@@ -537,18 +690,24 @@ function SPPAFormInner() {
             {product && fields.length > 0 && (
               <div className="space-y-4">
                 <SectionDivider label={`${selectedProduct?.icon} Detail ${selectedProduct?.label}`} />
-                {fields.map(field => (
-                  <div key={field.id}>
-                    <label className="block text-xs font-semibold text-navy/60 mb-1.5">
-                      {field.label}
-                    </label>
-                    <InputField
-                      field={field}
-                      value={(form[field.id] as string | string[]) || ""}
-                      onChange={handleChange}
-                    />
-                  </div>
-                ))}
+
+                {/* Properti: pakai komponen khusus dengan logika gempa */}
+                {product === "properti" ? (
+                  <PropertiFields form={form} onChange={handleChange} />
+                ) : (
+                  fields.map(field => (
+                    <div key={field.id}>
+                      <label className="block text-xs font-semibold text-navy/60 mb-1.5">
+                        {field.label}
+                      </label>
+                      <InputField
+                        field={field}
+                        value={(form[field.id] as string | string[]) || ""}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  ))
+                )}
               </div>
             )}
 
