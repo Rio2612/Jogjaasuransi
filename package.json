@@ -11,7 +11,7 @@
   "dependencies": {
     "next": "15.2.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
     "@sparticuz/chromium": "^131.0.0",
 "puppeteer-core": "^23.0.0"
   },
