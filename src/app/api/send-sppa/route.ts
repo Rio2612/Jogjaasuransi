@@ -106,11 +106,10 @@ function generateId(): string {
 
 // ─── Normalize WA number ──────────────────────────────────────────────────────
 function normalizeWA(num: string): string {
-  let clean = num.replace(/\D/g, "");
-  if (clean.startsWith("08")) clean = "628" + clean.slice(1);
-  else if (clean.startsWith("8")) clean = "62" + clean;
-  else if (!clean.startsWith("62")) clean = "62" + clean;
-  return clean;
+  const clean = num.replace(/\D/g, "");
+  if (clean.startsWith("62")) return clean;          // sudah benar: 628xxx
+  if (clean.startsWith("0"))  return "62" + clean.slice(1); // 08xxx → 628xxx
+  return "62" + clean;                               // 8xxx → 628xxx
 }
 
 // ─── POST: Terima submission ──────────────────────────────────────────────────
