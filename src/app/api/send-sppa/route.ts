@@ -6,6 +6,7 @@ import {
   type SPPASubmission,
 } from "@/lib/sppaStore";
 import { buildEmailHtml, buildEmailText } from "@/lib/emailTemplate";
+import { generatePDFBuffer } from "@/lib/pdfGenerator";
 
 // ─── Fonnte WA Sender ─────────────────────────────────────────────────────────
 async function sendWA(target: string, message: string): Promise<boolean> {
@@ -58,6 +59,20 @@ async function sendEmail(sub: SPPASubmission): Promise<boolean> {
   }
 
   try {
+    // Generate PDF buffer (jika gagal, email tetap terkirim tanpa attachment)
+    const safeNama  = sub.nama.replace(/\s+/g, "-").replace(/[^a-zA-Z0-9-]/g, "");
+    const fileName  = `Simulasi-dan-Estimasi-Premi-${safeNama}.pdf`;
+    const pdfBuffer = await generatePDFBuffer(sub);
+
+    // Bangun attachment jika PDF berhasil digenerate
+    const attachments = pdfBuffer
+      ? [{ filename: fileName, content: pdfBuffer.toString("base64") }]
+      : [];
+
+    if (!pdfBuffer) {
+      console.warn("[send-sppa] PDF gagal digenerate — email dikirim tanpa attachment");
+    }
+
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -65,12 +80,13 @@ async function sendEmail(sub: SPPASubmission): Promise<boolean> {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from:     "Asuransi Jogja <rio@asuransijogja.biz.id>",
-        reply_to: "rio@asuransijogja.biz.id",
-        to:       [sub.email],
-        subject:  `Konfirmasi Permintaan Simulasi — ${sub.productLabel} [${sub.id}]`,
-        html:     buildEmailHtml(sub),
-        text:     buildEmailText(sub),
+        from:        "Asuransi Jogja <rio@asuransijogja.biz.id>",
+        reply_to:    "rio@asuransijogja.biz.id",
+        to:          [sub.email],
+        subject:     `Simulasi & Estimasi Premi — ${sub.productLabel} [${sub.id}]`,
+        html:        buildEmailHtml(sub),
+        text:        buildEmailText(sub),
+        attachments, // array kosong jika PDF gagal → email tetap terkirim
       }),
     });
 
@@ -81,7 +97,11 @@ async function sendEmail(sub: SPPASubmission): Promise<boolean> {
       return false;
     }
 
-    console.log("[send-sppa] Email terkirim ke:", sub.email, "| ID Resend:", json.id);
+    console.log(
+      "[send-sppa] Email terkirim ke:", sub.email,
+      "| PDF attached:", !!pdfBuffer,
+      "| ID Resend:", json.id
+    );
     return true;
   } catch (err) {
     console.error("[send-sppa] Resend fetch error:", err);
