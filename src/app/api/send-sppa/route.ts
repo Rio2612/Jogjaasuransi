@@ -5,6 +5,7 @@ import {
   updateSubmissionStatus,
   type SPPASubmission,
 } from "@/lib/sppaStore";
+import { buildEmailHtml, buildEmailText } from "@/lib/emailTemplate";
 
 // ─── Fonnte WA Sender ─────────────────────────────────────────────────────────
 async function sendWA(target: string, message: string): Promise<boolean> {
@@ -40,6 +41,50 @@ async function sendWA(target: string, message: string): Promise<boolean> {
     return true;
   } catch (err) {
     console.error("[send-sppa] Fonnte fetch error:", err);
+    return false;
+  }
+}
+
+// ─── Resend Email Sender ──────────────────────────────────────────────────────
+async function sendEmail(sub: SPPASubmission): Promise<boolean> {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.warn("[send-sppa] RESEND_API_KEY tidak di-set — email tidak dikirim");
+    return false;
+  }
+  if (!sub.email) {
+    console.log("[send-sppa] Tidak ada email user — skip kirim email");
+    return false;
+  }
+
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from:     "Asuransi Jogja <rio@asuransijogja.biz.id>",
+        reply_to: "rio@asuransijogja.biz.id",
+        to:       [sub.email],
+        subject:  `Konfirmasi Permintaan Simulasi — ${sub.productLabel} [${sub.id}]`,
+        html:     buildEmailHtml(sub),
+        text:     buildEmailText(sub),
+      }),
+    });
+
+    const json = await res.json() as Record<string, unknown>;
+
+    if (!res.ok) {
+      console.error("[send-sppa] Resend gagal:", json);
+      return false;
+    }
+
+    console.log("[send-sppa] Email terkirim ke:", sub.email, "| ID Resend:", json.id);
+    return true;
+  } catch (err) {
+    console.error("[send-sppa] Resend fetch error:", err);
     return false;
   }
 }
@@ -139,19 +184,25 @@ export async function POST(req: NextRequest) {
     await addSubmission(submission);
     console.log("[send-sppa] Tersimpan ke Supabase:", submission.id);
 
-    // 2. Kirim WA — await keduanya agar tidak mati di Vercel serverless
+    // 2. Kirim WA + Email bersamaan — semua di-await agar tidak mati di Vercel serverless
     const adminWA = process.env.ADMIN_WA || "6287781658231";
-    const [adminSent, clientSent] = await Promise.all([
+    const [adminSent, clientSent, emailSent] = await Promise.all([
       sendWA(adminWA, buildAdminMessage(submission)),
       sendWA(submission.whatsapp, buildClientMessage(submission)),
+      sendEmail(submission),
     ]);
 
-    console.log("[send-sppa] WA admin:", adminSent, "| WA client:", clientSent);
+    console.log(
+      "[send-sppa] WA admin:", adminSent,
+      "| WA client:", clientSent,
+      "| Email:", emailSent
+    );
 
     return NextResponse.json({
       success: true,
       id: submission.id,
-      wa: { admin: adminSent, client: clientSent },
+      wa:    { admin: adminSent, client: clientSent },
+      email: emailSent,
     });
   } catch (err) {
     console.error("[send-sppa] POST error:", err);
