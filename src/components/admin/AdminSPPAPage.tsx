@@ -41,12 +41,16 @@ function formatRp(n: number) {
 // ─── PDF Generator (client-side, print-to-PDF via browser) ────────────────────
 // ─── Data Zona Gempa (sync dengan SPPAForm) ──────────────────────────────────
 // Rate gempa dalam % sesuai ketentuan: Zona 4 → 0,075% | Zona 5 → 0,160%
-const ZONA_GEMPA_RATE: Record<string, number> = {
-  "Kota Yogyakarta":        0.075,
-  "Kabupaten Sleman":       0.075,
-  "Kabupaten Gunung Kidul": 0.075,
-  "Kabupaten Kulon Progo":  0.075,
-  "Kabupaten Bantul":       0.160,
+// Rate gempa dalam ‰ (per mil), per golongan
+// Golongan I  : Rumah tinggal, Kos, Kantor, Ruko/Toko
+// Golongan II : Vila, Homestay, Motel, Hotel, Gudang non-hazardous
+// Golongan III: Gudang kimia/hazardous, pabrik (tidak disupport di form ini)
+const ZONA_GEMPA_RATE: Record<string, { gol1: number; gol2: number }> = {
+  "Kota Yogyakarta":        { gol1: 1.350, gol2: 1.600 },
+  "Kabupaten Sleman":       { gol1: 1.350, gol2: 1.600 },
+  "Kabupaten Gunung Kidul": { gol1: 1.350, gol2: 1.600 },
+  "Kabupaten Kulon Progo":  { gol1: 1.350, gol2: 1.600 },
+  "Kabupaten Bantul":       { gol1: 1.600, gol2: 2.150 },
 };
 
 const ZONA_GEMPA_NOMOR: Record<string, number> = {
@@ -307,14 +311,16 @@ function buildProductSections(sub: Submission): string {
       ? f.risikoTambahan as string[]
       : f.risikoTambahan ? [String(f.risikoTambahan)] : [];
 
-    // 1. Banjir & Angin Topan — 0,500‰ (zona rendah, semua okupasi)
-    const adaBanjir       = risikoTambahan.some(r => r.toLowerCase().includes("banjir"));
-    const rateBanjirPermil = 0.500;
-    const premiBanjir     = adaBanjir ? Math.round(totalNilai * rateBanjirPermil / 1000) : 0;
+    // 1. Banjir, Tanah Longsor & Angin Topan (Bencana Alam) — 0,0450% = 0,450‰
+    // Sumber: tarif batas bawah OJK untuk rumah tinggal/properti standar
+    const adaBanjir        = risikoTambahan.some(r => r.toLowerCase().includes("banjir") || r.toLowerCase().includes("longsor") || r.toLowerCase().includes("topan"));
+    const rateBanjirPermil = 0.450;   // 0,0450% → 0,450‰
+    const premiBanjir      = adaBanjir ? Math.round(totalNilai * rateBanjirPermil / 1000) : 0;
 
-    // 2. Huru-Hara / SRCC — 0,0100‰ (Kelas 1 Beton, semua okupasi)
-    const adaHuru        = risikoTambahan.some(r => r.toLowerCase().includes("huru") || r.toLowerCase().includes("srcc") || r.toLowerCase().includes("kerusuhan"));
-    const rateHuruPermil  = 0.0100;
+    // 2. Huru-Hara, Kerusuhan & Sabotase (RSMD/SRCC) — 0,0010% = 0,010‰
+    // Sumber: tarif batas bawah OJK RSMD untuk properti standar
+    const adaHuru         = risikoTambahan.some(r => r.toLowerCase().includes("huru") || r.toLowerCase().includes("srcc") || r.toLowerCase().includes("kerusuhan") || r.toLowerCase().includes("rsmd"));
+    const rateHuruPermil  = 0.010;   // 0,0010% → 0,010‰
     const premiHuru       = adaHuru ? Math.round(totalNilai * rateHuruPermil / 1000) : 0;
 
     // 3. Kebongkaran / Burglary — rate per jenis okupasi, dihitung dari nilaiIsi saja
@@ -334,20 +340,28 @@ function buildProductSections(sub: Submission): string {
     const premiDasarTotal = premiDasar + totalPerluasan;
     const totalPolisIncl  = premiDasarTotal + biayaAdmin;
 
-    // ── Gempa bumi — polis tersendiri ──
-    // Rate dalam % (Zona 4: 0,075% | Zona 5: 0,160%) → dibagi 100
-    const wGempa          = fStr(f.wilayahGempa);
-    const rGempa          = ZONA_GEMPA_RATE[wGempa] || 0;
-    const zonaGempa       = ZONA_GEMPA_NOMOR[wGempa] || 0;
-    const pGempa          = rGempa && totalNilai ? Math.round(totalNilai * rGempa / 100) : 0;
+    // ── Gempa bumi — polis tersendiri (PSAKI) ──
+    // Rate dalam ‰ (per mil) sesuai tarif gempa komersial OJK per golongan
+    // Golongan I : Rumah, Kos, Kantor, Ruko
+    // Golongan II: Vila, Homestay, Hotel, Gudang non-hazardous
+    const wGempa     = fStr(f.wilayahGempa);
+    const zonaGempa  = ZONA_GEMPA_NOMOR[wGempa] || 0;
+    const rateZona   = ZONA_GEMPA_RATE[wGempa];
+    // Tentukan golongan berdasarkan okupasi
+    const isGol2     = ["vila", "villa", "homestay", "motel", "hotel", "gudang"].some(k => okupasiStr.includes(k));
+    const rGempaPermil = rateZona
+      ? (isGol2 ? rateZona.gol2 : rateZona.gol1)
+      : 0;
+    const golLabel   = isGol2 ? "Golongan II (Vila/Hotel/Gudang)" : "Golongan I (Rumah/Kos/Kantor/Ruko)";
+    const pGempa          = rGempaPermil && totalNilai ? Math.round(totalNilai * rGempaPermil / 1000) : 0;
     const biayaAdminGempa = pGempa < 5_000_000 ? 30_000 : 40_000;
     const totalPolisGempa = pGempa + biayaAdminGempa;
     const adaGempa        = pGempa > 0;
 
     // Perluasan yang belum dipilih — ditampilkan sebagai info referensi
     const perluasanInfoRows = [
-      !adaBanjir   ? ["Banjir & Angin Topan (Flood/Windstorm)", "0,500‰ dari nilai pertanggungan"]                                     : null,
-      !adaHuru     ? ["Huru-Hara / Kerusuhan (SRCC)",           "0,0100‰ dari nilai pertanggungan"]                                    : null,
+      !adaBanjir   ? ["Banjir, Tanah Longsor & Angin Topan (Bencana Alam)", "0,450‰ (0,0450%) dari nilai pertanggungan"]              : null,
+      !adaHuru     ? ["Huru-Hara / Kerusuhan / RSMD (SRCC)",                "0,010‰ (0,0010%) dari nilai pertanggungan"]              : null,
       !adaBurglary ? ["Kebongkaran / Pencurian (Burglary)",      isRumah ? "0,010‰ dari nilai isi" : "1,000–1,500‰ dari nilai isi"]    : null,
       !adaTabrakan ? ["Tabrakan Kendaraan (Vehicle Impact)",     "0,010‰ dari nilai pertanggungan"]                                    : null,
     ].filter(Boolean) as string[][];
@@ -384,8 +398,8 @@ function buildProductSections(sub: Submission): string {
         <tr><td class="td-premi">Total Nilai Pertanggungan</td><td class="td-premi-val">${totalNilai ? "Rp " + totalNilai.toLocaleString("id-ID") : "—"}</td></tr>
         <tr><td class="td-premi">Rate Premi Dasar</td><td class="td-premi-val">${rateLabel}</td></tr>
         <tr><td class="td-premi">Premi Dasar Kebakaran</td><td class="td-premi-val">${totalNilai ? "Rp " + premiDasar.toLocaleString("id-ID") : "—"}</td></tr>
-        ${adaBanjir   ? `<tr><td class="td-premi">+ Banjir &amp; Angin Topan (0,500‰)</td><td class="td-premi-val">Rp ${premiBanjir.toLocaleString("id-ID")}</td></tr>` : ""}
-        ${adaHuru     ? `<tr><td class="td-premi">+ Huru-Hara / SRCC (0,0100‰)</td><td class="td-premi-val">Rp ${premiHuru.toLocaleString("id-ID")}</td></tr>` : ""}
+        ${adaBanjir   ? `<tr><td class="td-premi">+ Banjir, Tanah Longsor &amp; Angin Topan (0,450‰)</td><td class="td-premi-val">Rp ${premiBanjir.toLocaleString("id-ID")}</td></tr>` : ""}
+        ${adaHuru     ? `<tr><td class="td-premi">+ Huru-Hara / RSMD (0,010‰)</td><td class="td-premi-val">Rp ${premiHuru.toLocaleString("id-ID")}</td></tr>` : ""}
         ${adaBurglary ? `<tr><td class="td-premi">+ Kebongkaran / Burglary (${rateBurglaryLabel})</td><td class="td-premi-val">Rp ${premiBurglary.toLocaleString("id-ID")}</td></tr>` : ""}
         ${adaTabrakan ? `<tr><td class="td-premi">+ Tabrakan Kendaraan (0,010‰)</td><td class="td-premi-val">Rp ${premiTabrakan.toLocaleString("id-ID")}</td></tr>` : ""}
         ${totalPerluasan > 0 ? `<tr><td class="td-premi" style="font-style:italic;">Subtotal Premi + Perluasan</td><td class="td-premi-val" style="font-style:italic;">Rp ${premiDasarTotal.toLocaleString("id-ID")}</td></tr>` : ""}
@@ -396,7 +410,7 @@ function buildProductSections(sub: Submission): string {
         </tr>
       </tbody>
     </table>
-    <p style="font-size:11px;color:#94A3B8;margin-top:8px;line-height:1.6;">* Rate dasar mengacu tarif OJK batas bawah (‰) per jenis okupasi &amp; kelas konstruksi. Perluasan dihitung sebagai endorsement dalam polis utama. Biaya admin: &lt;Rp 5 juta = Rp 30.000, &ge;Rp 5 juta = Rp 40.000.</p>
+    <p style="font-size:11px;color:#94A3B8;margin-top:8px;line-height:1.6;">* Rate dasar mengacu tarif OJK batas bawah (‰) per jenis okupasi &amp; kelas konstruksi. Banjir/Bencana Alam: 0,450‰ (0,0450%). Huru-Hara/RSMD: 0,010‰ (0,0010%). Biaya admin: &lt;Rp 5 juta = Rp 30.000, &ge;Rp 5 juta = Rp 40.000.</p>
   </div>
 
   ${adaGempa ? `
@@ -412,7 +426,8 @@ function buildProductSections(sub: Submission): string {
       <tbody>
         <tr><td class="td-premi">Total Nilai Pertanggungan</td><td class="td-premi-val">Rp ${totalNilai.toLocaleString("id-ID")}</td></tr>
         <tr><td class="td-premi">Wilayah / Zona Gempa</td><td class="td-premi-val">${wGempa} — Zona ${zonaGempa}</td></tr>
-        <tr><td class="td-premi">Rate Premi Gempa</td><td class="td-premi-val">${rGempa}% dari nilai pertanggungan</td></tr>
+        <tr><td class="td-premi">Golongan Risiko</td><td class="td-premi-val">${golLabel}</td></tr>
+        <tr><td class="td-premi">Rate Premi Gempa</td><td class="td-premi-val">${rGempaPermil.toFixed(3).replace(".", ",")}‰ dari nilai pertanggungan</td></tr>
         <tr><td class="td-premi">Premi Gempa Bumi (estimasi)</td><td class="td-premi-val">Rp ${pGempa.toLocaleString("id-ID")}</td></tr>
         <tr><td class="td-premi">Biaya Administrasi</td><td class="td-premi-val">Rp ${biayaAdminGempa.toLocaleString("id-ID")}</td></tr>
         <tr style="background:#FDF9F3;">
