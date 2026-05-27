@@ -86,13 +86,25 @@ function buildProductSections(sub: Submission): string {
 
   /* ── Kendaraan ── */
   if (product === "kendaraan") {
-    const nilaiRaw   = fNum(f.nilaiKendaraan);
-    const rateAR     = 1.05; // % estimasi (kategori menengah)
-    const rateTLO    = 0.20;
-    const tipeStr    = fStr(f.tipeProteksi);
-    const isAR       = !tipeStr || tipeStr === "—" || tipeStr.includes("All Risk");
-    const rateUsed   = isAR ? rateAR : rateTLO;
-    const rateLabel  = isAR ? "1,05% (estimasi All Risk)" : "0,20% (estimasi TLO)";
+    const nilaiRaw = fNum(f.nilaiKendaraan);
+    const tipeStr  = fStr(f.tipeProteksi);
+    const isAR     = !tipeStr || tipeStr === "—" || tipeStr.includes("All Risk");
+
+    // ── Rate OJK SE No.6/SEOJK.05/2017 — Wilayah 3 (Yogyakarta) ──
+    // Menggunakan titik tengah dari range min–max resmi OJK.
+    // All Risk: Kat1=2,655% | Kat2=2,825% | Kat3=1,880% | Kat4=1,195% | Kat5=1,105%
+    // TLO     : Kat1=0,535% | Kat2=0,460% | Kat3=0,320% | Kat4=0,250% | Kat5=0,220%
+    type RateEntry = { max: number; ar: number; tlo: number; labelAR: string; labelTLO: string };
+    const OJK_RATES: RateEntry[] = [
+      { max: 125_000_000,   ar: 2.655, tlo: 0.535, labelAR: "2,655% (Kat.1 ≤125 jt, range 2,53–2,78%)",     labelTLO: "0,535% (Kat.1 ≤125 jt, range 0,51–0,56%)"     },
+      { max: 200_000_000,   ar: 2.825, tlo: 0.460, labelAR: "2,825% (Kat.2 >125–200 jt, range 2,69–2,96%)", labelTLO: "0,460% (Kat.2 >125–200 jt, range 0,44–0,48%)" },
+      { max: 400_000_000,   ar: 1.880, tlo: 0.320, labelAR: "1,880% (Kat.3 >200–400 jt, range 1,79–1,97%)", labelTLO: "0,320% (Kat.3 >200–400 jt, range 0,29–0,35%)" },
+      { max: 800_000_000,   ar: 1.195, tlo: 0.250, labelAR: "1,195% (Kat.4 >400–800 jt, range 1,14–1,25%)", labelTLO: "0,250% (Kat.4 >400–800 jt, range 0,23–0,27%)" },
+      { max: Infinity,      ar: 1.105, tlo: 0.220, labelAR: "1,105% (Kat.5 >800 jt, range 1,05–1,16%)",     labelTLO: "0,220% (Kat.5 >800 jt, range 0,20–0,24%)"     },
+    ];
+    const rateEntry  = OJK_RATES.find(r => nilaiRaw <= r.max) ?? OJK_RATES[OJK_RATES.length - 1];
+    const rateUsed   = isAR ? rateEntry.ar  : rateEntry.tlo;
+    const rateLabel  = isAR ? rateEntry.labelAR : rateEntry.labelTLO;
     const premiDasar = Math.round(nilaiRaw * rateUsed / 100);
     // Biaya administrasi: <5 juta = Rp 30.000, ≥5 juta = Rp 40.000
     const biayaAdmin = premiDasar < 5_000_000 ? 30_000 : 40_000;
@@ -145,7 +157,7 @@ function buildProductSections(sub: Submission): string {
       </tbody>
     </table>
     <p style="font-size:11px;color:#94A3B8;margin-top:8px;line-height:1.6;">
-      * Rate estimasi mengacu pada tarif referensi OJK SE No.6/SEOJK.05/2017. Biaya admin: premi &lt;Rp 5 juta = Rp 30.000, &ge;Rp 5 juta = Rp 40.000. Own Risk: Rp 300.000/kejadian (BBM) atau Rp 500.000/kejadian (EV).
+      * Rate estimasi mengacu pada tarif referensi OJK SE No.6/SEOJK.05/2017 <strong>Wilayah 3 (Yogyakarta)</strong> — titik tengah range min/maks per kategori harga kendaraan. Biaya admin: premi &lt;Rp 5 juta = Rp 30.000, &ge;Rp 5 juta = Rp 40.000. Own Risk: Rp 300.000/kejadian (BBM) atau Rp 500.000/kejadian (EV).
     </p>
   </div>
 
