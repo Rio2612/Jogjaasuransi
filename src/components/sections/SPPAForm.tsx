@@ -180,12 +180,16 @@ const FIELD_CONFIGS: Record<ProductId, FieldConfig[]> = {
 
 
 /* ─── Data Zona Gempa DIY ────────────────────────────────── */
-const ZONA_GEMPA: { label: string; zona: number; rate: number }[] = [
-  { label: "Kota Yogyakarta",     zona: 4, rate: 0.240 },
-  { label: "Kabupaten Sleman",    zona: 4, rate: 0.240 },
-  { label: "Kabupaten Gunung Kidul", zona: 4, rate: 0.240 },
-  { label: "Kabupaten Kulon Progo",  zona: 4, rate: 0.240 },
-  { label: "Kabupaten Bantul",    zona: 5, rate: 0.360 },
+// Rate gempa dalam ‰ (per mil) — Golongan I (rumah, kos, kantor) sebagai estimasi awal di form.
+// Golongan II (vila/hotel/gudang) dan III (gudang kimia/pabrik) dihitung detail di PDF admin.
+// Zona 4 (Jogja Kota, Sleman, Gunung Kidul, Kulon Progo): 1,350‰
+// Zona 5 (Bantul): 1,600‰
+const ZONA_GEMPA: { label: string; zona: number; rate: number; rateGol2: number }[] = [
+  { label: "Kota Yogyakarta",        zona: 4, rate: 1.350, rateGol2: 1.600 },
+  { label: "Kabupaten Sleman",       zona: 4, rate: 1.350, rateGol2: 1.600 },
+  { label: "Kabupaten Gunung Kidul", zona: 4, rate: 1.350, rateGol2: 1.600 },
+  { label: "Kabupaten Kulon Progo",  zona: 4, rate: 1.350, rateGol2: 1.600 },
+  { label: "Kabupaten Bantul",       zona: 5, rate: 1.600, rateGol2: 2.150 },
 ];
 
 // Biaya admin properti berdasarkan total premi
@@ -376,8 +380,9 @@ function PropertiFields({
   const nilaiBangunan = parseInt((form.nilaiBangunan as string) || "0", 10) || 0;
   const nilaiIsi      = parseInt((form.nilaiIsi as string) || "0", 10) || 0;
   const totalNilai    = nilaiBangunan + nilaiIsi;
+  // Rate dalam ‰ (per mil) → rumus: nilaiPertanggungan × rate / 1000
   const premiGempa    = zonaData && totalNilai > 0
-    ? Math.round(totalNilai * zonaData.rate / 1000) // rate dalam ‰ (per mil)
+    ? Math.round(totalNilai * zonaData.rate / 1000)
     : 0;
 
   const handleRisikoChange = (opt: string) => {
@@ -433,7 +438,7 @@ function PropertiFields({
                     <option value="">— Pilih Wilayah —</option>
                     {ZONA_GEMPA.map(z => (
                       <option key={z.label} value={z.label}>
-                        {z.label} — Zona {z.zona} (Rate {z.rate}‰)
+                        {z.label} — Zona {z.zona}
                       </option>
                     ))}
                   </select>
@@ -446,7 +451,7 @@ function PropertiFields({
                         <span className="font-bold text-navy">Zona {zonaData.zona}</span>
                       </div>
                       <div className="flex justify-between text-xs">
-                        <span className="text-[#64748B]">Tarif Gempa</span>
+                        <span className="text-[#64748B]">Tarif Gempa (Gol. I est.)</span>
                         <span className="font-bold text-navy">{zonaData.rate}‰ dari nilai pertanggungan</span>
                       </div>
                       {premiGempa > 0 && (
@@ -459,7 +464,7 @@ function PropertiFields({
                             </span>
                           </div>
                           <p className="text-[0.65rem] text-[#94A3B8] leading-relaxed">
-                            * Estimasi dari nilai pertanggungan Rp {totalNilai.toLocaleString("id-ID")} × {zonaData.rate}‰
+                            * Estimasi Golongan I (Rumah/Kos/Kantor) dari nilai pertanggungan Rp {totalNilai.toLocaleString("id-ID")} × {zonaData.rate}‰. Vila/Hotel/Gudang menggunakan Golongan II.
                           </p>
                         </>
                       )}
