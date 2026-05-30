@@ -1,7 +1,7 @@
 // app/artikel/syarat-asuransi-tender-pemerintah-diy/page.tsx
-// TARGET KEYWORD: "syarat asuransi tender pemerintah DIY", "dokumen asuransi CAR tender yogyakarta"
-// INTENT: Navigational + Commercial — kontraktor yang sedang persiapan tender
-// SILO: Engineering cluster → mendukung /asuransi-engineering/contractor-all-risk/
+// TARGET KEYWORD: "syarat asuransi tender pemerintah DIY", "asuransi wajib kontraktor tender yogyakarta"
+// INTENT: Informational + Commercial — kontraktor yang baru menang tender atau sedang persiapan penawaran
+// SILO: Surety Bond + Engineering cluster — cross-link ke CAR, jaminan-pelaksanaan, jaminan-penawaran
 
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -10,17 +10,18 @@ import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Syarat Asuransi Tender Pemerintah DIY 2026 – Dokumen CAR yang Wajib Ada | Asuransi Jogja",
+  title: "Syarat Asuransi Tender Pemerintah DIY – Panduan Lengkap Kontraktor | Asuransi Jogja",
   description:
-    "Panduan lengkap dokumen asuransi yang wajib dilampirkan dalam tender pemerintah DIY 2026. Contractor All Risk (CAR), Surety Bond, dan endorsement khusus. Proses cepat 1–3 hari kerja.",
+    "Panduan lengkap syarat asuransi untuk tender pemerintah di Yogyakarta: Jaminan Penawaran, Jaminan Pelaksanaan, CAR, dan Jaminan Pemeliharaan. Dasar hukum Perpres 12/2021, urutan pengajuan, dan tips agar dokumen asuransi tidak ditolak panitia.",
   keywords:
-    "syarat asuransi tender pemerintah DIY, dokumen CAR tender yogyakarta, asuransi wajib kontraktor pemerintah, certificate of insurance tender DIY, asuransi CAR APBD yogyakarta",
+    "syarat asuransi tender pemerintah DIY, asuransi kontraktor yogyakarta, jaminan penawaran tender jogja, jaminan pelaksanaan proyek pemerintah, CAR wajib tender yogyakarta, perpres 12 2021 asuransi kontraktor",
   alternates: {
     canonical: "https://asuransijogja.biz.id/artikel/syarat-asuransi-tender-pemerintah-diy",
   },
   openGraph: {
-    title: "Syarat Asuransi Tender Pemerintah DIY 2026",
-    description: "Dokumen asuransi CAR dan Surety Bond yang wajib ada saat mengikuti tender APBN/APBD di Yogyakarta.",
+    title: "Syarat Asuransi Tender Pemerintah DIY – Panduan Lengkap Kontraktor",
+    description:
+      "Jaminan apa saja yang wajib disiapkan kontraktor sebelum dan sesudah menang tender pemerintah di Yogyakarta? Lengkap dengan dasar hukum dan urutan pengajuan.",
     url: "https://asuransijogja.biz.id/artikel/syarat-asuransi-tender-pemerintah-diy",
     type: "article",
   },
@@ -34,213 +35,261 @@ const schemaArtikel = {
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Beranda", item: "https://asuransijogja.biz.id" },
         { "@type": "ListItem", position: 2, name: "Artikel", item: "https://asuransijogja.biz.id/artikel" },
-        { "@type": "ListItem", position: 3, name: "Syarat Asuransi Tender Pemerintah DIY", item: "https://asuransijogja.biz.id/artikel/syarat-asuransi-tender-pemerintah-diy" },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Syarat Asuransi Tender Pemerintah DIY",
+          item: "https://asuransijogja.biz.id/artikel/syarat-asuransi-tender-pemerintah-diy",
+        },
       ],
     },
     {
       "@type": "Article",
-      headline: "Syarat Asuransi Tender Pemerintah DIY 2026",
-      description: "Dokumen asuransi yang wajib dilampirkan dalam tender pemerintah DIY — CAR, Surety Bond, dan endorsement khusus.",
+      headline: "Syarat Asuransi Tender Pemerintah DIY – Panduan Lengkap Kontraktor",
+      description:
+        "Panduan lengkap jenis asuransi dan jaminan yang wajib disiapkan kontraktor untuk mengikuti dan melaksanakan tender pemerintah di Yogyakarta.",
       author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
-      publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
-      datePublished: "2026-02-01",
-      dateModified: "2026-06-01",
-      mainEntityOfPage: "https://asuransijogja.biz.id/artikel/syarat-asuransi-tender-pemerintah-diy",
+      publisher: {
+        "@type": "Organization",
+        name: "Asuransi Jogja",
+        url: "https://asuransijogja.biz.id",
+      },
+      datePublished: "2025-03-10",
+      dateModified: "2025-06-01",
     },
     {
       "@type": "FAQPage",
       mainEntity: [
         {
           "@type": "Question",
-          name: "Dokumen asuransi apa yang wajib ada saat tender pemerintah?",
-          acceptedAnswer: { "@type": "Answer", text: "Dokumen asuransi yang umumnya wajib dalam tender pemerintah DIY: Certificate of Insurance CAR, Schedule of Insurance, Jaminan Penawaran (Bid Bond) dari perusahaan surety/asuransi, dan endorsement Principal Clause jika disyaratkan." },
+          name: "Apa saja asuransi yang wajib disiapkan kontraktor untuk tender pemerintah DIY?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Ada empat jenis jaminan utama: (1) Jaminan Penawaran sebelum memasukkan penawaran, (2) Jaminan Pelaksanaan setelah dinyatakan menang dan sebelum kontrak ditandatangani, (3) Asuransi CAR (Contractor All Risk) sebelum pekerjaan dimulai, dan (4) Jaminan Pemeliharaan setelah serah terima pertama (PHO). Khusus proyek dengan nilai DP, ditambah Jaminan Uang Muka.",
+          },
         },
         {
           "@type": "Question",
-          name: "Berapa lama proses mendapatkan polis CAR untuk tender?",
-          acceptedAnswer: { "@type": "Answer", text: "Dengan dokumen proyek yang lengkap, polis CAR dan Certificate of Insurance dapat terbit dalam 1–3 hari kerja. Untuk proyek di atas Rp 10 miliar yang memerlukan survei, prosesnya 3–7 hari kerja." },
+          name: "Berapa nilai Jaminan Penawaran untuk tender pemerintah?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Berdasarkan Perpres 12/2021, nilai Jaminan Penawaran untuk pengadaan jasa konstruksi pemerintah berkisar 1–3% dari nilai HPS (Harga Perkiraan Sendiri). Nilai persisnya tercantum dalam Dokumen Pengadaan masing-masing paket tender.",
+          },
         },
         {
           "@type": "Question",
-          name: "Apakah Jaminan Penawaran (Bid Bond) termasuk asuransi?",
-          acceptedAnswer: { "@type": "Answer", text: "Jaminan Penawaran bisa diterbitkan oleh perusahaan asuransi umum (dalam bentuk Surety Bond) atau bank (dalam bentuk bank garansi). Keduanya diterima dalam tender pemerintah. Surety Bond dari asuransi umumnya lebih cepat prosesnya dan tidak memblokir plafon kredit bank." },
+          name: "Berapa lama proses penerbitan polis CAR dan Jaminan Pelaksanaan?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Jaminan Pelaksanaan dan Jaminan Penawaran melalui surety bond umumnya dapat diterbitkan dalam 1–3 hari kerja setelah dokumen lengkap diterima. Polis CAR membutuhkan 1–3 hari kerja tergantung nilai proyek dan kelengkapan dokumen (RAB, gambar, schedule). Proyek besar di atas Rp 50 miliar umumnya membutuhkan proses underwriting lebih panjang.",
+          },
         },
-      ],
-    },
-    {
-      "@type": "HowTo",
-      name: "Cara Menyiapkan Dokumen Asuransi untuk Tender Pemerintah DIY",
-      description: "Langkah-langkah menyiapkan dokumen asuransi CAR dan Surety Bond untuk mengikuti tender proyek pemerintah di Yogyakarta.",
-      totalTime: "P3D",
-      step: [
-        { "@type": "HowToStep", position: 1, name: "Baca Dokumen RKS dengan Teliti", text: "Identifikasi semua persyaratan asuransi dalam Rencana Kerja dan Syarat-Syarat (RKS). Catat jenis asuransi, nilai minimum, dan endorsement yang diminta." },
-        { "@type": "HowToStep", position: 2, name: "Hubungi Konsultan Asuransi", text: "Hubungi konsultan asuransi dengan informasi: nama proyek, nilai HPS, durasi proyek, dan persyaratan asuransi dari RKS. Konsultan akan menyiapkan penawaran." },
-        { "@type": "HowToStep", position: 3, name: "Review dan Bayar Premi", text: "Review penawaran premi, pastikan cakupan sesuai RKS, lakukan pembayaran. Polis dan Certificate of Insurance diterbitkan dalam 1–3 hari kerja." },
-        { "@type": "HowToStep", position: 4, name: "Lampirkan di Dokumen Penawaran", text: "Lampirkan Certificate of Insurance dan dokumen pendukung dalam amplop dokumen kualifikasi atau penawaran sesuai petunjuk dokumen tender." },
+        {
+          "@type": "Question",
+          name: "Apakah Jaminan Penawaran dari surety bond diterima panitia tender pemerintah DIY?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Ya. Berdasarkan Perpres 16/2018 jo. Perpres 12/2021, jaminan penawaran dapat menggunakan Bank Garansi atau Surety Bond dari perusahaan asuransi yang memiliki izin OJK dan tercantum dalam Daftar Perusahaan Penjaminan yang ditetapkan Menteri Keuangan.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Apa yang terjadi jika kontraktor tidak menyerahkan Jaminan Pelaksanaan tepat waktu?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Jika kontraktor pemenang tidak menyerahkan Jaminan Pelaksanaan dalam batas waktu yang ditentukan (umumnya 14 hari kerja setelah penetapan pemenang), kontrak dapat dibatalkan dan Jaminan Penawaran dicairkan. Kontraktor juga dapat dimasukkan dalam Daftar Hitam (blacklist) pengadaan pemerintah.",
+          },
+        },
       ],
     },
   ],
 };
 
-const dokumenWajib = [
+// ─── DATA ────────────────────────────────────────────────────────────────────
+
+const jaminanWajib = [
   {
-    no: "1",
-    dokumen: "Certificate of Insurance (CoI) CAR",
-    kapan: "Saat penandatanganan kontrak / pencairan termin pertama",
-    detail: "Bukti bahwa polis CAR sudah aktif dan menanggung proyek sesuai nilai dan periode kontrak. Harus mencantumkan nama proyek, nilai pertanggungan, periode, dan limit TPL.",
-    wajib: true,
+    urutan: "01",
+    nama: "Jaminan Penawaran",
+    kapan: "Sebelum memasukkan dokumen penawaran",
+    nilai: "1–3% dari nilai HPS",
+    masa: "Mengikuti masa berlaku penawaran (umumnya 28–60 hari)",
+    dasar: "Perpres 12/2021 Pasal 33",
+    icon: "📋",
+    warna: "border-blue-200 bg-blue-50/60",
+    warnaLabel: "bg-blue-100 text-blue-700",
+    link: "/asuransi-surety-bond/jaminan-penawaran",
+    catatan: "Wajib diserahkan bersamaan dengan dokumen penawaran. Jika tidak ada, penawaran gugur administrasi.",
   },
   {
-    no: "2",
-    dokumen: "Schedule of Insurance",
-    kapan: "Bersamaan dengan CoI",
-    detail: "Lampiran polis yang merinci nilai pertanggungan Section I dan II, deductible, periode jaminan, dan nama tertanggung. Beberapa pemilik proyek mensyaratkan ini secara terpisah.",
-    wajib: true,
+    urutan: "02",
+    nama: "Jaminan Pelaksanaan",
+    kapan: "Setelah ditetapkan sebagai pemenang, sebelum penandatanganan kontrak",
+    nilai: "5% dari nilai kontrak (atau 5% dari HPS jika penawaran < 80% HPS)",
+    masa: "Sama dengan masa pelaksanaan kontrak + 14 hari",
+    dasar: "Perpres 12/2021 Pasal 36",
+    icon: "🏆",
+    warna: "border-gold/40 bg-gold/5",
+    warnaLabel: "bg-gold/15 text-amber-700",
+    link: "/asuransi-surety-bond/jaminan-pelaksanaan",
+    catatan: "Wajib diserahkan maksimal 14 hari kerja setelah penetapan pemenang. Terlambat = kontrak batal.",
   },
   {
-    no: "3",
-    dokumen: "Jaminan Penawaran (Bid Bond)",
-    kapan: "Saat memasukkan dokumen penawaran",
-    detail: "Surety Bond atau bank garansi senilai 1–3% dari nilai HPS (Harga Perkiraan Sendiri). Berlaku selama proses lelang hingga penandatanganan kontrak.",
-    wajib: true,
+    urutan: "03",
+    nama: "Jaminan Uang Muka",
+    kapan: "Sebelum uang muka dicairkan (jika ada klausul DP dalam kontrak)",
+    nilai: "Sama dengan nilai uang muka yang diterima (umumnya 20–30% kontrak)",
+    masa: "Sampai uang muka terkompensasi sepenuhnya",
+    dasar: "Perpres 12/2021 Pasal 37",
+    icon: "💰",
+    warna: "border-green-200 bg-green-50/60",
+    warnaLabel: "bg-green-100 text-green-700",
+    link: "/asuransi-surety-bond/jaminan-uang-muka",
+    catatan: "Tidak semua proyek memberikan DP. Cek dokumen kontrak. Nilai jaminan harus sama persis dengan nilai DP.",
   },
   {
-    no: "4",
-    dokumen: "Jaminan Pelaksanaan (Performance Bond)",
-    kapan: "Saat penandatanganan kontrak",
-    detail: "Surety Bond senilai 5% dari nilai kontrak. Menjamin kontraktor akan menyelesaikan pekerjaan sesuai spesifikasi dan jadwal kontrak.",
-    wajib: true,
+    urutan: "04",
+    nama: "Asuransi CAR (Contractor All Risk)",
+    kapan: "Sebelum pekerjaan konstruksi dimulai — umumnya syarat pencairan termin pertama",
+    nilai: "Nilai kontrak (termasuk material, upah, overhead)",
+    masa: "Masa pelaksanaan + masa pemeliharaan (umumnya +12 bulan)",
+    dasar: "Perpres 12/2021 + Spesifikasi Teknis masing-masing proyek",
+    icon: "🏗️",
+    warna: "border-navy/20 bg-navy/3",
+    warnaLabel: "bg-navy/10 text-navy",
+    link: "/asuransi-engineering/contractor-all-risk",
+    catatan: "Polis CAR harus mencantumkan nama owner/bouwheer sebagai co-insured (Principal Clause). Tanpa ini, klaim bisa ditolak.",
   },
   {
-    no: "5",
-    dokumen: "Endorsement Principal Clause",
-    kapan: "Bersamaan dengan polis CAR",
-    detail: "Memperluas perlindungan CAR sehingga juga melindungi kepentingan pemilik proyek (owner). Sering disyaratkan dalam kontrak BUMN dan beberapa instansi pemerintah.",
-    wajib: false,
-  },
-  {
-    no: "6",
-    dokumen: "Endorsement Waiver of Subrogation",
-    kapan: "Bersamaan dengan polis CAR",
-    detail: "Perusahaan asuransi melepaskan hak subrogasi terhadap pemilik proyek. Artinya jika ada klaim akibat kelalaian owner, perusahaan asuransi tidak bisa menuntut owner.",
-    wajib: false,
-  },
-  {
-    no: "7",
-    dokumen: "Jaminan Uang Muka (Advance Payment Bond)",
-    kapan: "Saat pencairan uang muka",
-    detail: "Jika kontrak memberikan uang muka kepada kontraktor, pemilik proyek biasanya mensyaratkan jaminan uang muka senilai uang muka yang diterima.",
-    wajib: false,
+    urutan: "05",
+    nama: "Jaminan Pemeliharaan",
+    kapan: "Diserahkan saat Serah Terima Pertama (PHO) — sebagai pengganti retensi",
+    nilai: "5% dari nilai kontrak",
+    masa: "Masa pemeliharaan (umumnya 6–12 bulan setelah PHO)",
+    dasar: "Perpres 12/2021 Pasal 38",
+    icon: "🔧",
+    warna: "border-purple-200 bg-purple-50/60",
+    warnaLabel: "bg-purple-100 text-purple-700",
+    link: "/asuransi-surety-bond/jaminan-pemeliharan",
+    catatan: "Berfungsi menggantikan dana retensi 5% yang ditahan PPK. Dengan menyerahkan jaminan ini, kontraktor bisa menerima pembayaran penuh.",
   },
 ];
 
-const tahapanProses = [
+const alurTender = [
   {
-    tahap: "H-7 sebelum batas upload",
-    aksi: "Baca RKS",
-    desc: "Baca seluruh Rencana Kerja dan Syarat-Syarat (RKS) dengan teliti. Identifikasi semua klausal asuransi — jenis, nilai minimum, endorsement khusus, dan format dokumen yang diterima.",
-    tips: "Tandai semua ketentuan asuransi dengan highlighter — sering tersebar di beberapa bagian RKS",
+    fase: "Pra-Tender",
+    langkah: [
+      { label: "Terima undangan / download dokumen pengadaan", dokumen: null },
+      { label: "Siapkan Jaminan Penawaran (surety bond atau bank garansi)", dokumen: "Jaminan Penawaran" },
+      { label: "Masukkan dokumen penawaran + jaminan ke panitia", dokumen: null },
+    ],
   },
   {
-    tahap: "H-5",
-    aksi: "Hubungi Konsultan",
-    desc: "Hubungi konsultan asuransi dengan informasi: nama dan nomor paket tender, nilai HPS, lokasi proyek, durasi, dan persyaratan asuransi dari RKS. Sertakan dokumen RKS jika memungkinkan.",
-    tips: "Semakin lengkap informasi, semakin akurat penawaran premi yang Anda terima",
+    fase: "Pasca Penetapan Pemenang",
+    langkah: [
+      { label: "Terima SPPBJ (Surat Penunjukan Penyedia Barang/Jasa)", dokumen: null },
+      { label: "Siapkan Jaminan Pelaksanaan — max. 14 hari kerja", dokumen: "Jaminan Pelaksanaan" },
+      { label: "Tandatangani kontrak setelah jaminan diserahkan", dokumen: null },
+      { label: "Ajukan DP jika ada → siapkan Jaminan Uang Muka", dokumen: "Jaminan Uang Muka" },
+    ],
   },
   {
-    tahap: "H-4",
-    aksi: "Terima & Review Penawaran",
-    desc: "Review penawaran premi dari beberapa perusahaan asuransi. Pastikan cakupan sesuai RKS — nilai pertanggungan, endorsement, nama tertanggung, dan format CoI yang diminta.",
-    tips: "Jangan hanya bandingkan harga — pastikan endorsement yang diminta RKS sudah termasuk",
+    fase: "Pelaksanaan Pekerjaan",
+    langkah: [
+      { label: "Siapkan polis CAR sebelum mulai pekerjaan", dokumen: "Asuransi CAR" },
+      { label: "Serahkan polis CAR ke PPK — syarat pencairan termin", dokumen: null },
+      { label: "Jaga masa berlaku semua jaminan sesuai perpanjangan proyek", dokumen: null },
+    ],
   },
   {
-    tahap: "H-3",
-    aksi: "Bayar Premi & Proses Polis",
-    desc: "Lakukan pembayaran premi. Polis CAR dan Certificate of Insurance diterbitkan dalam 1–3 hari kerja untuk proyek standar. Koordinasikan dengan konsultan untuk proyek yang membutuhkan survei.",
-    tips: "Minta draft CoI terlebih dahulu untuk dikonfirmasi sebelum polis resmi terbit",
-  },
-  {
-    tahap: "H-1",
-    aksi: "Terima & Cek Dokumen",
-    desc: "Terima polis dan Certificate of Insurance. Cek ulang: nama tertanggung, nilai pertanggungan, periode, nomor proyek, dan semua endorsement yang diminta RKS sudah tercantum.",
-    tips: "Kesalahan kecil seperti nama proyek yang berbeda bisa menjadi alasan dokumen ditolak panitia",
-  },
-  {
-    tahap: "Hari H",
-    aksi: "Upload / Lampirkan",
-    desc: "Lampirkan Certificate of Insurance, Schedule of Insurance, dan dokumen Surety Bond dalam amplop dokumen penawaran atau upload di SPSE sesuai petunjuk paket tender.",
-    tips: "Simpan salinan semua dokumen — diperlukan kembali saat penandatanganan kontrak",
+    fase: "Serah Terima & Pemeliharaan",
+    langkah: [
+      { label: "Ajukan Serah Terima Pertama (PHO)", dokumen: null },
+      { label: "Serahkan Jaminan Pemeliharaan — tukar dengan retensi 5%", dokumen: "Jaminan Pemeliharaan" },
+      { label: "Masa pemeliharaan berjalan — semua jaminan aktif", dokumen: null },
+      { label: "Serah Terima Akhir (FHO) — semua kewajiban selesai", dokumen: null },
+    ],
   },
 ];
 
 const kesalahanUmum = [
   {
-    icon: "⚠️",
-    kesalahan: "Terlambat Mengurus Asuransi",
-    dampak: "Dokumen tidak siap sebelum batas upload, tidak bisa ikut tender",
-    solusi: "Urus minimal H-5 sebelum batas pemasukan dokumen. Untuk proyek besar, H-10.",
+    kesalahan: "Jaminan sudah kedaluwarsa saat diserahkan",
+    dampak: "Panitia menolak dokumen penawaran — gugur administrasi",
+    solusi: "Pastikan masa berlaku jaminan minimal sampai batas waktu sanggah + 14 hari. Koordinasikan tanggal dengan konsultan sebelum cetak.",
   },
   {
-    icon: "❌",
-    kesalahan: "Nilai Pertanggungan Tidak Sesuai HPS",
-    dampak: "Dokumen ditolak panitia karena tidak memenuhi syarat minimum",
-    solusi: "Gunakan nilai HPS atau nilai kontrak yang tercantum dalam RKS sebagai dasar sum insured.",
+    kesalahan: "Nama tertanggung tidak sesuai persis dengan nama di SIUJK/NIB",
+    dampak: "PPK menolak polis — kontraktor harus urus endorsement atau cetak ulang",
+    solusi: "Berikan copy SIUJK dan akta perusahaan terbaru kepada konsultan sebelum proses penerbitan jaminan.",
   },
   {
-    icon: "❌",
-    kesalahan: "Endorsement yang Diminta Tidak Terpenuhi",
-    dampak: "Polis dianggap tidak memenuhi syarat kontrak meski sudah bayar premi",
-    solusi: "Baca RKS dengan teliti dan komunikasikan semua endorsement yang diminta ke konsultan.",
+    kesalahan: "Polis CAR tidak mencantumkan Principal Clause (nama owner)",
+    dampak: "Klaim CAR bisa ditolak karena owner tidak terdaftar sebagai tertanggung",
+    solusi: "Selalu minta Principal Clause saat pesan polis CAR proyek pemerintah. Sebutkan nama instansi pemilik proyek secara lengkap.",
   },
   {
-    icon: "❌",
-    kesalahan: "Nama Tertanggung Salah",
-    dampak: "CoI ditolak karena nama perusahaan berbeda dengan dokumen penawaran",
-    solusi: "Konfirmasi nama tertanggung yang benar sebelum polis terbit — sesuaikan dengan akta perusahaan.",
+    kesalahan: "Nilai Jaminan Pelaksanaan dihitung dari nilai penawaran, bukan dari HPS",
+    dampak: "Jika penawaran < 80% HPS, nilai jaminan harus 5% dari HPS — bukan dari nilai penawaran",
+    solusi: "Cek dahulu: apakah penawaran Anda ≥ 80% HPS atau tidak. Jika di bawah, konsultasikan nilai jaminan dengan PPK sebelum cetak.",
   },
   {
-    icon: "❌",
-    kesalahan: "Periode Polis Lebih Pendek dari Durasi Proyek",
-    dampak: "Proyek tidak terlindungi di periode akhir, bisa melanggar kontrak",
-    solusi: "Periode polis harus sama atau lebih panjang dari durasi kontrak termasuk masa pemeliharaan.",
+    kesalahan: "Lupa memperpanjang jaminan saat proyek terlambat",
+    dampak: "Jaminan kedaluwarsa di tengah proyek — PPK bisa mencairkan jaminan pelaksanaan",
+    solusi: "Pasang reminder 30 hari sebelum jatuh tempo. Konsultan kami membantu monitoring masa berlaku semua jaminan aktif Anda.",
   },
+];
+
+const dokumenPengajuan = [
+  { dok: "KTP/identitas Direktur", untuk: "Semua jenis jaminan" },
+  { dok: "Akta pendirian + perubahan terakhir", untuk: "Semua jenis jaminan" },
+  { dok: "SIUJK / IUJK yang masih berlaku", untuk: "Semua jenis jaminan" },
+  { dok: "NIB (Nomor Induk Berusaha)", untuk: "Semua jenis jaminan" },
+  { dok: "NPWP perusahaan", untuk: "Semua jenis jaminan" },
+  { dok: "Dokumen pengadaan / undangan tender", untuk: "Jaminan Penawaran" },
+  { dok: "SPPBJ (Surat Penunjukan Pemenang)", untuk: "Jaminan Pelaksanaan" },
+  { dok: "Kontrak yang sudah ditandatangani", untuk: "Jaminan Uang Muka, CAR, Pemeliharaan" },
+  { dok: "RAB / Bill of Quantity proyek", untuk: "Asuransi CAR" },
+  { dok: "Jadwal pelaksanaan proyek (S-Curve / schedule)", untuk: "Asuransi CAR" },
+  { dok: "Gambar teknis / desain (untuk proyek > Rp 5 miliar)", untuk: "Asuransi CAR" },
 ];
 
 const faqItems = [
   {
-    q: "Apakah Certificate of Insurance sama dengan polis asuransi?",
-    a: "Tidak sama, tapi keduanya terkait. Polis adalah kontrak lengkap antara tertanggung dan perusahaan asuransi — dokumennya tebal dan teknis. Certificate of Insurance (CoI) adalah ringkasan satu halaman yang membuktikan polis sudah aktif — inilah yang umumnya dilampirkan dalam dokumen tender.",
+    q: "Apakah surety bond dari perusahaan asuransi diterima sama seperti bank garansi?",
+    a: "Ya. Berdasarkan Perpres 16/2018 jo. Perpres 12/2021, surety bond dari perusahaan asuransi yang memiliki izin OJK dan terdaftar sebagai perusahaan penjaminan (sesuai PMK No. 45/PMK.06/2020) memiliki kedudukan hukum yang setara dengan bank garansi. Sebagian besar panitia pengadaan di lingkungan Pemerintah DIY sudah familiar dan menerima surety bond. Prosesnya juga lebih cepat dan premi umumnya lebih terjangkau.",
   },
   {
-    q: "Bisakah menggunakan CoI dari proyek lain yang masih aktif?",
-    a: "Tidak bisa. Setiap proyek memerlukan polis CAR tersendiri yang spesifik mencantumkan nama, lokasi, nilai, dan periode proyek tersebut. CoI dari proyek lain tidak akan diterima panitia tender.",
+    q: "Berapa premi Jaminan Penawaran dan Jaminan Pelaksanaan?",
+    a: "Premi surety bond sangat terjangkau karena fungsinya sebagai penjaminan, bukan asuransi kerugian. Jaminan Penawaran umumnya berkisar Rp 100–500 ribu tergantung nilai dan masa berlaku. Jaminan Pelaksanaan berkisar 0,2–0,8% dari nilai jaminan per tahun. Hubungi kami untuk simulasi biaya berdasarkan nilai proyek spesifik Anda.",
   },
   {
-    q: "Apa bedanya Surety Bond dari asuransi vs bank garansi?",
-    a: "Keduanya diterima dalam tender pemerintah. Surety Bond dari asuransi prosesnya lebih cepat (1–2 hari), tidak memblokir plafon kredit di bank, dan persyaratan administrasinya lebih fleksibel. Bank Garansi membutuhkan agunan dan memblokir plafon kredit, namun beberapa pemilik proyek BUMN masih lebih menyukainya.",
+    q: "Bolehkah kontraktor menggunakan satu konsultan asuransi untuk semua jenis jaminan?",
+    a: "Sangat disarankan. Menggunakan satu konsultan untuk semua kebutuhan jaminan — dari Jaminan Penawaran, CAR, hingga Jaminan Pemeliharaan — memudahkan koordinasi, monitoring masa berlaku, dan penanganan jika ada perpanjangan atau klaim. Kami di Asuransi Jogja menangani semua jenis jaminan kontraktor dalam satu layanan terintegrasi.",
   },
   {
-    q: "Apa yang terjadi jika tidak menang tender — apakah premi CAR bisa dikembalikan?",
-    a: "Jaminan Penawaran (Bid Bond) akan dikembalikan atau dicairkan setelah proses tender selesai — tanpa biaya. Untuk polis CAR yang sudah dibeli sebelum pengumuman pemenang, premi umumnya tidak dikembalikan. Oleh karena itu, sebaiknya urus polis CAR setelah ditetapkan sebagai pemenang tender.",
+    q: "Apa itu PPK dan mengapa nama PPK penting dalam polis?",
+    a: "PPK adalah Pejabat Pembuat Komitmen — pihak yang bertanggung jawab atas pelaksanaan kontrak dari sisi pemerintah. Nama PPK dan nama instansi pemilik proyek (owner) wajib tercantum dengan benar di polis CAR sebagai Principal (co-insured). Jika terjadi kesalahan nama, proses klaim atau pencairan jaminan bisa terhambat.",
   },
   {
-    q: "Berapa lama proses mendapatkan dokumen asuransi untuk tender?",
-    a: "Untuk proyek standar dengan dokumen lengkap: Jaminan Penawaran (Bid Bond) 1 hari, polis CAR dan CoI 1–3 hari kerja, Jaminan Pelaksanaan 1–2 hari setelah ada SPPBJ. Untuk proyek besar di atas Rp 10 miliar, proses mungkin memerlukan survei dan bisa 3–7 hari.",
-  },
-  {
-    q: "Apakah konsultan asuransi bisa membantu memeriksa kesesuaian dokumen dengan RKS?",
-    a: "Ya, ini justru salah satu layanan utama kami. Kami review persyaratan asuransi dalam RKS, memastikan polis yang diterbitkan memenuhi semua ketentuan, dan mempersiapkan seluruh dokumen yang diperlukan. Layanan ini gratis sebagai bagian dari konsultasi.",
+    q: "Apakah proyek APBD kabupaten/kota di DIY syaratnya sama dengan proyek APBN?",
+    a: "Secara umum sama, karena semua mengacu pada Perpres 12/2021. Namun beberapa Pemerintah Kabupaten di DIY memiliki ketentuan tambahan dalam dokumen pengadaan (misalnya persyaratan minimum nilai pertanggungan CAR atau klausul khusus). Kami terbiasa menangani proyek dari APBN, APBD DIY, maupun APBD Kabupaten Sleman, Bantul, Kulon Progo, dan Gunung Kidul.",
   },
 ];
 
-export default function ArtikelSyaratTender() {
+// ─── PAGE ────────────────────────────────────────────────────────────────────
+
+export default function ArtikelSyaratAsuransiTenderDIY() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }}
+      />
       <Header />
       <div className="pt-[68px]">
 
-        {/* Breadcrumb */}
+        {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
           <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
@@ -251,148 +300,275 @@ export default function ArtikelSyaratTender() {
           </div>
         </div>
 
-        {/* Hero */}
+        {/* ── Hero ── */}
         <section className="bg-navy py-16 px-[5vw] relative overflow-hidden">
-          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 60% 70% at 80% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)" }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 60% 70% at 80% 50%, rgba(200,150,62,0.10) 0%, transparent 65%)",
+            }}
+          />
           <div className="relative z-10 max-w-3xl">
             <div className="flex items-center gap-3 mb-5 flex-wrap">
-              <Link href="/asuransi-engineering/contractor-all-risk" className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors">
-                🏗️ Contractor All Risk
-              </Link>
-              <Link href="/asuransi-surety-bond" className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors">
+              <Link
+                href="/asuransi-surety-bond"
+                className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors"
+              >
                 📋 Surety Bond
               </Link>
               <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Panduan Tender</span>
+              <Link
+                href="/asuransi-engineering/contractor-all-risk"
+                className="inline-flex items-center gap-1.5 bg-white/8 border border-white/15 text-white/70 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-white/12 transition-colors"
+              >
+                🏗️ Asuransi Engineering
+              </Link>
+              <span className="text-white/30 text-xs">·</span>
+              <span className="text-white/40 text-xs">Panduan Praktis</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
-              Syarat Asuransi Tender<br /><em className="not-italic text-gold">Pemerintah DIY 2026</em> —<br />Dokumen yang Wajib Disiapkan
+              Syarat Asuransi Tender<br />
+              Pemerintah DIY —<br />
+              <em className="not-italic text-gold">Panduan Lengkap Kontraktor</em>
             </h1>
-            <p className="text-white/80 text-base leading-[1.85] max-w-[540px] mb-6">
-              Tidak sedikit kontraktor yang gugur di tahap administrasi tender hanya karena dokumen asuransi tidak lengkap atau tidak sesuai. Panduan ini membantu Anda menyiapkan semua dokumen asuransi yang benar sebelum batas waktu.
+            <p className="text-white/80 text-base leading-[1.85] max-w-[560px] mb-6">
+              Dari Jaminan Penawaran hingga Jaminan Pemeliharaan — ada 5 jenis dokumen jaminan yang wajib disiapkan kontraktor
+              di berbagai tahapan tender pemerintah. Salah satu saja terlambat atau salah nilai, kontrak bisa batal.
             </p>
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
               <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
               <span>·</span>
-              <span>📅 Diperbarui Juni 2026</span>
+              <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
-              <span>⏱️ Baca 7 menit</span>
+              <span>⏱️ Baca 8 menit</span>
             </div>
           </div>
         </section>
 
-        {/* Konten */}
+        {/* ── Konten Utama ── */}
         <article className="py-14 px-[5vw] max-w-[780px] mx-auto">
 
-          {/* Lead */}
+          {/* Lead Box */}
           <div className="bg-gold/6 border-l-4 border-gold rounded-r-xl p-5 mb-10">
             <p className="text-navy2 text-sm leading-relaxed">
-              <strong className="text-navy">Penting:</strong> Berdasarkan Perpres No. 12 Tahun 2021 tentang Pengadaan Barang/Jasa Pemerintah, kontraktor yang memenangkan tender <strong>wajib menyerahkan bukti asuransi CAR</strong> sebelum pencairan termin pertama. Jaminan Penawaran (Bid Bond) juga wajib dilampirkan saat pemasukan dokumen penawaran.
+              <strong className="text-navy">Jawaban Singkat:</strong> Kontraktor yang mengikuti dan melaksanakan
+              tender pemerintah di DIY wajib menyiapkan{" "}
+              <strong>5 jenis jaminan</strong> — Jaminan Penawaran, Jaminan Pelaksanaan, Jaminan Uang Muka (jika ada DP),{" "}
+              <strong>Asuransi CAR</strong>, dan Jaminan Pemeliharaan — sesuai{" "}
+              <strong>Perpres 12/2021</strong>. Setiap jaminan memiliki waktu penyerahan berbeda dan konsekuensi serius jika terlambat.
             </p>
           </div>
 
-          {/* Dokumen Wajib */}
+          {/* Dasar Hukum */}
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
-            Daftar Lengkap Dokumen Asuransi untuk Tender Pemerintah
+            Dasar Hukum — Mengapa Jaminan Ini Wajib?
+          </h2>
+          <p className="text-[#64748B] text-base leading-relaxed mb-4">
+            Kewajiban asuransi dan jaminan dalam pengadaan barang/jasa pemerintah diatur dalam{" "}
+            <strong className="text-navy">Peraturan Presiden Nomor 12 Tahun 2021</strong> tentang Pengadaan Barang/Jasa
+            Pemerintah (perubahan atas Perpres 16/2018), yang kemudian dijabarkan lebih teknis melalui{" "}
+            Peraturan LKPP Nomor 12 Tahun 2021 tentang Pedoman Pelaksanaan Pengadaan.
+          </p>
+          <p className="text-[#64748B] text-base leading-relaxed mb-4">
+            Di lingkungan Pemerintah DIY — baik proyek APBN yang dikelola oleh BBWSO, Balai Pelaksana Jalan Nasional,
+            maupun APBD DIY dan APBD kabupaten (Sleman, Bantul, Kulon Progo, Gunung Kidul) — ketentuan ini berlaku
+            seragam. Pengalaman kami mendampingi kontraktor di Yogyakarta selama lebih dari 11 tahun menunjukkan bahwa
+            kesalahan administrasi jaminan adalah penyebab terbesar kontraktor gagal kontrak atau terkena sanksi blacklist.
+          </p>
+          <div className="bg-navy/4 border border-navy/12 rounded-xl p-4 mb-10 flex gap-3">
+            <span className="text-lg flex-shrink-0">⚠️</span>
+            <p className="text-sm text-navy2 leading-relaxed">
+              <strong>Penting:</strong> Jaminan yang diterbitkan oleh perusahaan asuransi (surety bond) harus berasal dari perusahaan yang
+              memiliki izin OJK dan tercantum dalam daftar Menteri Keuangan. Jaminan dari perusahaan tidak terdaftar
+              otomatis ditolak panitia, meski formatnya terlihat sah.
+            </p>
+          </div>
+
+          {/* 5 Jaminan Wajib */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            5 Jaminan Wajib Kontraktor — Beserta Nilai & Waktu Penyerahan
           </h2>
           <p className="text-[#64748B] text-base leading-relaxed mb-6">
-            Berikut semua dokumen asuransi yang mungkin disyaratkan dalam tender pemerintah DIY. Dokumen yang wajib ada hampir di semua paket, dan dokumen yang bersifat kondisional tergantung persyaratan kontrak spesifik.
+            Berikut kelima jenis jaminan secara lengkap, urut sesuai tahapan yang harus dilalui kontraktor:
           </p>
           <div className="flex flex-col gap-4 mb-10">
-            {dokumenWajib.map((d) => (
-              <div key={d.no} className={`rounded-card p-5 border ${d.wajib ? "bg-white border-navy/10" : "bg-cream border-black/6"}`}>
+            {jaminanWajib.map((j) => (
+              <div key={j.nama} className={`rounded-card p-5 border ${j.warna}`}>
                 <div className="flex items-start gap-4">
-                  <div className={`font-heading font-bold text-xs w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${d.wajib ? "bg-navy text-gold" : "bg-[#64748B]/20 text-[#64748B]"}`}>
-                    {d.no}
+                  <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-white/70 border border-black/8 flex items-center justify-center text-lg shadow-sm">
+                    {j.icon}
                   </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1 flex-wrap">
-                      <span className="font-heading text-navy font-bold text-sm">{d.dokumen}</span>
-                      <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${d.wajib ? "bg-green-100 text-green-700" : "bg-amber-50 text-amber-700"}`}>
-                        {d.wajib ? "✓ Umum Wajib" : "◎ Kondisional"}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2.5 mb-2 flex-wrap">
+                      <span className="font-heading font-bold text-navy text-[0.95rem]">{j.nama}</span>
+                      <span className={`text-[0.65rem] font-bold px-2 py-0.5 rounded-full ${j.warnaLabel}`}>
+                        {j.urutan}
                       </span>
                     </div>
-                    <div className="text-xs text-gold font-semibold mb-1.5">📅 {d.kapan}</div>
-                    <p className="text-sm text-[#64748B] leading-relaxed">{d.detail}</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 mb-3">
+                      <div>
+                        <span className="text-xs text-[#94A3B8] uppercase tracking-wide font-semibold">Kapan diserahkan</span>
+                        <p className="text-sm text-navy2 leading-snug mt-0.5">{j.kapan}</p>
+                      </div>
+                      <div>
+                        <span className="text-xs text-[#94A3B8] uppercase tracking-wide font-semibold">Nilai</span>
+                        <p className="text-sm text-navy2 leading-snug mt-0.5">{j.nilai}</p>
+                      </div>
+                      <div>
+                        <span className="text-xs text-[#94A3B8] uppercase tracking-wide font-semibold">Masa berlaku</span>
+                        <p className="text-sm text-navy2 leading-snug mt-0.5">{j.masa}</p>
+                      </div>
+                      <div>
+                        <span className="text-xs text-[#94A3B8] uppercase tracking-wide font-semibold">Dasar hukum</span>
+                        <p className="text-sm text-navy2 leading-snug mt-0.5">{j.dasar}</p>
+                      </div>
+                    </div>
+                    <div className="bg-white/60 rounded-lg px-3.5 py-2.5 border border-black/6 mb-3">
+                      <p className="text-xs text-[#64748B] leading-relaxed">
+                        <strong className="text-navy">💡 Catatan penting:</strong> {j.catatan}
+                      </p>
+                    </div>
+                    <Link
+                      href={j.link}
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-gold hover:text-gold2 transition-colors no-underline"
+                    >
+                      Pelajari produk ini →
+                    </Link>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Timeline Proses */}
+          {/* Alur Lengkap */}
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
-            Timeline: Cara Menyiapkan Dokumen Asuransi Sebelum Tender
+            Alur Lengkap: Kapan Masing-masing Jaminan Dibutuhkan?
           </h2>
           <p className="text-[#64748B] text-base leading-relaxed mb-6">
-            Ini panduan hari demi hari yang kami rekomendasikan agar dokumen asuransi Anda siap tepat waktu tanpa ada yang terlewat.
+            Berikut urutan kronologis pengajuan jaminan dari awal proses tender hingga selesai masa pemeliharaan:
           </p>
-          <div className="flex flex-col gap-4 mb-4">
-            {tahapanProses.map((t, i) => (
-              <div key={t.tahap} className="bg-cream rounded-card p-5 border border-black/5 grid grid-cols-[auto_1fr] gap-4">
-                <div className="flex flex-col items-center gap-2">
-                  <div className="bg-navy text-gold font-heading font-bold text-xs px-3 py-1.5 rounded-full whitespace-nowrap">{t.tahap}</div>
-                  {i < tahapanProses.length - 1 && <div className="w-px h-full bg-navy/10 flex-1" />}
+          <div className="flex flex-col gap-3 mb-10">
+            {alurTender.map((fase, fi) => (
+              <div key={fase.fase} className="bg-white rounded-card border border-black/8 overflow-hidden">
+                <div className="bg-navy px-4 py-2.5 flex items-center gap-2.5">
+                  <span className="text-gold font-heading font-bold text-xs">
+                    FASE {fi + 1}
+                  </span>
+                  <span className="text-white font-semibold text-sm">{fase.fase}</span>
                 </div>
-                <div className="pb-2">
-                  <div className="font-heading text-navy font-bold text-sm mb-1">{t.aksi}</div>
-                  <p className="text-sm text-[#64748B] leading-relaxed mb-2">{t.desc}</p>
-                  <div className="bg-gold/8 border border-gold/15 rounded-lg px-3 py-1.5 text-xs text-navy2">
-                    💡 {t.tips}
-                  </div>
+                <div className="p-4 flex flex-col gap-2">
+                  {fase.langkah.map((l, li) => (
+                    <div key={li} className="flex items-start gap-3">
+                      <span className="flex-shrink-0 w-5 h-5 rounded-full bg-cream border border-black/10 flex items-center justify-center text-[0.6rem] font-bold text-navy mt-0.5">
+                        {li + 1}
+                      </span>
+                      <div className="flex-1">
+                        <p className="text-sm text-[#64748B] leading-snug">{l.label}</p>
+                      </div>
+                      {l.dokumen && (
+                        <span className="flex-shrink-0 text-[0.65rem] font-bold px-2 py-0.5 rounded-full bg-gold/12 text-amber-700 border border-gold/20 whitespace-nowrap">
+                          {l.dokumen}
+                        </span>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
-          </div>
-          <div className="bg-navy rounded-xl p-5 text-white mb-10">
-            <p className="text-sm text-white/80">
-              <strong className="text-gold">⚡ Butuh dokumen URGENT?</strong> Kami bisa proses Jaminan Penawaran dalam <strong className="text-gold">1 hari kerja</strong> dan CoI CAR dalam <strong className="text-gold">1–2 hari kerja</strong> dengan dokumen yang lengkap. Hubungi kami sekarang via WhatsApp.
-            </p>
           </div>
 
           {/* Kesalahan Umum */}
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
-            5 Kesalahan Dokumen Asuransi yang Sering Membuat Kontraktor Gugur
+            5 Kesalahan yang Paling Sering Terjadi — dan Cara Menghindarinya
           </h2>
           <p className="text-[#64748B] text-base leading-relaxed mb-6">
-            Berdasarkan pengalaman kami mendampingi kontraktor di Yogyakarta, berikut kesalahan yang paling sering terjadi dan cara menghindarinya:
+            Berdasarkan pengalaman mendampingi ratusan kontraktor di DIY, ini adalah kesalahan administrasi jaminan
+            yang paling sering berujung pada penolakan panitia atau bahkan pembatalan kontrak:
           </p>
-          <div className="flex flex-col gap-4 mb-10">
-            {kesalahanUmum.map((k) => (
-              <div key={k.kesalahan} className="bg-white rounded-card p-5 border border-red-100">
-                <div className="flex items-start gap-3">
-                  <span className="text-xl flex-shrink-0">{k.icon}</span>
-                  <div>
-                    <div className="font-heading text-navy font-bold text-sm mb-1">{k.kesalahan}</div>
-                    <div className="text-xs text-red-600 font-semibold mb-2">Dampak: {k.dampak}</div>
-                    <div className="text-xs text-[#64748B] bg-green-50 border border-green-100 rounded-lg px-3 py-2">
-                      ✓ Solusi: {k.solusi}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="overflow-x-auto mb-10">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="bg-navy text-white">
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs rounded-tl-xl w-[33%]">Kesalahan</th>
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs w-[30%]">Dampak</th>
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs text-gold rounded-tr-xl w-[37%]">✓ Cara Menghindari</th>
+                </tr>
+              </thead>
+              <tbody>
+                {kesalahanUmum.map((row, i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
+                    <td className="p-3.5 font-semibold text-navy text-xs align-top">{row.kesalahan}</td>
+                    <td className="p-3.5 text-red-600 text-xs leading-relaxed align-top">{row.dampak}</td>
+                    <td className="p-3.5 text-[#64748B] text-sm leading-relaxed align-top">{row.solusi}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
+
+          {/* Dokumen yang Diperlukan */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Dokumen yang Perlu Disiapkan untuk Pengajuan Jaminan
+          </h2>
+          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+            Semakin lengkap dokumen Anda dari awal, semakin cepat polis atau surat jaminan dapat diterbitkan.
+            Berikut checklist dokumen yang umumnya dibutuhkan:
+          </p>
+          <div className="overflow-x-auto mb-6">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="bg-cream border-b-2 border-gold/30">
+                  <th className="text-left p-3 font-heading font-semibold text-xs text-navy w-[55%]">Dokumen</th>
+                  <th className="text-left p-3 font-heading font-semibold text-xs text-navy w-[45%]">Dibutuhkan untuk</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dokumenPengajuan.map((d, i) => (
+                  <tr key={i} className={`border-b border-black/5 ${i % 2 === 0 ? "bg-white" : "bg-cream/50"}`}>
+                    <td className="p-3 text-navy2 text-sm align-top">
+                      <span className="text-gold mr-2">✓</span>{d.dok}
+                    </td>
+                    <td className="p-3 text-[#64748B] text-xs align-top">{d.untuk}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-[#94A3B8] mb-10">
+            * Dokumen di atas adalah standar umum. Beberapa underwriter mungkin meminta dokumen tambahan untuk proyek dengan
+            nilai besar atau lokasi tertentu (misalnya kawasan rawan gempa di Kulon Progo atau Gunung Kidul).
+          </p>
 
           {/* CTA Inline */}
           <div className="bg-gold/8 border border-gold/25 rounded-card p-6 mb-10">
-            <div className="font-heading text-navy font-bold text-base mb-2">Mau Dokumen Tender Siap dalam 1–3 Hari?</div>
+            <div className="font-heading text-navy font-bold text-base mb-2">
+              Butuh semua jaminan ini dalam satu layanan?
+            </div>
             <p className="text-[#64748B] text-sm leading-relaxed mb-4">
-              Ceritakan paket tender Anda kepada kami — nama proyek, nilai HPS, dan persyaratan RKS. Kami siapkan semua dokumen asuransi yang dibutuhkan.
+              Kami bantu kontraktor DIY mengurus Jaminan Penawaran, Jaminan Pelaksanaan, Polis CAR, hingga Jaminan
+              Pemeliharaan — dalam satu koordinasi. Konsultasi gratis, proses cepat, dan kami pantau masa berlaku semua
+              jaminan Anda.
             </p>
             <div className="flex gap-3 flex-wrap">
-              <a href={`https://wa.me/${KONTAK.wa}`} className="bg-gold text-navy px-5 py-2.5 rounded-lg font-bold text-sm no-underline hover:bg-gold2 transition-all">
-                💬 Konsultasi Tender via WA
+              <a
+                href={`https://wa.me/${KONTAK.wa}`}
+                className="bg-gold text-navy px-5 py-2.5 rounded-lg font-bold text-sm no-underline hover:bg-gold2 transition-all"
+              >
+                💬 Konsultasi via WA — Gratis
               </a>
-              <Link href="/asuransi-surety-bond" className="border border-navy/20 text-navy px-5 py-2.5 rounded-lg text-sm no-underline hover:border-gold hover:text-gold transition-all">
-                📋 Lihat Produk Surety Bond →
+              <Link
+                href="/asuransi-surety-bond"
+                className="border border-navy/20 text-navy px-5 py-2.5 rounded-lg text-sm no-underline hover:border-gold hover:text-gold transition-all"
+              >
+                📋 Lihat Semua Produk Surety Bond →
               </Link>
             </div>
           </div>
 
           {/* FAQ */}
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-6">
-            FAQ Asuransi Tender Pemerintah
+            Pertanyaan yang Sering Diajukan Kontraktor
           </h2>
           <div className="flex flex-col divide-y divide-black/8 mb-10">
             {faqItems.map((f, i) => (
@@ -406,20 +582,58 @@ export default function ArtikelSyaratTender() {
             ))}
           </div>
 
-          {/* Internal links */}
+          {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Baca Juga</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Pelajari Lebih Lanjut</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { href: "/asuransi-engineering/contractor-all-risk", icon: "🏗️", judul: "Asuransi CAR Yogyakarta", desc: "Cakupan polis, kalkulator premi, dan cara klaim CAR" },
-                { href: "/asuransi-surety-bond/jaminan-penawaran", icon: "📋", judul: "Jaminan Penawaran (Bid Bond)", desc: "Surety Bond untuk ikut tender pemerintah dan swasta" },
-                { href: "/asuransi-surety-bond/jaminan-pelaksanaan", icon: "🤝", judul: "Jaminan Pelaksanaan", desc: "Performance Bond wajib saat penandatanganan kontrak" },
-                { href: "/artikel/premi-asuransi-car-jogja", icon: "💰", judul: "Berapa Premi CAR Jogja?", desc: "Tabel estimasi premi dan faktor penentu rate CAR" },
+                {
+                  href: "/asuransi-surety-bond/jaminan-penawaran",
+                  icon: "📋",
+                  judul: "Jaminan Penawaran",
+                  desc: "Syarat, nilai, dan cara pengajuan sebelum memasukkan penawaran",
+                },
+                {
+                  href: "/asuransi-surety-bond/jaminan-pelaksanaan",
+                  icon: "🏆",
+                  judul: "Jaminan Pelaksanaan",
+                  desc: "Panduan lengkap setelah menang tender — nilai, waktu, dan risiko",
+                },
+                {
+                  href: "/asuransi-engineering/contractor-all-risk",
+                  icon: "🏗️",
+                  judul: "Asuransi CAR (Contractor All Risk)",
+                  desc: "Cakupan, kalkulator premi, dan cara klaim CAR proyek pemerintah",
+                },
+                {
+                  href: "/artikel/perbedaan-car-ear-asuransi-engineering",
+                  icon: "⚙️",
+                  judul: "CAR vs EAR — Mana yang Tepat?",
+                  desc: "Panduan memilih antara CAR dan EAR untuk jenis proyek berbeda",
+                },
+                {
+                  href: "/artikel/premi-asuransi-car-jogja",
+                  icon: "💰",
+                  judul: "Berapa Premi CAR di Jogja?",
+                  desc: "Tabel estimasi premi dan faktor yang mempengaruhi rate",
+                },
+                {
+                  href: "/artikel/asuransi-kontraktor-proyek-jogja",
+                  icon: "🔨",
+                  judul: "Panduan Asuransi Kontraktor Jogja",
+                  desc: "Semua jenis asuransi yang dibutuhkan kontraktor dari A–Z",
+                },
               ].map((a) => (
-                <Link key={a.href} href={a.href} className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
+                <Link
+                  key={a.href}
+                  href={a.href}
+                  className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group"
+                >
                   <span className="text-xl flex-shrink-0">{a.icon}</span>
                   <div>
-                    <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">{a.judul}</div>
+                    <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">
+                      {a.judul}
+                    </div>
                     <div className="text-xs text-[#64748B]">{a.desc}</div>
                   </div>
                 </Link>
@@ -428,19 +642,37 @@ export default function ArtikelSyaratTender() {
           </div>
         </article>
 
-        {/* CTA Bottom */}
+        {/* ── CTA Bottom ── */}
         <section className="py-16 px-[5vw] bg-navy text-center relative overflow-hidden">
-          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)" }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.10) 0%, transparent 65%)",
+            }}
+          />
           <div className="relative z-10">
             <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.2rem)] text-white leading-[1.22] mb-4">
-              Jangan Sampai Gugur Administrasi<br />karena Dokumen Asuransi Kurang
+              Siap Ikut Tender?<br />Kami Urus Semua Jaminannya
             </h2>
-            <p className="text-white/75 text-sm max-w-[420px] mx-auto mb-8">
-              Hubungi kami sekarang — kami siapkan semua dokumen asuransi untuk tender Anda dalam 1–3 hari kerja.
+            <p className="text-white/75 text-sm max-w-[440px] mx-auto mb-8">
+              Dari Jaminan Penawaran hingga Jaminan Pemeliharaan — satu konsultan, satu koordinasi.
+              Kontraktor DIY yang bekerja sama dengan kami tidak pernah melewatkan tenggat jaminan.
             </p>
-            <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">
-              💬 Siapkan Dokumen Tender via WhatsApp
-            </a>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <a
+                href={`https://wa.me/${KONTAK.wa}`}
+                className="bg-[#25D366] text-white px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all"
+              >
+                💬 Konsultasi via WhatsApp
+              </a>
+              <Link
+                href="/asuransi-surety-bond"
+                className="border border-white/25 text-white/80 px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:border-gold hover:text-gold transition-all"
+              >
+                📋 Lihat Produk Surety Bond
+              </Link>
+            </div>
           </div>
         </section>
       </div>
