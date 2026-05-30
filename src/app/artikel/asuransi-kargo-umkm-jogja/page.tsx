@@ -1,7 +1,7 @@
 // app/artikel/asuransi-kargo-umkm-jogja/page.tsx
-// TARGET: "asuransi kargo UMKM jogja", "asuransi pengiriman barang yogyakarta"
-// INTENT: Local + Commercial — UMKM batik, kerajinan, kuliner yang sering kirim barang
-// SILO: Kargo cluster → mendukung /asuransi-kargo/ dan /asuransi-kargo/ekspedisi-umkm/
+// TARGET KEYWORD: "asuransi kargo UMKM Jogja", "asuransi pengiriman barang usaha kecil Yogyakarta"
+// INTENT: Informational + Commercial — pemilik toko online / UMKM yang pernah rugi karena paket rusak/hilang
+// SILO: Kargo cluster → /ekspedisi-umkm, /pengiriman-barang + cross-link artikel UMKM
 
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -10,24 +10,24 @@ import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Kargo untuk UMKM Jogja – Proteksi Pengiriman Batik, Kerajinan & Produk Lokal | Asuransi Jogja",
+  title: "Asuransi Kargo untuk UMKM di Jogja – Proteksi Pengiriman Barang | Asuransi Jogja",
   description:
-    "Panduan asuransi kargo untuk UMKM di Yogyakarta. Proteksi pengiriman produk batik, kerajinan, kuliner, dan furnitur dari risiko rusak dan hilang. Syarat, cara klaim, dan tips memilih polis kargo yang tepat.",
+    "Panduan lengkap asuransi kargo untuk UMKM dan toko online di Yogyakarta. Bedanya asuransi ekspedisi standar vs polis kargo khusus, estimasi premi, cara klaim, dan tips Open Cover untuk pengiriman rutin. Mulai Rp 50 ribu per pengiriman.",
   keywords:
-    "asuransi kargo UMKM jogja, asuransi pengiriman barang yogyakarta, asuransi kiriman batik jogja, proteksi pengiriman ekspedisi DIY, asuransi kargo ekspedisi yogyakarta, asuransi barang kiriman UMKM",
+    "asuransi kargo UMKM jogja, asuransi pengiriman barang yogyakarta, proteksi paket toko online jogja, asuransi ekspedisi UMKM DIY, open cover kargo jogja, asuransi kerajinan jogja pengiriman",
   alternates: {
     canonical: "https://asuransijogja.biz.id/artikel/asuransi-kargo-umkm-jogja",
   },
   openGraph: {
-    title: "Asuransi Kargo untuk UMKM Jogja – Proteksi Pengiriman Produk Lokal",
+    title: "Asuransi Kargo untuk UMKM di Jogja – Proteksi Pengiriman Barang",
     description:
-      "Panduan asuransi kargo untuk pelaku UMKM Yogyakarta: batik, kerajinan, kuliner, furnitur. Syarat, cara klaim, dan tips polis kargo yang tepat.",
+      "Asuransi ekspedisi standar tidak cukup. Pelajari perbedaannya dengan polis kargo khusus UMKM, estimasi biaya, dan cara klaim yang benar.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-kargo-umkm-jogja",
     type: "article",
   },
 };
 
-const schema = {
+const schemaArtikel = {
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -35,16 +35,26 @@ const schema = {
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Beranda", item: "https://asuransijogja.biz.id" },
         { "@type": "ListItem", position: 2, name: "Artikel", item: "https://asuransijogja.biz.id/artikel" },
-        { "@type": "ListItem", position: 3, name: "Asuransi Kargo UMKM Jogja", item: "https://asuransijogja.biz.id/artikel/asuransi-kargo-umkm-jogja" },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Asuransi Kargo untuk UMKM di Jogja",
+          item: "https://asuransijogja.biz.id/artikel/asuransi-kargo-umkm-jogja",
+        },
       ],
     },
     {
       "@type": "Article",
-      headline: "Asuransi Kargo untuk UMKM Jogja – Proteksi Pengiriman Batik, Kerajinan & Produk Lokal",
-      description: "Panduan lengkap asuransi kargo untuk UMKM Yogyakarta yang aktif mengirim produk ke seluruh Indonesia.",
+      headline: "Asuransi Kargo untuk UMKM di Jogja – Proteksi Pengiriman Barang",
+      description:
+        "Panduan lengkap asuransi kargo untuk UMKM di Yogyakarta: perbedaan dengan asuransi ekspedisi standar, estimasi premi, Open Cover, dan cara klaim.",
       author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
-      publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
-      datePublished: "2025-05-01",
+      publisher: {
+        "@type": "Organization",
+        name: "Asuransi Jogja",
+        url: "https://asuransijogja.biz.id",
+      },
+      datePublished: "2025-04-20",
       dateModified: "2025-06-01",
     },
     {
@@ -52,396 +62,605 @@ const schema = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "Apakah UMKM di Yogyakarta perlu asuransi kargo?",
-          acceptedAnswer: { "@type": "Answer", text: "Ya, terutama jika secara rutin mengirim produk bernilai tinggi seperti batik premium, kerajinan perak, furnitur, atau produk elektronik. Asuransi kargo menanggung risiko kerusakan dan kehilangan barang selama pengiriman yang tidak ditanggung oleh ekspedisi." },
+          name: "Apakah asuransi bawaan ekspedisi (JNE, J&T, Sicepat) sudah cukup?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Tidak selalu. Asuransi standar ekspedisi umumnya hanya menanggung kehilangan total, dengan nilai ganti rugi maksimal 10× tarif kirim atau nilai yang dideklarasikan — mana yang lebih rendah. Kerusakan parsial, cacat kemasan, atau barang basah sering kali tidak ditanggung. Untuk barang bernilai di atas Rp 500 ribu per pengiriman, polis kargo terpisah memberikan perlindungan yang jauh lebih komprehensif.",
+          },
         },
         {
           "@type": "Question",
-          name: "Apakah jaminan dari ekspedisi sudah cukup?",
-          acceptedAnswer: { "@type": "Answer", text: "Tidak cukup untuk barang bernilai tinggi. Ganti rugi dari ekspedisi umumnya terbatas — banyak yang hanya mengganti maksimal 10 kali ongkir atau nilai yang dideklarasikan di formulir pengiriman, bukan nilai sebenarnya barang." },
+          name: "Berapa biaya asuransi kargo untuk pengiriman Rp 1 juta?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Estimasi premi asuransi kargo untuk pengiriman senilai Rp 1 juta berkisar Rp 1.000–3.000 (rate 0,1–0,3%). Ini adalah biaya yang sangat terjangkau dibanding risiko kehilangan atau kerusakan penuh. Untuk pengiriman rutin, Open Cover (satu polis tahunan untuk semua pengiriman) jauh lebih efisien.",
+          },
         },
         {
           "@type": "Question",
-          name: "Berapa premi asuransi kargo untuk UMKM?",
-          acceptedAnswer: { "@type": "Answer", text: "Premi kargo darat berkisar 0,15–0,3% dari nilai barang per pengiriman. Untuk barang senilai Rp 5 juta, premi asuransi sekitar Rp 7.500–15.000 per pengiriman. Ada juga produk open cover (polis terbuka) yang lebih efisien untuk UMKM yang sering kirim." },
+          name: "Apa itu Open Cover kargo dan apakah cocok untuk UMKM?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Open Cover adalah polis kargo yang menanggung semua pengiriman selama satu periode (biasanya 1 tahun) dengan satu polis dan satu premi tahunan. Premi dihitung berdasarkan estimasi total nilai pengiriman setahun. Sangat cocok untuk UMKM yang mengirim lebih dari 10 paket per bulan — jauh lebih efisien dan mudah dikelola dibanding asuransi per pengiriman.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Bagaimana cara klaim asuransi kargo jika barang rusak saat pengiriman?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Langkah klaim: (1) Jangan terima paket dalam kondisi rusak tanpa membuat catatan keberatan (nota keberatan) kepada kurir di tempat. (2) Dokumentasikan kerusakan dengan foto lengkap — kondisi luar kemasan dan isi barang. (3) Laporkan ke konsultan asuransi dalam 24–48 jam. (4) Isi formulir klaim dan lampirkan invoice, bukti pengiriman, foto kerusakan, dan nota keberatan. Proses klaim umumnya selesai dalam 5–14 hari kerja.",
+          },
         },
       ],
     },
   ],
 };
 
-// ─── DATA ─────────────────────────────────────────────────────────────────────
-const sektorUMKMJogja = [
-  {
-    icon: "🎭",
-    sektor: "Batik & Tekstil",
-    produk: "Batik tulis, batik cap, kain, dan pakaian jadi",
-    risiko: "Noda, sobek, basah terkena air hujan, dan kerusakan warna akibat penanganan kasar",
-    nilaiKirim: "Rp 1 juta – Rp 50 juta per pengiriman",
-    urgensi: "Tinggi — batik premium sangat sensitif dan sulit diperbaiki",
-  },
-  {
-    icon: "🥈",
-    sektor: "Kerajinan Perak & Logam",
-    produk: "Perhiasan perak, ornamen tembaga, kerajinan logam Kotagede",
-    risiko: "Pecah, penyok, kehilangan komponen kecil, dan pencurian",
-    nilaiKirim: "Rp 5 juta – Rp 100 juta per pengiriman",
-    urgensi: "Sangat Tinggi — nilai per satuan tinggi, sulit diganti",
-  },
-  {
-    icon: "🪑",
-    sektor: "Furnitur & Mebel",
-    produk: "Kursi, meja, lemari, dan dekorasi kayu dari pengrajin Klaten/Jepara",
-    risiko: "Goresan, retak, pecah, dan kerusakan finishing selama transit",
-    nilaiKirim: "Rp 2 juta – Rp 200 juta per pengiriman",
-    urgensi: "Tinggi — kerusakan permukaan sulit diperbaiki dan menurunkan nilai jual",
-  },
-  {
-    icon: "🎨",
-    sektor: "Lukisan & Kerajinan Seni",
-    produk: "Lukisan kanvas, patung, gerabah Kasongan, dan kerajinan bambu",
-    risiko: "Retak, robek, remuk, dan kerusakan permanen yang tidak bisa diperbaiki",
-    nilaiKirim: "Rp 500 ribu – Rp 50 juta per karya",
-    urgensi: "Sangat Tinggi — karya seni unik tidak bisa diganti dengan yang identik",
-  },
-  {
-    icon: "🍫",
-    sektor: "Makanan & Oleh-oleh Premium",
-    produk: "Cokelat Monggo, bakpia premium, dan oleh-oleh khas Jogja",
-    risiko: "Meleleh karena suhu, remuk, basi, dan kerusakan kemasan",
-    nilaiKirim: "Rp 200 ribu – Rp 5 juta per pengiriman",
-    urgensi: "Sedang — volume tinggi tapi nilai per pengiriman lebih kecil",
-  },
-  {
-    icon: "💻",
-    sektor: "Elektronik & Gadget Bekas",
-    produk: "Laptop refurbished, HP, kamera, dan peralatan elektronik dari toko online Jogja",
-    risiko: "Kerusakan akibat benturan, konslet karena basah, dan kehilangan",
-    nilaiKirim: "Rp 1 juta – Rp 20 juta per pengiriman",
-    urgensi: "Tinggi — klaim sering terjadi, ekspedisi membatasi tanggung jawab",
-  },
-];
+// ─── DATA ────────────────────────────────────────────────────────────────────
 
-const batasGantiEkspedisi = [
+const perbandinganAsuransi = [
   {
-    ekspedisi: "Ekspedisi Umum (tanpa asuransi tambahan)",
-    batas: "Maksimal 10× ongkos kirim",
-    contoh: "Ongkir Rp 50.000 → ganti rugi maks Rp 500.000",
-    catatan: "Jauh di bawah nilai barang sesungguhnya untuk produk bernilai tinggi",
+    aspek: "Cakupan Risiko",
+    ekspedisiStandar: "Kehilangan total saja",
+    polisKhusus: "Kehilangan, kerusakan, cacat, basah, pencurian sebagian",
+    unggul: true,
   },
   {
-    ekspedisi: "Asuransi dari ekspedisi (jika ada)",
-    batas: "Biasanya 0,2–0,3% dari nilai deklarasi",
-    contoh: "Barang Rp 5 juta → premi Rp 10.000–15.000",
-    catatan: "Nilai deklarasi harus diisi manual saat pengiriman, sering dilupakan",
+    aspek: "Nilai Ganti Rugi",
+    ekspedisiStandar: "Maks. 10× tarif kirim atau nilai deklarasi (mana lebih rendah)",
+    polisKhusus: "100% nilai barang sesuai invoice (dikurangi deductible)",
+    unggul: true,
   },
   {
-    ekspedisi: "Asuransi Kargo Independen (polis dari konsultan)",
-    batas: "Penuh sesuai nilai barang yang diasuransikan",
-    contoh: "Barang Rp 5 juta → ganti rugi hingga Rp 5 juta",
-    catatan: "Lebih komprehensif, klaim lebih mudah diproses dengan bantuan konsultan",
+    aspek: "Proses Klaim",
+    ekspedisiStandar: "Via CS ekspedisi — lambat, sering ditolak dengan alasan prosedural",
+    polisKhusus: "Via konsultan yang mendampingi — lebih cepat dan adil",
+    unggul: true,
+  },
+  {
+    aspek: "Barang yang Ditanggung",
+    ekspedisiStandar: "Semua barang yang dikirim via ekspedisi tersebut",
+    polisKhusus: "Semua moda (darat, udara, laut) dengan satu polis",
+    unggul: true,
+  },
+  {
+    aspek: "Biaya Premi",
+    ekspedisiStandar: "Gratis atau Rp 1.000–5.000 per resi",
+    polisKhusus: "Rp 50–300 ribu per pengiriman / atau Open Cover tahunan",
+    unggul: false,
+  },
+  {
+    aspek: "Bukti Klaim",
+    ekspedisiStandar: "Nota keberatan + resi + identitas",
+    polisKhusus: "Invoice + resi + foto kerusakan + nota keberatan",
+    unggul: false,
+  },
+  {
+    aspek: "Cocok untuk Barang Nilai Tinggi",
+    ekspedisiStandar: "Tidak — batas ganti rugi sangat terbatas",
+    polisKhusus: "Ya — tidak ada batasan nilai per pengiriman",
+    unggul: true,
   },
 ];
 
 const jenisPolisKargo = [
   {
-    jenis: "Per Pengiriman (Voyage Policy)",
-    cocokUntuk: "UMKM yang pengirimannya tidak rutin atau volume kiriman tidak menentu",
-    cara: "Setiap pengiriman dibuatkan sertifikat asuransi tersendiri dengan nilai dan tujuan yang spesifik",
-    kelebihan: "Fleksibel, hanya bayar premi saat ada pengiriman",
-    kekurangan: "Proses per pengiriman, kurang efisien untuk volume tinggi",
+    jenis: "Per Pengiriman (Single Shipment)",
+    icon: "📦",
+    deskripsi:
+      "Satu polis untuk satu pengiriman tertentu. Cocok untuk pengiriman nilai tinggi yang tidak rutin — furnitur, peralatan elektronik, atau kerajinan custom bernilai besar.",
+    cocokUntuk: "Pengiriman < 5 kali per bulan, atau barang bernilai > Rp 5 juta per kiriman",
+    estimasiPremi: "Rp 50 rb – Rp 500 rb per pengiriman",
+    warna: "border-blue-200 bg-blue-50/40",
   },
   {
-    jenis: "Open Cover (Polis Terbuka)",
-    cocokUntuk: "UMKM yang mengirim rutin dengan volume tinggi — paling direkomendasikan untuk toko online aktif",
-    cara: "Satu polis menanggung semua pengiriman dalam periode tertentu (biasanya 1 tahun) hingga batas nilai tertentu",
-    kelebihan: "Efisien, tidak perlu proses per pengiriman, premi lebih hemat",
-    kekurangan: "Perlu pencatatan pengiriman yang tertib untuk keperluan klaim",
+    jenis: "Open Cover (Tahunan)",
+    icon: "📋",
+    deskripsi:
+      "Satu polis menanggung semua pengiriman selama setahun. Premi dihitung dari estimasi total nilai pengiriman tahunan. Lebih hemat dan tidak perlu urus asuransi per pengiriman.",
+    cocokUntuk: "Pengiriman > 10 kali per bulan, atau omzet pengiriman > Rp 50 juta per tahun",
+    estimasiPremi: "0,10–0,25% dari total nilai pengiriman setahun",
+    warna: "border-gold/30 bg-gold/4",
+    recommended: true,
   },
   {
-    jenis: "Annual Cargo (Polis Tahunan)",
-    cocokUntuk: "Bisnis dengan volume pengiriman sangat besar dan rutin — biasanya distributor atau eksportir",
-    cara: "Premi dihitung berdasarkan estimasi total nilai pengiriman per tahun",
-    kelebihan: "Paling efisien untuk volume besar, administrasi paling sederhana",
-    kekurangan: "Perlu estimasi volume tahunan yang akurat di awal",
+    jenis: "Kargo Udara & Laut",
+    icon: "✈️",
+    deskripsi:
+      "Untuk pengiriman antar pulau via udara atau laut — kerajinan ke Bali, produk kuliner ke Kalimantan, atau ekspor ke luar negeri. Menggunakan klausul ICC (Institute Cargo Clauses) internasional.",
+    cocokUntuk: "Ekspor, pengiriman antar pulau via kapal/pesawat, atau barang > Rp 10 juta",
+    estimasiPremi: "0,15–0,40% dari nilai barang + freight",
+    warna: "border-green-200 bg-green-50/40",
   },
 ];
 
-const cakupanKargo = [
-  { icon: "✅", risiko: "Kerusakan fisik barang selama transit", catatan: "Retak, pecah, penyok, robek akibat penanganan pengiriman" },
-  { icon: "✅", risiko: "Kehilangan barang (theft)", catatan: "Barang hilang selama dalam proses pengiriman" },
-  { icon: "✅", risiko: "Kecelakaan kendaraan pengantar", catatan: "Kerusakan akibat kecelakaan truk, motor kurir, atau kendaraan pengangkut" },
-  { icon: "✅", risiko: "Kebakaran selama transit", catatan: "Barang terbakar saat ada insiden kebakaran di gudang transit atau kendaraan" },
-  { icon: "✅", risiko: "Bencana alam selama transit", catatan: "Banjir, longsor, atau bencana lain yang merusak kiriman" },
-  { icon: "❌", risiko: "Kerusakan akibat pengemasan yang buruk", catatan: "Jika barang tidak dikemas dengan standar yang memadai, klaim bisa ditolak" },
-  { icon: "❌", risiko: "Kerusakan karena sifat alami barang", catatan: "Makanan yang basi karena perjalanan lama, bukan karena insiden" },
-  { icon: "❌", risiko: "Keterlambatan pengiriman", catatan: "Asuransi kargo tidak menanggung kerugian akibat keterlambatan" },
+const barangBerisiko = [
+  {
+    kategori: "Kerajinan & Seni",
+    contoh: "Batik, kerajinan perak Kotagede, wayang, gerabah Kasongan",
+    risiko: "Pecah, retak, cacat permukaan, luntur warna",
+    rekomendasi: "Open Cover dengan ICC(B) atau ICC(C) + perluasan kerusakan parsial",
+    icon: "🎨",
+  },
+  {
+    kategori: "Elektronik & Gadget",
+    contoh: "Handphone bekas, aksesoris elektronik, spare part",
+    risiko: "Rusak akibat benturan, komponen lepas, layar pecah",
+    rekomendasi: "Single shipment ICC(A) all risk untuk nilai tinggi",
+    icon: "📱",
+  },
+  {
+    kategori: "Makanan & Minuman",
+    contoh: "Bakpia, gudeg kaleng, kopi, oleh-oleh Jogja",
+    risiko: "Hancur, bocor, tumpah, kedaluwarsa akibat keterlambatan",
+    rekomendasi: "Kargo dengan klausul perishable goods + batas waktu pengiriman",
+    icon: "🍱",
+  },
+  {
+    kategori: "Fashion & Tekstil",
+    contoh: "Batik, kemeja, tas kulit, sepatu",
+    risiko: "Basah, kotor, kusut parah, cacat akibat tekanan",
+    rekomendasi: "ICC(B) untuk perlindungan menengah, Open Cover untuk volume tinggi",
+    icon: "👗",
+  },
+  {
+    kategori: "Furnitur & Dekorasi",
+    contoh: "Meja, kursi, lampu, dekorasi kayu",
+    risiko: "Patah, retak, goresan, cat terkelupas",
+    rekomendasi: "ICC(A) all risk dengan packing requirement ketat",
+    icon: "🪑",
+  },
+  {
+    kategori: "Mesin & Spare Part",
+    contoh: "Spare part industri, peralatan bengkel, komponen elektronik",
+    risiko: "Korosi, bengkok, retak, komponen hilang",
+    rekomendasi: "ICC(A) + klausul rust & oxidation untuk komponen logam",
+    icon: "⚙️",
+  },
 ];
 
-const syaratKlaim = [
+const langkahKlaim = [
   {
-    syarat: "Laporkan segera setelah menerima barang",
-    detail: "Saat barang diterima dalam kondisi rusak, jangan tanda tangani tanda terima tanpa catatan. Tulis 'diterima dengan kondisi rusak' dan foto kondisi barang sebelum membuka kemasan.",
+    no: "01",
+    ikon: "🚫",
+    judul: "Jangan Langsung Terima Paket Rusak",
+    detail:
+      "Jika paket tiba dalam kondisi rusak — kemasan penyok, basah, atau terbuka — jangan tanda tangan tanda terima tanpa membuat catatan. Minta kurir untuk mencatat kondisi paket di resi atau buat nota keberatan tertulis. Ini bukti krusial untuk klaim.",
+    warna: "bg-red-50 border-red-200",
+    warnaNo: "bg-red-100 text-red-700",
   },
   {
-    syarat: "Dokumentasikan kondisi kerusakan secara lengkap",
-    detail: "Foto dari berbagai sudut — kondisi luar kemasan, kondisi dalam kemasan, dan kondisi barang yang rusak. Video lebih baik. Simpan kemasan asli karena bisa diminta loss adjuster.",
+    no: "02",
+    ikon: "📸",
+    judul: "Dokumentasikan Kerusakan Segera",
+    detail:
+      "Foto kondisi luar kemasan dari semua sisi sebelum dibuka. Setelah dibuka, foto kondisi isi barang secara detail. Video pendek sangat membantu. Jangan buang kemasan rusak — bisa diminta saat survei klaim.",
+    warna: "bg-amber-50 border-amber-200",
+    warnaNo: "bg-amber-100 text-amber-700",
   },
   {
-    syarat: "Simpan semua bukti pengiriman",
-    detail: "Resi pengiriman, invoice, daftar isi kiriman, dan sertifikat asuransi kargo. Dokumen-dokumen ini diperlukan saat mengajukan klaim.",
+    no: "03",
+    ikon: "📞",
+    judul: "Laporkan ke Konsultan dalam 24–48 Jam",
+    detail:
+      "Hubungi kami via WhatsApp segera setelah menerima laporan dari pembeli atau menemukan kerusakan. Pelaporan tepat waktu adalah syarat klaim — keterlambatan melapor bisa menjadi alasan penolakan klaim.",
+    warna: "bg-blue-50 border-blue-200",
+    warnaNo: "bg-blue-100 text-blue-700",
   },
   {
-    syarat: "Hubungi konsultan untuk panduan klaim",
-    detail: "Hubungi kami segera setelah kerusakan diketahui. Kami bantu menjelaskan prosedur, dokumen yang dibutuhkan, dan cara berkomunikasi dengan perusahaan asuransi agar klaim berjalan lancar.",
+    no: "04",
+    ikon: "📄",
+    judul: "Siapkan Dokumen Klaim",
+    detail:
+      "Dokumen yang dibutuhkan: invoice / faktur barang, bukti pengiriman (resi / airway bill), foto kerusakan, nota keberatan dari kurir, dan deskripsi kejadian. Semakin lengkap dokumen, semakin cepat proses klaim.",
+    warna: "bg-purple-50 border-purple-200",
+    warnaNo: "bg-purple-100 text-purple-700",
   },
   {
-    syarat: "Isi formulir klaim dengan lengkap",
-    detail: "Formulir klaim berisi deskripsi kejadian, nilai kerugian, dan permintaan ganti rugi. Isi dengan teliti dan jujur — ketidakakuratan bisa menjadi alasan klaim ditolak.",
+    no: "05",
+    ikon: "✅",
+    judul: "Dana Klaim Cair",
+    detail:
+      "Setelah dokumen lengkap dan klaim diverifikasi, dana ganti rugi ditransfer ke rekening tertanggung. Proses umumnya 5–14 hari kerja untuk klaim kargo standar. Kami pantau proses ini dan update Anda secara berkala.",
+    warna: "bg-green-50 border-green-200",
+    warnaNo: "bg-green-100 text-green-700",
+  },
+];
+
+const kasusNyata = [
+  {
+    judul: "Kerajinan Perak Kotagede Rusak dalam Pengiriman ke Surabaya",
+    nilai: "Rp 28 juta",
+    moda: "Darat — ekspedisi reguler",
+    kronologi:
+      "Set perhiasan perak senilai Rp 28 juta dikirim ke pembeli di Surabaya menggunakan ekspedisi reguler. Paket tiba dalam kondisi kemasan penyok parah dan beberapa item retak. Pembeli menolak menerima.",
+    asuransiEkspedisi: "Ekspedisi menawarkan ganti rugi Rp 500 ribu (10× tarif kirim) — ditolak penjual.",
+    polisKhusus:
+      "Penjual memiliki Open Cover kargo. Klaim diajukan dengan foto kerusakan dan invoice. Dana Rp 26,5 juta cair dalam 12 hari (dikurangi deductible Rp 1,5 juta).",
+    pelajaran:
+      "Selisih ganti rugi antara asuransi ekspedisi (Rp 500 ribu) vs polis kargo khusus (Rp 26,5 juta) adalah Rp 26 juta — hampir seluruh nilai barang.",
+    badge: "bg-amber-50 text-amber-700 border-amber-100",
+  },
+  {
+    judul: "Batik Premium Terkena Air Hujan saat Transit di Gudang Ekspedisi",
+    nilai: "Rp 12 juta",
+    moda: "Darat — pengiriman antar kota",
+    kronologi:
+      "12 lembar batik tulis premium senilai Rp 1 juta per lembar rusak karena atap gudang transit ekspedisi bocor saat hujan lebat. Batik basah dan warnanya luntur.",
+    asuransiEkspedisi: "Ekspedisi menolak klaim dengan alasan 'force majeure' (hujan).",
+    polisKhusus:
+      "Polis kargo ICC(B) menanggung kerusakan akibat air hujan di luar kontrol pengirim. Klaim Rp 11 juta disetujui setelah survei dan foto dilampirkan.",
+    pelajaran:
+      "Banyak ekspedisi menolak klaim dengan alasan force majeure atau 'di luar tanggung jawab'. Polis kargo independen tidak punya konflik kepentingan seperti itu.",
+    badge: "bg-blue-50 text-blue-700 border-blue-100",
+  },
+];
+
+const tipsPackaging = [
+  {
+    tip: "Gunakan kardus double wall untuk barang pecah belah",
+    detail: "Kardus single wall tidak cukup untuk melindungi keramik, kaca, dan kerajinan rapuh. Double wall memberikan lapisan perlindungan ganda yang signifikan mengurangi kerusakan akibat benturan.",
+  },
+  {
+    tip: "Foto kondisi barang dan kemasan sebelum diserahkan ke kurir",
+    detail: "Dokumentasi sebelum pengiriman adalah bukti penting bahwa barang dalam kondisi baik saat diserahkan. Tanpa ini, ekspedisi bisa berargumen kerusakan terjadi sebelum pengiriman.",
+  },
+  {
+    tip: "Deklarasikan nilai barang yang akurat, bukan diremehkan",
+    detail: "Mendeklarasikan nilai Rp 100 ribu untuk barang Rp 5 juta agar hemat premi adalah kesalahan mahal. Ganti rugi dihitung berdasarkan nilai yang dideklarasikan — bukan nilai sebenarnya.",
+  },
+  {
+    tip: "Gunakan bubble wrap minimal 3 lapis untuk barang elektronik",
+    detail: "Standar packing elektronik: bungkus item dengan bubble wrap, masukkan dalam styrofoam, lalu dalam kardus dengan isian void fill. Packing yang kurang memadai bisa menjadi alasan penolakan klaim.",
   },
 ];
 
 const faqItems = [
   {
-    q: "Apakah pengiriman via marketplace (Tokopedia, Shopee) bisa diasuransikan dengan polis kargo independen?",
-    a: "Bisa, terutama untuk pengiriman bernilai tinggi yang dilakukan di luar platform marketplace. Untuk pengiriman dalam platform, biasanya sudah ada proteksi bawaan dari marketplace, namun nilainya terbatas. Untuk produk premium, polis kargo independen memberikan perlindungan yang lebih komprehensif.",
+    q: "Apakah asuransi kargo menanggung barang yang hilang akibat pencurian oleh oknum ekspedisi?",
+    a: "Ya, polis kargo all risk (ICC-A atau Institute Cargo Clauses A) menanggung kehilangan barang termasuk akibat pencurian, baik pencurian total maupun sebagian. Namun ada pengecualian standar: kehilangan yang disebabkan oleh kelalaian atau ketidakjujuran pengirim sendiri tidak ditanggung. Untuk barang bernilai tinggi, tambahkan klausul theft, pilferage & non-delivery (TPND) untuk perlindungan lebih spesifik.",
   },
   {
-    q: "Bagaimana cara mengklaim jika barang rusak saat diterima pembeli?",
-    a: "Situasi ini perlu dikomunikasikan terlebih dahulu dengan pembeli — minta pembeli mendokumentasikan kondisi barang saat diterima (foto/video) dan tidak membuang kemasan. Selanjutnya hubungi kami untuk panduan langkah klaim. Prosedur pastinya bergantung pada polis yang berlaku.",
+    q: "Apakah polis kargo menanggung return pengiriman jika pembeli menolak paket?",
+    a: "Tergantung klausul polis. Polis kargo standar menanggung risiko selama perjalanan dari pengirim ke penerima. Perjalanan return (dari penerima kembali ke pengirim) perlu didaftarkan sebagai pengiriman terpisah atau ada klausul return voyage dalam polis. Konfirmasikan kebutuhan ini saat mengajukan polis.",
   },
   {
-    q: "Apakah ada minimal nilai pengiriman untuk bisa diasuransikan?",
-    a: "Secara teknis tidak ada nilai minimum yang baku, namun secara ekonomis asuransi kargo paling efektif untuk pengiriman bernilai di atas Rp 1–2 juta. Untuk pengiriman rutin dengan nilai kecil, produk open cover lebih efisien dari pada mengasuransikan per pengiriman.",
+    q: "Berapa minimal nilai pengiriman agar asuransi kargo 'worth it'?",
+    a: "Panduan praktis kami: untuk barang di atas Rp 500 ribu per pengiriman, asuransi kargo sudah sangat worth it mengingat premi hanya sekitar Rp 500–1.500 per pengiriman. Untuk barang di bawah Rp 200 ribu, asuransi ekspedisi standar mungkin sudah cukup. Yang paling penting bukan nilai per pengiriman, tapi apakah kerugian akibat satu kerusakan atau kehilangan bisa mengganggu cash flow usaha Anda secara signifikan.",
   },
   {
-    q: "Apakah asuransi kargo menanggung seluruh nilai barang atau hanya sebagian?",
-    a: "Jika nilai pertanggungan ditetapkan dengan benar sesuai nilai barang, klaim akan dibayar penuh (dikurangi deductible jika ada). Pastikan nilai yang diasuransikan mencakup harga pokok produksi ditambah keuntungan yang wajar, bukan sekadar harga beli bahan baku.",
+    q: "Apakah UMKM yang berjualan di marketplace (Tokopedia, Shopee) bisa mengajukan asuransi kargo?",
+    a: "Ya. Status penjual di marketplace tidak mempengaruhi eligibilitas untuk mengajukan polis kargo. Yang diperlukan adalah bukti transaksi (screenshot pesanan + invoice) sebagai dokumen pendukung klaim. Beberapa UMKM marketplace dengan volume pengiriman tinggi bahkan menggunakan Open Cover untuk efisiensi — kami bisa bantu setup-nya.",
   },
   {
-    q: "Bagaimana dengan pengiriman antar pulau — apakah ada produk khususnya?",
-    a: "Ada. Untuk pengiriman antar pulau yang menggunakan jalur laut, ada produk Marine Cargo Insurance yang dirancang untuk risiko perjalanan laut termasuk kerusakan akibat air laut, penumpukan di pelabuhan, dan risiko perjalanan yang lebih panjang. Konsultasikan rute pengiriman spesifik Anda.",
-  },
-  {
-    q: "Apa yang dimaksud dengan 'pengemasan yang memadai' sebagai syarat klaim kargo?",
-    a: "Standar pengemasan yang memadai berarti barang dikemas dengan material yang sesuai untuk melindungi dari risiko yang wajar selama pengiriman. Misalnya: bubble wrap untuk barang pecah belah, kardus double wall untuk barang berat, plastik waterproof untuk barang sensitif air. Pengemasan yang jelas-jelas tidak memadai bisa menjadi alasan klaim ditolak.",
+    q: "Bagaimana jika pembeli mengklaim barang rusak tapi sebenarnya tidak?",
+    a: "Ini risiko yang dihadapi semua penjual online. Polis kargo yang baik mensyaratkan dokumentasi kondisi barang sebelum dikirim (foto pre-shipment) dan nota keberatan dari penerima saat terima barang. Jika pembeli mengklaim rusak tanpa ada catatan keberatan dari kurir dan kondisi kemasan baik, klaim umumnya tidak bisa diproses. Dokumentasi pre-shipment adalah perlindungan terbaik dari klaim palsu.",
   },
 ];
+
+// ─── PAGE ────────────────────────────────────────────────────────────────────
 
 export default function ArtikelAsuransiKargoUMKMJogja() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }}
+      />
       <Header />
       <div className="pt-[68px]">
 
-        {/* Breadcrumb */}
+        {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
           <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
             <span className="text-gold/60">›</span>
-            <span className="text-navy font-semibold">Asuransi Kargo UMKM Jogja</span>
+            <span className="text-navy font-semibold">Asuransi Kargo untuk UMKM di Jogja</span>
           </div>
         </div>
 
-        {/* Hero */}
+        {/* ── Hero ── */}
         <section className="bg-navy py-16 px-[5vw] relative overflow-hidden">
-          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 60% 70% at 80% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)" }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 60% 70% at 80% 50%, rgba(200,150,62,0.10) 0%, transparent 65%)",
+            }}
+          />
           <div className="relative z-10 max-w-3xl">
             <div className="flex items-center gap-3 mb-5 flex-wrap">
-              <Link href="/asuransi-kargo" className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors">
+              <Link
+                href="/asuransi-kargo"
+                className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors"
+              >
                 📦 Asuransi Kargo
               </Link>
-              <Link href="/asuransi-kargo/ekspedisi-umkm" className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors">
-                🛵 Ekspedisi UMKM
+              <Link
+                href="/asuransi-kargo/ekspedisi-umkm"
+                className="inline-flex items-center gap-1.5 bg-white/8 border border-white/15 text-white/70 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-white/12 transition-colors"
+              >
+                🚚 Ekspedisi UMKM
               </Link>
               <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Panduan UMKM Jogja</span>
+              <span className="text-white/40 text-xs">Panduan Praktis</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
-              Asuransi Kargo untuk UMKM Jogja —<br /><em className="not-italic text-gold">Proteksi Pengiriman</em><br />Batik, Kerajinan & Produk Lokal
+              Asuransi Kargo untuk UMKM<br />
+              di Jogja —{" "}
+              <em className="not-italic text-gold">Bukan Sekadar<br />
+              Asuransi Bawaan Ekspedisi</em>
             </h1>
-            <p className="text-white/80 text-base leading-[1.85] max-w-[540px] mb-6">
-              Yogyakarta adalah pusat UMKM kreatif terbesar di Indonesia. Setiap hari, ribuan paket batik, kerajinan perak, dan produk lokal dikirim ke seluruh negeri. Tapi berapa banyak yang benar-benar terlindungi jika terjadi kerusakan atau kehilangan di jalan?
+            <p className="text-white/80 text-base leading-[1.85] max-w-[560px] mb-6">
+              Asuransi standar JNE, J&T, atau SiCepat hanya mengganti maksimal{" "}
+              <strong className="text-gold2">10× tarif kirim</strong>. Untuk kerajinan Kotagede
+              senilai Rp 5 juta, itu berarti maksimal Rp 300 ribu. Polis kargo khusus
+              menanggung nilai penuh — dengan premi mulai Rp 50 ribu per pengiriman.
             </p>
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
               <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
-              <span>⏱️ Baca 8 menit</span>
+              <span>⏱️ Baca 7 menit</span>
             </div>
           </div>
         </section>
 
-        {/* Konten */}
+        {/* ── Konten ── */}
         <article className="py-14 px-[5vw] max-w-[780px] mx-auto">
 
-          {/* Ringkasan */}
+          {/* Lead box */}
           <div className="bg-gold/6 border-l-4 border-gold rounded-r-xl p-5 mb-10">
             <p className="text-navy2 text-sm leading-relaxed">
-              <strong className="text-navy">Yang perlu dipahami:</strong> Ganti rugi dari ekspedisi umumnya sangat terbatas — banyak hanya menanggung maksimal 10× ongkos kirim. Untuk produk UMKM Yogyakarta yang bernilai tinggi seperti batik premium atau kerajinan perak, ini jauh dari cukup. Asuransi kargo independen menanggung <strong>nilai penuh barang</strong> sesuai yang diasuransikan.
+              <strong className="text-navy">Intinya:</strong> Asuransi bawaan ekspedisi cocok
+              untuk barang murah. Untuk barang di atas{" "}
+              <strong>Rp 500 ribu per pengiriman</strong>, polis kargo terpisah memberikan
+              perlindungan yang jauh lebih nyata. UMKM dengan pengiriman rutin lebih hemat
+              menggunakan <strong>Open Cover tahunan</strong> — satu polis untuk semua pengiriman.
             </p>
           </div>
 
-          {/* Realita Ganti Rugi Ekspedisi */}
+          {/* Perbandingan */}
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
-            Kenapa Jaminan Ekspedisi Saja Tidak Cukup?
+            Asuransi Ekspedisi Standar vs Polis Kargo Khusus — Apa Bedanya?
           </h2>
           <p className="text-[#64748B] text-base leading-relaxed mb-6">
-            Banyak pelaku UMKM merasa aman karena menganggap ekspedisi bertanggung jawab penuh atas kiriman. Faktanya, tanggung jawab ekspedisi sangat terbatas secara regulasi:
+            Banyak UMKM mengira asuransi bawaan ekspedisi sudah cukup. Berikut perbandingan
+            nyata yang sering menjadi kejutan tidak menyenangkan saat klaim:
           </p>
-          <div className="flex flex-col gap-4 mb-8">
-            {batasGantiEkspedisi.map((b, i) => (
-              <div key={i} className={`rounded-card p-5 border ${i === 2 ? "bg-white border-gold/20" : "bg-cream border-black/6"}`}>
-                <div className="flex items-start justify-between gap-3 mb-2 flex-wrap">
-                  <span className="font-heading text-navy font-bold text-sm">{b.ekspedisi}</span>
-                  {i === 2 && <span className="bg-gold/15 text-gold text-xs font-bold px-2.5 py-1 rounded-full">Direkomendasikan</span>}
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
-                  <div>
-                    <div className="text-xs text-[#64748B] mb-0.5">Batas ganti rugi:</div>
-                    <div className="font-semibold text-navy text-sm">{b.batas}</div>
-                  </div>
-                  <div>
-                    <div className="text-xs text-[#64748B] mb-0.5">Contoh:</div>
-                    <div className="text-sm text-[#64748B]">{b.contoh}</div>
-                  </div>
-                </div>
-                <div className={`mt-3 text-xs leading-relaxed ${i === 2 ? "text-gold" : "text-[#64748B]"}`}>
-                  ℹ️ {b.catatan}
-                </div>
-              </div>
-            ))}
+          <div className="overflow-x-auto mb-4">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="bg-navy text-white">
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs rounded-tl-xl w-[28%]">
+                    Aspek
+                  </th>
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs w-[36%]">
+                    📮 Asuransi Bawaan Ekspedisi
+                  </th>
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs text-gold rounded-tr-xl w-[36%]">
+                    📦 Polis Kargo Khusus
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {perbandinganAsuransi.map((row, i) => (
+                  <tr key={row.aspek} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
+                    <td className="p-3.5 font-semibold text-navy text-xs align-top">{row.aspek}</td>
+                    <td className="p-3.5 text-[#64748B] text-sm leading-relaxed align-top">
+                      {row.ekspedisiStandar}
+                    </td>
+                    <td className={`p-3.5 text-sm leading-relaxed align-top ${row.unggul ? "text-navy2 font-medium" : "text-[#64748B]"}`}>
+                      {row.unggul && <span className="text-gold mr-1.5 font-bold">✓</span>}
+                      {row.polisKhusus}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-
-          {/* Sektor UMKM */}
-          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
-            Sektor UMKM Jogja yang Paling Perlu Asuransi Kargo
-          </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
-            Tidak semua pengiriman memiliki urgensi yang sama. Berikut analisis per sektor UMKM di Yogyakarta:
+          <p className="text-xs text-[#94A3B8] mb-10">
+            * Ketentuan asuransi ekspedisi bervariasi antar perusahaan dan bisa berubah. Selalu
+            baca syarat dan ketentuan sebelum mengandalkan perlindungan ekspedisi.
           </p>
-          <div className="flex flex-col gap-5 mb-10">
-            {sektorUMKMJogja.map((s) => (
-              <div key={s.sektor} className="bg-white rounded-card p-5 border border-black/8">
-                <div className="flex items-start gap-4">
-                  <span className="text-3xl flex-shrink-0">{s.icon}</span>
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between gap-3 mb-2 flex-wrap">
-                      <span className="font-heading text-navy font-bold text-base">{s.sektor}</span>
-                      <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${
-                        s.urgensi.includes("Sangat") ? "bg-red-50 text-red-700 border border-red-100" :
-                        s.urgensi.includes("Tinggi") ? "bg-amber-50 text-amber-700 border border-amber-100" :
-                        "bg-blue-50 text-blue-700 border border-blue-100"
-                      }`}>
-                        ⚡ Urgensi: {s.urgensi}
-                      </span>
-                    </div>
-                    <div className="text-xs text-[#64748B] mb-2">Produk: <span className="text-navy font-medium">{s.produk}</span></div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
-                      <div className="bg-red-50/50 rounded-lg p-3">
-                        <div className="text-xs font-semibold text-red-700 mb-1">⚠️ Risiko Utama</div>
-                        <div className="text-xs text-[#64748B] leading-relaxed">{s.risiko}</div>
-                      </div>
-                      <div className="bg-cream rounded-lg p-3">
-                        <div className="text-xs font-semibold text-navy mb-1">💰 Nilai Kirim Tipikal</div>
-                        <div className="text-xs text-[#64748B] leading-relaxed">{s.nilaiKirim}</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
 
           {/* Jenis Polis */}
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
-            Jenis Polis Kargo: Mana yang Cocok untuk UMKM?
+            3 Jenis Polis Kargo yang Relevan untuk UMKM
           </h2>
           <p className="text-[#64748B] text-base leading-relaxed mb-6">
-            Ada tiga jenis polis kargo yang umumnya tersedia. Pilihannya bergantung pada frekuensi dan volume pengiriman UMKM Anda:
+            Pilihan polis disesuaikan dengan frekuensi dan skala pengiriman usaha Anda:
+          </p>
+          <div className="flex flex-col gap-4 mb-10">
+            {jenisPolisKargo.map((p) => (
+              <div key={p.jenis} className={`rounded-card p-5 border relative ${p.warna}`}>
+                {p.recommended && (
+                  <div className="absolute -top-3 left-5">
+                    <span className="bg-gold text-navy text-[0.65rem] font-bold px-3 py-1 rounded-full shadow-sm">
+                      ⭐ Paling Direkomendasikan untuk UMKM Aktif
+                    </span>
+                  </div>
+                )}
+                <div className="flex items-start gap-4 mt-1">
+                  <span className="text-2xl flex-shrink-0">{p.icon}</span>
+                  <div className="flex-1">
+                    <div className="font-heading font-bold text-navy text-[0.95rem] mb-1">{p.jenis}</div>
+                    <p className="text-sm text-[#64748B] leading-relaxed mb-3">{p.deskripsi}</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div className="bg-white/60 rounded-lg p-3 border border-black/6">
+                        <div className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1">
+                          Cocok untuk
+                        </div>
+                        <p className="text-xs text-navy2 leading-snug">{p.cocokUntuk}</p>
+                      </div>
+                      <div className="bg-white/60 rounded-lg p-3 border border-black/6">
+                        <div className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1">
+                          Estimasi premi
+                        </div>
+                        <p className="text-sm font-bold text-navy">{p.estimasiPremi}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Barang berisiko tinggi */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Produk UMKM Jogja yang Paling Perlu Perlindungan Kargo
+          </h2>
+          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+            Setiap jenis barang memiliki risiko pengiriman yang berbeda. Berikut panduan
+            per kategori produk yang umum dikirim UMKM Yogyakarta:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            {barangBerisiko.map((b) => (
+              <div key={b.kategori} className="bg-white border border-black/8 rounded-card p-4 hover:border-gold/30 transition-colors">
+                <div className="flex items-center gap-2.5 mb-2">
+                  <span className="text-xl">{b.icon}</span>
+                  <span className="font-heading font-bold text-navy text-sm">{b.kategori}</span>
+                </div>
+                <p className="text-xs text-[#64748B] mb-2">{b.contoh}</p>
+                <div className="mb-2">
+                  <span className="text-[0.6rem] font-bold uppercase tracking-wide text-red-500">
+                    Risiko utama:
+                  </span>
+                  <p className="text-xs text-[#64748B] mt-0.5">{b.risiko}</p>
+                </div>
+                <div className="bg-cream rounded-lg p-2.5 border border-black/5">
+                  <span className="text-[0.6rem] font-bold uppercase tracking-wide text-gold">
+                    Rekomendasi:
+                  </span>
+                  <p className="text-xs text-navy2 mt-0.5 leading-snug">{b.rekomendasi}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Cara klaim */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Cara Klaim Asuransi Kargo — 5 Langkah yang Benar
+          </h2>
+          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+            Kesalahan dalam proses klaim — terutama di langkah pertama — adalah penyebab
+            terbesar klaim kargo ditolak. Ikuti langkah berikut dengan cermat:
+          </p>
+          <div className="flex flex-col gap-3 mb-6">
+            {langkahKlaim.map((l) => (
+              <div key={l.no} className={`rounded-xl p-4 border flex gap-4 ${l.warna}`}>
+                <div className="flex-shrink-0 text-center">
+                  <div className={`text-xs font-bold px-2 py-1 rounded-lg mb-1 ${l.warnaNo}`}>
+                    {l.no}
+                  </div>
+                  <div className="text-xl">{l.ikon}</div>
+                </div>
+                <div>
+                  <p className="font-semibold text-navy text-sm mb-1">{l.judul}</p>
+                  <p className="text-xs text-[#64748B] leading-relaxed">{l.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="bg-navy/4 border border-navy/12 rounded-xl p-4 mb-10 flex gap-3">
+            <span className="text-lg flex-shrink-0">⚠️</span>
+            <p className="text-sm text-navy2 leading-relaxed">
+              <strong>Penting:</strong> Jangan pernah membuang kemasan rusak sebelum proses
+              klaim selesai. Loss adjuster mungkin memerlukan kemasan sebagai bukti fisik
+              kondisi saat tiba.
+            </p>
+          </div>
+
+          {/* Tips packaging */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Tips Packaging yang Membantu Proses Klaim
+          </h2>
+          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+            Packing yang baik bukan hanya mencegah kerusakan — tapi juga memperkuat posisi
+            Anda saat mengajukan klaim:
+          </p>
+          <div className="flex flex-col gap-3 mb-10">
+            {tipsPackaging.map((t, i) => (
+              <div key={i} className="flex gap-3 bg-cream rounded-xl p-4 border border-black/5">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gold/15 border border-gold/25 flex items-center justify-center text-xs font-bold text-amber-700 mt-0.5">
+                  {i + 1}
+                </span>
+                <div>
+                  <p className="font-semibold text-navy text-sm mb-0.5">{t.tip}</p>
+                  <p className="text-xs text-[#64748B] leading-relaxed">{t.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Kasus Nyata */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Kasus Nyata — Perbedaan yang Sangat Signifikan
+          </h2>
+          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+            Dua kasus berikut menggambarkan secara konkret mengapa polis kargo terpisah
+            jauh lebih baik dari asuransi bawaan ekspedisi:
           </p>
           <div className="flex flex-col gap-5 mb-10">
-            {jenisPolisKargo.map((j, i) => (
-              <div key={j.jenis} className={`rounded-card p-6 border ${i === 1 ? "bg-white border-gold/20" : "bg-cream border-black/6"}`}>
-                <div className="flex items-center gap-2 mb-3 flex-wrap">
-                  <span className="font-heading text-navy font-bold text-base">{j.jenis}</span>
-                  {i === 1 && <span className="bg-gold/15 text-gold text-xs font-bold px-2.5 py-1 rounded-full">Paling populer untuk UMKM aktif</span>}
+            {kasusNyata.map((k) => (
+              <div key={k.judul} className={`rounded-card p-5 border ${k.badge}`}>
+                <div className="flex items-center gap-2.5 mb-4 flex-wrap">
+                  <span className="font-heading font-bold text-navy text-sm">{k.judul}</span>
+                  <span className={`text-[0.65rem] font-bold px-2 py-0.5 rounded-full border ${k.badge}`}>
+                    Nilai: {k.nilai}
+                  </span>
+                  <span className="text-[0.65rem] text-[#94A3B8]">via {k.moda}</span>
                 </div>
-                <div className="text-xs text-gold font-semibold mb-2">✓ Cocok untuk: {j.cocokUntuk}</div>
-                <p className="text-sm text-[#64748B] leading-relaxed mb-3">{j.cara}</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div className="bg-green-50 rounded-lg p-3">
-                    <div className="text-xs font-semibold text-green-700 mb-1">✓ Kelebihan</div>
-                    <div className="text-xs text-[#64748B]">{j.kelebihan}</div>
+                <p className="text-sm text-[#64748B] leading-relaxed mb-4">{k.kronologi}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+                  <div className="bg-red-50 rounded-lg p-3.5 border border-red-100">
+                    <div className="text-[0.65rem] font-bold uppercase tracking-wide text-red-500 mb-1">
+                      ❌ Dengan Asuransi Ekspedisi
+                    </div>
+                    <p className="text-xs text-[#64748B] leading-relaxed">{k.asuransiEkspedisi}</p>
                   </div>
-                  <div className="bg-red-50/50 rounded-lg p-3">
-                    <div className="text-xs font-semibold text-red-600 mb-1">✗ Kekurangan</div>
-                    <div className="text-xs text-[#64748B]">{j.kekurangan}</div>
+                  <div className="bg-green-50 rounded-lg p-3.5 border border-green-100">
+                    <div className="text-[0.65rem] font-bold uppercase tracking-wide text-green-600 mb-1">
+                      ✅ Dengan Polis Kargo Khusus
+                    </div>
+                    <p className="text-xs text-[#64748B] leading-relaxed">{k.polisKhusus}</p>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Cakupan Polis */}
-          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
-            Apa yang Ditanggung dan Tidak Ditanggung Asuransi Kargo
-          </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
-            Memahami batas cakupan sama pentingnya dengan memahami manfaatnya. Berikut panduan umum — detail spesifik selalu mengacu pada polis masing-masing:
-          </p>
-          <div className="flex flex-col gap-2.5 mb-10">
-            {cakupanKargo.map((c, i) => (
-              <div key={i} className={`flex gap-3 items-start rounded-xl p-4 border ${c.icon === "✅" ? "bg-green-50/50 border-green-100" : "bg-red-50/40 border-red-100"}`}>
-                <span className="text-lg flex-shrink-0 mt-0.5">{c.icon}</span>
-                <div>
-                  <div className="font-semibold text-navy text-sm">{c.risiko}</div>
-                  <div className="text-xs text-[#64748B] mt-0.5">{c.catatan}</div>
+                <div className="bg-navy/4 rounded-lg p-3 border border-navy/8">
+                  <p className="text-xs text-navy2 leading-relaxed">
+                    <strong>💡 Pelajaran:</strong> {k.pelajaran}
+                  </p>
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Syarat Klaim */}
-          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
-            Syarat dan Cara Agar Klaim Kargo Berjalan Lancar
-          </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
-            Klaim kargo yang ditolak hampir selalu disebabkan oleh hal-hal yang sebenarnya bisa diantisipasi sejak awal. Berikut panduan dari kami sebagai konsultan:
-          </p>
-          <div className="flex flex-col gap-4 mb-6">
-            {syaratKlaim.map((s, i) => (
-              <div key={i} className="bg-cream rounded-card p-5 border border-black/6 grid grid-cols-[auto_1fr] gap-4">
-                <div className="bg-navy text-gold font-heading font-bold text-xs w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">{i + 1}</div>
-                <div>
-                  <div className="font-heading text-navy font-bold text-sm mb-1">{s.syarat}</div>
-                  <p className="text-sm text-[#64748B] leading-relaxed">{s.detail}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="bg-navy rounded-xl p-5 text-white mb-10">
-            <p className="text-sm text-white/80">
-              <strong className="text-gold">💡 Catatan dari Konsultan:</strong> Sebagai konsultan asuransi independen, kami bisa membantu menjelaskan prosedur klaim, dokumen yang perlu disiapkan, dan cara berkomunikasi yang tepat dengan perusahaan asuransi. Kami tidak menggantikan proses formal klaim, namun bisa memastikan Anda memahami prosesnya dengan benar.
-            </p>
           </div>
 
           {/* CTA Inline */}
           <div className="bg-gold/8 border border-gold/25 rounded-card p-6 mb-10">
-            <div className="font-heading text-navy font-bold text-base mb-2">Mau Konsultasi Polis Kargo untuk UMKM Anda?</div>
+            <div className="font-heading text-navy font-bold text-base mb-2">
+              Kirim lebih dari 10 paket per bulan?
+            </div>
             <p className="text-[#64748B] text-sm leading-relaxed mb-4">
-              Ceritakan jenis produk, frekuensi pengiriman, dan tujuan utama pengiriman. Kami bantu rekomendasikan jenis polis yang paling efisien.
+              Open Cover adalah solusi paling efisien untuk Anda. Ceritakan estimasi
+              volume dan nilai pengiriman per bulan — kami hitung premi tahunan yang
+              paling hemat. Konsultasi gratis.
             </p>
             <div className="flex gap-3 flex-wrap">
-              <a href={`https://wa.me/${KONTAK.wa}`} className="bg-gold text-navy px-5 py-2.5 rounded-lg font-bold text-sm no-underline hover:bg-gold2 transition-all">
-                💬 Konsultasi Kargo via WhatsApp
+              <a
+                href={`https://wa.me/${KONTAK.wa}`}
+                className="bg-gold text-navy px-5 py-2.5 rounded-lg font-bold text-sm no-underline hover:bg-gold2 transition-all"
+              >
+                💬 Konsultasi Open Cover via WA
               </a>
-              <Link href="/asuransi-kargo/ekspedisi-umkm" className="border border-navy/20 text-navy px-5 py-2.5 rounded-lg text-sm no-underline hover:border-gold hover:text-gold transition-all">
-                📦 Lihat Produk Kargo UMKM →
+              <Link
+                href="/asuransi-kargo/ekspedisi-umkm"
+                className="border border-navy/20 text-navy px-5 py-2.5 rounded-lg text-sm no-underline hover:border-gold hover:text-gold transition-all"
+              >
+                📦 Halaman Produk Kargo UMKM →
               </Link>
             </div>
           </div>
@@ -455,7 +674,9 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
               <details key={i} className="group py-1">
                 <summary className="py-3 cursor-pointer font-semibold text-[0.9rem] text-navy flex justify-between items-center list-none">
                   {f.q}
-                  <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
+                  <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">
+                    +
+                  </span>
                 </summary>
                 <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
               </details>
@@ -464,18 +685,58 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
 
           {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Baca Juga</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">
+              Produk & Artikel Terkait
+            </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { href: "/asuransi-kargo", icon: "📦", judul: "Semua Produk Asuransi Kargo", desc: "Kargo darat, udara, dan marine cargo" },
-                { href: "/asuransi-kargo/ekspedisi-umkm", icon: "🛵", judul: "Kargo Ekspedisi untuk UMKM", desc: "Proteksi pengiriman via kurir dan ekspedisi" },
-                { href: "/asuransi-kargo/pengiriman-barang", icon: "🚛", judul: "Asuransi Pengiriman Barang", desc: "Kargo darat untuk pengiriman antar kota" },
-                { href: "/artikel/asuransi-umkm-jogja", icon: "🏪", judul: "Panduan Asuransi UMKM Jogja", desc: "Semua jenis asuransi yang dibutuhkan UMKM" },
+                {
+                  href: "/asuransi-kargo/ekspedisi-umkm",
+                  icon: "🚚",
+                  judul: "Asuransi Kargo Ekspedisi UMKM",
+                  desc: "Halaman produk lengkap dengan cara daftar dan klaim",
+                },
+                {
+                  href: "/asuransi-kargo/pengiriman-barang",
+                  icon: "📦",
+                  judul: "Asuransi Pengiriman Barang",
+                  desc: "Untuk pengiriman skala lebih besar dan kargo komersial",
+                },
+                {
+                  href: "/asuransi-kargo/kargo-udara-laut",
+                  icon: "✈️",
+                  judul: "Asuransi Kargo Udara & Laut",
+                  desc: "Untuk pengiriman antar pulau dan ekspor",
+                },
+                {
+                  href: "/artikel/asuransi-umkm-jogja",
+                  icon: "🏪",
+                  judul: "Panduan Asuransi UMKM Jogja",
+                  desc: "Semua jenis asuransi yang dibutuhkan UMKM dari A–Z",
+                },
+                {
+                  href: "/artikel/cara-klaim-asuransi-kargo",
+                  icon: "📋",
+                  judul: "Cara Klaim Asuransi Kargo",
+                  desc: "Panduan lengkap klaim dari pelaporan hingga dana cair",
+                },
+                {
+                  href: "/asuransi-properti/kebakaran",
+                  icon: "🔥",
+                  judul: "Asuransi Kebakaran untuk UMKM",
+                  desc: "Proteksi gudang dan tempat usaha dari kebakaran",
+                },
               ].map((a) => (
-                <Link key={a.href} href={a.href} className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
+                <Link
+                  key={a.href}
+                  href={a.href}
+                  className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group"
+                >
                   <span className="text-xl flex-shrink-0">{a.icon}</span>
                   <div>
-                    <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">{a.judul}</div>
+                    <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">
+                      {a.judul}
+                    </div>
                     <div className="text-xs text-[#64748B]">{a.desc}</div>
                   </div>
                 </Link>
@@ -484,19 +745,39 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
           </div>
         </article>
 
-        {/* CTA Bottom */}
+        {/* ── CTA Bottom ── */}
         <section className="py-16 px-[5vw] bg-navy text-center relative overflow-hidden">
-          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)" }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.10) 0%, transparent 65%)",
+            }}
+          />
           <div className="relative z-10">
             <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.2rem)] text-white leading-[1.22] mb-4">
-              Produk UMKM Anda Layak<br />Mendapat Perlindungan yang Setara Nilainya
+              Jangan Biarkan Satu Pengiriman<br />
+              Merusak Cash Flow Usaha Anda
             </h2>
             <p className="text-white/75 text-sm max-w-[440px] mx-auto mb-8">
-              Konsultasi gratis — ceritakan jenis produk dan pola pengiriman Anda. Kami bantu temukan polis kargo yang paling efisien untuk UMKM Yogyakarta Anda.
+              Polis kargo khusus UMKM mulai dari Rp 50 ribu per pengiriman.
+              Open Cover tahunan untuk pengiriman rutin jauh lebih hemat.
+              Konsultasi gratis — ceritakan volume pengiriman Anda.
             </p>
-            <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">
-              💬 Konsultasi Asuransi Kargo via WhatsApp
-            </a>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <a
+                href={`https://wa.me/${KONTAK.wa}`}
+                className="bg-[#25D366] text-white px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all"
+              >
+                💬 Konsultasi via WhatsApp
+              </a>
+              <Link
+                href="/asuransi-kargo/ekspedisi-umkm"
+                className="border border-white/25 text-white/80 px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:border-gold hover:text-gold transition-all"
+              >
+                📦 Lihat Produk Kargo UMKM
+              </Link>
+            </div>
           </div>
         </section>
       </div>
