@@ -1,3 +1,8 @@
+// app/artikel/asuransi-umkm-jogja/page.tsx
+// TARGET KEYWORD: "asuransi UMKM Jogja", "asuransi usaha kecil menengah Yogyakarta"
+// INTENT: Informational + Commercial — pelaku UMKM yang baru sadar butuh proteksi, belum tahu mulai dari mana
+// SILO: Hub lintas klaster — Properti, Kargo, Liability, Kendaraan
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/sections/Header";
@@ -5,269 +10,750 @@ import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Panduan Lengkap Asuransi untuk UMKM di Yogyakarta | Asuransi Jogja",
+  title: "Asuransi untuk UMKM di Jogja – Panduan Lengkap Pelaku Usaha | Asuransi Jogja",
   description:
-    "Panduan lengkap asuransi UMKM Jogja: jenis asuransi yang wajib dimiliki, estimasi premi, dan cara klaim. Dari asuransi toko, kendaraan niaga, liability, hingga kargo pengiriman.",
+    "Panduan lengkap asuransi untuk UMKM di Yogyakarta: asuransi toko, gudang, kargo pengiriman, kendaraan operasional, dan liability. Mulai dari Rp 300 ribu per tahun. Cocok untuk warung, toko, konveksi, katering, dan usaha rumahan.",
   keywords:
-    "asuransi umkm jogja, asuransi toko yogyakarta, asuransi usaha kecil menengah jogja, proteksi bisnis umkm yogyakarta, asuransi warung jogja, asuransi pedagang jogja, asuransi bisnis kecil yogyakarta, jenis asuransi untuk umkm",
-  alternates: { canonical: "https://asuransijogja.biz.id/artikel/asuransi-umkm-jogja" },
+    "asuransi UMKM jogja, asuransi usaha kecil yogyakarta, asuransi toko jogja, asuransi gudang yogyakarta, asuransi pengiriman barang UMKM, proteksi usaha kecil DIY, asuransi konveksi jogja",
+  alternates: {
+    canonical: "https://asuransijogja.biz.id/artikel/asuransi-umkm-jogja",
+  },
   openGraph: {
-    title: "Panduan Lengkap Asuransi untuk UMKM di Yogyakarta",
+    title: "Asuransi untuk UMKM di Jogja – Panduan Lengkap Pelaku Usaha",
+    description:
+      "Jenis asuransi apa yang dibutuhkan UMKM di Yogyakarta? Dari asuransi toko hingga kargo pengiriman — panduan praktis dengan estimasi biaya.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-umkm-jogja",
+    type: "article",
   },
 };
 
-const risikoUMKM = [
-  { icon: "🔥", risiko: "Kebakaran Toko / Gudang", dampak: "Aset habis terbakar dalam hitungan jam, tanpa asuransi = mulai dari nol", frekuensi: "Sering" },
-  { icon: "🌊", risiko: "Banjir & Kerusakan Cuaca", dampak: "Jogja bagian selatan dan bantaran sungai rentan banjir tahunan", frekuensi: "Musiman" },
-  { icon: "🚗", risiko: "Kecelakaan Kendaraan Niaga", dampak: "Motor/mobil operasional rusak, pengiriman terhenti, klaim BPKB diblokir", frekuensi: "Sering" },
-  { icon: "⚖️", risiko: "Gugatan Konsumen / Pelanggan", dampak: "Produk bermasalah atau pelanggan cedera di toko bisa berujung tuntutan hukum", frekuensi: "Meningkat" },
-  { icon: "📦", risiko: "Kerusakan Barang Pengiriman", dampak: "Kiriman hilang atau rusak, tuntutan pembeli, reputasi toko online hancur", frekuensi: "Sering" },
-  { icon: "🏥", risiko: "Kecelakaan Karyawan", dampak: "Karyawan cedera saat kerja, BPJS tidak cukup, pengusaha wajib tanggung selisihnya", frekuensi: "Sedang" },
+const schemaArtikel = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Beranda", item: "https://asuransijogja.biz.id" },
+        { "@type": "ListItem", position: 2, name: "Artikel", item: "https://asuransijogja.biz.id/artikel" },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Asuransi untuk UMKM di Jogja",
+          item: "https://asuransijogja.biz.id/artikel/asuransi-umkm-jogja",
+        },
+      ],
+    },
+    {
+      "@type": "Article",
+      headline: "Asuransi untuk UMKM di Jogja – Panduan Lengkap Pelaku Usaha",
+      description:
+        "Panduan lengkap jenis asuransi yang dibutuhkan UMKM di Yogyakarta, estimasi biaya, dan cara memilih yang sesuai anggaran.",
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      publisher: {
+        "@type": "Organization",
+        name: "Asuransi Jogja",
+        url: "https://asuransijogja.biz.id",
+      },
+      datePublished: "2025-04-10",
+      dateModified: "2025-06-01",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Asuransi apa yang paling dibutuhkan UMKM di Yogyakarta?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Prioritas pertama adalah asuransi kebakaran untuk tempat usaha — toko, gudang, atau rumah produksi. Prioritas kedua adalah asuransi kargo jika UMKM mengirimkan produk ke luar kota. Kendaraan operasional juga perlu diasuransikan. Untuk UMKM yang melayani pelanggan langsung, Public Liability melindungi dari tuntutan jika pelanggan mengalami cedera atau kerugian di tempat usaha.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Berapa biaya asuransi untuk toko atau warung di Yogyakarta?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Asuransi kebakaran untuk toko dengan nilai bangunan dan isi Rp 300 juta di Yogyakarta mulai dari Rp 300–900 ribu per tahun. Biaya naik sesuai nilai pertanggungan dan perluasan yang dipilih (banjir, gempa). Ini setara kurang dari Rp 100 ribu per bulan — jauh lebih terjangkau dibanding kerugian yang bisa terjadi.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Apakah UMKM yang kirim barang lewat ekspedisi perlu asuransi kargo?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Ya, sangat dianjurkan. Asuransi standar ekspedisi umumnya sangat terbatas dan tidak menanggung semua jenis kerusakan. Asuransi kargo khusus UMKM menanggung kerusakan, kehilangan, dan keterlambatan kritis selama pengiriman — dengan premi mulai dari Rp 50–150 ribu per pengiriman tergantung nilai dan tujuan.",
+          },
+        },
+      ],
+    },
+  ],
+};
+
+// ─── DATA ────────────────────────────────────────────────────────────────────
+
+const jenisProdukUMKM = [
+  {
+    no: "01",
+    icon: "🏪",
+    judul: "Asuransi Kebakaran / Properti",
+    subJudul: "Untuk toko, gudang, rumah produksi",
+    deskripsi:
+      "Melindungi bangunan tempat usaha dan seluruh isinya (stok barang, peralatan, mesin) dari risiko kebakaran, petir, ledakan, dan asap. Dengan perluasan, bisa mencakup banjir dan gempa bumi — sangat relevan untuk DIY.",
+    cocokUntuk: ["Toko retail dan warung", "Gudang penyimpanan stok", "Workshop dan rumah produksi", "Konveksi, katering, dan dapur usaha"],
+    estimasiPremi: "Rp 300 rb – Rp 2 juta / tahun",
+    dasarPerhitungan: "0,1–0,3% dari nilai bangunan + isi",
+    prioritas: "Sangat Tinggi",
+    warnaPrioritas: "bg-red-100 text-red-700 border-red-200",
+    warnaCard: "border-red-200 bg-red-50/30",
+    href: "/asuransi-properti/kebakaran",
+    linkLabel: "Asuransi Kebakaran",
+  },
+  {
+    no: "02",
+    icon: "📦",
+    judul: "Asuransi Kargo / Pengiriman",
+    subJudul: "Untuk UMKM yang kirim produk keluar kota",
+    deskripsi:
+      "Melindungi produk selama proses pengiriman — dari gudang pengirim hingga tangan pembeli. Menanggung kerusakan, kehilangan, dan pencurian selama transit, baik via darat, udara, maupun laut.",
+    cocokUntuk: ["Toko online yang kirim ke seluruh Indonesia", "Produsen kerajinan dan furnitur", "UMKM kuliner (oleh-oleh Jogja)", "Ekspedisi skala kecil"],
+    estimasiPremi: "Rp 50 rb – Rp 300 rb / pengiriman",
+    dasarPerhitungan: "0,1–0,3% dari nilai barang per pengiriman",
+    prioritas: "Tinggi",
+    warnaPrioritas: "bg-amber-100 text-amber-700 border-amber-200",
+    warnaCard: "border-amber-200 bg-amber-50/30",
+    href: "/asuransi-kargo/ekspedisi-umkm",
+    linkLabel: "Asuransi Kargo UMKM",
+  },
+  {
+    no: "03",
+    icon: "🚗",
+    judul: "Asuransi Kendaraan Operasional",
+    subJudul: "Untuk motor/mobil yang digunakan usaha",
+    deskripsi:
+      "Melindungi kendaraan yang digunakan untuk operasional usaha — antar jemput bahan baku, pengiriman produk, atau mobilitas pemilik. Kendaraan yang digunakan usaha memiliki risiko lebih tinggi dari kendaraan pribadi biasa.",
+    cocokUntuk: ["Motor untuk ojek atau delivery", "Mobil pick-up pengangkut barang", "Kendaraan operasional katering", "Armada delivery UMKM"],
+    estimasiPremi: "Rp 700 rb – Rp 3 juta / tahun",
+    dasarPerhitungan: "Tergantung tipe, tahun, dan wilayah operasi",
+    prioritas: "Tinggi",
+    warnaPrioritas: "bg-amber-100 text-amber-700 border-amber-200",
+    warnaCard: "border-blue-200 bg-blue-50/30",
+    href: "/asuransi-kendaraan/mobil",
+    linkLabel: "Asuransi Kendaraan",
+  },
+  {
+    no: "04",
+    icon: "🛡️",
+    judul: "Public Liability",
+    subJudul: "Untuk usaha yang melayani pelanggan langsung",
+    deskripsi:
+      "Melindungi pemilik usaha dari tuntutan hukum jika pelanggan atau pihak ketiga mengalami cedera atau kerugian di tempat usaha. Misalnya: pelanggan terpeleset di toko, atau produk menyebabkan alergi.",
+    cocokUntuk: ["Restoran, kafe, dan warung makan", "Salon, spa, dan jasa kecantikan", "Studio foto dan event organizer", "Toko dengan banyak pengunjung"],
+    estimasiPremi: "Rp 500 rb – Rp 3 juta / tahun",
+    dasarPerhitungan: "Tergantung jenis usaha, omzet, dan limit liability",
+    prioritas: "Menengah",
+    warnaPrioritas: "bg-blue-100 text-blue-700 border-blue-200",
+    warnaCard: "border-green-200 bg-green-50/30",
+    href: "/asuransi-liability/public-liability",
+    linkLabel: "Public Liability",
+  },
+  {
+    no: "05",
+    icon: "🔧",
+    judul: "Asuransi Mesin & Peralatan",
+    subJudul: "Untuk UMKM dengan mesin produksi",
+    deskripsi:
+      "Melindungi mesin jahit, oven industri, mesin cetak, kompresor, dan peralatan produksi dari kerusakan mendadak akibat kegagalan mekanis — termasuk biaya perbaikan dan sewa mesin pengganti.",
+    cocokUntuk: ["Konveksi dan garmen rumahan", "Bakery dan usaha kuliner produksi", "Percetakan dan sablon", "Bengkel kecil dan manufaktur ringan"],
+    estimasiPremi: "Rp 500 rb – Rp 5 juta / tahun",
+    dasarPerhitungan: "0,3–1% dari nilai mesin",
+    prioritas: "Menengah",
+    warnaPrioritas: "bg-blue-100 text-blue-700 border-blue-200",
+    warnaCard: "border-purple-200 bg-purple-50/30",
+    href: "/asuransi-engineering/machinery-breakdown",
+    linkLabel: "Machinery Breakdown",
+  },
 ];
 
-const paketAsuransiUMKM = [
+const profilUMKM = [
   {
-    level: "Paket Dasar",
-    cocok: "Warung, toko kelontong, UMKM pemula",
-    icon: "🌱",
-    warna: "border-green-200 bg-green-50",
-    warnaLabel: "bg-green-100 text-green-800",
-    items: [
-      { nama: "Asuransi Kebakaran Toko", deskripsi: "Perlindungan gedung + isi toko dari kebakaran, petir, ledakan", estimasiPremi: "Rp 500rb–2 jt/tahun", href: "/asuransi-properti/kebakaran" },
-      { nama: "Asuransi Kendaraan Niaga", deskripsi: "Motor/mobil operasional untuk pengiriman dan mobilitas bisnis", estimasiPremi: "Rp 800rb–3 jt/tahun", href: "/asuransi-kendaraan/mobil" },
+    profil: "Toko Retail / Warung Sembako",
+    icon: "🏪",
+    omzet: "< Rp 500 juta/tahun",
+    prioritasUtama: ["Asuransi Kebakaran (bangunan + stok)"],
+    opsional: ["Perluasan Banjir jika dekat sungai", "Public Liability jika ramai pengunjung"],
+    estimasiBiaya: "Rp 300 rb – Rp 1,5 juta/tahun",
+    warna: "border-red-200 bg-red-50/40",
+  },
+  {
+    profil: "Konveksi / Garmen Rumahan",
+    icon: "🧵",
+    omzet: "Rp 200 juta – Rp 2 miliar/tahun",
+    prioritasUtama: [
+      "Asuransi Kebakaran (workshop + mesin + stok bahan)",
+      "Asuransi Kargo (pengiriman hasil produksi)",
     ],
-    totalEstimasi: "Rp 1,3–5 juta/tahun",
+    opsional: ["Machinery Breakdown untuk mesin jahit utama", "Kendaraan operasional"],
+    estimasiBiaya: "Rp 1 – Rp 5 juta/tahun",
+    warna: "border-purple-200 bg-purple-50/40",
   },
   {
-    level: "Paket Berkembang",
-    cocok: "Toko online aktif, kuliner, jasa, retailer",
-    icon: "📈",
-    warna: "border-blue-200 bg-blue-50",
-    warnaLabel: "bg-blue-100 text-blue-800",
-    items: [
-      { nama: "Asuransi Kebakaran / PAR", deskripsi: "Perlindungan lebih luas termasuk banjir, gempa, dan kerusakan lain", estimasiPremi: "Rp 1–4 jt/tahun", href: "/asuransi-properti/property-all-risk" },
-      { nama: "Asuransi Kargo Pengiriman", deskripsi: "Barang yang dikirim terlindungi dari risiko hilang dan kerusakan", estimasiPremi: "Rp 500rb–2 jt/tahun", href: "/asuransi-kargo/ekspedisi-umkm" },
-      { nama: "Product Liability (opsional)", deskripsi: "Perlindungan dari gugatan konsumen atas produk yang dijual", estimasiPremi: "Rp 2–6 jt/tahun", href: "/asuransi-liability/product-liability" },
+    profil: "Toko Online / Reseller",
+    icon: "📱",
+    omzet: "Rp 100 juta – Rp 1 miliar/tahun",
+    prioritasUtama: [
+      "Asuransi Kargo per pengiriman (Open Cover lebih efisien)",
+      "Asuransi Kebakaran untuk gudang/stok",
     ],
-    totalEstimasi: "Rp 3,5–12 juta/tahun",
+    opsional: ["Kendaraan motor delivery", "Product Liability untuk produk branded sendiri"],
+    estimasiBiaya: "Rp 600 rb – Rp 4 juta/tahun",
+    warna: "border-amber-200 bg-amber-50/40",
   },
   {
-    level: "Paket Mapan",
-    cocok: "Café, workshop, toko dengan karyawan & pengunjung",
-    icon: "🏆",
-    warna: "border-gold/30 bg-gold/5",
-    warnaLabel: "bg-gold/15 text-navy",
-    items: [
-      { nama: "Property All Risk", deskripsi: "Perlindungan komprehensif aset fisik bisnis Anda", estimasiPremi: "Rp 2–6 jt/tahun", href: "/asuransi-properti/property-all-risk" },
-      { nama: "Public Liability", deskripsi: "Perlindungan dari tuntutan pelanggan yang cedera di tempat usaha", estimasiPremi: "Rp 2–8 jt/tahun", href: "/asuransi-liability/public-liability" },
-      { nama: "Employer Liability", deskripsi: "Perlindungan dari tuntutan karyawan yang kecelakaan saat bekerja", estimasiPremi: "Rp 2–7 jt/tahun", href: "/asuransi-liability/employer-liability" },
-      { nama: "Asuransi Kargo", deskripsi: "Pengiriman barang bisnis ke pelanggan terlindungi", estimasiPremi: "Rp 500rb–2 jt/tahun", href: "/asuransi-kargo/ekspedisi-umkm" },
+    profil: "Restoran / Kafe / Katering",
+    icon: "🍱",
+    omzet: "Rp 300 juta – Rp 3 miliar/tahun",
+    prioritasUtama: [
+      "Asuransi Kebakaran (dapur + peralatan)",
+      "Public Liability (risiko pengunjung cedera)",
     ],
-    totalEstimasi: "Rp 6,5–23 juta/tahun",
+    opsional: [
+      "Machinery Breakdown (mesin masak, chiller, oven)",
+      "Kendaraan delivery",
+      "Product Liability jika produk dijual retail",
+    ],
+    estimasiBiaya: "Rp 1,5 – Rp 8 juta/tahun",
+    warna: "border-green-200 bg-green-50/40",
   },
 ];
 
-const faktaUMKMJogja = [
-  { angka: "270rb+", label: "UMKM aktif di DIY", sumber: "Dinas Koperasi DIY 2023" },
-  { angka: "89%", label: "Belum punya asuransi usaha", sumber: "Survei OJK 2022" },
-  { angka: "1 dari 5", label: "UMKM tutup akibat insiden fisik", sumber: "Estimasi industri" },
-  { angka: "Rp 1–5 jt", label: "Premi asuransi dasar per tahun", sumber: "Rata-rata pasar" },
+const kasusNyata = [
+  {
+    judul: "Konveksi Rumahan di Bantul Ludes Terbakar",
+    nilai: "Rp 280 juta",
+    cerita:
+      "Kebakaran akibat korsleting listrik menghanguskan workshop konveksi rumahan beserta 40 mesin jahit dan stok kain senilai total Rp 280 juta. Pemilik memiliki asuransi kebakaran dengan nilai pertanggungan Rp 350 juta.",
+    hasil: "Klaim cair Rp 270 juta dalam 21 hari. Usaha bisa dibuka kembali dalam 2 bulan.",
+    tanpaAsuransi: "Tanpa asuransi, pemilik harus pinjam modal dari awal. Banyak konveksi serupa yang tidak pernah buka lagi setelah insiden seperti ini.",
+    badge: "bg-red-50 text-red-700 border-red-100",
+  },
+  {
+    judul: "Paket Kerajinan Perak Kotagede Rusak saat Pengiriman",
+    nilai: "Rp 45 juta",
+    cerita:
+      "Pengiriman kerajinan perak senilai Rp 45 juta ke pembeli di Jakarta mengalami kerusakan parah akibat penanganan kasar ekspedisi. Pemilik toko memiliki asuransi kargo Open Cover.",
+    hasil: "Klaim diproses dalam 10 hari. Dana Rp 43 juta cair setelah deductible. Hubungan dengan pembeli tetap terjaga.",
+    tanpaAsuransi: "Ekspedisi hanya mengganti maksimal 10× tarif kirim — sekitar Rp 500 ribu. Kerugian Rp 44,5 juta harus ditanggung sendiri.",
+    badge: "bg-amber-50 text-amber-700 border-amber-100",
+  },
+  {
+    judul: "Pelanggan Terpeleset di Kafe Malioboro",
+    nilai: "Tuntutan Rp 75 juta",
+    cerita:
+      "Pelanggan terpeleset di lantai basah dekat wastafel kafe dan mengalami patah pergelangan tangan. Keluarga menuntut ganti rugi biaya pengobatan dan kehilangan penghasilan senilai Rp 75 juta.",
+    hasil: "Public Liability menanggung negosiasi dan penyelesaian sebesar Rp 62 juta. Pemilik kafe tidak perlu menanggung sendiri.",
+    tanpaAsuransi: "Pemilik kafe harus membayar sendiri atau menghadapi proses hukum — yang bisa jauh lebih mahal dari tuntutan awal.",
+    badge: "bg-blue-50 text-blue-700 border-blue-100",
+  },
 ];
 
-const faqUMKM = [
+const tipsMemilih = [
   {
-    q: "UMKM saya kecil, apakah benar-benar perlu asuransi?",
-    a: "Justru UMKM yang paling membutuhkan. Korporasi besar memiliki cadangan modal untuk bertahan dari insiden — UMKM tidak. Satu kebakaran, satu gugatan pelanggan, atau satu kecelakaan karyawan bisa menutup usaha kecil selamanya. Dengan premi mulai Rp 500rb/tahun, proteksinya tidak sebanding dengan risikonya.",
+    no: "1",
+    judul: "Mulai dari risiko terbesar, bukan produk terlengkap",
+    detail:
+      "UMKM dengan anggaran terbatas tidak harus langsung ambil semua jenis asuransi. Identifikasi satu risiko yang jika terjadi akan membuat usaha kolaps — itu yang diasuransikan pertama. Untuk sebagian besar UMKM, itu adalah kebakaran tempat usaha.",
   },
   {
-    q: "Apakah asuransi UMKM bisa dicicil atau bayar per bulan?",
-    a: "Sebagian besar asuransi kerugian dibayar tahunan. Namun beberapa produk memiliki opsi pembayaran semesteran. Kami bisa membantu menemukan produk yang paling fleksibel sesuai arus kas bisnis Anda.",
+    no: "2",
+    judul: "Hitung nilai pertanggungan dengan jujur",
+    detail:
+      "Kesalahan umum UMKM adalah meremehkan nilai stok dan peralatan agar premi lebih murah. Akibatnya saat klaim, ganti rugi tidak mencukupi (underinsurance). Lebih baik nilai pertanggungan akurat meski premi sedikit lebih tinggi.",
   },
   {
-    q: "Apakah toko online juga perlu asuransi?",
-    a: "Ya, bahkan sangat perlu. Toko online memiliki dua risiko utama: kerusakan barang saat pengiriman (tutup dengan kargo) dan gugatan konsumen atas produk bermasalah (tutup dengan product liability). Jika ada gudang penyimpanan, asuransi properti juga diperlukan.",
+    no: "3",
+    judul: "Tanyakan perluasan Banjir dan Gempa untuk lokasi di DIY",
+    detail:
+      "Polis kebakaran standar tidak otomatis menanggung banjir dan gempa. Untuk usaha di DIY, perluasan ini sangat dianjurkan mengingat sejarah gempa 2006 dan banjir yang rutin di beberapa kawasan Bantul dan Kulon Progo.",
   },
   {
-    q: "Bagaimana kalau UMKM saya beroperasi dari rumah?",
-    a: "Asuransi rumah tinggal standar biasanya TIDAK mencakup kerugian komersial. Jika Anda menjalankan bisnis dari rumah, perlu endorsement khusus atau polis terpisah untuk melindungi stok barang dan peralatan bisnis. Konsultasikan ke kami untuk solusi yang tepat.",
+    no: "4",
+    judul: "Open Cover lebih efisien untuk pengiriman rutin",
+    detail:
+      "Jika mengirim barang lebih dari 2–3 kali per bulan, Open Cover (satu polis untuk semua pengiriman selama setahun) jauh lebih efisien dibanding asuransi per pengiriman. Premi dihitung berdasarkan estimasi volume pengiriman setahun.",
+  },
+  {
+    no: "5",
+    judul: "Simpan polis dan nomor klaim di tempat yang mudah diakses",
+    detail:
+      "Saat musibah terjadi, kondisi panik adalah yang paling buruk untuk mencari dokumen. Simpan soft copy polis di cloud (Google Drive atau WhatsApp), dan catat nomor konsultan serta prosedur klaim di tempat yang mudah diakses semua anggota keluarga atau karyawan.",
   },
 ];
 
-export default function AsuransiUMKMJogjaPage() {
+const faqItems = [
+  {
+    q: "Apakah usaha rumahan (home industry) bisa diasuransikan?",
+    a: "Ya. Usaha rumahan — konveksi di garasi, dapur produksi oleh-oleh, atau studio kerajinan — bisa diasuransikan. Namun ada beberapa hal yang perlu diperhatikan: (1) lokasi usaha yang sama dengan rumah tinggal memerlukan deklarasi yang jelas kepada insurer, (2) nilai stok dan peralatan produksi harus dideklarasikan terpisah dari isi rumah, (3) beberapa insurer membatasi pertanggungan usaha rumahan — konsultasikan kepada kami untuk memastikan cakupan yang tepat.",
+  },
+  {
+    q: "Apakah stok barang di gudang bisa diasuransikan meski bukan milik sendiri (barang titipan)?",
+    a: "Ini pertanyaan penting yang sering terlewat. Secara standar, polis kebakaran menanggung stok milik tertanggung. Untuk stok titipan atau barang konsinyasi, diperlukan klausul 'barang milik orang lain dalam penjagaan' (Goods Held in Trust). Jika gudang Anda menyimpan barang pelanggan atau pemasok, pastikan klausul ini ada dalam polis.",
+  },
+  {
+    q: "Berapa lama klaim asuransi UMKM diproses?",
+    a: "Untuk klaim kebakaran: pelaporan dalam 24–48 jam, survei loss adjuster 2–5 hari kerja, persetujuan 7–21 hari kerja. Untuk klaim kargo: lebih cepat, umumnya 5–14 hari kerja untuk klaim tanpa sengketa. Yang paling mempengaruhi kecepatan klaim adalah kelengkapan dokumentasi — foto kerusakan, daftar barang, dan laporan kejadian yang disiapkan segera setelah insiden.",
+  },
+  {
+    q: "Apakah UMKM yang baru berdiri (kurang dari 1 tahun) bisa mendapatkan asuransi?",
+    a: "Bisa. Tidak ada ketentuan minimum usia usaha untuk asuransi kebakaran, kargo, atau kendaraan. Yang diperlukan adalah bukti kepemilikan atau sewa tempat usaha (untuk kebakaran), dan daftar stok/aset yang ingin diasuransikan. Untuk Public Liability atau Product Liability, beberapa insurer mungkin meminta profil usaha yang lebih detail.",
+  },
+  {
+    q: "Apakah premi asuransi UMKM bisa menjadi biaya deductible pajak?",
+    a: "Ya. Berdasarkan UU PPh, premi asuransi yang dibayarkan untuk kepentingan usaha — termasuk asuransi kebakaran tempat usaha, kargo, dan kendaraan operasional — dapat dibebankan sebagai biaya dalam perhitungan PPh Badan atau PPh Final UMKM. Konsultasikan dengan konsultan pajak Anda untuk optimasi biaya asuransi sebagai pengurang penghasilan.",
+  },
+];
+
+// ─── PAGE ────────────────────────────────────────────────────────────────────
+
+export default function ArtikelAsuransiUMKMJogja() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }}
+      />
       <Header />
       <div className="pt-[68px]">
 
-        {/* Breadcrumb */}
+        {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
           <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
             <span className="text-gold/60">›</span>
-            <span className="text-navy font-semibold">Panduan Asuransi UMKM Jogja</span>
+            <span className="text-navy font-semibold">Asuransi untuk UMKM di Jogja</span>
           </div>
         </div>
 
-        {/* HERO */}
+        {/* ── Hero ── */}
         <section className="bg-navy py-16 px-[5vw] relative overflow-hidden">
-          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 55% 70% at 80% 40%, rgba(200,150,62,0.12) 0%, transparent 65%)" }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 60% 70% at 80% 50%, rgba(200,150,62,0.10) 0%, transparent 65%)",
+            }}
+          />
           <div className="relative z-10 max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-4 py-1.5 rounded-full mb-5 tracking-widest uppercase">
-              <span className="text-[0.5rem] text-gold">◆</span>Panduan UMKM · Yogyakarta
+            <div className="flex items-center gap-3 mb-5 flex-wrap">
+              <Link
+                href="/asuransi-properti"
+                className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors"
+              >
+                🏠 Properti
+              </Link>
+              <Link
+                href="/asuransi-kargo"
+                className="inline-flex items-center gap-1.5 bg-white/8 border border-white/15 text-white/70 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-white/12 transition-colors"
+              >
+                📦 Kargo
+              </Link>
+              <Link
+                href="/asuransi-liability"
+                className="inline-flex items-center gap-1.5 bg-white/8 border border-white/15 text-white/70 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-white/12 transition-colors"
+              >
+                🛡️ Liability
+              </Link>
+              <span className="text-white/30 text-xs">·</span>
+              <span className="text-white/40 text-xs">Panduan UMKM</span>
             </div>
-            <h1 className="font-heading text-[clamp(2rem,3.5vw,3rem)] text-white leading-[1.2] mb-4">
-              Panduan Lengkap Asuransi<br /><em className="not-italic text-gold">untuk UMKM di Yogyakarta</em>
+            <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
+              Asuransi untuk UMKM di Jogja —<br />
+              <em className="not-italic text-gold">Panduan Praktis<br />Pelaku Usaha</em>
             </h1>
-            <p className="text-white/80 text-base leading-[1.85] max-w-[560px]">
-              89% UMKM di Indonesia belum memiliki asuransi usaha. Satu insiden saja — kebakaran, gugatan pelanggan, atau karyawan kecelakaan — bisa mengakhiri usaha yang sudah dibangun bertahun-tahun. Panduan ini membantu Anda mulai dari mana.
+            <p className="text-white/80 text-base leading-[1.85] max-w-[560px] mb-6">
+              Banyak UMKM di Yogyakarta baru memikirkan asuransi setelah musibah terjadi.
+              Padahal proteksi usaha bisa dimulai dari{" "}
+              <strong className="text-gold2">Rp 300 ribu per tahun</strong> — lebih murah dari
+              satu kali makan di restoran. Panduan ini membantu Anda memilih yang tepat sesuai
+              jenis dan skala usaha.
             </p>
-            <div className="flex gap-6 mt-8 pt-6 border-t border-white/10 text-sm text-white/50">
-              <span>📅 Diperbarui Mei 2025</span>
-              <span>⏱️ 8 menit membaca</span>
-              <span>🎯 Untuk UMKM Jogja</span>
+            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+              <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
+              <span>·</span>
+              <span>📅 Diperbarui Juni 2025</span>
+              <span>·</span>
+              <span>⏱️ Baca 8 menit</span>
             </div>
           </div>
         </section>
 
-        {/* FAKTA UMKM JOGJA */}
-        <section className="py-10 px-[5vw] bg-gold/8 border-b border-gold/15">
-          <div className="max-w-[750px] mx-auto grid grid-cols-2 sm:grid-cols-4 gap-5">
-            {faktaUMKMJogja.map(f => (
-              <div key={f.angka} className="text-center">
-                <div className="font-heading text-navy text-[1.8rem] font-bold">{f.angka}</div>
-                <div className="text-navy2 text-xs font-semibold mt-0.5">{f.label}</div>
-                <div className="text-[#94A3B8] text-[0.7rem] mt-0.5">{f.sumber}</div>
+        {/* ── Konten ── */}
+        <article className="py-14 px-[5vw] max-w-[780px] mx-auto">
+
+          {/* Lead box */}
+          <div className="bg-gold/6 border-l-4 border-gold rounded-r-xl p-5 mb-10">
+            <p className="text-navy2 text-sm leading-relaxed">
+              <strong className="text-navy">Jawaban Cepat:</strong> UMKM di Yogyakarta
+              paling membutuhkan <strong>asuransi kebakaran</strong> untuk tempat usaha,{" "}
+              <strong>asuransi kargo</strong> untuk pengiriman produk, dan{" "}
+              <strong>asuransi kendaraan</strong> untuk armada operasional. Untuk usaha
+              yang melayani pelanggan langsung, tambahkan{" "}
+              <strong>Public Liability</strong>. Total biaya bisa dimulai dari{" "}
+              <strong>Rp 300 ribu hingga Rp 8 juta per tahun</strong> tergantung skala usaha.
+            </p>
+          </div>
+
+          {/* Mengapa UMKM perlu asuransi */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Mengapa UMKM di Yogyakarta Rentan Tanpa Asuransi?
+          </h2>
+          <p className="text-[#64748B] text-base leading-relaxed mb-4">
+            UMKM adalah tulang punggung ekonomi Yogyakarta — dari sentra kerajinan Kotagede,
+            konveksi Bantul, kuliner Malioboro, hingga ribuan toko online yang beroperasi dari
+            rumah-rumah di Sleman dan Kulon Progo. Namun sebagian besar beroperasi tanpa
+            perlindungan asuransi sama sekali.
+          </p>
+          <p className="text-[#64748B] text-base leading-relaxed mb-4">
+            Ironisnya, UMKM justru lebih rentan dibanding usaha besar. Perusahaan besar punya
+            cadangan modal untuk pulih dari musibah. UMKM tidak. Satu kebakaran yang memusnahkan
+            stok dan peralatan — tanpa asuransi — bisa mengakhiri usaha yang dibangun bertahun-tahun.
+          </p>
+          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+            DIY juga memiliki karakteristik risiko yang spesifik: zona gempa aktif, banjir musiman
+            di bantaran Code dan Progo, serta cuaca ekstrem yang makin sering terjadi. Semua ini
+            adalah risiko yang bisa dimitigasi dengan asuransi yang tepat — dengan biaya yang
+            jauh lebih terjangkau dari yang dibayangkan kebanyakan pelaku UMKM.
+          </p>
+
+          {/* 5 Produk Utama */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            5 Jenis Asuransi yang Paling Relevan untuk UMKM Jogja
+          </h2>
+          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+            Berikut penjelasan setiap produk — diurutkan dari yang paling prioritas bagi
+            sebagian besar UMKM:
+          </p>
+          <div className="flex flex-col gap-5 mb-10">
+            {jenisProdukUMKM.map((p) => (
+              <div key={p.no} className={`rounded-card p-5 border ${p.warnaCard}`}>
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/70 border border-black/8 flex items-center justify-center text-xl shadow-sm">
+                    {p.icon}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2.5 mb-1 flex-wrap">
+                      <span className="font-heading font-bold text-navy text-[0.95rem]">{p.judul}</span>
+                      <span className={`text-[0.6rem] font-bold px-2 py-0.5 rounded-full border ${p.warnaPrioritas}`}>
+                        {p.prioritas}
+                      </span>
+                    </div>
+                    <p className="text-xs text-[#94A3B8] mb-2">{p.subJudul}</p>
+                    <p className="text-sm text-[#64748B] leading-relaxed mb-3">{p.deskripsi}</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+                      <div>
+                        <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1.5">
+                          Cocok untuk
+                        </p>
+                        <ul className="flex flex-col gap-1">
+                          {p.cocokUntuk.map((item, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="text-gold flex-shrink-0 font-bold text-xs mt-0.5">✓</span>
+                              <span className="text-xs text-navy2">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1.5">
+                          Estimasi biaya
+                        </p>
+                        <div className="bg-white/70 rounded-lg p-3 border border-black/6">
+                          <div className="font-heading font-bold text-navy text-sm mb-0.5">
+                            {p.estimasiPremi}
+                          </div>
+                          <div className="text-[0.65rem] text-[#94A3B8]">{p.dasarPerhitungan}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <Link
+                      href={p.href}
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-gold hover:text-gold2 transition-colors no-underline"
+                    >
+                      Pelajari {p.linkLabel} →
+                    </Link>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
-        </section>
 
-        {/* RISIKO UMKM */}
-        <section className="py-14 px-[5vw] bg-white">
-          <div className="max-w-[750px] mx-auto">
-            <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Peta Risiko</div>
-            <h2 className="font-heading text-navy text-[clamp(1.6rem,2.5vw,2.2rem)] mb-8">6 Risiko Terbesar<br />yang Mengancam UMKM Anda</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {risikoUMKM.map(r => (
-                <div key={r.risiko} className="bg-cream rounded-card p-5 border border-black/6">
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <span className="text-2xl">{r.icon}</span>
-                      <span className="font-heading text-navy font-bold text-[0.9rem]">{r.risiko}</span>
-                    </div>
-                    <span className={`text-[0.65rem] font-bold px-2 py-0.5 rounded-full flex-shrink-0 ${r.frekuensi === "Sering" ? "bg-red-100 text-red-700" : r.frekuensi === "Meningkat" ? "bg-orange-100 text-orange-700" : "bg-yellow-100 text-yellow-700"}`}>
-                      {r.frekuensi}
-                    </span>
+          {/* Profil per jenis UMKM */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Rekomendasi Berdasarkan Jenis Usaha Anda
+          </h2>
+          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+            Setiap jenis UMKM memiliki risiko dan kebutuhan yang berbeda.
+            Temukan profil yang paling mendekati usaha Anda:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            {profilUMKM.map((p) => (
+              <div key={p.profil} className={`rounded-card p-5 border ${p.warna}`}>
+                <div className="flex items-center gap-2.5 mb-3">
+                  <span className="text-2xl">{p.icon}</span>
+                  <div>
+                    <div className="font-heading font-bold text-navy text-sm">{p.profil}</div>
+                    <div className="text-xs text-[#94A3B8]">{p.omzet}</div>
                   </div>
-                  <p className="text-xs text-[#64748B] leading-relaxed">{r.dampak}</p>
                 </div>
-              ))}
-            </div>
+                <div className="mb-3">
+                  <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1.5">
+                    Prioritas utama
+                  </p>
+                  <ul className="flex flex-col gap-1">
+                    {p.prioritasUtama.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-navy font-bold text-xs flex-shrink-0 mt-0.5">✓</span>
+                        <span className="text-xs text-navy2 leading-snug">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mb-3">
+                  <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1.5">
+                    Tambahan dianjurkan
+                  </p>
+                  <ul className="flex flex-col gap-1">
+                    {p.opsional.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-gold font-bold text-xs flex-shrink-0 mt-0.5">+</span>
+                        <span className="text-xs text-[#64748B] leading-snug">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="bg-white/60 rounded-lg px-3 py-2 border border-black/6">
+                  <span className="text-[0.65rem] text-[#94A3B8] uppercase tracking-wide font-semibold">
+                    Estimasi total
+                  </span>
+                  <div className="font-heading font-bold text-navy text-sm">{p.estimasiBiaya}</div>
+                </div>
+              </div>
+            ))}
           </div>
-        </section>
 
-        {/* PAKET REKOMENDASI */}
-        <section className="py-14 px-[5vw] bg-cream">
-          <div className="max-w-[750px] mx-auto">
-            <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Rekomendasi Paket</div>
-            <h2 className="font-heading text-navy text-[clamp(1.6rem,2.5vw,2.2rem)] mb-3">Paket Asuransi Sesuai<br />Skala Bisnis Anda</h2>
-            <p className="text-base text-[#64748B] mb-8">Pilih paket yang paling mendekati kondisi bisnis Anda — atau konsultasikan untuk paket yang benar-benar custom.</p>
-            <div className="flex flex-col gap-6">
-              {paketAsuransiUMKM.map(paket => (
-                <div key={paket.level} className={`rounded-[18px] border overflow-hidden ${paket.warna}`}>
-                  <div className="px-6 py-4 flex items-center justify-between border-b border-black/5">
-                    <div className="flex items-center gap-3">
-                      <span className="text-3xl">{paket.icon}</span>
-                      <div>
-                        <div className="font-heading text-navy font-bold text-[1.05rem]">{paket.level}</div>
-                        <div className="text-xs text-[#64748B]">Cocok untuk: {paket.cocok}</div>
+          {/* Kasus Nyata */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Kasus Nyata dari UMKM di Yogyakarta
+          </h2>
+          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+            Tiga contoh berikut menggambarkan perbedaan antara UMKM yang memiliki asuransi
+            dan yang tidak, ketika musibah benar-benar terjadi:
+          </p>
+          <div className="flex flex-col gap-4 mb-10">
+            {kasusNyata.map((k) => (
+              <div key={k.judul} className={`rounded-card p-5 border ${k.badge}`}>
+                <div className="flex items-start gap-3 mb-3 flex-wrap">
+                  <div>
+                    <div className="flex items-center gap-2.5 mb-1 flex-wrap">
+                      <span className="font-heading font-bold text-navy text-sm">{k.judul}</span>
+                      <span className={`text-[0.65rem] font-bold px-2 py-0.5 rounded-full border ${k.badge}`}>
+                        Nilai: {k.nilai}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {[
+                    { label: "Kronologi", val: k.cerita },
+                    { label: "✅ Hasil dengan Asuransi", val: k.hasil },
+                    { label: "⚠️ Tanpa Asuransi", val: k.tanpaAsuransi },
+                  ].map((item) => (
+                    <div key={item.label} className="bg-white/60 rounded-lg p-3 border border-black/6">
+                      <div className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1">
+                        {item.label}
                       </div>
+                      <p className="text-xs text-[#64748B] leading-relaxed">{item.val}</p>
                     </div>
-                    <span className={`text-xs font-bold px-3 py-1.5 rounded-full ${paket.warnaLabel}`}>Est. {paket.totalEstimasi}</span>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex flex-col gap-3">
-                      {paket.items.map(item => (
-                        <div key={item.nama} className="bg-white rounded-xl p-4 border border-black/5 flex items-center justify-between gap-3 flex-wrap">
-                          <div className="flex-1">
-                            <Link href={item.href} className="font-semibold text-navy text-sm hover:text-gold transition-colors no-underline">{item.nama} →</Link>
-                            <p className="text-xs text-[#64748B] mt-0.5">{item.deskripsi}</p>
-                          </div>
-                          <span className="text-xs font-bold text-gold flex-shrink-0">{item.estimasiPremi}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-            <p className="text-xs text-[#94A3B8] mt-4 text-center">*Estimasi premi bersifat indikatif. Premi aktual bergantung pada nilai aset, lokasi, dan profil risiko spesifik bisnis Anda.</p>
+              </div>
+            ))}
           </div>
-        </section>
 
-        {/* KAPAN HARUS MULAI */}
-        <section className="py-14 px-[5vw] bg-white">
-          <div className="max-w-[750px] mx-auto">
-            <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Timing yang Tepat</div>
-            <h2 className="font-heading text-navy text-[clamp(1.6rem,2.5vw,2.2rem)] mb-6">Kapan UMKM Harus Mulai<br />Membeli Asuransi?</h2>
-            <div className="bg-navy rounded-xl p-6 mb-6">
-              <p className="text-white/90 text-base leading-[1.85]">
-                <strong className="text-gold">Jawabannya: sekarang, bukan saat omset sudah besar.</strong> Justru di fase awal bisnis risiko paling besar — modal terbatas, cadangan nol, dan satu insiden bisa mengakhiri segalanya. Semakin dini Anda memiliki proteksi, semakin tenang Anda bertumbuh.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {[
-                { fase: "Baru Buka", tips: "Minimal asuransi kebakaran untuk aset/stok. Premi Rp 500rb/tahun sudah ada proteksi dasar." },
-                { fase: "Sudah Punya Karyawan", tips: "Tambahkan employer liability. Satu kecelakaan kerja tanpa asuransi bisa lebih mahal dari gaji setahun." },
-                { fase: "Punya Pelanggan & Pengunjung", tips: "Tambahkan public liability dan/atau product liability. Risiko gugatan meningkat seiring skala bisnis." },
-              ].map(f => (
-                <div key={f.fase} className="bg-cream rounded-card p-5 border border-black/6">
-                  <div className="font-heading text-gold text-sm font-bold mb-2">{f.fase}</div>
-                  <p className="text-sm text-[#64748B] leading-relaxed">{f.tips}</p>
+          {/* Tips memilih */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            5 Tips Memilih Asuransi yang Tepat untuk UMKM
+          </h2>
+          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+            Agar premi tidak terasa sia-sia dan klaim bisa cair saat dibutuhkan:
+          </p>
+          <div className="flex flex-col gap-3 mb-10">
+            {tipsMemilih.map((t) => (
+              <div key={t.no} className="flex gap-3.5 bg-cream rounded-xl p-4 border border-black/5">
+                <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-gold/15 border border-gold/25 flex items-center justify-center text-xs font-bold text-amber-700">
+                  {t.no}
+                </span>
+                <div>
+                  <p className="font-semibold text-navy text-sm mb-1">{t.judul}</p>
+                  <p className="text-xs text-[#64748B] leading-relaxed">{t.detail}</p>
                 </div>
-              ))}
+              </div>
+            ))}
+          </div>
+
+          {/* CTA Inline */}
+          <div className="bg-gold/8 border border-gold/25 rounded-card p-6 mb-10">
+            <div className="font-heading text-navy font-bold text-base mb-2">
+              Tidak yakin asuransi apa yang dibutuhkan usaha Anda?
+            </div>
+            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+              Ceritakan jenis usaha, lokasi, dan aset utama Anda — kami rekomendasikan
+              kombinasi perlindungan paling efisien sesuai anggaran. Konsultasi gratis,
+              tanpa tekanan.
+            </p>
+            <div className="flex gap-3 flex-wrap">
+              <a
+                href={`https://wa.me/${KONTAK.wa}`}
+                className="bg-gold text-navy px-5 py-2.5 rounded-lg font-bold text-sm no-underline hover:bg-gold2 transition-all"
+              >
+                💬 Konsultasi via WA — Gratis
+              </a>
+              <Link
+                href="/asuransi-properti/kebakaran"
+                className="border border-navy/20 text-navy px-5 py-2.5 rounded-lg text-sm no-underline hover:border-gold hover:text-gold transition-all"
+              >
+                🏠 Asuransi Kebakaran →
+              </Link>
+              <Link
+                href="/asuransi-kargo/ekspedisi-umkm"
+                className="border border-navy/20 text-navy px-5 py-2.5 rounded-lg text-sm no-underline hover:border-gold hover:text-gold transition-all"
+              >
+                📦 Asuransi Kargo UMKM →
+              </Link>
             </div>
           </div>
-        </section>
 
-        {/* FAQ */}
-        <section className="py-14 px-[5vw] bg-cream">
-          <div className="max-w-[750px] mx-auto">
-            <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">FAQ</div>
-            <h2 className="font-heading text-navy text-[clamp(1.6rem,2.5vw,2.2rem)] mb-8">Pertanyaan Umum<br />UMKM tentang Asuransi</h2>
-            {faqUMKM.map((f, i) => (
-              <details key={i} className="border-b border-black/8 group">
-                <summary className="py-4 cursor-pointer font-semibold text-[0.92rem] text-navy flex justify-between items-center list-none">
-                  {f.q}<span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
+          {/* FAQ */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-6">
+            Pertanyaan yang Sering Diajukan Pelaku UMKM
+          </h2>
+          <div className="flex flex-col divide-y divide-black/8 mb-10">
+            {faqItems.map((f, i) => (
+              <details key={i} className="group py-1">
+                <summary className="py-3 cursor-pointer font-semibold text-[0.9rem] text-navy flex justify-between items-center list-none">
+                  {f.q}
+                  <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">
+                    +
+                  </span>
                 </summary>
-                <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
               </details>
             ))}
           </div>
-        </section>
 
-        {/* CTA + INTERNAL LINKS */}
-        <section className="py-14 px-[5vw] bg-navy">
-          <div className="max-w-[750px] mx-auto text-center">
-            <h2 className="font-heading text-white text-[clamp(1.5rem,2.5vw,2rem)] mb-3">Konsultasi Paket Asuransi<br />untuk UMKM Anda</h2>
-            <p className="text-white/70 text-sm max-w-[420px] mx-auto mb-6">Ceritakan skala dan jenis usaha Anda — kami bantu susun paket perlindungan yang tepat dan efisien dari sisi biaya.</p>
-            <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all mb-8">💬 Konsultasi Gratis via WhatsApp</a>
-            <div className="border-t border-white/10 pt-8 text-left">
-              <div className="text-xs font-bold tracking-widest uppercase text-white/40 mb-4">Produk yang Relevan untuk UMKM</div>
-              <div className="flex gap-3 flex-wrap">
-                <Link href="/asuransi-properti/kebakaran" className="bg-white/8 border border-white/15 text-white/80 text-sm px-4 py-2 rounded-full hover:border-gold/50 hover:text-gold transition-colors no-underline">🔥 Asuransi Kebakaran →</Link>
-                <Link href="/asuransi-kargo/ekspedisi-umkm" className="bg-white/8 border border-white/15 text-white/80 text-sm px-4 py-2 rounded-full hover:border-gold/50 hover:text-gold transition-colors no-underline">📦 Kargo Ekspedisi →</Link>
-                <Link href="/asuransi-liability/public-liability" className="bg-white/8 border border-white/15 text-white/80 text-sm px-4 py-2 rounded-full hover:border-gold/50 hover:text-gold transition-colors no-underline">🤝 Public Liability →</Link>
-                <Link href="/asuransi-liability/product-liability" className="bg-white/8 border border-white/15 text-white/80 text-sm px-4 py-2 rounded-full hover:border-gold/50 hover:text-gold transition-colors no-underline">🛍️ Product Liability →</Link>
-                <Link href="/asuransi-kendaraan/mobil" className="bg-white/8 border border-white/15 text-white/80 text-sm px-4 py-2 rounded-full hover:border-gold/50 hover:text-gold transition-colors no-underline">🚗 Kendaraan Niaga →</Link>
-              </div>
+          {/* Internal Links */}
+          <div className="border-t border-black/8 pt-8">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">
+              Produk & Artikel Terkait
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                {
+                  href: "/asuransi-properti/kebakaran",
+                  icon: "🔥",
+                  judul: "Asuransi Kebakaran",
+                  desc: "Proteksi toko, gudang, dan rumah produksi UMKM",
+                },
+                {
+                  href: "/asuransi-kargo/ekspedisi-umkm",
+                  icon: "📦",
+                  judul: "Asuransi Kargo Ekspedisi UMKM",
+                  desc: "Proteksi pengiriman produk ke seluruh Indonesia",
+                },
+                {
+                  href: "/asuransi-liability/public-liability",
+                  icon: "🛡️",
+                  judul: "Public Liability",
+                  desc: "Proteksi dari tuntutan pelanggan atau pihak ketiga",
+                },
+                {
+                  href: "/asuransi-kendaraan/mobil",
+                  icon: "🚗",
+                  judul: "Asuransi Kendaraan",
+                  desc: "Proteksi motor dan mobil operasional usaha",
+                },
+                {
+                  href: "/asuransi-properti/property-all-risk",
+                  icon: "🏢",
+                  judul: "Property All Risk",
+                  desc: "Perlindungan lebih luas untuk usaha menengah ke atas",
+                },
+                {
+                  href: "/artikel/pentingnya-asuransi-dunia-usaha-jogja",
+                  icon: "📖",
+                  judul: "Pentingnya Asuransi untuk Dunia Usaha Jogja",
+                  desc: "Mengapa proteksi usaha bukan sekadar biaya tambahan",
+                },
+              ].map((a) => (
+                <Link
+                  key={a.href}
+                  href={a.href}
+                  className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group"
+                >
+                  <span className="text-xl flex-shrink-0">{a.icon}</span>
+                  <div>
+                    <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">
+                      {a.judul}
+                    </div>
+                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </article>
+
+        {/* ── CTA Bottom ── */}
+        <section className="py-16 px-[5vw] bg-navy text-center relative overflow-hidden">
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.10) 0%, transparent 65%)",
+            }}
+          />
+          <div className="relative z-10">
+            <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.2rem)] text-white leading-[1.22] mb-4">
+              Mulai Proteksi Usaha Anda<br />
+              Hari Ini — Mulai dari Rp 300 Ribu
+            </h2>
+            <p className="text-white/75 text-sm max-w-[440px] mx-auto mb-8">
+              Konsultasi gratis dengan Rio MD — konsultan asuransi UMKM berpengalaman di
+              Yogyakarta. Kami bantu pilihkan perlindungan yang tepat, tidak lebih dan tidak kurang.
+            </p>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <a
+                href={`https://wa.me/${KONTAK.wa}`}
+                className="bg-[#25D366] text-white px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all"
+              >
+                💬 Konsultasi via WhatsApp
+              </a>
+              <Link
+                href="/asuransi-properti"
+                className="border border-white/25 text-white/80 px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:border-gold hover:text-gold transition-all"
+              >
+                🏠 Lihat Produk Properti
+              </Link>
+              <Link
+                href="/asuransi-kargo"
+                className="border border-white/25 text-white/80 px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:border-gold hover:text-gold transition-all"
+              >
+                📦 Lihat Produk Kargo
+              </Link>
             </div>
           </div>
         </section>
-
       </div>
       <Footer />
     </>
