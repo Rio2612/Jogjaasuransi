@@ -46,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/asuransi-surety-bond/jaminan-penawaran`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/asuransi-surety-bond/jaminan-pelaksanaan`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/asuransi-surety-bond/jaminan-uang-muka`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${base}/asuransi-surety-bond/jaminan-pemeliharan`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/asuransi-surety-bond/jaminan-pemeliharaan`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
 
     // Artikel Utama (Parent)
     { url: `${base}/artikel`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
