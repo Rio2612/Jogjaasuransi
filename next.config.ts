@@ -10,6 +10,17 @@ const nextConfig: NextConfig = {
   // HAPUS redirect www — biarkan Vercel yang handle lewat Dashboard
   // Redirect di sini + Vercel redirect = ERR_TOO_MANY_REDIRECTS
 
+  // Fix typo 404 dari sitemap lama
+  async redirects() {
+    return [
+      {
+        source: "/asuransi-surety-bond/jaminan-pemeliharan",
+        destination: "/asuransi-surety-bond/jaminan-pemeliharaan",
+        permanent: true,
+      },
+    ];
+  },
+
   // Security headers
   async headers() {
     return [
