@@ -1,7 +1,7 @@
 // app/artikel/asuransi-mesin-pabrik-jogja/page.tsx
-// TARGET KEYWORD: "asuransi mesin pabrik jogja", "asuransi machinery breakdown yogyakarta"
-// INTENT: Local + Commercial — pemilik pabrik DIY yang cari proteksi mesin
-// SILO: Engineering cluster → mendukung /asuransi-engineering/machinery-breakdown/
+// TARGET KEYWORD: "asuransi mesin pabrik jogja", "machinery breakdown yogyakarta"
+// INTENT: Commercial Investigation — manajer pabrik atau pemilik industri yang sadar mesinnya berisiko
+// SILO: Engineering cluster → /machinery-breakdown + cross-link EAR, artikel CAR
 
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -10,17 +10,18 @@ import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Mesin Pabrik Jogja – Machinery Breakdown untuk Industri DIY | Asuransi Jogja",
+  title: "Asuransi Mesin Pabrik di Jogja – Machinery Breakdown untuk Industri DIY | Asuransi Jogja",
   description:
-    "Panduan asuransi mesin pabrik dan peralatan industri di Yogyakarta. Machinery Breakdown Insurance untuk mesin produksi, genset, chiller, kompresor di kawasan industri Sleman, Bantul, dan Kulon Progo. Konsultasi gratis.",
+    "Panduan lengkap asuransi mesin pabrik (Machinery Breakdown) di Yogyakarta. Apa yang ditanggung, apa yang tidak, estimasi premi, perbedaan dengan asuransi kebakaran, dan kasus nyata kerusakan mesin industri di DIY.",
   keywords:
-    "asuransi mesin pabrik jogja, asuransi machinery breakdown yogyakarta, asuransi mesin industri DIY, asuransi genset jogja, asuransi chiller yogyakarta, proteksi mesin pabrik sleman bantul",
+    "asuransi mesin pabrik jogja, machinery breakdown yogyakarta, asuransi kerusakan mesin industri DIY, proteksi mesin produksi jogja, biaya asuransi mesin pabrik yogyakarta",
   alternates: {
     canonical: "https://asuransijogja.biz.id/artikel/asuransi-mesin-pabrik-jogja",
   },
   openGraph: {
-    title: "Asuransi Mesin Pabrik Jogja – Machinery Breakdown untuk Industri DIY",
-    description: "Proteksi mesin produksi, genset, chiller, dan kompresor di kawasan industri Yogyakarta. Premi mulai 0,3% nilai mesin per tahun.",
+    title: "Asuransi Mesin Pabrik di Jogja – Machinery Breakdown untuk Industri DIY",
+    description:
+      "Mesin pabrik yang rusak mendadak bisa menghentikan produksi berhari-hari. Pelajari bagaimana Machinery Breakdown Insurance melindungi industri di Yogyakarta.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-mesin-pabrik-jogja",
     type: "article",
   },
@@ -34,16 +35,26 @@ const schemaArtikel = {
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Beranda", item: "https://asuransijogja.biz.id" },
         { "@type": "ListItem", position: 2, name: "Artikel", item: "https://asuransijogja.biz.id/artikel" },
-        { "@type": "ListItem", position: 3, name: "Asuransi Mesin Pabrik Jogja", item: "https://asuransijogja.biz.id/artikel/asuransi-mesin-pabrik-jogja" },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Asuransi Mesin Pabrik di Jogja",
+          item: "https://asuransijogja.biz.id/artikel/asuransi-mesin-pabrik-jogja",
+        },
       ],
     },
     {
       "@type": "Article",
-      headline: "Asuransi Mesin Pabrik Jogja – Machinery Breakdown untuk Industri DIY",
-      description: "Panduan lengkap asuransi Machinery Breakdown untuk pabrik dan industri di Yogyakarta.",
+      headline: "Asuransi Mesin Pabrik di Jogja – Machinery Breakdown untuk Industri DIY",
+      description:
+        "Panduan lengkap Machinery Breakdown Insurance untuk pabrik dan industri manufaktur di Yogyakarta — cakupan, estimasi premi, dan kasus nyata.",
       author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
-      publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
-      datePublished: "2025-03-01",
+      publisher: {
+        "@type": "Organization",
+        name: "Asuransi Jogja",
+        url: "https://asuransijogja.biz.id",
+      },
+      datePublished: "2025-05-05",
       dateModified: "2025-06-01",
     },
     {
@@ -51,156 +62,312 @@ const schemaArtikel = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "Berapa premi asuransi mesin pabrik di Yogyakarta?",
-          acceptedAnswer: { "@type": "Answer", text: "Premi Machinery Breakdown untuk mesin pabrik di Yogyakarta berkisar 0,3–0,8% dari nilai mesin per tahun. Untuk mesin produksi senilai Rp 500 juta, premi sekitar Rp 1,5–4 juta per tahun." },
+          name: "Apa itu Machinery Breakdown Insurance?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Machinery Breakdown Insurance (MBI) adalah asuransi yang melindungi mesin dan peralatan industri dari kerusakan mendadak akibat kegagalan mekanis internal — seperti korsleting, overpressure, atau keausan tiba-tiba. Berbeda dengan asuransi kebakaran yang menanggung kerusakan akibat api, MBI menanggung kerusakan yang terjadi dari dalam mesin itu sendiri saat sedang beroperasi.",
+          },
         },
         {
           "@type": "Question",
-          name: "Apakah semua jenis mesin pabrik bisa diasuransikan?",
-          acceptedAnswer: { "@type": "Answer", text: "Hampir semua mesin yang beroperasi secara elektris atau mekanis bisa diasuransikan Machinery Breakdown — termasuk mesin produksi, kompresor, genset, chiller, pompa, conveyor, dan mesin CNC. Mesin dengan usia di atas 15 tahun perlu survei terlebih dahulu." },
+          name: "Apa perbedaan Machinery Breakdown dengan asuransi kebakaran untuk mesin?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Asuransi kebakaran menanggung kerusakan mesin akibat api, petir, atau ledakan dari luar. Machinery Breakdown menanggung kerusakan dari dalam — kegagalan mekanis, overpressure, korsleting motor, atau keausan mendadak saat beroperasi. Keduanya saling melengkapi dan sebaiknya dimiliki bersamaan untuk perlindungan menyeluruh.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Berapa estimasi premi Machinery Breakdown untuk mesin senilai Rp 1 miliar?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Estimasi premi Machinery Breakdown untuk mesin senilai Rp 1 miliar berkisar Rp 3–10 juta per tahun (rate 0,3–1%). Rate dipengaruhi oleh jenis mesin, usia, kondisi pemeliharaan, dan frekuensi operasi. Mesin yang rutin diservis dan memiliki catatan perawatan baik umumnya mendapat rate lebih rendah.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Apakah kerusakan mesin akibat gempa bumi ditanggung Machinery Breakdown?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Tidak. Machinery Breakdown tidak menanggung kerusakan akibat bencana alam seperti gempa bumi, banjir, atau petir. Risiko-risiko tersebut ditanggung oleh polis Property All Risk atau Industrial All Risk dengan perluasan gempa. Untuk perlindungan menyeluruh mesin di DIY, kedua polis sebaiknya dimiliki bersamaan.",
+          },
         },
       ],
     },
   ],
 };
 
-const sektorIndustriDIY = [
+// ─── DATA ────────────────────────────────────────────────────────────────────
+
+const apaYangDitanggung = [
+  { item: "Kegagalan mekanis mendadak dan tak terduga", contoh: "Bearing patah tiba-tiba, shaft retak, gear rompal" },
+  { item: "Korsleting motor listrik (electrical burnout)", contoh: "Motor terbakar akibat lonjakan arus atau insulasi rusak" },
+  { item: "Overpressure dan kegagalan sistem tekanan", contoh: "Boiler atau pressure vessel retak akibat tekanan berlebih" },
+  { item: "Kerusakan akibat kesalahan operasi", contoh: "Operator salah setting parameter — mesin overheat atau overload" },
+  { item: "Kerusakan akibat kegagalan sistem kontrol", contoh: "PLC atau sensor gagal menyebabkan mesin beroperasi abnormal" },
+  { item: "Biaya perbaikan termasuk ongkos tenaga ahli", contoh: "Teknisi spesialis, suku cadang, dan biaya pengiriman komponen" },
+  { item: "Biaya pengujian ulang setelah perbaikan", contoh: "Commissioning ulang setelah penggantian komponen utama" },
+];
+
+const apaYangTidakDitanggung = [
+  { item: "Kerusakan akibat kebakaran, petir, atau ledakan dari luar", solusi: "→ Ditanggung polis Property All Risk / Industrial All Risk" },
+  { item: "Kerusakan akibat gempa bumi, banjir, atau bencana alam", solusi: "→ Butuh perluasan CAT pada PAR/IAR" },
+  { item: "Keausan normal dan penuaan mesin (wear & tear)", solusi: "→ Biaya perawatan rutin — bukan risiko asuransi" },
+  { item: "Kerusakan yang sudah diketahui sebelum polis terbit", solusi: "→ Insurer akan minta deklarasi kondisi mesin saat awal" },
+  { item: "Biaya penggantian suku cadang dalam pemeliharaan rutin", solusi: "→ Komponen habis pakai bukan cakupan MBI" },
+  { item: "Kerugian produksi akibat mesin berhenti (kecuali ada MLOP)", solusi: "→ Perluasan MLOP/BI diperlukan untuk menanggung lost profit" },
+];
+
+const jenisPerluasan = [
   {
-    icon: "👗",
-    sektor: "Industri Garmen & Tekstil",
-    lokasi: "Sleman, Bantul",
-    mesinKritis: "Mesin jahit industri, mesin potong, mesin bordir, mesin finishing",
-    risikoUtama: "Kegagalan motor listrik, jarum patah merusak mesin, keausan roller",
-    estimasiNilai: "Rp 50 juta – Rp 5 miliar per lini produksi",
+    nama: "MLOP (Machinery Loss of Profit)",
+    icon: "📉",
+    deskripsi:
+      "Menanggung kerugian keuntungan yang hilang akibat terhentinya produksi karena kerusakan mesin yang tertanggung. Ini adalah perluasan paling penting untuk pabrik dengan revenue harian yang signifikan.",
+    cocokUntuk: "Pabrik dengan revenue harian > Rp 10 juta atau kontrak produksi dengan penalti keterlambatan",
+    estimasiTambahan: "+20–40% dari premi dasar MBI",
+    warna: "border-red-200 bg-red-50/40",
   },
   {
-    icon: "🍜",
-    sektor: "Industri Pengolahan Pangan",
-    lokasi: "Sleman, Bantul, Kulon Progo",
-    mesinKritis: "Mesin pengemas, mesin penggiling, mesin pasteurisasi, conveyor belt",
-    risikoUtama: "Kontaminasi bahan makanan ke mesin, overheat, kerusakan seal",
-    estimasiNilai: "Rp 100 juta – Rp 2 miliar per unit",
+    nama: "Third Party Liability (TPL)",
+    icon: "🛡️",
+    deskripsi:
+      "Menanggung tuntutan pihak ketiga jika kerusakan mesin menyebabkan kerugian pada pihak luar — misalnya mesin meledak dan melukai subkontraktor atau merusak properti tetangga.",
+    cocokUntuk: "Pabrik di kawasan industri padat atau yang sering dikunjungi pihak luar",
+    estimasiTambahan: "+10–20% dari premi dasar",
+    warna: "border-blue-200 bg-blue-50/40",
   },
   {
-    icon: "🪑",
-    sektor: "Industri Mebel & Furnitur",
-    lokasi: "Klaten (dekat DIY), Sleman",
-    mesinKritis: "Mesin CNC router, mesin potong, mesin finishing UV, mesin press",
-    risikoUtama: "Debu kayu merusak komponen elektronik, getaran berlebih, bit patah",
-    estimasiNilai: "Rp 200 juta – Rp 3 miliar per unit CNC",
+    nama: "Expediting Expenses",
+    icon: "⚡",
+    deskripsi:
+      "Menanggung biaya tambahan untuk mempercepat perbaikan — pengiriman suku cadang via udara, lembur teknisi, atau sewa mesin sementara — agar produksi bisa segera kembali normal.",
+    cocokUntuk: "Industri dengan toleransi downtime sangat rendah (makanan, farmasi, tekstil pesanan)",
+    estimasiTambahan: "+5–15% dari premi dasar",
+    warna: "border-amber-200 bg-amber-50/40",
   },
   {
-    icon: "🏨",
-    sektor: "Hotel & Properti Komersial",
-    lokasi: "Kota Yogyakarta, Sleman",
-    mesinKritis: "Chiller, AHU, genset, lift, pompa submersible",
-    risikoUtama: "Kegagalan kompresor chiller, kerusakan panel kontrol lift, overheat genset",
-    estimasiNilai: "Rp 300 juta – Rp 5 miliar (chiller) per unit",
+    nama: "Deterioration of Stock (DOS)",
+    icon: "🧊",
+    deskripsi:
+      "Menanggung kerugian stok produk yang rusak akibat berhentinya mesin pendingin atau refrigerasi — relevan untuk industri makanan, farmasi, atau cold chain.",
+    cocokUntuk: "Pabrik makanan, cold storage, industri farmasi, dan distributor produk dingin",
+    estimasiTambahan: "+15–30% dari premi dasar",
+    warna: "border-green-200 bg-green-50/40",
+  },
+];
+
+const tabelPerbandingan = [
+  {
+    aspek: "Risiko yang Ditanggung",
+    mbi: "Kegagalan mekanis dari dalam mesin",
+    par: "Kebakaran, petir, banjir, gempa (dengan perluasan)",
+    ear: "Kerusakan selama proses instalasi & commissioning",
   },
   {
-    icon: "🏥",
-    sektor: "Rumah Sakit & Klinik",
-    lokasi: "Seluruh DIY",
-    mesinKritis: "MRI, CT Scan, sterilisator, chiller medis, UPS medis",
-    risikoUtama: "Kerusakan magnet superkonduktor MRI, kegagalan pendingin, gangguan listrik",
-    estimasiNilai: "Rp 5 miliar – Rp 50 miliar (MRI) per unit",
+    aspek: "Fase Berlaku",
+    mbi: "Selama mesin beroperasi (ongoing)",
+    par: "Selama mesin berada di lokasi (termasuk idle)",
+    ear: "Selama proses erection hingga commissioning selesai",
   },
   {
+    aspek: "Pemicu Klaim Utama",
+    mbi: "Mesin rusak tiba-tiba saat beroperasi normal",
+    par: "Kebakaran atau bencana merusak mesin dari luar",
+    ear: "Mesin jatuh, salah rakit, atau gagal saat uji coba",
+  },
+  {
+    aspek: "Mesin Idle Ditanggung?",
+    mbi: "Tidak — harus beroperasi saat rusak",
+    par: "Ya — ditanggung meski mesin tidak beroperasi",
+    ear: "Ya — selama dalam proses instalasi",
+  },
+  {
+    aspek: "Perluasan Utama",
+    mbi: "MLOP, Expediting Expenses, DOS",
+    par: "Gempa, Banjir, RSMD, Business Interruption",
+    ear: "DSU (Delay in Start-Up), Marine Cargo",
+  },
+  {
+    aspek: "Estimasi Rate",
+    mbi: "0,30–1,00% dari nilai mesin",
+    par: "0,10–0,40% dari nilai aset",
+    ear: "0,20–0,60% dari nilai kontrak",
+  },
+];
+
+const skenarioIndustri = [
+  {
+    industri: "Pabrik Garmen & Konveksi",
+    lokasi: "Bantul & Sleman",
+    mesinUtama: "Mesin jahit industrial, mesin potong CNC, mesin bordir",
+    risikoKhas: "Motor mesin jahit terbakar akibat lonjakan listrik PLN, mesin potong macet karena material masuk ke sistem",
+    risikoDowntime: "Tinggi — kontrak pesanan dengan deadline ketat",
+    rekomendasiPolis: "MBI + MLOP jika ada kontrak pesanan tetap",
+    estimasiPremi: "Rp 5–25 juta/tahun (nilai mesin Rp 500 juta–2 miliar)",
+    warna: "border-purple-200 bg-purple-50/30",
+    icon: "🧵",
+  },
+  {
+    industri: "Industri Makanan & Minuman",
+    lokasi: "Kulon Progo & Bantul",
+    mesinUtama: "Mesin pengolahan, filling machine, mesin pengemas, cold storage",
+    risikoKhas: "Kompresor cold storage mati menyebabkan stok rusak, mesin filling macet karena kontaminasi bahan",
+    risikoDowntime: "Sangat tinggi — produk perishable, kontrak supply ke supermarket",
+    rekomendasiPolis: "MBI + MLOP + DOS (Deterioration of Stock)",
+    estimasiPremi: "Rp 8–40 juta/tahun (nilai mesin Rp 800 juta–3 miliar)",
+    warna: "border-green-200 bg-green-50/30",
+    icon: "🏭",
+  },
+  {
+    industri: "Percetakan & Penerbitan",
+    lokasi: "Kota Yogyakarta & Sleman",
+    mesinUtama: "Mesin cetak offset, mesin digital printing, mesin binding",
+    risikoKhas: "Drum mesin cetak retak, roller aus mendadak, sistem tinta tersumbat menyebabkan mesin berhenti",
+    risikoDowntime: "Tinggi — proyek cetak dengan deadline hari tertentu",
+    rekomendasiPolis: "MBI + Expediting Expenses untuk komponen impor",
+    estimasiPremi: "Rp 3–15 juta/tahun (nilai mesin Rp 300 juta–1,5 miliar)",
+    warna: "border-blue-200 bg-blue-50/30",
     icon: "🖨️",
-    sektor: "Percetakan & Penerbitan",
-    lokasi: "Kota Yogyakarta, Sleman",
-    mesinKritis: "Mesin offset, digital printing, mesin finishing, mesin CTP",
-    risikoUtama: "Kerusakan blanket roller, kegagalan sistem tinta, kerusakan laser CTP",
-    estimasiNilai: "Rp 500 juta – Rp 10 miliar per mesin offset",
+  },
+  {
+    industri: "Industri Logam & Fabrikasi",
+    lokasi: "Klaten border & Kulon Progo",
+    mesinUtama: "Mesin las, mesin bubut CNC, press hydraulic, mesin bending",
+    risikoKhas: "Hydraulic pump bocor internal menyebabkan press berhenti, spindle mesin bubut patah tiba-tiba",
+    risikoDowntime: "Menengah — tergantung jadwal pesanan",
+    rekomendasiPolis: "MBI standar, tambah MLOP jika ada kontrak jangka panjang",
+    estimasiPremi: "Rp 4–20 juta/tahun (nilai mesin Rp 400 juta–2 miliar)",
+    warna: "border-amber-200 bg-amber-50/30",
+    icon: "⚙️",
   },
 ];
 
-const checklist = [
-  { item: "Inventarisir semua mesin dan peralatan yang beroperasi secara elektris/mekanis", done: false },
-  { item: "Catat nilai penggantian (replacement value) setiap mesin — bukan nilai buku", done: false },
-  { item: "Dokumentasikan usia, merek, kapasitas, dan riwayat pemeliharaan mesin", done: false },
-  { item: "Identifikasi mesin mana yang paling kritis — jika rusak, produksi berhenti total", done: false },
-  { item: "Hitung potensi kerugian finansial jika mesin kritis rusak selama 1–4 minggu", done: false },
-  { item: "Tentukan apakah perlu perluasan Business Interruption (BI)", done: false },
-  { item: "Hubungi konsultan untuk mendapatkan estimasi premi dan penawaran resmi", done: false },
+const kasusNyata = [
+  {
+    judul: "Motor Penggerak Mesin Jahit Terbakar di Pabrik Garmen Bantul",
+    nilai: "Rp 185 juta",
+    kronologi:
+      "Lonjakan tegangan listrik PLN (voltage spike) menyebabkan 23 motor penggerak mesin jahit industrial terbakar secara bersamaan. Pabrik dengan kapasitas 500 pekerja terpaksa berhenti produksi 8 hari.",
+    tanpaMLOP:
+      "MBI menanggung biaya penggantian 23 motor senilai Rp 185 juta. Namun tanpa perluasan MLOP, kerugian produksi 8 hari senilai Rp 240 juta tidak tertanggung.",
+    denganMLOP:
+      "Jika ada MLOP: total klaim Rp 185 juta + Rp 240 juta = Rp 425 juta — semua tertanggung. Premi MLOP tambahan hanya sekitar Rp 3–5 juta per tahun.",
+    pelajaran: "Untuk pabrik dengan kapasitas produksi besar, MLOP bukan opsional — ini justru komponen paling penting dari perlindungan mesin.",
+    badge: "bg-purple-50 text-purple-700 border-purple-100",
+  },
+  {
+    judul: "Kompresor Cold Storage Mati di Pabrik Makanan Kulon Progo",
+    nilai: "Rp 320 juta (mesin + stok)",
+    kronologi:
+      "Sistem pendingin cold storage gagal total akibat kerusakan pada compressor unit. Suhu ruang naik dari -18°C ke +8°C dalam 6 jam. Stok produk beku senilai Rp 135 juta rusak seluruhnya. Biaya perbaikan compressor Rp 185 juta.",
+    tanpaMLOP:
+      "Tanpa perluasan DOS: MBI hanya menanggung biaya perbaikan compressor Rp 185 juta. Kerugian stok Rp 135 juta ditanggung sendiri.",
+    denganMLOP:
+      "Dengan DOS (Deterioration of Stock): total klaim Rp 320 juta — mesin + stok rusak keduanya tertanggung. Premi DOS tambahan Rp 2–4 juta per tahun.",
+    pelajaran: "Industri makanan dengan cold storage mutlak memerlukan perluasan DOS. Nilai stok yang rusak bisa jauh melebihi biaya perbaikan mesin itu sendiri.",
+    badge: "bg-green-50 text-green-700 border-green-100",
+  },
 ];
 
-const mithosVsFakta = [
-  {
-    mitos: "Asuransi kebakaran sudah cukup untuk melindungi mesin pabrik",
-    fakta: "Asuransi kebakaran hanya menanggung kerusakan mesin yang disebabkan oleh kebakaran dari luar. Lebih dari 90% kerusakan mesin berasal dari dalam — korsleting internal, bearing aus, overheat — yang tidak ditanggung asuransi kebakaran.",
-  },
-  {
-    mitos: "Mesin baru tidak perlu diasuransikan karena masih dalam garansi",
-    fakta: "Garansi pabrikan mencakup cacat produksi, bukan kerusakan operasional. Kesalahan operator, gangguan listrik, dan kerusakan akibat kondisi lingkungan biasanya tidak tercakup garansi. EAR saat pemasangan dan MB setelah beroperasi tetap diperlukan.",
-  },
-  {
-    mitos: "Premi Machinery Breakdown terlalu mahal untuk pabrik kecil",
-    fakta: "Premi MB mulai dari 0,3% nilai mesin per tahun. Untuk mesin senilai Rp 200 juta, preminya hanya Rp 600 ribu per tahun — jauh lebih kecil dari biaya perbaikan satu kali jika terjadi kerusakan mendadak.",
-  },
-  {
-    mitos: "Klaim Machinery Breakdown selalu rumit dan lama prosesnya",
-    fakta: "Dengan pendampingan konsultan yang berpengalaman, proses klaim MB bisa berjalan lebih lancar. Kunci utamanya adalah melaporkan dalam 24–48 jam dan tidak melakukan perbaikan sebelum loss adjuster survei.",
-  },
+const tabelEstimasiPremi = [
+  { nilaiMesin: "Rp 100 – 500 juta", rateMin: "0,50%", rateMax: "1,00%", premiMin: "Rp 500 rb", premiMaks: "Rp 5 juta", jenisMesin: "Mesin ringan: jahit, komputer industri, pompa kecil" },
+  { nilaiMesin: "Rp 500 juta – Rp 2 miliar", rateMin: "0,35%", rateMax: "0,80%", premiMin: "Rp 1,75 juta", premiMaks: "Rp 16 juta", jenisMesin: "Mesin menengah: CNC, mesin cetak, cold storage" },
+  { nilaiMesin: "Rp 2 – 10 miliar", rateMin: "0,30%", rateMax: "0,65%", premiMin: "Rp 6 juta", premiMaks: "Rp 65 juta", jenisMesin: "Mesin berat: press hydraulic, mesin produksi line" },
+  { nilaiMesin: "Di atas Rp 10 miliar", rateMin: "Negosiasi", rateMax: "Negosiasi", premiMin: "—", premiMaks: "—", jenisMesin: "Generator besar, turbin, peralatan industri khusus" },
+];
+
+const dokumenPengajuan = [
+  { dok: "Daftar mesin yang akan diasuransikan (nama, merek, tahun, nilai)", wajib: true },
+  { dok: "Invoice atau NJOP mesin sebagai dasar nilai pertanggungan", wajib: true },
+  { dok: "Catatan perawatan / service record mesin (jika ada)", wajib: false },
+  { dok: "Foto kondisi mesin saat ini", wajib: false },
+  { dok: "Manual / spesifikasi teknis mesin (untuk mesin di atas Rp 500 juta)", wajib: false },
+  { dok: "Laporan inspeksi terakhir (untuk boiler atau pressure vessel)", wajib: true },
+  { dok: "NPWP dan dokumen legalitas perusahaan", wajib: true },
 ];
 
 const faqItems = [
   {
-    q: "Apakah genset cadangan di pabrik perlu diasuransikan terpisah?",
-    a: "Ya, genset sebaiknya diasuransikan terpisah dalam polis Machinery Breakdown. Genset adalah mesin yang relatif sering mengalami kerusakan mendadak — terutama akibat kegagalan sistem pendingin, kerusakan alternator, atau masalah starter. Nilai genset 100–500 kVA bisa mencapai ratusan juta rupiah.",
+    q: "Apakah mesin yang sudah tua (> 10 tahun) masih bisa diasuransikan?",
+    a: "Bisa, namun dengan syarat tertentu. Underwriter umumnya akan meminta inspeksi kondisi mesin untuk mesin yang berusia di atas 10 tahun sebelum menerbitkan polis. Mesin tua yang terawat baik dengan catatan servis lengkap biasanya masih bisa diasuransikan, meski rate mungkin lebih tinggi. Mesin yang sudah dalam kondisi aus parah atau tidak layak operasi umumnya ditolak atau memerlukan perbaikan dulu sebelum bisa dicover.",
   },
   {
-    q: "Bagaimana jika mesin pabrik kami sudah berusia 12 tahun — masih bisa diasuransikan?",
-    a: "Masih bisa, namun perlu survei kondisi mesin terlebih dahulu oleh teknisi yang ditunjuk perusahaan asuransi. Beberapa perusahaan asuransi menetapkan batas usia 15 tahun, sementara yang lain bisa menanggung hingga 20 tahun dengan premium loading. Kami bantu carikan perusahaan asuransi yang tepat.",
+    q: "Apakah perlu laporan inspeksi teknis sebelum mendaftar?",
+    a: "Untuk mesin bernilai di atas Rp 2 miliar atau mesin khusus seperti boiler dan pressure vessel, inspeksi oleh surveyor teknis biasanya diperlukan sebelum polis diterbitkan. Untuk mesin standar di bawah nilai tersebut, umumnya cukup dengan foto kondisi mesin dan daftar spesifikasi. Kami bantu koordinasi dengan surveyor jika diperlukan.",
   },
   {
-    q: "Apakah nilai pertanggungan MB menggunakan nilai buku atau nilai penggantian mesin?",
-    a: "Sebaiknya menggunakan nilai penggantian (replacement value) — yaitu biaya membeli mesin baru yang setara jika mesin lama rusak total. Menggunakan nilai buku (nilai akuntansi yang sudah mengalami penyusutan) berisiko menyebabkan under-insurance dan klaim tidak penuh dibayar.",
+    q: "Bagaimana menentukan nilai pertanggungan yang tepat untuk mesin?",
+    a: "Ada dua pendekatan: (1) Replacement Value — nilai mesin baru yang setara di pasar saat ini. Ini memastikan Anda bisa membeli mesin pengganti jika terjadi kerusakan total. (2) Actual Cash Value — nilai mesin dikurangi depresiasi. Lebih murah preminya tapi ganti rugi lebih kecil. Untuk mesin produksi utama, Replacement Value sangat dianjurkan agar klaim bisa membiayai penggantian penuh.",
   },
   {
-    q: "Apa itu clause 'pairs & sets' dalam Machinery Breakdown?",
-    a: "Pairs & sets clause mengatur penggantian komponen yang berpasangan atau berseri. Jika satu dari dua bearing kembar rusak, misalnya, perusahaan asuransi mungkin hanya mengganti satu, bukan keduanya. Memahami klausul ini penting agar tidak ada kejutan saat klaim.",
+    q: "Apakah satu polis bisa menanggung semua mesin di pabrik?",
+    a: "Ya, dan ini yang paling umum. Satu polis MBI bisa mendaftarkan semua mesin dalam satu schedule dengan nilai pertanggungan per mesin yang tercantum. Jika ada mesin baru yang dibeli, bisa ditambahkan ke polis yang sudah ada melalui endorsement. Ini jauh lebih efisien dibanding polis terpisah untuk setiap mesin.",
   },
   {
-    q: "Apakah Business Interruption bisa diklaim jika kerusakan kecil dan mesin hanya berhenti 2–3 hari?",
-    a: "Tergantung kebijakan polis. Banyak polis BI memiliki waiting period (periode tunggu) — misalnya 3 hari atau 7 hari — sebelum klaim BI mulai berlaku. Ini untuk menghindari klaim kecil yang sering. Besaran waiting period dan coverage limit bisa disesuaikan saat negosiasi polis.",
+    q: "Apa yang dimaksud dengan deductible dalam klaim Machinery Breakdown?",
+    a: "Deductible adalah bagian kerugian yang harus ditanggung sendiri oleh pemilik mesin sebelum asuransi membayar sisanya. Misalnya deductible Rp 10 juta dan kerusakan Rp 80 juta — asuransi membayar Rp 70 juta. Deductible yang lebih besar menghasilkan premi yang lebih rendah. Untuk industri besar dengan cash flow kuat, strategi deductible tinggi bisa menghemat premi secara signifikan.",
   },
 ];
 
-export default function ArtikelAsuransiMesinPabrik() {
+// ─── PAGE ────────────────────────────────────────────────────────────────────
+
+export default function ArtikelAsuransiMesinPabrikJogja() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }}
+      />
       <Header />
       <div className="pt-[68px]">
 
-        {/* Breadcrumb */}
+        {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
           <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
             <span className="text-gold/60">›</span>
-            <span className="text-navy font-semibold">Asuransi Mesin Pabrik Jogja</span>
+            <span className="text-navy font-semibold">Asuransi Mesin Pabrik di Jogja</span>
           </div>
         </div>
 
-        {/* Hero */}
+        {/* ── Hero ── */}
         <section className="bg-navy py-16 px-[5vw] relative overflow-hidden">
-          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 60% 70% at 80% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)" }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse 60% 70% at 80% 50%, rgba(200,150,62,0.10) 0%, transparent 65%)",
+            }}
+          />
           <div className="relative z-10 max-w-3xl">
             <div className="flex items-center gap-3 mb-5 flex-wrap">
-              <Link href="/asuransi-engineering/machinery-breakdown" className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors">
+              <Link
+                href="/asuransi-engineering/machinery-breakdown"
+                className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors"
+              >
                 🔧 Machinery Breakdown
               </Link>
+              <Link
+                href="/asuransi-engineering"
+                className="inline-flex items-center gap-1.5 bg-white/8 border border-white/15 text-white/70 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-white/12 transition-colors"
+              >
+                ⚙️ Asuransi Engineering
+              </Link>
               <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Panduan Industri DIY</span>
+              <span className="text-white/40 text-xs">Panduan Industri</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
-              Asuransi Mesin Pabrik Jogja —<br /><em className="not-italic text-gold">Machinery Breakdown</em><br />untuk Industri DIY
+              Asuransi Mesin Pabrik di Jogja —<br />
+              <em className="not-italic text-gold">Panduan Machinery<br />
+              Breakdown untuk Industri DIY</em>
             </h1>
-            <p className="text-white/80 text-base leading-[1.85] max-w-[540px] mb-6">
-              Kawasan industri di Sleman, Bantul, dan Kulon Progo terus berkembang — namun banyak pemilik pabrik belum menyadari bahwa asuransi kebakaran saja tidak cukup melindungi mesin mereka dari kerusakan mendadak.
+            <p className="text-white/80 text-base leading-[1.85] max-w-[560px] mb-6">
+              Mesin pabrik senilai Rp 2 miliar yang rusak mendadak bisa menghentikan produksi
+              selama 2 minggu — kerugian yang jauh lebih besar dari biaya perbaikannya sendiri.
+              Machinery Breakdown Insurance dirancang khusus untuk risiko ini.
             </p>
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
               <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
@@ -212,44 +379,107 @@ export default function ArtikelAsuransiMesinPabrik() {
           </div>
         </section>
 
-        {/* Konten */}
+        {/* ── Konten ── */}
         <article className="py-14 px-[5vw] max-w-[780px] mx-auto">
 
-          {/* Lead */}
+          {/* Lead box */}
           <div className="bg-gold/6 border-l-4 border-gold rounded-r-xl p-5 mb-10">
             <p className="text-navy2 text-sm leading-relaxed">
-              <strong className="text-navy">Fakta:</strong> Berdasarkan data industri asuransi, lebih dari <strong>90% kerusakan mesin pabrik</strong> disebabkan oleh kegagalan internal — korsleting, bearing aus, overheat, kesalahan operator — bukan kebakaran. Ini yang dimaksud Machinery Breakdown Insurance: proteksi dari dalam mesin itu sendiri.
+              <strong className="text-navy">Poin Utama:</strong> Machinery Breakdown (MBI)
+              menanggung kerusakan mesin dari <strong>dalam</strong> — kegagalan mekanis,
+              korsleting, overpressure. Asuransi kebakaran menanggung kerusakan dari{" "}
+              <strong>luar</strong> — api, petir, bencana alam. Keduanya saling melengkapi
+              dan sebaiknya dimiliki bersamaan. Untuk pabrik dengan revenue harian tinggi,
+              tambahkan perluasan <strong>MLOP</strong> agar kerugian produksi juga tertanggung.
             </p>
           </div>
 
-          {/* Sektor Industri DIY */}
+          {/* Penjelasan MBI */}
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
-            Sektor Industri DIY dan Mesin yang Perlu Dilindungi
+            Apa itu Machinery Breakdown Insurance dan Mengapa Berbeda?
+          </h2>
+          <p className="text-[#64748B] text-base leading-relaxed mb-4">
+            Banyak pemilik pabrik di Yogyakarta mengira mesin mereka sudah terlindungi oleh
+            asuransi kebakaran yang dimiliki pabrik. Anggapan ini berbahaya. Asuransi kebakaran
+            menanggung mesin jika rusak akibat api, petir, atau bencana yang datang dari luar.
+            Namun jika mesin rusak karena kegagalan internalnya sendiri — bearing patah, motor
+            terbakar karena overvoltage, atau pressure vessel retak karena cacat material —
+            asuransi kebakaran tidak menanggung sepeser pun.
+          </p>
+          <p className="text-[#64748B] text-base leading-relaxed mb-4">
+            Inilah celah yang diisi oleh Machinery Breakdown Insurance. Produk ini dirancang
+            khusus untuk kerusakan yang terjadi <em>dari dalam mesin</em> saat sedang beroperasi
+            normal — risiko yang justru paling sering terjadi di pabrik aktif.
+          </p>
+          <p className="text-[#64748B] text-base leading-relaxed mb-10">
+            Yogyakarta memiliki kawasan industri yang terus berkembang — dari sentra garmen
+            di Bantul, industri makanan di Kulon Progo, hingga percetakan di Kota Yogyakarta.
+            Mesin-mesin di kawasan ini beroperasi dalam kondisi iklim tropis lembap yang
+            mempercepat korosi dan keausan komponen — faktor yang meningkatkan risiko kegagalan
+            mekanis dibanding pabrik di iklim kering.
+          </p>
+
+          {/* Yang ditanggung dan tidak */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Apa yang Ditanggung dan Tidak Ditanggung?
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            {/* Ditanggung */}
+            <div className="bg-green-50/50 border border-green-200 rounded-card p-5">
+              <p className="text-xs font-bold uppercase tracking-wide text-green-700 mb-3 flex items-center gap-2">
+                <span className="w-4 h-4 rounded-full bg-green-600 text-white flex items-center justify-center text-[0.6rem]">✓</span>
+                Yang Ditanggung MBI
+              </p>
+              <ul className="flex flex-col gap-3">
+                {apaYangDitanggung.map((item, i) => (
+                  <li key={i}>
+                    <p className="text-xs font-semibold text-navy leading-snug mb-0.5">{item.item}</p>
+                    <p className="text-[0.65rem] text-[#64748B] italic">{item.contoh}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Tidak ditanggung */}
+            <div className="bg-red-50/50 border border-red-200 rounded-card p-5">
+              <p className="text-xs font-bold uppercase tracking-wide text-red-700 mb-3 flex items-center gap-2">
+                <span className="w-4 h-4 rounded-full bg-red-600 text-white flex items-center justify-center text-[0.6rem]">✕</span>
+                Yang Tidak Ditanggung
+              </p>
+              <ul className="flex flex-col gap-3">
+                {apaYangTidakDitanggung.map((item, i) => (
+                  <li key={i}>
+                    <p className="text-xs font-semibold text-navy leading-snug mb-0.5">{item.item}</p>
+                    <p className="text-[0.65rem] text-gold italic">{item.solusi}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Perluasan penting */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            4 Perluasan yang Mengubah MBI Menjadi Perlindungan Menyeluruh
           </h2>
           <p className="text-[#64748B] text-base leading-relaxed mb-6">
-            Yogyakarta memiliki ekosistem industri yang beragam. Setiap sektor memiliki jenis mesin kritis dan pola risiko yang berbeda:
+            Polis MBI standar hanya menanggung biaya perbaikan mesin. Untuk industri dengan
+            risiko lebih kompleks, perluasan berikut sangat dianjurkan:
           </p>
-          <div className="flex flex-col gap-5 mb-10">
-            {sektorIndustriDIY.map((s) => (
-              <div key={s.sektor} className="bg-white rounded-card p-6 border border-black/8">
-                <div className="flex items-start gap-4">
-                  <span className="text-3xl flex-shrink-0">{s.icon}</span>
+          <div className="flex flex-col gap-4 mb-10">
+            {jenisPerluasan.map((p) => (
+              <div key={p.nama} className={`rounded-card p-5 border ${p.warna}`}>
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl flex-shrink-0">{p.icon}</span>
                   <div className="flex-1">
-                    <div className="flex items-start justify-between gap-3 mb-2 flex-wrap">
-                      <div>
-                        <div className="font-heading text-navy font-bold text-base">{s.sektor}</div>
-                        <div className="text-xs text-gold font-semibold">📍 {s.lokasi}</div>
+                    <div className="font-heading font-bold text-navy text-[0.95rem] mb-1">{p.nama}</div>
+                    <p className="text-sm text-[#64748B] leading-relaxed mb-3">{p.deskripsi}</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <div className="bg-white/60 rounded-lg p-2.5 border border-black/6">
+                        <div className="text-[0.6rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-0.5">Cocok untuk</div>
+                        <p className="text-xs text-navy2 leading-snug">{p.cocokUntuk}</p>
                       </div>
-                      <span className="text-xs bg-navy/5 border border-navy/10 text-navy px-2.5 py-1 rounded-full whitespace-nowrap">{s.estimasiNilai}</span>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
-                      <div className="bg-cream rounded-lg p-3">
-                        <div className="text-xs font-semibold text-navy mb-1">⚙️ Mesin Kritis</div>
-                        <div className="text-xs text-[#64748B] leading-relaxed">{s.mesinKritis}</div>
-                      </div>
-                      <div className="bg-cream rounded-lg p-3">
-                        <div className="text-xs font-semibold text-navy mb-1">⚠️ Risiko Utama</div>
-                        <div className="text-xs text-[#64748B] leading-relaxed">{s.risikoUtama}</div>
+                      <div className="bg-white/60 rounded-lg p-2.5 border border-black/6">
+                        <div className="text-[0.6rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-0.5">Tambahan premi</div>
+                        <p className="text-sm font-bold text-navy">{p.estimasiTambahan}</p>
                       </div>
                     </div>
                   </div>
@@ -258,54 +488,217 @@ export default function ArtikelAsuransiMesinPabrik() {
             ))}
           </div>
 
-          {/* Mitos vs Fakta */}
+          {/* Tabel perbandingan MBI vs PAR vs EAR */}
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
-            Mitos vs Fakta: Asuransi Mesin Pabrik
+            MBI vs Property All Risk vs EAR — Mana yang Anda Butuhkan?
+          </h2>
+          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+            Ketiganya sering membingungkan karena sama-sama bisa menanggung mesin.
+            Berikut perbedaan yang perlu dipahami:
+          </p>
+          <div className="overflow-x-auto mb-4">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="bg-navy text-white">
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs rounded-tl-xl w-[22%]">Aspek</th>
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs text-gold w-[26%]">🔧 MBI</th>
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs w-[26%]">🏢 Property All Risk</th>
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs text-gold3 rounded-tr-xl w-[26%]">⚙️ EAR</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tabelPerbandingan.map((row, i) => (
+                  <tr key={row.aspek} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
+                    <td className="p-3.5 font-semibold text-navy text-xs align-top">{row.aspek}</td>
+                    <td className="p-3.5 text-navy2 text-sm leading-relaxed align-top font-medium">{row.mbi}</td>
+                    <td className="p-3.5 text-[#64748B] text-sm leading-relaxed align-top">{row.par}</td>
+                    <td className="p-3.5 text-[#64748B] text-sm leading-relaxed align-top">{row.ear}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="bg-navy/4 border border-navy/12 rounded-xl p-4 mb-10 flex gap-3">
+            <span className="text-lg flex-shrink-0">💡</span>
+            <p className="text-sm text-navy2 leading-relaxed">
+              <strong>Rekomendasi untuk pabrik di DIY:</strong> MBI + Property All Risk (dengan
+              perluasan Gempa Bumi) adalah kombinasi minimum yang dianjurkan. EAR dibutuhkan
+              saat mesin baru sedang dipasang. Setelah commissioning selesai, EAR digantikan
+              oleh MBI untuk perlindungan operasional jangka panjang.
+            </p>
+          </div>
+
+          {/* Skenario per industri */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Panduan per Jenis Industri di Yogyakarta
           </h2>
           <p className="text-[#64748B] text-base leading-relaxed mb-6">
-            Ada banyak kesalahpahaman tentang proteksi mesin yang membuat pemilik pabrik merasa sudah terlindungi padahal sebenarnya tidak:
+            Setiap industri memiliki profil risiko mesin yang berbeda. Berikut panduan
+            spesifik untuk jenis industri yang umum di DIY:
           </p>
           <div className="flex flex-col gap-4 mb-10">
-            {mithosVsFakta.map((m, i) => (
-              <div key={i} className="rounded-card border border-black/8 overflow-hidden">
-                <div className="bg-red-50 border-b border-red-100 px-5 py-3 flex gap-2 items-start">
-                  <span className="text-red-500 font-bold text-sm flex-shrink-0">✗ Mitos:</span>
-                  <span className="text-red-700 text-sm leading-relaxed">{m.mitos}</span>
+            {skenarioIndustri.map((s) => (
+              <div key={s.industri} className={`rounded-card p-5 border ${s.warna}`}>
+                <div className="flex items-start gap-3 mb-3">
+                  <span className="text-2xl flex-shrink-0">{s.icon}</span>
+                  <div>
+                    <div className="font-heading font-bold text-navy text-[0.95rem]">{s.industri}</div>
+                    <div className="text-xs text-[#94A3B8]">📍 {s.lokasi}</div>
+                  </div>
                 </div>
-                <div className="bg-green-50 px-5 py-3 flex gap-2 items-start">
-                  <span className="text-green-600 font-bold text-sm flex-shrink-0">✓ Fakta:</span>
-                  <span className="text-[#64748B] text-sm leading-relaxed">{m.fakta}</span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+                  {[
+                    { label: "Mesin utama", val: s.mesinUtama },
+                    { label: "Risiko khas", val: s.risikoKhas },
+                    { label: "Risiko downtime", val: s.risikoDowntime },
+                    { label: "Rekomendasi polis", val: s.rekomendasiPolis },
+                  ].map((item) => (
+                    <div key={item.label} className="bg-white/60 rounded-lg p-3 border border-black/6">
+                      <div className="text-[0.6rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-0.5">{item.label}</div>
+                      <p className="text-xs text-navy2 leading-snug">{item.val}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-[0.65rem] text-[#94A3B8] uppercase tracking-wide font-semibold">Estimasi premi:</span>
+                  <span className="text-xs font-bold text-navy">{s.estimasiPremi}</span>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Checklist */}
+          {/* Tabel estimasi premi */}
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
-            Checklist: Persiapan Sebelum Konsultasi Asuransi Mesin
+            Tabel Estimasi Premi MBI
           </h2>
           <p className="text-[#64748B] text-base leading-relaxed mb-5">
-            Siapkan informasi ini sebelum menghubungi kami — semakin lengkap, semakin akurat penawaran premi yang Anda terima:
+            Estimasi berdasarkan nilai mesin dan jenis mesin standar. Mesin khusus, usia tua,
+            atau kondisi operasi ekstrem dapat menghasilkan rate berbeda:
           </p>
-          <div className="flex flex-col gap-2.5 mb-6">
-            {checklist.map((c, i) => (
-              <div key={i} className="flex gap-3 items-center bg-cream rounded-xl p-4 border border-black/5">
-                <div className="w-5 h-5 rounded border-2 border-navy/30 flex-shrink-0" />
-                <span className="text-sm text-navy2 leading-relaxed">{c.item}</span>
+          <div className="overflow-x-auto mb-4">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="bg-navy text-white">
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs rounded-tl-xl w-[24%]">Nilai Mesin</th>
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs w-[12%]">Rate Min</th>
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs w-[12%]">Rate Maks</th>
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs w-[22%]">Estimasi Premi</th>
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs text-gold rounded-tr-xl">Tipikal Mesin</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tabelEstimasiPremi.map((row, i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
+                    <td className="p-3.5 font-bold text-navy text-xs align-middle">{row.nilaiMesin}</td>
+                    <td className="p-3.5 text-[#64748B] text-sm align-middle">{row.rateMin}</td>
+                    <td className="p-3.5 text-[#64748B] text-sm align-middle">{row.rateMax}</td>
+                    <td className="p-3.5 align-middle">
+                      {row.premiMin === "—" ? (
+                        <span className="text-xs text-[#94A3B8] italic">Negosiasi langsung</span>
+                      ) : (
+                        <span className="text-navy2 font-semibold text-xs">{row.premiMin} – {row.premiMaks}</span>
+                      )}
+                    </td>
+                    <td className="p-3.5 text-[#64748B] text-xs align-middle leading-snug">{row.jenisMesin}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-[#94A3B8] mb-10">
+            * Rate estimasi untuk mesin standar dalam kondisi baik dengan perawatan rutin.
+            Mesin di atas usia 10 tahun atau kondisi operasi ekstrem dapat dikenai loading rate.
+          </p>
+
+          {/* Kasus Nyata */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Kasus Nyata — Mengapa MLOP dan DOS Bukan Sekadar Opsional
+          </h2>
+          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+            Dua kasus berikut menggambarkan mengapa perluasan MBI sama pentingnya dengan
+            polis dasar — dan betapa mahalnya tidak memilikinya:
+          </p>
+          <div className="flex flex-col gap-5 mb-10">
+            {kasusNyata.map((k) => (
+              <div key={k.judul} className={`rounded-card p-5 border ${k.badge}`}>
+                <div className="flex items-center gap-2.5 mb-4 flex-wrap">
+                  <span className="font-heading font-bold text-navy text-sm">{k.judul}</span>
+                  <span className={`text-[0.65rem] font-bold px-2 py-0.5 rounded-full border ${k.badge}`}>
+                    Total nilai: {k.nilai}
+                  </span>
+                </div>
+                <p className="text-sm text-[#64748B] leading-relaxed mb-4">{k.kronologi}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+                  <div className="bg-amber-50 rounded-lg p-3.5 border border-amber-100">
+                    <div className="text-[0.65rem] font-bold uppercase tracking-wide text-amber-600 mb-1">
+                      ⚠️ MBI Standar (tanpa perluasan)
+                    </div>
+                    <p className="text-xs text-[#64748B] leading-relaxed">{k.tanpaMLOP}</p>
+                  </div>
+                  <div className="bg-green-50 rounded-lg p-3.5 border border-green-100">
+                    <div className="text-[0.65rem] font-bold uppercase tracking-wide text-green-600 mb-1">
+                      ✅ MBI + Perluasan Lengkap
+                    </div>
+                    <p className="text-xs text-[#64748B] leading-relaxed">{k.denganMLOP}</p>
+                  </div>
+                </div>
+                <div className="bg-navy/4 rounded-lg p-3 border border-navy/8">
+                  <p className="text-xs text-navy2 leading-relaxed">
+                    <strong>💡 Pelajaran:</strong> {k.pelajaran}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
+
+          {/* Dokumen pengajuan */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Dokumen yang Dibutuhkan untuk Mengajukan MBI
+          </h2>
+          <div className="overflow-x-auto mb-10">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="bg-cream border-b-2 border-black/8">
+                  <th className="text-left p-3 font-heading font-semibold text-xs text-navy w-[70%]">Dokumen</th>
+                  <th className="text-center p-3 font-heading font-semibold text-xs text-navy w-[30%]">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dokumenPengajuan.map((d, i) => (
+                  <tr key={i} className={`border-b border-black/5 ${i % 2 === 0 ? "bg-white" : "bg-cream/50"}`}>
+                    <td className="p-3 text-sm text-navy2">{d.dok}</td>
+                    <td className="p-3 text-center">
+                      <span className={`text-[0.65rem] font-bold px-2.5 py-1 rounded-full ${d.wajib ? "bg-navy text-white" : "bg-cream text-[#64748B] border border-black/10"}`}>
+                        {d.wajib ? "Wajib" : "Dianjurkan"}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* CTA Inline */}
           <div className="bg-gold/8 border border-gold/25 rounded-card p-6 mb-10">
-            <div className="font-heading text-navy font-bold text-base mb-2">Siap Konsultasi?</div>
+            <div className="font-heading text-navy font-bold text-base mb-2">
+              Ingin estimasi premi MBI untuk mesin pabrik Anda?
+            </div>
             <p className="text-[#64748B] text-sm leading-relaxed mb-4">
-              Hubungi kami via WhatsApp — ceritakan jenis mesin, nilai, dan lokasi pabrik Anda. Kami bantu hitung estimasi premi dan siapkan penawaran resmi.
+              Kirimkan daftar mesin (nama, merek, tahun, nilai) via WhatsApp — kami siapkan
+              estimasi premi dan rekomendasi perluasan dalam 1 hari kerja.
             </p>
             <div className="flex gap-3 flex-wrap">
-              <a href={`https://wa.me/${KONTAK.wa}`} className="bg-gold text-navy px-5 py-2.5 rounded-lg font-bold text-sm no-underline hover:bg-gold2 transition-all">
-                💬 Konsultasi Gratis via WA
+              <a
+                href={`https://wa.me/${KONTAK.wa}`}
+                className="bg-gold text-navy px-5 py-2.5 rounded-lg font-bold text-sm no-underline hover:bg-gold2 transition-all"
+              >
+                💬 Minta Estimasi via WA
               </a>
-              <Link href="/asuransi-engineering/machinery-breakdown#kalkulator" className="border border-navy/20 text-navy px-5 py-2.5 rounded-lg text-sm no-underline hover:border-gold hover:text-gold transition-all">
-                🧮 Kalkulator Premi MB →
+              <Link
+                href="/asuransi-engineering/machinery-breakdown"
+                className="border border-navy/20 text-navy px-5 py-2.5 rounded-lg text-sm no-underline hover:border-gold hover:text-gold transition-all"
+              >
+                🔧 Halaman Produk MBI Lengkap →
               </Link>
             </div>
           </div>
@@ -328,15 +721,53 @@ export default function ArtikelAsuransiMesinPabrik() {
 
           {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Baca Juga</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">
+              Produk & Artikel Terkait
+            </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { href: "/asuransi-engineering/machinery-breakdown", icon: "🔧", judul: "Halaman Produk Machinery Breakdown", desc: "Kalkulator premi, mesin yang dijamin, dan cara klaim" },
-                { href: "/asuransi-engineering/erection-all-risk", icon: "⚙️", judul: "Asuransi EAR saat Pasang Mesin Baru", desc: "Proteksi saat proses instalasi sebelum MB berlaku" },
-                { href: "/asuransi-properti/property-all-risk", icon: "🏭", judul: "Property All Risk untuk Pabrik", desc: "Proteksi bangunan pabrik dari kebakaran dan risiko lainnya" },
-                { href: "/artikel/perbedaan-car-ear-asuransi-engineering", icon: "🔍", judul: "Perbedaan CAR, EAR, dan MB", desc: "Kapan pakai masing-masing produk engineering?" },
+                {
+                  href: "/asuransi-engineering/machinery-breakdown",
+                  icon: "🔧",
+                  judul: "Machinery Breakdown — Halaman Produk",
+                  desc: "Cakupan lengkap, cara klaim, dan estimasi premi MBI",
+                },
+                {
+                  href: "/asuransi-engineering/erection-all-risk",
+                  icon: "⚙️",
+                  judul: "Erection All Risk (EAR)",
+                  desc: "Perlindungan saat mesin baru sedang dipasang dan di-commissioning",
+                },
+                {
+                  href: "/asuransi-engineering",
+                  icon: "🏭",
+                  judul: "Hub Asuransi Engineering",
+                  desc: "CAR, EAR, dan MBI — semua produk engineering dalam satu halaman",
+                },
+                {
+                  href: "/artikel/perbedaan-car-ear-asuransi-engineering",
+                  icon: "📊",
+                  judul: "Perbedaan CAR vs EAR",
+                  desc: "Panduan memilih untuk proyek konstruksi vs instalasi mesin",
+                },
+                {
+                  href: "/artikel/asuransi-umkm-jogja",
+                  icon: "🏪",
+                  judul: "Asuransi untuk UMKM Jogja",
+                  desc: "Panduan asuransi untuk usaha kecil termasuk mesin produksi",
+                },
+                {
+                  href: "/asuransi-properti/property-all-risk",
+                  icon: "🏢",
+                  judul: "Property All Risk",
+                  desc: "Pasangan ideal MBI — menanggung kerusakan mesin dari faktor eksternal",
+                },
               ].map((a) => (
-                <Link key={a.href} href={a.href} className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
+                <Link
+                  key={a.href}
+                  href={a.href}
+                  className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group"
+                >
                   <span className="text-xl flex-shrink-0">{a.icon}</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">{a.judul}</div>
@@ -348,19 +779,43 @@ export default function ArtikelAsuransiMesinPabrik() {
           </div>
         </article>
 
-        {/* CTA Bottom */}
+        {/* ── CTA Bottom ── */}
         <section className="py-16 px-[5vw] bg-navy text-center relative overflow-hidden">
-          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)" }} />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.10) 0%, transparent 65%)",
+            }}
+          />
           <div className="relative z-10">
             <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.2rem)] text-white leading-[1.22] mb-4">
-              Lindungi Mesin Pabrik Anda<br />Sebelum Terlambat
+              Lindungi Mesin Pabrik Anda<br />
+              Sebelum Kerusakan Terjadi
             </h2>
-            <p className="text-white/75 text-sm max-w-[420px] mx-auto mb-8">
-              Konsultasi gratis — kami bantu inventarisir mesin, hitung nilai pertanggungan, dan pilih polis Machinery Breakdown yang paling tepat untuk industri Anda di Yogyakarta.
+            <p className="text-white/75 text-sm max-w-[440px] mx-auto mb-8">
+              Kirimkan daftar mesin Anda — kami siapkan estimasi premi dan rekomendasi
+              perluasan yang tepat untuk industri Anda di Yogyakarta.
             </p>
-            <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">
-              💬 Konsultasi Asuransi Mesin via WhatsApp
-            </a>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <a
+                href={`https://wa.me/${KONTAK.wa}`}
+                className="bg-[#25D366] text-white px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all"
+              >
+                💬 Konsultasi via WhatsApp
+              </a>
+              <Link
+                href="/asuransi-engineering/machinery-breakdown"
+                className="border border-white/25 text-white/80 px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:border-gold hover:text-gold transition-all"
+              >
+                🔧 Produk Machinery Breakdown
+              </Link>
+              <Link
+                href="/asuransi-engineering"
+                className="border border-white/25 text-white/80 px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:border-gold hover:text-gold transition-all"
+              >
+                ⚙️ Semua Produk Engineering
+              </Link>
+            </div>
           </div>
         </section>
       </div>
