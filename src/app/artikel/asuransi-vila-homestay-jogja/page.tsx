@@ -1,21 +1,29 @@
+// app/artikel/asuransi-vila-homestay-jogja/page.tsx
+// TARGET KEYWORD: "asuransi vila jogja", "asuransi homestay yogyakarta", "asuransi hotel jogja"
+// INTENT: Commercial Investigation — pemilik properti penginapan dari skala kos hingga hotel butik
+// SILO: Properti cluster → /vila-homestay, /hotel-vila, /kebakaran + cross-link Liability
+// CATATAN: Halaman ini menggantikan /asuransi-properti/vila-homestay dan /asuransi-properti/hotel-vila
+//          sebagai satu artikel definitif. Kedua halaman produk tersebut link ke sini sebagai panduan lengkap.
+
 import type { Metadata } from "next";
 import Link from "next/link";
+import Header from "@/components/sections/Header";
+import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Panduan Asuransi Vila & Homestay Jogja: Proteksi Properti Wisata Sewa Harian | Asuransi Jogja",
+  title: "Asuransi Vila, Homestay & Hotel di Jogja – Panduan Lengkap Pemilik Properti Penginapan | Asuransi Jogja",
   description:
-    "Panduan lengkap asuransi vila dan homestay di Yogyakarta. Risiko sewa harian, perbedaan produk, cara klaim, estimasi premi, dan tips memilih proteksi untuk host Airbnb, Tiket.com & Traveloka. Konsultasi gratis.",
+    "Panduan lengkap asuransi untuk pemilik properti penginapan di Yogyakarta: homestay rumahan, vila privat, guest house, hingga hotel butik. Proteksi bangunan, isi, kehilangan pendapatan sewa, dan tanggung jawab tamu. Polis rumah biasa tidak cukup.",
   keywords:
-    "asuransi vila jogja, asuransi homestay yogyakarta, asuransi airbnb jogja, proteksi properti sewa harian jogja, asuransi properti wisata yogyakarta, asuransi kaliurang, vila merapi asuransi, asuransi property all risk vila, nilai pertanggungan vila, premi asuransi homestay",
+    "asuransi vila jogja, asuransi homestay yogyakarta, asuransi hotel boutique DIY, asuransi guest house jogja, proteksi properti penginapan yogyakarta, asuransi airbnb jogja, insurance villa yogyakarta",
   alternates: {
     canonical: "https://asuransijogja.biz.id/artikel/asuransi-vila-homestay-jogja",
   },
   openGraph: {
-    title:
-      "Panduan Asuransi Vila & Homestay Jogja: Proteksi Properti Wisata Sewa Harian",
+    title: "Asuransi Vila, Homestay & Hotel di Jogja – Panduan Lengkap Pemilik Properti Penginapan",
     description:
-      "Risiko nyata pemilik vila di DIY, produk yang tepat, estimasi premi, dan cara klaim. Panduan dari konsultan lokal Yogyakarta.",
+      "Dari homestay 2 kamar hingga hotel butik 20 kamar — panduan memilih asuransi yang tepat untuk bisnis penginapan di Yogyakarta.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-vila-homestay-jogja",
     type: "article",
   },
@@ -23,1123 +31,705 @@ export const metadata: Metadata = {
 
 const schemaArtikel = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  headline:
-    "Panduan Asuransi Vila & Homestay Jogja: Proteksi Properti Wisata Sewa Harian",
-  description:
-    "Panduan lengkap asuransi vila dan homestay di Yogyakarta untuk pemilik properti wisata dan host platform sewa harian.",
-  url: "https://asuransijogja.biz.id/artikel/asuransi-vila-homestay-jogja",
-  datePublished: "2025-06-01",
-  dateModified: "2025-06-01",
-  author: { "@type": "Person", name: "Rio MD" },
-  publisher: {
-    "@type": "Organization",
-    name: "Asuransi Jogja",
-    url: "https://asuransijogja.biz.id",
-  },
-  mainEntityOfPage:
-    "https://asuransijogja.biz.id/artikel/asuransi-vila-homestay-jogja",
-};
-
-// ─── FAQ SCHEMA (structured data untuk rich snippet Google) ────────────────
-const schemaFAQ = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
+  "@graph": [
     {
-      "@type": "Question",
-      name: "Apakah polis asuransi rumah tinggal biasa bisa digunakan untuk vila yang disewakan harian?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Tidak. Polis kebakaran residensial standar umumnya memiliki klausul pengecualian penggunaan komersial. Vila yang terdaftar di Airbnb, Tiket.com, atau platform sewa harian lainnya dianggap properti komersial. Anda memerlukan endorsement komersial atau produk khusus agar polis tetap valid saat klaim.",
-      },
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Beranda", item: "https://asuransijogja.biz.id" },
+        { "@type": "ListItem", position: 2, name: "Artikel", item: "https://asuransijogja.biz.id/artikel" },
+        {
+          "@type": "ListItem", position: 3,
+          name: "Asuransi Vila, Homestay & Hotel di Jogja",
+          item: "https://asuransijogja.biz.id/artikel/asuransi-vila-homestay-jogja",
+        },
+      ],
     },
     {
-      "@type": "Question",
-      name: "Berapa estimasi premi asuransi untuk vila 3 kamar di Kaliurang?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Untuk vila beton (Kelas 1) dengan nilai bangunan Rp 600 juta, ditambah perluasan gempa dan banjir, estimasi premi sekitar Rp 900.000 – Rp 1.200.000 per tahun. Angka ini bisa berubah tergantung nilai isi bangunan, perluasan vulkanik, dan penambahan Public Liability.",
+      "@type": "Article",
+      headline: "Asuransi Vila, Homestay & Hotel di Jogja – Panduan Lengkap Pemilik Properti Penginapan",
+      description:
+        "Panduan lengkap asuransi untuk semua skala properti penginapan di Yogyakarta — dari homestay rumahan hingga hotel butik.",
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      publisher: {
+        "@type": "Organization",
+        name: "Asuransi Jogja",
+        url: "https://asuransijogja.biz.id",
       },
+      datePublished: "2025-05-15",
+      dateModified: "2025-06-01",
     },
     {
-      "@type": "Question",
-      name: "Apakah AirCover dari Airbnb sudah cukup sebagai perlindungan properti?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Belum cukup. AirCover hanya menjamin kerusakan akibat tamu untuk pemesanan via Airbnb, dan tidak mencakup kebakaran struktural, gempa bumi, banjir, Business Interruption, maupun Public Liability secara komprehensif. Asuransi properti mandiri tetap diperlukan sebagai perlindungan utama.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Apa itu franchise atau deductible dalam polis asuransi properti?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Franchise (atau deductible) adalah jumlah kerugian pertama yang menjadi tanggungan sendiri tertanggung sebelum asuransi membayar. Misalnya, jika franchise Rp 2 juta dan kerugian Rp 10 juta, asuransi membayar Rp 8 juta. Besaran franchise mempengaruhi premi — semakin besar franchise, semakin rendah premi.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Bagaimana cara menghitung nilai pertanggungan yang benar untuk vila?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Nilai pertanggungan harus berdasarkan biaya penggantian (replacement cost), bukan harga jual properti. Cara sederhananya: kalikan luas bangunan (m²) dengan estimasi biaya konstruksi per meter persegi di Yogyakarta saat ini (sekitar Rp 4–8 juta/m² tergantung spesifikasi). Nilai isi bangunan dihitung terpisah.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Apakah perluasan gempa bumi dan vulkanik bisa ditambahkan ke polis kebakaran biasa?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Ya, keduanya ditambahkan sebagai endorsement (klausul tambahan) pada polis kebakaran atau PAR yang sudah ada. Khusus untuk perluasan gempa bumi, di beberapa perusahaan asuransi diterbitkan sebagai polis terpisah. Biaya surcharge relatif terjangkau — sekitar 7–15% dari premi dasar.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Apa itu Business Interruption (BI) dan apakah pemilik vila perlu membelinya?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Business Interruption (BI) adalah perluasan yang menggantikan kehilangan pendapatan usaha selama properti tidak bisa beroperasi akibat klaim yang dijamin polis. Untuk pemilik vila dengan omzet signifikan, BI sangat direkomendasikan — terutama jika vila adalah sumber penghasilan utama dan cicilan KPR masih berjalan.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Berapa lama proses klaim asuransi properti vila di Yogyakarta?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Tergantung kompleksitas klaim. Klaim sederhana (kerusakan parsial) biasanya selesai dalam 14–30 hari kerja setelah dokumen lengkap dan survei adjustor selesai. Klaim besar seperti kebakaran total atau gempa bisa memakan waktu 30–60 hari. Pendampingan konsultan independen dapat mempercepat proses ini.",
-      },
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Apakah asuransi rumah biasa cukup untuk homestay atau vila yang disewakan?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Tidak. Polis asuransi rumah tinggal standar mengecualikan penggunaan komersial. Jika properti disewakan tanpa deklarasi yang benar kepada insurer, klaim bisa ditolak penuh — meski polis aktif. Vila, homestay, dan hotel memerlukan polis dengan endorsement komersial atau polis khusus hospitality.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Apa itu Loss of Rent dan apakah pemilik homestay memerlukannya?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Loss of Rent menanggung kehilangan pendapatan sewa jika properti tidak bisa disewakan akibat kerusakan yang tertanggung — misalnya kebakaran yang memerlukan renovasi 3 bulan. Untuk pemilik yang mengandalkan pendapatan sewa sebagai penghasilan utama, ini sangat dianjurkan. Premi tambahan hanya Rp 500 ribu–2 juta per tahun tergantung nilai pendapatan.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Apakah hotel butik di Yogyakarta perlu asuransi yang berbeda dari homestay?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Ya, skalanya berbeda. Hotel butik dengan lebih dari 10 kamar umumnya memerlukan Property All Risk (bukan sekadar kebakaran), Business Interruption yang lebih besar, Public Liability dengan limit lebih tinggi (Rp 1–5 miliar), dan Employer Liability untuk staf. Namun prinsip perlindungannya sama — bangunan, isi, pendapatan, dan tanggung jawab kepada tamu.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Apakah listing di Airbnb atau Traveloka mempengaruhi klaim asuransi?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Bisa mempengaruhi jika tidak dideklarasikan. Status penggunaan properti sebagai short-term rental via platform digital mengubah klasifikasi dari hunian ke komersial. Beritahu insurer bahwa properti digunakan untuk bisnis sewa — ini penting dilakukan sejak awal agar klaim tidak ditolak dengan alasan 'penggunaan tidak sesuai yang dideklarasikan'.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Bagaimana jika tamu merusak properti — ditanggung asuransi?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Kerusakan yang disengaja (vandalisme) bisa ditanggung jika ada klausul RSMD dalam polis. Kerusakan tidak sengaja oleh tamu umumnya tidak dicakup polis properti standar — lebih tepat diselesaikan melalui deposit tamu atau proteksi host dari platform (AirCover, dll). Beberapa insurer menawarkan endorsement 'accidental damage' — diskusikan opsi ini dengan konsultan.",
+          },
+        },
+      ],
     },
   ],
 };
 
-export default function ArtikelVilaHomestayPage() {
+// ─── DATA ────────────────────────────────────────────────────────────────────
+
+const segmenProperti = [
+  {
+    id: "homestay",
+    icon: "🏠",
+    nama: "Homestay Rumahan",
+    rentang: "1–5 kamar disewakan",
+    nilaiProperti: "Rp 300 juta – Rp 1,5 miliar",
+    pendapatan: "Rp 3–20 juta/bulan",
+    contoh: "Kamar kos bergaya, rumah kampung disewakan per malam, rumah heritage Kotagede",
+    warna: "border-blue-200 bg-blue-50/30",
+    warnaBadge: "bg-blue-50 text-blue-700 border-blue-200",
+  },
+  {
+    id: "vila",
+    icon: "🏊",
+    nama: "Vila Privat",
+    rentang: "Disewa utuh, umumnya dengan kolam renang",
+    nilaiProperti: "Rp 1–8 miliar",
+    pendapatan: "Rp 15–150 juta/bulan",
+    contoh: "Villa private pool di Sleman, vila sawah di Bantul, vila lereng Merapi",
+    warna: "border-gold/30 bg-gold/4",
+    warnaBadge: "bg-gold/15 text-amber-700 border-amber-200",
+  },
+  {
+    id: "hotel",
+    icon: "🏨",
+    nama: "Guest House & Hotel Butik",
+    rentang: "6–50 kamar, operasional profesional",
+    nilaiProperti: "Rp 2–20 miliar",
+    pendapatan: "Rp 30–300 juta/bulan",
+    contoh: "Guest house Prawirotaman, hotel butik Malioboro, penginapan heritage Kotagede",
+    warna: "border-purple-200 bg-purple-50/30",
+    warnaBadge: "bg-purple-50 text-purple-700 border-purple-200",
+  },
+];
+
+const lapisanPerlindungan = [
+  {
+    no: "01",
+    icon: "🏡",
+    nama: "Bangunan & Struktur",
+    deskripsi: "Perlindungan terhadap kerusakan fisik bangunan akibat kebakaran, petir, ledakan, dan — sangat penting untuk DIY — gempa bumi serta banjir sebagai perluasan.",
+    wajib: ["Homestay", "Vila", "Hotel"],
+    nilaiDasar: "Biaya rekonstruksi bangunan — bukan harga jual atau NJOP",
+    tipPenting: "Untuk DIY, perluasan gempa bumi WAJIB. Gempa 2006 merusak lebih dari 150.000 bangunan di Bantul dan Sleman.",
+    warna: "border-navy/15 bg-navy/3",
+  },
+  {
+    no: "02",
+    icon: "🛋️",
+    nama: "Isi & Perlengkapan Tamu",
+    deskripsi: "Melindungi semua furnitur, elektronik, linen, peralatan dapur, dekorasi, dan perlengkapan operasional yang disediakan untuk tamu.",
+    wajib: ["Homestay", "Vila", "Hotel"],
+    nilaiDasar: "Inventarisasi semua barang — gunakan replacement cost, bukan harga beli dulu",
+    tipPenting: "Vila premium dengan furnitur desainer atau antik perlu penilaian khusus. Foto setiap ruangan sebagai dokumentasi.",
+    warna: "border-blue-200 bg-blue-50/20",
+  },
+  {
+    no: "03",
+    icon: "💰",
+    nama: "Kehilangan Pendapatan (Loss of Rent)",
+    deskripsi: "Menanggung pendapatan sewa yang hilang selama properti tidak bisa beroperasi akibat kerusakan yang tertanggung — dari hari pertama tutup hingga siap beroperasi kembali.",
+    wajib: ["Vila", "Hotel"],
+    dianjurkan: ["Homestay"],
+    nilaiDasar: "Rata-rata pendapatan per bulan × estimasi durasi perbaikan (umumnya 1–12 bulan)",
+    tipPenting: "Untuk vila dengan pendapatan Rp 50 juta/bulan dan perbaikan 3 bulan — Loss of Rent menyelamatkan Rp 150 juta. Premi tambahannya hanya Rp 1–3 juta/tahun.",
+    warna: "border-gold/30 bg-gold/4",
+  },
+  {
+    no: "04",
+    icon: "🛡️",
+    nama: "Public Liability (Tanggung Jawab kepada Tamu)",
+    deskripsi: "Melindungi pemilik dari tuntutan hukum tamu yang mengalami cedera atau kerugian di properti — terpeleset, kecelakaan di kolam renang, atau kerusakan barang tamu.",
+    wajib: ["Vila", "Hotel"],
+    dianjurkan: ["Homestay"],
+    nilaiDasar: "Limit liability: Homestay Rp 250–500 juta. Vila Rp 500 juta–2 miliar. Hotel Rp 1–5 miliar.",
+    tipPenting: "Kolam renang meningkatkan eksposur liability secara signifikan. Vila pool tanpa Public Liability adalah risiko finansial yang sangat besar.",
+    warna: "border-green-200 bg-green-50/20",
+  },
+  {
+    no: "05",
+    icon: "👷",
+    nama: "Employer Liability",
+    deskripsi: "Melindungi dari tuntutan hukum karyawan (cleaning service, resepsionis, teknisi) atas kecelakaan kerja di atas manfaat BPJS Ketenagakerjaan.",
+    wajib: ["Hotel"],
+    dianjurkan: ["Vila"],
+    nilaiDasar: "Sesuai jumlah karyawan tetap dan paruh waktu",
+    tipPenting: "Wajib untuk hotel dengan karyawan tetap. Relevan untuk vila yang menggunakan cleaning service dan maintenance rutin.",
+    warna: "border-amber-200 bg-amber-50/20",
+  },
+];
+
+const rekomendasiPerSegmen = [
+  {
+    segmen: "Homestay Rumahan",
+    icon: "🏠",
+    warna: "border-blue-200 bg-blue-50/40",
+    warnaHeader: "bg-blue-700",
+    polisWajib: [
+      "Asuransi Kebakaran (bangunan + isi)",
+      "Perluasan Gempa Bumi — wajib untuk DIY",
+    ],
+    polisDianjurkan: [
+      "Perluasan Banjir (jika dekat sungai/dataran rendah)",
+      "Loss of Rent jika pendapatan sewa kritis",
+      "Public Liability ringan (limit Rp 250–500 juta)",
+    ],
+    estimasiPremi: "Rp 1–5 juta/tahun",
+    contohHitung: "Homestay 3 kamar di Prawirotaman, nilai bangunan + isi Rp 800 juta, pendapatan Rp 8 juta/bulan → estimasi premi lengkap Rp 2–4 juta/tahun",
+  },
+  {
+    segmen: "Vila Privat (dengan/tanpa kolam)",
+    icon: "🏊",
+    warna: "border-gold/30 bg-gold/5",
+    warnaHeader: "bg-amber-600",
+    polisWajib: [
+      "Property All Risk (bangunan + isi + fasilitas outdoor)",
+      "Perluasan Gempa Bumi + Banjir",
+      "Public Liability limit Rp 1–2 miliar (wajib jika ada kolam)",
+      "Loss of Rent",
+    ],
+    polisDianjurkan: [
+      "Employer Liability (jika ada staff tetap)",
+      "RSMD — Riot, Strike, Malicious Damage",
+      "Accidental Damage endorsement untuk kerusakan tidak sengaja tamu",
+    ],
+    estimasiPremi: "Rp 5–20 juta/tahun",
+    contohHitung: "Vila pool privat di Sleman, nilai Rp 3 miliar, pendapatan Rp 60 juta/bulan → estimasi premi lengkap Rp 8–15 juta/tahun",
+  },
+  {
+    segmen: "Guest House & Hotel Butik",
+    icon: "🏨",
+    warna: "border-purple-200 bg-purple-50/40",
+    warnaHeader: "bg-purple-700",
+    polisWajib: [
+      "Property All Risk (bangunan + seluruh isi operasional)",
+      "Perluasan Gempa + Banjir",
+      "Business Interruption / Loss of Revenue",
+      "Public Liability limit Rp 1–5 miliar",
+      "Employer Liability (untuk semua karyawan)",
+    ],
+    polisDianjurkan: [
+      "Product Liability jika ada restoran atau F&B",
+      "Money Insurance (untuk pengelolaan kas)",
+      "Electronic Equipment Insurance (CCTV, sistem reservasi)",
+      "Fidelity Guarantee (proteksi dari penggelapan karyawan)",
+    ],
+    estimasiPremi: "Rp 10–50 juta/tahun",
+    contohHitung: "Hotel butik 20 kamar di kawasan Prawirotaman, nilai properti Rp 8 miliar, revenue Rp 150 juta/bulan → estimasi premi lengkap Rp 18–35 juta/tahun",
+  },
+];
+
+const perbedaanRumahVsKomersial = [
+  { aspek: "Status di Polis", rumah: "Hunian (residential)", komersial: "Komersial / hospitality" },
+  { aspek: "Penghuni", rumah: "Pemilik + keluarga", komersial: "Tamu berbeda-beda setiap hari" },
+  { aspek: "Risiko Kerusakan", rumah: "Rendah — penghuni merawat", komersial: "Lebih tinggi — tamu tidak selalu merawat" },
+  { aspek: "Cakupan Standar", rumah: "Kebakaran + perluasan", komersial: "Butuh endorsement komersial atau polis PAR" },
+  { aspek: "Kehilangan Pendapatan", rumah: "Tidak relevan", komersial: "Sangat relevan — Loss of Rent / BI" },
+  { aspek: "Liability Tamu", rumah: "Terbatas", komersial: "Tinggi — Public Liability wajib" },
+  { aspek: "Jika Salah Dideklarasikan", rumah: "N/A", komersial: "Klaim bisa DITOLAK PENUH" },
+];
+
+const kasusNyata = [
+  {
+    judul: "Vila Pool Sleman — Gempa + Kehilangan Pendapatan 4 Bulan",
+    segmen: "Vila Privat",
+    nilai: "Rp 920 juta",
+    kronologi: "Gempa bumi merusak struktur vila premium. Kolam renang retak, bangunan butuh renovasi besar selama 4 bulan. Vila tidak bisa beroperasi — kehilangan pendapatan Rp 70 juta/bulan.",
+    tanpaPerlindunganLengkap: "Property All Risk menanggung kerusakan Rp 640 juta. Tanpa Loss of Rent, kehilangan pendapatan 4 bulan = Rp 280 juta ditanggung sendiri.",
+    denganPerlindunganLengkap: "Dengan Loss of Rent: total klaim Rp 920 juta tertanggung penuh. Premi Loss of Rent tambahan hanya Rp 1,5–2 juta/tahun.",
+    badge: "bg-amber-50 text-amber-700 border-amber-100",
+  },
+  {
+    judul: "Hotel Butik Prawirotaman — Tamu Cedera, Dituntut Rp 1,4 Miliar",
+    segmen: "Hotel Butik",
+    nilai: "Tuntutan Rp 1,4 miliar",
+    kronologi: "Tamu terpeleset di kamar mandi hotel karena lantai licin tanpa karpet anti-slip. Mengalami cedera tulang belakang. Keluarga menuntut Rp 1,4 miliar untuk biaya pengobatan, rehabilitasi, dan kehilangan penghasilan jangka panjang.",
+    tanpaPerlindunganLengkap: "Tanpa Public Liability, pemilik hotel menghadapi proses hukum sendirian. Bahkan jika akhirnya menang di pengadilan, biaya pengacara bisa mencapai ratusan juta.",
+    denganPerlindunganLengkap: "Public Liability menanggung biaya pengacara, negosiasi, dan penyelesaian Rp 1,1 miliar. Hotel tetap beroperasi tanpa gangguan finansial berarti.",
+    badge: "bg-red-50 text-red-700 border-red-100",
+  },
+  {
+    judul: "Homestay Kotagede — Kebakaran Dapur, Polis Ditolak",
+    segmen: "Homestay",
+    nilai: "Rp 180 juta (klaim ditolak)",
+    kronologi: "Kebakaran dari dapur homestay merusak satu bangunan senilai Rp 180 juta. Pemilik mengajukan klaim ke polis asuransi rumah tinggal yang sudah dimilikinya.",
+    tanpaPerlindunganLengkap: "Insurer menolak klaim dengan alasan 'penggunaan properti tidak sesuai yang dideklarasikan' — polis diterbitkan sebagai hunian pribadi, bukan properti komersial. Pemilik tidak mendapat ganti rugi apapun.",
+    denganPerlindunganLengkap: "Jika dideklarasikan sebagai homestay komersial sejak awal: premi lebih tinggi Rp 300–500 ribu/tahun, tapi klaim Rp 180 juta akan diproses normal.",
+    badge: "bg-gray-50 text-gray-700 border-gray-200",
+  },
+];
+
+const tipsAirbnbOTA = [
+  {
+    no: "1",
+    judul: "Deklarasikan penggunaan komersial sejak polis terbit",
+    detail: "Ini yang paling penting dan paling sering terlewat. Beritahu insurer secara eksplisit bahwa properti digunakan sebagai homestay / vila sewa. Perubahan ini tidak selalu menaikkan premi secara signifikan, tapi melindungi Anda dari penolakan klaim.",
+  },
+  {
+    no: "2",
+    judul: "Proteksi platform (AirCover, dll) bukan pengganti polis properti",
+    detail: "AirCover dari Airbnb dan proteksi serupa dari platform lain memiliki banyak pengecualian dan batasan nilai. Anggap ini sebagai pelengkap — bukan pengganti. Polis properti yang komprehensif tetap diperlukan.",
+  },
+  {
+    no: "3",
+    judul: "Hitung Loss of Rent dari pendapatan aktual, bukan maksimum",
+    detail: "Gunakan rata-rata pendapatan 12 bulan terakhir sebagai dasar nilai pertanggungan Loss of Rent — bukan angka optimistis. Overinsurance Loss of Rent tidak menguntungkan; underinsurance membuat ganti rugi tidak mencukupi.",
+  },
+  {
+    no: "4",
+    judul: "Pasang dan dokumentasikan perangkat keselamatan",
+    detail: "Detektor asap, alat pemadam ringan, rambu keselamatan kolam, dan karpet anti-slip kamar mandi. Ini menurunkan risiko klaim dan bisa menurunkan premi. Yang lebih penting: mencegah insiden yang tidak perlu terjadi.",
+  },
+  {
+    no: "5",
+    judul: "Review polis setiap kali ada perubahan properti atau pendapatan signifikan",
+    detail: "Renovasi besar, penambahan kolam renang, atau kenaikan tarif yang signifikan mengubah profil risiko dan nilai pertanggungan. Review tahunan dengan konsultan memastikan tidak ada gap perlindungan.",
+  },
+];
+
+const faqItems = [
+  {
+    q: "Apa perbedaan Property All Risk (PAR) dan asuransi kebakaran untuk properti penginapan?",
+    a: "Asuransi kebakaran menanggung risiko yang secara eksplisit disebutkan (kebakaran, petir, ledakan, asap) plus perluasan yang dipilih. Property All Risk menanggung semua risiko kecuali yang secara eksplisit dikecualikan — cakupannya jauh lebih luas. Untuk vila dan hotel butik dengan nilai properti besar dan fasilitas beragam, PAR lebih dianjurkan karena memberikan perlindungan lebih komprehensif terhadap kejadian-kejadian yang tidak terduga.",
+  },
+  {
+    q: "Apakah pool villa perlu persyaratan khusus dari insurer?",
+    a: "Beberapa insurer menerapkan persyaratan kondisi (warranty) untuk kolam renang sebagai syarat polis — misalnya kewajiban ada pagar pengaman, rambu kedalaman, dan perawatan berkala. Pelanggaran warranty ini bisa menjadi alasan penolakan klaim terkait kolam. Tanyakan kepada kami persyaratan spesifik insurer yang Anda pilih sebelum polis terbit.",
+  },
+  {
+    q: "Bagaimana cara menentukan nilai pertanggungan yang tepat untuk hotel butik?",
+    a: "Nilai pertanggungan harus mencerminkan biaya rekonstruksi total — bangunan, instalasi M&E, furnitur, peralatan dapur, sistem IT, dan seluruh perlengkapan operasional. Untuk hotel dengan aset di atas Rp 5 miliar, kami sarankan penilaian oleh surveyor profesional agar nilai pertanggungan akurat dan tidak ada risiko underinsurance.",
+  },
+  {
+    q: "Berapa lama masa tunggu (waiting period) Business Interruption / Loss of Rent?",
+    a: "Sebagian besar polis BI/Loss of Rent memiliki masa tunggu (excess period) antara 3–14 hari setelah insiden sebelum manfaat mulai dibayar. Artinya kehilangan pendapatan di hari-hari awal ditanggung sendiri. Pilih excess period yang paling sesuai dengan kemampuan cash flow — excess lebih pendek berarti premi lebih tinggi.",
+  },
+  {
+    q: "Apakah polis properti penginapan bisa mencakup barang milik tamu yang rusak atau hilang?",
+    a: "Tidak secara standar. Polis properti pemilik menanggung aset milik pemilik. Barang milik tamu yang hilang atau rusak di properti Anda secara teknis bisa menjadi klaim Public Liability jika ada kelalaian dari pihak pemilik. Pastikan limit Public Liability memadai, dan informasikan kepada tamu untuk menggunakan asuransi perjalanan mereka sendiri untuk barang bawaan.",
+  },
+];
+
+// ─── PAGE ────────────────────────────────────────────────────────────────────
+
+export default function ArtikelAsuransiVilaHomestayJogja() {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFAQ) }}
-      />
+      <Header />
+      <div className="pt-[68px]">
 
-      {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="bg-navy py-16 px-[5vw] relative overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 55% 65% at 85% 45%, rgba(200,150,62,0.12) 0%, transparent 65%)",
-          }}
-        />
-        <div className="relative z-10 max-w-3xl">
-          <div className="flex items-center gap-2 text-xs text-gold/80 mb-4 flex-wrap">
-            <Link
-              href="/"
-              className="hover:text-gold transition-colors no-underline text-white/50"
-            >
-              Beranda
-            </Link>
-            <span className="text-gold/40">›</span>
-            <Link
-              href="/artikel"
-              className="hover:text-gold transition-colors no-underline text-white/50"
-            >
-              Artikel
-            </Link>
-            <span className="text-gold/40">›</span>
-            <span className="text-gold2 font-semibold">Asuransi Vila &amp; Homestay Jogja</span>
-          </div>
-
-          <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-4 py-1.5 rounded-full mb-5 tracking-widest uppercase">
-            <span className="text-gold text-[0.5rem]">◆</span>
-            Properti · Panduan Pemilik Vila &amp; Homestay
-          </div>
-
-          <h1 className="font-heading text-[clamp(2rem,3.5vw,3rem)] text-white leading-[1.18] mb-5">
-            Asuransi Vila &amp; Homestay Jogja:{" "}
-            <em className="not-italic text-gold">
-              Panduan Lengkap Proteksi Properti Wisata Sewa Harian
-            </em>
-          </h1>
-
-          <div className="flex items-center gap-4 text-sm text-white/50 flex-wrap">
-            <span>✍️ Rio MD – Konsultan Asuransi Kerugian</span>
-            <span>·</span>
-            <span>⏱ 12 menit baca</span>
-            <span>·</span>
-            <span>🗓️ Diperbarui Juni 2025</span>
+        {/* ── Breadcrumb ── */}
+        <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
+          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+            <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
+            <span className="text-gold/60">›</span>
+            <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
+            <span className="text-gold/60">›</span>
+            <span className="text-navy font-semibold">Asuransi Vila, Homestay & Hotel Jogja</span>
           </div>
         </div>
-      </section>
 
-      {/* ── ARTIKEL BODY ─────────────────────────────────────────────────── */}
-      <article className="py-16 px-[5vw] bg-white">
-        <div className="max-w-[780px] mx-auto">
+        {/* ── Hero ── */}
+        <section className="bg-navy py-16 px-[5vw] relative overflow-hidden">
+          <div
+            className="absolute inset-0"
+            style={{ background: "radial-gradient(ellipse 60% 70% at 80% 50%, rgba(200,150,62,0.10) 0%, transparent 65%)" }}
+          />
+          <div className="relative z-10 max-w-3xl">
+            <div className="flex items-center gap-3 mb-5 flex-wrap">
+              <Link href="/asuransi-properti/vila-homestay" className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors">
+                🏡 Vila & Homestay
+              </Link>
+              <Link href="/asuransi-properti/hotel-vila" className="inline-flex items-center gap-1.5 bg-white/8 border border-white/15 text-white/70 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-white/12 transition-colors">
+                🏨 Hotel & Vila Komersial
+              </Link>
+              <Link href="/asuransi-liability/public-liability" className="inline-flex items-center gap-1.5 bg-white/8 border border-white/15 text-white/70 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-white/12 transition-colors">
+                🛡️ Public Liability
+              </Link>
+            </div>
+            <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
+              Asuransi Vila, Homestay &<br />
+              Hotel di Jogja —{" "}
+              <em className="not-italic text-gold">Panduan Lengkap<br />
+              untuk Semua Skala</em>
+            </h1>
+            <p className="text-white/80 text-base leading-[1.85] max-w-[560px] mb-6">
+              Dari homestay 2 kamar hingga hotel butik 30 kamar — properti yang disewakan kepada tamu memiliki risiko yang berbeda dari rumah tinggal biasa. Polis yang salah bukan hanya tidak efektif; klaim Anda bisa ditolak penuh karena kesalahan deklarasi.
+            </p>
+            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+              <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
+              <span>·</span>
+              <span>📅 Diperbarui Juni 2025</span>
+              <span>·</span>
+              <span>⏱️ Baca 10 menit</span>
+            </div>
+          </div>
+        </section>
 
-          {/* DAFTAR ISI */}
-          <div className="bg-cream border border-black/6 rounded-[14px] p-6 mb-10">
-            <div className="font-heading text-navy font-bold text-[0.95rem] mb-3">📋 Daftar Isi</div>
-            <ol className="flex flex-col gap-1.5 list-decimal list-inside">
-              {[
-                "Mengapa Vila & Homestay Punya Profil Risiko Unik?",
-                "5 Risiko yang Paling Sering Menyebabkan Kerugian",
-                "Produk Asuransi yang Relevan",
-                "Perbandingan Produk: Kebakaran vs PAR",
-                "Apakah AirCover Sudah Cukup?",
-                "Estimasi Premi Asuransi Vila",
-                "Cara Menentukan Nilai Pertanggungan yang Tepat",
-                "Tips Memilih Asuransi dari Konsultan Lokal",
-                "Kesimpulan",
-                "FAQ — Pertanyaan yang Sering Diajukan",
-              ].map((item, i) => (
-                <li key={i} className="text-sm text-[#475569] leading-relaxed">
-                  {item}
-                </li>
-              ))}
-            </ol>
+        <article className="py-14 px-[5vw] max-w-[780px] mx-auto">
+
+          {/* Lead + peringatan */}
+          <div className="bg-gold/6 border-l-4 border-gold rounded-r-xl p-5 mb-5">
+            <p className="text-navy2 text-sm leading-relaxed">
+              <strong className="text-navy">Aturan Dasar:</strong> Properti yang disewakan kepada tamu — apapun skalanya — adalah properti <strong>komersial</strong>. Polis asuransi rumah tinggal biasa <strong>tidak valid</strong> untuk penggunaan ini. Deklarasikan penggunaan yang benar kepada insurer sejak awal, atau risiko ditolaknya klaim di saat paling membutuhkan.
+            </p>
+          </div>
+          <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-10 flex gap-3">
+            <span className="text-lg flex-shrink-0">⚠️</span>
+            <p className="text-sm text-red-700 leading-relaxed">
+              <strong>Listing di Airbnb, Traveloka, atau platform OTA lainnya:</strong> Status penggunaan properti Anda sudah berubah ke komersial. Pastikan insurer mengetahui ini sebelum ada klaim — bukan setelahnya.
+            </p>
           </div>
 
-          {/* INTRO */}
-          <p className="text-lg leading-[1.85] text-[#475569] mb-6">
-            Yogyakarta tidak pernah kehabisan tamu. Setiap tahun, lebih dari 10 juta wisatawan
-            domestik dan mancanegara mengunjungi kota ini — untuk menikmati Keraton, Malioboro,
-            Prambanan, pantai-pantai Gunungkidul, hingga udara sejuk lereng Merapi. Dan di balik
-            arus wisatawan yang deras itu, muncul peluang bisnis yang semakin besar:{" "}
-            <strong className="text-navy">vila dan homestay sewa harian.</strong>
-          </p>
-          <p className="text-base leading-[1.85] text-[#475569] mb-6">
-            Platform seperti Airbnb, Tiket.com, Traveloka Xperience, dan Booking.com telah
-            membuka akses pasar global bagi pemilik properti di Yogyakarta. Seorang ibu rumah
-            tangga di Prawirotaman bisa menyewakan kamar ekstranya ke tamu dari Tokyo. Seorang
-            pensiunan di Kaliurang bisa mengoperasikan vila dengan kolam renang yang selalu
-            terisi di akhir pekan. Bahkan sebuah gubuk bambu artistik di tepi sawah Bantul
-            punya potensi penghasilan jutaan rupiah per bulan.
-          </p>
-          <p className="text-base leading-[1.85] text-[#475569] mb-6">
-            Tapi ada satu hal yang sering luput dari perhatian para host dan pemilik vila:{" "}
-            <strong className="text-navy">
-              profil risiko properti sewa harian sangat berbeda dari hunian biasa — dan polis
-              asuransi yang Anda miliki saat ini mungkin tidak melindungi Anda sama sekali.
-            </strong>
-          </p>
-          <p className="text-base leading-[1.85] text-[#475569] mb-10">
-            Artikel ini ditulis khusus untuk Anda — pemilik vila, pengelola homestay, atau
-            siapa pun yang mempertimbangkan untuk masuk ke bisnis properti wisata di Yogyakarta.
-            Kami akan membahas risiko riil yang sering diabaikan, produk asuransi yang tepat,
-            perbedaan yang wajib dipahami, dan strategi perlindungan yang sesuai dengan skala
-            dan lokasi properti Anda.
-          </p>
-
-          {/* SECTION 1 */}
-          <h2 className="font-heading text-[1.65rem] text-navy font-bold mb-4 mt-12 leading-tight">
-            1. Mengapa Vila & Homestay di Yogyakarta Punya Profil Risiko yang Unik?
+          {/* Navigasi segmen */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Panduan ini Mencakup 3 Segmen Properti Penginapan
           </h2>
-          <p className="text-base leading-[1.85] text-[#475569] mb-6">
-            Jika Anda bertanya kepada pemilik vila di Kaliurang tentang apa yang paling
-            mereka khawatirkan, jawabannya biasanya bukan kebakaran atau gempa — melainkan
-            "tamu yang rewel" atau "kamar yang kotor". Padahal risiko finansial terbesar
-            justru tersembunyi di balik kejadian yang tidak terpikirkan.
-          </p>
-          <p className="text-base leading-[1.85] text-[#475569] mb-6">
-            Ada tiga faktor yang membuat vila dan homestay memiliki profil risiko yang
-            berbeda — dan lebih kompleks — dibanding rumah tinggal biasa:
-          </p>
-
-          <div className="flex flex-col gap-4 mb-8">
-            {[
-              {
-                ico: "🔄",
-                judul: "Pergantian Tamu yang Cepat dan Tidak Terkendalikan",
-                isi: 'Setiap tamu yang datang adalah orang baru dengan kebiasaan, kehati-hatian, dan tingkat familiaritas yang berbeda-beda dengan fasilitas properti Anda. Kompor gas yang sudah sering dipakai tapi tidak familiar bagi tamu dari kota besar. AC yang dibiarkan menyala 24 jam. Instalasi listrik yang dibebani perangkat elektronik berlebih. Semua ini adalah pemicu risiko yang sulit dikontrol oleh pemilik dari jarak jauh.',
-              },
-              {
-                ico: "🗺️",
-                judul: "Lokasi di Zona Risiko Geologi Tinggi",
-                isi: "Sebagian besar destinasi vila premium di Yogyakarta terletak di kawasan yang secara geologis berisiko: Kaliurang dan Pakem hanya berjarak 20-an km dari puncak Gunung Merapi yang paling aktif di Indonesia. Kawasan Bantul Selatan berada di dekat jalur patahan Opak yang pernah memicu gempa destruktif 2006. Vila tepi pantai di Parangtritis dan Sanden terpapar risiko tsunami dari Samudra Hindia. Lokasi premium secara wisata sering berkorelasi dengan eksposur risiko alam yang tinggi.",
-              },
-              {
-                ico: "💼",
-                judul: "Status Komersial yang Mempengaruhi Validitas Polis",
-                isi: "Inilah yang paling sering tidak disadari: sebagian besar polis asuransi kebakaran residensial memiliki klausul yang membatasi atau bahkan membatalkan jaminan jika properti dioperasikan secara komersial. Vila yang terdaftar di Airbnb secara hukum adalah properti komersial — bukan hunian. Jika terjadi kebakaran dan polis Anda adalah polis residensial biasa, klaim bisa ditolak. Ini bukan soal niat buruk perusahaan asuransi; ini soal ketidaksesuaian produk dengan risiko yang sebenarnya.",
-              },
-            ].map((r) => (
-              <div
-                key={r.judul}
-                className="flex gap-4 items-start border border-black/6 rounded-[14px] p-5 bg-white hover:border-gold/30 hover:shadow-sm transition-all"
-              >
-                <div className="text-[2rem] flex-shrink-0 leading-none mt-0.5">{r.ico}</div>
-                <div>
-                  <div className="font-heading text-navy font-bold text-[1rem] mb-1.5">
-                    {r.judul}
-                  </div>
-                  <p className="text-sm leading-[1.75] text-[#64748B]">{r.isi}</p>
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10">
+            {segmenProperti.map((s) => (
+              <div key={s.id} className={`rounded-card p-4 border ${s.warna}`}>
+                <div className="text-2xl mb-2">{s.icon}</div>
+                <div className="font-heading font-bold text-navy text-sm mb-1">{s.nama}</div>
+                <div className={`text-[0.6rem] font-bold px-2 py-0.5 rounded-full border inline-block mb-2 ${s.warnaBadge}`}>{s.rentang}</div>
+                <div className="text-[0.65rem] text-[#94A3B8] mb-1">Nilai: {s.nilaiProperti}</div>
+                <div className="text-[0.65rem] text-[#94A3B8] mb-2">Pendapatan: {s.pendapatan}</div>
+                <p className="text-[0.65rem] text-[#64748B] leading-snug italic">{s.contoh}</p>
               </div>
             ))}
           </div>
 
-          {/* SECTION 2 */}
-          <h2 className="font-heading text-[1.65rem] text-navy font-bold mb-4 mt-12 leading-tight">
-            2. 5 Risiko yang Paling Sering Menyebabkan Kerugian Pemilik Vila di Jogja
+          {/* Mengapa berbeda */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Perbedaan Mendasar: Rumah Tinggal vs Properti Komersial
           </h2>
-
-          <h3 className="font-heading text-[1.25rem] text-navy font-bold mb-3 mt-8">
-            1. Kebakaran dari Aktivitas Tamu
-          </h3>
-          <p className="text-base leading-[1.85] text-[#475569] mb-6">
-            Kebakaran adalah ancaman terbesar — dan paling tidak terprediksi — di properti
-            wisata. Sumber apinya tidak harus dramatis: rokok yang tidak dimatikan di teras,
-            lilin aromaterapi yang ditinggal, atau tamu yang memaksakan alat masak listrik
-            berdaya tinggi ke soket yang tidak memadai. Satu insiden kebakaran pada vila yang
-            terbuat dari material kayu atau bambu bisa menghancurkan seluruh struktur dalam
-            hitungan menit. Untuk properti beton sekalipun, kerusakan interior, perabot, dan
-            peralatan bisa mencapai ratusan juta rupiah.
-          </p>
-
-          <h3 className="font-heading text-[1.25rem] text-navy font-bold mb-3 mt-8">
-            2. Kerusakan Struktural Akibat Gempa Bumi
-          </h3>
-          <p className="text-base leading-[1.85] text-[#475569] mb-6">
-            Gempa Yogyakarta 27 Mei 2006 berkekuatan M5,9 adalah pengingat keras bahwa tanah
-            di bawah DIY tidak pernah benar-benar diam. Lebih dari 150.000 bangunan rusak,
-            termasuk ribuan properti di Bantul, Klaten, dan Sleman. Vila dan homestay yang
-            menggunakan material tradisional — bambu, kayu, atau bata tanpa tulangan — adalah
-            yang paling rentan. Bahkan bangunan beton modern pun bisa mengalami keretakan
-            struktural yang biaya perbaikannya mencapai puluhan hingga ratusan juta rupiah.
-          </p>
-
-          <h3 className="font-heading text-[1.25rem] text-navy font-bold mb-3 mt-8">
-            3. Kerusakan Fasilitas oleh Tamu
-          </h3>
-          <p className="text-base leading-[1.85] text-[#475569] mb-4">
-            Ini adalah risiko yang paling sering dikeluhkan pemilik vila, tapi justru paling
-            jarang ditanggung oleh polis standar. Kasur yang dicoret-coret, pintu kaca yang
-            dipecahkan, AC yang rusak karena penyalahgunaan, atau bahkan kolam renang yang
-            kotor akibat penggunaan tidak semestinya — semuanya adalah kerugian nyata yang
-            harus ditanggung pemilik.
-          </p>
-          <p className="text-base leading-[1.85] text-[#475569] mb-6">
-            Beberapa produk asuransi properti komersial menyediakan perluasan{" "}
-            <strong className="text-navy">malicious damage</strong> atau{" "}
-            <strong className="text-navy">tenant's damage</strong> yang bisa menjamin jenis
-            kerugian ini. Pastikan Anda mendiskusikan kebutuhan spesifik ini saat konsultasi.
-          </p>
-
-          <h3 className="font-heading text-[1.25rem] text-navy font-bold mb-3 mt-8">
-            4. Tamu yang Cedera di Area Properti — Risiko Liability
-          </h3>
-          <p className="text-base leading-[1.85] text-[#475569] mb-4">
-            Ini adalah skenario yang tidak pernah ada dalam rencana bisnis, tapi bisa terjadi
-            kapan saja: tamu tergelincir di tepi kolam renang yang licin, anak-anak terjatuh
-            dari balkon tanpa pengaman memadai, atau tamu tersengat listrik dari instalasi
-            yang tidak standar. Sebagai pemilik properti yang dioperasikan secara komersial,
-            Anda bisa dimintai pertanggungjawaban hukum atas insiden-insiden ini.
-          </p>
-          <p className="text-base leading-[1.85] text-[#475569] mb-6">
-            Biaya tuntutan hukum, biaya pengobatan, dan ganti rugi yang ditetapkan pengadilan
-            bisa jauh melampaui nilai properti Anda sendiri. Inilah mengapa{" "}
-            <Link
-              href="/asuransi-liability/public-liability"
-              className="text-gold font-semibold hover:underline"
-            >
-              asuransi Public Liability
-            </Link>{" "}
-            bukan sekadar pelengkap — ini adalah kebutuhan dasar bagi setiap pemilik
-            properti wisata.
-          </p>
-
-          <h3 className="font-heading text-[1.25rem] text-navy font-bold mb-3 mt-8">
-            5. Kehilangan Pendapatan Selama Perbaikan — Business Interruption
-          </h3>
-          <p className="text-base leading-[1.85] text-[#475569] mb-6">
-            Bayangkan skenario ini: kebakaran kecil di dapur vila Anda merusak satu kamar
-            dan area makan. Perbaikan membutuhkan waktu dua bulan. Selama dua bulan itu,
-            vila tidak bisa menerima tamu — sementara cicilan KPR, gaji cleaning service,
-            langganan listrik dan air, serta biaya pemeliharaan tetap berjalan. Jika vila
-            Anda menghasilkan Rp 5 juta per bulan dari sewa, dua bulan penutupan berarti
-            kerugian Rp 10 juta yang tidak bisa dikembalikan hanya dengan asuransi properti
-            biasa. Di sinilah{" "}
-            <strong className="text-navy">Business Interruption (BI) coverage</strong>{" "}
-            menjadi sangat relevan.
-          </p>
-
-          {/* CTA INLINE */}
-          <div className="bg-navy rounded-[18px] p-7 mb-10 text-center">
-            <div className="font-heading text-white text-[1.2rem] font-bold mb-2">
-              Ingin Tahu Risiko Spesifik Vila Anda?
-            </div>
-            <p className="text-white/75 text-sm leading-relaxed mb-5 max-w-[420px] mx-auto">
-              Konsultasi gratis dengan Pak Rio — analisis risiko berdasarkan lokasi,
-              material bangunan, fasilitas, dan platform sewa yang Anda gunakan.
-            </p>
-            <a
-              href={`https://wa.me/${KONTAK.wa}`}
-              className="inline-block bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm no-underline hover:opacity-90 transition-all"
-            >
-              💬 Konsultasi Gratis via WhatsApp
-            </a>
-          </div>
-
-          {/* SECTION 3 */}
-          <h2 className="font-heading text-[1.65rem] text-navy font-bold mb-4 mt-12 leading-tight">
-            3. Produk Asuransi yang Relevan untuk Vila & Homestay di Yogyakarta
-          </h2>
-          <p className="text-base leading-[1.85] text-[#475569] mb-6">
-            Tidak ada produk asuransi yang "satu ukuran untuk semua" ketika berbicara
-            tentang properti wisata. Pilihan tergantung pada skala, lokasi, fasilitas,
-            dan nilai properti Anda. Berikut peta produk yang perlu Anda pahami:
-          </p>
-
-          <h3 className="font-heading text-[1.25rem] text-navy font-bold mb-3 mt-8">
-            A. Asuransi Kebakaran dengan Endorsement Komersial
-          </h3>
-          <p className="text-base leading-[1.85] text-[#475569] mb-4">
-            Ini adalah titik masuk yang paling terjangkau. Asuransi kebakaran standar
-            menjamin risiko{" "}
-            <strong className="text-navy">FLEXAS</strong> — Fire, Lightning, Explosion,
-            Aircraft impact, dan Smoke. Tapi untuk vila dan homestay, Anda memerlukan
-            <strong className="text-navy"> endorsement penggunaan komersial</strong> yang
-            memastikan polis tetap valid meskipun properti dioperasikan sebagai usaha
-            sewa harian.
-          </p>
-          <p className="text-base leading-[1.85] text-[#475569] mb-6">
-            Pelajari lebih lengkap di halaman{" "}
-            <Link
-              href="/asuransi-properti/kebakaran"
-              className="text-gold font-semibold hover:underline"
-            >
-              asuransi kebakaran untuk properti komersial di Yogyakarta
-            </Link>
-            , termasuk cara menentukan nilai pertanggungan yang tepat untuk bangunan vila.
-          </p>
-
-          <h3 className="font-heading text-[1.25rem] text-navy font-bold mb-3 mt-8">
-            B. Property All Risk (PAR) — Pilihan Terbaik untuk Vila Skala Menengah ke Atas
-          </h3>
-          <p className="text-base leading-[1.85] text-[#475569] mb-4">
-            PAR adalah standar perlindungan tertinggi untuk properti. Dengan prinsip "semua
-            risiko dijamin kecuali yang dikecualikan" (<em>all risks except</em>), PAR
-            memberikan ketenangan pikiran yang jauh lebih luas dibanding asuransi kebakaran
-            biasa. Untuk vila dengan kolam renang, furnitur premium, peralatan dapur lengkap,
-            dan nilai keseluruhan di atas Rp 500 juta — PAR adalah pilihan yang sangat
-            direkomendasikan.
-          </p>
-          <p className="text-base leading-[1.85] text-[#475569] mb-6">
-            Baca panduan lengkap tentang{" "}
-            <Link
-              href="/asuransi-properti/property-all-risk"
-              className="text-gold font-semibold hover:underline"
-            >
-              Property All Risk (PAR) di Yogyakarta
-            </Link>{" "}
-            dan bagaimana produk ini berbeda dari asuransi kebakaran biasa.
-          </p>
-
-          <h3 className="font-heading text-[1.25rem] text-navy font-bold mb-3 mt-8">
-            C. Perluasan Banjir & Gempa — Wajib untuk DIY
-          </h3>
-          <p className="text-base leading-[1.85] text-[#475569] mb-4">
-            Baik PAR maupun asuransi kebakaran standar tidak otomatis menjamin banjir dan
-            gempa bumi. Kedua risiko ini harus ditambahkan sebagai perluasan (endorsement)
-            secara eksplisit. Untuk properti di Yogyakarta — yang berada di zona seismik
-            aktif dan dalam bayang-bayang Gunung Merapi — kedua perluasan ini adalah{" "}
-            <strong className="text-navy">keharusan mutlak</strong>, bukan pilihan opsional.
-          </p>
-          <div className="bg-gold/8 border border-gold/25 rounded-[14px] p-5 mb-6">
-            <div className="flex items-start gap-3">
-              <span className="text-2xl flex-shrink-0">💡</span>
-              <div>
-                <div className="font-semibold text-navy mb-1">Rekomendasi Konsultan</div>
-                <p className="text-sm leading-[1.75] text-[#475569]">
-                  Vila di Kaliurang, Pakem, dan kawasan lereng Merapi wajib menyertakan
-                  perluasan letusan gunung berapi dan lahar dingin, bukan hanya gempa
-                  tektonik biasa. Biaya <em>surcharge</em> tambahan untuk perluasan vulkanik ini
-                  relatif kecil dibanding potensi kerugian erupsi. Pelajari lebih lanjut
-                  tentang{" "}
-                  <Link
-                    href="/asuransi-properti/banjir-gempa"
-                    className="text-gold font-semibold hover:underline"
-                  >
-                    perluasan asuransi banjir dan gempa khusus Yogyakarta
-                  </Link>
-                  .
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <h3 className="font-heading text-[1.25rem] text-navy font-bold mb-3 mt-8">
-            D. Public Liability — Perlindungan dari Tuntutan Tamu
-          </h3>
-          <p className="text-base leading-[1.85] text-[#475569] mb-6">
-            Public Liability melindungi Anda dari klaim hukum pihak ketiga — dalam konteks
-            vila, pihak ketiga adalah tamu Anda — akibat cedera atau kerusakan properti
-            yang terjadi di area bisnis Anda. Polis ini menanggung biaya hukum, biaya
-            pengobatan, dan ganti rugi yang diputuskan pengadilan. Bagi pemilik vila dengan
-            kolam renang, <em>climbing wall</em>, atau fasilitas outdoor lainnya, Public Liability
-            adalah lapisan proteksi yang tidak boleh dilewatkan.
-          </p>
-
-          {/* ── NEW SECTION: PERBANDINGAN PRODUK ──────────────────────── */}
-          <h2 className="font-heading text-[1.65rem] text-navy font-bold mb-4 mt-12 leading-tight">
-            4. Perbandingan Produk: Kebakaran vs Property All Risk untuk Vila
-          </h2>
-          <p className="text-base leading-[1.85] text-[#475569] mb-6">
-            Banyak pemilik vila yang bingung memilih antara asuransi kebakaran biasa dengan
-            perluasan, atau langsung mengambil Property All Risk. Tabel berikut membantu Anda
-            membuat keputusan yang tepat berdasarkan skala dan kebutuhan properti Anda:
-          </p>
-
-          <div className="overflow-x-auto mb-6">
+          <div className="overflow-x-auto mb-10">
             <table className="w-full border-collapse text-sm">
               <thead>
                 <tr className="bg-navy text-white">
-                  <th className="text-left px-4 py-3 rounded-tl-[10px] font-semibold">Aspek</th>
-                  <th className="text-left px-4 py-3 font-semibold">Kebakaran + Perluasan</th>
-                  <th className="text-left px-4 py-3 rounded-tr-[10px] font-semibold">Property All Risk (PAR)</th>
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs rounded-tl-xl w-[30%]">Aspek</th>
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs w-[35%]">🏠 Rumah Tinggal</th>
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs text-gold rounded-tr-xl w-[35%]">🏡 Vila / Homestay / Hotel</th>
                 </tr>
               </thead>
               <tbody>
-                {[
-                  ["Prinsip Jaminan", "Named perils (risiko yang disebutkan)", "All risks except (semua kecuali pengecualian)"],
-                  ["Cakupan Dasar", "FLEXAS: Kebakaran, Petir, Ledakan, Pesawat, Asap", "Semua kerusakan fisik yang tidak dikecualikan"],
-                  ["Banjir & Gempa", "Tambahkan sebagai endorsement terpisah", "Bisa dimasukkan sekaligus dalam satu polis"],
-                  ["Kerusakan Struktural Lainnya", "Tidak otomatis dijamin", "Lebih luas, termasuk banyak risiko tak terduga"],
-                  ["Nilai Properti Ideal", "Di bawah Rp 500 juta", "Di atas Rp 500 juta"],
-                  ["Cocok untuk", "Homestay kecil 1–5 kamar", "Vila mandiri, hotel butik, resort"],
-                  ["Premi (perkiraan)", "Lebih rendah", "Lebih tinggi, coverage jauh lebih luas"],
-                  ["Kemudahan Klaim", "Harus buktikan risiko yang terjamin", "Lebih mudah — semua dijamin kecuali pengecualian"],
-                ].map(([a, b, c], i) => (
-                  <tr key={i} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
-                    <td className="px-4 py-3 font-semibold text-navy">{a}</td>
-                    <td className="px-4 py-3 text-[#64748B]">{b}</td>
-                    <td className="px-4 py-3 text-green-700 font-medium">{c}</td>
+                {perbedaanRumahVsKomersial.map((row, i) => (
+                  <tr key={row.aspek} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
+                    <td className="p-3.5 font-semibold text-navy text-xs align-top">{row.aspek}</td>
+                    <td className="p-3.5 text-[#64748B] text-sm leading-relaxed align-top">{row.rumah}</td>
+                    <td className={`p-3.5 text-sm leading-relaxed align-top ${row.aspek === "Jika Salah Dideklarasikan" ? "text-red-600 font-bold" : "text-navy2 font-medium"}`}>
+                      {row.komersial}
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
-          <div className="bg-gold/8 border border-gold/25 rounded-[14px] p-5 mb-10">
-            <p className="text-sm leading-[1.75] text-[#475569]">
-              <strong className="text-navy">💡 Panduan Singkat:</strong> Untuk homestay dengan
-              nilai bangunan di bawah Rp 400 juta, asuransi kebakaran dengan endorsement komersial
-              + perluasan gempa sudah memadai. Untuk vila dengan kolam renang, furnitur premium,
-              dan nilai total di atas Rp 500 juta,{" "}
-              <Link href="/asuransi-properti/property-all-risk" className="text-gold font-semibold hover:underline">
-                Property All Risk
-              </Link>{" "}
-              adalah investasi yang lebih bijak.
-            </p>
-          </div>
-
-          {/* SECTION 5 */}
-          <h2 className="font-heading text-[1.65rem] text-navy font-bold mb-4 mt-12 leading-tight">
-            5. Apakah AirCover dari Airbnb Sudah Cukup?
+          {/* 5 Lapisan perlindungan */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            5 Lapisan Perlindungan — dan Siapa yang Membutuhkan Masing-masing
           </h2>
-          <p className="text-base leading-[1.85] text-[#475569] mb-4">
-            Ini pertanyaan yang sangat sering kami terima dari host Airbnb di Yogyakarta.
-            Jawabannya perlu diulas dengan jujur: AirCover adalah program perlindungan dari
-            Airbnb yang mencakup kerusakan properti hingga nilai tertentu.
-            Ini adalah langkah yang baik dari platform.
+          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+            Perlindungan optimal terdiri dari beberapa lapisan yang saling melengkapi.
+            Skala properti menentukan lapisan mana yang wajib dan mana yang dianjurkan:
           </p>
-          <p className="text-base leading-[1.85] text-[#475569] mb-4">
-            Yang perlu diperhatikan, platform lokal seperti Tiket.com, Traveloka Xperience,
-            dan Booking.com umumnya <strong className="text-navy">tidak menyediakan proteksi
-            properti serupa</strong> bagi host. Artinya, jika pemesanan masuk melalui platform
-            selain Airbnb, tidak ada perlindungan dari sisi platform sama sekali.
-          </p>
-          <p className="text-base leading-[1.85] text-[#475569] mb-4">
-            Namun ada keterbatasan mendasar yang perlu Anda pahami:
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
-            <div className="border border-red-600/20 bg-red-600/5 rounded-[14px] p-5">
-              <h4 className="font-heading text-red-700 font-bold mb-3">
-                ✗ Keterbatasan AirCover
-              </h4>
-              <ul className="flex flex-col gap-2">
-                {[
-                  "Tidak menjamin kebakaran, banjir, atau gempa",
-                  "Tidak mencakup risiko yang bukan disebabkan tamu",
-                  "Tidak ada Business Interruption / BI",
-                  "Tidak menjamin Public Liability secara komprehensif",
-                  "Proses klaim melalui platform, bukan polis mandiri",
-                  "Hanya berlaku saat ada pemesanan aktif via Airbnb",
-                  "Tidak berlaku untuk pemesanan via Tiket.com, Traveloka, dll.",
-                ].map((i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-[#475569]">
-                    <span className="text-red-600 font-bold flex-shrink-0 mt-0.5">✗</span>
-                    {i}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="border border-green-600/20 bg-green-600/5 rounded-[14px] p-5">
-              <h4 className="font-heading text-green-800 font-bold mb-3">
-                ✓ Asuransi Properti Mandiri
-              </h4>
-              <ul className="flex flex-col gap-2">
-                {[
-                  "Menjamin kebakaran, banjir, gempa, dan risiko FLEXAS",
-                  "Berlaku kapan saja — ada atau tidak ada tamu",
-                  "Business Interruption tersedia sebagai perluasan",
-                  "Public Liability komprehensif dan terpisah",
-                  "Polis resmi berlisensi OJK, klaim terjamin",
-                  "Berlaku untuk semua platform dan pemesanan langsung",
-                  "Mencakup konstruksi kelas 1, 2, maupun 3",
-                ].map((i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-[#475569]">
-                    <span className="text-green-700 font-bold flex-shrink-0 mt-0.5">✓</span>
-                    {i}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <p className="text-base leading-[1.85] text-[#475569] mb-10">
-            Kesimpulannya: AirCover dan asuransi properti mandiri bukan kompetitor —
-            keduanya bisa berjalan berdampingan. AirCover menanggung kerusakan akibat
-            tamu untuk pemesanan via Airbnb; asuransi properti mandiri menanggung semua
-            risiko lainnya, termasuk bencana alam, kebakaran struktural, dan klaim hukum
-            dari tamu via platform manapun.
-          </p>
-
-          {/* SECTION 6 */}
-          <h2 className="font-heading text-[1.65rem] text-navy font-bold mb-4 mt-12 leading-tight">
-            6. Estimasi Premi Asuransi Vila & Homestay di Yogyakarta
-          </h2>
-          <p className="text-base leading-[1.85] text-[#475569] mb-6">
-            Premi asuransi untuk vila dan homestay dihitung berdasarkan beberapa variabel
-            utama sesuai panduan tarif AAUI (Asosiasi Asuransi Umum Indonesia) yang berlaku.
-            Berikut estimasi kasar yang bisa menjadi referensi awal Anda:
-          </p>
-
-          <div className="bg-cream border border-black/6 rounded-[14px] p-6 mb-6">
-            <div className="font-heading text-navy font-bold text-[1rem] mb-4">
-              📊 Ilustrasi Estimasi Premi Asuransi Vila
-            </div>
-            <div className="flex flex-col gap-4">
-              {[
-                {
-                  label:
-                    "Homestay 3 kamar, bangunan beton (Kelas 1), nilai bangunan Rp 400 juta, + perluasan gempa",
-                  premi: "~ Rp 550.000 – Rp 700.000 / tahun",
-                },
-                {
-                  label:
-                    "Vila dengan kolam renang, 5 kamar, beton (Kelas 1), nilai bangunan Rp 800 juta, + gempa + banjir + public liability dasar",
-                  premi: "~ Rp 1.500.000 – Rp 2.000.000 / tahun",
-                },
-                {
-                  label:
-                    "Vila premium Kaliurang, PAR komprehensif, nilai bangunan Rp 1,5 miliar, + vulkanik + BI",
-                  premi: "~ Rp 3.500.000 – Rp 5.000.000 / tahun",
-                },
-                {
-                  label:
-                    "Homestay bambu/kayu (Kelas 3), nilai bangunan Rp 200 juta, + gempa + angin",
-                  premi: "~ Rp 900.000 – Rp 1.200.000 / tahun",
-                },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 py-3 border-b border-black/5 last:border-0"
-                >
-                  <span className="text-sm text-[#475569] leading-snug flex-1">
-                    {item.label}
-                  </span>
-                  <span className="font-heading text-gold font-bold text-[1rem] whitespace-nowrap">
-                    {item.premi}
-                  </span>
-                </div>
-              ))}
-            </div>
-            <p className="text-xs text-[#94A3B8] mt-3 leading-relaxed">
-              * Estimasi berdasarkan tarif referensi pasar mengacu panduan AAUI. Premi final
-              ditentukan perusahaan asuransi setelah evaluasi risiko. Gunakan{" "}
-              <Link
-                href="/asuransi-properti#kalkulator"
-                className="text-gold hover:underline"
-              >
-                kalkulator premi
-              </Link>{" "}
-              atau hubungi kami untuk penawaran lebih akurat.
-            </p>
-          </div>
-
-          {/* ── NEW: FAKTOR PENENTU PREMI ─────────────────────────────── */}
-          <h3 className="font-heading text-[1.15rem] text-navy font-bold mb-3 mt-8">
-            Faktor yang Mempengaruhi Besaran Premi Vila Anda
-          </h3>
-          <div className="overflow-x-auto mb-8">
-            <table className="w-full border-collapse text-sm">
-              <thead>
-                <tr className="bg-navy text-white">
-                  <th className="text-left px-4 py-3 rounded-tl-[10px] font-semibold">Faktor</th>
-                  <th className="text-left px-4 py-3 font-semibold">Detail</th>
-                  <th className="text-left px-4 py-3 rounded-tr-[10px] font-semibold">Pengaruh pada Premi</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ["Kelas Konstruksi", "Kelas 1 (beton), Kelas 2 (semi permanen), Kelas 3 (kayu/bambu)", "Kelas 1 paling rendah; Kelas 3 bisa 4–5× lebih mahal"],
-                  ["Nilai Pertanggungan", "Nilai penggantian bangunan + isi (replacement cost)", "Makin tinggi nilai, premi makin besar proporsional"],
-                  ["Lokasi / Zona Risiko", "Bantul (Zona 5 gempa), Sleman/Kota/GK/KP (Zona 4)", "Zona 5 premi gempa ~15–20% lebih tinggi dari Zona 4"],
-                  ["Perluasan Dipilih", "Gempa, banjir, vulkanik, BI, Public Liability", "Setiap perluasan menambah premi; BI paling signifikan"],
-                  ["Deductible / Franchise", "Jumlah tanggungan sendiri per klaim", "Deductible lebih besar = premi lebih rendah"],
-                  ["Nilai Isi Bangunan", "Furnitur, elektronik, peralatan operasional vila", "Dihitung terpisah dari nilai bangunan"],
-                ].map(([f, d, p], i) => (
-                  <tr key={i} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
-                    <td className="px-4 py-3 font-semibold text-navy">{f}</td>
-                    <td className="px-4 py-3 text-[#64748B]">{d}</td>
-                    <td className="px-4 py-3 text-[#64748B]">{p}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <p className="text-base leading-[1.85] text-[#475569] mb-10">
-            Jika vila Anda menghasilkan pendapatan Rp 5–20 juta per bulan, premi asuransi
-            senilai Rp 1–5 juta per tahun adalah investasi yang sangat rasional — kurang
-            dari 5% dari omzet tahunan Anda. Bandingkan dengan risiko kehilangan aset
-            senilai ratusan juta hingga miliaran rupiah.
-          </p>
-
-          {/* SECTION 7 */}
-          <h2 className="font-heading text-[1.65rem] text-navy font-bold mb-4 mt-12 leading-tight">
-            7. Menentukan Nilai Pertanggungan yang Tepat untuk Vila Anda
-          </h2>
-          <p className="text-base leading-[1.85] text-[#475569] mb-4">
-            Salah satu kesalahan paling umum — dan paling mahal — yang dilakukan pemilik
-            vila adalah menetapkan nilai pertanggungan berdasarkan harga beli properti
-            atau harga pasar tanah + bangunan. Ini adalah pendekatan yang keliru dan akan
-            mengakibatkan <strong className="text-navy">underinsurance</strong>.
-          </p>
-          <p className="text-base leading-[1.85] text-[#475569] mb-4">
-            Nilai pertanggungan yang benar untuk vila adalah{" "}
-            <strong className="text-navy">biaya penggantian (replacement cost)</strong> —
-            berapa biaya yang dibutuhkan untuk membangun ulang bangunan tersebut dengan
-            spesifikasi yang sama, di lokasi yang sama, dengan harga material dan upah
-            konstruksi saat ini. Nilai ini tidak termasuk harga tanah.
-          </p>
-
-          {/* ── NEW: PANDUAN HITUNG REPLACEMENT COST ─────────────────── */}
-          <div className="bg-cream border border-black/6 rounded-[14px] p-6 mb-6">
-            <div className="font-heading text-navy font-bold text-[1rem] mb-4">
-              🧮 Cara Hitung Sederhana Replacement Cost Vila
-            </div>
-            <div className="flex flex-col gap-3">
-              <div className="flex items-start gap-3">
-                <span className="bg-gold text-navy text-xs font-bold rounded-full w-6 h-6 flex-shrink-0 flex items-center justify-center mt-0.5">1</span>
-                <div>
-                  <div className="font-semibold text-navy text-sm mb-1">Hitung Luas Bangunan Total</div>
-                  <p className="text-sm text-[#64748B]">Jumlahkan semua lantai bangunan yang akan diasuransikan (tidak termasuk tanah). Ukur atau ambil dari IMB/PBG.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="bg-gold text-navy text-xs font-bold rounded-full w-6 h-6 flex-shrink-0 flex items-center justify-center mt-0.5">2</span>
-                <div>
-                  <div className="font-semibold text-navy text-sm mb-1">Kalikan dengan Biaya Konstruksi per m²</div>
-                  <p className="text-sm text-[#64748B]">
-                    Estimasi biaya konstruksi Yogyakarta 2025 (berdasarkan referensi pasar lokal):
-                  </p>
-                  <div className="mt-2 flex flex-col gap-1">
-                    {[
-                      ["Bangunan standar beton (Kelas 1)", "Rp 4.000.000 – Rp 5.500.000 / m²"],
-                      ["Bangunan semi permanen (Kelas 2)", "Rp 2.500.000 – Rp 3.500.000 / m²"],
-                      ["Bangunan kayu/bambu artisan (Kelas 3)", "Rp 3.500.000 – Rp 6.000.000 / m²"],
-                      ["Vila premium / custom arsitektur", "Rp 6.000.000 – Rp 10.000.000+ / m²"],
-                    ].map(([kelas, biaya]) => (
-                      <div key={kelas} className="flex justify-between text-xs gap-2 py-1 border-b border-black/5 last:border-0">
-                        <span className="text-[#475569]">{kelas}</span>
-                        <span className="font-semibold text-navy whitespace-nowrap">{biaya}</span>
+          <div className="flex flex-col gap-4 mb-10">
+            {lapisanPerlindungan.map((l) => (
+              <div key={l.no} className={`rounded-card p-5 border ${l.warna}`}>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-navy/8 flex items-center justify-center text-xs font-bold text-navy mb-1">
+                      {l.no}
+                    </div>
+                    <div className="text-xl text-center">{l.icon}</div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="font-heading font-bold text-navy text-[0.95rem] mb-1">{l.nama}</div>
+                    <p className="text-sm text-[#64748B] leading-relaxed mb-3">{l.deskripsi}</p>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {l.wajib?.map((s) => (
+                        <span key={s} className="text-[0.6rem] font-bold px-2 py-0.5 rounded-full bg-navy text-white">
+                          ✓ Wajib: {s}
+                        </span>
+                      ))}
+                      {l.dianjurkan?.map((s) => (
+                        <span key={s} className="text-[0.6rem] font-bold px-2 py-0.5 rounded-full bg-gold/15 text-amber-700 border border-gold/30">
+                          + Dianjurkan: {s}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <div className="bg-white/60 rounded-lg p-2.5 border border-black/6">
+                        <div className="text-[0.6rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-0.5">Dasar nilai</div>
+                        <p className="text-xs text-navy2">{l.nilaiDasar}</p>
                       </div>
-                    ))}
+                      <div className="bg-gold/6 rounded-lg p-2.5 border border-gold/15">
+                        <div className="text-[0.6rem] font-bold uppercase tracking-wide text-gold mb-0.5">💡 Tips</div>
+                        <p className="text-xs text-navy2">{l.tipPenting}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="bg-gold text-navy text-xs font-bold rounded-full w-6 h-6 flex-shrink-0 flex items-center justify-center mt-0.5">3</span>
-                <div>
-                  <div className="font-semibold text-navy text-sm mb-1">Tambahkan Nilai Isi Bangunan</div>
-                  <p className="text-sm text-[#64748B]">Inventarisasi semua furnitur, elektronik (AC, TV, kulkas, water heater), peralatan dapur, linen, dan dekorasi. Untuk vila premium, nilai isi bisa mencapai 30–50% dari nilai bangunan.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="bg-gold text-navy text-xs font-bold rounded-full w-6 h-6 flex-shrink-0 flex items-center justify-center mt-0.5">4</span>
-                <div>
-                  <div className="font-semibold text-navy text-sm mb-1">Jangan Lupa Fasilitas Outdoor</div>
-                  <p className="text-sm text-[#64748B]">Kolam renang, gazebo, taman landscape, pagar, dan area parkir sering tidak dimasukkan. Padahal biaya pembangunan kolam renang saja bisa Rp 100–300 juta.</p>
-                </div>
-              </div>
-            </div>
-            <div className="mt-4 bg-gold/10 border border-gold/25 rounded-lg p-3">
-              <p className="text-xs text-navy">
-                <strong>Contoh:</strong> Vila 200 m² beton standar = 200 × Rp 5.000.000 = Rp 1 miliar nilai bangunan.
-                Ditambah isi bangunan Rp 300 juta + kolam renang Rp 200 juta = <strong>total pertanggungan Rp 1,5 miliar.</strong>
-              </p>
-            </div>
-          </div>
-
-          <p className="text-base leading-[1.85] text-[#475569] mb-4">
-            Untuk vila dengan material khusus — bambu artisan, kayu jati, batu alam,
-            atau desain arsitektur custom — biaya penggantian bisa jauh lebih tinggi
-            dari nilai pasar properti itu sendiri, karena material dan keahlian spesifik
-            yang dibutuhkan.
-          </p>
-          <p className="text-base leading-[1.85] text-[#475569] mb-10">
-            Baca panduan lengkap cara menghitung nilai pertanggungan di artikel kami:{" "}
-            <Link
-              href="/artikel/cara-menghitung-nilai-asuransi"
-              className="text-gold font-semibold hover:underline"
-            >
-              Cara Menghitung Nilai Asuransi yang Benar (Hindari Underinsurance)
-            </Link>
-            .
-          </p>
-
-          {/* SECTION 8 */}
-          <h2 className="font-heading text-[1.65rem] text-navy font-bold mb-4 mt-12 leading-tight">
-            8. Tips Memilih Asuransi Vila dari Konsultan Lokal Yogyakarta
-          </h2>
-          <p className="text-base leading-[1.85] text-[#475569] mb-6">
-            Dari pengalaman melayani pemilik vila dan homestay di Yogyakarta selama bertahun-tahun,
-            ada beberapa hal yang selalu kami tekankan:
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            {[
-              {
-                ico: "📋",
-                judul: "Pastikan Status Komersial Polis Anda Jelas",
-                isi: "Sebelum membeli, tanyakan secara eksplisit: 'Apakah polis ini valid jika properti saya disewakan secara harian melalui platform seperti Airbnb atau Tiket.com?' Minta jawabannya secara tertulis dalam polis atau endorsement.",
-              },
-              {
-                ico: "🌋",
-                judul: "Jangan Skip Perluasan Gempa & Vulkanik",
-                isi: "Di Yogyakarta, ini bukan opsional. Terutama untuk vila di kawasan Sleman Utara dan Bantul. Biaya surcharge sangat terjangkau relatif terhadap perlindungan yang diberikan.",
-              },
-              {
-                ico: "🏊",
-                judul: "Sertakan Nilai Kolam Renang & Fasilitas Outdoor",
-                isi: "Kolam renang, gazebo, taman, playground, dan fasilitas outdoor lainnya sering tidak disertakan dalam nilai pertanggungan. Pastikan semua aset ini masuk dalam polis.",
-              },
-              {
-                ico: "🛡️",
-                judul: "Public Liability adalah Keharusan",
-                isi: "Jika vila Anda menerima tamu, Public Liability bukan kemewahan — ini adalah perlindungan dasar dari tuntutan hukum yang bisa menghancurkan finansial Anda.",
-              },
-              {
-                ico: "📊",
-                judul: "Pertimbangkan Business Interruption",
-                isi: "BI coverage sangat relevan jika vila adalah sumber pendapatan utama atau signifikan. Hitung berapa bulan omzet yang Anda butuhkan untuk menutup biaya selama renovasi pasca-klaim.",
-              },
-              {
-                ico: "🔄",
-                judul: "Perbarui Nilai Pertanggungan Setiap 2–3 Tahun",
-                isi: "Harga material konstruksi naik setiap tahun. Vila yang dibangun 5 tahun lalu mungkin perlu biaya 40–50% lebih mahal untuk dibangun ulang hari ini. Tinjau ulang nilai pertanggungan secara berkala.",
-              },
-            ].map((t) => (
-              <div
-                key={t.judul}
-                className="bg-cream rounded-[14px] p-5 border border-black/5"
-              >
-                <div className="text-2xl mb-2">{t.ico}</div>
-                <div className="font-heading text-navy font-bold text-[1rem] mb-1">
-                  {t.judul}
-                </div>
-                <p className="text-sm leading-[1.7] text-[#64748B]">{t.isi}</p>
               </div>
             ))}
           </div>
 
-          {/* PENUTUP */}
-          <h2 className="font-heading text-[1.65rem] text-navy font-bold mb-4 mt-12 leading-tight">
-            9. Kesimpulan: Vila Anda adalah Bisnis — Lindungi Seperti Bisnis
+          {/* Rekomendasi per segmen */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Rekomendasi Polis per Segmen — Beserta Estimasi Biaya
           </h2>
-          <p className="text-base leading-[1.85] text-[#475569] mb-4">
-            Vila dan homestay di Yogyakarta adalah salah satu aset bisnis paling menjanjikan
-            di dekade ini. Pertumbuhan wisatawan, ekosistem platform digital yang matang,
-            dan keunikan destinasi DIY menciptakan peluang yang belum pernah ada sebelumnya
-            bagi pemilik properti.
-          </p>
-          <p className="text-base leading-[1.85] text-[#475569] mb-4">
-            Tapi bisnis yang baik selalu disertai manajemen risiko yang baik. Polis asuransi
-            yang tepat bukan hanya soal "jaga-jaga" — ini soal memastikan bahwa satu kejadian
-            buruk tidak bisa menghapus semua yang sudah Anda bangun. Kebakaran, gempa, tamu
-            yang cedera, atau bencana alam tidak bisa dicegah sepenuhnya. Tapi dampak
-            finansialnya bisa dikelola — dengan polis yang tepat, nilai pertanggungan yang
-            benar, dan konsultan yang berpihak pada Anda.
-          </p>
-          <p className="text-base leading-[1.85] text-[#475569] mb-10">
-            Hubungi Pak Rio sekarang untuk konsultasi gratis. Kami akan bantu menganalisis
-            risiko lokasi vila Anda, merekomendasikan kombinasi produk yang paling efisien,
-            dan memastikan setiap rupiah premi yang Anda bayarkan memberikan perlindungan
-            yang nyata.
-          </p>
-
-          {/* INTERNAL LINKS BOX */}
-          <div className="bg-cream border border-black/6 rounded-[18px] p-6 mb-10">
-            <div className="font-heading text-navy font-bold text-[1rem] mb-4">
-              📚 Halaman &amp; Artikel Terkait
-            </div>
-            <div className="flex flex-col gap-2">
-              {[
-                {
-                  href: "/asuransi-properti/vila-homestay",
-                  label: "Halaman Produk: Asuransi Vila & Homestay Yogyakarta — Paket & Harga",
-                },
-                {
-                  href: "/asuransi-properti",
-                  label: "Asuransi Properti Jogja – Panduan Lengkap untuk Semua Jenis Properti",
-                },
-                {
-                  href: "/asuransi-properti/property-all-risk",
-                  label: "Property All Risk (PAR) – Proteksi Komprehensif untuk Properti Komersial",
-                },
-                {
-                  href: "/asuransi-properti/kebakaran",
-                  label: "Asuransi Kebakaran Rumah, Kos & Ruko di Yogyakarta",
-                },
-                {
-                  href: "/asuransi-properti/banjir-gempa",
-                  label: "Perluasan Asuransi Banjir & Gempa Bumi – Khusus Yogyakarta",
-                },
-                {
-                  href: "/asuransi-liability/public-liability",
-                  label: "Asuransi Public Liability – Perlindungan dari Tuntutan Tamu",
-                },
-                {
-                  href: "/artikel/cara-menghitung-nilai-asuransi",
-                  label: "Cara Menghitung Nilai Pertanggungan Asuransi yang Benar",
-                },
-                {
-                  href: "/artikel/asuransi-rumah-tinggal-jogja",
-                  label: "Panduan Asuransi Rumah Tinggal di Yogyakarta",
-                },
-                {
-                  href: "/artikel",
-                  label: "Lihat Semua Artikel Edukasi Asuransi →",
-                },
-              ].map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  className="flex items-center gap-2 text-sm text-navy2 hover:text-gold transition-colors no-underline py-1 border-b border-black/5 last:border-0"
-                >
-                  <span className="text-gold text-xs">›</span>
-                  {l.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* ── FAQ SECTION ─────────────────────────────────────────────── */}
-          <div id="faq">
-            <h2 className="font-heading text-[1.65rem] text-navy font-bold mb-2 mt-12 leading-tight">
-              10. FAQ — Pertanyaan yang Sering Diajukan
-            </h2>
-            <p className="text-base leading-[1.85] text-[#475569] mb-8">
-              Berikut pertanyaan yang paling sering kami terima dari pemilik vila dan
-              homestay di Yogyakarta:
-            </p>
-
-            <div className="flex flex-col divide-y divide-black/8">
-              {[
-                {
-                  q: "Apakah polis asuransi rumah tinggal biasa bisa digunakan untuk vila yang disewakan harian?",
-                  a: (
-                    <>
-                      Tidak. Polis kebakaran residensial standar umumnya memiliki{" "}
-                      <strong className="text-navy">klausul pengecualian penggunaan komersial</strong>.
-                      Vila yang terdaftar di Airbnb, Tiket.com, atau platform sewa harian lainnya
-                      dianggap properti komersial. Anda memerlukan{" "}
-                      <strong className="text-navy">endorsement komersial</strong> atau produk khusus
-                      agar polis tetap valid saat klaim. Tanpa ini, klaim kebakaran atau kerusakan
-                      bisa ditolak sepenuhnya.
-                    </>
-                  ),
-                },
-                {
-                  q: "Apa perbedaan 'endorsement' dan 'perluasan' dalam polis asuransi properti?",
-                  a: (
-                    <>
-                      Keduanya merujuk hal serupa: penambahan klausul atau jaminan di luar cakupan
-                      polis dasar. <strong className="text-navy">Endorsement</strong> biasanya merujuk
-                      pada perubahan atau penambahan spesifik pada polis yang sudah ada (misalnya
-                      endorsement penggunaan komersial). <strong className="text-navy">Perluasan</strong>{" "}
-                      (rider) merujuk pada penambahan jenis risiko baru seperti banjir, gempa, atau
-                      Business Interruption. Keduanya tercantum dalam dokumen polis dan memiliki
-                      premi tambahan tersendiri.
-                    </>
-                  ),
-                },
-                {
-                  q: "Apa itu franchise atau deductible, dan bagaimana pengaruhnya pada klaim vila saya?",
-                  a: (
-                    <>
-                      <strong className="text-navy">Franchise</strong> (atau deductible) adalah jumlah
-                      kerugian pertama yang menjadi tanggungan Anda sendiri sebelum asuransi membayar.
-                      Misalnya, jika franchise Rp 2 juta dan kerugian Rp 15 juta, asuransi membayar
-                      Rp 13 juta. Semakin besar franchise yang Anda pilih, semakin rendah premi yang
-                      dibayarkan — karena Anda menanggung sendiri risiko kecil dan asuransi fokus
-                      pada kerugian besar.
-                    </>
-                  ),
-                },
-                {
-                  q: "Berapa estimasi premi untuk vila 3 kamar di Kaliurang dengan kolam renang?",
-                  a: (
-                    <>
-                      Untuk vila beton (Kelas 1) di Kaliurang dengan estimasi nilai bangunan Rp 700 juta
-                      dan isi bangunan Rp 200 juta, ditambah perluasan gempa bumi (Zona 4 Sleman) dan
-                      perluasan vulkanik, estimasi premi berkisar{" "}
-                      <strong className="text-navy">Rp 1.200.000 – Rp 1.800.000 per tahun</strong>.
-                      Jika ditambah Public Liability dan Business Interruption, total bisa mencapai
-                      Rp 2.500.000 – Rp 3.500.000 per tahun. Gunakan{" "}
-                      <Link href="/asuransi-properti#kalkulator" className="text-gold hover:underline">
-                        kalkulator premi kami
-                      </Link>{" "}
-                      untuk estimasi lebih spesifik.
-                    </>
-                  ),
-                },
-                {
-                  q: "Apakah kerusakan kolam renang akibat gempa bumi bisa diklaim?",
-                  a: (
-                    <>
-                      Ya, <em>jika</em> kolam renang masuk dalam nilai pertanggungan polis Anda dan
-                      perluasan gempa bumi sudah ditambahkan. Ini adalah hal yang sering terlewat —
-                      banyak pemilik yang mengasuransikan bangunan utama tapi lupa memasukkan kolam
-                      renang, gazebo, dan fasilitas outdoor ke dalam nilai pertanggungan. Pastikan
-                      semua aset properti terdaftar saat pengajuan polis.
-                    </>
-                  ),
-                },
-                {
-                  q: "Apakah Business Interruption (BI) wajib untuk semua pemilik vila?",
-                  a: (
-                    <>
-                      Tidak wajib, tapi sangat direkomendasikan jika vila adalah{" "}
-                      <strong className="text-navy">sumber penghasilan signifikan</strong> atau utama.
-                      BI menjamin penggantian kehilangan omzet selama vila tidak bisa beroperasi
-                      akibat klaim yang dijamin polis (misalnya masa renovasi pasca kebakaran).
-                      Jika vila hanya menghasilkan Rp 1–2 juta/bulan, BI mungkin belum prioritas.
-                      Tapi untuk vila dengan omzet Rp 10 juta+/bulan, BI adalah proteksi arus kas
-                      yang krusial.
-                    </>
-                  ),
-                },
-                {
-                  q: "Berapa lama proses klaim asuransi properti jika vila saya mengalami kebakaran?",
-                  a: (
-                    <>
-                      Prosesnya: lapor dalam 3×24 jam → survei loss adjustor → evaluasi dokumen →
-                      persetujuan klaim → pencairan. Untuk klaim kebakaran sederhana (kerusakan
-                      parsial), umumnya selesai dalam{" "}
-                      <strong className="text-navy">14–30 hari kerja</strong> setelah dokumen lengkap.
-                      Klaim besar dengan kerugian di atas ratusan juta bisa memakan 30–60 hari.
-                      Pendampingan konsultan independen seperti kami dapat membantu memperlancar
-                      dan mempercepat proses ini.
-                    </>
-                  ),
-                },
-                {
-                  q: "Apakah vila yang dikelola oleh operator/manajemen pihak ketiga tetap bisa diasuransikan?",
-                  a: (
-                    <>
-                      Ya. Polis tetap diterbitkan atas nama{" "}
-                      <strong className="text-navy">pemilik properti sebagai tertanggung utama</strong>.
-                      Operator atau manajemen properti dapat ditambahkan sebagai tertanggung tambahan
-                      (additional insured). Proses dan dokumen yang diperlukan sama seperti polis
-                      standar — hubungi kami dengan membawa dokumen kepemilikan dan data properti.
-                    </>
-                  ),
-                },
-              ].map((faq, i) => (
-                <details key={i} className="group py-1">
-                  <summary className="py-4 cursor-pointer font-semibold text-[0.95rem] text-navy flex justify-between items-start list-none gap-4">
-                    <span>{faq.q}</span>
-                    <span className="text-gold text-xl flex-shrink-0 transition-transform group-open:rotate-45 mt-0.5">
-                      +
-                    </span>
-                  </summary>
-                  <div className="text-base leading-[1.78] text-[#64748B] pb-5 pr-8">
-                    {faq.a}
-                  </div>
-                </details>
-              ))}
-            </div>
-          </div>
-
-          {/* LINK KE HALAMAN PRODUK */}
-          <div className="bg-navy/5 border border-navy/10 rounded-[14px] p-5 mt-10 mb-4">
-            <div className="flex items-center gap-3 flex-wrap">
-              <span className="text-2xl">🌿</span>
-              <div className="flex-1">
-                <div className="font-heading text-navy font-bold text-[1rem] mb-1">
-                  Siap Melindungi Vila atau Homestay Anda?
+          <div className="flex flex-col gap-5 mb-10">
+            {rekomendasiPerSegmen.map((r) => (
+              <div key={r.segmen} className={`rounded-card border overflow-hidden ${r.warna}`}>
+                <div className={`px-5 py-3 flex items-center gap-2.5 ${r.warnaHeader}`}>
+                  <span className="text-xl">{r.icon}</span>
+                  <span className="font-heading font-bold text-white text-[0.95rem]">{r.segmen}</span>
                 </div>
-                <p className="text-sm text-[#64748B]">
-                  Kunjungi halaman produk khusus kami untuk melihat paket, harga, dan detail perlindungan.
-                </p>
+                <div className="p-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                    <div>
+                      <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-2">Polis Wajib / Sangat Dianjurkan</p>
+                      <ul className="flex flex-col gap-1.5">
+                        {r.polisWajib.map((item, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <span className="text-navy font-bold text-xs flex-shrink-0 mt-0.5">✓</span>
+                            <span className="text-xs text-navy2 leading-snug">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-2">Tambahan Dianjurkan</p>
+                      <ul className="flex flex-col gap-1.5">
+                        {r.polisDianjurkan.map((item, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <span className="text-gold font-bold text-xs flex-shrink-0 mt-0.5">+</span>
+                            <span className="text-xs text-[#64748B] leading-snug">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="bg-white/60 rounded-xl p-3.5 border border-black/6 flex flex-col sm:flex-row gap-3">
+                    <div className="flex-shrink-0">
+                      <div className="text-[0.65rem] text-[#94A3B8] uppercase tracking-wide font-semibold mb-0.5">Estimasi premi</div>
+                      <div className="font-heading font-bold text-navy text-lg">{r.estimasiPremi}</div>
+                    </div>
+                    <div className="sm:border-l sm:border-black/10 sm:pl-3">
+                      <div className="text-[0.65rem] text-[#94A3B8] uppercase tracking-wide font-semibold mb-0.5">Contoh perhitungan</div>
+                      <p className="text-xs text-[#64748B] leading-relaxed">{r.contohHitung}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
+            ))}
+          </div>
+
+          {/* Kasus Nyata */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            3 Kasus Nyata dari Properti Penginapan di Yogyakarta
+          </h2>
+          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+            Tiga skenario berikut menggambarkan konsekuensi nyata dari perlindungan yang lengkap vs tidak lengkap:
+          </p>
+          <div className="flex flex-col gap-4 mb-10">
+            {kasusNyata.map((k) => (
+              <div key={k.judul} className={`rounded-card p-5 border ${k.badge}`}>
+                <div className="flex items-center gap-2.5 mb-3 flex-wrap">
+                  <span className="font-heading font-bold text-navy text-sm">{k.judul}</span>
+                  <span className={`text-[0.65rem] font-bold px-2 py-0.5 rounded-full border ${k.badge}`}>{k.segmen}</span>
+                  <span className={`text-[0.65rem] font-bold px-2 py-0.5 rounded-full border ${k.badge}`}>{k.nilai}</span>
+                </div>
+                <p className="text-sm text-[#64748B] leading-relaxed mb-3">{k.kronologi}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="bg-amber-50 rounded-lg p-3 border border-amber-100">
+                    <div className="text-[0.65rem] font-bold uppercase tracking-wide text-amber-600 mb-1">⚠️ Tanpa perlindungan lengkap</div>
+                    <p className="text-xs text-[#64748B] leading-relaxed">{k.tanpaPerlindunganLengkap}</p>
+                  </div>
+                  <div className="bg-green-50 rounded-lg p-3 border border-green-100">
+                    <div className="text-[0.65rem] font-bold uppercase tracking-wide text-green-600 mb-1">✅ Dengan perlindungan lengkap</div>
+                    <p className="text-xs text-[#64748B] leading-relaxed">{k.denganPerlindunganLengkap}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Tips platform digital */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            5 Tips Penting untuk Pemilik yang Listing di Platform Digital
+          </h2>
+          <div className="flex flex-col gap-3 mb-10">
+            {tipsAirbnbOTA.map((t) => (
+              <div key={t.no} className="flex gap-3.5 bg-cream rounded-xl p-4 border border-black/5">
+                <span className="flex-shrink-0 w-7 h-7 rounded-lg bg-gold/15 border border-gold/25 flex items-center justify-center text-xs font-bold text-amber-700">
+                  {t.no}
+                </span>
+                <div>
+                  <p className="font-semibold text-navy text-sm mb-1">{t.judul}</p>
+                  <p className="text-xs text-[#64748B] leading-relaxed">{t.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA Inline */}
+          <div className="bg-gold/8 border border-gold/25 rounded-card p-6 mb-10">
+            <div className="font-heading text-navy font-bold text-base mb-2">
+              Ingin review atau upgrade polis properti penginapan Anda?
+            </div>
+            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+              Ceritakan skala dan kondisi properti Anda — kami evaluasi apakah perlindungan yang ada sudah memadai, dan rekomendasikan yang perlu ditambah. Gratis, tanpa komitmen.
+            </p>
+            <div className="flex gap-3 flex-wrap">
+              <a
+                href={`https://wa.me/${KONTAK.wa}`}
+                className="bg-gold text-navy px-5 py-2.5 rounded-lg font-bold text-sm no-underline hover:bg-gold2 transition-all"
+              >
+                💬 Konsultasi via WA — Gratis
+              </a>
               <Link
                 href="/asuransi-properti/vila-homestay"
-                className="bg-gold text-navy px-5 py-2.5 rounded-lg font-bold text-sm no-underline hover:bg-gold2 transition-all whitespace-nowrap"
+                className="border border-navy/20 text-navy px-5 py-2.5 rounded-lg text-sm no-underline hover:border-gold hover:text-gold transition-all"
               >
-                Lihat Paket Produk →
+                🏡 Produk Vila & Homestay →
+              </Link>
+              <Link
+                href="/asuransi-properti/hotel-vila"
+                className="border border-navy/20 text-navy px-5 py-2.5 rounded-lg text-sm no-underline hover:border-gold hover:text-gold transition-all"
+              >
+                🏨 Produk Hotel & Vila →
               </Link>
             </div>
           </div>
 
-        </div>
-      </article>
-
-      {/* ── CTA PENUTUP ───────────────────────────────────────────────────── */}
-      <section className="py-16 px-[5vw] bg-navy text-center relative overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)",
-          }}
-        />
-        <div className="relative z-10">
-          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold2 mb-3">
-            Konsultasi Gratis
-          </div>
-          <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.2rem)] text-white leading-[1.22] mb-4">
-            Lindungi Vila &amp; Homestay Anda
-            <br />
-            Sebelum Musibah Datang
+          {/* FAQ */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-6">
+            Pertanyaan yang Sering Diajukan Pemilik Properti Penginapan
           </h2>
-          <p className="text-white/80 text-sm leading-relaxed max-w-[480px] mx-auto mb-8">
-            Konsultasi gratis dengan Pak Rio — konsultan asuransi kerugian lokal di Yogyakarta.
-            Analisis risiko lokasi, rekomendasi produk, dan pendampingan klaim. Semua tanpa biaya.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <a
-              href={`https://wa.me/${KONTAK.wa}`}
-              className="bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm flex items-center gap-2 no-underline hover:opacity-90 transition-all"
-            >
-              💬 Chat WhatsApp Sekarang
-            </a>
-            <a
-              href={`mailto:${KONTAK.email}`}
-              className="bg-white/8 border border-white/20 text-white px-7 py-3 rounded-lg font-medium text-sm no-underline hover:bg-white/12 transition-all"
-            >
-              ✉️ {KONTAK.email}
-            </a>
+          <div className="flex flex-col divide-y divide-black/8 mb-10">
+            {faqItems.map((f, i) => (
+              <details key={i} className="group py-1">
+                <summary className="py-3 cursor-pointer font-semibold text-[0.9rem] text-navy flex justify-between items-center list-none">
+                  {f.q}
+                  <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
+              </details>
+            ))}
           </div>
-        </div>
-      </section>
+
+          {/* Internal Links */}
+          <div className="border-t border-black/8 pt-8">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Produk & Artikel Terkait</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                { href: "/asuransi-properti/vila-homestay", icon: "🏡", judul: "Produk Asuransi Vila & Homestay", desc: "Detail cakupan, cara daftar, dan estimasi premi" },
+                { href: "/asuransi-properti/hotel-vila", icon: "🏨", judul: "Produk Asuransi Hotel & Vila Komersial", desc: "Untuk properti penginapan skala menengah ke atas" },
+                { href: "/asuransi-properti/kebakaran", icon: "🔥", judul: "Asuransi Kebakaran", desc: "Perlindungan dasar bangunan dari api dan petir" },
+                { href: "/asuransi-properti/banjir-gempa", icon: "🌊", judul: "Perluasan Banjir & Gempa", desc: "Wajib untuk semua properti di wilayah DIY" },
+                { href: "/asuransi-liability/public-liability", icon: "🛡️", judul: "Public Liability", desc: "Proteksi dari tuntutan tamu yang cedera di properti" },
+                { href: "/artikel/asuransi-rumah-tinggal-jogja", icon: "🏠", judul: "Asuransi Rumah Tinggal Jogja", desc: "Untuk properti yang ditempati sendiri, bukan disewakan" },
+              ].map((a) => (
+                <Link
+                  key={a.href}
+                  href={a.href}
+                  className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group"
+                >
+                  <span className="text-xl flex-shrink-0">{a.icon}</span>
+                  <div>
+                    <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">{a.judul}</div>
+                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </article>
+
+        {/* ── CTA Bottom ── */}
+        <section className="py-16 px-[5vw] bg-navy text-center relative overflow-hidden">
+          <div
+            className="absolute inset-0"
+            style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.10) 0%, transparent 65%)" }}
+          />
+          <div className="relative z-10">
+            <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.2rem)] text-white leading-[1.22] mb-4">
+              Lindungi Bisnis Penginapan Anda<br />
+              dengan Perlindungan yang Tepat
+            </h2>
+            <p className="text-white/75 text-sm max-w-[440px] mx-auto mb-8">
+              Dari homestay hingga hotel butik — kami susun paket perlindungan yang sesuai skala dan kebutuhan spesifik properti Anda di Yogyakarta.
+            </p>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <a
+                href={`https://wa.me/${KONTAK.wa}`}
+                className="bg-[#25D366] text-white px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all"
+              >
+                💬 Konsultasi via WhatsApp
+              </a>
+              <Link
+                href="/asuransi-properti/vila-homestay"
+                className="border border-white/25 text-white/80 px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:border-gold hover:text-gold transition-all"
+              >
+                🏡 Vila & Homestay
+              </Link>
+              <Link
+                href="/asuransi-properti/hotel-vila"
+                className="border border-white/25 text-white/80 px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:border-gold hover:text-gold transition-all"
+              >
+                🏨 Hotel & Vila
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
+      <Footer />
     </>
   );
 }

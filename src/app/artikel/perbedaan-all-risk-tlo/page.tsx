@@ -1,362 +1,383 @@
+// app/artikel/perbedaan-all-risk-tlo/page.tsx
+// TARGET KEYWORD: "perbedaan all risk dan TLO", "asuransi mobil all risk vs TLO yogyakarta"
+// INTENT: Informational + Commercial Investigation — calon pembeli asuransi kendaraan yang bingung memilih
+// SILO: Kendaraan cluster → /mobil, /dump-truk-niaga + cross-link artikel kalkulator premi mobil
+
 import type { Metadata } from "next";
 import Link from "next/link";
+import Header from "@/components/sections/Header";
+import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Perbedaan All Risk dan TLO: Mana yang Tepat untuk Mobil Anda?",
+  title: "Perbedaan Asuransi All Risk dan TLO – Mana yang Lebih Tepat untuk Mobil Anda? | Asuransi Jogja",
   description:
-    "Penjelasan lengkap perbedaan asuransi All Risk dan TLO untuk kendaraan bermotor. Simulasi premi, skenario klaim, dan panduan memilih berdasarkan tarif resmi OJK.",
+    "Penjelasan lengkap perbedaan asuransi mobil All Risk (Comprehensive) vs TLO (Total Loss Only). Tabel perbandingan, simulasi premi untuk mobil di Yogyakarta, kapan pilih mana, dan contoh kasus klaim nyata.",
   keywords:
-    "perbedaan all risk dan TLO, all risk vs TLO mobil, asuransi comprehensive vs TLO, pilih all risk atau TLO, premi all risk TLO OJK",
-  alternates: { canonical: "https://asuransijogja.biz.id/artikel/perbedaan-all-risk-tlo" },
+    "perbedaan all risk dan TLO, asuransi mobil all risk vs TLO yogyakarta, comprehensive vs TLO asuransi kendaraan, pilih all risk atau TLO jogja, premi asuransi mobil all risk yogyakarta",
+  alternates: {
+    canonical: "https://asuransijogja.biz.id/artikel/perbedaan-all-risk-tlo",
+  },
   openGraph: {
-    title: "Perbedaan All Risk dan TLO: Panduan Lengkap 2025",
+    title: "Perbedaan Asuransi All Risk dan TLO – Mana yang Lebih Tepat untuk Mobil Anda?",
     description:
-      "Bingung pilih All Risk atau TLO? Artikel ini menjelaskan perbedaan, simulasi premi, dan skenario klaim secara jujur — berdasarkan tarif resmi OJK.",
+      "All Risk vs TLO — tabel perbandingan lengkap, simulasi premi, dan panduan memilih berdasarkan kondisi nyata pemilik mobil di Yogyakarta.",
     url: "https://asuransijogja.biz.id/artikel/perbedaan-all-risk-tlo",
+    type: "article",
   },
 };
 
-const schemaArticle = {
+const schemaArtikel = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  headline: "Perbedaan All Risk dan TLO: Mana yang Tepat untuk Mobil Anda?",
-  description:
-    "Penjelasan lengkap perbedaan asuransi All Risk dan TLO untuk kendaraan bermotor berdasarkan tarif OJK.",
-  url: "https://asuransijogja.biz.id/artikel/perbedaan-all-risk-tlo",
-  datePublished: "2025-05-01",
-  dateModified: "2025-05-01",
-  author: { "@type": "Person", name: "Rio MD", url: "https://asuransijogja.biz.id" },
-  publisher: {
-    "@type": "Organization",
-    name: "Asuransi Jogja",
-    url: "https://asuransijogja.biz.id",
-  },
-  mainEntityOfPage: "https://asuransijogja.biz.id/artikel/perbedaan-all-risk-tlo",
-};
-
-const schemaFAQ = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
+  "@graph": [
     {
-      "@type": "Question",
-      name: "Apakah All Risk otomatis lebih baik dari TLO?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text:
-          "Tidak selalu. All Risk memberikan perlindungan lebih luas, tetapi preminya lebih tinggi. Untuk mobil berusia di atas 7 tahun dengan nilai pasar rendah, premi All Risk bisa mendekati 5–8% dari nilai kendaraan per tahun — tidak ekonomis dibanding risiko yang ditanggung. TLO lebih masuk akal untuk kendaraan tua dengan nilai rendah.",
-      },
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Beranda", item: "https://asuransijogja.biz.id" },
+        { "@type": "ListItem", position: 2, name: "Artikel", item: "https://asuransijogja.biz.id/artikel" },
+        {
+          "@type": "ListItem", position: 3,
+          name: "Perbedaan All Risk dan TLO",
+          item: "https://asuransijogja.biz.id/artikel/perbedaan-all-risk-tlo",
+        },
+      ],
     },
     {
-      "@type": "Question",
-      name: "Apakah asuransi All Risk cover kecelakaan ringan dan goresan?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text:
-          "Ya. All Risk (Comprehensive) menanggung kerusakan fisik mulai dari goresan ringan, penyok, hingga rusak parah akibat kecelakaan. Namun setiap klaim dikenakan Own Risk (risiko sendiri) sebesar Rp 300.000 per kejadian untuk kendaraan konvensional, atau Rp 500.000 untuk kendaraan listrik.",
-      },
+      "@type": "Article",
+      headline: "Perbedaan Asuransi All Risk dan TLO – Mana yang Lebih Tepat untuk Mobil Anda?",
+      description: "Panduan lengkap perbedaan asuransi kendaraan All Risk dan TLO dengan tabel perbandingan, simulasi premi, dan panduan memilih.",
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
+      datePublished: "2025-05-20",
+      dateModified: "2025-06-01",
     },
     {
-      "@type": "Question",
-      name: "TLO bisa klaim lecet atau penyok tidak?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text:
-          "Tidak. TLO (Total Loss Only) hanya menanggung kerugian jika kendaraan hilang akibat pencurian, atau jika kerusakan akibat kecelakaan melebihi 75% dari nilai kendaraan. Kerusakan ringan seperti lecet, penyok, dan goresan tidak ditanggung oleh polis TLO.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Mobil kredit wajib pakai All Risk?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text:
-          "Sebagian besar bank dan lembaga pembiayaan mewajibkan asuransi All Risk selama masa kredit berlangsung. Ini karena kendaraan menjadi jaminan kredit, sehingga kreditur ingin pastikan aset terlindungi secara penuh.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Berapa perbedaan premi All Risk vs TLO untuk mobil seharga Rp 300 juta?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text:
-          "Mengacu tarif OJK untuk Wilayah III (Yogyakarta), mobil seharga Rp 300 juta masuk Kategori 3. Estimasi premi All Risk sekitar 1,79%–2,69% = Rp 5,37–8,07 juta/tahun. Premi TLO sekitar 0,29%–0,44% = Rp 870.000–1,32 juta/tahun. Selisihnya cukup besar — pilihan bergantung pada usia mobil dan intensitas pemakaian.",
-      },
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Apa perbedaan utama antara asuransi All Risk dan TLO?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "All Risk (Comprehensive) menanggung semua jenis kerusakan — dari lecet ringan, tabrakan, banjir, hingga kehilangan total. TLO (Total Loss Only) hanya menanggung jika mobil hilang dicuri atau rusak lebih dari 75% dari nilai kendaraan. Kerusakan parsial seperti penyok atau pecah kaca tidak ditanggung TLO.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Kapan sebaiknya memilih TLO dibanding All Risk?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "TLO lebih cocok untuk: mobil berusia di atas 8–10 tahun, mobil dengan nilai pasar di bawah Rp 150 juta, kendaraan niaga atau operasional yang risikonya tinggi dan selisih premi signifikan, atau pemilik yang hanya ingin proteksi dari kehilangan total. All Risk lebih cocok untuk mobil baru, mobil kredit (biasanya diwajibkan leasing), dan mobil yang sering digunakan di area padat.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Apakah asuransi All Risk menanggung kerusakan akibat banjir di Yogyakarta?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Tidak secara standar. Banjir adalah risiko perluasan yang harus ditambahkan secara eksplisit dalam polis. Untuk kendaraan di Yogyakarta — terutama di kawasan Bantul, Kulon Progo, atau area sekitar sungai — perluasan banjir sangat dianjurkan. Tambahan premi sekitar Rp 50–200 ribu per tahun tergantung nilai kendaraan.",
+          },
+        },
+      ],
     },
   ],
 };
 
+// ─── DATA ────────────────────────────────────────────────────────────────────
+
 const tabelPerbandingan = [
   {
-    aspek: "Kerusakan ringan (lecet, penyok)",
-    allrisk: "✓ Ditanggung",
-    tlo: "✗ Tidak ditanggung",
-    positifAR: true,
+    aspek: "Definisi",
+    allRisk: "Menanggung semua risiko kecuali yang secara eksplisit dikecualikan",
+    tlo: "Hanya menanggung kehilangan total atau kerusakan ≥ 75% nilai kendaraan",
   },
   {
-    aspek: "Kecelakaan sedang–berat",
-    allrisk: "✓ Ditanggung",
-    tlo: "✗ Tidak ditanggung (kecuali >75% nilai)",
-    positifAR: true,
+    aspek: "Kerusakan Kecil (lecet, penyok ringan)",
+    allRisk: "✓ Ditanggung",
+    tlo: "✕ Tidak ditanggung",
+    highlight: true,
   },
   {
-    aspek: "Kehilangan akibat pencurian",
-    allrisk: "✓ Ditanggung",
+    aspek: "Kerusakan Sedang (tabrakan, kaca pecah)",
+    allRisk: "✓ Ditanggung",
+    tlo: "✕ Tidak ditanggung",
+    highlight: true,
+  },
+  {
+    aspek: "Kerusakan Berat (tabrak total, rusak parah)",
+    allRisk: "✓ Ditanggung",
+    tlo: "✓ Ditanggung (jika ≥ 75% nilai)",
+  },
+  {
+    aspek: "Kehilangan (pencurian)",
+    allRisk: "✓ Ditanggung",
     tlo: "✓ Ditanggung",
-    positifAR: false,
   },
   {
-    aspek: "Kerusakan total (>75% nilai)",
-    allrisk: "✓ Ditanggung",
-    tlo: "✓ Ditanggung",
-    positifAR: false,
+    aspek: "Kerusakan akibat Banjir",
+    allRisk: "Perluasan — tidak otomatis",
+    tlo: "✕ Tidak ditanggung (bahkan sebagai perluasan)",
   },
   {
-    aspek: "Premi tahunan",
-    allrisk: "Lebih tinggi (1,05%–3,82%)",
-    tlo: "Lebih rendah (0,20%–0,65%)",
-    positifAR: false,
+    aspek: "Kerusakan akibat Gempa Bumi",
+    allRisk: "Perluasan — tidak otomatis",
+    tlo: "✕ Tidak ditanggung",
   },
   {
-    aspek: "Own Risk per kejadian",
-    allrisk: "Rp 300.000 (konvensional) / Rp 500.000 (EV)",
-    tlo: "Rp 300.000 (konvensional) / Rp 500.000 (EV)",
-    positifAR: false,
+    aspek: "Tanggung Jawab Pihak Ketiga (TPL)",
+    allRisk: "Perluasan tersedia",
+    tlo: "Perluasan tersedia (terbatas)",
   },
   {
-    aspek: "Cocok untuk",
-    allrisk: "Mobil baru, kredit, intensitas tinggi, EV",
-    tlo: "Mobil tua (>7 thn), sudah lunas, pemakaian ringan",
-    positifAR: false,
+    aspek: "Estimasi Rate Premi",
+    allRisk: "1,5–3,5% dari harga kendaraan/tahun",
+    tlo: "0,2–0,8% dari harga kendaraan/tahun",
+  },
+  {
+    aspek: "Cocok untuk Usia Kendaraan",
+    allRisk: "0–10 tahun (optimal 0–7 tahun)",
+    tlo: "> 7–10 tahun atau kendaraan niaga",
+  },
+  {
+    aspek: "Wajib untuk KKB/Leasing?",
+    allRisk: "Ya — hampir semua leasing mensyaratkan All Risk",
+    tlo: "Tidak diterima leasing untuk kendaraan baru",
   },
 ];
 
-const skenarioKlaim = [
+const simulasiPremi = [
   {
-    skenario: "Goresan di parkiran mal",
-    icon: "🏬",
-    allrisk: "Ditanggung. Estimasi biaya perbaikan Rp 1–3 juta, dikurangi OR Rp 300rb.",
-    tlo: "Tidak ditanggung. Anda bayar sendiri.",
-    kesimpulan: "All Risk lebih menguntungkan untuk skenario ini.",
+    kendaraan: "Toyota Avanza 2023 (baru)",
+    nilaiKendaraan: "Rp 230 juta",
+    premiAllRisk: "Rp 3,45–8 juta",
+    premiTLO: "Rp 460 rb–1,84 juta",
+    rekomendasiType: "All Risk",
+    alasan: "Kendaraan baru dengan nilai tinggi — kerusakan kecil sekalipun sudah signifikan. Leasing umumnya mewajibkan All Risk.",
+    warna: "border-blue-200 bg-blue-50/30",
   },
   {
-    skenario: "Kecelakaan, mobil rusak parah 80% nilai",
-    icon: "💥",
-    allrisk: "Ditanggung penuh sebagai total loss. Ganti rugi sesuai nilai pertanggungan.",
-    tlo: "Ditanggung sebagai total loss (>75%). Ganti rugi sesuai nilai pertanggungan.",
-    kesimpulan: "Keduanya menanggung skenario ini.",
+    kendaraan: "Honda Jazz 2018 (5 tahun)",
+    nilaiKendaraan: "Rp 170 juta",
+    premiAllRisk: "Rp 2,55–5,95 juta",
+    premiTLO: "Rp 340 rb–1,36 juta",
+    rekomendasiType: "All Risk",
+    alasan: "Masih dalam rentang optimal All Risk. Mobil 5 tahun di area perkotaan Jogja yang padat — risiko baret dan tabrakan ringan masih tinggi.",
+    warna: "border-blue-200 bg-blue-50/30",
   },
   {
-    skenario: "Mobil hilang dicuri",
-    icon: "🔓",
-    allrisk: "Ditanggung. Proses klaim 14–30 hari setelah laporan polisi.",
-    tlo: "Ditanggung. Proses klaim 14–30 hari setelah laporan polisi.",
-    kesimpulan: "Keduanya menanggung skenario ini.",
+    kendaraan: "Toyota Kijang Innova 2013 (10 tahun)",
+    nilaiKendaraan: "Rp 210 juta",
+    premiAllRisk: "Rp 3,15–7,35 juta",
+    premiTLO: "Rp 420 rb–1,68 juta",
+    rekomendasiType: "TLO atau Pertimbangkan",
+    alasan: "Mobil 10 tahun — beberapa insurer All Risk sudah menolak atau rate sangat tinggi. TLO lebih ekonomis. Pertimbangkan All Risk hanya jika kondisi mobil prima dan sering diparkir di area risiko tinggi.",
+    warna: "border-amber-200 bg-amber-50/30",
   },
   {
-    skenario: "Banjir merendam mesin (hydrolocking)",
+    kendaraan: "Daihatsu Gran Max Pick-Up 2019 (niaga)",
+    nilaiKendaraan: "Rp 130 juta",
+    premiAllRisk: "Rp 2,6–5,2 juta",
+    premiTLO: "Rp 260 rb–1,04 juta",
+    rekomendasiType: "TLO",
+    alasan: "Kendaraan niaga/operasional dengan frekuensi penggunaan tinggi — rate All Risk sangat mahal. TLO lebih efisien: lindungi dari risiko terbesar (kehilangan) dengan premi jauh lebih terjangkau.",
+    warna: "border-green-200 bg-green-50/30",
+  },
+];
+
+const perluasanPenting = [
+  {
+    nama: "Banjir & Genangan Air",
     icon: "🌊",
-    allrisk:
-      "Ditanggung HANYA jika ada perluasan banjir dalam polis. Tanpa perluasan, tidak ditanggung.",
-    tlo: "Tidak ditanggung (bukan total loss standar).",
-    kesimpulan: "Butuh perluasan banjir eksplisit di polis All Risk.",
-  },
-];
-
-const panduan = [
-  {
-    kondisi: "Mobil baru atau usia < 5 tahun",
-    rekomendasi: "All Risk",
-    alasan:
-      "Nilai kendaraan masih tinggi, risiko kerusakan ringan lebih berdampak finansial. Premi relatif proporsional terhadap nilai aset.",
-    icon: "🚗",
+    tersediaAllRisk: true,
+    tersediaTLO: false,
+    relevansiDIY: "Sangat Tinggi",
+    warnaRelevansi: "bg-red-100 text-red-700",
+    penjelasan: "Kawasan Bantul, Kulon Progo, dan area sekitar Kali Code rawan banjir musiman. Kerusakan mesin akibat mobil menerjang banjir (water hammer) bisa mencapai Rp 30–80 juta. Tambahan premi Rp 50–200 ribu/tahun.",
   },
   {
-    kondisi: "Masih dalam cicilan/kredit",
-    rekomendasi: "All Risk (wajib)",
-    alasan:
-      "Bank atau leasing umumnya mewajibkan All Risk selama masa kredit. Kendaraan sebagai jaminan harus terlindungi penuh.",
-    icon: "🏦",
+    nama: "Gempa Bumi & Letusan Gunung Api",
+    icon: "🌋",
+    tersediaAllRisk: true,
+    tersediaTLO: false,
+    relevansiDIY: "Tinggi",
+    warnaRelevansi: "bg-amber-100 text-amber-700",
+    penjelasan: "DIY berada di zona seismik aktif. Kerusakan kendaraan akibat gempa atau material jatuh dari bangunan dapat diklaim jika ada perluasan ini. Sangat relevan untuk kendaraan yang diparkir di area bangunan tua.",
   },
   {
-    kondisi: "Mobil listrik (EV)",
-    rekomendasi: "All Risk sangat disarankan",
-    alasan:
-      "Biaya perbaikan komponen EV (baterai, motor listrik) sangat mahal. Risiko kerugian ringan pada EV bisa mencapai puluhan juta.",
+    nama: "Kerusuhan & RSMD",
     icon: "⚡",
+    tersediaAllRisk: true,
+    tersediaTLO: false,
+    relevansiDIY: "Menengah",
+    warnaRelevansi: "bg-blue-100 text-blue-700",
+    penjelasan: "Riot, Strike, Malicious Damage — relevan untuk kendaraan yang diparkir di area publik atau kawasan demo. Tambahan premi kecil tapi memberikan ketenangan pikiran.",
   },
   {
-    kondisi: "Mobil > 7 tahun, sudah lunas",
-    rekomendasi: "TLO lebih ekonomis",
-    alasan:
-      "Premi All Risk mendekati 5–8% dari nilai kendaraan yang sudah rendah. TLO memberikan proteksi dasar (kehilangan/total loss) dengan biaya jauh lebih terjangkau.",
-    icon: "📅",
-  },
-  {
-    kondisi: "Parkir di area padat / kota besar",
-    rekomendasi: "All Risk",
-    alasan:
-      "Risiko goresan, penyok, dan kerusakan ringan jauh lebih tinggi di area parkir padat. All Risk menanggung biaya yang berulang ini.",
-    icon: "🏙️",
-  },
-  {
-    kondisi: "Pemakaian ringan, disimpan di garasi",
-    rekomendasi: "TLO bisa dipertimbangkan",
-    alasan:
-      "Frekuensi risiko kerusakan ringan rendah. Proteksi utama yang dibutuhkan adalah terhadap kehilangan, yang sudah ditanggung TLO.",
-    icon: "🏠",
+    nama: "Tanggung Jawab Pihak Ketiga (TPL)",
+    icon: "🛡️",
+    tersediaAllRisk: true,
+    tersediaTLO: true,
+    relevansiDIY: "Sangat Tinggi",
+    warnaRelevansi: "bg-red-100 text-red-700",
+    penjelasan: "Menanggung kerusakan kendaraan atau properti orang lain, dan biaya pengobatan pihak ketiga jika Anda yang bersalah dalam kecelakaan. Sangat dianjurkan — klaim TPL bisa lebih mahal dari kerusakan kendaraan Anda sendiri.",
   },
 ];
 
-export default function PerbedaanAllRiskTLOPage() {
-  const wa = `https://wa.me/${KONTAK.wa}?text=${encodeURIComponent(
-    "Halo Pak Rio, saya ingin konsultasi pilihan asuransi mobil All Risk vs TLO untuk kendaraan saya."
-  )}`;
+const kapanPilihAllRisk = [
+  "Kendaraan berusia kurang dari 7–8 tahun",
+  "Kendaraan kredit (KKB) — hampir semua leasing mewajibkan All Risk",
+  "Mobil baru atau dengan nilai pasar di atas Rp 200 juta",
+  "Sering melewati area ramai dan padat (Malioboro, Jl. Kaliurang, kawasan wisata)",
+  "Parkir di tempat terbuka atau area risiko tinggi",
+  "Menginginkan ketenangan pikiran untuk kerusakan sekecil apapun",
+];
 
+const kapanPilihTLO = [
+  "Kendaraan berusia di atas 8–10 tahun",
+  "Mobil dengan nilai pasar di bawah Rp 150 juta",
+  "Kendaraan niaga / operasional dengan frekuensi penggunaan sangat tinggi",
+  "Anggaran terbatas — ingin proteksi kehilangan total dengan premi minimal",
+  "Kendaraan yang sudah ada baret atau kerusakan kecil di berbagai tempat",
+  "Mobil cadangan yang jarang digunakan — risiko harian rendah",
+];
+
+const kasusNyata = [
+  {
+    kasus: "All Risk Tepat Sasaran",
+    judul: "Avanza Baru Tertabrak dari Belakang di Simpang Empat Sleman",
+    kronologi: "Honda Avanza 2022 ditabrak kendaraan di belakang saat berhenti di lampu merah kawasan Sleman. Kerusakan bagian belakang: bumper, lampu, dan panel body — total perbaikan Rp 18,5 juta.",
+    hasilKlaim: "All Risk menanggung penuh Rp 18,5 juta dikurangi deductible Rp 300 ribu. Mobil diperbaiki di bengkel rekanan insurer dalam 5 hari kerja.",
+    jikaHanyaTLO: "TLO tidak menanggung — kerusakan Rp 18,5 juta hanya 8% dari nilai kendaraan, jauh di bawah ambang 75%. Pemilik harus bayar sendiri.",
+    badge: "bg-blue-50 text-blue-700 border-blue-100",
+    rekType: "All Risk",
+  },
+  {
+    kasus: "TLO Tepat Sasaran",
+    judul: "Kijang 2010 Hilang Dicuri dari Parkiran Bantul",
+    kronologi: "Toyota Kijang Innova 2010 dengan nilai pasar Rp 160 juta hilang dicuri dari halaman rumah pemilik di Bantul. Pelaku tidak tertangkap.",
+    hasilKlaim: "TLO menanggung kehilangan total Rp 152 juta (nilai aktual dikurangi penyusutan). Premi TLO yang dibayar pemilik selama 2 tahun hanya Rp 960 ribu — jauh lebih hemat dari All Risk.",
+    jikaAllRisk: "All Risk juga menanggung kehilangan. Tapi premi All Risk untuk Kijang 2010 akan jauh lebih mahal — dan pemilik mungkin tidak menggunakannya karena mobil sudah 13 tahun.",
+    badge: "bg-green-50 text-green-700 border-green-100",
+    rekType: "TLO",
+  },
+  {
+    kasus: "Kesalahan Umum",
+    judul: "Mobil Masuk Banjir di Bantul — Klaim TLO Ditolak",
+    kronologi: "Pemilik Honda Brio 2016 menerjang banjir di kawasan Bantul. Mesin mengalami water hammer — biaya perbaikan Rp 22 juta. Pemilik memiliki TLO tanpa perluasan banjir.",
+    hasilKlaim: "TLO tidak menanggung kerusakan parsial dan tidak memiliki opsi perluasan banjir. Klaim ditolak — Rp 22 juta ditanggung sendiri.",
+    jikaAllRiskDenganBanjir: "All Risk + perluasan banjir: Rp 22 juta ditanggung penuh. Premi perluasan banjir hanya tambahan Rp 75–120 ribu per tahun untuk mobil senilai Rp 175 juta.",
+    badge: "bg-red-50 text-red-700 border-red-100",
+    rekType: "Pelajaran",
+  },
+];
+
+const faqItems = [
+  {
+    q: "Apakah All Risk benar-benar menanggung 'semua risiko'?",
+    a: "Tidak 100% — nama 'All Risk' sedikit menyesatkan. Polis All Risk menanggung semua risiko kecuali yang secara eksplisit dikecualikan dalam polis. Pengecualian standar yang perlu diperhatikan: keausan normal, kerusakan akibat pemakaian rutin, kerusakan mesin akibat oli kurang atau perawatan buruk, banjir/gempa (perlu perluasan), dan kerusakan yang disengaja. Bacalah klausul pengecualian dengan cermat sebelum polis terbit.",
+  },
+  {
+    q: "Apakah bisa upgrade dari TLO ke All Risk di tengah periode?",
+    a: "Bisa, tapi prosesnya tidak sederhana. Upgrade biasanya dilakukan saat renewal (perpanjangan). Upgrade di tengah periode memerlukan survei kondisi kendaraan, pembayaran premi pro-rata untuk selisih, dan persetujuan underwriter. Beberapa insurer tidak menerima upgrade mid-period — tergantung kebijakan masing-masing. Downgrade (All Risk ke TLO) lebih mudah.",
+  },
+  {
+    q: "Bagaimana cara menghitung apakah All Risk 'worth it' untuk mobil saya?",
+    a: "Rumus praktis: jika selisih premi All Risk dan TLO per tahun lebih kecil dari biaya satu kali perbaikan kerusakan sedang yang mungkin terjadi — All Risk worth it. Misalnya selisih premi Rp 2 juta/tahun, dan biaya perbaikan lecet/penyok sekali kira-kira Rp 3–5 juta — All Risk sudah balik modal jika terjadi satu insiden kecil per tahun. Faktor lain: seberapa sering Anda di jalanan dan seberapa padat area yang dilewati.",
+  },
+  {
+    q: "Apakah perluasan banjir otomatis ada di All Risk?",
+    a: "Tidak — ini salah kaprah yang sangat umum. Perluasan banjir, gempa, dan RSMD harus secara eksplisit diminta dan tercantum dalam polis. Saat membeli All Risk, selalu tanyakan: 'Apakah sudah termasuk perluasan banjir?' Untuk kendaraan di DIY, ini wajib ditambahkan mengingat risiko banjir di beberapa kawasan.",
+  },
+  {
+    q: "Bagaimana jika kendaraan yang diasuransikan All Risk dijual?",
+    a: "Polis bisa dipindahtangankan (cessie) ke pembeli baru dengan persetujuan insurer, atau Anda bisa meminta pengembalian premi pro-rata untuk sisa periode yang tidak terpakai. Untuk kendaraan kredit, polis biasanya atas nama leasing — proses pengalihan perlu koordinasi dengan leasing terlebih dahulu.",
+  },
+];
+
+export default function ArtikelPerbedaanAllRiskTLO() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArticle) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFAQ) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }} />
+      <Header />
+      <div className="pt-[68px]">
 
-      {/* BREADCRUMB */}
-      <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-        <div className="flex items-center gap-2 text-sm text-[#64748B]">
-          <Link href="/" className="hover:text-gold transition-colors no-underline">
-            Beranda
-          </Link>
-          <span className="text-gold/60">›</span>
-          <Link href="/artikel" className="hover:text-gold transition-colors no-underline">
-            Artikel
-          </Link>
-          <span className="text-gold/60">›</span>
-          <span className="text-navy font-semibold">Perbedaan All Risk dan TLO</span>
-        </div>
-      </div>
-
-      {/* HERO */}
-      <section className="bg-navy py-16 px-[5vw] relative overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 80% at 80% 50%, rgba(200,150,62,0.12) 0%, transparent 65%)",
-          }}
-        />
-        <div className="relative z-10 max-w-3xl">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-xs font-bold tracking-[2px] uppercase text-gold2 bg-gold/10 border border-gold/25 px-3 py-1 rounded-full">
-              Panduan Asuransi Kendaraan
-            </span>
-          </div>
-          <h1 className="font-heading text-[clamp(2rem,3.5vw,3rem)] text-white leading-[1.18] mb-4">
-            Perbedaan All Risk dan TLO:<br />
-            <em className="not-italic text-gold">Mana yang Tepat</em> untuk Mobil Anda?
-          </h1>
-          <p className="text-white/80 text-base leading-[1.85] max-w-[580px] mb-6">
-            Dua jenis proteksi, dua filosofi perlindungan yang berbeda. Artikel ini menjelaskan
-            perbedaan mendasar All Risk dan TLO, lengkap dengan simulasi premi berdasarkan tarif
-            OJK, skenario klaim nyata, dan panduan memilih yang jujur — bukan sekadar teori.
-          </p>
-          <div className="flex items-center gap-4 text-sm text-white/50">
-            <span>Oleh <strong className="text-white/75">Rio MD</strong> — Konsultan Asuransi Independen</span>
-            <span>·</span>
-            <span>10+ tahun pengalaman</span>
+        {/* Breadcrumb */}
+        <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
+          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+            <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
+            <span className="text-gold/60">›</span>
+            <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
+            <span className="text-gold/60">›</span>
+            <span className="text-navy font-semibold">Perbedaan All Risk dan TLO</span>
           </div>
         </div>
-      </section>
 
-      <article className="px-[5vw] max-w-[900px] mx-auto">
-
-        {/* DEFINISI */}
-        <section className="py-12 border-b border-black/8">
-          <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-6">
-            Apa Itu All Risk dan TLO?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div className="bg-gold/5 border border-gold/25 rounded-card p-6">
-              <div className="text-2xl mb-3">⭐</div>
-              <h3 className="font-heading text-navy font-bold text-lg mb-3">
-                All Risk (Comprehensive)
-              </h3>
-              <p className="text-[0.95rem] leading-[1.78] text-[#64748B]">
-                Menanggung <strong className="text-navy">hampir semua risiko kerusakan fisik</strong> pada
-                kendaraan — mulai dari goresan ringan, penyok, kecelakaan, hingga kehilangan total
-                akibat pencurian. Ini adalah perlindungan paling luas yang tersedia dalam asuransi
-                kendaraan bermotor di Indonesia.
-              </p>
-              <div className="mt-4 pt-4 border-t border-gold/15">
-                <p className="text-xs text-[#64748B]">
-                  <strong className="text-navy">Tarif OJK Wilayah III (Yogyakarta):</strong> 1,05% – 2,69% dari
-                  nilai kendaraan per tahun
-                </p>
-              </div>
+        {/* Hero */}
+        <section className="bg-navy py-16 px-[5vw] relative overflow-hidden">
+          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 60% 70% at 80% 50%, rgba(200,150,62,0.10) 0%, transparent 65%)" }} />
+          <div className="relative z-10 max-w-3xl">
+            <div className="flex items-center gap-3 mb-5 flex-wrap">
+              <Link href="/asuransi-kendaraan/mobil" className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors">
+                🚗 Asuransi Mobil
+              </Link>
+              <Link href="/asuransi-kendaraan" className="inline-flex items-center gap-1.5 bg-white/8 border border-white/15 text-white/70 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-white/12 transition-colors">
+                🚙 Asuransi Kendaraan
+              </Link>
+              <span className="text-white/30 text-xs">·</span>
+              <span className="text-white/40 text-xs">Perbandingan Produk</span>
             </div>
-            <div className="bg-cream border border-black/8 rounded-card p-6">
-              <div className="text-2xl mb-3">🛡️</div>
-              <h3 className="font-heading text-navy font-bold text-lg mb-3">
-                TLO (Total Loss Only)
-              </h3>
-              <p className="text-[0.95rem] leading-[1.78] text-[#64748B]">
-                Hanya menanggung dua kondisi: kendaraan{" "}
-                <strong className="text-navy">hilang akibat pencurian</strong> atau kendaraan{" "}
-                <strong className="text-navy">rusak melebihi 75% dari nilai pertanggungan</strong>.
-                Kerusakan ringan, sedang, dan kejadian di bawah ambang 75% tidak ditanggung sama
-                sekali.
-              </p>
-              <div className="mt-4 pt-4 border-t border-black/8">
-                <p className="text-xs text-[#64748B]">
-                  <strong className="text-navy">Tarif OJK Wilayah III (Yogyakarta):</strong> 0,20% – 0,44% dari
-                  nilai kendaraan per tahun
-                </p>
-              </div>
+            <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
+              Perbedaan All Risk dan TLO —<br />
+              <em className="not-italic text-gold">Mana yang Lebih Tepat<br />untuk Mobil Anda?</em>
+            </h1>
+            <p className="text-white/80 text-base leading-[1.85] max-w-[540px] mb-6">
+              All Risk dan TLO bukan soal mana yang "lebih bagus" — tapi mana yang{" "}
+              <em>lebih tepat untuk kondisi kendaraan dan kebiasaan berkendara Anda</em>.
+              Artikel ini membantu Anda memutuskan berdasarkan data nyata, bukan asumsi.
+            </p>
+            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+              <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
+              <span>·</span>
+              <span>📅 Diperbarui Juni 2025</span>
+              <span>·</span>
+              <span>⏱️ Baca 7 menit</span>
             </div>
-          </div>
-          <div className="bg-navy/5 border border-navy/10 rounded-lg p-4 text-sm text-[#64748B] leading-relaxed">
-            <strong className="text-navy">Catatan OJK:</strong> Tarif premi asuransi kendaraan bermotor
-            di Indonesia diatur dalam Surat Edaran OJK No.6/SEOJK.05/2017. Tarif yang berlaku adalah
-            tarif batas bawah dan batas atas — perusahaan asuransi tidak boleh menetapkan premi di luar
-            rentang ini. Konsultan independen seperti Asuransi Jogja membantu Anda mendapatkan penawaran
-            terbaik dalam rentang yang diizinkan.
           </div>
         </section>
 
-        {/* TABEL PERBANDINGAN */}
-        <section className="py-12 border-b border-black/8">
-          <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-2">
-            Tabel Perbandingan Lengkap
+        <article className="py-14 px-[5vw] max-w-[780px] mx-auto">
+
+          {/* Lead */}
+          <div className="bg-gold/6 border-l-4 border-gold rounded-r-xl p-5 mb-10">
+            <p className="text-navy2 text-sm leading-relaxed">
+              <strong className="text-navy">Jawaban Singkat:</strong>{" "}
+              <strong>All Risk</strong> menanggung semua kerusakan — dari lecet ringan hingga kehilangan.{" "}
+              <strong>TLO</strong> hanya menanggung kehilangan atau kerusakan ≥ 75% nilai kendaraan.
+              Pilih All Risk untuk mobil baru atau kendaraan kredit. Pilih TLO untuk mobil tua (&gt;8 tahun) atau kendaraan niaga dengan anggaran terbatas.
+            </p>
+          </div>
+
+          {/* Tabel utama */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Tabel Perbandingan Lengkap: All Risk vs TLO
           </h2>
-          <p className="text-[#64748B] text-sm mb-8 leading-relaxed">
-            Perbandingan aspek per aspek antara asuransi All Risk dan TLO berdasarkan ketentuan umum
-            polis kendaraan bermotor Indonesia.
-          </p>
-          <div className="overflow-x-auto rounded-card border border-black/8">
-            <table className="w-full text-sm">
+          <div className="overflow-x-auto mb-4">
+            <table className="w-full border-collapse text-sm">
               <thead>
                 <tr className="bg-navy text-white">
-                  <th className="text-left py-3 px-4 font-semibold text-white/70 w-[35%]">Aspek</th>
-                  <th className="text-center py-3 px-4 font-semibold text-gold">All Risk ⭐</th>
-                  <th className="text-center py-3 px-4 font-semibold">TLO</th>
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs rounded-tl-xl w-[34%]">Aspek</th>
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs text-gold w-[33%]">✓ All Risk (Comprehensive)</th>
+                  <th className="text-left p-3.5 font-heading font-semibold text-xs rounded-tr-xl w-[33%]">TLO (Total Loss Only)</th>
                 </tr>
               </thead>
               <tbody>
                 {tabelPerbandingan.map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-cream/50"}>
-                    <td className="py-3 px-4 font-semibold text-navy">{row.aspek}</td>
-                    <td
-                      className={`py-3 px-4 text-center text-xs leading-relaxed ${
-                        row.positifAR ? "text-green-700 font-semibold" : "text-[#64748B]"
-                      }`}
-                    >
-                      {row.allrisk}
+                  <tr key={row.aspek} className={`${i % 2 === 0 ? "bg-cream" : "bg-white"} ${row.highlight ? "border-l-2 border-gold/40" : ""}`}>
+                    <td className="p-3.5 font-semibold text-navy text-xs align-top">{row.aspek}</td>
+                    <td className={`p-3.5 text-sm leading-relaxed align-top ${row.allRisk.startsWith("✓") ? "text-navy2 font-medium" : "text-[#64748B]"}`}>
+                      {row.allRisk}
                     </td>
-                    <td className="py-3 px-4 text-center text-xs leading-relaxed text-[#64748B]">
+                    <td className={`p-3.5 text-sm leading-relaxed align-top ${row.tlo.startsWith("✓") ? "text-navy2 font-medium" : row.tlo.startsWith("✕") ? "text-red-500" : "text-[#64748B]"}`}>
                       {row.tlo}
                     </td>
                   </tr>
@@ -364,245 +385,230 @@ export default function PerbedaanAllRiskTLOPage() {
               </tbody>
             </table>
           </div>
-        </section>
-
-        {/* SIMULASI PREMI */}
-        <section className="py-12 border-b border-black/8">
-          <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-2">
-            Simulasi Premi: Berapa Selisih Nyatanya?
-          </h2>
-          <p className="text-[#64748B] text-sm mb-8 leading-relaxed">
-            Berikut estimasi perbandingan premi All Risk vs TLO untuk tiga contoh harga kendaraan di
-            Wilayah III (Yogyakarta), berdasarkan tarif referensi OJK.
+          <p className="text-xs text-[#94A3B8] mb-10">
+            * Rate premi sesuai Surat Edaran OJK tentang penetapan tarif premi asuransi kendaraan bermotor. Rate aktual tergantung wilayah, usia kendaraan, dan penggunaan.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[
-              { harga: "Rp 150 juta", kat: "Kategori 2", ar: "Rp 3,71–7,45 jt/thn", tlo: "Rp 660rb–1,32 jt/thn", selisih: "~Rp 3–6 jt" },
-              { harga: "Rp 300 juta", kat: "Kategori 3", ar: "Rp 5,37–8,07 jt/thn", tlo: "Rp 870rb–1,32 jt/thn", selisih: "~Rp 4–7 jt" },
-              { harga: "Rp 600 juta", kat: "Kategori 4", ar: "Rp 6,84–6,84 jt/thn", tlo: "Rp 1,38–1,5 jt/thn", selisih: "~Rp 5–5,5 jt" },
-            ].map((sim) => (
-              <div key={sim.harga} className="bg-white border border-black/8 rounded-card p-5">
-                <div className="text-xs font-bold tracking-[1.5px] uppercase text-gold mb-1">{sim.kat}</div>
-                <div className="font-heading text-navy text-xl font-bold mb-4">{sim.harga}</div>
-                <div className="flex flex-col gap-2 text-sm">
-                  <div className="flex justify-between items-start gap-2">
-                    <span className="text-[#64748B]">All Risk</span>
-                    <span className="text-navy font-semibold text-right">{sim.ar}</span>
+
+          {/* Simulasi premi nyata */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Simulasi Premi untuk 4 Jenis Kendaraan di Yogyakarta
+          </h2>
+          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+            Angka konkret membantu lebih dari teori. Berikut simulasi premi berdasarkan kendaraan yang umum di Yogyakarta:
+          </p>
+          <div className="flex flex-col gap-4 mb-10">
+            {simulasiPremi.map((s) => (
+              <div key={s.kendaraan} className={`rounded-card p-5 border ${s.warna}`}>
+                <div className="flex items-start justify-between gap-3 mb-4 flex-wrap">
+                  <div>
+                    <div className="font-heading font-bold text-navy text-[0.95rem] mb-0.5">{s.kendaraan}</div>
+                    <div className="text-xs text-[#94A3B8]">Nilai kendaraan: {s.nilaiKendaraan}</div>
                   </div>
-                  <div className="flex justify-between items-start gap-2">
-                    <span className="text-[#64748B]">TLO</span>
-                    <span className="text-navy font-semibold text-right">{sim.tlo}</span>
+                  <span className={`text-xs font-bold px-3 py-1 rounded-full flex-shrink-0 ${
+                    s.rekomendasiType === "All Risk" ? "bg-blue-100 text-blue-700" :
+                    s.rekomendasiType === "TLO" ? "bg-green-100 text-green-700" :
+                    "bg-amber-100 text-amber-700"
+                  }`}>
+                    → {s.rekomendasiType}
+                  </span>
+                </div>
+                <div className="grid grid-cols-2 gap-3 mb-3">
+                  <div className="bg-white/60 rounded-xl p-3 border border-black/6">
+                    <div className="text-[0.65rem] font-bold uppercase tracking-wide text-gold mb-1">Premi All Risk / tahun</div>
+                    <div className="font-heading font-bold text-navy text-sm">{s.premiAllRisk}</div>
                   </div>
-                  <div className="border-t border-black/8 pt-2 mt-1 flex justify-between items-center">
-                    <span className="text-[#64748B] text-xs">Selisih premi</span>
-                    <span className="text-gold font-bold">{sim.selisih}</span>
+                  <div className="bg-white/60 rounded-xl p-3 border border-black/6">
+                    <div className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1">Premi TLO / tahun</div>
+                    <div className="font-heading font-bold text-navy text-sm">{s.premiTLO}</div>
                   </div>
                 </div>
+                <p className="text-xs text-[#64748B] leading-relaxed">{s.alasan}</p>
               </div>
             ))}
           </div>
-          <p className="text-xs text-[#64748B] mt-4 leading-relaxed">
-            * Estimasi berdasarkan tarif referensi OJK. Premi final ditentukan perusahaan asuransi
-            setelah evaluasi. Untuk penawaran resmi, silakan{" "}
-            <Link href="/asuransi-kendaraan" className="text-gold hover:underline">
-              gunakan kalkulator premi kami
-            </Link>{" "}
-            atau hubungi konsultan.
-          </p>
-        </section>
 
-        {/* SKENARIO KLAIM */}
-        <section className="py-12 border-b border-black/8">
-          <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-2">
-            Skenario Klaim: Apa yang Terjadi di Lapangan?
+          {/* Kapan pilih mana */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Panduan Cepat: Kapan Pilih All Risk, Kapan TLO?
           </h2>
-          <p className="text-[#64748B] text-sm mb-8 leading-relaxed">
-            Teori sering berbeda dengan realita. Berikut analisis skenario klaim nyata dan apa yang
-            ditanggung masing-masing jenis polis.
-          </p>
-          <div className="flex flex-col gap-5">
-            {skenarioKlaim.map((s, i) => (
-              <div key={i} className="border border-black/8 rounded-card overflow-hidden">
-                <div className="bg-navy/5 px-5 py-3 flex items-center gap-3 border-b border-black/8">
-                  <span className="text-xl">{s.icon}</span>
-                  <span className="font-semibold text-navy text-sm">{s.skenario}</span>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                  <div className="px-5 py-4 border-b md:border-b-0 md:border-r border-black/8">
-                    <div className="text-xs font-bold text-gold mb-2 uppercase tracking-wide">All Risk</div>
-                    <p className="text-sm text-[#64748B] leading-relaxed">{s.allrisk}</p>
-                  </div>
-                  <div className="px-5 py-4">
-                    <div className="text-xs font-bold text-[#64748B] mb-2 uppercase tracking-wide">TLO</div>
-                    <p className="text-sm text-[#64748B] leading-relaxed">{s.tlo}</p>
-                  </div>
-                </div>
-                <div className="bg-gold/5 border-t border-gold/15 px-5 py-3">
-                  <p className="text-xs text-navy font-semibold">
-                    💡 {s.kesimpulan}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* PANDUAN MEMILIH */}
-        <section className="py-12 border-b border-black/8">
-          <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-2">
-            Panduan Praktis: Pilih Berdasarkan Kondisi Anda
-          </h2>
-          <p className="text-[#64748B] text-sm mb-8 leading-relaxed">
-            Tidak ada jawaban universal. Yang tepat bergantung pada usia kendaraan, status cicilan,
-            dan pola pemakaian Anda.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {panduan.map((p, i) => (
-              <div key={i} className="bg-white border border-black/8 rounded-card p-5 flex gap-4">
-                <span className="text-2xl flex-shrink-0">{p.icon}</span>
-                <div>
-                  <div className="font-semibold text-navy text-sm mb-1">{p.kondisi}</div>
-                  <div className="inline-flex items-center gap-1 text-xs font-bold text-gold bg-gold/8 border border-gold/20 px-2 py-0.5 rounded-full mb-2">
-                    → {p.rekomendasi}
-                  </div>
-                  <p className="text-sm text-[#64748B] leading-relaxed">{p.alasan}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* OWN RISK */}
-        <section className="py-12 border-b border-black/8">
-          <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-4">
-            Yang Sering Terlewat: Own Risk (Risiko Sendiri)
-          </h2>
-          <p className="text-[#64748B] leading-relaxed mb-6 text-sm">
-            Baik All Risk maupun TLO memiliki klausul <strong className="text-navy">Own Risk (OR)</strong> —
-            jumlah yang harus Anda tanggung sendiri untuk setiap kejadian klaim. Ini bukan premi
-            tambahan, melainkan bagian dari kerugian yang tidak ditanggung asuransi.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <div className="bg-white border border-black/8 rounded-card p-5">
-              <div className="font-heading text-navy font-bold mb-3">Kendaraan Konvensional (BBM)</div>
-              <div className="text-3xl font-bold text-gold mb-1">Rp 300.000</div>
-              <div className="text-sm text-[#64748B]">per kejadian klaim (minimal)</div>
-            </div>
-            <div className="bg-white border border-black/8 rounded-card p-5">
-              <div className="font-heading text-navy font-bold mb-3">Kendaraan Listrik (EV)</div>
-              <div className="text-3xl font-bold text-gold mb-1">Rp 500.000</div>
-              <div className="text-sm text-[#64748B]">per kejadian klaim (minimal)</div>
-            </div>
-          </div>
-          <div className="mt-4 bg-navy/5 border border-navy/10 rounded-lg p-4 text-sm text-[#64748B] leading-relaxed">
-            <strong className="text-navy">Contoh praktis:</strong> Jika kendaraan Anda lecet dan
-            biaya perbaikan Rp 800.000, asuransi All Risk akan mengganti Rp 500.000 (Rp 800.000 –
-            OR Rp 300.000). Untuk kerusakan di bawah OR, tidak worth it untuk diklaim karena bisa
-            mempengaruhi premi renewal.
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="py-12 border-b border-black/8">
-          <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-8">
-            Pertanyaan yang Sering Diajukan
-          </h2>
-          <div className="flex flex-col divide-y divide-black/8">
-            {schemaFAQ.mainEntity.map((faq, i) => (
-              <div key={i} className="py-5">
-                <h3 className="font-semibold text-navy text-[0.95rem] mb-2">{faq.name}</h3>
-                <p className="text-sm text-[#64748B] leading-[1.78]">{faq.acceptedAnswer.text}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* INTERNAL LINKS */}
-        <section className="py-10 border-b border-black/8">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">
-            Artikel & Halaman Terkait
-          </p>
-          <div className="flex gap-3 flex-wrap">
-            <Link
-              href="/asuransi-kendaraan/mobil"
-              className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline"
-            >
-              🚗 Panduan Lengkap Asuransi Mobil →
-            </Link>
-            <Link
-              href="/asuransi-kendaraan"
-              className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline"
-            >
-              🧮 Kalkulator Premi OJK →
-            </Link>
-            <Link
-              href="/artikel/asuransi-mobil-listrik"
-              className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline"
-            >
-              ⚡ Asuransi Mobil Listrik →
-            </Link>
-            <Link
-              href="/artikel/penyebab-klaim-asuransi-ditolak"
-              className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline"
-            >
-              ⚠️ Kenapa Klaim Bisa Ditolak? →
-            </Link>
-          </div>
-        </section>
-
-        {/* AUTHOR BOX */}
-        <section className="py-10">
-          <div className="bg-navy rounded-card p-6 flex gap-5 items-start">
-            <div className="w-12 h-12 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center flex-shrink-0 font-heading font-bold text-gold text-lg">
-              R
-            </div>
-            <div>
-              <div className="font-heading text-white font-bold mb-1">Rio MD</div>
-              <div className="text-gold2 text-xs mb-3">Konsultan Asuransi Kerugian Independen · Yogyakarta · 10+ Tahun Pengalaman</div>
-              <p className="text-white/65 text-sm leading-relaxed">
-                Sebagai konsultan independen, saya tidak terikat pada satu perusahaan asuransi
-                manapun. Rekomendasi yang saya berikan murni berdasarkan analisis kebutuhan dan
-                profil risiko klien — bukan target penjualan produk tertentu.
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            <div className="bg-blue-50/50 border border-blue-200 rounded-card p-5">
+              <p className="text-xs font-bold uppercase tracking-wide text-blue-700 mb-3 flex items-center gap-2">
+                <span className="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[0.6rem] font-bold">✓</span>
+                Pilih All Risk jika…
               </p>
+              <ul className="flex flex-col gap-2">
+                {kapanPilihAllRisk.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-blue-500 font-bold text-xs flex-shrink-0 mt-0.5">→</span>
+                    <span className="text-xs text-navy2 leading-snug">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-green-50/50 border border-green-200 rounded-card p-5">
+              <p className="text-xs font-bold uppercase tracking-wide text-green-700 mb-3 flex items-center gap-2">
+                <span className="w-5 h-5 rounded-full bg-green-600 text-white flex items-center justify-center text-[0.6rem] font-bold">✓</span>
+                Pilih TLO jika…
+              </p>
+              <ul className="flex flex-col gap-2">
+                {kapanPilihTLO.map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-green-500 font-bold text-xs flex-shrink-0 mt-0.5">→</span>
+                    <span className="text-xs text-navy2 leading-snug">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Perluasan penting */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            Perluasan yang Wajib Dipertimbangkan untuk Kendaraan di DIY
+          </h2>
+          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+            Baik All Risk maupun TLO memiliki pengecualian standar. Perluasan berikut sangat
+            relevan untuk kondisi spesifik Yogyakarta:
+          </p>
+          <div className="flex flex-col gap-3 mb-10">
+            {perluasanPenting.map((p) => (
+              <div key={p.nama} className="bg-white border border-black/8 rounded-card p-4 hover:border-gold/30 transition-colors">
+                <div className="flex items-start gap-3">
+                  <span className="text-xl flex-shrink-0">{p.icon}</span>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2.5 mb-2 flex-wrap">
+                      <span className="font-heading font-bold text-navy text-sm">{p.nama}</span>
+                      <span className={`text-[0.6rem] font-bold px-2 py-0.5 rounded-full ${p.warnaRelevansi}`}>
+                        Relevansi DIY: {p.relevansiDIY}
+                      </span>
+                      <span className={`text-[0.6rem] px-2 py-0.5 rounded-full ${p.tersediaAllRisk ? "bg-blue-50 text-blue-600 border border-blue-200" : "bg-gray-50 text-gray-400"}`}>
+                        {p.tersediaAllRisk ? "✓ All Risk" : "✕ All Risk"}
+                      </span>
+                      <span className={`text-[0.6rem] px-2 py-0.5 rounded-full ${p.tersediaTLO ? "bg-green-50 text-green-600 border border-green-200" : "bg-gray-50 text-gray-400"}`}>
+                        {p.tersediaTLO ? "✓ TLO" : "✕ TLO"}
+                      </span>
+                    </div>
+                    <p className="text-xs text-[#64748B] leading-relaxed">{p.penjelasan}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Kasus Nyata */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
+            3 Kasus Nyata — All Risk, TLO, dan Pelajaran dari Kesalahan
+          </h2>
+          <div className="flex flex-col gap-4 mb-10">
+            {kasusNyata.map((k) => (
+              <div key={k.judul} className={`rounded-card p-5 border ${k.badge}`}>
+                <div className="flex items-center gap-2.5 mb-3 flex-wrap">
+                  <span className={`text-[0.65rem] font-bold px-2.5 py-1 rounded-full border ${k.badge}`}>
+                    {k.kasus}
+                  </span>
+                  <span className="font-heading font-bold text-navy text-sm">{k.judul}</span>
+                </div>
+                <p className="text-sm text-[#64748B] leading-relaxed mb-3">{k.kronologi}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="bg-white/70 rounded-lg p-3 border border-black/6">
+                    <div className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1">
+                      ✅ Hasil Klaim
+                    </div>
+                    <p className="text-xs text-navy2 leading-relaxed font-medium">
+                      {k.hasilKlaim || k.hasilKlaim}
+                    </p>
+                  </div>
+                  <div className="bg-amber-50 rounded-lg p-3 border border-amber-100">
+                    <div className="text-[0.65rem] font-bold uppercase tracking-wide text-amber-600 mb-1">
+                      💡 {k.rekType === "Pelajaran" ? "Dengan All Risk + Banjir" : k.rekType === "All Risk" ? "Jika Hanya TLO" : "Jika All Risk"}
+                    </div>
+                    <p className="text-xs text-[#64748B] leading-relaxed">
+                      {k.jikaHanyaTLO || k.jikaAllRisk || k.jikaAllRiskDenganBanjir}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="bg-gold/8 border border-gold/25 rounded-card p-6 mb-10">
+            <div className="font-heading text-navy font-bold text-base mb-2">
+              Masih ragu All Risk atau TLO untuk kendaraan Anda?
+            </div>
+            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+              Ceritakan merek, tahun, dan penggunaan kendaraan Anda — kami rekomendasikan produk yang paling tepat beserta estimasi premi. Gratis, tanpa tekanan.
+            </p>
+            <div className="flex gap-3 flex-wrap">
+              <a href={`https://wa.me/${KONTAK.wa}`} className="bg-gold text-navy px-5 py-2.5 rounded-lg font-bold text-sm no-underline hover:bg-gold2 transition-all">
+                💬 Minta Rekomendasi via WA
+              </a>
+              <Link href="/asuransi-kendaraan/mobil" className="border border-navy/20 text-navy px-5 py-2.5 rounded-lg text-sm no-underline hover:border-gold hover:text-gold transition-all">
+                🚗 Halaman Produk Asuransi Mobil →
+              </Link>
+            </div>
+          </div>
+
+          {/* FAQ */}
+          <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-6">Pertanyaan yang Sering Diajukan</h2>
+          <div className="flex flex-col divide-y divide-black/8 mb-10">
+            {faqItems.map((f, i) => (
+              <details key={i} className="group py-1">
+                <summary className="py-3 cursor-pointer font-semibold text-[0.9rem] text-navy flex justify-between items-center list-none">
+                  {f.q}
+                  <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
+              </details>
+            ))}
+          </div>
+
+          {/* Internal Links */}
+          <div className="border-t border-black/8 pt-8">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Produk & Artikel Terkait</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {[
+                { href: "/asuransi-kendaraan/mobil", icon: "🚗", judul: "Asuransi Mobil", desc: "Halaman produk — cakupan, premi, cara daftar" },
+                { href: "/asuransi-kendaraan/dump-truk-niaga", icon: "🚛", judul: "Asuransi Dump Truk & Niaga", desc: "TLO dan All Risk untuk kendaraan komersial" },
+                { href: "/asuransi-kendaraan/armada-fleet", icon: "🚌", judul: "Asuransi Armada & Fleet", desc: "Proteksi untuk banyak kendaraan sekaligus" },
+                { href: "/artikel/cara-klaim-asuransi-mobil", icon: "📋", judul: "Cara Klaim Asuransi Mobil", desc: "Panduan step-by-step dari laporan hingga klaim cair" },
+                { href: "/artikel/cara-menghitung-premi-asuransi-mobil", icon: "💰", judul: "Cara Menghitung Premi Asuransi Mobil", desc: "Formula dan simulasi premi berbagai jenis kendaraan" },
+                { href: "/artikel/asuransi-mobil-banjir", icon: "🌊", judul: "Asuransi Mobil dari Banjir", desc: "Khusus: perluasan banjir untuk kendaraan di DIY" },
+              ].map((a) => (
+                <Link key={a.href} href={a.href} className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
+                  <span className="text-xl flex-shrink-0">{a.icon}</span>
+                  <div>
+                    <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">{a.judul}</div>
+                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </article>
+
+        {/* CTA Bottom */}
+        <section className="py-16 px-[5vw] bg-navy text-center relative overflow-hidden">
+          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.10) 0%, transparent 65%)" }} />
+          <div className="relative z-10">
+            <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.2rem)] text-white leading-[1.22] mb-4">
+              Dapatkan Rekomendasi yang Tepat<br />untuk Kendaraan Anda di Jogja
+            </h2>
+            <p className="text-white/75 text-sm max-w-[420px] mx-auto mb-8">
+              Ceritakan merek, tahun, dan bagaimana kendaraan Anda digunakan — kami rekomendasikan All Risk atau TLO beserta perluasan yang paling relevan untuk wilayah Anda.
+            </p>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">
+                💬 Konsultasi via WhatsApp
+              </a>
+              <Link href="/asuransi-kendaraan/mobil" className="border border-white/25 text-white/80 px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:border-gold hover:text-gold transition-all">
+                🚗 Lihat Produk Asuransi Mobil
+              </Link>
             </div>
           </div>
         </section>
-
-      </article>
-
-      {/* CTA */}
-      <section className="py-20 px-[5vw] bg-navy text-center relative overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)",
-          }}
-        />
-        <div className="relative z-10">
-          <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-white leading-[1.22] mb-4">
-            Masih Ragu All Risk atau TLO?
-          </h2>
-          <p className="text-white/80 text-sm max-w-[480px] mx-auto mb-8">
-            Konsultasikan kondisi kendaraan Anda secara gratis. Kami bantu analisis mana yang lebih
-            menguntungkan — tanpa tekanan untuk membeli produk tertentu.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <a
-              href={wa}
-              className="bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm flex items-center gap-2 no-underline hover:opacity-90 transition-all"
-            >
-              💬 Konsultasi Gratis via WhatsApp
-            </a>
-            <Link
-              href="/asuransi-kendaraan"
-              className="bg-white/8 border border-white/20 text-white px-7 py-3 rounded-lg text-sm no-underline hover:bg-white/12 transition-all"
-            >
-              🧮 Hitung Estimasi Premi
-            </Link>
-          </div>
-        </div>
-      </section>
+      </div>
+      <Footer />
     </>
   );
 }
