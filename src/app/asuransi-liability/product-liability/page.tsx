@@ -176,6 +176,11 @@ export default function ProductLiabilityPage() {
         { label: "Product Liability" },
       ]}
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Beranda\", \"item\": \"https://asuransijogja.biz.id\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Asuransi Liability\", \"item\": \"https://asuransijogja.biz.id/asuransi-liability\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Product Liability\", \"item\": \"https://asuransijogja.biz.id/asuransi-liability/product-liability\"}]}" }}
+      />
+
       {/* HERO */}
       <section className="bg-navy py-20 px-[5vw] relative overflow-hidden">
         <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 55% 70% at 85% 40%, rgba(200,150,62,0.13) 0%, transparent 65%)" }} />
@@ -328,6 +333,55 @@ export default function ProductLiabilityPage() {
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Konsultasi Product Liability</a>
         </div>
       </section>
+
+      {/* PENJELASAN LENGKAP, STUDI KASUS & ESTIMASI PREMI */}
+      <section className="py-16 px-[5vw] bg-cream">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Panduan Lengkap</div>
+          <h2 className="font-heading text-[clamp(1.6rem,2.6vw,2.2rem)] text-navy leading-[1.25] mb-5">Asuransi Product Liability: Lindungi Bisnis dari Klaim Cacat Produk</h2>
+          <div className="text-base leading-[1.85] text-[#475569] space-y-4">
+            <p>Pelaku usaha manufaktur, makanan-minuman kemasan, dan kerajinan ekspor di Yogyakarta menghadapi risiko tuntutan hukum jika produk yang mereka jual menyebabkan kerugian, cedera, atau kerusakan kepada konsumen — baik akibat cacat produksi, kontaminasi, maupun kesalahan label/instruksi penggunaan.</p>
+            <p>Product Liability menanggung biaya kompensasi konsumen yang dirugikan serta biaya hukum pembelaan, termasuk dalam kasus product recall (penarikan produk dari pasar) yang bisa sangat mahal jika ditanggung sendiri oleh perusahaan.</p>
+            <p>Bagi UMKM yang mulai mengekspor produk ke pasar internasional, banyak buyer luar negeri mensyaratkan bukti polis product liability sebagai bagian dari due diligence sebelum kontrak distribusi ditandatangani.</p>
+          </div>
+
+          <div className="bg-white border border-black/8 rounded-card p-6 mt-8">
+            <div className="text-gold text-xs font-bold uppercase tracking-wider mb-2">📖 Studi Kasus: Kontaminasi Produk Makanan Kemasan Memicu Klaim Konsumen</div>
+            <p className="text-sm leading-relaxed text-[#475569]">Sebuah produsen makanan ringan kemasan di Bantul menerima keluhan dari beberapa konsumen yang mengalami gangguan pencernaan setelah mengonsumsi produknya akibat masalah pada satu batch produksi. Konsumen mengajukan klaim kompensasi biaya pengobatan dan kerugian. Karena produsen memiliki polis Product Liability, biaya kompensasi dan penanganan hukum ditanggung polis, sehingga reputasi dan keuangan perusahaan tetap terjaga selama proses investigasi dan perbaikan proses produksi berlangsung.</p>
+          </div>
+
+          <div className="mt-8">
+            <div className="font-heading text-navy font-bold text-[1.05rem] mb-3">🧮 Estimasi Premi Product Liability (Ilustrasi, per Tahun)</div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-black/8 rounded-card overflow-hidden bg-white">
+                <thead><tr className="bg-navy text-white"><th className="p-3 text-left font-semibold">Jenis Usaha</th><th className="p-3 text-left font-semibold">Limit Liability</th><th className="p-3 text-left font-semibold">Estimasi Premi/Tahun</th></tr></thead>
+                <tbody>
+                  <tr><td className="p-3 border-t border-black/8">UMKM makanan kemasan</td><td className="p-3 border-t border-black/8">Rp 500.000.000</td><td className="p-3 border-t border-black/8">Rp 3.000.000 – Rp 6.000.000</td></tr>
+                  <tr><td className="p-3 border-t border-black/8">Manufaktur skala menengah</td><td className="p-3 border-t border-black/8">Rp 2.000.000.000</td><td className="p-3 border-t border-black/8">Rp 12.000.000 – Rp 20.000.000</td></tr>
+                  <tr><td className="p-3 border-t border-black/8">Eksportir kerajinan/produk</td><td className="p-3 border-t border-black/8">Rp 1.000.000.000</td><td className="p-3 border-t border-black/8">Rp 6.000.000 – Rp 10.000.000</td></tr>
+                  
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-[#94A3B8] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+          </div>
+
+          <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
+            <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
+            <div>
+              <div className="text-sm font-semibold text-navy">Ditinjau oleh Rio Mardiansyah</div>
+              <div className="text-xs text-[#64748B]">Konsultan Asuransi Kerugian Independen · 10+ Tahun Pengalaman · Berbasis di Yogyakarta</div>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-3 mt-6">
+            <Link href="/asuransi-liability" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🤝 Semua Produk Liability →</Link>
+            <Link href="/asuransi-liability/limbah-b3" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏭 Liability Limbah B3 →</Link>
+            <Link href="/artikel/contoh-kasus-gugatan-liability-bisnis" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📖 Studi Kasus Gugatan Liability →</Link>
+          </div>
+        </div>
+      </section>
+
     </LiabilityLayout>
   );
 }

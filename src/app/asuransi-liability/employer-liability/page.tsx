@@ -40,6 +40,11 @@ export default function EmployerLiabilityPage() {
       { label: "Asuransi Liability", href: "/asuransi-liability" },
       { label: "Employer Liability" }
     ]}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Beranda\", \"item\": \"https://asuransijogja.biz.id\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Asuransi Liability\", \"item\": \"https://asuransijogja.biz.id/asuransi-liability\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Employer Liability\", \"item\": \"https://asuransijogja.biz.id/asuransi-liability/employer-liability\"}]}" }}
+      />
+
 
       {/* HERO */}
       <section className="bg-navy py-20 px-[5vw] relative overflow-hidden">
@@ -140,6 +145,55 @@ export default function EmployerLiabilityPage() {
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Konsultasi Employer Liability</a>
         </div>
       </section>
+
+      {/* PENJELASAN LENGKAP, STUDI KASUS & ESTIMASI PREMI */}
+      <section className="py-16 px-[5vw] bg-cream">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Panduan Lengkap</div>
+          <h2 className="font-heading text-[clamp(1.6rem,2.6vw,2.2rem)] text-navy leading-[1.25] mb-5">Asuransi Employer's Liability: Tanggung Jawab kepada Karyawan</h2>
+          <div className="text-base leading-[1.85] text-[#475569] space-y-4">
+            <p>Employer's Liability melindungi perusahaan dari tuntutan hukum dan kompensasi karyawan yang mengalami cedera, sakit, atau meninggal akibat kecelakaan kerja yang berkaitan dengan pekerjaan mereka. Ini berbeda dari BPJS Ketenagakerjaan yang menanggung klaim dasar — polis ini memberikan lapisan proteksi tambahan terutama untuk klaim yang melebihi limit BPJS atau gugatan perdata terpisah.</p>
+            <p>Industri dengan risiko kerja fisik tinggi seperti konstruksi, manufaktur, dan pergudangan di Yogyakarta sangat dianjurkan memiliki lapisan ini, terutama jika mempekerjakan banyak pekerja lapangan atau buruh harian yang rentan kecelakaan kerja.</p>
+            <p>Premi dihitung berdasarkan jumlah karyawan, jenis pekerjaan (klasifikasi risiko manual handling vs kantor), dan total payroll tahunan perusahaan.</p>
+          </div>
+
+          <div className="bg-white border border-black/8 rounded-card p-6 mt-8">
+            <div className="text-gold text-xs font-bold uppercase tracking-wider mb-2">📖 Studi Kasus: Pekerja Bangunan Cedera Akibat Jatuh dari Scaffolding</div>
+            <p className="text-sm leading-relaxed text-[#475569]">Seorang pekerja proyek renovasi gedung komersial di Yogyakarta mengalami patah tulang akibat jatuh dari scaffolding setinggi 4 meter. Selain klaim BPJS Ketenagakerjaan yang menanggung biaya medis dasar, keluarga pekerja mengajukan tuntutan tambahan kepada kontraktor terkait kelalaian K3. Karena kontraktor memiliki polis Employer's Liability, biaya kompensasi tambahan dan biaya hukum ditanggung polis, melindungi cash flow perusahaan dari kerugian besar yang tidak terduga.</p>
+          </div>
+
+          <div className="mt-8">
+            <div className="font-heading text-navy font-bold text-[1.05rem] mb-3">🧮 Estimasi Premi Employer's Liability (Ilustrasi, per Tahun)</div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-black/8 rounded-card overflow-hidden bg-white">
+                <thead><tr className="bg-navy text-white"><th className="p-3 text-left font-semibold">Jumlah Karyawan</th><th className="p-3 text-left font-semibold">Sektor</th><th className="p-3 text-left font-semibold">Estimasi Premi/Tahun</th></tr></thead>
+                <tbody>
+                  <tr><td className="p-3 border-t border-black/8">1–25 karyawan</td><td className="p-3 border-t border-black/8">Konstruksi/manufaktur</td><td className="p-3 border-t border-black/8">Rp 3.500.000 – Rp 7.000.000</td></tr>
+                  <tr><td className="p-3 border-t border-black/8">26–75 karyawan</td><td className="p-3 border-t border-black/8">Konstruksi/manufaktur</td><td className="p-3 border-t border-black/8">Rp 9.000.000 – Rp 18.000.000</td></tr>
+                  <tr><td className="p-3 border-t border-black/8">1–50 karyawan</td><td className="p-3 border-t border-black/8">Kantor/jasa (risiko rendah)</td><td className="p-3 border-t border-black/8">Rp 1.500.000 – Rp 4.000.000</td></tr>
+                  
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-[#94A3B8] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+          </div>
+
+          <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
+            <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
+            <div>
+              <div className="text-sm font-semibold text-navy">Ditinjau oleh Rio Mardiansyah</div>
+              <div className="text-xs text-[#64748B]">Konsultan Asuransi Kerugian Independen · 10+ Tahun Pengalaman · Berbasis di Yogyakarta</div>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-3 mt-6">
+            <Link href="/asuransi-liability" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🤝 Semua Produk Liability →</Link>
+            <Link href="/asuransi-liability/public-liability" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">👥 Public Liability →</Link>
+            <Link href="/artikel/perbedaan-jenis-asuransi-liability" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">⚖️ Perbedaan Jenis Liability →</Link>
+          </div>
+        </div>
+      </section>
+
     </LiabilityLayout>
   );
 }

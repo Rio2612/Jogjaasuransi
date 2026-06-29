@@ -41,6 +41,11 @@ export default function PublicLiabilityPage() {
       { label: "Asuransi Liability", href: "/asuransi-liability" },
       { label: "Public Liability" }
     ]}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Beranda\", \"item\": \"https://asuransijogja.biz.id\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Asuransi Liability\", \"item\": \"https://asuransijogja.biz.id/asuransi-liability\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Public Liability\", \"item\": \"https://asuransijogja.biz.id/asuransi-liability/public-liability\"}]}" }}
+      />
+
 
       {/* HERO */}
       <section className="bg-navy py-20 px-[5vw] relative overflow-hidden">
@@ -149,6 +154,55 @@ export default function PublicLiabilityPage() {
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Konsultasi Public Liability</a>
         </div>
       </section>
+
+      {/* PENJELASAN LENGKAP, STUDI KASUS & ESTIMASI PREMI */}
+      <section className="py-16 px-[5vw] bg-cream">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Panduan Lengkap</div>
+          <h2 className="font-heading text-[clamp(1.6rem,2.6vw,2.2rem)] text-navy leading-[1.25] mb-5">Asuransi Public Liability untuk Hotel, Restoran & Wisata Jogja</h2>
+          <div className="text-base leading-[1.85] text-[#475569] space-y-4">
+            <p>Yogyakarta sebagai destinasi wisata menerima jutaan pengunjung setiap tahun yang berinteraksi langsung dengan properti bisnis — hotel, restoran, vila, hingga lokasi wisata. Setiap interaksi ini membawa potensi risiko cedera tamu atau pihak ketiga di area properti yang bisa berujung tuntutan hukum dan kompensasi.</p>
+            <p>Public Liability menanggung biaya kompensasi dan hukum jika pihak ketiga (tamu, pengunjung, atau masyarakat umum) mengalami cedera tubuh atau kerugian properti akibat kelalaian operasional bisnis Anda — misalnya lantai licin, makanan tidak higienis, atau insiden fasilitas.</p>
+            <p>Bagi pelaku usaha penginapan dan kuliner di DIY, polis ini sering menjadi syarat kerja sama dengan platform OTA (Online Travel Agent) atau penyelenggara event besar yang mewajibkan bukti proteksi liability.</p>
+          </div>
+
+          <div className="bg-white border border-black/8 rounded-card p-6 mt-8">
+            <div className="text-gold text-xs font-bold uppercase tracking-wider mb-2">📖 Studi Kasus: Tamu Hotel Terpeleset di Area Kolam Renang</div>
+            <p className="text-sm leading-relaxed text-[#475569]">Seorang tamu hotel butik di kawasan Malioboro terpeleset di area kolam renang akibat lantai basah tanpa tanda peringatan, mengalami cedera pergelangan tangan yang memerlukan tindakan medis. Tamu mengajukan klaim kompensasi biaya pengobatan dan kompensasi atas ketidaknyamanan. Karena hotel memiliki polis Public Liability, seluruh biaya kompensasi dan negosiasi ditangani oleh asuransi tanpa membebani reputasi dan kas operasional hotel.</p>
+          </div>
+
+          <div className="mt-8">
+            <div className="font-heading text-navy font-bold text-[1.05rem] mb-3">🧮 Estimasi Premi Public Liability (Ilustrasi, per Tahun)</div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-black/8 rounded-card overflow-hidden bg-white">
+                <thead><tr className="bg-navy text-white"><th className="p-3 text-left font-semibold">Jenis Usaha</th><th className="p-3 text-left font-semibold">Limit Liability</th><th className="p-3 text-left font-semibold">Estimasi Premi/Tahun</th></tr></thead>
+                <tbody>
+                  <tr><td className="p-3 border-t border-black/8">Restoran/kafe skala menengah</td><td className="p-3 border-t border-black/8">Rp 500.000.000</td><td className="p-3 border-t border-black/8">Rp 2.500.000 – Rp 5.000.000</td></tr>
+                  <tr><td className="p-3 border-t border-black/8">Hotel/vila 10–20 kamar</td><td className="p-3 border-t border-black/8">Rp 1.000.000.000</td><td className="p-3 border-t border-black/8">Rp 5.000.000 – Rp 9.000.000</td></tr>
+                  <tr><td className="p-3 border-t border-black/8">Lokasi wisata/event venue</td><td className="p-3 border-t border-black/8">Rp 2.000.000.000</td><td className="p-3 border-t border-black/8">Rp 9.000.000 – Rp 16.000.000</td></tr>
+                  
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-[#94A3B8] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+          </div>
+
+          <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
+            <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
+            <div>
+              <div className="text-sm font-semibold text-navy">Ditinjau oleh Rio Mardiansyah</div>
+              <div className="text-xs text-[#64748B]">Konsultan Asuransi Kerugian Independen · 10+ Tahun Pengalaman · Berbasis di Yogyakarta</div>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-3 mt-6">
+            <Link href="/asuransi-liability" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🤝 Semua Produk Liability →</Link>
+            <Link href="/asuransi-properti/hotel-vila" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏨 Asuransi Hotel & Guest House →</Link>
+            <Link href="/artikel/asuransi-vila-homestay-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏡 Asuransi Vila & Homestay →</Link>
+          </div>
+        </div>
+      </section>
+
     </LiabilityLayout>
   );
 }

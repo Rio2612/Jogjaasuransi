@@ -39,6 +39,11 @@ export default function JaminanPelaksanaanPage() {
       { label: "Surety Bond", href: "/asuransi-surety-bond" },
       { label: "Jaminan Pelaksanaan" }
     ]}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Beranda\", \"item\": \"https://asuransijogja.biz.id\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Surety Bond\", \"item\": \"https://asuransijogja.biz.id/asuransi-surety-bond\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Jaminan Pelaksanaan\", \"item\": \"https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-pelaksanaan\"}]}" }}
+      />
+
       <section className="bg-navy py-20 px-[5vw] relative overflow-hidden">
         <div className="absolute inset-0" style={{background:"radial-gradient(ellipse 55% 70% at 85% 40%, rgba(200,150,62,0.13) 0%, transparent 65%)"}} />
         <div className="absolute top-6 right-[5vw] text-gold/5 text-[9rem] leading-none select-none hidden lg:block">🏗️</div>
@@ -135,6 +140,55 @@ export default function JaminanPelaksanaanPage() {
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Proses Performance Bond</a>
         </div>
       </section>
+
+      {/* PENJELASAN LENGKAP, STUDI KASUS & ESTIMASI PREMI */}
+      <section className="py-16 px-[5vw] bg-cream">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Panduan Lengkap</div>
+          <h2 className="font-heading text-[clamp(1.6rem,2.6vw,2.2rem)] text-navy leading-[1.25] mb-5">Jaminan Pelaksanaan (Performance Bond): Garansi Penyelesaian Proyek</h2>
+          <div className="text-base leading-[1.85] text-[#475569] space-y-4">
+            <p>Jaminan Pelaksanaan diwajibkan setelah kontraktor memenangkan tender, sebagai garansi bahwa proyek akan diselesaikan sesuai kontrak. Nilainya umumnya 5% dari nilai kontrak dan berlaku sejak penandatanganan kontrak hingga serah terima pertama (PHO).</p>
+            <p>Jika kontraktor gagal menyelesaikan proyek sesuai spesifikasi dan jadwal, pemberi kerja dapat mencairkan jaminan ini sebagai kompensasi keterlambatan atau kegagalan pekerjaan — sehingga penerbit jaminan akan melakukan underwriting lebih ketat dibanding bid bond, termasuk melihat track record dan kapasitas finansial kontraktor.</p>
+            <p>Untuk proyek pemerintah di DIY (APBD/APBN), jaminan pelaksanaan biasanya menjadi syarat wajib pencairan uang muka pertama, sehingga proses penerbitannya perlu disinkronkan dengan timeline pencairan proyek.</p>
+          </div>
+
+          <div className="bg-white border border-black/8 rounded-card p-6 mt-8">
+            <div className="text-gold text-xs font-bold uppercase tracking-wider mb-2">📖 Studi Kasus: Performance Bond untuk Proyek Renovasi Gedung Pemerintah</div>
+            <p className="text-sm leading-relaxed text-[#475569]">Seorang kontraktor memenangkan tender renovasi gedung dinas senilai Rp 2,8 miliar di Kabupaten Bantul. Sesuai syarat kontrak, jaminan pelaksanaan 5% (Rp 140 juta) harus diterbitkan sebelum kontrak ditandatangani. Dengan dukungan riwayat proyek yang baik, jaminan diterbitkan dalam 2 hari kerja dengan premi sekitar Rp 3,5 juta, memungkinkan kontraktor segera memulai mobilisasi dan mencairkan uang muka proyek tepat waktu.</p>
+          </div>
+
+          <div className="mt-8">
+            <div className="font-heading text-navy font-bold text-[1.05rem] mb-3">🧮 Estimasi Biaya Jaminan Pelaksanaan (Ilustrasi)</div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-black/8 rounded-card overflow-hidden bg-white">
+                <thead><tr className="bg-navy text-white"><th className="p-3 text-left font-semibold">Nilai Kontrak</th><th className="p-3 text-left font-semibold">Nilai Jaminan (5%)</th><th className="p-3 text-left font-semibold">Estimasi Premi</th></tr></thead>
+                <tbody>
+                  <tr><td className="p-3 border-t border-black/8">Rp 800.000.000</td><td className="p-3 border-t border-black/8">Rp 40.000.000</td><td className="p-3 border-t border-black/8">Rp 1.000.000 – Rp 1.600.000</td></tr>
+                  <tr><td className="p-3 border-t border-black/8">Rp 2.800.000.000</td><td className="p-3 border-t border-black/8">Rp 140.000.000</td><td className="p-3 border-t border-black/8">Rp 3.500.000 – Rp 5.600.000</td></tr>
+                  <tr><td className="p-3 border-t border-black/8">Rp 7.000.000.000</td><td className="p-3 border-t border-black/8">Rp 350.000.000</td><td className="p-3 border-t border-black/8">Rp 8.750.000 – Rp 14.000.000</td></tr>
+                  
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-[#94A3B8] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+          </div>
+
+          <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
+            <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
+            <div>
+              <div className="text-sm font-semibold text-navy">Ditinjau oleh Rio Mardiansyah</div>
+              <div className="text-xs text-[#64748B]">Konsultan Asuransi Kerugian Independen · 10+ Tahun Pengalaman · Berbasis di Yogyakarta</div>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-3 mt-6">
+            <Link href="/asuransi-surety-bond" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📄 Semua Produk Surety Bond →</Link>
+            <Link href="/asuransi-surety-bond/jaminan-uang-muka" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">💰 Jaminan Uang Muka →</Link>
+            <Link href="/asuransi-surety-bond/jaminan-pemeliharaan" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🔧 Jaminan Pemeliharaan →</Link>
+          </div>
+        </div>
+      </section>
+
     </SuretyLayout>
   );
 }

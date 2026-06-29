@@ -55,6 +55,11 @@ export default function AsuransiMobilPage() {
       { label: "Asuransi Kendaraan", href: "/asuransi-kendaraan" },
       { label: "Asuransi Mobil" }
     ]}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Beranda\", \"item\": \"https://asuransijogja.biz.id\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Asuransi Kendaraan\", \"item\": \"https://asuransijogja.biz.id/asuransi-kendaraan\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Asuransi Mobil\", \"item\": \"https://asuransijogja.biz.id/asuransi-kendaraan/mobil\"}]}" }}
+      />
+
 
       {/* HERO */}
       <section className="bg-navy py-20 px-[5vw] relative overflow-hidden">
@@ -201,6 +206,56 @@ export default function AsuransiMobilPage() {
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 WhatsApp Pak Rio Sekarang</a>
         </div>
       </section>
+
+      {/* PENJELASAN LENGKAP, STUDI KASUS & ESTIMASI PREMI */}
+      <section className="py-16 px-[5vw] bg-cream">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Panduan Lengkap</div>
+          <h2 className="font-heading text-[clamp(1.6rem,2.6vw,2.2rem)] text-navy leading-[1.25] mb-5">Panduan Lengkap Asuransi Mobil di Yogyakarta</h2>
+          <div className="text-base leading-[1.85] text-[#475569] space-y-4">
+            <p>Mobil pribadi adalah aset bernilai tinggi yang setiap hari menghadapi risiko jalan raya: kecelakaan, lecet parkir, pencurian, hingga kerusakan akibat banjir musiman di kawasan Sleman dan Bantul. Tanpa asuransi, biaya perbaikan body repair bisa mencapai puluhan juta rupiah untuk kerusakan menengah.</p>
+            <p>Dua pilihan utama adalah All Risk (komprehensif, menanggung lecet hingga kehilangan total) dan TLO/Total Loss Only (hanya menanggung kehilangan atau kerusakan lebih dari 75% nilai kendaraan). Mobil baru atau di bawah 5 tahun umumnya lebih cocok All Risk karena nilai pertanggungan tinggi; mobil di atas 5 tahun sering memilih TLO untuk efisiensi premi.</p>
+            <p>Mobil listrik (EV) kini punya tarif tersendiri sesuai aturan OJK terbaru, dengan Own Risk yang sedikit lebih tinggi dibanding mobil BBM karena karakteristik biaya perbaikan baterai dan komponen elektrik yang lebih mahal.</p>
+          </div>
+
+          <div className="bg-white border border-black/8 rounded-card p-6 mt-8">
+            <div className="text-gold text-xs font-bold uppercase tracking-wider mb-2">📖 Studi Kasus: Mobil All Risk Tertabrak di Ring Road Utara</div>
+            <p className="text-sm leading-relaxed text-[#475569]">Seorang pegawai swasta di Yogyakarta mengalami tabrakan dari belakang di Ring Road Utara yang merusak bumper dan lampu belakang mobilnya dengan estimasi perbaikan Rp 18 juta. Karena memiliki polis All Risk dengan bengkel rekanan, mobil diperbaiki tanpa biaya tambahan selain Own Risk Rp 300.000, dan proses dari lapor hingga mobil selesai diperbaiki memakan waktu 6 hari kerja.</p>
+          </div>
+
+          <div className="mt-8">
+            <div className="font-heading text-navy font-bold text-[1.05rem] mb-3">🧮 Estimasi Premi Mobil Berdasarkan Nilai Kendaraan (Wilayah 3 – Jogja)</div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-black/8 rounded-card overflow-hidden bg-white">
+                <thead><tr className="bg-navy text-white"><th className="p-3 text-left font-semibold">Nilai Kendaraan</th><th className="p-3 text-left font-semibold">All Risk (≈%)</th><th className="p-3 text-left font-semibold">TLO (≈%)</th></tr></thead>
+                <tbody>
+                  <tr><td className="p-3 border-t border-black/8">Rp 150.000.000</td><td className="p-3 border-t border-black/8">Rp 4.700.000 – Rp 6.300.000</td><td className="p-3 border-t border-black/8">Rp 1.200.000 – Rp 1.650.000</td></tr>
+                  <tr><td className="p-3 border-t border-black/8">Rp 250.000.000</td><td className="p-3 border-t border-black/8">Rp 7.500.000 – Rp 9.750.000</td><td className="p-3 border-t border-black/8">Rp 1.875.000 – Rp 2.625.000</td></tr>
+                  <tr><td className="p-3 border-t border-black/8">Rp 400.000.000 (termasuk EV)</td><td className="p-3 border-t border-black/8">Rp 11.600.000 – Rp 15.200.000</td><td className="p-3 border-t border-black/8">Rp 2.800.000 – Rp 3.800.000</td></tr>
+                  
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-[#94A3B8] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+          </div>
+
+          <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
+            <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
+            <div>
+              <div className="text-sm font-semibold text-navy">Ditinjau oleh Rio Mardiansyah</div>
+              <div className="text-xs text-[#64748B]">Konsultan Asuransi Kerugian Independen · 10+ Tahun Pengalaman · Berbasis di Yogyakarta</div>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-3 mt-6">
+            <Link href="/asuransi-kendaraan" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🚗 Semua Produk Kendaraan →</Link>
+            <Link href="/artikel/cara-menghitung-premi-asuransi-mobil" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🧮 Cara Hitung Premi →</Link>
+            <Link href="/artikel/asuransi-mobil-listrik" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">⚡ Asuransi Mobil Listrik →</Link>
+            <Link href="/artikel/cara-klaim-asuransi-mobil" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📋 Cara Klaim Mobil →</Link>
+          </div>
+        </div>
+      </section>
+
     </KendaraanLayout>
   );
 }

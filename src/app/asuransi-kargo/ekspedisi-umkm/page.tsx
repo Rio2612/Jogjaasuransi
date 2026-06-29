@@ -50,6 +50,11 @@ export default function EkspedisiUmkmPage() {
       { label: "Asuransi Kargo", href: "/asuransi-kargo" },
       { label: "Ekspedisi & UMKM" }
     ]}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Beranda\", \"item\": \"https://asuransijogja.biz.id\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Asuransi Kargo\", \"item\": \"https://asuransijogja.biz.id/asuransi-kargo\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Ekspedisi & UMKM\", \"item\": \"https://asuransijogja.biz.id/asuransi-kargo/ekspedisi-umkm\"}]}" }}
+      />
+
 
       {/* HERO */}
       <section className="bg-navy py-20 px-[5vw] relative overflow-hidden">
@@ -172,6 +177,55 @@ export default function EkspedisiUmkmPage() {
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Konsultasi Kargo UMKM</a>
         </div>
       </section>
+
+      {/* PENJELASAN LENGKAP, STUDI KASUS & ESTIMASI PREMI */}
+      <section className="py-16 px-[5vw] bg-cream">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Panduan Lengkap</div>
+          <h2 className="font-heading text-[clamp(1.6rem,2.6vw,2.2rem)] text-navy leading-[1.25] mb-5">Asuransi Kargo untuk UMKM & Penjual Online di Yogyakarta</h2>
+          <div className="text-base leading-[1.85] text-[#475569] space-y-4">
+            <p>Pelaku UMKM dan penjual online di Yogyakarta — penjual batik, kerajinan, makanan kemasan — mengandalkan jasa ekspedisi pihak ketiga untuk mengirim produk ke pembeli marketplace. Sayangnya, ganti rugi standar dari jasa ekspedisi sering terbatas (misalnya hanya 10x ongkos kirim), jauh dari nilai barang sebenarnya jika hilang atau rusak.</p>
+            <p>Asuransi kargo khusus UMKM mengisi gap ini dengan menanggung nilai barang sesungguhnya, bukan hanya nilai ongkos kirim, dengan premi yang dirancang terjangkau untuk skala pengiriman kecil-menengah harian/bulanan.</p>
+            <p>Skema ini sangat relevan bagi penjual dengan volume kiriman tinggi dan nilai barang per paket yang signifikan, misalnya elektronik kecil, kerajinan perak, atau produk fashion bernilai menengah-tinggi.</p>
+          </div>
+
+          <div className="bg-white border border-black/8 rounded-card p-6 mt-8">
+            <div className="text-gold text-xs font-bold uppercase tracking-wider mb-2">📖 Studi Kasus: Kerajinan Perak Hilang Saat Pengiriman ke Marketplace</div>
+            <p className="text-sm leading-relaxed text-[#475569]">Seorang penjual kerajinan perak Kotagede mengirim pesanan senilai Rp 8 juta ke pembeli di Jakarta melalui ekspedisi reguler. Paket dinyatakan hilang di tengah jalan oleh pihak ekspedisi, yang hanya bersedia mengganti sebesar ongkos kirim (sekitar Rp 150.000) sesuai kebijakan standar mereka. Karena penjual sudah mendaftarkan pengiriman tersebut dalam polis asuransi kargo UMKM, selisih kerugian nilai barang sebesar hampir Rp 7,85 juta dapat diklaim dan cair dalam waktu sekitar 2 minggu.</p>
+          </div>
+
+          <div className="mt-8">
+            <div className="font-heading text-navy font-bold text-[1.05rem] mb-3">🧮 Estimasi Premi Kargo UMKM (Ilustrasi, per Pengiriman)</div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-black/8 rounded-card overflow-hidden bg-white">
+                <thead><tr className="bg-navy text-white"><th className="p-3 text-left font-semibold">Nilai Barang per Kiriman</th><th className="p-3 text-left font-semibold">Estimasi Premi</th></tr></thead>
+                <tbody>
+                  <tr><td className="p-3 border-t border-black/8">Rp 1.000.000</td><td className="p-3 border-t border-black/8">Rp 5.000 – Rp 8.000</td></tr>
+                  <tr><td className="p-3 border-t border-black/8">Rp 5.000.000</td><td className="p-3 border-t border-black/8">Rp 25.000 – Rp 40.000</td></tr>
+                  <tr><td className="p-3 border-t border-black/8">Rp 15.000.000</td><td className="p-3 border-t border-black/8">Rp 75.000 – Rp 120.000</td></tr>
+                  
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-[#94A3B8] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+          </div>
+
+          <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
+            <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
+            <div>
+              <div className="text-sm font-semibold text-navy">Ditinjau oleh Rio Mardiansyah</div>
+              <div className="text-xs text-[#64748B]">Konsultan Asuransi Kerugian Independen · 10+ Tahun Pengalaman · Berbasis di Yogyakarta</div>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-3 mt-6">
+            <Link href="/asuransi-kargo" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📦 Semua Produk Kargo →</Link>
+            <Link href="/artikel/asuransi-kargo-umkm-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🛵 Panduan Kargo UMKM →</Link>
+            <Link href="/artikel/cara-klaim-asuransi-kargo" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📋 Cara Klaim Kargo →</Link>
+          </div>
+        </div>
+      </section>
+
     </KargoLayout>
   );
 }

@@ -51,6 +51,11 @@ const faqItems = [
 export default function AsuransiKendaraanPage() {
   return (
     <KendaraanLayout breadcrumbs={[{ label: "Asuransi Kendaraan" }]}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Beranda\", \"item\": \"https://asuransijogja.biz.id\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Asuransi Kendaraan\", \"item\": \"https://asuransijogja.biz.id/asuransi-kendaraan\"}]}" }}
+      />
+
 
       {/* HERO */}
       <section className="bg-navy py-20 px-[5vw] relative overflow-hidden">
@@ -159,6 +164,57 @@ export default function AsuransiKendaraanPage() {
           </div>
         </div>
       </section>
+
+      {/* PENJELASAN LENGKAP, STUDI KASUS & ESTIMASI PREMI */}
+      <section className="py-16 px-[5vw] bg-cream">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Panduan Lengkap</div>
+          <h2 className="font-heading text-[clamp(1.6rem,2.6vw,2.2rem)] text-navy leading-[1.25] mb-5">Memilih Asuransi Kendaraan yang Tepat di Yogyakarta</h2>
+          <div className="text-base leading-[1.85] text-[#475569] space-y-4">
+            <p>Yogyakarta sebagai kota dengan kepadatan lalu lintas tinggi dan curah hujan ekstrem musiman (terutama November–Maret) membuat risiko kecelakaan, banjir, dan pencurian kendaraan nyata bagi pemilik kendaraan pribadi maupun perusahaan. Asuransi kendaraan bermotor bukan sekadar syarat leasing, tapi instrumen pengelolaan risiko keuangan.</p>
+            <p>Secara garis besar produk kendaraan terbagi 3 segmen: kendaraan pribadi (mobil harian), kendaraan niaga berat (dump truk, tronton untuk proyek/tambang), dan armada/fleet korporasi (5+ unit operasional). Setiap segmen punya profil risiko, tarif, dan skema klaim berbeda meski sama-sama mengacu tarif referensi OJK SE No.6/SEOJK.05/2017.</p>
+            <p>Sebagai konsultan independen, kami tidak terikat satu perusahaan asuransi sehingga bisa membandingkan penawaran dari beberapa perusahaan sekaligus untuk mendapatkan kombinasi premi dan cakupan terbaik sesuai profil risiko kendaraan Anda.</p>
+          </div>
+
+          <div className="bg-white border border-black/8 rounded-card p-6 mt-8">
+            <div className="text-gold text-xs font-bold uppercase tracking-wider mb-2">📖 Studi Kasus: Armada Logistik UMKM Terkena Banjir di Maguwoharjo</div>
+            <p className="text-sm leading-relaxed text-[#475569]">Seorang pelaku usaha ekspedisi lokal di Maguwoharjo memiliki 4 unit pick-up untuk distribusi barang. Saat banjir musiman merendam area tersebut, 2 unit mengalami kerusakan mesin akibat air masuk ke ruang pembakaran. Karena polis All Risk yang dipegang sudah termasuk perluasan banjir, klaim kerusakan mesin senilai sekitar Rp 35 juta per unit dapat diproses dan cair dalam 9 hari kerja.</p>
+          </div>
+
+          <div className="mt-8">
+            <div className="font-heading text-navy font-bold text-[1.05rem] mb-3">🧮 Estimasi Premi Tahunan per Segmen Kendaraan (Ilustrasi)</div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-black/8 rounded-card overflow-hidden bg-white">
+                <thead><tr className="bg-navy text-white"><th className="p-3 text-left font-semibold">Segmen</th><th className="p-3 text-left font-semibold">Jenis Pertanggungan</th><th className="p-3 text-left font-semibold">Estimasi Premi/Tahun</th></tr></thead>
+                <tbody>
+                  <tr><td className="p-3 border-t border-black/8">Mobil pribadi (Rp 200 jt)</td><td className="p-3 border-t border-black/8">All Risk</td><td className="p-3 border-t border-black/8">Rp 6.000.000 – Rp 9.000.000</td></tr>
+                  <tr><td className="p-3 border-t border-black/8">Mobil pribadi (Rp 200 jt)</td><td className="p-3 border-t border-black/8">TLO</td><td className="p-3 border-t border-black/8">Rp 1.600.000 – Rp 2.400.000</td></tr>
+                  <tr><td className="p-3 border-t border-black/8">Dump truk/tronton (Rp 500 jt)</td><td className="p-3 border-t border-black/8">All Risk</td><td className="p-3 border-t border-black/8">Rp 17.500.000 – Rp 27.500.000</td></tr>
+                  <tr><td className="p-3 border-t border-black/8">Armada fleet (5 unit @Rp 250 jt)</td><td className="p-3 border-t border-black/8">All Risk (gabungan)</td><td className="p-3 border-t border-black/8">Rp 35.000.000 – Rp 50.000.000</td></tr>
+                  
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-[#94A3B8] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+          </div>
+
+          <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
+            <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
+            <div>
+              <div className="text-sm font-semibold text-navy">Ditinjau oleh Rio Mardiansyah</div>
+              <div className="text-xs text-[#64748B]">Konsultan Asuransi Kerugian Independen · 10+ Tahun Pengalaman · Berbasis di Yogyakarta</div>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-3 mt-6">
+            <Link href="/asuransi-kendaraan/mobil" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🚗 Asuransi Mobil →</Link>
+            <Link href="/asuransi-kendaraan/dump-truk-niaga" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🚛 Dump Truk & Niaga →</Link>
+            <Link href="/asuransi-kendaraan/armada-fleet" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🚐 Armada Fleet →</Link>
+            <Link href="/artikel/perbedaan-all-risk-tlo" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">⚖️ All Risk vs TLO →</Link>
+          </div>
+        </div>
+      </section>
+
     </KendaraanLayout>
   );
 }
