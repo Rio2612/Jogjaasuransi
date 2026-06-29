@@ -4,18 +4,18 @@ import PropertyLayout from "@/components/properti/PropertyLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Hotel & Vila Jogja – Proteksi Properti Wisata DIY | Asuransi Jogja",
+  title: "Asuransi Hotel & Guest House Jogja – Proteksi Properti Wisata DIY | Asuransi Jogja",
   description:
-    "Asuransi properti untuk hotel, vila, guest house, dan homestay di Yogyakarta. PAR komprehensif, kebakaran, banjir, gempa Merapi, business interruption, hingga public liability tamu. Konsultasi gratis.",
+    "Asuransi properti untuk hotel, guest house, dan resort di Yogyakarta. PAR komprehensif, kebakaran, banjir, gempa Merapi, business interruption, hingga public liability tamu. Konsultasi gratis.",
   keywords:
-    "asuransi hotel jogja, asuransi vila yogyakarta, asuransi penginapan jogja, asuransi guest house yogyakarta, asuransi properti wisata jogja, asuransi hotel bintang yogyakarta, asuransi resort DIY, asuransi business interruption hotel, asuransi public liability hotel jogja, asuransi kebakaran hotel yogyakarta",
+    "asuransi hotel jogja, asuransi penginapan jogja, asuransi guest house yogyakarta, asuransi properti wisata jogja, asuransi hotel bintang yogyakarta, asuransi resort DIY, asuransi business interruption hotel, asuransi public liability hotel jogja, asuransi kebakaran hotel yogyakarta",
   alternates: {
     canonical: "https://asuransijogja.biz.id/asuransi-properti/hotel-vila",
   },
   openGraph: {
-    title: "Asuransi Hotel & Vila Jogja – Proteksi Properti Wisata DIY",
+    title: "Asuransi Hotel & Guest House Jogja – Proteksi Properti Wisata DIY",
     description:
-      "Solusi asuransi lengkap untuk hotel, vila, guest house, dan penginapan di Yogyakarta. Konsultasi gratis dengan konsultan lokal.",
+      "Solusi asuransi lengkap untuk hotel, guest house, resort, dan penginapan skala besar di Yogyakarta. Konsultasi gratis dengan konsultan lokal.",
     url: "https://asuransijogja.biz.id/asuransi-properti/hotel-vila",
     type: "website",
   },
@@ -326,9 +326,9 @@ export default function HotelVilaPage() {
             <span className="text-[0.5rem] text-gold">◆</span>Hotel &amp; Vila · Wisata Yogyakarta
           </div>
           <h1 className="font-heading text-[clamp(2.2rem,4vw,3.6rem)] text-white leading-[1.15] mb-5">
-            Asuransi Hotel, Vila
+            Asuransi Hotel
             <br />
-            <em className="not-italic text-gold">&amp; Penginapan Wisata</em>
+            <em className="not-italic text-gold">&amp; Guest House Wisata</em>
             <br />
             di Yogyakarta
           </h1>

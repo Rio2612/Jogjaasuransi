@@ -243,6 +243,24 @@ export default function AsuransiKargoPage() {
         </div>
       </section>
 
+      {/* ARTIKEL TERKAIT */}
+      <section className="py-12 px-[5vw] bg-white">
+        <div className="text-center mb-8">
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Baca Juga</div>
+          <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-navy leading-[1.22]">Artikel Seputar<br />Asuransi Kargo</h2>
+        </div>
+        <div className="flex flex-wrap gap-3 justify-center max-w-3xl mx-auto">
+          {[
+            { href: "/artikel/asuransi-kargo-umkm-jogja", icon: "📦", title: "Asuransi Kargo untuk UMKM Jogja" },
+            { href: "/artikel/cara-klaim-asuransi-kargo", icon: "📋", title: "Cara Klaim Asuransi Kargo" },
+          ].map(l => (
+            <Link key={l.href} href={l.href} className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">
+              {l.icon} {l.title} →
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-16 px-[5vw] bg-white">
         <div className="text-center mb-10">

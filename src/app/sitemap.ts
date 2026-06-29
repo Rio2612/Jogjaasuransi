@@ -46,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/asuransi-surety-bond/jaminan-penawaran`,         lastModified: now, changeFrequency: "monthly", priority: 0.8  },
     { url: `${base}/asuransi-surety-bond/jaminan-pelaksanaan`,       lastModified: now, changeFrequency: "monthly", priority: 0.8  },
     { url: `${base}/asuransi-surety-bond/jaminan-uang-muka`,         lastModified: now, changeFrequency: "monthly", priority: 0.8  },
-    { url: `${base}/asuransi-surety-bond/jaminan-pemeliharan`,       lastModified: now, changeFrequency: "monthly", priority: 0.8  },
+    { url: `${base}/asuransi-surety-bond/jaminan-pemeliharaan`,     lastModified: now, changeFrequency: "monthly", priority: 0.8  },
 
     // ─── ARTIKEL — INDUK ─────────────────────────────────────────────────────
     { url: `${base}/artikel`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
@@ -79,10 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/artikel/asuransi-mobil-banjir`,                   lastModified: now, changeFrequency: "monthly", priority: 0.80 },
     { url: `${base}/artikel/asuransi-mobil-bekas`,                    lastModified: now, changeFrequency: "monthly", priority: 0.78 },
     { url: `${base}/artikel/asuransi-mobil-listrik`,                  lastModified: now, changeFrequency: "monthly", priority: 0.78 },
-    // Slug diperbaiki: artikel_rental_mobil_wisata → asuransi-kendaraan-rental-mobil-wisata
-    // Tambahkan redirect di next.config.js:
-    //   { source: '/artikel/artikel_rental_mobil_wisata', destination: '/artikel/asuransi-kendaraan-rental-mobil-wisata', permanent: true }
-    { url: `${base}/artikel/asuransi-kendaraan-rental-mobil-wisata`,  lastModified: now, changeFrequency: "monthly", priority: 0.78 },
+    { url: `${base}/artikel/asuransi-rental-mobil-jogja`,             lastModified: now, changeFrequency: "monthly", priority: 0.78 },
 
     // ─── ARTIKEL — PROPERTI CLUSTER ──────────────────────────────────────────
     { url: `${base}/artikel/asuransi-rumah-tinggal-jogja`,            lastModified: now, changeFrequency: "monthly", priority: 0.82 },

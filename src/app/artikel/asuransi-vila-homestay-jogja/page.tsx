@@ -670,7 +670,7 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { href: "/asuransi-properti/vila-homestay", icon: "🏡", judul: "Produk Asuransi Vila & Homestay", desc: "Detail cakupan, cara daftar, dan estimasi premi" },
-                { href: "/asuransi-properti/hotel-vila", icon: "🏨", judul: "Produk Asuransi Hotel & Vila Komersial", desc: "Untuk properti penginapan skala menengah ke atas" },
+                { href: "/asuransi-properti/hotel-vila", icon: "🏨", judul: "Produk Asuransi Hotel & Guest House", desc: "Untuk properti penginapan skala menengah ke atas" },
                 { href: "/asuransi-properti/kebakaran", icon: "🔥", judul: "Asuransi Kebakaran", desc: "Perlindungan dasar bangunan dari api dan petir" },
                 { href: "/asuransi-properti/banjir-gempa", icon: "🌊", judul: "Perluasan Banjir & Gempa", desc: "Wajib untuk semua properti di wilayah DIY" },
                 { href: "/asuransi-liability/public-liability", icon: "🛡️", judul: "Public Liability", desc: "Proteksi dari tuntutan tamu yang cedera di properti" },

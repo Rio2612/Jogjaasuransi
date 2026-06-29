@@ -18,6 +18,11 @@ const nextConfig: NextConfig = {
         destination: "/asuransi-surety-bond/jaminan-pemeliharaan",
         permanent: true,
       },
+      {
+        source: "/artikel/artikel_rental_mobil_wisata",
+        destination: "/artikel/asuransi-rental-mobil-jogja",
+        permanent: true,
+      },
     ];
   },
 

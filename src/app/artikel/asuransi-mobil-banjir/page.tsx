@@ -467,7 +467,7 @@ export default function AsuransiMobilBanjirPage() {
               🏠 Asuransi Properti Banjir & Gempa →
             </Link>
             <Link
-              href="/artikel/penyebab-klaim-asuransi-ditolak"
+              href="/artikel/cara-klaim-asuransi-mobil"
               className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline"
             >
               ⚠️ Kenapa Klaim Bisa Ditolak? →

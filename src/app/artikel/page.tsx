@@ -81,7 +81,7 @@ const ARTIKEL = [
     menit: "6 menit",
   },
   {
-    slug: "artikel_rental_mobil_wisata",
+    slug: "asuransi-rental-mobil-jogja",
     icon: "🚌",
     kategori: "Kendaraan",
     judul: "Asuransi Kendaraan untuk Rental & Wisata: Panduan Pemilik Armada",
@@ -201,6 +201,22 @@ const ARTIKEL = [
     judul: "Panduan Asuransi untuk UMKM di Jogja: Proteksi Tepat, Premi Efisien",
     ringkasan: "UMKM Yogyakarta punya risiko yang unik — dari kebakaran toko hingga kerusakan stok barang. Pelajari produk asuransi yang tepat dan terjangkau untuk usaha kecil menengah.",
     menit: "9 menit",
+  },
+  {
+    slug: "asuransi-kargo-umkm-jogja",
+    icon: "📦",
+    kategori: "Kargo",
+    judul: "Asuransi Kargo untuk UMKM di Jogja: Proteksi Pengiriman Barang",
+    ringkasan: "Pelaku UMKM dan penjual online di Yogyakarta rentan kehilangan barang saat pengiriman. Pelajari produk asuransi kargo yang terjangkau khusus untuk skala usaha kecil.",
+    menit: "7 menit",
+  },
+  {
+    slug: "cara-klaim-asuransi-kargo",
+    icon: "📋",
+    kategori: "Kargo",
+    judul: "Cara Klaim Asuransi Kargo: Panduan Agar Dana Ganti Rugi Cair",
+    ringkasan: "Klaim kargo punya prosedur dan dokumen yang berbeda dari klaim kendaraan. Pelajari langkah-langkah lengkap agar klaim Anda tidak ditolak dan dana cair tepat waktu.",
+    menit: "8 menit",
   },
   {
     slug: "pentingnya-asuransi-dunia-usaha-jogja",
