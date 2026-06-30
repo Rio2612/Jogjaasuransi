@@ -162,6 +162,7 @@ export default function JaminanUangMukaPage() {
             <Link href="/asuransi-surety-bond" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📄 Semua Produk Surety Bond →</Link>
             <Link href="/asuransi-surety-bond/jaminan-pelaksanaan" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏗️ Jaminan Pelaksanaan →</Link>
             <Link href="/artikel/syarat-asuransi-tender-pemerintah-diy" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏛️ Syarat Tender Pemerintah DIY →</Link>
+            <Link href="/artikel/jaminan-pelaksanaan-pemeliharaan-uang-muka" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📄 Siklus Jaminan Setelah Menang Tender →</Link>
           </div>
         </div>
       </section>

@@ -185,6 +185,7 @@ export default function JaminanPemeliharaanPage() {
             <Link href="/asuransi-surety-bond" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📄 Semua Produk Surety Bond →</Link>
             <Link href="/asuransi-surety-bond/jaminan-pelaksanaan" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏗️ Jaminan Pelaksanaan →</Link>
             <Link href="/asuransi-surety-bond/jaminan-uang-muka" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">💰 Jaminan Uang Muka →</Link>
+            <Link href="/artikel/jaminan-pelaksanaan-pemeliharaan-uang-muka" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📖 Pahami Seluruh Siklus Jaminan →</Link>
           </div>
         </div>
       </section>

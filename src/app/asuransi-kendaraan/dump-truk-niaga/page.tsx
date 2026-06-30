@@ -203,6 +203,7 @@ export default function DumpTrukPage() {
             <Link href="/asuransi-kendaraan" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🚗 Semua Produk Kendaraan →</Link>
             <Link href="/asuransi-kendaraan/armada-fleet" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🚐 Armada Fleet →</Link>
             <Link href="/asuransi-engineering/contractor-all-risk" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏗️ Asuransi Kontraktor (CAR) →</Link>
+            <Link href="/artikel/asuransi-truk-niaga-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📖 Panduan Truk Niaga Lengkap →</Link>
           </div>
         </div>
       </section>

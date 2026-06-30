@@ -88,6 +88,22 @@ const ARTIKEL = [
     ringkasan: "Pemilik usaha rental mobil dan kendaraan wisata di Jogja wajib memiliki proteksi yang tepat. Pelajari jenis asuransi yang sesuai untuk armada komersial Anda.",
     menit: "7 menit",
   },
+  {
+    slug: "asuransi-armada-fleet-jogja",
+    icon: "🚐",
+    kategori: "Kendaraan",
+    judul: "Asuransi Armada/Fleet Perusahaan di Jogja: Panduan Konsolidasi Polis",
+    ringkasan: "Perusahaan dengan 5+ kendaraan operasional bisa hemat signifikan dengan konsolidasi ke polis fleet. Pelajari kapan saatnya beralih dan cara menghitung penghematannya.",
+    menit: "7 menit",
+  },
+  {
+    slug: "asuransi-truk-niaga-jogja",
+    icon: "🚛",
+    kategori: "Kendaraan",
+    judul: "Asuransi Dump Truk & Truk Niaga di Jogja: Panduan untuk Kontraktor",
+    ringkasan: "Dump truk dan tronton proyek punya profil risiko berbeda dari mobil pribadi. Pelajari cakupan yang tepat untuk kendaraan niaga berat di proyek dan tambang DIY.",
+    menit: "7 menit",
+  },
 
   // ── Properti ───────────────────────────────────────────────────────────────
   {
@@ -174,6 +190,22 @@ const ARTIKEL = [
     ringkasan: "Dari toko yang menyebabkan cedera pengunjung hingga produk cacat yang merugikan konsumen — inilah contoh nyata kasus liability dan bagaimana asuransi menyelamatkan bisnis.",
     menit: "9 menit",
   },
+  {
+    slug: "employer-liability-panduan-jogja",
+    icon: "🤝",
+    kategori: "Liability",
+    judul: "Asuransi Employer's Liability: Tanggung Jawab kepada Karyawan",
+    ringkasan: "BPJS Ketenagakerjaan saja tidak cukup melindungi perusahaan dari gugatan perdata karyawan. Pahami kapan Employer's Liability dibutuhkan dan bagaimana keduanya saling melengkapi.",
+    menit: "6 menit",
+  },
+  {
+    slug: "limbah-b3-liability-jogja",
+    icon: "🏭",
+    kategori: "Liability",
+    judul: "Asuransi Liability Limbah B3: Proteksi dari Gugatan Pencemaran",
+    ringkasan: "Industri yang menghasilkan limbah B3 menghadapi risiko gugatan pencemaran lingkungan. Pelajari apa yang ditanggung polis ini dan siapa yang membutuhkannya.",
+    menit: "6 menit",
+  },
 
   // ── Surety Bond ────────────────────────────────────────────────────────────
   {
@@ -190,6 +222,14 @@ const ARTIKEL = [
     kategori: "Surety Bond",
     judul: "Syarat Asuransi & Surety Bond untuk Tender Pemerintah DIY",
     ringkasan: "Proyek pemerintah di Daerah Istimewa Yogyakarta memiliki persyaratan jaminan yang ketat. Ketahui jenis-jenis bond yang diperlukan dan cara mengurusnya dengan benar.",
+    menit: "8 menit",
+  },
+  {
+    slug: "jaminan-pelaksanaan-pemeliharaan-uang-muka",
+    icon: "📄",
+    kategori: "Surety Bond",
+    judul: "Siklus Jaminan Proyek: Pelaksanaan, Uang Muka & Pemeliharaan",
+    ringkasan: "Setelah menang tender, kontraktor masih harus melewati 3 fase jaminan. Pahami kapan masing-masing dibutuhkan dari mulai proyek hingga serah terima akhir.",
     menit: "8 menit",
   },
 
@@ -217,6 +257,14 @@ const ARTIKEL = [
     judul: "Cara Klaim Asuransi Kargo: Panduan Agar Dana Ganti Rugi Cair",
     ringkasan: "Klaim kargo punya prosedur dan dokumen yang berbeda dari klaim kendaraan. Pelajari langkah-langkah lengkap agar klaim Anda tidak ditolak dan dana cair tepat waktu.",
     menit: "8 menit",
+  },
+  {
+    slug: "asuransi-kargo-ekspor-impor-jogja",
+    icon: "📦",
+    kategori: "Kargo",
+    judul: "Asuransi Kargo Ekspor-Impor Udara & Laut: Panduan Klausul ICC",
+    ringkasan: "Eksportir kerajinan dan furnitur di Jogja perlu memahami perbedaan klausul ICC A, B, dan C. Pelajari mana yang tepat untuk jalur laut maupun udara.",
+    menit: "7 menit",
   },
   {
     slug: "pentingnya-asuransi-dunia-usaha-jogja",

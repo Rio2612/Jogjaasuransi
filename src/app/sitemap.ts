@@ -61,16 +61,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/artikel/syarat-asuransi-tender-pemerintah-diy`,   lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     { url: `${base}/artikel/perbedaan-surety-bond-bank-garansi`,      lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/artikel/cara-mengurus-jaminan-penawaran-jogja`,   lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/artikel/jaminan-pelaksanaan-pemeliharaan-uang-muka`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
 
     // ─── ARTIKEL — UMKM & KARGO CLUSTER ──────────────────────────────────────
     { url: `${base}/artikel/asuransi-umkm-jogja`,                     lastModified: now, changeFrequency: "monthly", priority: 0.90 },
     { url: `${base}/artikel/asuransi-kargo-umkm-jogja`,               lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/artikel/cara-klaim-asuransi-kargo`,               lastModified: now, changeFrequency: "monthly", priority: 0.78 },
+    { url: `${base}/artikel/asuransi-kargo-ekspor-impor-jogja`,       lastModified: now, changeFrequency: "monthly", priority: 0.80 },
 
     // ─── ARTIKEL — LIABILITY CLUSTER ─────────────────────────────────────────
     { url: `${base}/artikel/perbedaan-jenis-asuransi-liability`,      lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/artikel/cara-klaim-asuransi-liability`,           lastModified: now, changeFrequency: "monthly", priority: 0.88 },
     { url: `${base}/artikel/contoh-kasus-gugatan-liability-bisnis`,   lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/artikel/employer-liability-panduan-jogja`,        lastModified: now, changeFrequency: "monthly", priority: 0.80 },
+    { url: `${base}/artikel/limbah-b3-liability-jogja`,               lastModified: now, changeFrequency: "monthly", priority: 0.80 },
 
     // ─── ARTIKEL — KENDARAAN CLUSTER ─────────────────────────────────────────
     { url: `${base}/artikel/perbedaan-all-risk-tlo`,                  lastModified: now, changeFrequency: "monthly", priority: 0.88 },
@@ -80,6 +84,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/artikel/asuransi-mobil-bekas`,                    lastModified: now, changeFrequency: "monthly", priority: 0.78 },
     { url: `${base}/artikel/asuransi-mobil-listrik`,                  lastModified: now, changeFrequency: "monthly", priority: 0.78 },
     { url: `${base}/artikel/asuransi-rental-mobil-jogja`,             lastModified: now, changeFrequency: "monthly", priority: 0.78 },
+    { url: `${base}/artikel/asuransi-armada-fleet-jogja`,             lastModified: now, changeFrequency: "monthly", priority: 0.80 },
+    { url: `${base}/artikel/asuransi-truk-niaga-jogja`,               lastModified: now, changeFrequency: "monthly", priority: 0.80 },
 
     // ─── ARTIKEL — PROPERTI CLUSTER ──────────────────────────────────────────
     { url: `${base}/artikel/asuransi-rumah-tinggal-jogja`,            lastModified: now, changeFrequency: "monthly", priority: 0.82 },

@@ -200,6 +200,7 @@ export default function KargoUdaraLautPage() {
             <Link href="/asuransi-kargo" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📦 Semua Produk Kargo →</Link>
             <Link href="/asuransi-kargo/pengiriman-barang" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🚚 Kargo Darat/Inland Transit →</Link>
             <Link href="/artikel/asuransi-kargo-umkm-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🛵 Kargo untuk UMKM →</Link>
+            <Link href="/artikel/asuransi-kargo-ekspor-impor-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📦 Panduan Klausul ICC Lengkap →</Link>
           </div>
         </div>
       </section>
