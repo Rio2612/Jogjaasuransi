@@ -212,77 +212,170 @@ function computePropertiCalc(sub: Submission): PropertiCalc {
 function docStyles(): string {
   return `
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:Arial,Helvetica,sans-serif;color:#1A1A1A;background:#fff;}
-  .doc-page{width:190mm;margin:0 auto;padding:14mm 16mm 12mm;page-break-after:always;}
+  body{font-family:Helvetica,Arial,sans-serif;color:#1A1A1A;background:#fff;font-size:9.5pt;}
+  .doc-page{position:relative;width:190mm;min-height:277mm;margin:0 auto;padding:12mm 14mm 26mm;page-break-after:always;}
   .doc-page:last-child{page-break-after:auto;}
-  .letterhead{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2.5px solid #0D2137;padding-bottom:10px;margin-bottom:16px;}
-  .lh-brand{font-size:19px;font-weight:800;color:#0D2137;letter-spacing:-0.3px;}
-  .lh-brand span{color:#C8963E;}
-  .lh-sub{font-size:9.5px;color:#64748B;margin-top:2px;}
-  .lh-contact{font-size:9px;color:#64748B;text-align:right;line-height:1.7;}
-  .doc-meta{display:flex;justify-content:space-between;font-size:10px;color:#64748B;margin-bottom:10px;}
-  .doc-title{text-align:center;font-size:13.5px;font-weight:700;text-decoration:underline;color:#0D2137;margin:6px 0 16px;}
-  .calc-card{border:1.5px solid #0D2137;border-radius:5px;overflow:hidden;}
-  .calc-card-head{background:#0D2137;padding:11px 14px;text-align:center;}
-  .cch-t1{color:#fff;font-size:12.5px;font-weight:700;letter-spacing:0.3px;}
-  .cch-t2{color:#C8963E;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-top:2px;}
-  .calc-body{padding:16px 20px;}
-  .info-row{display:flex;font-size:11.5px;padding:3.5px 0;}
-  .info-row .lbl{width:180px;flex-shrink:0;font-style:italic;color:#334155;}
-  .info-row .col{width:12px;flex-shrink:0;color:#334155;}
-  .info-row .val{font-weight:500;color:#0D2137;}
-  .info-row.total .val{font-weight:800;}
-  .info-row.total{background:#FEF6E0;margin:3px -8px 2px;padding:6px 8px;border-radius:4px;}
-  .grp-title{font-size:11px;font-weight:700;color:#0D2137;margin:12px 0 4px;}
-  .rincian-table{width:100%;border-collapse:collapse;margin-top:4px;}
-  .rincian-table td{padding:4px 2px;font-size:11px;vertical-align:middle;}
-  .rincian-table td.item{color:#334155;}
-  .rincian-table td.rate{color:#64748B;text-align:right;width:76px;white-space:nowrap;}
-  .rincian-table td.rp-lbl{width:18px;color:#64748B;text-align:right;padding-right:4px;}
-  .rincian-table td.rp-val{text-align:right;font-weight:600;color:#0D2137;width:96px;}
-  .rincian-total td{border-top:1.5px solid #0D2137;font-weight:800;padding-top:7px;}
-  .sum-row{display:flex;justify-content:space-between;font-size:11.5px;padding:4px 0;}
-  .sum-row .k{color:#334155;}
-  .sum-row .v{font-weight:700;color:#0D2137;}
-  .sum-row.final{margin-top:6px;padding-top:9px;border-top:2px solid #C8963E;}
-  .sum-row.final .k{font-weight:800;font-size:13px;color:#0D2137;}
-  .sum-row.final .v{font-weight:800;font-size:15px;color:#C8963E;}
-  .footnote{font-size:9.5px;color:#64748B;font-style:italic;margin-top:14px;line-height:1.6;}
-  .sign-wrap{display:flex;justify-content:space-between;align-items:flex-end;margin-top:30px;}
-  .sign-left{font-size:9.5px;color:#64748B;}
-  .sign-right{text-align:left;}
-  .sign-brand{font-size:12px;font-weight:800;color:#0D2137;}
-  .sign-brand span{color:#C8963E;}
-  .sign-name{font-size:11px;font-weight:700;color:#0D2137;margin-top:34px;}
-  .sign-role{font-size:9.5px;color:#64748B;}
+
+  .kop{display:flex;align-items:center;gap:16px;}
+  .kop-logo{width:120px;height:auto;}
+  .kop-text{font-size:8.3px;line-height:1.5;}
+  .kop-title{font-weight:bold;font-size:9.5px;}
+  .kop-hr{border-bottom:1px solid #999;margin:8px 0 14px 0;}
+
+  .row-between{display:flex;justify-content:space-between;font-size:9.5px;}
+  .bold{font-weight:bold;}
+  .perihal{text-align:center;font-weight:bold;font-size:10.5px;margin:14px 0;}
+  .paragraph{line-height:1.55;text-align:justify;margin-bottom:4px;font-size:9.5px;}
+  .bullet{font-weight:bold;font-style:italic;margin-left:16px;margin-top:6px;font-size:9.5px;}
+  .poin-list{margin:8px 0 0 20px;}
+  .poin-list li{font-weight:bold;font-size:9px;line-height:1.45;margin-bottom:4px;}
+  .ttd{width:100px;height:auto;margin-top:4px;}
+
+  .footer-band{position:absolute;left:0;right:0;bottom:0;background:#D2142D;color:#fff;padding:8px 14mm;font-size:7px;line-height:1.6;}
+  .footer-title{font-weight:bold;font-size:7.5px;}
+
+  .doc-title{text-align:center;font-weight:bold;font-size:13px;margin:16px 0 14px;}
   .badge-sim{display:inline-block;background:#FEF2F2;color:#991B1B;border:1px solid #FECACA;border-radius:4px;padding:3px 8px;font-size:9px;font-weight:700;margin-bottom:12px;}
+  .calc-card{border:1px solid #000;}
+  .calc-card-head{background:#D9D9D9;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;}
+  .cch-logo{width:100px;height:auto;}
+  .cch-pahami{width:56px;height:auto;}
+  .cch-title{text-align:center;font-weight:bold;font-size:10px;line-height:1.55;flex:1;}
+  .calc-body{padding:14px 16px;}
+  .info-row{display:flex;font-size:9px;font-style:italic;padding:3px 0;}
+  .info-row .lbl{width:175px;flex-shrink:0;}
+  .info-row .col{width:12px;flex-shrink:0;}
+  .info-row .val{}
+  .info-row.total{background:#FFF59D;}
+  .info-row.total .lbl,.info-row.total .val{font-weight:800;font-style:normal;}
+  .grp-title{font-size:9.3px;font-weight:700;font-style:italic;margin:6px 0 3px;}
+  .rincian-table{width:100%;border-collapse:collapse;margin-top:2px;}
+  .rincian-table td{padding:3px 2px;font-size:8.7px;font-style:italic;vertical-align:middle;}
+  .rincian-table td.item{}
+  .rincian-table td.rate{width:75px;}
+  .rincian-table td.rp-lbl{width:26px;font-style:normal;}
+  .rincian-table td.rp-val{text-align:right;font-style:normal;}
+  .rincian-total td{border-top:0.6px solid #000;font-weight:800;font-style:normal;padding-top:5px;}
+  .sum-row{display:flex;justify-content:space-between;font-size:9px;font-weight:700;padding:3px 0;}
+  .sum-row.final .v{}
+  .footnote{font-size:8px;font-weight:700;font-style:italic;margin-top:16px;line-height:1.6;}
+  .sign-wrap{display:flex;justify-content:space-between;margin-top:24px;}
+  .sign-left{font-size:8.3px;}
+  .sign-right{text-align:center;width:200px;}
+  .sign-name{font-size:9px;font-weight:700;margin-top:40px;}
+  .sign-role{font-size:8.5px;}
+  .sign-line{border-top:0.5px solid #000;margin:0 10px;}
   @media print{body{print-color-adjust:exact;-webkit-print-color-adjust:exact;}}
   `;
 }
 
-function letterheadHTML(): string {
+const BUMIDA_LOGO   = "/pdf-assets/bumida-logo.png";
+const BUMIDA_PAHAMI = "/pdf-assets/bumida-pahami-asuransi.png";
+const BUMIDA_TTD    = "/pdf-assets/bumida-ttd-kacab.png";
+
+function kopHTML(): string {
   return `
-  <div class="letterhead">
-    <div>
-      <div class="lh-brand">Asuransi<span>Jogja</span></div>
-      <div class="lh-sub">Konsultan Asuransi Kerugian Independen · Yogyakarta</div>
+  <div class="kop">
+    <img src="${BUMIDA_LOGO}" class="kop-logo" />
+    <div class="kop-text">
+      <div class="kop-title">PT. ASURANSI UMUM BUMIDA 1967</div>
+      <div>Cabang Yogyakarta</div>
+      <div>Jl. Nyi. Tjondrolukito No 125 - Yogyakarta&nbsp;&nbsp;Telp : 0274-6411262 ; 6411153</div>
+      <div>email : yogyakarta@bumida.co.id ; website : www.bumida.co.id</div>
     </div>
-    <div class="lh-contact">
-      📱 0877-8165-8231 (Rio MD)<br/>
-      ✉️ rio@asuransijogja.biz.id · 🌐 asuransijogja.biz.id
-    </div>
+  </div>
+  <div class="kop-hr"></div>`;
+}
+
+function footerBandHTML(): string {
+  return `
+  <div class="footer-band">
+    <div class="footer-title">PT. ASURANSI UMUM BUMIDA 1967</div>
+    <div>Cabang Yogyakarta</div>
+    <div>Jl. Nyi. Tjondrolukito No 125 - Yogyakarta  Telp : 0274-6411262 ; 6411153</div>
+    <div>email : yogyakarta@bumida.co.id ; website : www.bumida.co.id</div>
   </div>`;
 }
 
 function signBlockHTML(): string {
   return `
   <div class="sign-wrap">
-    <div class="sign-left">Terdaftar dan bekerja sama dengan perusahaan asuransi<br/>yang diawasi oleh Otoritas Jasa Keuangan (OJK)</div>
+    <div class="sign-left">Terdaftar dan diawasi oleh<br/>Otoritas Jasa Keuangan (OJK)</div>
     <div class="sign-right">
-      <div class="sign-brand">Asuransi<span>Jogja</span></div>
-      <div class="sign-name">Rio Mardiansyah</div>
-      <div class="sign-role">Konsultan Asuransi Kerugian Independen</div>
+      <div class="bold">PT Asuransi Umum Bumida 1967</div>
+      <div>Cabang Yogyakarta</div>
+      <div class="sign-name">Afid Fauzan, S.IP., AAAIK</div>
+      <div class="sign-role">Kepala Cabang</div>
     </div>
+  </div>`;
+}
+
+// ─── Halaman 1: Surat Penawaran resmi (kop BUMIDA) ───────────────────────────
+function suratPageHTML(c: PropertiCalc, docNo: string, tanggal: string): string {
+  const produkBullets = [
+    "Asuransi Kebakaran;",
+    ...(c.adaGempa ? ["Asuransi Gempa Bumi (Polis Terpisah);"] : []),
+  ];
+  const perihal = `Penawaran Asuransi Kebakaran${c.adaGempa ? " & Gempa Bumi" : ""}`;
+  const penutup = `Asuransi Kebakaran${c.adaGempa ? " & Gempa Bumi (2 Polis Terpisah)" : ""}`;
+
+  return `
+  <div class="doc-page">
+    ${kopHTML()}
+
+    <div class="row-between">
+      <div>Nomor : ${docNo}</div>
+      <div>Yogyakarta, ${tanggal}</div>
+    </div>
+
+    <div style="margin-top:16px;font-size:9.5px;">Kepada Yth</div>
+    <div class="bold" style="font-size:9.5px;">${c.nama}</div>
+    <div style="margin-bottom:12px;font-size:9.5px;">di - Tempat</div>
+
+    <div class="perihal">Perihal : ${perihal}</div>
+
+    <p class="paragraph">
+      Dengan hormat,<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pada kesempatan yang baik ini ijinkanlah kami
+      untuk memperkenalkan diri bahwa kami PT. Asuransi Umum Bumida 1967 (disingkat BUMIDA) yang
+      khusus bergerak dalam bidang jasa asuransi kerugian (umum) yaitu menjual semua jenis produk
+      asuransi diluar asuransi jiwa, dengan produk asuransi seperti :
+    </p>
+
+    ${produkBullets.map(b => `<div class="bullet">➢ ${b}</div>`).join("")}
+
+    <p class="paragraph" style="margin-top:10px;">
+      Sebagai Perusahaan yang mempunyai komitmen yang tinggi terhadap pelayanan dan kepercayaan
+      konsumen, dapat kami informasikan sebagai berikut :
+    </p>
+
+    <ol class="poin-list">
+      <li>Status PT Asuransi Umum Bumida 1967 memiliki 57 Kantor cabang dan Kantor Layanan
+        Se-Indonesia dan posisi Cabang Yogyakarta sebagai Kantor Cabang mempunyai otoritas
+        penerbitan polis dan pelayanan klaim secara mandiri &amp; maksimal;</li>
+      <li>Sertifikat ISO 9001 : 2015 Tahun 2020 dari SGS ;</li>
+      <li>2nd Best General Insurance 2017 versi Media Asuransi untuk kategori Ekuitas 250 - 500 M ;</li>
+      <li>Piagam Penghargaan dari Infobank Insurance Award July 28th 2022 dengan Predikat
+        ‘’Excellent’’ for Financial Performance Full Year 2021 ;</li>
+      <li>Piagam Penghargaan dari Infobank Insurance Award 2023 dengan Predikat ‘’The Best
+        Performance General Insurance Company’’ untuk kategori Perusahaan Asuransi dengan Premi
+        Bruto Rp. 250 Miliar s.d Rp. &lt;500 Miliar ;</li>
+    </ol>
+
+    <p class="paragraph" style="margin-top:10px;">
+      Berdasarkan point tersebut diatas perkenankanlah kami untuk mengajukan penawaran kerjasama
+      ${penutup} dengan rincian benefit dan perhitungan terlampir.
+    </p>
+    <p class="paragraph">Demikian kami sampaikan, atas perhatian kami ucapkan terima kasih.</p>
+
+    <div style="margin-top:14px;font-size:9.5px;">Hormat kami,</div>
+    <div class="bold" style="font-size:9.5px;">PT Asuransi Umum Bumida 1967</div>
+    <div class="bold" style="font-size:9.5px;">Cabang Yogyakarta</div>
+    <img src="${BUMIDA_TTD}" class="ttd" />
+    <div class="bold" style="font-size:9.5px;margin-top:-6px;">AFID FAUZAN, S.IP., AAAIK</div>
+    <div style="font-size:9px;">Kepala Cabang</div>
+
+    ${footerBandHTML()}
   </div>`;
 }
 
@@ -299,16 +392,19 @@ function kebakaranPageHTML(sub: Submission, c: PropertiCalc, docNo: string, tang
 
   return `
   <div class="doc-page">
-    ${letterheadHTML()}
-    <div class="doc-meta">
-      <span>No. Simulasi: <strong>${docNo}</strong></span>
-      <span>${tanggal}</span>
-    </div>
+    ${kopHTML()}
     <div class="doc-title">Simulasi Perhitungan Premi Asuransi Kebakaran</div>
+
     <div class="calc-card">
       <div class="calc-card-head">
-        <div class="cch-t1">PERHITUNGAN PREMI ASURANSI KEBAKARAN</div>
-        <div class="cch-t2">AsuransiJogja — Simulasi &amp; Estimasi</div>
+        <img src="${BUMIDA_LOGO}" class="cch-logo" />
+        <div class="cch-title">
+          <div>PERHITUNGAN PREMI</div>
+          <div>ASURANSI KEBAKARAN</div>
+          <div>PT ASURANSI UMUM BUMIDA 1967</div>
+          <div>CABANG YOGYAKARTA</div>
+        </div>
+        <img src="${BUMIDA_PAHAMI}" class="cch-pahami" />
       </div>
       <div class="calc-body">
         <div class="info-row"><div class="lbl">Cover Asuransi</div><div class="col">:</div><div class="val">Kebakaran</div></div>
@@ -326,33 +422,36 @@ function kebakaranPageHTML(sub: Submission, c: PropertiCalc, docNo: string, tang
         <div class="grp-title">Rincian Premi</div>
         <table class="rincian-table"><tbody>${rows.join("")}</tbody></table>
 
-        <div style="margin-top:14px;">
-          <div class="sum-row"><span class="k">Premi / Tahun</span><span class="v">${fmtRpPlain(c.subtotalKebakaran)}</span></div>
-          <div class="sum-row"><span class="k">Biaya ADM</span><span class="v">${fmtRpPlain(c.biayaAdminKebakaran)}</span></div>
-          <div class="sum-row final"><span class="k">Total Premi Akhir</span><span class="v">${fmtRpPlain(c.totalKebakaran)} <span style="font-size:9.5px;font-weight:500;color:#64748B;">/ tahun</span></span></div>
+        <div style="margin-top:12px;">
+          <div class="sum-row"><span>Premi / Tahun</span><span>${fmtRpPlain(c.subtotalKebakaran)}</span></div>
+          <div class="sum-row"><span>Biaya ADM</span><span>${fmtRpPlain(c.biayaAdminKebakaran)}</span></div>
+          <div class="sum-row final"><span>Total Premi Akhir</span><span>${fmtRpPlain(c.totalKebakaran)} <i>(Per tahun)</i></span></div>
         </div>
-
-        <p class="footnote">*) Penetapan tarif mengacu pada SE OJK No. 6/SEOJK.05/2017 Tentang Usaha Asuransi Harta Benda. Angka di atas adalah <strong>simulasi &amp; estimasi</strong>, bukan penawaran resmi (quotation) maupun polis — premi final ditetapkan perusahaan asuransi setelah survei &amp; analisis risiko.</p>
       </div>
     </div>
+
+    <p class="footnote">*) Penetapan Tarif sesuai dengan SE OJK No 6/SEOJK.05/2017 Tentang Usaha Asuransi Harta Benda</p>
     ${signBlockHTML()}
+    ${footerBandHTML()}
   </div>`;
 }
 
 function gempaPageHTML(sub: Submission, c: PropertiCalc, docNo: string, tanggal: string): string {
   return `
   <div class="doc-page">
-    ${letterheadHTML()}
-    <div class="doc-meta">
-      <span>No. Simulasi: <strong>${docNo}</strong></span>
-      <span>${tanggal}</span>
-    </div>
+    ${kopHTML()}
     <div class="doc-title">Simulasi Perhitungan Premi Asuransi Gempa Bumi</div>
-    <span class="badge-sim">POLIS TERPISAH DARI ASURANSI KEBAKARAN</span>
+
     <div class="calc-card">
       <div class="calc-card-head">
-        <div class="cch-t1">PERHITUNGAN PREMI ASURANSI GEMPA BUMI</div>
-        <div class="cch-t2">AsuransiJogja — Simulasi &amp; Estimasi</div>
+        <img src="${BUMIDA_LOGO}" class="cch-logo" />
+        <div class="cch-title">
+          <div>PERHITUNGAN PREMI</div>
+          <div>ASURANSI GEMPA BUMI</div>
+          <div>PT ASURANSI UMUM BUMIDA 1967</div>
+          <div>CABANG YOGYAKARTA</div>
+        </div>
+        <img src="${BUMIDA_PAHAMI}" class="cch-pahami" />
       </div>
       <div class="calc-body">
         <div class="info-row"><div class="lbl">Cover Asuransi</div><div class="col">:</div><div class="val">Gempa Bumi</div></div>
@@ -370,36 +469,40 @@ function gempaPageHTML(sub: Submission, c: PropertiCalc, docNo: string, tanggal:
 
         <div class="grp-title">Rincian Premi</div>
         <table class="rincian-table"><tbody>
-          <tr><td class="item">Gempa Bumi (EQ) — Zona ${c.zonaGempa}</td><td class="rate">${fmtPct(c.rGempaPermil)}</td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiGempa)}</td></tr>
+          <tr><td class="item">Gempa Bumi (EQ) - Zona ${c.zonaGempa}</td><td class="rate">${fmtPct(c.rGempaPermil)}</td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiGempa)}</td></tr>
           <tr class="rincian-total"><td colspan="2"></td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiGempa)}</td></tr>
         </tbody></table>
 
-        <div style="margin-top:14px;">
-          <div class="sum-row"><span class="k">Premi / Tahun</span><span class="v">${fmtRpPlain(c.premiGempa)}</span></div>
-          <div class="sum-row"><span class="k">Biaya ADM</span><span class="v">${fmtRpPlain(c.biayaAdminGempa)}</span></div>
-          <div class="sum-row final"><span class="k">Total Premi Akhir</span><span class="v">${fmtRpPlain(c.totalGempa)} <span style="font-size:9.5px;font-weight:500;color:#64748B;">/ tahun</span></span></div>
+        <div style="margin-top:12px;">
+          <div class="sum-row"><span>Premi / Tahun</span><span>${fmtRpPlain(c.premiGempa)}</span></div>
+          <div class="sum-row"><span>Biaya ADM</span><span>${fmtRpPlain(c.biayaAdminGempa)}</span></div>
+          <div class="sum-row final"><span>Total Premi Akhir</span><span>${fmtRpPlain(c.totalGempa)} <i>(Per tahun)</i></span></div>
         </div>
-
-        <p class="footnote">*) Penetapan tarif mengacu pada SE OJK No. 6/SEOJK.05/2017 Tentang Usaha Asuransi Harta Benda. Golongan risiko: ${c.golLabel}. Asuransi Gempa Bumi diterbitkan sebagai <strong>polis tersendiri</strong>, terpisah dari polis Asuransi Kebakaran, sesuai ketentuan PSAKI. Angka di atas adalah <strong>simulasi &amp; estimasi</strong>, bukan penawaran resmi maupun polis.</p>
       </div>
     </div>
+
+    <p class="footnote">*) Penetapan Tarif sesuai dengan SE OJK No 6/SEOJK.05/2017 Tentang Usaha Asuransi Harta Benda. Golongan risiko: ${c.golLabel}. Asuransi Gempa Bumi diterbitkan sebagai polis tersendiri, terpisah dari polis Asuransi Kebakaran, sesuai ketentuan PSAKI.</p>
     ${signBlockHTML()}
+    ${footerBandHTML()}
   </div>`;
 }
 
 function buildPropertiDocument(sub: Submission): string {
   const c = computePropertiCalc(sub);
-  const docNo = sub.id;
+  const docNo = `EKS/BMD-YK/PMS/${sub.id}`;
   const tanggal = new Date(sub.submittedAt).toLocaleDateString("id-ID", { day: "2-digit", month: "long", year: "numeric" });
 
-  const pages = [kebakaranPageHTML(sub, c, docNo, tanggal)];
+  const pages = [
+    suratPageHTML(c, docNo, tanggal),
+    kebakaranPageHTML(sub, c, docNo, tanggal),
+  ];
   if (c.adaGempa) pages.push(gempaPageHTML(sub, c, docNo, tanggal));
 
   return `<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8"/>
-<title>Simulasi Premi Kebakaran & Gempa Bumi — ${sub.nama}</title>
+<title>Penawaran Asuransi Kebakaran &amp; Gempa Bumi — ${sub.nama}</title>
 <style>${docStyles()}</style>
 </head>
 <body>
@@ -420,7 +523,7 @@ function downloadPDF(sub: Submission) {
   if (!win) return alert("Pop-up diblokir browser. Izinkan pop-up dan coba lagi.");
 
   const safeNama = sub.nama.replace(/\s+/g, "-").replace(/[^a-zA-Z0-9-]/g, "");
-  const fileName = `Simulasi-Premi-Kebakaran-Gempa-${safeNama}.pdf`;
+  const fileName = `Penawaran-Asuransi-Bumida-${safeNama}.pdf`;
 
   win.document.write(html);
   win.document.close();
