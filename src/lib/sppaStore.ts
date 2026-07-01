@@ -1,10 +1,27 @@
 /**
  * src/lib/sppaStore.ts
- * Data layer untuk SPPA submissions — menggunakan Supabase.
+ * Data layer untuk SPPA submissions — menggunakan Redis (REST API).
  *
- * ENV yang dibutuhkan di Vercel:
- *   NEXT_PUBLIC_SUPABASE_URL   → Supabase Dashboard → Settings → API → Project URL
- *   SUPABASE_SERVICE_ROLE_KEY  → Supabase Dashboard → Settings → API → service_role key
+ * Kompatibel dengan DUA jenis integrasi (pilih salah satu di Vercel):
+ *
+ *   1) Vercel KV (Marketplace → Storage → KV, atau Upstash for Redis via
+ *      Vercel Marketplace) → env var otomatis ter-inject:
+ *        KV_REST_API_URL
+ *        KV_REST_API_TOKEN
+ *
+ *   2) Upstash Redis langsung (buat database di upstash.com lalu tempel
+ *      manual di Vercel → Settings → Environment Variables):
+ *        UPSTASH_REDIS_REST_URL
+ *        UPSTASH_REDIS_REST_TOKEN
+ *
+ * Tidak perlu install SDK — pakai REST API single-command Upstash/Vercel KV
+ * (keduanya memakai protokol yang sama), konsisten dengan pola sbFetch yang
+ * dipakai sebelumnya untuk Supabase.
+ *
+ * Struktur data:
+ *   - Setiap submission disimpan sebagai 1 JSON string di key: sppa:{id}
+ *   - Urutan waktu disimpan di sorted set "sppa:index"
+ *     (score = timestamp submittedAt dalam ms, member = id)
  */
 
 export interface SPPASubmission {
@@ -20,111 +37,71 @@ export interface SPPASubmission {
   status: "baru" | "diproses" | "selesai";
 }
 
-// ─── DB row shape (snake_case sesuai Supabase) ────────────────────────────────
-interface DBRow {
-  id: string;
-  product: string;
-  product_label: string;
-  nama: string;
-  whatsapp: string;
-  email: string | null;
-  fields: Record<string, string | string[]>;
-  field_labels: Record<string, string>;
-  submitted_at: string;
-  status: "baru" | "diproses" | "selesai";
-}
+const INDEX_KEY = "sppa:index";
+const itemKey = (id: string) => `sppa:${id}`;
 
-function rowToSubmission(row: DBRow): SPPASubmission {
-  return {
-    id: row.id,
-    product: row.product,
-    productLabel: row.product_label,
-    nama: row.nama,
-    whatsapp: row.whatsapp,
-    email: row.email,
-    fields: row.fields,
-    fieldLabels: row.field_labels,
-    submittedAt: row.submitted_at,
-    status: row.status,
-  };
-}
+// ─── Redis REST helper (format single-command Upstash/Vercel KV) ─────────────
+// POST {baseUrl} body: ["CMD", "arg1", "arg2", ...] → { result: ... }
+async function redisCmd<T = unknown>(args: (string | number)[]): Promise<T> {
+  const baseUrl =
+    process.env.KV_REST_API_URL ?? process.env.UPSTASH_REDIS_REST_URL;
+  const token =
+    process.env.KV_REST_API_TOKEN ?? process.env.UPSTASH_REDIS_REST_TOKEN;
 
-// ─── Supabase REST helper (tanpa install SDK) ─────────────────────────────────
-async function sbFetch(path: string, options: RequestInit = {}): Promise<Response> {
-  const baseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key     = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!baseUrl) throw new Error("KV_REST_API_URL / UPSTASH_REDIS_REST_URL tidak di-set di environment variables");
+  if (!token)   throw new Error("KV_REST_API_TOKEN / UPSTASH_REDIS_REST_TOKEN tidak di-set di environment variables");
 
-  if (!baseUrl) throw new Error("NEXT_PUBLIC_SUPABASE_URL tidak di-set di environment variables");
-  if (!key)     throw new Error("SUPABASE_SERVICE_ROLE_KEY tidak di-set di environment variables");
-
-  return fetch(`${baseUrl}/rest/v1${path}`, {
-    ...options,
+  const res = await fetch(baseUrl, {
+    method: "POST",
     headers: {
       "Content-Type":  "application/json",
-      "apikey":        key,
-      "Authorization": `Bearer ${key}`,
-      "Prefer":        "return=representation",
-      ...(options.headers ?? {}),
+      "Authorization": `Bearer ${token}`,
     },
+    body: JSON.stringify(args.map(String)),
   });
+
+  const json = await res.json() as { result?: T; error?: string };
+
+  if (!res.ok || json.error) {
+    throw new Error(`Redis command gagal [${args[0]}]: ${json.error ?? res.statusText}`);
+  }
+
+  return json.result as T;
 }
 
-// ─── Public API ───────────────────────────────────────────────────────────────
+// ─── Public API (signature tetap sama — tidak perlu ubah route.ts) ───────────
 
 export async function addSubmission(sub: SPPASubmission): Promise<void> {
-  const row: DBRow = {
-    id:           sub.id,
-    product:      sub.product,
-    product_label: sub.productLabel,
-    nama:         sub.nama,
-    whatsapp:     sub.whatsapp,
-    email:        sub.email,
-    fields:       sub.fields,
-    field_labels: sub.fieldLabels,
-    submitted_at: sub.submittedAt,
-    status:       sub.status,
-  };
+  const score = new Date(sub.submittedAt).getTime() || Date.now();
 
-  const res = await sbFetch("/sppa_submissions", {
-    method: "POST",
-    body:   JSON.stringify(row),
-  });
-
-  if (!res.ok) {
-    const errText = await res.text();
-    throw new Error(`Supabase insert gagal: ${errText}`);
-  }
+  // Simpan data lengkap
+  await redisCmd(["SET", itemKey(sub.id), JSON.stringify(sub)]);
+  // Tambahkan ke index terurut waktu
+  await redisCmd(["ZADD", INDEX_KEY, score, sub.id]);
 }
 
 export async function getSubmissions(): Promise<SPPASubmission[]> {
-  const res = await sbFetch("/sppa_submissions?order=submitted_at.desc&limit=500");
+  // Ambil id terbaru → terlama (maks 500)
+  const ids = await redisCmd<string[]>(["ZRANGE", INDEX_KEY, "0", "499", "REV"]);
+  if (!ids || ids.length === 0) return [];
 
-  if (!res.ok) {
-    const errText = await res.text();
-    throw new Error(`Supabase select gagal: ${errText}`);
-  }
+  const values = await redisCmd<(string | null)[]>(["MGET", ...ids.map(itemKey)]);
 
-  const rows: DBRow[] = await res.json();
-  return rows.map(rowToSubmission);
+  return values
+    .filter((v): v is string => v !== null && v !== undefined)
+    .map(v => JSON.parse(v) as SPPASubmission);
 }
 
 export async function updateSubmissionStatus(
   id: string,
   status: SPPASubmission["status"]
 ): Promise<SPPASubmission | null> {
-  const res = await sbFetch(
-    `/sppa_submissions?id=eq.${encodeURIComponent(id)}`,
-    {
-      method: "PATCH",
-      body:   JSON.stringify({ status }),
-    }
-  );
+  const raw = await redisCmd<string | null>(["GET", itemKey(id)]);
+  if (!raw) return null;
 
-  if (!res.ok) {
-    const errText = await res.text();
-    throw new Error(`Supabase update gagal: ${errText}`);
-  }
+  const sub = JSON.parse(raw) as SPPASubmission;
+  sub.status = status;
 
-  const rows: DBRow[] = await res.json();
-  return rows.length > 0 ? rowToSubmission(rows[0]) : null;
+  await redisCmd(["SET", itemKey(id), JSON.stringify(sub)]);
+  return sub;
 }

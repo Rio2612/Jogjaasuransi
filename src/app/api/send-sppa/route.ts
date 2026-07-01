@@ -200,9 +200,9 @@ export async function POST(req: NextRequest) {
       status:       "baru",
     };
 
-    // 1. Simpan ke Supabase dulu — ini harus berhasil
+    // 1. Simpan ke Redis dulu — ini harus berhasil
     await addSubmission(submission);
-    console.log("[send-sppa] Tersimpan ke Supabase:", submission.id);
+    console.log("[send-sppa] Tersimpan ke Redis:", submission.id);
 
     // 2. Kirim WA + Email bersamaan — semua di-await agar tidak mati di Vercel serverless
     const adminWA = process.env.ADMIN_WA || "6287781658231";
