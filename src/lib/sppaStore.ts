@@ -1,28 +1,24 @@
 /**
  * src/lib/sppaStore.ts
- * Data layer untuk SPPA submissions — menggunakan Redis (REST API).
+ * Data layer untuk SPPA submissions — menggunakan Redis Cloud (koneksi TCP
+ * standar via library "redis"/node-redis), sesuai integrasi resmi "Redis"
+ * (Redis Cloud, oleh Redis Inc.) dari Vercel Marketplace.
  *
- * Kompatibel dengan DUA jenis integrasi (pilih salah satu di Vercel):
+ * PENTING: integrasi ini BEDA dari Vercel KV / Upstash — Redis Cloud tidak
+ * memakai REST API, melainkan connection string standar yang di-inject
+ * sebagai env var:
+ *   REDIS_URL   (format: redis://default:PASSWORD@HOST:PORT
+ *                atau rediss://... jika TLS)
  *
- *   1) Vercel KV (Marketplace → Storage → KV, atau Upstash for Redis via
- *      Vercel Marketplace) → env var otomatis ter-inject:
- *        KV_REST_API_URL
- *        KV_REST_API_TOKEN
+ * Client dibuat sekali dan disimpan di variabel global agar dipakai ulang
+ * antar invocation (penting di lingkungan serverless Vercel supaya tidak
+ * membuka koneksi baru di setiap request).
  *
- *   2) Upstash Redis langsung (buat database di upstash.com lalu tempel
- *      manual di Vercel → Settings → Environment Variables):
- *        UPSTASH_REDIS_REST_URL
- *        UPSTASH_REDIS_REST_TOKEN
- *
- * Tidak perlu install SDK — pakai REST API single-command Upstash/Vercel KV
- * (keduanya memakai protokol yang sama), konsisten dengan pola sbFetch yang
- * dipakai sebelumnya untuk Supabase.
- *
- * Struktur data:
- *   - Setiap submission disimpan sebagai 1 JSON string di key: sppa:{id}
- *   - Urutan waktu disimpan di sorted set "sppa:index"
- *     (score = timestamp submittedAt dalam ms, member = id)
+ * Install sekali di terminal project:
+ *   npm install redis
  */
+
+import { createClient, type RedisClientType } from "redis";
 
 export interface SPPASubmission {
   id: string;
@@ -40,52 +36,60 @@ export interface SPPASubmission {
 const INDEX_KEY = "sppa:index";
 const itemKey = (id: string) => `sppa:${id}`;
 
-// ─── Redis REST helper (format single-command Upstash/Vercel KV) ─────────────
-// POST {baseUrl} body: ["CMD", "arg1", "arg2", ...] → { result: ... }
-async function redisCmd<T = unknown>(args: (string | number)[]): Promise<T> {
-  const baseUrl =
-    process.env.KV_REST_API_URL ?? process.env.UPSTASH_REDIS_REST_URL;
-  const token =
-    process.env.KV_REST_API_TOKEN ?? process.env.UPSTASH_REDIS_REST_TOKEN;
-
-  if (!baseUrl) throw new Error("KV_REST_API_URL / UPSTASH_REDIS_REST_URL tidak di-set di environment variables");
-  if (!token)   throw new Error("KV_REST_API_TOKEN / UPSTASH_REDIS_REST_TOKEN tidak di-set di environment variables");
-
-  const res = await fetch(baseUrl, {
-    method: "POST",
-    headers: {
-      "Content-Type":  "application/json",
-      "Authorization": `Bearer ${token}`,
-    },
-    body: JSON.stringify(args.map(String)),
-  });
-
-  const json = await res.json() as { result?: T; error?: string };
-
-  if (!res.ok || json.error) {
-    throw new Error(`Redis command gagal [${args[0]}]: ${json.error ?? res.statusText}`);
-  }
-
-  return json.result as T;
+// ─── Singleton client (reuse antar invocation serverless) ────────────────────
+declare global {
+  // eslint-disable-next-line no-var
+  var __sppaRedisClient: RedisClientType | undefined;
+  // eslint-disable-next-line no-var
+  var __sppaRedisConnectPromise: Promise<RedisClientType> | undefined;
 }
 
-// ─── Public API (signature tetap sama — tidak perlu ubah route.ts) ───────────
+function getRedisUrl(): string {
+  const url = process.env.REDIS_URL;
+  if (!url) {
+    throw new Error(
+      "REDIS_URL tidak di-set di environment variables. Pastikan integrasi Redis Cloud sudah di-connect ke project ini di Vercel (Storage tab), lalu redeploy."
+    );
+  }
+  return url;
+}
+
+async function getClient(): Promise<RedisClientType> {
+  if (global.__sppaRedisClient?.isOpen) {
+    return global.__sppaRedisClient;
+  }
+
+  if (!global.__sppaRedisConnectPromise) {
+    const client = createClient({ url: getRedisUrl() }) as RedisClientType;
+    client.on("error", (err) => console.error("[sppaStore] Redis client error:", err));
+
+    global.__sppaRedisConnectPromise = client.connect().then(() => {
+      global.__sppaRedisClient = client;
+      return client;
+    });
+  }
+
+  return global.__sppaRedisConnectPromise;
+}
+
+// ─── Public API ────────────────────────────────────────────────────────────
 
 export async function addSubmission(sub: SPPASubmission): Promise<void> {
+  const client = await getClient();
   const score = new Date(sub.submittedAt).getTime() || Date.now();
 
-  // Simpan data lengkap
-  await redisCmd(["SET", itemKey(sub.id), JSON.stringify(sub)]);
-  // Tambahkan ke index terurut waktu
-  await redisCmd(["ZADD", INDEX_KEY, score, sub.id]);
+  await client.set(itemKey(sub.id), JSON.stringify(sub));
+  await client.zAdd(INDEX_KEY, [{ score, value: sub.id }]);
 }
 
 export async function getSubmissions(): Promise<SPPASubmission[]> {
+  const client = await getClient();
+
   // Ambil id terbaru → terlama (maks 500)
-  const ids = await redisCmd<string[]>(["ZRANGE", INDEX_KEY, "0", "499", "REV"]);
+  const ids = await client.zRange(INDEX_KEY, 0, 499, { REV: true });
   if (!ids || ids.length === 0) return [];
 
-  const values = await redisCmd<(string | null)[]>(["MGET", ...ids.map(itemKey)]);
+  const values = await client.mGet(ids.map(itemKey));
 
   return values
     .filter((v): v is string => v !== null && v !== undefined)
@@ -96,12 +100,14 @@ export async function updateSubmissionStatus(
   id: string,
   status: SPPASubmission["status"]
 ): Promise<SPPASubmission | null> {
-  const raw = await redisCmd<string | null>(["GET", itemKey(id)]);
+  const client = await getClient();
+
+  const raw = await client.get(itemKey(id));
   if (!raw) return null;
 
   const sub = JSON.parse(raw) as SPPASubmission;
   sub.status = status;
 
-  await redisCmd(["SET", itemKey(id), JSON.stringify(sub)]);
+  await client.set(itemKey(id), JSON.stringify(sub));
   return sub;
 }
