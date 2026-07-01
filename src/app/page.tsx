@@ -3,6 +3,7 @@ import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import Trust from "@/components/sections/Trust";
 import Produk from "@/components/sections/Produk";
+import ArtikelPreview from "@/components/sections/ArtikelPreview";
 import Kalkulator from "@/components/sections/Kalkulator";
 import ProblemSolution from "@/components/sections/ProblemSolution";
 import Why from "@/components/sections/Why";
@@ -40,6 +41,7 @@ export default function HomePage() {
         <Hero />
         <Trust />
         <Produk />
+        <ArtikelPreview />
         <Kalkulator />
         <ProblemSolution />
         <Why />
