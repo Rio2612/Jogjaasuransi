@@ -50,9 +50,15 @@ export default function Produk() {
             <div className="text-[1.6rem] mb-3">{p.icon}</div>
             <div className="font-heading text-lg font-bold text-navy mb-2">{p.name}</div>
             <p className="text-[1rem] leading-[1.7] text-[#64748B]">{p.desc}</p>
-            <a href={p.href} className="inline-flex items-center gap-1 text-gold text-[0.92rem] font-semibold mt-3 hover:gap-2 transition-all no-underline">
-              {p.href.startsWith("#") ? "Hitung premi →" : "Konsultasi →"}
-            </a>
+            {p.href.startsWith("#") ? (
+              <a href={p.href} className="inline-flex items-center gap-1 text-gold text-[0.92rem] font-semibold mt-3 hover:gap-2 transition-all no-underline">
+                Hitung premi →
+              </a>
+            ) : (
+              <Link href={p.href} className="inline-flex items-center gap-1 text-gold text-[0.92rem] font-semibold mt-3 hover:gap-2 transition-all no-underline">
+                Pelajari lebih lanjut →
+              </Link>
+            )}
           </div>
         ))}
       </div>
