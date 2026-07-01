@@ -3,6 +3,12 @@
  * Generate PDF server-side menggunakan @sparticuz/chromium + puppeteer-core.
  * Dioptimasi untuk Vercel serverless (cold start cepat, ukuran minimal).
  *
+ * CATATAN: Saat ini format PDF resmi HANYA tersedia untuk produk "properti"
+ * (Asuransi Kebakaran & Gempa Bumi — 2 polis terpisah), meniru format
+ * "Perhitungan Premi" standar industri. Produk lain belum memiliki format
+ * PDF resmi sehingga generatePDFBuffer() akan mengembalikan null (email
+ * tetap terkirim tanpa lampiran PDF).
+ *
  * Install sekali di terminal project:
  *   npm install @sparticuz/chromium puppeteer-core
  */
@@ -15,18 +21,17 @@ function fStr(val: string | string[] | undefined, fallback = "—"): string {
   return Array.isArray(val) ? val.join(", ") : String(val);
 }
 
-function fRp(val: string | string[] | undefined): string {
-  if (!val || (Array.isArray(val) && val.length === 0)) return "—";
-  const raw = Array.isArray(val) ? val[0] : val;
-  const num = parseInt(String(raw).replace(/\D/g, ""), 10);
-  if (isNaN(num)) return String(raw);
-  return "Rp " + num.toLocaleString("id-ID");
-}
-
 function fNum(val: string | string[] | undefined): number {
   if (!val) return 0;
   const raw = Array.isArray(val) ? val[0] : val;
   return parseInt(String(raw).replace(/\D/g, ""), 10) || 0;
+}
+
+function fmtPct(permil: number): string {
+  return (permil / 10).toFixed(4) + "%";
+}
+function fmtRpPlain(n: number): string {
+  return Math.round(n).toLocaleString("id-ID");
 }
 
 // ─── Rate Tables (sync dengan AdminSPPAPage) ──────────────────────────────────
@@ -46,313 +51,323 @@ const ZONA_GEMPA_NOMOR: Record<string, number> = {
   "Kabupaten Bantul":       5,
 };
 
-// ─── Build HTML untuk PDF (sama dengan AdminSPPAPage tapi standalone) ─────────
-function buildPDFHtml(sub: SPPASubmission): string {
-  const f       = sub.fields;
-  const product = sub.product;
-  const now     = new Date(sub.submittedAt).toLocaleDateString("id-ID", {
-    day: "numeric", month: "long", year: "numeric",
-  });
+// ─── Kalkulasi Properti (sync dengan AdminSPPAPage.computePropertiCalc) ───────
+interface PropertiCalc {
+  nama: string;
+  alamat: string;
+  okupasiLabel: string;
+  kkLabel: string;
+  jenisPertanggungan: string;
+  nilaiBangunan: number;
+  nilaiIsi: number;
+  totalNilai: number;
+  ratePermilDasar: number;
+  premiDasar: number;
+  adaBanjir: boolean; premiBanjir: number; rateBanjirPermil: number;
+  adaHuru: boolean;   premiHuru: number;   rateHuruPermil: number;
+  adaBurglary: boolean; premiBurglary: number; rateBurglaryPermil: number;
+  adaTabrakan: boolean; premiTabrakan: number; rateTabrakanPermil: number;
+  subtotalKebakaran: number;
+  biayaAdminKebakaran: number;
+  totalKebakaran: number;
+  adaGempa: boolean;
+  wGempa: string;
+  zonaGempa: number;
+  golLabel: string;
+  rGempaPermil: number;
+  premiGempa: number;
+  biayaAdminGempa: number;
+  totalGempa: number;
+}
 
-  // ── Kendaraan ──────────────────────────────────────────────────────────────
-  let productSection = "";
+function computePropertiCalc(sub: SPPASubmission): PropertiCalc {
+  const f = sub.fields;
+  const nilaiBangunan = fNum(f.nilaiBangunan);
+  const nilaiIsi      = fNum(f.nilaiIsi);
+  const totalNilai    = nilaiBangunan + nilaiIsi;
+  const okupasiRaw    = fStr(f.okupasi);
+  const okupasiStr    = okupasiRaw.toLowerCase();
+  const kkStr         = fStr(f.kelasKonstruksi).toLowerCase();
 
-  if (product === "kendaraan") {
-    const nilaiRaw = fNum(f.nilaiKendaraan);
-    const tipeStr  = fStr(f.tipeProteksi);
-    const isAR     = !tipeStr || tipeStr === "—" || tipeStr.includes("All Risk");
+  const kk = kkStr.includes("1") || kkStr.includes("beton") ? 1
+           : kkStr.includes("2") || kkStr.includes("semi")  ? 2 : 3;
+  const kkLabel = kk === 1 ? "Kelas 1 (Beton/Bata)" : kk === 2 ? "Kelas 2 (Semi Permanen)" : "Kelas 3 (Kayu/Bambu)";
 
-    type RateEntry = { max: number; ar: number; tlo: number; labelAR: string; labelTLO: string };
-    const OJK_RATES: RateEntry[] = [
-      { max: 125_000_000, ar: 2.53, tlo: 0.51, labelAR: "2,53% (Kat.1 ≤125 jt)",     labelTLO: "0,51% (Kat.1 ≤125 jt)"     },
-      { max: 200_000_000, ar: 2.69, tlo: 0.44, labelAR: "2,69% (Kat.2 >125–200 jt)", labelTLO: "0,44% (Kat.2 >125–200 jt)" },
-      { max: 400_000_000, ar: 1.79, tlo: 0.29, labelAR: "1,79% (Kat.3 >200–400 jt)", labelTLO: "0,29% (Kat.3 >200–400 jt)" },
-      { max: 800_000_000, ar: 1.14, tlo: 0.23, labelAR: "1,14% (Kat.4 >400–800 jt)", labelTLO: "0,23% (Kat.4 >400–800 jt)" },
-      { max: Infinity,    ar: 1.05, tlo: 0.20, labelAR: "1,05% (Kat.5 >800 jt)",     labelTLO: "0,20% (Kat.5 >800 jt)"     },
-    ];
-    const rateEntry       = OJK_RATES.find(r => nilaiRaw <= r.max) ?? OJK_RATES[OJK_RATES.length - 1];
-    const rateUsed        = isAR ? rateEntry.ar : rateEntry.tlo;
-    const rateLabel       = isAR ? rateEntry.labelAR : rateEntry.labelTLO;
-    const premiDasar      = Math.round(nilaiRaw * rateUsed / 100);
-    const diskon          = Math.round(premiDasar * 0.11);
-    const premiSetelahDiskon = premiDasar - diskon;
-    const biayaAdmin      = premiDasar < 5_000_000 ? 30_000 : 40_000;
-    const total           = premiSetelahDiskon + biayaAdmin;
+  type OkupasiRate = { label: string; kk1: number; kk2: number; kk3: number };
+  const RATE_TABLE: { match: string[]; data: OkupasiRate }[] = [
+    { match: ["rumah", "hunian", "tinggal"],    data: { label: "Rumah Tinggal",           kk1: 0.294, kk2: 0.397, kk3: 0.499 } },
+    { match: ["kos", "kontrakan", "indekos"],   data: { label: "Kos-Kosan",                kk1: 0.478, kk2: 0.645, kk3: 0.812 } },
+    { match: ["ruko", "toko", "retail"],        data: { label: "Ruko / Toko",              kk1: 0.594, kk2: 0.802, kk3: 1.011 } },
+    { match: ["gudang", "warehouse", "pabrik"], data: { label: "Gudang / Pabrik",           kk1: 0.764, kk2: 1.031, kk3: 1.299 } },
+    { match: ["kantor", "office"],              data: { label: "Kantor",                   kk1: 0.368, kk2: 0.497, kk3: 0.625 } },
+    { match: ["vila", "villa", "homestay", "motel", "hotel"], data: { label: "Hotel / Vila / Homestay", kk1: 0.478, kk2: 0.645, kk3: 0.812 } },
+  ];
+  const matched     = RATE_TABLE.find(r => r.match.some(m => okupasiStr.includes(m)));
+  const okupasiData = matched ? matched.data : RATE_TABLE[0].data;
+  const ratePermilDasar = kk === 1 ? okupasiData.kk1 : kk === 2 ? okupasiData.kk2 : okupasiData.kk3;
+  const premiDasar  = Math.round(totalNilai * ratePermilDasar / 1000);
 
-    productSection = `
-    <div class="section">
-      <div class="section-title">🚗 A. Informasi Objek Pertanggungan</div>
-      <table><tbody>
-        <tr><td class="td-l">Nama Tertanggung</td><td class="td-v">${sub.nama}</td></tr>
-        <tr><td class="td-l">Jenis Kendaraan</td><td class="td-v">${fStr(f.jenisKendaraan)}</td></tr>
-        <tr><td class="td-l">Tahun Kendaraan</td><td class="td-v">${fStr(f.tahunKendaraan)}</td></tr>
-        <tr><td class="td-l">Plat / Wilayah</td><td class="td-v">${fStr(f.platKendaraan)}</td></tr>
-        <tr><td class="td-l">Tipe Proteksi</td><td class="td-v">${fStr(f.tipeProteksi, "All Risk / Comprehensive")}</td></tr>
-        <tr><td class="td-l">Nilai Pertanggungan</td><td class="td-v" style="color:#C8963E;font-size:14px;">${fRp(f.nilaiKendaraan)}</td></tr>
-      </tbody></table>
+  const risikoTambahan: string[] = Array.isArray(f.risikoTambahan)
+    ? f.risikoTambahan as string[]
+    : f.risikoTambahan ? [String(f.risikoTambahan)] : [];
+
+  const adaBanjir = risikoTambahan.some(r => /banjir|longsor|topan/i.test(r));
+  const rateBanjirPermil = 0.450;
+  const premiBanjir = adaBanjir ? Math.round(totalNilai * rateBanjirPermil / 1000) : 0;
+
+  const adaHuru = risikoTambahan.some(r => /huru|rsmd|srcc|kerusuhan/i.test(r));
+  const rateHuruPermil = 0.010;
+  const premiHuru = adaHuru ? Math.round(totalNilai * rateHuruPermil / 1000) : 0;
+
+  const isRumah = !matched || matched.match.includes("rumah");
+  const adaBurglary = risikoTambahan.some(r => /kebong|pencurian|burglary/i.test(r));
+  const rateBurglaryPermil = isRumah ? 0.010 : (okupasiStr.includes("gudang") ? 1.500 : 1.000);
+  const premiBurglary = adaBurglary ? Math.round((nilaiIsi || totalNilai) * rateBurglaryPermil / 1000) : 0;
+
+  const adaTabrakan = risikoTambahan.some(r => /tabrakan|vehicle/i.test(r));
+  const rateTabrakanPermil = 0.010;
+  const premiTabrakan = adaTabrakan ? Math.round(totalNilai * rateTabrakanPermil / 1000) : 0;
+
+  const subtotalKebakaran   = premiDasar + premiBanjir + premiHuru + premiBurglary + premiTabrakan;
+  const biayaAdminKebakaran = subtotalKebakaran < 5_000_000 ? 30_000 : 40_000;
+  const totalKebakaran      = subtotalKebakaran + biayaAdminKebakaran;
+
+  const wGempa    = fStr(f.wilayahGempa);
+  const zonaGempa = ZONA_GEMPA_NOMOR[wGempa] || 0;
+  const rateZona  = ZONA_GEMPA_RATE[wGempa];
+  const isGol2    = ["vila", "villa", "homestay", "motel", "hotel", "gudang"].some(k => okupasiStr.includes(k));
+  const rGempaPermil = rateZona ? (isGol2 ? rateZona.gol2 : rateZona.gol1) : 0;
+  const golLabel  = isGol2 ? "Golongan II (Vila/Hotel/Gudang)" : "Golongan I (Rumah/Kos/Kantor/Ruko)";
+  const premiGempa = rGempaPermil && totalNilai ? Math.round(totalNilai * rGempaPermil / 1000) : 0;
+  const biayaAdminGempa = premiGempa < 5_000_000 ? 30_000 : 40_000;
+  const totalGempa = premiGempa > 0 ? premiGempa + biayaAdminGempa : 0;
+
+  return {
+    nama: sub.nama,
+    alamat: fStr(f.lokasiProperti),
+    okupasiLabel: okupasiData.label,
+    kkLabel,
+    jenisPertanggungan: `${okupasiRaw !== "—" ? okupasiRaw : okupasiData.label} / ${kkLabel}`,
+    nilaiBangunan, nilaiIsi, totalNilai,
+    ratePermilDasar, premiDasar,
+    adaBanjir, premiBanjir, rateBanjirPermil,
+    adaHuru, premiHuru, rateHuruPermil,
+    adaBurglary, premiBurglary, rateBurglaryPermil,
+    adaTabrakan, premiTabrakan, rateTabrakanPermil,
+    subtotalKebakaran, biayaAdminKebakaran, totalKebakaran,
+    adaGempa: premiGempa > 0,
+    wGempa, zonaGempa, golLabel, rGempaPermil,
+    premiGempa, biayaAdminGempa, totalGempa,
+  };
+}
+
+function docStyles(): string {
+  return `
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:Arial,Helvetica,sans-serif;color:#1A1A1A;background:#fff;}
+  .doc-page{width:190mm;margin:0 auto;padding:14mm 16mm 12mm;page-break-after:always;}
+  .doc-page:last-child{page-break-after:auto;}
+  .letterhead{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2.5px solid #0D2137;padding-bottom:10px;margin-bottom:16px;}
+  .lh-brand{font-size:19px;font-weight:800;color:#0D2137;letter-spacing:-0.3px;}
+  .lh-brand span{color:#C8963E;}
+  .lh-sub{font-size:9.5px;color:#64748B;margin-top:2px;}
+  .lh-contact{font-size:9px;color:#64748B;text-align:right;line-height:1.7;}
+  .doc-meta{display:flex;justify-content:space-between;font-size:10px;color:#64748B;margin-bottom:10px;}
+  .doc-title{text-align:center;font-size:13.5px;font-weight:700;text-decoration:underline;color:#0D2137;margin:6px 0 16px;}
+  .calc-card{border:1.5px solid #0D2137;border-radius:5px;overflow:hidden;}
+  .calc-card-head{background:#0D2137;padding:11px 14px;text-align:center;}
+  .cch-t1{color:#fff;font-size:12.5px;font-weight:700;letter-spacing:0.3px;}
+  .cch-t2{color:#C8963E;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-top:2px;}
+  .calc-body{padding:16px 20px;}
+  .info-row{display:flex;font-size:11.5px;padding:3.5px 0;}
+  .info-row .lbl{width:180px;flex-shrink:0;font-style:italic;color:#334155;}
+  .info-row .col{width:12px;flex-shrink:0;color:#334155;}
+  .info-row .val{font-weight:500;color:#0D2137;}
+  .info-row.total .val{font-weight:800;}
+  .info-row.total{background:#FEF6E0;margin:3px -8px 2px;padding:6px 8px;border-radius:4px;}
+  .grp-title{font-size:11px;font-weight:700;color:#0D2137;margin:12px 0 4px;}
+  .rincian-table{width:100%;border-collapse:collapse;margin-top:4px;}
+  .rincian-table td{padding:4px 2px;font-size:11px;vertical-align:middle;}
+  .rincian-table td.item{color:#334155;}
+  .rincian-table td.rate{color:#64748B;text-align:right;width:76px;white-space:nowrap;}
+  .rincian-table td.rp-lbl{width:18px;color:#64748B;text-align:right;padding-right:4px;}
+  .rincian-table td.rp-val{text-align:right;font-weight:600;color:#0D2137;width:96px;}
+  .rincian-total td{border-top:1.5px solid #0D2137;font-weight:800;padding-top:7px;}
+  .sum-row{display:flex;justify-content:space-between;font-size:11.5px;padding:4px 0;}
+  .sum-row .k{color:#334155;}
+  .sum-row .v{font-weight:700;color:#0D2137;}
+  .sum-row.final{margin-top:6px;padding-top:9px;border-top:2px solid #C8963E;}
+  .sum-row.final .k{font-weight:800;font-size:13px;color:#0D2137;}
+  .sum-row.final .v{font-weight:800;font-size:15px;color:#C8963E;}
+  .footnote{font-size:9.5px;color:#64748B;font-style:italic;margin-top:14px;line-height:1.6;}
+  .sign-wrap{display:flex;justify-content:space-between;align-items:flex-end;margin-top:30px;}
+  .sign-left{font-size:9.5px;color:#64748B;}
+  .sign-right{text-align:left;}
+  .sign-brand{font-size:12px;font-weight:800;color:#0D2137;}
+  .sign-brand span{color:#C8963E;}
+  .sign-name{font-size:11px;font-weight:700;color:#0D2137;margin-top:34px;}
+  .sign-role{font-size:9.5px;color:#64748B;}
+  .badge-sim{display:inline-block;background:#FEF2F2;color:#991B1B;border:1px solid #FECACA;border-radius:4px;padding:3px 8px;font-size:9px;font-weight:700;margin-bottom:12px;}
+  @media print{body{print-color-adjust:exact;-webkit-print-color-adjust:exact;}}
+  `;
+}
+
+function letterheadHTML(): string {
+  return `
+  <div class="letterhead">
+    <div>
+      <div class="lh-brand">Asuransi<span>Jogja</span></div>
+      <div class="lh-sub">Konsultan Asuransi Kerugian Independen · Yogyakarta</div>
     </div>
-    <div class="section">
-      <div class="section-title">📊 B. Simulasi &amp; Estimasi Premi</div>
-      <div class="sim-note">⚠️ Nilai berikut adalah <strong>SIMULASI &amp; ESTIMASI</strong> — premi final ditetapkan perusahaan asuransi setelah survei &amp; analisis risiko.</div>
-      <table class="premi-table">
-        <thead><tr>
-          <th style="text-align:left;padding:9px 12px;background:#0D2137;color:#C8963E;font-size:10px;letter-spacing:1px;text-transform:uppercase;">Komponen</th>
-          <th style="text-align:right;padding:9px 12px;background:#0D2137;color:#C8963E;font-size:10px;letter-spacing:1px;text-transform:uppercase;">Estimasi Biaya</th>
-        </tr></thead>
-        <tbody>
-          <tr><td class="td-p">Nilai Pertanggungan</td><td class="td-pv">${fRp(f.nilaiKendaraan)}</td></tr>
-          <tr><td class="td-p">Rate Premi (estimasi, Wil. 3 Yogyakarta)</td><td class="td-pv">${rateLabel}</td></tr>
-          <tr><td class="td-p">Premi Dasar</td><td class="td-pv">Rp ${premiDasar.toLocaleString("id-ID")}</td></tr>
-          <tr><td class="td-p" style="color:#16A34A;">Diskon</td><td class="td-pv" style="color:#16A34A;">– Rp ${diskon.toLocaleString("id-ID")}</td></tr>
-          <tr><td class="td-p">Premi Setelah Diskon</td><td class="td-pv">Rp ${premiSetelahDiskon.toLocaleString("id-ID")}</td></tr>
-          <tr><td class="td-p">Biaya Administrasi</td><td class="td-pv">Rp ${biayaAdmin.toLocaleString("id-ID")}</td></tr>
-          <tr style="background:#FDF9F3;">
-            <td style="padding:11px 12px;font-weight:700;color:#0D2137;font-size:13px;border-top:2px solid #C8963E;">TOTAL ESTIMASI PREMI / TAHUN</td>
-            <td style="padding:11px 12px;font-weight:800;color:#C8963E;font-size:14px;text-align:right;border-top:2px solid #C8963E;">Rp ${total.toLocaleString("id-ID")}</td>
-          </tr>
-        </tbody>
-      </table>
-      <p style="font-size:10px;color:#94A3B8;margin-top:6px;line-height:1.6;">* Tarif referensi OJK SE No.6/SEOJK.05/2017 Wilayah 3. Own Risk: Rp 300.000/kejadian (BBM) / Rp 500.000 (EV). Biaya admin: &lt;Rp 5 juta = Rp 30.000, ≥Rp 5 juta = Rp 40.000.</p>
+    <div class="lh-contact">
+      📱 0877-8165-8231 (Rio MD)<br/>
+      ✉️ rio@asuransijogja.biz.id · 🌐 asuransijogja.biz.id
     </div>
-    <div class="section">
-      <div class="section-title">📞 C. Langkah Selanjutnya</div>
-      <div class="cta-box">
-        <div style="font-size:13px;font-weight:700;color:#C8963E;margin-bottom:6px;">Tertarik Melanjutkan ke Polis Resmi?</div>
-        <p style="font-size:12px;color:rgba(255,255,255,0.75);line-height:1.65;margin-bottom:12px;">Hubungi konsultan kami untuk penawaran resmi dari beberapa perusahaan asuransi — kami bantu bandingkan dan pilihkan yang terbaik.</p>
-        <div style="font-size:12px;color:rgba(255,255,255,0.65);line-height:2;">
-          💬 WhatsApp: <strong style="color:#fff;">0877-8165-8231</strong> (Rio MD)<br/>
-          ✉️ Email: <strong style="color:#fff;">rio@asuransijogja.biz.id</strong>
-        </div>
-      </div>
-    </div>`;
+  </div>`;
+}
+
+function signBlockHTML(): string {
+  return `
+  <div class="sign-wrap">
+    <div class="sign-left">Terdaftar dan bekerja sama dengan perusahaan asuransi<br/>yang diawasi oleh Otoritas Jasa Keuangan (OJK)</div>
+    <div class="sign-right">
+      <div class="sign-brand">Asuransi<span>Jogja</span></div>
+      <div class="sign-name">Rio Mardiansyah</div>
+      <div class="sign-role">Konsultan Asuransi Kerugian Independen</div>
+    </div>
+  </div>`;
+}
+
+function kebakaranPageHTML(c: PropertiCalc, docNo: string, tanggal: string): string {
+  const rows: string[] = [];
+  rows.push(`<tr><td class="item">Premi Dasar Kebakaran (FLEXAS)</td><td class="rate">${fmtPct(c.ratePermilDasar)}</td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiDasar)}</td></tr>`);
+  if (c.adaHuru)     rows.push(`<tr><td class="item">RSMDCC (Kerusuhan &amp; Huru-Hara)</td><td class="rate">${fmtPct(c.rateHuruPermil)}</td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiHuru)}</td></tr>`);
+  if (c.adaBanjir)   rows.push(`<tr><td class="item">TSWD (Banjir, Angin Topan)</td><td class="rate">${fmtPct(c.rateBanjirPermil)}</td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiBanjir)}</td></tr>`);
+  if (c.adaBurglary || c.adaTabrakan) {
+    const rateGab = c.rateBurglaryPermil + c.rateTabrakanPermil;
+    rows.push(`<tr><td class="item">Other (Burglary, Vehicle Impact)</td><td class="rate">${fmtPct(rateGab)}</td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiBurglary + c.premiTabrakan)}</td></tr>`);
   }
+  rows.push(`<tr class="rincian-total"><td colspan="2"></td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.subtotalKebakaran)}</td></tr>`);
 
-  // ── Properti ───────────────────────────────────────────────────────────────
-  else if (product === "properti") {
-    const nilaiRaw    = fNum(f.nilaiBangunan);
-    const nilaiIsiRaw = fNum(f.nilaiIsi);
-    const totalNilai  = nilaiRaw + nilaiIsiRaw;
-    const kkStr       = fStr(f.kelasKonstruksi).toLowerCase();
-    const okupasiStr  = fStr(f.okupasi).toLowerCase();
-
-    const kk = kkStr.includes("1") || kkStr.includes("beton") ? 1
-             : kkStr.includes("2") || kkStr.includes("semi")  ? 2 : 3;
-    const kkLabel = kk === 1 ? "Kelas 1 — Beton/Bata"
-                  : kk === 2 ? "Kelas 2 — Semi Permanen"
-                  : "Kelas 3 — Kayu/Bambu";
-
-    type OkupasiRate = { label: string; kk1: number; kk2: number; kk3: number };
-    const RATE_TABLE: { match: string[]; data: OkupasiRate }[] = [
-      { match: ["rumah","hunian","tinggal"], data: { label:"Rumah Tinggal",    kk1:0.294,kk2:0.397,kk3:0.499 } },
-      { match: ["kos","kontrakan"],          data: { label:"Kos-Kosan",         kk1:0.478,kk2:0.645,kk3:0.812 } },
-      { match: ["ruko","toko","retail"],     data: { label:"Ruko / Toko",       kk1:0.594,kk2:0.802,kk3:1.011 } },
-      { match: ["gudang","warehouse"],       data: { label:"Gudang",            kk1:0.764,kk2:1.031,kk3:1.299 } },
-      { match: ["kantor","office"],          data: { label:"Kantor",            kk1:0.368,kk2:0.497,kk3:0.625 } },
-      { match: ["vila","villa","homestay","motel"], data: { label:"Vila/Homestay", kk1:0.478,kk2:0.645,kk3:0.812 } },
-    ];
-    const matched     = RATE_TABLE.find(r => r.match.some(m => okupasiStr.includes(m)));
-    const okupasiData = matched ? matched.data : RATE_TABLE[0].data;
-    const ratePermil  = kk === 1 ? okupasiData.kk1 : kk === 2 ? okupasiData.kk2 : okupasiData.kk3;
-    const premiDasar  = Math.round(totalNilai * ratePermil / 1000);
-    const biayaAdmin  = premiDasar < 5_000_000 ? 30_000 : 40_000;
-    const totalPolis  = premiDasar + biayaAdmin;
-
-    const risikoTambahan: string[] = Array.isArray(f.risikoTambahan)
-      ? f.risikoTambahan as string[]
-      : f.risikoTambahan ? [String(f.risikoTambahan)] : [];
-    const adaBanjir = risikoTambahan.some(r => r.toLowerCase().includes("banjir") || r.toLowerCase().includes("longsor"));
-    const adaHuru   = risikoTambahan.some(r => r.toLowerCase().includes("huru") || r.toLowerCase().includes("rsmd"));
-    const premiBanjir = adaBanjir ? Math.round(totalNilai * 0.450 / 1000) : 0;
-    const premiHuru   = adaHuru   ? Math.round(totalNilai * 0.010 / 1000) : 0;
-    const totalPerluasan = premiBanjir + premiHuru;
-    const totalPolisIncl = premiDasar + totalPerluasan + biayaAdmin;
-
-    const wGempa       = fStr(f.wilayahGempa);
-    const zonaGempa    = ZONA_GEMPA_NOMOR[wGempa] || 0;
-    const rateZona     = ZONA_GEMPA_RATE[wGempa];
-    const isGol2       = ["vila","villa","homestay","motel","hotel","gudang"].some(k => okupasiStr.includes(k));
-    const rGempaPermil = rateZona ? (isGol2 ? rateZona.gol2 : rateZona.gol1) : 0;
-    const golLabel     = isGol2 ? "Golongan II (Vila/Hotel/Gudang)" : "Golongan I (Rumah/Kos/Kantor/Ruko)";
-    const pGempa       = rGempaPermil && totalNilai ? Math.round(totalNilai * rGempaPermil / 1000) : 0;
-    const biayaAdminGempa = pGempa < 5_000_000 ? 30_000 : 40_000;
-    const totalPolisGempa = pGempa + biayaAdminGempa;
-
-    productSection = `
-    <div class="section">
-      <div class="section-title">🏠 A. Informasi Objek Pertanggungan</div>
-      <table><tbody>
-        <tr><td class="td-l">Nama Tertanggung</td><td class="td-v">${sub.nama}</td></tr>
-        <tr><td class="td-l">Lokasi / Alamat</td><td class="td-v">${fStr(f.lokasiProperti)}</td></tr>
-        <tr><td class="td-l">Jenis / Okupasi</td><td class="td-v">${fStr(f.okupasi)}</td></tr>
-        <tr><td class="td-l">Kelas Konstruksi</td><td class="td-v">${kkLabel}</td></tr>
-        <tr><td class="td-l">Nilai Bangunan</td><td class="td-v" style="color:#C8963E;font-size:14px;">${fRp(f.nilaiBangunan)}</td></tr>
-        ${nilaiIsiRaw ? `<tr><td class="td-l">Nilai Isi / Perabot</td><td class="td-v">${fRp(f.nilaiIsi)}</td></tr>` : ""}
-        ${risikoTambahan.length ? `<tr><td class="td-l">Perluasan Risiko</td><td class="td-v">${risikoTambahan.join(", ")}</td></tr>` : ""}
-        ${wGempa !== "—" ? `<tr><td class="td-l">Wilayah Gempa</td><td class="td-v">${wGempa} (Zona ${zonaGempa})</td></tr>` : ""}
-      </tbody></table>
+  return `
+  <div class="doc-page">
+    ${letterheadHTML()}
+    <div class="doc-meta">
+      <span>No. Simulasi: <strong>${docNo}</strong></span>
+      <span>${tanggal}</span>
     </div>
-    <div class="section">
-      <div class="section-title">📊 B. Simulasi &amp; Estimasi Premi — Polis Utama</div>
-      <div class="sim-note">⚠️ Nilai berikut adalah <strong>SIMULASI &amp; ESTIMASI</strong> — premi final ditetapkan setelah survei lokasi &amp; analisis risiko.</div>
-      <table class="premi-table">
-        <thead><tr>
-          <th style="text-align:left;padding:9px 12px;background:#0D2137;color:#C8963E;font-size:10px;letter-spacing:1px;text-transform:uppercase;">Komponen</th>
-          <th style="text-align:right;padding:9px 12px;background:#0D2137;color:#C8963E;font-size:10px;letter-spacing:1px;text-transform:uppercase;">Estimasi</th>
-        </tr></thead>
-        <tbody>
-          <tr><td class="td-p">Total Nilai Pertanggungan</td><td class="td-pv">Rp ${totalNilai.toLocaleString("id-ID")}</td></tr>
-          <tr><td class="td-p">Rate Premi Dasar</td><td class="td-pv">${ratePermil.toFixed(3).replace(".",",")}‰ — ${okupasiData.label} / ${kkLabel}</td></tr>
-          <tr><td class="td-p">Premi Dasar Kebakaran</td><td class="td-pv">Rp ${premiDasar.toLocaleString("id-ID")}</td></tr>
-          ${adaBanjir ? `<tr><td class="td-p">+ Banjir &amp; Bencana Alam (0,450‰)</td><td class="td-pv">Rp ${premiBanjir.toLocaleString("id-ID")}</td></tr>` : ""}
-          ${adaHuru   ? `<tr><td class="td-p">+ Huru-Hara / RSMD (0,010‰)</td><td class="td-pv">Rp ${premiHuru.toLocaleString("id-ID")}</td></tr>` : ""}
-          <tr><td class="td-p">Biaya Administrasi</td><td class="td-pv">Rp ${biayaAdmin.toLocaleString("id-ID")}</td></tr>
-          <tr style="background:#FDF9F3;">
-            <td style="padding:11px 12px;font-weight:700;color:#0D2137;font-size:13px;border-top:2px solid #C8963E;">TOTAL ESTIMASI POLIS UTAMA / TAHUN</td>
-            <td style="padding:11px 12px;font-weight:800;color:#C8963E;font-size:14px;text-align:right;border-top:2px solid #C8963E;">Rp ${totalPolisIncl.toLocaleString("id-ID")}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    ${pGempa > 0 ? `
-    <div class="section">
-      <div class="section-title">🌋 C. Simulasi &amp; Estimasi Premi — Polis Gempa Bumi (Polis Tersendiri)</div>
-      <table class="premi-table">
-        <thead><tr>
-          <th style="text-align:left;padding:9px 12px;background:#0D2137;color:#C8963E;font-size:10px;letter-spacing:1px;text-transform:uppercase;">Komponen</th>
-          <th style="text-align:right;padding:9px 12px;background:#0D2137;color:#C8963E;font-size:10px;letter-spacing:1px;text-transform:uppercase;">Estimasi</th>
-        </tr></thead>
-        <tbody>
-          <tr><td class="td-p">Total Nilai Pertanggungan</td><td class="td-pv">Rp ${totalNilai.toLocaleString("id-ID")}</td></tr>
-          <tr><td class="td-p">Wilayah / Zona</td><td class="td-pv">${wGempa} — Zona ${zonaGempa}</td></tr>
-          <tr><td class="td-p">Golongan Risiko</td><td class="td-pv">${golLabel}</td></tr>
-          <tr><td class="td-p">Rate Gempa</td><td class="td-pv">${rGempaPermil.toFixed(3).replace(".",",")}‰</td></tr>
-          <tr><td class="td-p">Premi Gempa (estimasi)</td><td class="td-pv">Rp ${pGempa.toLocaleString("id-ID")}</td></tr>
-          <tr><td class="td-p">Biaya Administrasi</td><td class="td-pv">Rp ${biayaAdminGempa.toLocaleString("id-ID")}</td></tr>
-          <tr style="background:#FDF9F3;">
-            <td style="padding:11px 12px;font-weight:700;color:#0D2137;font-size:13px;border-top:2px solid #C8963E;">TOTAL ESTIMASI POLIS GEMPA / TAHUN</td>
-            <td style="padding:11px 12px;font-weight:800;color:#C8963E;font-size:14px;text-align:right;border-top:2px solid #C8963E;">Rp ${totalPolisGempa.toLocaleString("id-ID")}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>` : ""}
-    <div class="section">
-      <div class="section-title">📞 ${pGempa > 0 ? "D" : "C"}. Langkah Selanjutnya</div>
-      <div class="cta-box">
-        <div style="font-size:13px;font-weight:700;color:#C8963E;margin-bottom:6px;">Siap Melanjutkan ke Polis Resmi?</div>
-        <p style="font-size:12px;color:rgba(255,255,255,0.75);line-height:1.65;margin-bottom:12px;">Tim konsultan kami siap membantu membandingkan penawaran dari berbagai perusahaan asuransi untuk properti Anda di Yogyakarta.</p>
-        <div style="font-size:12px;color:rgba(255,255,255,0.65);line-height:2;">
-          💬 WhatsApp: <strong style="color:#fff;">0877-8165-8231</strong> (Rio MD)<br/>
-          ✉️ Email: <strong style="color:#fff;">rio@asuransijogja.biz.id</strong>
-        </div>
+    <div class="doc-title">Simulasi Perhitungan Premi Asuransi Kebakaran</div>
+    <div class="calc-card">
+      <div class="calc-card-head">
+        <div class="cch-t1">PERHITUNGAN PREMI ASURANSI KEBAKARAN</div>
+        <div class="cch-t2">AsuransiJogja — Simulasi &amp; Estimasi</div>
       </div>
-    </div>`;
-  }
+      <div class="calc-body">
+        <div class="info-row"><div class="lbl">Cover Asuransi</div><div class="col">:</div><div class="val">Kebakaran</div></div>
+        <div class="info-row"><div class="lbl">Nama Tertanggung</div><div class="col">:</div><div class="val">${c.nama}</div></div>
+        <div class="info-row"><div class="lbl">Alamat Resiko</div><div class="col">:</div><div class="val">${c.alamat}</div></div>
+        <div class="info-row"><div class="lbl">Jenis Pertanggungan</div><div class="col">:</div><div class="val">${c.jenisPertanggungan}</div></div>
+        <div class="info-row"><div class="lbl">Jangka Waktu</div><div class="col">:</div><div class="val">1 Tahun</div></div>
 
-  // ── Produk lain — generic ──────────────────────────────────────────────────
-  else {
-    const fieldRows = Object.entries(f)
-      .filter(([, val]) => val && !(Array.isArray(val) && val.length === 0))
-      .map(([key, val]) => {
-        const label   = sub.fieldLabels[key] || key;
-        const display = Array.isArray(val) ? val.join(", ") : String(val);
-        return `<tr><td class="td-l">${label}</td><td class="td-v">${display}</td></tr>`;
-      }).join("");
+        <div class="grp-title">Nilai Pertanggungan</div>
+        <div class="info-row"><div class="lbl">Bangunan ${c.okupasiLabel}</div><div class="col">:</div><div class="val">Rp ${fmtRpPlain(c.nilaiBangunan)}</div></div>
+        ${c.nilaiIsi ? `<div class="info-row"><div class="lbl">Perabotan</div><div class="col">:</div><div class="val">Rp ${fmtRpPlain(c.nilaiIsi)}</div></div>` : ""}
+        <div class="info-row total"><div class="lbl">Total Pertanggungan</div><div class="col">:</div><div class="val">Rp ${fmtRpPlain(c.totalNilai)}</div></div>
+        <div class="info-row"><div class="lbl">Okupasi</div><div class="col">:</div><div class="val">${c.okupasiLabel} / ${c.kkLabel}</div></div>
 
-    productSection = `
-    <div class="section">
-      <div class="section-title">📋 Rincian Data ${sub.productLabel}</div>
-      <div class="sim-note">⚠️ Dokumen ini merupakan <strong>Simulasi &amp; Estimasi</strong> awal — nilai final ditetapkan setelah analisis risiko.</div>
-      <table><tbody>${fieldRows}</tbody></table>
-    </div>
-    <div class="section">
-      <div class="cta-box">
-        <div style="font-size:13px;font-weight:700;color:#C8963E;margin-bottom:6px;">Hubungi Konsultan untuk Penawaran Resmi</div>
-        <div style="font-size:12px;color:rgba(255,255,255,0.65);line-height:2;">
-          💬 <strong style="color:#fff;">0877-8165-8231</strong> (Rio MD) &nbsp;·&nbsp;
-          ✉️ <strong style="color:#fff;">rio@asuransijogja.biz.id</strong>
+        <div class="grp-title">Rincian Premi</div>
+        <table class="rincian-table"><tbody>${rows.join("")}</tbody></table>
+
+        <div style="margin-top:14px;">
+          <div class="sum-row"><span class="k">Premi / Tahun</span><span class="v">${fmtRpPlain(c.subtotalKebakaran)}</span></div>
+          <div class="sum-row"><span class="k">Biaya ADM</span><span class="v">${fmtRpPlain(c.biayaAdminKebakaran)}</span></div>
+          <div class="sum-row final"><span class="k">Total Premi Akhir</span><span class="v">${fmtRpPlain(c.totalKebakaran)} <span style="font-size:9.5px;font-weight:500;color:#64748B;">/ tahun</span></span></div>
         </div>
+
+        <p class="footnote">*) Penetapan tarif mengacu pada SE OJK No. 6/SEOJK.05/2017 Tentang Usaha Asuransi Harta Benda. Angka di atas adalah <strong>simulasi &amp; estimasi</strong>, bukan penawaran resmi (quotation) maupun polis — premi final ditetapkan perusahaan asuransi setelah survei &amp; analisis risiko.</p>
       </div>
-    </div>`;
-  }
+    </div>
+    ${signBlockHTML()}
+  </div>`;
+}
+
+function gempaPageHTML(c: PropertiCalc, docNo: string, tanggal: string): string {
+  return `
+  <div class="doc-page">
+    ${letterheadHTML()}
+    <div class="doc-meta">
+      <span>No. Simulasi: <strong>${docNo}</strong></span>
+      <span>${tanggal}</span>
+    </div>
+    <div class="doc-title">Simulasi Perhitungan Premi Asuransi Gempa Bumi</div>
+    <span class="badge-sim">POLIS TERPISAH DARI ASURANSI KEBAKARAN</span>
+    <div class="calc-card">
+      <div class="calc-card-head">
+        <div class="cch-t1">PERHITUNGAN PREMI ASURANSI GEMPA BUMI</div>
+        <div class="cch-t2">AsuransiJogja — Simulasi &amp; Estimasi</div>
+      </div>
+      <div class="calc-body">
+        <div class="info-row"><div class="lbl">Cover Asuransi</div><div class="col">:</div><div class="val">Gempa Bumi</div></div>
+        <div class="info-row"><div class="lbl">Nama Tertanggung</div><div class="col">:</div><div class="val">${c.nama}</div></div>
+        <div class="info-row"><div class="lbl">Alamat Resiko</div><div class="col">:</div><div class="val">${c.alamat}</div></div>
+        <div class="info-row"><div class="lbl">Jenis Pertanggungan</div><div class="col">:</div><div class="val">${c.jenisPertanggungan}</div></div>
+        <div class="info-row"><div class="lbl">Jangka Waktu</div><div class="col">:</div><div class="val">1 Tahun</div></div>
+
+        <div class="grp-title">Nilai Pertanggungan</div>
+        <div class="info-row"><div class="lbl">Bangunan ${c.okupasiLabel}</div><div class="col">:</div><div class="val">Rp ${fmtRpPlain(c.nilaiBangunan)}</div></div>
+        ${c.nilaiIsi ? `<div class="info-row"><div class="lbl">Perabotan</div><div class="col">:</div><div class="val">Rp ${fmtRpPlain(c.nilaiIsi)}</div></div>` : ""}
+        <div class="info-row total"><div class="lbl">Total Pertanggungan</div><div class="col">:</div><div class="val">Rp ${fmtRpPlain(c.totalNilai)}</div></div>
+        <div class="info-row"><div class="lbl">Okupasi</div><div class="col">:</div><div class="val">${c.okupasiLabel} / ${c.kkLabel}</div></div>
+        <div class="info-row"><div class="lbl">Wilayah / Zona Gempa</div><div class="col">:</div><div class="val">${c.wGempa} — Zona ${c.zonaGempa}</div></div>
+
+        <div class="grp-title">Rincian Premi</div>
+        <table class="rincian-table"><tbody>
+          <tr><td class="item">Gempa Bumi (EQ) — Zona ${c.zonaGempa}</td><td class="rate">${fmtPct(c.rGempaPermil)}</td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiGempa)}</td></tr>
+          <tr class="rincian-total"><td colspan="2"></td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiGempa)}</td></tr>
+        </tbody></table>
+
+        <div style="margin-top:14px;">
+          <div class="sum-row"><span class="k">Premi / Tahun</span><span class="v">${fmtRpPlain(c.premiGempa)}</span></div>
+          <div class="sum-row"><span class="k">Biaya ADM</span><span class="v">${fmtRpPlain(c.biayaAdminGempa)}</span></div>
+          <div class="sum-row final"><span class="k">Total Premi Akhir</span><span class="v">${fmtRpPlain(c.totalGempa)} <span style="font-size:9.5px;font-weight:500;color:#64748B;">/ tahun</span></span></div>
+        </div>
+
+        <p class="footnote">*) Penetapan tarif mengacu pada SE OJK No. 6/SEOJK.05/2017 Tentang Usaha Asuransi Harta Benda. Golongan risiko: ${c.golLabel}. Asuransi Gempa Bumi diterbitkan sebagai <strong>polis tersendiri</strong>, terpisah dari polis Asuransi Kebakaran, sesuai ketentuan PSAKI. Angka di atas adalah <strong>simulasi &amp; estimasi</strong>, bukan penawaran resmi maupun polis.</p>
+      </div>
+    </div>
+    ${signBlockHTML()}
+  </div>`;
+}
+
+function buildPropertiPDFHtml(sub: SPPASubmission): string {
+  const c = computePropertiCalc(sub);
+  const docNo = sub.id;
+  const tanggal = new Date(sub.submittedAt).toLocaleDateString("id-ID", { day: "2-digit", month: "long", year: "numeric" });
+
+  const pages = [kebakaranPageHTML(c, docNo, tanggal)];
+  if (c.adaGempa) pages.push(gempaPageHTML(c, docNo, tanggal));
 
   return `<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8"/>
-<title>Simulasi & Estimasi Premi — ${sub.productLabel}</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap');
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'DM Sans',sans-serif;background:#fff;color:#0D2137;font-size:13px;line-height:1.65;}
-  .page{max-width:720px;margin:0 auto;padding:40px 48px;}
-  .header{background:#0D2137;border-radius:12px;padding:28px 32px;margin-bottom:28px;}
-  .brand{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;}
-  .brand span{color:#C8963E;}
-  .doc-type{font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#C8963E;margin-top:4px;margin-bottom:12px;}
-  .doc-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;line-height:1.22;}
-  .meta-row{display:flex;gap:20px;margin-top:14px;flex-wrap:wrap;}
-  .meta-item{display:flex;flex-direction:column;gap:2px;}
-  .meta-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.4);}
-  .meta-value{font-size:11px;color:rgba(255,255,255,0.8);font-weight:500;}
-  .id-badge{display:inline-block;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:2px 7px;font-size:9px;font-weight:600;color:rgba(255,255,255,0.4);font-family:monospace;margin-top:12px;}
-  .section{margin-bottom:22px;}
-  .section-title{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#94A3B8;border-bottom:1.5px solid #f1f5f9;padding-bottom:6px;margin-bottom:10px;}
-  table{width:100%;border-collapse:collapse;}
-  .td-l{padding:8px 11px;color:#64748B;font-size:12px;width:40%;border-bottom:1px solid #f8fafc;vertical-align:top;}
-  .td-v{padding:8px 11px;color:#0D2137;font-size:12px;font-weight:600;border-bottom:1px solid #f8fafc;}
-  .premi-table{border-radius:7px;overflow:hidden;margin-bottom:4px;}
-  .td-p{padding:8px 11px;color:#475569;font-size:12px;border-bottom:1px solid #f1f5f9;}
-  .td-pv{padding:8px 11px;color:#0D2137;font-size:12px;font-weight:600;text-align:right;border-bottom:1px solid #f1f5f9;}
-  .sim-note{background:#FFFBEB;border:1px solid #FDE68A;border-radius:7px;padding:9px 13px;font-size:11px;color:#92400E;margin-bottom:12px;line-height:1.6;}
-  .cta-box{background:#0D2137;border-radius:10px;padding:18px 20px;}
-  .disclaimer{background:#FDF9F3;border:1px solid #E8D5B0;border-radius:8px;padding:12px 16px;margin-top:22px;}
-  .disclaimer p{font-size:10.5px;color:#78716C;line-height:1.7;}
-  .footer{margin-top:28px;padding-top:12px;border-top:1px solid #f1f5f9;display:flex;justify-content:space-between;align-items:flex-end;}
-  .footer-brand{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;color:#0D2137;}
-  .footer-brand span{color:#C8963E;}
-  .footer-contact{font-size:10px;color:#94A3B8;text-align:right;line-height:1.7;}
-  @media print{body{print-color-adjust:exact;-webkit-print-color-adjust:exact;}.page{padding:28px 32px;}}
-</style>
+<title>Simulasi Premi Kebakaran & Gempa Bumi — ${sub.nama}</title>
+<style>${docStyles()}</style>
 </head>
 <body>
-<div class="page">
-  <div class="header">
-    <div class="brand">Asuransi<span>Jogja</span></div>
-    <div class="doc-type">Simulasi &amp; Estimasi Premi</div>
-    <div class="doc-title">Ringkasan Simulasi &amp; Estimasi<br/>${sub.productLabel}</div>
-    <div class="meta-row">
-      <div class="meta-item"><span class="meta-label">Dipersiapkan untuk</span><span class="meta-value">${sub.nama}</span></div>
-      <div class="meta-item"><span class="meta-label">WhatsApp</span><span class="meta-value">${sub.whatsapp}</span></div>
-      ${sub.email ? `<div class="meta-item"><span class="meta-label">Email</span><span class="meta-value">${sub.email}</span></div>` : ""}
-      <div class="meta-item"><span class="meta-label">Tanggal</span><span class="meta-value">${now}</span></div>
-    </div>
-    <div class="id-badge">${sub.id}</div>
-  </div>
-
-  ${productSection}
-
-  <div class="disclaimer">
-    <p><strong>⚠️ Pernyataan Penting:</strong> Seluruh angka dalam dokumen ini merupakan <strong>Simulasi &amp; Estimasi</strong> yang bersifat indikatif dan <strong>bukan merupakan penawaran resmi (quotation) maupun polis asuransi</strong>. Premi final ditetapkan oleh perusahaan asuransi setelah proses survei dan analisis risiko. Sebagai konsultan asuransi kerugian independen, kami tidak menerbitkan polis secara langsung.</p>
-  </div>
-
-  <div class="footer">
-    <div>
-      <div class="footer-brand">Asuransi<span>Jogja</span></div>
-      <div style="font-size:10px;color:#94A3B8;margin-top:2px;">Konsultan Asuransi Kerugian Independen · Yogyakarta</div>
-    </div>
-    <div class="footer-contact">
-      📱 0877-8165-8231 (Rio MD)<br/>
-      ✉️ rio@asuransijogja.biz.id<br/>
-      🌐 asuransijogja.biz.id
-    </div>
-  </div>
-</div>
+${pages.join("\n")}
 </body>
 </html>`;
 }
 
 // ─── Main export: generate PDF buffer ────────────────────────────────────────
+// Hanya produk "properti" yang punya format PDF resmi saat ini.
 export async function generatePDFBuffer(sub: SPPASubmission): Promise<Buffer | null> {
+  if (sub.product !== "properti") {
+    console.log("[pdfGenerator] Produk", sub.product, "belum memiliki format PDF — dilewati.");
+    return null;
+  }
+
   try {
     // Dynamic import agar tidak error saat build jika belum install
     const chromium = (await import("@sparticuz/chromium")).default;
@@ -366,7 +381,7 @@ export async function generatePDFBuffer(sub: SPPASubmission): Promise<Buffer | n
     });
 
     const page = await browser.newPage();
-    const html = buildPDFHtml(sub);
+    const html = buildPropertiPDFHtml(sub);
     await page.setContent(html, { waitUntil: "networkidle0" });
 
     const pdf = await page.pdf({

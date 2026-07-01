@@ -84,616 +84,347 @@ function fNum(val: string | string[] | undefined): number {
   return parseInt(String(raw).replace(/\D/g, ""), 10) || 0;
 }
 
-// ─── Template PDF per produk ──────────────────────────────────────────────────
-function buildProductSections(sub: Submission): string {
+// ═══════════════════════════════════════════════════════════════════════════
+// PDF PENAWARAN PROPERTI — meniru format "Perhitungan Premi" (contoh terlampir)
+// Hanya produk "properti" yang memiliki format PDF resmi saat ini.
+// Angka & baris di bawah 100% mengikuti hasil input form SPPA / kalkulator.
+// ═══════════════════════════════════════════════════════════════════════════
+
+// Format rate permil (‰) menjadi persen 4 desimal, contoh: 0.294‰ → "0.0294%"
+function fmtPct(permil: number): string {
+  return (permil / 10).toFixed(4) + "%";
+}
+function fmtRpPlain(n: number): string {
+  return Math.round(n).toLocaleString("id-ID");
+}
+
+interface PropertiCalc {
+  nama: string;
+  alamat: string;
+  okupasiRaw: string;
+  okupasiLabel: string;
+  kkLabel: string;
+  jenisPertanggungan: string;
+  nilaiBangunan: number;
+  nilaiIsi: number;
+  totalNilai: number;
+  ratePermilDasar: number;
+  premiDasar: number;
+  adaBanjir: boolean; premiBanjir: number; rateBanjirPermil: number;
+  adaHuru: boolean;   premiHuru: number;   rateHuruPermil: number;
+  adaBurglary: boolean; premiBurglary: number; rateBurglaryPermil: number;
+  adaTabrakan: boolean; premiTabrakan: number; rateTabrakanPermil: number;
+  subtotalKebakaran: number;
+  biayaAdminKebakaran: number;
+  totalKebakaran: number;
+  adaGempa: boolean;
+  wGempa: string;
+  zonaGempa: number;
+  golLabel: string;
+  rGempaPermil: number;
+  premiGempa: number;
+  biayaAdminGempa: number;
+  totalGempa: number;
+}
+
+function computePropertiCalc(sub: Submission): PropertiCalc {
   const f = sub.fields;
-  const product = sub.product;
+  const nilaiBangunan = fNum(f.nilaiBangunan);
+  const nilaiIsi      = fNum(f.nilaiIsi);
+  const totalNilai    = nilaiBangunan + nilaiIsi;
+  const okupasiRaw    = fStr(f.okupasi);
+  const okupasiStr    = okupasiRaw.toLowerCase();
+  const kkStr         = fStr(f.kelasKonstruksi).toLowerCase();
 
-  /* ── Kendaraan ── */
-  if (product === "kendaraan") {
-    const nilaiRaw = fNum(f.nilaiKendaraan);
-    const tipeStr  = fStr(f.tipeProteksi);
-    const isAR     = !tipeStr || tipeStr === "—" || tipeStr.includes("All Risk");
+  const kk = kkStr.includes("1") || kkStr.includes("beton") ? 1
+           : kkStr.includes("2") || kkStr.includes("semi")  ? 2 : 3;
+  const kkLabel = kk === 1 ? "Kelas 1 (Beton/Bata)" : kk === 2 ? "Kelas 2 (Semi Permanen)" : "Kelas 3 (Kayu/Bambu)";
 
-    // ── Rate OJK SE No.6/SEOJK.05/2017 — Wilayah 3 (Yogyakarta) ──
-    // Menggunakan batas BAWAH dari range min–max resmi OJK.
-    // All Risk: Kat1=2,53% | Kat2=2,69% | Kat3=1,79% | Kat4=1,14% | Kat5=1,05%
-    // TLO     : Kat1=0,51% | Kat2=0,44% | Kat3=0,29% | Kat4=0,23% | Kat5=0,20%
-    type RateEntry = { max: number; ar: number; tlo: number; labelAR: string; labelTLO: string };
-    const OJK_RATES: RateEntry[] = [
-      { max: 125_000_000, ar: 2.53, tlo: 0.51, labelAR: "2,53% (Kat.1 ≤125 jt)",     labelTLO: "0,51% (Kat.1 ≤125 jt)"     },
-      { max: 200_000_000, ar: 2.69, tlo: 0.44, labelAR: "2,69% (Kat.2 >125–200 jt)", labelTLO: "0,44% (Kat.2 >125–200 jt)" },
-      { max: 400_000_000, ar: 1.79, tlo: 0.29, labelAR: "1,79% (Kat.3 >200–400 jt)", labelTLO: "0,29% (Kat.3 >200–400 jt)" },
-      { max: 800_000_000, ar: 1.14, tlo: 0.23, labelAR: "1,14% (Kat.4 >400–800 jt)", labelTLO: "0,23% (Kat.4 >400–800 jt)" },
-      { max: Infinity,    ar: 1.05, tlo: 0.20, labelAR: "1,05% (Kat.5 >800 jt)",     labelTLO: "0,20% (Kat.5 >800 jt)"     },
-    ];
-    const rateEntry  = OJK_RATES.find(r => nilaiRaw <= r.max) ?? OJK_RATES[OJK_RATES.length - 1];
-    const rateUsed   = isAR ? rateEntry.ar  : rateEntry.tlo;
-    const rateLabel  = isAR ? rateEntry.labelAR : rateEntry.labelTLO;
-    const premiDasar = Math.round(nilaiRaw * rateUsed / 100);
-    // Diskon (ditampilkan sebagai nominal saja, tanpa %)
-    const diskon     = Math.round(premiDasar * 0.11);
-    const premiSetelahDiskon = premiDasar - diskon;
-    // Biaya administrasi: <5 juta = Rp 30.000, ≥5 juta = Rp 40.000
-    const biayaAdmin = premiDasar < 5_000_000 ? 30_000 : 40_000;
-    const total      = premiSetelahDiskon + biayaAdmin;
+  type OkupasiRate = { label: string; kk1: number; kk2: number; kk3: number };
+  const RATE_TABLE: { match: string[]; data: OkupasiRate }[] = [
+    { match: ["rumah", "hunian", "tinggal"],    data: { label: "Rumah Tinggal",           kk1: 0.294, kk2: 0.397, kk3: 0.499 } },
+    { match: ["kos", "kontrakan", "indekos"],   data: { label: "Kos-Kosan",                kk1: 0.478, kk2: 0.645, kk3: 0.812 } },
+    { match: ["ruko", "toko", "retail"],        data: { label: "Ruko / Toko",              kk1: 0.594, kk2: 0.802, kk3: 1.011 } },
+    { match: ["gudang", "warehouse", "pabrik"], data: { label: "Gudang / Pabrik",           kk1: 0.764, kk2: 1.031, kk3: 1.299 } },
+    { match: ["kantor", "office"],              data: { label: "Kantor",                   kk1: 0.368, kk2: 0.497, kk3: 0.625 } },
+    { match: ["vila", "villa", "homestay", "motel", "hotel"], data: { label: "Hotel / Vila / Homestay", kk1: 0.478, kk2: 0.645, kk3: 0.812 } },
+  ];
+  const matched     = RATE_TABLE.find(r => r.match.some(m => okupasiStr.includes(m)));
+  const okupasiData = matched ? matched.data : RATE_TABLE[0].data;
+  const ratePermilDasar = kk === 1 ? okupasiData.kk1 : kk === 2 ? okupasiData.kk2 : okupasiData.kk3;
+  const premiDasar  = Math.round(totalNilai * ratePermilDasar / 1000);
 
-    const perluasanRows = [
-      ["Tanggung Jawab Hukum Pihak Ketiga (TJH III)", "± Rp 150.000 – Rp 350.000 / tahun"],
-      ["Kecelakaan Diri Pengemudi & Penumpang (PA)", "± Rp 75.000 – Rp 200.000 / tahun"],
-      ["Perluasan Banjir & Genangan Air", "± Rp 100.000 – Rp 250.000 / tahun"],
-      ["Perluasan Gempa Bumi & Tsunami", "± Rp 80.000 – Rp 180.000 / tahun"],
-      ["Huru-Hara, Kerusuhan & Sabotase (RSMD)", "± Rp 50.000 – Rp 120.000 / tahun"],
-    ].map(([n,v]) => `<tr><td style="padding:8px 12px;border-bottom:1px solid #f1f5f9;font-size:12px;color:#475569;">${n}</td><td style="padding:8px 12px;border-bottom:1px solid #f1f5f9;font-size:12px;font-weight:600;color:#0D2137;text-align:right;">${v}</td></tr>`).join("");
+  const risikoTambahan: string[] = Array.isArray(f.risikoTambahan)
+    ? f.risikoTambahan as string[]
+    : f.risikoTambahan ? [String(f.risikoTambahan)] : [];
 
-    return `
-  <!-- A. INFO KENDARAAN -->
-  <div class="section">
-    <div class="section-title">🚗 A. Informasi Objek Pertanggungan</div>
-    <table>
-      <tbody>
-        <tr><td class="td-label">Nama Tertanggung</td><td class="td-val">${sub.nama}</td></tr>
-        <tr><td class="td-label">Jenis Kendaraan</td><td class="td-val">${fStr(f.jenisKendaraan)}</td></tr>
-        <tr><td class="td-label">Tahun Kendaraan</td><td class="td-val">${fStr(f.tahunKendaraan)}</td></tr>
-        <tr><td class="td-label">Plat / Wilayah</td><td class="td-val">${fStr(f.platKendaraan)}</td></tr>
-        <tr><td class="td-label">Tipe Proteksi</td><td class="td-val">${fStr(f.tipeProteksi, "All Risk / Comprehensive")}</td></tr>
-        <tr><td class="td-label">Nilai Pertanggungan</td><td class="td-val highlight">${fRp(f.nilaiKendaraan)}</td></tr>
-      </tbody>
-    </table>
-  </div>
+  const adaBanjir = risikoTambahan.some(r => /banjir|longsor|topan/i.test(r));
+  const rateBanjirPermil = 0.450;
+  const premiBanjir = adaBanjir ? Math.round(totalNilai * rateBanjirPermil / 1000) : 0;
 
-  <!-- B. SIMULASI PREMI -->
-  <div class="section">
-    <div class="section-title">📊 B. Simulasi &amp; Estimasi Premi</div>
-    <div class="sim-note">⚠️ Nilai di bawah adalah <strong>SIMULASI &amp; ESTIMASI</strong> — premi final ditetapkan perusahaan asuransi setelah survei &amp; analisis risiko.</div>
-    <table class="premi-table">
-      <thead>
-        <tr>
-          <th style="text-align:left;padding:10px 12px;background:#0D2137;color:#C8963E;font-size:11px;letter-spacing:1px;text-transform:uppercase;border-radius:6px 0 0 0;">Komponen</th>
-          <th style="text-align:right;padding:10px 12px;background:#0D2137;color:#C8963E;font-size:11px;letter-spacing:1px;text-transform:uppercase;border-radius:0 6px 0 0;">Estimasi Biaya</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="td-premi">Nilai Pertanggungan</td><td class="td-premi-val">${nilaiRaw ? fRp(f.nilaiKendaraan) : "—"}</td></tr>
-        <tr><td class="td-premi">Rate Premi Dasar (estimasi)</td><td class="td-premi-val">${rateLabel}</td></tr>
-        <tr><td class="td-premi">Premi Dasar (estimasi)</td><td class="td-premi-val">${nilaiRaw ? "Rp " + premiDasar.toLocaleString("id-ID") : "—"}</td></tr>
-        <tr><td class="td-premi" style="color:#16A34A;">Diskon</td><td class="td-premi-val" style="color:#16A34A;">${nilaiRaw && diskon > 0 ? "– Rp " + diskon.toLocaleString("id-ID") : "—"}</td></tr>
-        <tr><td class="td-premi">Premi Setelah Diskon</td><td class="td-premi-val">${nilaiRaw ? "Rp " + premiSetelahDiskon.toLocaleString("id-ID") : "—"}</td></tr>
-        <tr><td class="td-premi">Biaya Administrasi</td><td class="td-premi-val">Rp ${biayaAdmin.toLocaleString("id-ID")}</td></tr>
-        <tr style="background:#FDF9F3;">
-          <td style="padding:12px;font-weight:700;color:#0D2137;font-size:13px;border-top:2px solid #C8963E;">TOTAL ESTIMASI PREMI / TAHUN</td>
-          <td style="padding:12px;font-weight:800;color:#C8963E;font-size:15px;text-align:right;border-top:2px solid #C8963E;">${nilaiRaw ? "Rp " + total.toLocaleString("id-ID") : "—"}</td>
-        </tr>
-      </tbody>
-    </table>
-    <p style="font-size:11px;color:#94A3B8;margin-top:8px;line-height:1.6;">
-      * Rate estimasi mengacu pada tarif referensi OJK SE No.6/SEOJK.05/2017 <strong>Wilayah 3 (Yogyakarta)</strong> — titik tengah range min/maks per kategori harga kendaraan. Biaya admin: premi &lt;Rp 5 juta = Rp 30.000, &ge;Rp 5 juta = Rp 40.000. Own Risk: Rp 300.000/kejadian (BBM) atau Rp 500.000/kejadian (EV).
-    </p>
-  </div>
+  const adaHuru = risikoTambahan.some(r => /huru|rsmd|srcc|kerusuhan/i.test(r));
+  const rateHuruPermil = 0.010;
+  const premiHuru = adaHuru ? Math.round(totalNilai * rateHuruPermil / 1000) : 0;
 
-  <!-- C. JAMINAN UTAMA -->
-  <div class="section">
-    <div class="section-title">✅ C. Manfaat Pertanggungan Utama</div>
-    <div class="benefit-grid">
-      ${[
-        ["Kerusakan Akibat Tabrakan & Benturan","Termasuk kerusakan akibat tabrakan dengan kendaraan lain, benda diam, atau terjatuh ke jurang."],
-        ["Kerusakan Akibat Terbalik","Kendaraan yang terbalik akibat kecelakaan dijamin penuh sesuai tipe perlindungan."],
-        ["Kebakaran (termasuk sambaran petir)","Kerusakan akibat kebakaran, ledakan, atau sambaran petir ditanggung."],
-        ["Pencurian / Kehilangan Total","Kendaraan yang hilang akibat pencurian dijamin sesuai nilai pertanggungan."],
-        ["Kerusakan saat Transit","Kerusakan saat kendaraan diangkut menggunakan kapal penyeberangan resmi."],
-        ["Biaya Derek & Evakuasi","Biaya derek ke bengkel rekanan terdekat ditanggung oleh penanggung."],
-      ].map(([t,d]) => `<div class="benefit-item"><div class="benefit-title">✓ ${t}</div><div class="benefit-desc">${d}</div></div>`).join("")}
-    </div>
-  </div>
+  const isRumah = !matched || matched.match.includes("rumah");
+  const adaBurglary = risikoTambahan.some(r => /kebong|pencurian|burglary/i.test(r));
+  const rateBurglaryPermil = isRumah ? 0.010 : (okupasiStr.includes("gudang") ? 1.500 : 1.000);
+  const premiBurglary = adaBurglary ? Math.round((nilaiIsi || totalNilai) * rateBurglaryPermil / 1000) : 0;
 
-  <!-- D. PERLUASAN JAMINAN -->
-  <div class="section">
-    <div class="section-title">➕ D. Perluasan Jaminan (Opsional — Estimasi Tambahan Premi)</div>
-    <p style="font-size:12px;color:#64748B;margin-bottom:10px;">Berikut adalah perluasan jaminan yang dapat ditambahkan sesuai kebutuhan:</p>
-    <table><tbody>${perluasanRows}</tbody></table>
-  </div>
+  const adaTabrakan = risikoTambahan.some(r => /tabrakan|vehicle/i.test(r));
+  const rateTabrakanPermil = 0.010;
+  const premiTabrakan = adaTabrakan ? Math.round(totalNilai * rateTabrakanPermil / 1000) : 0;
 
-  <!-- E. YANG DIJAMIN -->
-  <div class="section">
-    <div class="section-title">📋 E. Hal-Hal yang Dijamin (PSAKBI)</div>
-    <p style="font-size:12px;color:#64748B;margin-bottom:10px;">Berdasarkan <em>Polis Standar Asuransi Kendaraan Bermotor Indonesia (PSAKBI)</em>, pertanggungan mencakup:</p>
-    <ul class="list-check">
-      <li>Kerugian atau kerusakan pada kendaraan bermotor yang dipertanggungkan akibat kecelakaan</li>
-      <li>Kerusakan akibat perbuatan jahat pihak ketiga (vandalisme) — bila diperluas</li>
-      <li>Biaya perbaikan di bengkel resmi atau bengkel rekanan penanggung</li>
-      <li>Kerugian total (total loss) akibat kerusakan ≥ 75% dari harga kendaraan atau pencurian</li>
-      <li>Tanggung jawab hukum kepada pihak ketiga — bila perluasan TJH III diambil</li>
-      <li>Santunan kecelakaan diri pengemudi &amp; penumpang — bila perluasan PA diambil</li>
-    </ul>
-  </div>
+  const subtotalKebakaran   = premiDasar + premiBanjir + premiHuru + premiBurglary + premiTabrakan;
+  const biayaAdminKebakaran = subtotalKebakaran < 5_000_000 ? 30_000 : 40_000;
+  const totalKebakaran      = subtotalKebakaran + biayaAdminKebakaran;
 
-  <!-- F. PENGECUALIAN -->
-  <div class="section">
-    <div class="section-title">🚫 F. Pengecualian — Hal yang Tidak Dijamin</div>
-    <p style="font-size:12px;color:#64748B;margin-bottom:10px;">Berdasarkan ketentuan polis, klaim <strong>tidak akan diproses</strong> apabila:</p>
-    <ul class="list-cross">
-      <li>Pengemudi tidak memiliki Surat Izin Mengemudi (SIM) yang sah dan sesuai golongan</li>
-      <li>Pengemudi berada di bawah pengaruh alkohol, narkotika, atau zat psikoaktif lainnya</li>
-      <li>Kerusakan disebabkan oleh kelalaian atau tindakan yang disengaja oleh tertanggung</li>
-      <li>Keausan, korosi, atau kerusakan mekanis akibat pemakaian normal (bukan kecelakaan)</li>
-      <li>Kendaraan digunakan untuk balapan, uji kecepatan, atau kegiatan sejenisnya</li>
-      <li>Kerusakan akibat perang, terorisme, atau bencana nuklir</li>
-      <li>Banjir, gempa bumi, tsunami — kecuali perluasan risiko telah diambil</li>
-      <li>Kendaraan digunakan di luar wilayah yang disepakati dalam polis</li>
-    </ul>
-  </div>
+  const wGempa    = fStr(f.wilayahGempa);
+  const zonaGempa = ZONA_GEMPA_NOMOR[wGempa] || 0;
+  const rateZona  = ZONA_GEMPA_RATE[wGempa];
+  const isGol2    = ["vila", "villa", "homestay", "motel", "hotel", "gudang"].some(k => okupasiStr.includes(k));
+  const rGempaPermil = rateZona ? (isGol2 ? rateZona.gol2 : rateZona.gol1) : 0;
+  const golLabel  = isGol2 ? "Golongan II (Vila/Hotel/Gudang)" : "Golongan I (Rumah/Kos/Kantor/Ruko)";
+  const premiGempa = rGempaPermil && totalNilai ? Math.round(totalNilai * rGempaPermil / 1000) : 0;
+  const biayaAdminGempa = premiGempa < 5_000_000 ? 30_000 : 40_000;
+  const totalGempa = premiGempa > 0 ? premiGempa + biayaAdminGempa : 0;
 
-  <!-- G. KLAIM & CTA -->
-  <div class="section">
-    <div class="section-title">📞 G. Prosedur Klaim &amp; Langkah Selanjutnya</div>
-    <div class="claim-box">
-      <div class="claim-title">Dokumen yang Diperlukan untuk Klaim</div>
-      <ul class="list-check" style="margin-top:8px;">
-        <li>Formulir klaim yang telah diisi dan ditandatangani</li>
-        <li>Fotokopi KTP, SIM, dan STNK yang masih berlaku</li>
-        <li>Foto kerusakan kendaraan (minimal 4 sisi: depan, belakang, kiri, kanan)</li>
-        <li>Laporan kepolisian (khusus untuk kasus pencurian atau kecelakaan besar)</li>
-        <li>Kronologi kejadian secara tertulis</li>
-      </ul>
-      <div style="margin-top:12px;padding:10px;background:#FEF9EC;border-radius:6px;border-left:3px solid #C8963E;">
-        ⏱ <strong>Batas waktu pelaporan klaim: maksimal 5 (lima) hari kalender</strong> sejak tanggal kejadian.
-      </div>
-    </div>
-    <div class="cta-box">
-      <div class="cta-title">Tertarik Melanjutkan ke Penerbitan Polis Resmi?</div>
-      <p class="cta-desc">Hubungi konsultan kami untuk mendapatkan penawaran resmi dari beberapa perusahaan asuransi terkemuka — kami akan bantu membandingkan dan memilihkan yang paling sesuai dengan kebutuhan dan anggaran Anda.</p>
-      <div class="cta-contact">
-        <span>💬 WhatsApp: <strong>0877-8165-8231</strong> (Rio MD)</span>
-        <span>✉️ Email: <strong>rio@asuransijogja.biz.id</strong></span>
-      </div>
-    </div>
-  </div>`;
-  }
+  return {
+    nama: sub.nama,
+    alamat: fStr(f.lokasiProperti),
+    okupasiRaw,
+    okupasiLabel: okupasiData.label,
+    kkLabel,
+    jenisPertanggungan: `${okupasiRaw !== "—" ? okupasiRaw : okupasiData.label} / ${kkLabel}`,
+    nilaiBangunan, nilaiIsi, totalNilai,
+    ratePermilDasar, premiDasar,
+    adaBanjir, premiBanjir, rateBanjirPermil,
+    adaHuru, premiHuru, rateHuruPermil,
+    adaBurglary, premiBurglary, rateBurglaryPermil,
+    adaTabrakan, premiTabrakan, rateTabrakanPermil,
+    subtotalKebakaran, biayaAdminKebakaran, totalKebakaran,
+    adaGempa: premiGempa > 0,
+    wGempa, zonaGempa, golLabel, rGempaPermil,
+    premiGempa, biayaAdminGempa, totalGempa,
+  };
+}
 
-  /* ── Properti ── */
-  if (product === "properti") {
-    const nilaiRaw    = parseInt(String(f.nilaiBangunan || "0").replace(/\D/g, ""), 10) || 0;
-    const nilaiIsiRaw = fNum(f.nilaiIsi);
-    const totalNilai  = nilaiRaw + nilaiIsiRaw;
-    const kkStr       = fStr(f.kelasKonstruksi).toLowerCase();
-    const okupasiStr  = fStr(f.okupasi).toLowerCase();
-
-    // ── Tentukan kelas konstruksi (1/2/3) ──
-    const kk = kkStr.includes("1") || kkStr.includes("beton") ? 1
-              : kkStr.includes("2") || kkStr.includes("semi")  ? 2
-              : 3;
-    const kkLabel = kk === 1 ? "Kelas 1 — Beton/Bata" : kk === 2 ? "Kelas 2 — Semi Permanen" : "Kelas 3 — Kayu/Bambu";
-
-    // ── Tabel Rate Dasar OJK (Batas Bawah) dalam permil (‰) ──
-    // Rumus: nilaiPertanggungan × rate‰ / 1000
-    type OkupasiRate = { label: string; kk1: number; kk2: number; kk3: number };
-    const RATE_TABLE: { match: string[]; data: OkupasiRate }[] = [
-      {
-        match: ["rumah", "hunian", "tinggal"],
-        data:  { label: "Rumah Tinggal (Maks. 3 Lantai)", kk1: 0.294, kk2: 0.397, kk3: 0.499 },
-      },
-      {
-        match: ["kos", "kontrakan", "indekos"],
-        data:  { label: "Kos-Kosan / Kontrakan",           kk1: 0.478, kk2: 0.645, kk3: 0.812 },
-      },
-      {
-        match: ["ruko", "toko", "retail"],
-        data:  { label: "Ruko / Toko (Isi Barang Umum)",   kk1: 0.594, kk2: 0.802, kk3: 1.011 },
-      },
-      {
-        match: ["gudang", "warehouse"],
-        data:  { label: "Gudang (Non-Hazardous)",           kk1: 0.764, kk2: 1.031, kk3: 1.299 },
-      },
-      {
-        match: ["kantor", "office"],
-        data:  { label: "Kantor (Maks. 6 Lantai)",          kk1: 0.368, kk2: 0.497, kk3: 0.625 },
-      },
-      {
-        match: ["vila", "villa", "homestay", "motel"],
-        data:  { label: "Vila / Homestay / Motel",          kk1: 0.478, kk2: 0.645, kk3: 0.812 },
-      },
-    ];
-
-    // Cari okupasi — default ke rumah tinggal jika tidak dikenal
-    const matched = RATE_TABLE.find(r => r.match.some(m => okupasiStr.includes(m)));
-    const okupasiData = matched ? matched.data : RATE_TABLE[0].data;
-    const ratePermil  = kk === 1 ? okupasiData.kk1 : kk === 2 ? okupasiData.kk2 : okupasiData.kk3;
-    const rateLabel   = `${ratePermil.toFixed(3).replace(".", ",")}‰ — ${okupasiData.label} / ${kkLabel}`;
-    const isRumah     = !matched || matched.match.includes("rumah");
-
-    // Premi dasar: nilaiPertanggungan × rate‰ / 1000
-    const premiDasar  = Math.round(totalNilai * ratePermil / 1000);
-    const biayaAdmin  = premiDasar < 5_000_000 ? 30_000 : 40_000;
-    const totalPolis  = premiDasar + biayaAdmin;
-
-    // ── Perluasan Risiko (dihitung per item yang dipilih) ──
-    const risikoTambahan: string[] = Array.isArray(f.risikoTambahan)
-      ? f.risikoTambahan as string[]
-      : f.risikoTambahan ? [String(f.risikoTambahan)] : [];
-
-    // 1. Banjir, Tanah Longsor & Angin Topan (Bencana Alam) — 0,0450% = 0,450‰
-    // Sumber: tarif batas bawah OJK untuk rumah tinggal/properti standar
-    const adaBanjir        = risikoTambahan.some(r => r.toLowerCase().includes("banjir") || r.toLowerCase().includes("longsor") || r.toLowerCase().includes("topan"));
-    const rateBanjirPermil = 0.450;   // 0,0450% → 0,450‰
-    const premiBanjir      = adaBanjir ? Math.round(totalNilai * rateBanjirPermil / 1000) : 0;
-
-    // 2. Huru-Hara, Kerusuhan & Sabotase (RSMD/SRCC) — 0,0010% = 0,010‰
-    // Sumber: tarif batas bawah OJK RSMD untuk properti standar
-    const adaHuru         = risikoTambahan.some(r => r.toLowerCase().includes("huru") || r.toLowerCase().includes("srcc") || r.toLowerCase().includes("kerusuhan") || r.toLowerCase().includes("rsmd"));
-    const rateHuruPermil  = 0.010;   // 0,0010% → 0,010‰
-    const premiHuru       = adaHuru ? Math.round(totalNilai * rateHuruPermil / 1000) : 0;
-
-    // 3. Kebongkaran / Burglary — rate per jenis okupasi, dihitung dari nilaiIsi saja
-    const adaBurglary     = risikoTambahan.some(r => r.toLowerCase().includes("kebong") || r.toLowerCase().includes("pencurian") || r.toLowerCase().includes("burglary"));
-    const rateBurglaryPermil = isRumah ? 0.010
-      : (okupasiStr.includes("gudang") ? 1.500 : 1.000);
-    const rateBurglaryLabel  = isRumah ? "0,010‰ (Rumah Tinggal)" : okupasiStr.includes("gudang") ? "1,500‰ (Gudang)" : "1,000‰ (Ruko/Toko/Kantor)";
-    const premiBurglary   = adaBurglary && nilaiIsiRaw ? Math.round(nilaiIsiRaw * rateBurglaryPermil / 1000) : 0;
-
-    // 4. Tabrakan Kendaraan (Vehicle Impact) — 0,010‰, semua kelas
-    const adaTabrakan     = risikoTambahan.some(r => r.toLowerCase().includes("tabrakan") || r.toLowerCase().includes("vehicle"));
-    const rateTabrakanPermil = 0.010;
-    const premiTabrakan   = adaTabrakan ? Math.round(totalNilai * rateTabrakanPermil / 1000) : 0;
-
-    // Total premi semua perluasan (endorsement — ditambah ke polis utama)
-    const totalPerluasan  = premiBanjir + premiHuru + premiBurglary + premiTabrakan;
-    const premiDasarTotal = premiDasar + totalPerluasan;
-    const totalPolisIncl  = premiDasarTotal + biayaAdmin;
-
-    // ── Gempa bumi — polis tersendiri (PSAKI) ──
-    // Rate dalam ‰ (per mil) sesuai tarif gempa komersial OJK per golongan
-    // Golongan I : Rumah, Kos, Kantor, Ruko
-    // Golongan II: Vila, Homestay, Hotel, Gudang non-hazardous
-    const wGempa     = fStr(f.wilayahGempa);
-    const zonaGempa  = ZONA_GEMPA_NOMOR[wGempa] || 0;
-    const rateZona   = ZONA_GEMPA_RATE[wGempa];
-    // Tentukan golongan berdasarkan okupasi
-    const isGol2     = ["vila", "villa", "homestay", "motel", "hotel", "gudang"].some(k => okupasiStr.includes(k));
-    const rGempaPermil = rateZona
-      ? (isGol2 ? rateZona.gol2 : rateZona.gol1)
-      : 0;
-    const golLabel   = isGol2 ? "Golongan II (Vila/Hotel/Gudang)" : "Golongan I (Rumah/Kos/Kantor/Ruko)";
-    const pGempa          = rGempaPermil && totalNilai ? Math.round(totalNilai * rGempaPermil / 1000) : 0;
-    const biayaAdminGempa = pGempa < 5_000_000 ? 30_000 : 40_000;
-    const totalPolisGempa = pGempa + biayaAdminGempa;
-    const adaGempa        = pGempa > 0;
-
-    // Perluasan yang belum dipilih — ditampilkan sebagai info referensi
-    const perluasanInfoRows = [
-      !adaBanjir   ? ["Banjir, Tanah Longsor & Angin Topan (Bencana Alam)", "0,450‰ (0,0450%) dari nilai pertanggungan"]              : null,
-      !adaHuru     ? ["Huru-Hara / Kerusuhan / RSMD (SRCC)",                "0,010‰ (0,0010%) dari nilai pertanggungan"]              : null,
-      !adaBurglary ? ["Kebongkaran / Pencurian (Burglary)",      isRumah ? "0,010‰ dari nilai isi" : "1,000–1,500‰ dari nilai isi"]    : null,
-      !adaTabrakan ? ["Tabrakan Kendaraan (Vehicle Impact)",     "0,010‰ dari nilai pertanggungan"]                                    : null,
-    ].filter(Boolean) as string[][];
-
-    const perluasanRows = perluasanInfoRows.map(([n,v]) =>
-      `<tr><td style="padding:8px 12px;border-bottom:1px solid #f1f5f9;font-size:12px;color:#475569;">${n}</td><td style="padding:8px 12px;border-bottom:1px solid #f1f5f9;font-size:12px;font-weight:600;color:#0D2137;text-align:right;">${v}</td></tr>`
-    ).join("");
-
-    return `
-  <div class="section">
-    <div class="section-title">🏠 A. Informasi Objek Pertanggungan</div>
-    <table><tbody>
-      <tr><td class="td-label">Nama Tertanggung</td><td class="td-val">${sub.nama}</td></tr>
-      <tr><td class="td-label">Lokasi / Alamat</td><td class="td-val">${fStr(f.lokasiProperti)}</td></tr>
-      <tr><td class="td-label">Jenis / Okupasi</td><td class="td-val">${fStr(f.okupasi)}</td></tr>
-      <tr><td class="td-label">Kelas Konstruksi</td><td class="td-val">${fStr(f.kelasKonstruksi)}</td></tr>
-      <tr><td class="td-label">Nilai Bangunan</td><td class="td-val highlight">${fRp(f.nilaiBangunan)}</td></tr>
-      <tr><td class="td-label">Nilai Isi / Perabot</td><td class="td-val">${fRp(f.nilaiIsi)}</td></tr>
-      ${risikoTambahan.length ? `<tr><td class="td-label">Perluasan Risiko</td><td class="td-val">${risikoTambahan.join(", ")}</td></tr>` : ""}
-      ${wGempa !== "—" ? `<tr><td class="td-label">Wilayah Gempa</td><td class="td-val">${wGempa} (Zona ${zonaGempa || "—"})</td></tr>` : ""}
-    </tbody></table>
-  </div>
-
-  <!-- POLIS UTAMA + ENDORSEMENT -->
-  <div class="section">
-    <div class="section-title">📊 B. Simulasi &amp; Estimasi Premi — Polis Utama (Kebakaran + Perluasan)</div>
-    <div class="sim-note">⚠️ Nilai di bawah adalah <strong>SIMULASI &amp; ESTIMASI</strong> — premi final ditetapkan setelah survei lokasi &amp; analisis risiko oleh penanggung.</div>
-    <table class="premi-table">
-      <thead><tr>
-        <th style="text-align:left;padding:10px 12px;background:#0D2137;color:#C8963E;font-size:11px;letter-spacing:1px;text-transform:uppercase;border-radius:6px 0 0 0;">Komponen</th>
-        <th style="text-align:right;padding:10px 12px;background:#0D2137;color:#C8963E;font-size:11px;letter-spacing:1px;text-transform:uppercase;border-radius:0 6px 0 0;">Estimasi Biaya</th>
-      </tr></thead>
-      <tbody>
-        <tr><td class="td-premi">Total Nilai Pertanggungan</td><td class="td-premi-val">${totalNilai ? "Rp " + totalNilai.toLocaleString("id-ID") : "—"}</td></tr>
-        <tr><td class="td-premi">Rate Premi Dasar</td><td class="td-premi-val">${rateLabel}</td></tr>
-        <tr><td class="td-premi">Premi Dasar Kebakaran</td><td class="td-premi-val">${totalNilai ? "Rp " + premiDasar.toLocaleString("id-ID") : "—"}</td></tr>
-        ${adaBanjir   ? `<tr><td class="td-premi">+ Banjir, Tanah Longsor &amp; Angin Topan (0,450‰)</td><td class="td-premi-val">Rp ${premiBanjir.toLocaleString("id-ID")}</td></tr>` : ""}
-        ${adaHuru     ? `<tr><td class="td-premi">+ Huru-Hara / RSMD (0,010‰)</td><td class="td-premi-val">Rp ${premiHuru.toLocaleString("id-ID")}</td></tr>` : ""}
-        ${adaBurglary ? `<tr><td class="td-premi">+ Kebongkaran / Burglary (${rateBurglaryLabel})</td><td class="td-premi-val">Rp ${premiBurglary.toLocaleString("id-ID")}</td></tr>` : ""}
-        ${adaTabrakan ? `<tr><td class="td-premi">+ Tabrakan Kendaraan (0,010‰)</td><td class="td-premi-val">Rp ${premiTabrakan.toLocaleString("id-ID")}</td></tr>` : ""}
-        ${totalPerluasan > 0 ? `<tr><td class="td-premi" style="font-style:italic;">Subtotal Premi + Perluasan</td><td class="td-premi-val" style="font-style:italic;">Rp ${premiDasarTotal.toLocaleString("id-ID")}</td></tr>` : ""}
-        <tr><td class="td-premi">Biaya Administrasi</td><td class="td-premi-val">Rp ${biayaAdmin.toLocaleString("id-ID")}</td></tr>
-        <tr style="background:#FDF9F3;">
-          <td style="padding:12px;font-weight:700;color:#0D2137;font-size:13px;border-top:2px solid #C8963E;">TOTAL ESTIMASI POLIS UTAMA / TAHUN</td>
-          <td style="padding:12px;font-weight:800;color:#C8963E;font-size:15px;text-align:right;border-top:2px solid #C8963E;">${totalNilai ? "Rp " + totalPolisIncl.toLocaleString("id-ID") : "—"}</td>
-        </tr>
-      </tbody>
-    </table>
-    <p style="font-size:11px;color:#94A3B8;margin-top:8px;line-height:1.6;">* Rate dasar mengacu tarif OJK batas bawah (‰) per jenis okupasi &amp; kelas konstruksi. Banjir/Bencana Alam: 0,450‰ (0,0450%). Huru-Hara/RSMD: 0,010‰ (0,0010%). Biaya admin: &lt;Rp 5 juta = Rp 30.000, &ge;Rp 5 juta = Rp 40.000.</p>
-  </div>
-
-  ${adaGempa ? `
-  <!-- POLIS GEMPA BUMI (POLIS TERSENDIRI) -->
-  <div class="section">
-    <div class="section-title">🌋 C. Simulasi &amp; Estimasi Premi — Polis Gempa Bumi &amp; Tsunami (Polis Tersendiri)</div>
-    <div class="sim-note" style="background:#FEF2F2;border-color:#FECACA;color:#991B1B;">⚠️ Perluasan Gempa Bumi <strong>diterbitkan sebagai polis tersendiri</strong> terpisah dari polis utama PAR, sesuai ketentuan PSAKI.</div>
-    <table class="premi-table">
-      <thead><tr>
-        <th style="text-align:left;padding:10px 12px;background:#0D2137;color:#C8963E;font-size:11px;letter-spacing:1px;text-transform:uppercase;border-radius:6px 0 0 0;">Komponen</th>
-        <th style="text-align:right;padding:10px 12px;background:#0D2137;color:#C8963E;font-size:11px;letter-spacing:1px;text-transform:uppercase;border-radius:0 6px 0 0;">Estimasi Biaya</th>
-      </tr></thead>
-      <tbody>
-        <tr><td class="td-premi">Total Nilai Pertanggungan</td><td class="td-premi-val">Rp ${totalNilai.toLocaleString("id-ID")}</td></tr>
-        <tr><td class="td-premi">Wilayah / Zona Gempa</td><td class="td-premi-val">${wGempa} — Zona ${zonaGempa}</td></tr>
-        <tr><td class="td-premi">Golongan Risiko</td><td class="td-premi-val">${golLabel}</td></tr>
-        <tr><td class="td-premi">Rate Premi Gempa</td><td class="td-premi-val">${rGempaPermil.toFixed(3).replace(".", ",")}‰ dari nilai pertanggungan</td></tr>
-        <tr><td class="td-premi">Premi Gempa Bumi (estimasi)</td><td class="td-premi-val">Rp ${pGempa.toLocaleString("id-ID")}</td></tr>
-        <tr><td class="td-premi">Biaya Administrasi</td><td class="td-premi-val">Rp ${biayaAdminGempa.toLocaleString("id-ID")}</td></tr>
-        <tr style="background:#FDF9F3;">
-          <td style="padding:12px;font-weight:700;color:#0D2137;font-size:13px;border-top:2px solid #C8963E;">TOTAL ESTIMASI POLIS GEMPA / TAHUN</td>
-          <td style="padding:12px;font-weight:800;color:#C8963E;font-size:15px;text-align:right;border-top:2px solid #C8963E;">Rp ${totalPolisGempa.toLocaleString("id-ID")}</td>
-        </tr>
-      </tbody>
-    </table>
-    <p style="font-size:11px;color:#94A3B8;margin-top:8px;line-height:1.6;">* Rate gempa: Zona 4 = 0,075%, Zona 5 = 0,160% dari nilai pertanggungan. Biaya admin: &lt;Rp 5 juta = Rp 30.000, &ge;Rp 5 juta = Rp 40.000.</p>
-  </div>
-
-  <!-- RINGKASAN TOTAL -->
-  <div class="section">
-    <div style="background:#0D2137;border-radius:10px;padding:16px 20px;">
-      <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C8963E;margin-bottom:12px;">Ringkasan Total — Semua Polis</div>
-      <table style="width:100%;">
-        <tbody>
-          <tr><td style="padding:6px 0;font-size:12.5px;color:rgba(255,255,255,0.7);">Polis Utama (Kebakaran + Perluasan)</td><td style="padding:6px 0;font-size:12.5px;font-weight:600;color:#fff;text-align:right;">Rp ${totalPolisIncl.toLocaleString("id-ID")}</td></tr>
-          <tr><td style="padding:6px 0;font-size:12.5px;color:rgba(255,255,255,0.7);">Polis Gempa Bumi &amp; Tsunami</td><td style="padding:6px 0;font-size:12.5px;font-weight:600;color:#fff;text-align:right;">Rp ${totalPolisGempa.toLocaleString("id-ID")}</td></tr>
-          <tr style="border-top:1px solid rgba(255,255,255,0.15);">
-            <td style="padding:10px 0 0;font-size:14px;font-weight:700;color:#C8963E;">TOTAL ESTIMASI / TAHUN</td>
-            <td style="padding:10px 0 0;font-size:16px;font-weight:800;color:#C8963E;text-align:right;">Rp ${(totalPolisIncl + totalPolisGempa).toLocaleString("id-ID")}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  ` : ""}
-
-  <div class="section">
-    <div class="section-title">✅ ${adaGempa ? "D" : "C"}. Jaminan Utama (PSAKI / PAR)</div>
-    <ul class="list-check">
-      <li>Kebakaran akibat api yang timbul secara tiba-tiba (termasuk sambaran petir)</li>
-      <li>Ledakan yang berasal dari dalam bangunan</li>
-      <li>Kejatuhan pesawat udara atau bagian-bagiannya</li>
-      <li>Asap yang berasal dari kebakaran di dalam bangunan yang sama</li>
-      <li>Kerusakan akibat perbuatan jahat (malicious damage) — bila diperluas</li>
-      <li>Biaya pembersihan puing-puing akibat kebakaran (hingga batas tertentu)</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <div class="section-title">➕ ${adaGempa ? "E" : "D"}. Perluasan Jaminan (Opsional — Selain Gempa)</div>
-    <table><tbody>${perluasanRows}</tbody></table>
-  </div>
-
-  <div class="section">
-    <div class="section-title">🚫 ${adaGempa ? "F" : "E"}. Pengecualian — Tidak Dijamin</div>
-    <ul class="list-cross">
-      <li>Kerusakan yang disebabkan oleh tindakan disengaja oleh tertanggung atau keluarga</li>
-      <li>Bangunan kosong tidak berpenghuni lebih dari 30 hari berturut-turut tanpa pemberitahuan</li>
-      <li>Kerusakan akibat perang, invasi, pemberontakan bersenjata</li>
-      <li>Kerusakan akibat reaksi nuklir, radiasi, atau kontaminasi radioaktif</li>
-      <li>Banjir, gempa bumi, tsunami, tanah longsor — kecuali perluasan telah diambil</li>
-      <li>Kerusakan akibat keausan, pemeliharaan yang tidak memadai, atau konstruksi yang cacat</li>
-      <li>Kerugian akibat penyitaan atau penggusuran oleh pemerintah berdasarkan hukum</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <div class="section-title">📞 ${adaGempa ? "G" : "F"}. Prosedur Klaim &amp; Langkah Selanjutnya</div>
-    <div class="claim-box">
-      <div class="claim-title">Dokumen Klaim yang Diperlukan</div>
-      <ul class="list-check" style="margin-top:8px;">
-        <li>Formulir klaim yang telah diisi dan ditandatangani</li>
-        <li>Fotokopi KTP pemilik bangunan</li>
-        <li>Fotokopi sertifikat atau bukti kepemilikan bangunan</li>
-        <li>Foto kerusakan sebelum dilakukan perbaikan apapun</li>
-        <li>Laporan kepolisian (untuk kasus kebakaran besar atau perbuatan jahat)</li>
-        <li>Estimasi biaya perbaikan dari kontraktor atau toko bangunan</li>
-      </ul>
-      <div style="margin-top:12px;padding:10px;background:#FEF9EC;border-radius:6px;border-left:3px solid #C8963E;">
-        ⏱ <strong>Batas waktu pelaporan klaim: maksimal 5 (lima) hari kalender</strong> sejak tanggal kejadian.
-      </div>
-    </div>
-    <div class="cta-box">
-      <div class="cta-title">Siap Melanjutkan ke Penerbitan Polis Resmi?</div>
-      <p class="cta-desc">Tim konsultan kami siap membantu Anda membandingkan penawaran dari berbagai perusahaan asuransi dan memilih yang paling sesuai untuk properti Anda di Yogyakarta.</p>
-      <div class="cta-contact">
-        <span>💬 WhatsApp: <strong>0877-8165-8231</strong> (Rio MD)</span>
-        <span>✉️ Email: <strong>rio@asuransijogja.biz.id</strong></span>
-      </div>
-    </div>
-  </div>`;
-  }
-
-  /* ── Produk lain — generic template ── */
-  const fieldRows = Object.entries(f)
-    .filter(([, val]) => val && !(Array.isArray(val) && val.length === 0))
-    .map(([key, val]) => {
-      const label = sub.fieldLabels[key] || key;
-      const display = Array.isArray(val) ? val.join(", ") : String(val);
-      return `<tr><td class="td-label">${label}</td><td class="td-val">${display}</td></tr>`;
-    }).join("");
-
+function docStyles(): string {
   return `
-  <div class="section">
-    <div class="section-title">📋 Rincian Data ${sub.productLabel}</div>
-    <div class="sim-note">⚠️ Dokumen ini merupakan <strong>Simulasi &amp; Estimasi</strong> awal — nilai final ditetapkan setelah analisis risiko lebih lanjut.</div>
-    <table><tbody>${fieldRows || '<tr><td colspan="2" style="padding:16px;color:#94A3B8;text-align:center;">Data belum diisi</td></tr>'}</tbody></table>
-  </div>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:Arial,Helvetica,sans-serif;color:#1A1A1A;background:#fff;}
+  .doc-page{width:190mm;margin:0 auto;padding:14mm 16mm 12mm;page-break-after:always;}
+  .doc-page:last-child{page-break-after:auto;}
+  .letterhead{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2.5px solid #0D2137;padding-bottom:10px;margin-bottom:16px;}
+  .lh-brand{font-size:19px;font-weight:800;color:#0D2137;letter-spacing:-0.3px;}
+  .lh-brand span{color:#C8963E;}
+  .lh-sub{font-size:9.5px;color:#64748B;margin-top:2px;}
+  .lh-contact{font-size:9px;color:#64748B;text-align:right;line-height:1.7;}
+  .doc-meta{display:flex;justify-content:space-between;font-size:10px;color:#64748B;margin-bottom:10px;}
+  .doc-title{text-align:center;font-size:13.5px;font-weight:700;text-decoration:underline;color:#0D2137;margin:6px 0 16px;}
+  .calc-card{border:1.5px solid #0D2137;border-radius:5px;overflow:hidden;}
+  .calc-card-head{background:#0D2137;padding:11px 14px;text-align:center;}
+  .cch-t1{color:#fff;font-size:12.5px;font-weight:700;letter-spacing:0.3px;}
+  .cch-t2{color:#C8963E;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-top:2px;}
+  .calc-body{padding:16px 20px;}
+  .info-row{display:flex;font-size:11.5px;padding:3.5px 0;}
+  .info-row .lbl{width:180px;flex-shrink:0;font-style:italic;color:#334155;}
+  .info-row .col{width:12px;flex-shrink:0;color:#334155;}
+  .info-row .val{font-weight:500;color:#0D2137;}
+  .info-row.total .val{font-weight:800;}
+  .info-row.total{background:#FEF6E0;margin:3px -8px 2px;padding:6px 8px;border-radius:4px;}
+  .grp-title{font-size:11px;font-weight:700;color:#0D2137;margin:12px 0 4px;}
+  .rincian-table{width:100%;border-collapse:collapse;margin-top:4px;}
+  .rincian-table td{padding:4px 2px;font-size:11px;vertical-align:middle;}
+  .rincian-table td.item{color:#334155;}
+  .rincian-table td.rate{color:#64748B;text-align:right;width:76px;white-space:nowrap;}
+  .rincian-table td.rp-lbl{width:18px;color:#64748B;text-align:right;padding-right:4px;}
+  .rincian-table td.rp-val{text-align:right;font-weight:600;color:#0D2137;width:96px;}
+  .rincian-total td{border-top:1.5px solid #0D2137;font-weight:800;padding-top:7px;}
+  .sum-row{display:flex;justify-content:space-between;font-size:11.5px;padding:4px 0;}
+  .sum-row .k{color:#334155;}
+  .sum-row .v{font-weight:700;color:#0D2137;}
+  .sum-row.final{margin-top:6px;padding-top:9px;border-top:2px solid #C8963E;}
+  .sum-row.final .k{font-weight:800;font-size:13px;color:#0D2137;}
+  .sum-row.final .v{font-weight:800;font-size:15px;color:#C8963E;}
+  .footnote{font-size:9.5px;color:#64748B;font-style:italic;margin-top:14px;line-height:1.6;}
+  .sign-wrap{display:flex;justify-content:space-between;align-items:flex-end;margin-top:30px;}
+  .sign-left{font-size:9.5px;color:#64748B;}
+  .sign-right{text-align:left;}
+  .sign-brand{font-size:12px;font-weight:800;color:#0D2137;}
+  .sign-brand span{color:#C8963E;}
+  .sign-name{font-size:11px;font-weight:700;color:#0D2137;margin-top:34px;}
+  .sign-role{font-size:9.5px;color:#64748B;}
+  .badge-sim{display:inline-block;background:#FEF2F2;color:#991B1B;border:1px solid #FECACA;border-radius:4px;padding:3px 8px;font-size:9px;font-weight:700;margin-bottom:12px;}
+  @media print{body{print-color-adjust:exact;-webkit-print-color-adjust:exact;}}
+  `;
+}
 
-  <div class="section">
-    <div class="section-title">📞 Langkah Selanjutnya</div>
-    <div class="cta-box">
-      <div class="cta-title">Hubungi Konsultan Kami untuk Penawaran Resmi</div>
-      <p class="cta-desc">Kami akan membantu Anda mendapatkan penawaran terbaik dari beberapa perusahaan asuransi terpercaya yang sesuai dengan kebutuhan dan anggaran Anda.</p>
-      <div class="cta-contact">
-        <span>💬 WhatsApp: <strong>0877-8165-8231</strong> (Rio MD)</span>
-        <span>✉️ Email: <strong>rio@asuransijogja.biz.id</strong></span>
-      </div>
+function letterheadHTML(): string {
+  return `
+  <div class="letterhead">
+    <div>
+      <div class="lh-brand">Asuransi<span>Jogja</span></div>
+      <div class="lh-sub">Konsultan Asuransi Kerugian Independen · Yogyakarta</div>
+    </div>
+    <div class="lh-contact">
+      📱 0877-8165-8231 (Rio MD)<br/>
+      ✉️ rio@asuransijogja.biz.id · 🌐 asuransijogja.biz.id
     </div>
   </div>`;
 }
 
-function generatePDFContent(sub: Submission): string {
-  const produkLabel = sub.productLabel;
-  const now = new Date(sub.submittedAt).toLocaleDateString("id-ID", {
-    day: "numeric", month: "long", year: "numeric",
-  });
+function signBlockHTML(): string {
+  return `
+  <div class="sign-wrap">
+    <div class="sign-left">Terdaftar dan bekerja sama dengan perusahaan asuransi<br/>yang diawasi oleh Otoritas Jasa Keuangan (OJK)</div>
+    <div class="sign-right">
+      <div class="sign-brand">Asuransi<span>Jogja</span></div>
+      <div class="sign-name">Rio Mardiansyah</div>
+      <div class="sign-role">Konsultan Asuransi Kerugian Independen</div>
+    </div>
+  </div>`;
+}
 
-  const productSections = buildProductSections(sub);
+function kebakaranPageHTML(sub: Submission, c: PropertiCalc, docNo: string, tanggal: string): string {
+  const rows: string[] = [];
+  rows.push(`<tr><td class="item">Premi Dasar Kebakaran (FLEXAS)</td><td class="rate">${fmtPct(c.ratePermilDasar)}</td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiDasar)}</td></tr>`);
+  if (c.adaHuru)     rows.push(`<tr><td class="item">RSMDCC (Kerusuhan &amp; Huru-Hara)</td><td class="rate">${fmtPct(c.rateHuruPermil)}</td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiHuru)}</td></tr>`);
+  if (c.adaBanjir)   rows.push(`<tr><td class="item">TSWD (Banjir, Angin Topan)</td><td class="rate">${fmtPct(c.rateBanjirPermil)}</td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiBanjir)}</td></tr>`);
+  if (c.adaBurglary || c.adaTabrakan) {
+    const rateGab = c.rateBurglaryPermil + c.rateTabrakanPermil;
+    rows.push(`<tr><td class="item">Other (Burglary, Vehicle Impact)</td><td class="rate">${fmtPct(rateGab)}</td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiBurglary + c.premiTabrakan)}</td></tr>`);
+  }
+  rows.push(`<tr class="rincian-total"><td colspan="2"></td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.subtotalKebakaran)}</td></tr>`);
+
+  return `
+  <div class="doc-page">
+    ${letterheadHTML()}
+    <div class="doc-meta">
+      <span>No. Simulasi: <strong>${docNo}</strong></span>
+      <span>${tanggal}</span>
+    </div>
+    <div class="doc-title">Simulasi Perhitungan Premi Asuransi Kebakaran</div>
+    <div class="calc-card">
+      <div class="calc-card-head">
+        <div class="cch-t1">PERHITUNGAN PREMI ASURANSI KEBAKARAN</div>
+        <div class="cch-t2">AsuransiJogja — Simulasi &amp; Estimasi</div>
+      </div>
+      <div class="calc-body">
+        <div class="info-row"><div class="lbl">Cover Asuransi</div><div class="col">:</div><div class="val">Kebakaran</div></div>
+        <div class="info-row"><div class="lbl">Nama Tertanggung</div><div class="col">:</div><div class="val">${c.nama}</div></div>
+        <div class="info-row"><div class="lbl">Alamat Resiko</div><div class="col">:</div><div class="val">${c.alamat}</div></div>
+        <div class="info-row"><div class="lbl">Jenis Pertanggungan</div><div class="col">:</div><div class="val">${c.jenisPertanggungan}</div></div>
+        <div class="info-row"><div class="lbl">Jangka Waktu</div><div class="col">:</div><div class="val">1 Tahun</div></div>
+
+        <div class="grp-title">Nilai Pertanggungan</div>
+        <div class="info-row"><div class="lbl">Bangunan ${c.okupasiLabel}</div><div class="col">:</div><div class="val">Rp ${fmtRpPlain(c.nilaiBangunan)}</div></div>
+        ${c.nilaiIsi ? `<div class="info-row"><div class="lbl">Perabotan</div><div class="col">:</div><div class="val">Rp ${fmtRpPlain(c.nilaiIsi)}</div></div>` : ""}
+        <div class="info-row total"><div class="lbl">Total Pertanggungan</div><div class="col">:</div><div class="val">Rp ${fmtRpPlain(c.totalNilai)}</div></div>
+        <div class="info-row"><div class="lbl">Okupasi</div><div class="col">:</div><div class="val">${c.okupasiLabel} / ${c.kkLabel}</div></div>
+
+        <div class="grp-title">Rincian Premi</div>
+        <table class="rincian-table"><tbody>${rows.join("")}</tbody></table>
+
+        <div style="margin-top:14px;">
+          <div class="sum-row"><span class="k">Premi / Tahun</span><span class="v">${fmtRpPlain(c.subtotalKebakaran)}</span></div>
+          <div class="sum-row"><span class="k">Biaya ADM</span><span class="v">${fmtRpPlain(c.biayaAdminKebakaran)}</span></div>
+          <div class="sum-row final"><span class="k">Total Premi Akhir</span><span class="v">${fmtRpPlain(c.totalKebakaran)} <span style="font-size:9.5px;font-weight:500;color:#64748B;">/ tahun</span></span></div>
+        </div>
+
+        <p class="footnote">*) Penetapan tarif mengacu pada SE OJK No. 6/SEOJK.05/2017 Tentang Usaha Asuransi Harta Benda. Angka di atas adalah <strong>simulasi &amp; estimasi</strong>, bukan penawaran resmi (quotation) maupun polis — premi final ditetapkan perusahaan asuransi setelah survei &amp; analisis risiko.</p>
+      </div>
+    </div>
+    ${signBlockHTML()}
+  </div>`;
+}
+
+function gempaPageHTML(sub: Submission, c: PropertiCalc, docNo: string, tanggal: string): string {
+  return `
+  <div class="doc-page">
+    ${letterheadHTML()}
+    <div class="doc-meta">
+      <span>No. Simulasi: <strong>${docNo}</strong></span>
+      <span>${tanggal}</span>
+    </div>
+    <div class="doc-title">Simulasi Perhitungan Premi Asuransi Gempa Bumi</div>
+    <span class="badge-sim">POLIS TERPISAH DARI ASURANSI KEBAKARAN</span>
+    <div class="calc-card">
+      <div class="calc-card-head">
+        <div class="cch-t1">PERHITUNGAN PREMI ASURANSI GEMPA BUMI</div>
+        <div class="cch-t2">AsuransiJogja — Simulasi &amp; Estimasi</div>
+      </div>
+      <div class="calc-body">
+        <div class="info-row"><div class="lbl">Cover Asuransi</div><div class="col">:</div><div class="val">Gempa Bumi</div></div>
+        <div class="info-row"><div class="lbl">Nama Tertanggung</div><div class="col">:</div><div class="val">${c.nama}</div></div>
+        <div class="info-row"><div class="lbl">Alamat Resiko</div><div class="col">:</div><div class="val">${c.alamat}</div></div>
+        <div class="info-row"><div class="lbl">Jenis Pertanggungan</div><div class="col">:</div><div class="val">${c.jenisPertanggungan}</div></div>
+        <div class="info-row"><div class="lbl">Jangka Waktu</div><div class="col">:</div><div class="val">1 Tahun</div></div>
+
+        <div class="grp-title">Nilai Pertanggungan</div>
+        <div class="info-row"><div class="lbl">Bangunan ${c.okupasiLabel}</div><div class="col">:</div><div class="val">Rp ${fmtRpPlain(c.nilaiBangunan)}</div></div>
+        ${c.nilaiIsi ? `<div class="info-row"><div class="lbl">Perabotan</div><div class="col">:</div><div class="val">Rp ${fmtRpPlain(c.nilaiIsi)}</div></div>` : ""}
+        <div class="info-row total"><div class="lbl">Total Pertanggungan</div><div class="col">:</div><div class="val">Rp ${fmtRpPlain(c.totalNilai)}</div></div>
+        <div class="info-row"><div class="lbl">Okupasi</div><div class="col">:</div><div class="val">${c.okupasiLabel} / ${c.kkLabel}</div></div>
+        <div class="info-row"><div class="lbl">Wilayah / Zona Gempa</div><div class="col">:</div><div class="val">${c.wGempa} — Zona ${c.zonaGempa}</div></div>
+
+        <div class="grp-title">Rincian Premi</div>
+        <table class="rincian-table"><tbody>
+          <tr><td class="item">Gempa Bumi (EQ) — Zona ${c.zonaGempa}</td><td class="rate">${fmtPct(c.rGempaPermil)}</td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiGempa)}</td></tr>
+          <tr class="rincian-total"><td colspan="2"></td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiGempa)}</td></tr>
+        </tbody></table>
+
+        <div style="margin-top:14px;">
+          <div class="sum-row"><span class="k">Premi / Tahun</span><span class="v">${fmtRpPlain(c.premiGempa)}</span></div>
+          <div class="sum-row"><span class="k">Biaya ADM</span><span class="v">${fmtRpPlain(c.biayaAdminGempa)}</span></div>
+          <div class="sum-row final"><span class="k">Total Premi Akhir</span><span class="v">${fmtRpPlain(c.totalGempa)} <span style="font-size:9.5px;font-weight:500;color:#64748B;">/ tahun</span></span></div>
+        </div>
+
+        <p class="footnote">*) Penetapan tarif mengacu pada SE OJK No. 6/SEOJK.05/2017 Tentang Usaha Asuransi Harta Benda. Golongan risiko: ${c.golLabel}. Asuransi Gempa Bumi diterbitkan sebagai <strong>polis tersendiri</strong>, terpisah dari polis Asuransi Kebakaran, sesuai ketentuan PSAKI. Angka di atas adalah <strong>simulasi &amp; estimasi</strong>, bukan penawaran resmi maupun polis.</p>
+      </div>
+    </div>
+    ${signBlockHTML()}
+  </div>`;
+}
+
+function buildPropertiDocument(sub: Submission): string {
+  const c = computePropertiCalc(sub);
+  const docNo = sub.id;
+  const tanggal = new Date(sub.submittedAt).toLocaleDateString("id-ID", { day: "2-digit", month: "long", year: "numeric" });
+
+  const pages = [kebakaranPageHTML(sub, c, docNo, tanggal)];
+  if (c.adaGempa) pages.push(gempaPageHTML(sub, c, docNo, tanggal));
 
   return `<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8"/>
-<title>Simulasi & Estimasi Premi ${produkLabel} — ${sub.nama}</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap');
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'DM Sans',sans-serif;background:#fff;color:#0D2137;font-size:13.5px;line-height:1.65;}
-  .page{max-width:740px;margin:0 auto;padding:48px 52px;}
-  /* Header */
-  .header{background:#0D2137;border-radius:14px;padding:30px 36px;margin-bottom:32px;position:relative;overflow:hidden;}
-  .brand{font-family:'Syne',sans-serif;font-size:21px;font-weight:800;color:#fff;}
-  .brand span{color:#C8963E;}
-  .doc-type{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#C8963E;margin-top:5px;margin-bottom:14px;}
-  .doc-title{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#fff;line-height:1.22;}
-  .meta-row{display:flex;gap:20px;margin-top:16px;flex-wrap:wrap;}
-  .meta-item{display:flex;flex-direction:column;gap:2px;}
-  .meta-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.40);}
-  .meta-value{font-size:11.5px;color:rgba(255,255,255,0.82);font-weight:500;}
-  .id-badge{display:inline-block;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:5px;padding:2px 8px;font-size:9.5px;font-weight:600;color:rgba(255,255,255,0.45);font-family:monospace;margin-top:14px;}
-  /* Sections */
-  .section{margin-bottom:26px;}
-  .section-title{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#94A3B8;border-bottom:1.5px solid #f1f5f9;padding-bottom:7px;margin-bottom:12px;}
-  /* Tables */
-  table{width:100%;border-collapse:collapse;}
-  .td-label{padding:9px 12px;color:#64748B;font-size:12.5px;width:40%;border-bottom:1px solid #f8fafc;vertical-align:top;}
-  .td-val{padding:9px 12px;color:#0D2137;font-size:12.5px;font-weight:600;border-bottom:1px solid #f8fafc;}
-  .td-val.highlight{color:#C8963E;font-size:13.5px;}
-  /* Premi table */
-  .premi-table{border-radius:8px;overflow:hidden;margin-bottom:4px;}
-  .td-premi{padding:9px 12px;color:#475569;font-size:12.5px;border-bottom:1px solid #f1f5f9;}
-  .td-premi-val{padding:9px 12px;color:#0D2137;font-size:12.5px;font-weight:600;text-align:right;border-bottom:1px solid #f1f5f9;}
-  /* Sim note */
-  .sim-note{background:#FFFBEB;border:1px solid #FDE68A;border-radius:8px;padding:10px 14px;font-size:12px;color:#92400E;margin-bottom:14px;line-height:1.6;}
-  /* Benefits */
-  .benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-  .benefit-item{background:#F8FAFC;border:1px solid #E2E8F0;border-radius:8px;padding:12px 14px;}
-  .benefit-title{font-size:12px;font-weight:700;color:#0D2137;margin-bottom:4px;}
-  .benefit-desc{font-size:11.5px;color:#64748B;line-height:1.55;}
-  /* Lists */
-  .list-check{list-style:none;display:flex;flex-direction:column;gap:6px;}
-  .list-check li{font-size:12.5px;color:#475569;padding-left:20px;position:relative;line-height:1.55;}
-  .list-check li::before{content:"✓";position:absolute;left:0;color:#16A34A;font-weight:700;}
-  .list-cross{list-style:none;display:flex;flex-direction:column;gap:6px;}
-  .list-cross li{font-size:12.5px;color:#475569;padding-left:20px;position:relative;line-height:1.55;}
-  .list-cross li::before{content:"✕";position:absolute;left:0;color:#DC2626;font-weight:700;}
-  /* Claim box */
-  .claim-box{background:#F8FAFC;border:1px solid #E2E8F0;border-radius:10px;padding:16px 18px;margin-bottom:16px;}
-  .claim-title{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:#0D2137;margin-bottom:10px;}
-  /* CTA */
-  .cta-box{background:#0D2137;border-radius:12px;padding:20px 22px;}
-  .cta-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:#C8963E;margin-bottom:8px;}
-  .cta-desc{font-size:12px;color:rgba(255,255,255,0.75);line-height:1.65;margin-bottom:14px;}
-  .cta-contact{display:flex;flex-direction:column;gap:5px;}
-  .cta-contact span{font-size:12px;color:rgba(255,255,255,0.70);}
-  .cta-contact strong{color:#fff;}
-  /* Disclaimer */
-  .disclaimer-final{background:#FDF9F3;border:1px solid #E8D5B0;border-radius:10px;padding:14px 18px;margin-top:24px;}
-  .disclaimer-final p{font-size:11.5px;color:#64748B;line-height:1.7;}
-  /* Footer */
-  .footer{margin-top:32px;padding-top:14px;border-top:1px solid #f1f5f9;display:flex;justify-content:space-between;align-items:flex-end;}
-  .footer-brand{font-family:'Syne',sans-serif;font-weight:700;font-size:14px;color:#0D2137;}
-  .footer-brand span{color:#C8963E;}
-  .footer-contact{font-size:10.5px;color:#94A3B8;text-align:right;line-height:1.65;}
-  @media print{
-    body{print-color-adjust:exact;-webkit-print-color-adjust:exact;}
-    .page{padding:28px 32px;}
-    .benefit-grid{grid-template-columns:1fr 1fr;}
-  }
-</style>
+<title>Simulasi Premi Kebakaran & Gempa Bumi — ${sub.nama}</title>
+<style>${docStyles()}</style>
 </head>
 <body>
-<div class="page">
-
-  <!-- HEADER -->
-  <div class="header">
-    <div class="brand">Asuransi<span>Jogja</span></div>
-    <div class="doc-type">Simulasi &amp; Estimasi Premi</div>
-    <div class="doc-title">Ringkasan Simulasi &amp; Estimasi<br/>${produkLabel}</div>
-    <div class="meta-row">
-      <div class="meta-item">
-        <span class="meta-label">Dipersiapkan untuk</span>
-        <span class="meta-value">${sub.nama}</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">WhatsApp</span>
-        <span class="meta-value">${sub.whatsapp}</span>
-      </div>
-      ${sub.email ? `<div class="meta-item"><span class="meta-label">Email</span><span class="meta-value">${sub.email}</span></div>` : ""}
-      <div class="meta-item">
-        <span class="meta-label">Tanggal Dokumen</span>
-        <span class="meta-value">${now}</span>
-      </div>
-    </div>
-    <div class="id-badge">${sub.id}</div>
-  </div>
-
-  <!-- PRODUCT SECTIONS -->
-  ${productSections}
-
-  <!-- DISCLAIMER AKHIR -->
-  <div class="disclaimer-final">
-    <p>
-      <strong>⚠️ Pernyataan Penting:</strong> Seluruh angka dalam dokumen ini merupakan <strong>Simulasi &amp; Estimasi</strong>
-      yang bersifat indikatif dan <strong>bukan merupakan penawaran resmi (quotation) maupun polis asuransi</strong>.
-      Premi final akan ditetapkan oleh perusahaan asuransi setelah proses survei objek dan analisis risiko secara menyeluruh.
-      Sebagai konsultan asuransi kerugian independen, kami tidak menerbitkan polis secara langsung, melainkan membantu
-      Anda memperoleh penawaran terbaik dari perusahaan asuransi yang terdaftar dan diawasi oleh OJK.
-    </p>
-  </div>
-
-  <!-- FOOTER -->
-  <div class="footer">
-    <div>
-      <div class="footer-brand">Asuransi<span>Jogja</span></div>
-      <div style="font-size:10.5px;color:#94A3B8;margin-top:3px;">Konsultan Asuransi Kerugian Independen · Yogyakarta</div>
-    </div>
-    <div class="footer-contact">
-      📱 0877-8165-8231 (Rio MD)<br/>
-      ✉️ rio@asuransijogja.biz.id<br/>
-      🌐 asuransijogja.biz.id
-    </div>
-  </div>
-
-</div>
+${pages.join("\n")}
 </body>
 </html>`;
 }
 
+// ─── Trigger download / print — HANYA untuk produk Properti ──────────────────
 function downloadPDF(sub: Submission) {
-  const html = generatePDFContent(sub);
+  if (sub.product !== "properti") {
+    alert("Format PDF resmi saat ini baru tersedia untuk produk Asuransi Properti (Kebakaran & Gempa Bumi). Produk lain akan menyusul.");
+    return;
+  }
+
+  const html = buildPropertiDocument(sub);
   const win = window.open("", "_blank");
   if (!win) return alert("Pop-up diblokir browser. Izinkan pop-up dan coba lagi.");
 
-  // Format nama file: Simulasi-dan-Estimasi-Premi-[NamaNasabah].pdf
   const safeNama = sub.nama.replace(/\s+/g, "-").replace(/[^a-zA-Z0-9-]/g, "");
-  const fileName = `Simulasi-dan-Estimasi-Premi-${safeNama}.pdf`;
+  const fileName = `Simulasi-Premi-Kebakaran-Gempa-${safeNama}.pdf`;
 
   win.document.write(html);
   win.document.close();
 
-  // Set document title agar browser memakai nama file yang benar saat Save/Print to PDF
   setTimeout(() => {
     win.document.title = fileName;
     win.print();
@@ -908,12 +639,21 @@ export default function AdminSPPAPage() {
                           </span>
                         </td>
                         <td className="px-4 py-3">
-                          <button
-                            onClick={e => { e.stopPropagation(); downloadPDF(sub); }}
-                            className="text-xs bg-navy text-white px-3 py-1.5 rounded-lg hover:bg-navy/80 transition-colors whitespace-nowrap"
-                          >
-                            📄 PDF
-                          </button>
+                          {sub.product === "properti" ? (
+                            <button
+                              onClick={e => { e.stopPropagation(); downloadPDF(sub); }}
+                              className="text-xs bg-navy text-white px-3 py-1.5 rounded-lg hover:bg-navy/80 transition-colors whitespace-nowrap"
+                            >
+                              📄 PDF
+                            </button>
+                          ) : (
+                            <span
+                              title="Format PDF belum tersedia untuk produk ini"
+                              className="text-xs bg-[#F1F5F9] text-[#94A3B8] px-3 py-1.5 rounded-lg whitespace-nowrap cursor-not-allowed select-none"
+                            >
+                              📄 PDF
+                            </span>
+                          )}
                         </td>
                       </tr>
                     ))}
@@ -1004,12 +744,21 @@ export default function AdminSPPAPage() {
 
                   {/* Actions */}
                   <div className="space-y-2 pt-2 border-t border-black/6">
-                    <button
-                      onClick={() => downloadPDF(selected)}
-                      className="w-full bg-navy text-white text-xs font-bold py-2.5 rounded-xl hover:bg-navy/85 transition-colors"
-                    >
-                      📄 Download / Cetak PDF
-                    </button>
+                    {selected.product === "properti" ? (
+                      <button
+                        onClick={() => downloadPDF(selected)}
+                        className="w-full bg-navy text-white text-xs font-bold py-2.5 rounded-xl hover:bg-navy/85 transition-colors"
+                      >
+                        📄 Download / Cetak PDF Penawaran
+                      </button>
+                    ) : (
+                      <div
+                        title="Format PDF belum tersedia untuk produk ini"
+                        className="w-full bg-[#F1F5F9] text-[#94A3B8] text-xs font-semibold py-2.5 rounded-xl text-center cursor-not-allowed select-none"
+                      >
+                        📄 Format PDF belum tersedia
+                      </div>
+                    )}
                     <a
                       href={`https://wa.me/${selected.whatsapp}`}
                       target="_blank"
