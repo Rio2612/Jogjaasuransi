@@ -155,7 +155,7 @@ function buildClientMessage(sub: SPPASubmission): string {
   msg += `Tim kami sedang menyiapkan dokumen *Simulasi & Estimasi Premi* khusus untuk kebutuhan Anda.\n\n`;
   msg += `⏱ Estimasi pengiriman: *dalam 1×24 jam kerja*\n\n`;
   msg += `Jika ada pertanyaan, balas pesan ini atau hubungi:\n`;
-  msg += `📞 *0877-8165-8231* (Rio MD)\n\n`;
+  msg += `📞 *0813-7333-6728* (Rio Mardiansyah)\n\n`;
   msg += `_Asuransi Jogja — Konsultan Asuransi Kerugian Independen Yogyakarta_`;
   return msg;
 }
