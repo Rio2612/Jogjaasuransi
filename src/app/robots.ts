@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/","/?m=1/", "/_next/"],
+        disallow: ["/api/", "/_next/"],
       },
     ],
     sitemap: "https://asuransijogja.biz.id/sitemap.xml",

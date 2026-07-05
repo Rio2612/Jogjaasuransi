@@ -40,14 +40,112 @@ const mitosVsFakta = [
 
 const schemaArtikel = {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Pentingnya Asuransi di Dunia Usaha Yogyakarta",
-  "description": "Panduan risiko usaha di Yogyakarta dan jenis asuransi bisnis yang dibutuhkan UMKM dan korporasi.",
-  "url": "https://asuransijogja.biz.id/artikel/pentingnya-asuransi-dunia-usaha-jogja",
-  "author": { "@type": "Person", "name": "Rio MD" },
-  "publisher": { "@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id" },
-  "inLanguage": "id-ID",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Beranda", item: "https://asuransijogja.biz.id" },
+        { "@type": "ListItem", position: 2, name: "Artikel", item: "https://asuransijogja.biz.id/artikel" },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Pentingnya Asuransi Dunia Usaha Jogja",
+          item: "https://asuransijogja.biz.id/artikel/pentingnya-asuransi-dunia-usaha-jogja",
+        },
+      ],
+    },
+    {
+      "@type": "Article",
+      headline: "Pentingnya Asuransi di Dunia Usaha Yogyakarta",
+      description: "Panduan risiko usaha di Yogyakarta dan jenis asuransi bisnis yang dibutuhkan UMKM dan korporasi.",
+      url: "https://asuransijogja.biz.id/artikel/pentingnya-asuransi-dunia-usaha-jogja",
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
+      datePublished: "2025-11-05",
+      dateModified: "2026-07-05",
+      inLanguage: "id-ID",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Apakah usaha kecil di Yogyakarta wajib memiliki asuransi?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Secara hukum umum, tidak ada kewajiban asuransi untuk semua jenis usaha kecil. Namun untuk sektor tertentu — seperti kontraktor yang mengikuti tender pemerintah DIY, atau usaha yang menjadi vendor perusahaan besar (misalnya subkontraktor galangan kapal atau pabrik) — asuransi liability dan surety bond sering menjadi syarat wajib dari pemberi kerja atau obligee, bukan dari regulasi negara.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Berapa persentase biaya yang wajar untuk asuransi bisnis dari total omzet?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Sebagai acuan umum, biaya premi asuransi properti dan liability untuk usaha kecil-menengah di Yogyakarta biasanya berkisar 0,1%–0,5% dari nilai aset yang diasuransikan per tahun — jauh lebih kecil dibanding potensi kerugian jika risiko benar-benar terjadi tanpa proteksi.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Apa yang terjadi jika usaha tidak punya asuransi dan terjadi kebakaran?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Seluruh kerugian — bangunan, peralatan, stok barang, hingga hilangnya pendapatan selama masa perbaikan — menjadi tanggungan pribadi pemilik usaha. Banyak UMKM yang tidak bisa bangkit setelah kebakaran besar justru karena tidak memiliki cadangan dana maupun proteksi asuransi untuk menutup kerugian tersebut.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Bisakah satu polis mencakup beberapa jenis risiko usaha sekaligus?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Bisa, tergantung struktur usaha. Beberapa insurer menawarkan paket gabungan (combined package policy) yang mencakup properti, liability, dan kendaraan operasional dalam satu polis dengan administrasi lebih sederhana. Namun untuk risiko yang sangat spesifik seperti machinery breakdown atau surety bond, biasanya tetap diterbitkan sebagai polis tersendiri.",
+          },
+        },
+      ],
+    },
+  ],
 };
+
+const langkahMulai = [
+  {
+    no: "01",
+    judul: "Petakan aset dan aktivitas usaha Anda",
+    detail: "Buat daftar sederhana: bangunan/tempat usaha, peralatan dan mesin, stok barang, kendaraan operasional, dan jumlah karyawan. Daftar ini jadi dasar untuk menentukan jenis dan besar pertanggungan yang benar-benar Anda butuhkan — bukan asal ikut paket standar.",
+  },
+  {
+    no: "02",
+    judul: "Identifikasi risiko paling mungkin terjadi, bukan yang paling menakutkan",
+    detail: "Restoran lebih rawan kebakaran dapur dan keracunan makanan dibanding gempa. Kontraktor lebih rawan tuntutan pemilik proyek dibanding pencurian toko. Prioritaskan proteksi sesuai profil risiko usaha Anda, baru pertimbangkan perluasan lain.",
+  },
+  {
+    no: "03",
+    judul: "Minta estimasi premi dari konsultan independen, bukan cuma satu agen",
+    detail: "Konsultan independen bisa membandingkan beberapa perusahaan asuransi sekaligus untuk mendapatkan cakupan terbaik dengan premi paling efisien — tanpa Anda harus repot menghubungi banyak pihak sendiri.",
+  },
+  {
+    no: "04",
+    judul: "Baca klausul pengecualian sebelum tanda tangan",
+    detail: "Sebagian besar sengketa klaim terjadi karena pemilik usaha tidak menyadari adanya pengecualian tertentu dalam polis. Pastikan konsultan Anda menjelaskan pengecualian utama di awal — bukan setelah klaim ditolak.",
+  },
+];
+
+const faqDisplay = [
+  {
+    q: "Apakah usaha kecil di Yogyakarta wajib memiliki asuransi?",
+    a: "Tidak ada kewajiban hukum untuk semua jenis usaha kecil. Tapi untuk sektor tertentu — kontraktor yang ikut tender pemerintah DIY, atau vendor/subkontraktor perusahaan besar seperti galangan kapal dan pabrik — asuransi liability dan surety bond sering menjadi syarat wajib dari pemberi kerja, bukan dari negara.",
+  },
+  {
+    q: "Berapa persentase biaya wajar untuk asuransi bisnis dari omzet?",
+    a: "Sebagai acuan umum, premi properti dan liability untuk usaha kecil-menengah di Yogyakarta biasanya 0,1%–0,5% dari nilai aset yang diasuransikan per tahun — jauh lebih kecil dibanding potensi kerugian jika risiko benar-benar terjadi tanpa proteksi.",
+  },
+  {
+    q: "Apa yang terjadi jika usaha tidak punya asuransi dan terjadi kebakaran?",
+    a: "Seluruh kerugian — bangunan, peralatan, stok, hingga hilangnya pendapatan selama masa perbaikan — jadi tanggungan pribadi. Banyak UMKM gagal bangkit setelah kebakaran besar justru karena tidak punya cadangan dana maupun proteksi asuransi.",
+  },
+  {
+    q: "Bisakah satu polis mencakup beberapa risiko usaha sekaligus?",
+    a: "Bisa, tergantung struktur usaha. Beberapa insurer menawarkan combined package policy yang mencakup properti, liability, dan kendaraan dalam satu polis. Namun risiko spesifik seperti machinery breakdown atau surety bond umumnya tetap diterbitkan sebagai polis tersendiri.",
+  },
+];
 
 export default function PentingnyaAsuransiUsahaPage() {
   return (
@@ -68,13 +166,16 @@ export default function PentingnyaAsuransiUsahaPage() {
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-gold/10 border border-gold/20 text-gold text-xs font-bold px-3 py-1 rounded-full">🏢 Bisnis</span>
-            <span className="text-[#94A3B8] text-xs">⏱ 7 menit baca</span>
+            <span className="text-[#94A3B8] text-xs">⏱ 9 menit baca</span>
           </div>
           <h1 className="font-heading text-[clamp(1.8rem,3.5vw,2.8rem)] text-navy leading-[1.2] mb-4">
             Pentingnya Asuransi di<br />Dunia Usaha Yogyakarta
           </h1>
-          <p className="text-[#64748B] text-lg leading-[1.85]">
+          <p className="text-[#64748B] text-lg leading-[1.85] mb-4">
             Yogyakarta adalah salah satu kota dengan ekosistem bisnis paling dinamis di Indonesia — dari warung makan hingga hotel bintang, dari kontraktor lokal hingga pabrik manufaktur. Namun di balik pertumbuhan itu, banyak pelaku usaha belum memiliki proteksi memadai terhadap risiko yang bisa datang kapan saja.
+          </p>
+          <p className="text-[#64748B] text-base leading-[1.85]">
+            Posisi geografis DIY di jalur patahan Opak dan lereng Gunung Merapi membuat risiko properti di wilayah ini bukan sekadar teori — melainkan pertimbangan operasional nyata bagi pemilik usaha. Ditambah pertumbuhan sektor pariwisata, konstruksi, dan manufaktur yang pesat, kebutuhan atas proteksi risiko usaha di Yogyakarta terus meningkat, baik untuk memenuhi syarat tender/vendor maupun untuk melindungi kelangsungan usaha itu sendiri.
           </p>
         </div>
 
@@ -121,6 +222,38 @@ export default function PentingnyaAsuransiUsahaPage() {
                 <div className="bg-white px-5 py-3">
                   <span className="text-xs font-bold text-green-700 uppercase tracking-wider">Fakta</span>
                   <p className="text-sm text-navy2 leading-relaxed mt-1">{m.fakta}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="font-heading text-[1.6rem] text-navy mb-2">4 Langkah Memulai Proteksi Usaha Anda</h2>
+          <p className="text-sm text-[#64748B] mb-6">Tidak perlu langsung membeli semua jenis polis. Mulai dari yang paling relevan dengan cara berikut:</p>
+          <div className="flex flex-col gap-4">
+            {langkahMulai.map(l => (
+              <div key={l.no} className="flex gap-4 bg-white rounded-xl p-5 border border-black/7">
+                <div className="font-heading text-gold text-2xl font-bold flex-shrink-0">{l.no}</div>
+                <div>
+                  <div className="font-heading text-navy font-bold text-[0.98rem] mb-1.5">{l.judul}</div>
+                  <p className="text-xs text-[#64748B] leading-relaxed">{l.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="font-heading text-[1.6rem] text-navy mb-6">Pertanyaan yang Sering Ditanyakan</h2>
+          <div className="flex flex-col gap-4">
+            {faqDisplay.map((f, i) => (
+              <div key={i} className="rounded-xl border border-black/7 overflow-hidden bg-cream">
+                <div className="px-5 py-3 border-b border-black/5">
+                  <p className="text-sm font-bold text-navy">{f.q}</p>
+                </div>
+                <div className="bg-white px-5 py-3">
+                  <p className="text-sm text-navy2 leading-relaxed">{f.a}</p>
                 </div>
               </div>
             ))}

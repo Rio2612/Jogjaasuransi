@@ -23,6 +23,17 @@ const nextConfig: NextConfig = {
         destination: "/artikel/asuransi-rental-mobil-jogja",
         permanent: true,
       },
+      // Sisa parameter mobile-view "?m=1" dari platform lama (Blogger-style).
+      // Google masih mencoba crawl URL ini dan gagal (GSC: "Kesalahan pengalihan").
+      // Redirect 301 generik ini menghapus query string ini secara definitif
+      // di SELURUH path sekaligus, jauh lebih baik daripada membiarkan
+      // Next.js men-serve 200 duplikat untuk setiap URL berbeda.
+      {
+        source: "/:path*",
+        has: [{ type: "query", key: "m", value: "1" }],
+        destination: "/:path*",
+        permanent: true,
+      },
     ];
   },
 
