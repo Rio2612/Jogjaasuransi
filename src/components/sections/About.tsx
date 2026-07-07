@@ -26,23 +26,23 @@ export default function About() {
             <div className="text-gold2 text-sm font-medium mt-0.5">Praktisi Asuransi</div>
             <div className="flex items-center gap-2 mt-2 flex-wrap">
               <span className="bg-gold text-navy text-xs font-bold px-3 py-1 rounded-full">📍 , DIY</span>
-              <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">11 Tahun</span>
+              <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">8 Tahun</span>
             </div>
           </div>
         </div>
 
         {/* TEKS */}
         <div>
-          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Tentang Konsultan</div>
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Tentang Praktisi</div>
           <h2 className="font-heading text-[clamp(1.9rem,3vw,2.9rem)] leading-[1.22] text-navy">
-            Kenali Rio MD,<br />Konsultan Anda
+            Kenali Rio MD,<br />Praktisi Asuransi Anda
           </h2>
           <p className="text-lg leading-[1.85] text-[#64748B] max-w-[560px] mt-3">
-            Sebelas tahun berkecimpung di dunia asuransi kerugian mengajarkan Rio MD satu hal: klien butuh konsultan yang berpihak pada mereka — bukan agen yang sekadar mengejar komisi penjualan polis.
+            Delapan tahun berkecimpung di dunia asuransi kerugian mengajarkan Rio MD satu hal: klien butuh mitra yang berpihak pada mereka — bukan agen yang sekadar mengejar komisi penjualan polis.
           </p>
           <ul className="flex flex-col gap-3 mt-5">
             {[
-              "11 tahun pengalaman langsung di lini asuransi kerugian",
+              "8 tahun pengalaman langsung di lini asuransi kerugian",
               "Klien dari kalangan pribadi, pelaku usaha kecil, hingga perusahaan skala menengah",
               "Familiar dengan hampir semua produk asuransi kerugian — dari kendaraan hingga surety bond",
               "Setiap konsultasi disampaikan apa adanya, termasuk hal-hal yang sering disembunyikan agen lain",
@@ -63,6 +63,9 @@ export default function About() {
             <span className="flex items-center gap-2 text-[1rem] text-navy2 font-medium">
               📍 {KONTAK.kota}
             </span>
+            <a href="https://www.linkedin.com/in/riomardiansyah" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[1rem] text-navy2 font-medium no-underline hover:text-gold transition-colors">
+              🔗 Profil LinkedIn Rio MD
+            </a>
           </div>
         </div>
 

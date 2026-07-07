@@ -81,7 +81,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         "url": BASE_URL,
         "telephone": "+6287781658231",
         "email": "rio@asuransijogja.biz.id",
-        "founder": { "@type": "Person", "name": "Rio MD" },
+        "founder": { "@type": "Person", "name": "Rio MD", "sameAs": ["https://www.linkedin.com/in/riomardiansyah"] },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Yogyakarta",

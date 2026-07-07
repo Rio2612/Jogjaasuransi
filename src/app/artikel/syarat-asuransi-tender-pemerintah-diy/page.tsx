@@ -373,7 +373,7 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
           <p className="text-[#64748B] text-base leading-relaxed mb-4">
             Di lingkungan Pemerintah DIY — baik proyek APBN yang dikelola oleh BBWSO, Balai Pelaksana Jalan Nasional,
             maupun APBD DIY dan APBD kabupaten (Sleman, Bantul, Kulon Progo, Gunung Kidul) — ketentuan ini berlaku
-            seragam. Pengalaman kami mendampingi kontraktor di Yogyakarta selama lebih dari 11 tahun menunjukkan bahwa
+            seragam. Pengalaman kami mendampingi kontraktor di Yogyakarta selama 8 tahun menunjukkan bahwa
             kesalahan administrasi jaminan adalah penyebab terbesar kontraktor gagal kontrak atau terkena sanksi blacklist.
           </p>
           <div className="bg-navy/4 border border-navy/12 rounded-xl p-4 mb-10 flex gap-3">
