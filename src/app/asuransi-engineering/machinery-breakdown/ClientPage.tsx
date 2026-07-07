@@ -163,8 +163,8 @@ function KalkulatorMB() {
       <div className="bg-white/5 border border-gold/20 rounded-[20px] p-8 max-w-[680px] mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className={labelCls}>Jenis Mesin</label>
-            <select className={selectCls} value={jenisMesin} onChange={(e) => setJenisMesin(e.target.value)}>
+            <label className={labelCls} htmlFor="mb-jenis">Jenis Mesin</label>
+            <select id="mb-jenis" className={selectCls} value={jenisMesin} onChange={(e) => setJenisMesin(e.target.value)}>
               <option value="produksi" style={{ background: "#163352" }}>🏭 Mesin Produksi / Manufaktur</option>
               <option value="pendingin" style={{ background: "#163352" }}>❄️ Pendingin / HVAC / Chiller</option>
               <option value="genset" style={{ background: "#163352" }}>⚡ Genset & Sistem Kelistrikan</option>
@@ -174,8 +174,8 @@ function KalkulatorMB() {
             </select>
           </div>
           <div>
-            <label className={labelCls}>Usia Mesin</label>
-            <select className={selectCls} value={usiaMesin} onChange={(e) => setUsiaMesin(e.target.value)}>
+            <label className={labelCls} htmlFor="mb-usia">Usia Mesin</label>
+            <select id="mb-usia" className={selectCls} value={usiaMesin} onChange={(e) => setUsiaMesin(e.target.value)}>
               <option value="baru" style={{ background: "#163352" }}>Baru (0–5 tahun)</option>
               <option value="sedang" style={{ background: "#163352" }}>Sedang (5–10 tahun)</option>
               <option value="tua" style={{ background: "#163352" }}>Tua (10–15 tahun)</option>

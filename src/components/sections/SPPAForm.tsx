@@ -266,6 +266,7 @@ function InputField({
   if (field.type === "select") {
     return (
       <select
+        id={field.id}
         value={(value as string) || ""}
         onChange={e => onChange(field.id, e.target.value)}
         className={inputBase}
@@ -341,6 +342,7 @@ function InputField({
   }
   return (
     <input
+      id={field.id}
       type={field.type === "number" ? "number" : "text"}
       value={(value as string) || ""}
       onChange={e => onChange(field.id, e.target.value)}
@@ -431,6 +433,7 @@ function PropertiFields({
                     <span>Pilih Wilayah untuk Menentukan Zona & Tarif Gempa</span>
                   </div>
                   <select
+                    aria-label="Pilih wilayah untuk menentukan zona & tarif gempa"
                     value={wilayahGempa}
                     onChange={e => onChange("wilayahGempa", e.target.value)}
                     className={inputBase + " border-amber-200 focus:border-amber-400 focus:ring-amber-100"}
@@ -479,7 +482,7 @@ function PropertiFields({
         // Field lainnya — render normal
         return (
           <div key={field.id}>
-            <label className="block text-xs font-semibold text-navy/60 mb-1.5">
+            <label htmlFor={field.id} className="block text-xs font-semibold text-navy/60 mb-1.5">
               {field.label}
             </label>
             <InputField
@@ -628,10 +631,11 @@ function SPPAFormInner() {
 
           {/* Product selector */}
           <div className="bg-navy px-6 py-5">
-            <label className="block text-[0.68rem] font-bold tracking-[2.5px] uppercase text-gold/80 mb-2">
+            <label htmlFor="sppa-produk" className="block text-[0.68rem] font-bold tracking-[2.5px] uppercase text-gold/80 mb-2">
               Pilih Produk Asuransi <span className="text-red-400">*</span>
             </label>
             <select
+              id="sppa-produk"
               value={product}
               onChange={e => handleProductChange(e.target.value)}
               className="w-full bg-white/10 border border-white/20 text-white rounded-lg px-3.5 py-2.5 text-sm font-medium focus:outline-none focus:border-gold transition-all appearance-none cursor-pointer"
@@ -702,7 +706,7 @@ function SPPAFormInner() {
                 ) : (
                   fields.map(field => (
                     <div key={field.id}>
-                      <label className="block text-xs font-semibold text-navy/60 mb-1.5">
+                      <label htmlFor={field.id} className="block text-xs font-semibold text-navy/60 mb-1.5">
                         {field.label}
                       </label>
                       <InputField

@@ -76,8 +76,9 @@ export default function Kalkulator() {
         {/* Row 1 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div className="flex flex-col gap-1.5">
-            <label className="text-sm font-semibold text-white/90">Plat Kendaraan (Asal Daerah)</label>
+            <label className="text-sm font-semibold text-white/90" htmlFor="kalk-plat">Plat Kendaraan (Asal Daerah)</label>
             <select
+              id="kalk-plat"
               className="bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold appearance-none cursor-pointer"
               onChange={e => {
                 const opt = e.target.options[e.target.selectedIndex];
@@ -100,8 +101,8 @@ export default function Kalkulator() {
             </select>
           </div>
           <div className="flex flex-col gap-1.5">
-            <label className="text-sm font-semibold text-white/90">Jenis Kendaraan</label>
-            <select className="bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold appearance-none cursor-pointer" value={jenis} onChange={e => setJenis(e.target.value as JenisKendaraan)}>
+            <label className="text-sm font-semibold text-white/90" htmlFor="kalk-jenis">Jenis Kendaraan</label>
+            <select id="kalk-jenis" className="bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold appearance-none cursor-pointer" value={jenis} onChange={e => setJenis(e.target.value as JenisKendaraan)}>
               <option value="konvensional" style={{background:"#163352"}}>Mobil Konvensional (BBM)</option>
               <option value="listrik" style={{background:"#163352"}}>Mobil Listrik (EV)</option>
             </select>
@@ -111,15 +112,15 @@ export default function Kalkulator() {
         {/* Row 2 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-5">
           <div className="flex flex-col gap-1.5">
-            <label className="text-sm font-semibold text-white/90">Jenis Perlindungan</label>
-            <select className="bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold appearance-none cursor-pointer" value={tipe} onChange={e => setTipe(e.target.value as TipePerlindungan)}>
+            <label className="text-sm font-semibold text-white/90" htmlFor="kalk-tipe">Jenis Perlindungan</label>
+            <select id="kalk-tipe" className="bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold appearance-none cursor-pointer" value={tipe} onChange={e => setTipe(e.target.value as TipePerlindungan)}>
               <option value="allrisk" style={{background:"#163352"}}>Comprehensive / All Risk</option>
               <option value="tlo" style={{background:"#163352"}}>TLO (Total Loss Only)</option>
             </select>
           </div>
           <div className="flex flex-col gap-1.5">
-            <label className="text-sm font-semibold text-white/90">Periode Asuransi</label>
-            <select className="bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold appearance-none cursor-pointer" value={periode} onChange={e => setPeriode(Number(e.target.value))}>
+            <label className="text-sm font-semibold text-white/90" htmlFor="kalk-periode">Periode Asuransi</label>
+            <select id="kalk-periode" className="bg-navy2 border border-white/20 text-white px-3.5 py-[11px] rounded-lg text-[1rem] outline-none focus:border-gold appearance-none cursor-pointer" value={periode} onChange={e => setPeriode(Number(e.target.value))}>
               <option value={12} style={{background:"#163352"}}>1 Tahun (12 bulan)</option>
               <option value={6} style={{background:"#163352"}}>6 Bulan</option>
               <option value={3} style={{background:"#163352"}}>3 Bulan</option>

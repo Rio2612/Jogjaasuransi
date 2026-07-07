@@ -41,8 +41,8 @@ export default function KalkulatorKendaraan() {
       <div className="bg-white/5 border border-gold/20 rounded-[20px] p-8 max-w-[680px] mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className={lbl}>Plat Kendaraan</label>
-            <select className={sel} onChange={e => { const o=e.target.options[e.target.selectedIndex]; setPlatValue(o.value as Wilayah); setPlatText(o.text); }}>
+            <label className={lbl} htmlFor="kk-plat">Plat Kendaraan</label>
+            <select id="kk-plat" className={sel} onChange={e => { const o=e.target.options[e.target.selectedIndex]; setPlatValue(o.value as Wilayah); setPlatText(o.text); }}>
               {PLAT_DATA.map((item,i) => "group" in item
                 ? <optgroup key={i} label={(item as PlatGroup).group} style={{background:"#163352"}}>
                     {(item as PlatGroup).options.map(o=><option key={o.label} value={o.value} style={{background:"#163352"}}>{o.label}</option>)}
@@ -52,22 +52,22 @@ export default function KalkulatorKendaraan() {
             </select>
           </div>
           <div>
-            <label className={lbl}>Jenis Kendaraan</label>
-            <select className={sel} value={jenis} onChange={e=>setJenis(e.target.value as JenisKendaraan)}>
+            <label className={lbl} htmlFor="kk-jenis">Jenis Kendaraan</label>
+            <select id="kk-jenis" className={sel} value={jenis} onChange={e=>setJenis(e.target.value as JenisKendaraan)}>
               <option value="konvensional" style={{background:"#163352"}}>Mobil Konvensional (BBM)</option>
               <option value="listrik" style={{background:"#163352"}}>Mobil Listrik (EV)</option>
             </select>
           </div>
           <div>
-            <label className={lbl}>Jenis Perlindungan</label>
-            <select className={sel} value={tipe} onChange={e=>setTipe(e.target.value as TipePerlindungan)}>
+            <label className={lbl} htmlFor="kk-tipe">Jenis Perlindungan</label>
+            <select id="kk-tipe" className={sel} value={tipe} onChange={e=>setTipe(e.target.value as TipePerlindungan)}>
               <option value="allrisk" style={{background:"#163352"}}>Comprehensive / All Risk</option>
               <option value="tlo" style={{background:"#163352"}}>TLO (Total Loss Only)</option>
             </select>
           </div>
           <div>
-            <label className={lbl}>Periode Asuransi</label>
-            <select className={sel} value={periode} onChange={e=>setPeriode(Number(e.target.value))}>
+            <label className={lbl} htmlFor="kk-periode">Periode Asuransi</label>
+            <select id="kk-periode" className={sel} value={periode} onChange={e=>setPeriode(Number(e.target.value))}>
               <option value={12} style={{background:"#163352"}}>1 Tahun (12 bulan)</option>
               <option value={6}  style={{background:"#163352"}}>6 Bulan</option>
               <option value={3}  style={{background:"#163352"}}>3 Bulan</option>

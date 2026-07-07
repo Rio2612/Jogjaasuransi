@@ -675,6 +675,7 @@ export default function AdminSPPAPage() {
             className="border border-[#D4C9B8] rounded-lg px-3 py-2 text-sm flex-1 min-w-[180px] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/15"
           />
           <select
+            aria-label="Filter status"
             value={filterStatus}
             onChange={e => setFilter(e.target.value)}
             className="border border-[#D4C9B8] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-gold"
@@ -685,6 +686,7 @@ export default function AdminSPPAPage() {
             <option value="selesai">Selesai</option>
           </select>
           <select
+            aria-label="Filter produk"
             value={filterProduk}
             onChange={e => setFProduk(e.target.value)}
             className="border border-[#D4C9B8] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-gold"
