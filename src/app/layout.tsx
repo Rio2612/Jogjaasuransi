@@ -30,11 +30,11 @@ export const metadata: Metadata = {
     "Asuransi Jogja – Konsultan asuransi kerugian independen di Yogyakarta. Melayani asuransi kendaraan, properti, engineering, kargo, liability, dan surety bond untuk personal dan korporasi.",
   keywords:
     "asuransi jogja, asuransi kerugian yogyakarta, konsultan asuransi jogja, asuransi mobil jogja, asuransi kebakaran jogja, asuransi properti jogja, asuransi kos jogja",
-  authors: [{ name: "Rio MD" }],
+  authors: [{ name: "Rio Mardiansyah" }],
   alternates: { canonical: BASE_URL },
   openGraph: {
     title: "Asuransi Jogja – Praktisi Asuransi Terpercaya",
-    description: "Praktisi asuransi independen di Yogyakarta. Konsultasi GRATIS, 8 tahun pengalaman.",
+    description: "Praktisi asuransi independen di Yogyakarta. Konsultasi GRATIS, 9+ tahun pengalaman.",
     url: BASE_URL,
     siteName: "Asuransi Jogja",
     locale: "id_ID",
@@ -77,11 +77,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         "@id": `${BASE_URL}/#organization`,
         "name": "Asuransi Jogja",
         "alternateName": "AsuransiJogja.biz.id",
-        "description": "Praktisi asuransi independen di Yogyakarta dengan pengalaman 8 tahun.",
+        "description": "Praktisi asuransi independen di Yogyakarta dengan 9+ tahun pengalaman.",
         "url": BASE_URL,
         "telephone": "+6287781658231",
         "email": "rio@asuransijogja.biz.id",
-        "founder": { "@type": "Person", "name": "Rio MD", "sameAs": ["https://www.linkedin.com/in/riomardiansyah"] },
+        "founder": { "@type": "Person", "name": "Rio Mardiansyah", "alternateName": "Rio MD", "sameAs": ["https://www.linkedin.com/in/riomardiansyah"] },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Yogyakarta",
