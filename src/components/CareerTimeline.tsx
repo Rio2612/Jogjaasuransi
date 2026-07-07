@@ -18,7 +18,7 @@ const stops: Stop[] = [
     period: "Feb 2013 – Agu 2016",
     duration: "3 thn 7 bln",
     location: "Batam, Kepulauan Riau",
-    desc: "Mengawali karier langsung di lapangan — akuisisi nasabah dan pemahaman risiko dasar industri asuransi kerugian.",
+    desc: "Mengawali karier dari titik paling dasar — turun langsung ke lapangan untuk memahami bagaimana nasabah biasa sebenarnya membuat keputusan membeli polis.",
     logo: "/logos/bumida.png",
   },
   {
@@ -27,7 +27,7 @@ const stops: Stop[] = [
     period: "Sep 2016 – Agu 2021",
     duration: "4 thn 11 bln",
     location: "Bengkulu",
-    desc: "Memperdalam sisi pemasaran produk asuransi kerugian lintas segmen, dari ritel hingga korporat.",
+    desc: "Bertahun-tahun berhadapan langsung dengan pemilik usaha kecil dan keluarga, belajar menerjemahkan produk asuransi yang rumit jadi pilihan yang masuk akal buat mereka.",
     logo: "/logos/aspan.png",
   },
   {
@@ -36,7 +36,7 @@ const stops: Stop[] = [
     period: "Sep 2021 – Agu 2022",
     duration: "11 bln",
     location: "Bengkulu",
-    desc: "Memimpin operasional cabang — target penjualan, manajemen tim, hingga penyelesaian klaim nasabah.",
+    desc: "Mengelola cabang dari sisi bisnis sekaligus sisi manusia — memastikan setiap klaim nasabah diselesaikan, bukan sekadar dicatat sebagai statistik.",
     logo: "/logos/aspan.png",
   },
   {
@@ -45,7 +45,7 @@ const stops: Stop[] = [
     period: "Agu 2022 – Sekarang",
     duration: "4 thn",
     location: "Yogyakarta",
-    desc: "Melanjutkan pengalaman lapangan ke ranah digital — membantu klien Jogja memilih & mengurus polis secara transparan.",
+    desc: "Kini fokus melayani klien Yogyakarta secara online — dari pemilik kos dan UMKM hingga kontraktor tender, dengan pendekatan konsultasi yang sama seperti saat masih di lapangan.",
     current: true,
   },
 ];
