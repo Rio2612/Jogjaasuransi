@@ -149,8 +149,8 @@ function KalkulatorEAR() {
       <div className="bg-white/5 border border-gold/20 rounded-[20px] p-8 max-w-[680px] mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className={labelCls}>Jenis Instalasi</label>
-            <select className={selectCls} value={jenisInstalasi} onChange={(e) => setJenisInstalasi(e.target.value)}>
+            <label className={labelCls} htmlFor="ear-jenis">Jenis Instalasi</label>
+            <select id="ear-jenis" className={selectCls} value={jenisInstalasi} onChange={(e) => setJenisInstalasi(e.target.value)}>
               <option value="mesin" style={{ background: "#163352" }}>🏭 Mesin Industri / Pabrik</option>
               <option value="struktur" style={{ background: "#163352" }}>🏗️ Struktur Baja</option>
               <option value="listrik" style={{ background: "#163352" }}>⚡ Instalasi Listrik / Panel HV</option>
@@ -159,8 +159,8 @@ function KalkulatorEAR() {
             </select>
           </div>
           <div>
-            <label className={labelCls}>Limit TPL (Pihak Ketiga)</label>
-            <select className={selectCls} value={limitTPL} onChange={(e) => setLimitTPL(e.target.value)}>
+            <label className={labelCls} htmlFor="ear-limit">Limit TPL (Pihak Ketiga)</label>
+            <select id="ear-limit" className={selectCls} value={limitTPL} onChange={(e) => setLimitTPL(e.target.value)}>
               <option value="5" style={{ background: "#163352" }}>Rp 5 Miliar</option>
               <option value="10" style={{ background: "#163352" }}>Rp 10 Miliar</option>
               <option value="25" style={{ background: "#163352" }}>Rp 25 Miliar</option>

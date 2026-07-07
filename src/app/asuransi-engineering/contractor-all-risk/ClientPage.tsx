@@ -177,8 +177,8 @@ function KalkulatorCAR() {
       <div className="bg-white/5 border border-gold/20 rounded-[20px] p-8 max-w-[680px] mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className={labelCls}>Jenis Pekerjaan</label>
-            <select className={selectCls} value={jenisProyek} onChange={(e) => setJenisProyek(e.target.value)}>
+            <label className={labelCls} htmlFor="car-jenis">Jenis Pekerjaan</label>
+            <select id="car-jenis" className={selectCls} value={jenisProyek} onChange={(e) => setJenisProyek(e.target.value)}>
               <option value="sipil" style={{ background: "#163352" }}>🏗️ Pekerjaan Sipil / Gedung</option>
               <option value="infrastruktur" style={{ background: "#163352" }}>🛣️ Infrastruktur (Jalan, Jembatan)</option>
               <option value="mep" style={{ background: "#163352" }}>⚡ MEP / Mekanikal-Elektrikal</option>
@@ -186,8 +186,8 @@ function KalkulatorCAR() {
             </select>
           </div>
           <div>
-            <label className={labelCls}>Limit TPL (Pihak Ketiga)</label>
-            <select className={selectCls} value={limitTPL} onChange={(e) => setLimitTPL(e.target.value)}>
+            <label className={labelCls} htmlFor="car-limit">Limit TPL (Pihak Ketiga)</label>
+            <select id="car-limit" className={selectCls} value={limitTPL} onChange={(e) => setLimitTPL(e.target.value)}>
               <option value="5" style={{ background: "#163352" }}>Rp 5 Miliar</option>
               <option value="10" style={{ background: "#163352" }}>Rp 10 Miliar</option>
               <option value="25" style={{ background: "#163352" }}>Rp 25 Miliar</option>
