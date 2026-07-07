@@ -46,7 +46,7 @@ const schemaArtikel = {
       "@type": "Article",
       headline: "Asuransi Rumah Tinggal di Jogja – Panduan Proteksi Hunian dari Kebakaran & Gempa",
       description: "Panduan lengkap asuransi rumah tinggal di Yogyakarta termasuk estimasi premi, jenis perlindungan, dan cara klaim.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-05-10",
       dateModified: "2025-06-01",
@@ -219,7 +219,7 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
               <strong className="text-gold2">Rp 150 ribu per tahun</strong>.
             </p>
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
-              <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
+              <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>

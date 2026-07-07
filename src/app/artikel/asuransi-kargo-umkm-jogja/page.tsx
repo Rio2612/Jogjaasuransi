@@ -48,7 +48,7 @@ const schemaArtikel = {
       headline: "Asuransi Kargo untuk UMKM di Jogja – Proteksi Pengiriman Barang",
       description:
         "Panduan lengkap asuransi kargo untuk UMKM di Yogyakarta: perbedaan dengan asuransi ekspedisi standar, estimasi premi, Open Cover, dan cara klaim.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
       publisher: {
         "@type": "Organization",
         name: "Asuransi Jogja",
@@ -401,7 +401,7 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
               menanggung nilai penuh — dengan premi mulai Rp 50 ribu per pengiriman.
             </p>
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
-              <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
+              <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>

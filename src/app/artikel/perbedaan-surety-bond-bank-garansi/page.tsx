@@ -42,7 +42,7 @@ const schema = {
       "@type": "Article",
       headline: "Perbedaan Surety Bond dan Bank Garansi – Mana yang Lebih Menguntungkan Kontraktor?",
       description: "Perbandingan mendalam antara Surety Bond dari perusahaan asuransi dan Bank Garansi dari bank — dari sisi proses, agunan, biaya, dan fleksibilitas.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-04-15",
       dateModified: "2025-06-01",
@@ -269,7 +269,7 @@ export default function ArtikelPerbedaanSuretyBondBankGaransi() {
               Keduanya sama-sama diterima di tender pemerintah. Tapi mekanismenya sangat berbeda — dan perbedaan itu berdampak langsung pada likuiditas dan fleksibilitas operasional kontraktor. Artikel ini menjelaskan secara objektif tanpa memihak.
             </p>
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
-              <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
+              <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>

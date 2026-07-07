@@ -217,7 +217,7 @@ function letterheadHTML(): string {
   <div class="letterhead">
     <div>
       <div class="lh-brand">Asuransi<span>Jogja</span></div>
-      <div class="lh-sub">Konsultan Asuransi Kerugian Independen · Yogyakarta</div>
+      <div class="lh-sub">Praktisi Asuransi Independen · Yogyakarta</div>
     </div>
     <div class="lh-contact">
       📱 0877-8165-8231 (Rio MD)<br/>
@@ -233,7 +233,7 @@ function signBlockHTML(): string {
     <div class="sign-right">
       <div class="sign-brand">Asuransi<span>Jogja</span></div>
       <div class="sign-name">Rio Mardiansyah</div>
-      <div class="sign-role">Konsultan Asuransi Kerugian Independen</div>
+      <div class="sign-role">Praktisi Asuransi Independen</div>
     </div>
   </div>`;
 }

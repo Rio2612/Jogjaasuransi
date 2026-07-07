@@ -48,7 +48,7 @@ const schemaArtikel = {
       headline: "Asuransi untuk UMKM di Jogja – Panduan Lengkap Pelaku Usaha",
       description:
         "Panduan lengkap jenis asuransi yang dibutuhkan UMKM di Yogyakarta, estimasi biaya, dan cara memilih yang sesuai anggaran.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
       publisher: {
         "@type": "Organization",
         name: "Asuransi Jogja",
@@ -379,7 +379,7 @@ export default function ArtikelAsuransiUMKMJogja() {
               jenis dan skala usaha.
             </p>
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
-              <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
+              <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>

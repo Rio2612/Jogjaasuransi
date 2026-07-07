@@ -146,7 +146,7 @@ const whyItems = [
   {
     icon: "🏛️",
     title: "Paham Risiko Lokal Jogja",
-    desc: "10+ tahun melayani klien di Yogyakarta. Kami memahami betul risiko banjir Kali Code, zona seismik Bantul, dan kondisi bangunan lokal.",
+    desc: "8 tahun melayani klien di Yogyakarta. Kami memahami betul risiko banjir Kali Code, zona seismik Bantul, dan kondisi bangunan lokal.",
   },
   {
     icon: "🎯",

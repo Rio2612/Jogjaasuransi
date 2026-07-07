@@ -116,7 +116,7 @@ export default function ArtikelAsuransiKosPage() {
           </h1>
 
           <div className="flex items-center gap-4 text-sm text-white/50">
-            <span>✍️ Rio MD – Konsultan Asuransi Kerugian</span>
+            <span>✍️ Rio MD – Praktisi Asuransi</span>
             <span>·</span>
             <span>⏱ 12 menit baca</span>
           </div>
@@ -669,7 +669,7 @@ export default function ArtikelAsuransiKosPage() {
           </div>
 
           <p className="text-base leading-[1.85] text-[#475569] mb-6">
-            Sebagai konsultan asuransi kerugian independen yang berbasis di Yogyakarta, kami di{" "}
+            Sebagai praktisi asuransi independen yang berbasis di Yogyakarta, kami di{" "}
             <Link href="/" className="text-gold font-semibold hover:underline">
               Asuransi Jogja
             </Link>{" "}

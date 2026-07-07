@@ -23,7 +23,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Asuransi Jogja – Konsultan Asuransi Kerugian Terpercaya di Yogyakarta",
+    default: "Asuransi Jogja – Praktisi Asuransi Terpercaya di Yogyakarta",
     template: "%s | Asuransi Jogja",
   },
   description:
@@ -33,17 +33,17 @@ export const metadata: Metadata = {
   authors: [{ name: "Rio MD" }],
   alternates: { canonical: BASE_URL },
   openGraph: {
-    title: "Asuransi Jogja – Konsultan Asuransi Kerugian Terpercaya",
-    description: "Konsultan asuransi kerugian independen di Yogyakarta. Konsultasi GRATIS, 10+ tahun pengalaman.",
+    title: "Asuransi Jogja – Praktisi Asuransi Terpercaya",
+    description: "Praktisi asuransi independen di Yogyakarta. Konsultasi GRATIS, 8 tahun pengalaman.",
     url: BASE_URL,
     siteName: "Asuransi Jogja",
     locale: "id_ID",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Jogja – Konsultan Asuransi Kerugian Yogyakarta" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Jogja – Praktisi Asuransi Yogyakarta" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Asuransi Jogja – Konsultan Asuransi Kerugian Yogyakarta",
+    title: "Asuransi Jogja – Praktisi Asuransi Yogyakarta",
     description: "Konsultasi asuransi kerugian gratis. Kendaraan, properti, kargo, engineering, liability, surety bond.",
   },
   icons: {
@@ -77,7 +77,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         "@id": `${BASE_URL}/#organization`,
         "name": "Asuransi Jogja",
         "alternateName": "AsuransiJogja.biz.id",
-        "description": "Konsultan asuransi kerugian independen di Yogyakarta dengan pengalaman 10+ tahun.",
+        "description": "Praktisi asuransi independen di Yogyakarta dengan pengalaman 8 tahun.",
         "url": BASE_URL,
         "telephone": "+6287781658231",
         "email": "rio@asuransijogja.biz.id",

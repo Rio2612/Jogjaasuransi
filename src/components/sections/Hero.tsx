@@ -10,7 +10,7 @@ export default function Hero() {
         <div>
           <div className="animate-fadeUp-d1 inline-flex items-center gap-2 bg-gold/10 border border-gold/35 text-gold3 text-xs font-semibold px-4 py-[5px] rounded-full mb-5 tracking-widest uppercase">
             <span className="text-[0.55rem] text-gold">◆</span>
-            Konsultan Asuransi Kerugian · Yogyakarta
+            Praktisi Asuransi · Yogyakarta
           </div>
           <h1 className="animate-fadeUp-d2 font-heading text-[clamp(2.6rem,4.5vw,4rem)] text-white leading-[1.15] mb-5">
             Proteksi Tepat untuk<br />

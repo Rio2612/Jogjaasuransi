@@ -156,7 +156,7 @@ function buildClientMessage(sub: SPPASubmission): string {
   msg += `⏱ Estimasi pengiriman: *dalam 1×24 jam kerja*\n\n`;
   msg += `Jika ada pertanyaan, balas pesan ini atau hubungi:\n`;
   msg += `📞 *0813-7333-6728* (Rio Mardiansyah)\n\n`;
-  msg += `_Asuransi Jogja — Konsultan Asuransi Kerugian Independen Yogyakarta_`;
+  msg += `_Asuransi Jogja — Praktisi Asuransi Independen Yogyakarta_`;
   return msg;
 }
 

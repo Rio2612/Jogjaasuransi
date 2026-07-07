@@ -42,7 +42,7 @@ const schema = {
       "@type": "Article",
       headline: "Cara Mengurus Jaminan Penawaran (Bid Bond) Jogja – Syarat & Alur Lengkap",
       description: "Panduan lengkap cara mengurus Jaminan Penawaran untuk tender pemerintah dan swasta di Yogyakarta.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-04-01",
       dateModified: "2025-06-01",
@@ -263,7 +263,7 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
               Jaminan Penawaran adalah dokumen pertama yang wajib ada sebelum penawaran Anda bahkan dibuka oleh panitia. Tanpanya, peluang proyek hangus di meja administrasi. Panduan ini menjelaskan semua yang perlu Anda tahu — dari syarat dokumen hingga hal-hal yang sering menjadi penghambat.
             </p>
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
-              <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
+              <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>

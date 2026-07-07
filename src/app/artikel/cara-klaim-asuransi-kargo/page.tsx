@@ -42,7 +42,7 @@ const schema = {
       "@type": "Article",
       headline: "Cara Klaim Asuransi Kargo – Panduan Lengkap agar Dana Ganti Rugi Cair",
       description: "Panduan langkah demi langkah mengajukan klaim asuransi kargo jika barang kiriman rusak atau hilang.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-05-15",
       dateModified: "2025-06-01",
@@ -322,7 +322,7 @@ export default function ArtikelCaraKlaimKargo() {
               Klaim asuransi kargo sering gagal bukan karena kejadiannya tidak nyata, tapi karena prosedur yang salah sejak menit pertama. Panduan ini menjelaskan langkah yang benar — dari momen barang diterima dalam kondisi rusak hingga dana ganti rugi masuk ke rekening.
             </p>
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
-              <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
+              <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>

@@ -59,7 +59,7 @@ const schemaArtikel = {
       headline: "Pentingnya Asuransi di Dunia Usaha Yogyakarta",
       description: "Panduan risiko usaha di Yogyakarta dan jenis asuransi bisnis yang dibutuhkan UMKM dan korporasi.",
       url: "https://asuransijogja.biz.id/artikel/pentingnya-asuransi-dunia-usaha-jogja",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-11-05",
       dateModified: "2026-07-05",

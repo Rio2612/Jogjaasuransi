@@ -49,7 +49,7 @@ const schemaArtikel = {
       headline: "Asuransi Vila, Homestay & Hotel di Jogja – Panduan Lengkap Pemilik Properti Penginapan",
       description:
         "Panduan lengkap asuransi untuk semua skala properti penginapan di Yogyakarta — dari homestay rumahan hingga hotel butik.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
       publisher: {
         "@type": "Organization",
         name: "Asuransi Jogja",
@@ -402,7 +402,7 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
               Dari homestay 2 kamar hingga hotel butik 30 kamar — properti yang disewakan kepada tamu memiliki risiko yang berbeda dari rumah tinggal biasa. Polis yang salah bukan hanya tidak efektif; klaim Anda bisa ditolak penuh karena kesalahan deklarasi.
             </p>
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
-              <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
+              <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>

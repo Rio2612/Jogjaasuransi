@@ -48,7 +48,7 @@ const schemaArtikel = {
       headline: "Syarat Asuransi Tender Pemerintah DIY – Panduan Lengkap Kontraktor",
       description:
         "Panduan lengkap jenis asuransi dan jaminan yang wajib disiapkan kontraktor untuk mengikuti dan melaksanakan tender pemerintah di Yogyakarta.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
       publisher: {
         "@type": "Organization",
         name: "Asuransi Jogja",
@@ -337,7 +337,7 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
               di berbagai tahapan tender pemerintah. Salah satu saja terlambat atau salah nilai, kontrak bisa batal.
             </p>
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
-              <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
+              <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>

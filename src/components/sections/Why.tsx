@@ -1,7 +1,7 @@
 export default function Why() {
   const cards = [
     { ico: "🎯", title: "Independen & Objektif", desc: "Tidak terikat satu perusahaan asuransi. Rekomendasi kami 100% berdasarkan kebutuhan dan kepentingan terbaik Anda." },
-    { ico: "🏆", title: "10+ Tahun Pengalaman", desc: "Lebih dari satu dekade pengalaman di industri asuransi kerugian. Memahami produk, risiko, dan regulasi secara mendalam." },
+    { ico: "🏆", title: "8 Tahun Pengalaman", desc: "Lebih dari satu dekade pengalaman di industri asuransi kerugian. Memahami produk, risiko, dan regulasi secara mendalam." },
     { ico: "🤝", title: "Pendampingan Klaim", desc: "Kami dampingi proses klaim dari awal hingga selesai. Tidak perlu berjuang sendiri menghadapi prosedur yang rumit." },
     { ico: "💬", title: "Konsultasi Gratis", desc: "Analisis risiko dan rekomendasi produk sepenuhnya gratis. Tidak ada biaya tersembunyi, tidak ada tekanan untuk membeli." },
   ];

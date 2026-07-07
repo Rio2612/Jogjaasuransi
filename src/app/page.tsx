@@ -15,8 +15,8 @@ import Footer from "@/components/sections/Footer";
 import CTAPenawaran from "@/components/ui/CTAPenawaran";
 
 export const metadata: Metadata = {
-  title: "Asuransi Jogja – Konsultan Asuransi Kerugian Terpercaya di Yogyakarta",
-  description: "Konsultan asuransi kerugian independen di Yogyakarta. Kendaraan, properti, engineering, kargo, liability, surety bond. Konsultasi GRATIS, 10+ tahun pengalaman.",
+  title: "Asuransi Jogja – Praktisi Asuransi Terpercaya di Yogyakarta",
+  description: "Praktisi asuransi independen di Yogyakarta. Kendaraan, properti, engineering, kargo, liability, surety bond. Konsultasi GRATIS, 8 tahun pengalaman.",
   alternates: { canonical: "https://asuransijogja.biz.id" },
 };
 

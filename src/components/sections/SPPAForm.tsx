@@ -809,7 +809,7 @@ function SPPAFormInner() {
         )}
 
         <p className="text-center text-[0.68rem] text-[#94A3B8] mt-8">
-          © {new Date().getFullYear()} AsuransiJogja.biz.id · Konsultan Asuransi Kerugian Independen Yogyakarta
+          © {new Date().getFullYear()} AsuransiJogja.biz.id · Praktisi Asuransi Independen Yogyakarta
         </p>
       </div>
     </div>

@@ -41,7 +41,7 @@ const schemaArtikel = {
       "@type": "Article",
       headline: "Perbedaan CAR dan EAR dalam Asuransi Engineering",
       description: "Penjelasan lengkap perbedaan Contractor All Risk dan Erection All Risk — kapan pakai yang mana dan pilihan Combined CAR/EAR.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-02-15",
       dateModified: "2025-06-01",
@@ -187,7 +187,7 @@ export default function ArtikelPerbedaanCARvsEAR() {
               CAR dan EAR sama-sama disebut "asuransi engineering" — namun keduanya dirancang untuk risiko yang sangat berbeda. Salah pilih produk bukan hanya membuang premi, tapi bisa membuat klaim Anda ditolak.
             </p>
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
-              <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
+              <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>

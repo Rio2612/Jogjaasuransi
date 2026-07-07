@@ -48,7 +48,7 @@ const schemaArtikel = {
       headline: "Asuransi Mesin Pabrik di Jogja – Machinery Breakdown untuk Industri DIY",
       description:
         "Panduan lengkap Machinery Breakdown Insurance untuk pabrik dan industri manufaktur di Yogyakarta — cakupan, estimasi premi, dan kasus nyata.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
       publisher: {
         "@type": "Organization",
         name: "Asuransi Jogja",
@@ -370,7 +370,7 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
               Machinery Breakdown Insurance dirancang khusus untuk risiko ini.
             </p>
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
-              <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
+              <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>

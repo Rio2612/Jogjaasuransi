@@ -48,7 +48,7 @@ const schemaArtikel = {
       headline: "Berapa Premi Asuransi CAR di Jogja? Tabel Estimasi + Faktor Penentu",
       description:
         "Tabel estimasi premi Contractor All Risk untuk berbagai skala proyek di Yogyakarta, beserta faktor penentu rate dan contoh perhitungan nyata.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
       publisher: {
         "@type": "Organization",
         name: "Asuransi Jogja",
@@ -388,7 +388,7 @@ export default function ArtikelPremiCAR() {
               yang diminta. Berikut panduan lengkap agar Anda bisa memperkirakan biaya sebelum konsultasi.
             </p>
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
-              <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
+              <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>

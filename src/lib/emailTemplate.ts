@@ -55,7 +55,7 @@ export function buildEmailHtml(sub: SPPASubmission): string {
                 Asuransi<span style="color:#C8963E;">Jogja</span>
               </div>
               <div style="font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#C8963E;margin-bottom:20px;">
-                Konsultan Asuransi Kerugian Independen
+                Praktisi Asuransi Independen
               </div>
               <div style="font-size:22px;font-weight:700;color:#FFFFFF;line-height:1.3;margin-bottom:8px;">
                 Permintaan Simulasi &amp; Estimasi Premi<br/>
@@ -169,7 +169,7 @@ export function buildEmailHtml(sub: SPPASubmission): string {
                       Asuransi<span style="color:#C8963E;">Jogja</span>
                     </div>
                     <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:12px;">
-                      Konsultan Asuransi Kerugian Independen · Yogyakarta
+                      Praktisi Asuransi Independen · Yogyakarta
                     </div>
                     <div style="font-size:12px;color:rgba(255,255,255,0.55);line-height:2;">
                       📱 <a href="https://wa.me/6287781658231" style="color:#C8963E;text-decoration:none;">0877-8165-8231</a> (Rio MD)<br/>
@@ -224,6 +224,6 @@ export function buildEmailText(sub: SPPASubmission): string {
   text += `📱 WhatsApp: 0877-8165-8231 (Rio MD)\n`;
   text += `✉️ Email: rio@asuransijogja.biz.id\n`;
   text += `🌐 asuransijogja.biz.id\n\n`;
-  text += `Asuransi Jogja — Konsultan Asuransi Kerugian Independen Yogyakarta`;
+  text += `Asuransi Jogja — Praktisi Asuransi Independen Yogyakarta`;
   return text;
 }

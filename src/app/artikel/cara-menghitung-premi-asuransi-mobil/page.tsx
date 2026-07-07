@@ -187,7 +187,7 @@ export default function CaraHitungPremiPage() {
             Sebelum membeli polis, sangat penting memahami bagaimana premi dihitung. Artikel ini menjelaskan rumus, kategori harga, sistem wilayah, dan simulasi nyata — sehingga Anda bisa memverifikasi sendiri kewajaran penawaran yang diterima.
           </p>
           <div className="flex items-center gap-4 text-sm text-white/50">
-            <span>Oleh <strong className="text-white/75">Rio MD</strong> — Konsultan Asuransi Independen</span>
+            <span>Oleh <strong className="text-white/75">Rio MD</strong> — Praktisi Asuransi Independen</span>
             <span>·</span>
             <span>Yogyakarta</span>
           </div>
@@ -428,7 +428,7 @@ export default function CaraHitungPremiPage() {
             <div className="w-12 h-12 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center flex-shrink-0 font-heading font-bold text-gold text-lg">R</div>
             <div>
               <div className="font-heading text-white font-bold mb-1">Rio MD</div>
-              <div className="text-gold2 text-xs mb-3">Konsultan Asuransi Kerugian Independen · Yogyakarta · 10+ Tahun Pengalaman</div>
+              <div className="text-gold2 text-xs mb-3">Praktisi Asuransi Independen · Yogyakarta · 8 Tahun Pengalaman</div>
               <p className="text-white/65 text-sm leading-relaxed">
                 Memahami cara kerja tarif OJK memberi Anda daya tawar yang lebih baik saat membeli polis. Sebagai konsultan independen, saya membantu klien memverifikasi kewajaran penawaran yang diterima dan memastikan mereka tidak membayar lebih dari yang seharusnya.
               </p>

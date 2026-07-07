@@ -46,7 +46,7 @@ const schemaArtikel = {
       "@type": "Article",
       headline: "Perbedaan Jenis Asuransi Liability – Public, Employer, Product & Limbah B3",
       description: "Panduan lengkap perbedaan empat jenis asuransi liability dan kapan masing-masing dibutuhkan untuk bisnis di Yogyakarta.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-04-25",
       dateModified: "2025-06-01",
@@ -268,7 +268,7 @@ export default function ArtikelPerbedaanJenisLiability() {
               Semua disebut "asuransi liability" — tapi masing-masing melindungi dari tuntutan yang berbeda, dari pihak yang berbeda. Salah pilih produk berarti klaim Anda tidak tertanggung saat dibutuhkan.
             </p>
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
-              <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
+              <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>

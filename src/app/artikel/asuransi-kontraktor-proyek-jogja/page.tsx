@@ -48,7 +48,7 @@ const schemaArtikel = {
       headline: "Panduan Lengkap Asuransi Kontraktor di Jogja – Semua yang Perlu Anda Tahu",
       description:
         "Panduan A–Z asuransi untuk kontraktor di Yogyakarta mencakup CAR, EAR, Surety Bond, Employer Liability, hingga Machinery Breakdown.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
       publisher: {
         "@type": "Organization",
         name: "Asuransi Jogja",
@@ -461,7 +461,7 @@ export default function ArtikelAsuransiKontraktorJogja() {
               menjelaskan mana yang wajib, mana yang dianjurkan, kapan dibutuhkan, dan berapa biayanya.
             </p>
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
-              <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
+              <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>

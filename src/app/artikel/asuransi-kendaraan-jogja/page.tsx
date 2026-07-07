@@ -5,7 +5,7 @@ import { KONTAK } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Asuransi Kendaraan Jogja – Konsultan Independen, Premi OJK, Klaim Mudah",
   description:
-    "Layanan asuransi kendaraan bermotor di Yogyakarta oleh konsultan independen berpengalaman 10+ tahun. Mobil, truk, armada fleet. Tarif OJK, klaim didampingi. Konsultasi gratis.",
+    "Layanan asuransi kendaraan bermotor di Yogyakarta oleh praktisi asuransi independen berpengalaman 8 tahun. Mobil, truk, armada fleet. Tarif OJK, klaim didampingi. Konsultasi gratis.",
   keywords:
     "asuransi kendaraan Jogja, asuransi mobil Yogyakarta, konsultan asuransi kendaraan Yogyakarta, asuransi mobil plat AB, asuransi kendaraan wilayah III, asuransi mobil Sleman Bantul",
   alternates: { canonical: "https://asuransijogja.biz.id/artikel/asuransi-kendaraan-jogja" },
@@ -71,7 +71,7 @@ const schemaFAQ = {
       name: "Apakah ada konsultan asuransi kendaraan independen di Jogja?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ya. Asuransi Jogja adalah konsultan asuransi kerugian independen yang beroperasi di Yogyakarta dengan pengalaman 10+ tahun. Sebagai konsultan independen (bukan agen terikat satu perusahaan), kami bisa membandingkan produk dari berbagai perusahaan asuransi dan merekomendasikan yang paling sesuai untuk kebutuhan Anda.",
+        text: "Ya. Asuransi Jogja dikelola oleh praktisi asuransi independen yang beroperasi di Yogyakarta dengan pengalaman 8 tahun. Sebagai konsultan independen (bukan agen terikat satu perusahaan), kami bisa membandingkan produk dari berbagai perusahaan asuransi dan merekomendasikan yang paling sesuai untuk kebutuhan Anda.",
       },
     },
     {
@@ -327,7 +327,7 @@ export default function AsuransiKendaraanJogjaPage() {
             <div className="w-12 h-12 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center flex-shrink-0 font-heading font-bold text-gold text-lg">R</div>
             <div>
               <div className="font-heading text-white font-bold mb-1">Rio MD</div>
-              <div className="text-gold2 text-xs mb-3">Konsultan Asuransi Kerugian Independen · Berbasis di Yogyakarta · 10+ Tahun Pengalaman</div>
+              <div className="text-gold2 text-xs mb-3">Praktisi Asuransi Independen · Berbasis di Yogyakarta · 8 Tahun Pengalaman</div>
               <p className="text-white/65 text-sm leading-relaxed">
                 Saya telah membantu ratusan pemilik kendaraan di Yogyakarta dan sekitarnya menemukan perlindungan asuransi yang tepat — mulai dari mobil pribadi, dump truk proyek, hingga armada puluhan unit. Tidak ada biaya konsultasi, tidak ada tekanan untuk membeli produk tertentu.
               </p>

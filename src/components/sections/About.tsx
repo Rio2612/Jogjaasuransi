@@ -13,7 +13,7 @@ export default function About() {
 
           <Image
             src="/rio-mardiansyah.jpg"
-            alt="Rio MD – Konsultan Asuransi Kerugian Yogyakarta"
+            alt="Rio MD – Praktisi Asuransi Yogyakarta"
             fill
             className="object-cover object-top"
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -23,7 +23,7 @@ export default function About() {
           {/* Badge nama di atas foto */}
           <div className="absolute bottom-0 left-0 right-0 z-20 px-6 pb-6 pt-10">
             <div className="font-heading text-white text-[1.3rem] font-bold leading-tight">Rio MD</div>
-            <div className="text-gold2 text-sm font-medium mt-0.5">Konsultan Asuransi Kerugian</div>
+            <div className="text-gold2 text-sm font-medium mt-0.5">Praktisi Asuransi</div>
             <div className="flex items-center gap-2 mt-2 flex-wrap">
               <span className="bg-gold text-navy text-xs font-bold px-3 py-1 rounded-full">📍 , DIY</span>
               <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">11 Tahun</span>

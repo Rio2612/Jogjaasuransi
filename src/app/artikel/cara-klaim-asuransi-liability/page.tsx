@@ -41,7 +41,7 @@ const schemaArtikel = {
       "@type": "Article",
       headline: "Cara Klaim Asuransi Liability – Panduan Lengkap dari Laporan hingga Dana Cair",
       description: "Panduan step-by-step cara klaim asuransi liability di Yogyakarta termasuk dokumen yang dibutuhkan dan kesalahan yang harus dihindari.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Konsultan Asuransi Kerugian" },
+      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-05-01",
       dateModified: "2025-06-01",
@@ -324,7 +324,7 @@ export default function ArtikelCaraKlaimLiability() {
               Klaim liability berbeda dari klaim asuransi lain. Ada aturan yang jika dilanggar di langkah pertama, seluruh klaim bisa gugur — meski polis Anda aktif dan insiden jelas-jelas tertanggung.
             </p>
             <div className="flex gap-3 text-xs text-white/40 flex-wrap">
-              <span>✍️ Rio MD — Konsultan Asuransi Kerugian</span>
+              <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
