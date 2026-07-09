@@ -461,7 +461,7 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
                   <tr key={row.aspek} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
                     <td className="p-3.5 font-semibold text-navy text-xs align-top">{row.aspek}</td>
                     <td className="p-3.5 text-[#475569] text-sm leading-relaxed align-top">{row.rumah}</td>
-                    <td className={`p-3.5 text-sm leading-relaxed align-top ${row.aspek === "Jika Salah Dideklarasikan" ? "text-red-600 font-bold" : "text-navy2 font-medium"}`}>
+                    <td className={`p-3.5 text-sm leading-relaxed align-top ${row.aspek === "Jika Salah Dideklarasikan" ? "text-red-700 font-bold" : "text-navy2 font-medium"}`}>
                       {row.komersial}
                     </td>
                   </tr>

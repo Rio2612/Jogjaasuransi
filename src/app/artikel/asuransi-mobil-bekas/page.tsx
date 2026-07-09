@@ -169,7 +169,7 @@ export default function AsuransiMobilBekasPage() {
                   <span className={`font-heading font-bold text-sm ${
                     p.warna === "green" ? "text-green-700" :
                     p.warna === "gold" ? "text-gold" :
-                    p.warna === "orange" ? "text-orange-600" : "text-red-600"
+                    p.warna === "orange" ? "text-orange-600" : "text-red-700"
                   }`}>{p.rentang}</span>
                   <div className="flex gap-1 flex-wrap text-xs">
                     <span className={`px-1.5 py-0.5 rounded font-semibold ${p.allrisk ? "bg-green-700/10 text-green-700" : "bg-black/8 text-[#5A6472] line-through"}`}>All Risk</span>

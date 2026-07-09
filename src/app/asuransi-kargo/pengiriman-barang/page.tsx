@@ -652,7 +652,7 @@ export default function PengirimanBarangPage() {
               </div>
 
               <div className="mb-4">
-                <p className="text-xs font-bold text-red-600 uppercase tracking-wider mb-2">
+                <p className="text-xs font-bold text-red-700 uppercase tracking-wider mb-2">
                   ❌ Tidak Dijamin
                 </p>
                 <ul className="space-y-1">

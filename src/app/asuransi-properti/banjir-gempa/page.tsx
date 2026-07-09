@@ -412,7 +412,7 @@ export default function BanjirGempaPage() {
                     "✗ Angin topan & puting beliung",
                     "✗ Tanah longsor",
                   ].map((item) => (
-                    <div key={item} className="text-sm text-red-600 py-0.5">
+                    <div key={item} className="text-sm text-red-700 py-0.5">
                       {item}
                     </div>
                   ))}

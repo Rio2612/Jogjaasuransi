@@ -308,7 +308,7 @@ export default function ArtikelRentalMobilPage() {
 
           <div className="p-4 bg-red-50 border-l-4 border-red-500 rounded-r-xl">
             <p className="text-sm text-navy2">
-              <strong className="text-red-600">⚠️ Peringatan krusial:</strong>{" "}
+              <strong className="text-red-700">⚠️ Peringatan krusial:</strong>{" "}
               Jika kendaraan Anda diasuransikan dengan polis personal namun
               terbukti sedang digunakan untuk tujuan komersial saat kejadian,
               perusahaan asuransi <strong>berhak menolak klaim sepenuhnya</strong>{" "}
@@ -443,7 +443,7 @@ export default function ArtikelRentalMobilPage() {
               Ketika klaim diajukan, surveyor asuransi menemukan bahwa kendaraan
               sedang dalam status sewa (ada bukti transfer pembayaran sewa di
               WhatsApp penyewa). Klaim{" "}
-              <strong className="text-red-600">ditolak seluruhnya</strong>{" "}
+              <strong className="text-red-700">ditolak seluruhnya</strong>{" "}
               berdasarkan klausul penggunaan komersial yang tidak tercakup dalam
               polis personal. Pak Budi harus menanggung Rp 38 juta dari kantong
               sendiri — ditambah kehilangan pendapatan sewa selama 3 minggu
