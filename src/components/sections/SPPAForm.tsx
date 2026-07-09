@@ -200,7 +200,7 @@ function biayaAdminProperti(totalPremi: number): number {
 /* ─── Helpers ────────────────────────────────────────────── */
 const inputBase =
   "w-full bg-white border border-[#D4C9B8] rounded-lg px-3.5 py-2.5 text-sm text-navy " +
-  "placeholder-[#94A3B8] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/15 transition-all";
+  "placeholder-[#5A6472] focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/15 transition-all";
 
 
 /* ─── Currency Input Mask ────────────────────────────────── */
@@ -239,7 +239,7 @@ function CurrencyInput({
 
   return (
     <div className="relative">
-      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-xs font-semibold text-[#94A3B8] select-none pointer-events-none">
+      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-xs font-semibold text-[#5A6472] select-none pointer-events-none">
         Rp
       </span>
       <input
@@ -354,7 +354,7 @@ function InputField({
 
 function SectionDivider({ label }: { label: string }) {
   return (
-    <div className="text-[0.65rem] font-bold tracking-[2px] uppercase text-[#94A3B8] flex items-center gap-3">
+    <div className="text-[0.65rem] font-bold tracking-[2px] uppercase text-[#5A6472] flex items-center gap-3">
       <span className="flex-1 h-px bg-black/6" />
       {label}
       <span className="flex-1 h-px bg-black/6" />
@@ -450,11 +450,11 @@ function PropertiFields({
                   {zonaData && (
                     <div className="bg-white border border-amber-200 rounded-lg p-3 space-y-1.5">
                       <div className="flex justify-between text-xs">
-                        <span className="text-[#64748B]">Zona Gempa</span>
+                        <span className="text-[#475569]">Zona Gempa</span>
                         <span className="font-bold text-navy">Zona {zonaData.zona}</span>
                       </div>
                       <div className="flex justify-between text-xs">
-                        <span className="text-[#64748B]">Tarif Gempa (Gol. I est.)</span>
+                        <span className="text-[#475569]">Tarif Gempa (Gol. I est.)</span>
                         <span className="font-bold text-navy">{zonaData.rate}‰ dari nilai pertanggungan</span>
                       </div>
                       {premiGempa > 0 && (
@@ -466,7 +466,7 @@ function PropertiFields({
                               Rp {premiGempa.toLocaleString("id-ID")}
                             </span>
                           </div>
-                          <p className="text-[0.65rem] text-[#94A3B8] leading-relaxed">
+                          <p className="text-[0.65rem] text-[#5A6472] leading-relaxed">
                             * Estimasi Golongan I (Rumah/Kos/Kantor) dari nilai pertanggungan Rp {totalNilai.toLocaleString("id-ID")} × {zonaData.rate}‰. Vila/Hotel/Gudang menggunakan Golongan II.
                           </p>
                         </>
@@ -583,10 +583,10 @@ function SPPAFormInner() {
         <div className="bg-white rounded-2xl shadow-lg border border-black/6 p-10 max-w-md w-full text-center">
           <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">✅</div>
           <h2 className="font-heading text-2xl font-bold text-navy mb-2">Permintaan Diterima!</h2>
-          <p className="text-sm text-[#64748B] leading-relaxed mb-2">
+          <p className="text-sm text-[#475569] leading-relaxed mb-2">
             Halo <strong>{nama}</strong>, data permintaan <strong>{produkLabel}</strong> Anda telah kami terima.
           </p>
-          <p className="text-sm text-[#64748B] leading-relaxed mb-6">
+          <p className="text-sm text-[#475569] leading-relaxed mb-6">
             Kami akan menyiapkan <em>Simulasi & Estimasi Premi</em> dan mengirimkannya segera. Notifikasi akan masuk ke WhatsApp Anda.
           </p>
           <a
@@ -601,7 +601,7 @@ function SPPAFormInner() {
               setForm({ nama: "", whatsapp: "", email: "", agree: false });
               setProduct("");
             }}
-            className="text-sm text-[#94A3B8] hover:text-navy transition-colors"
+            className="text-sm text-[#5A6472] hover:text-navy transition-colors"
           >
             Ajukan permintaan lain →
           </button>
@@ -616,13 +616,13 @@ function SPPAFormInner() {
 
         {/* Header */}
         <div className="text-center mb-8">
-          <span className="inline-block bg-gold/12 text-gold text-[0.68rem] font-bold tracking-[2.5px] uppercase px-3 py-1 rounded-full mb-3">
+          <span className="inline-block bg-gold/12 text-goldtext text-[0.68rem] font-bold tracking-[2.5px] uppercase px-3 py-1 rounded-full mb-3">
             SPPA Online
           </span>
           <h1 className="font-heading text-[clamp(1.7rem,3vw,2.3rem)] font-bold text-navy leading-tight mb-2">
             Permintaan Simulasi & Estimasi Premi
           </h1>
-          <p className="text-sm text-[#64748B] max-w-[480px] mx-auto leading-relaxed">
+          <p className="text-sm text-[#475569] max-w-[480px] mx-auto leading-relaxed">
             Isi form ini untuk mendapatkan <strong className="text-navy">simulasi & estimasi premi</strong> yang akan kami kirimkan via WhatsApp. Gratis, tanpa tekanan.
           </p>
         </div>
@@ -683,7 +683,7 @@ function SPPAFormInner() {
               </div>
               <div>
                 <label className="block text-xs font-semibold text-navy/60 mb-1.5">
-                  Email <span className="text-[#94A3B8] font-normal">(opsional — untuk pengiriman dokumen)</span>
+                  Email <span className="text-[#5A6472] font-normal">(opsional — untuk pengiriman dokumen)</span>
                 </label>
                 <input
                   type="email"
@@ -722,7 +722,7 @@ function SPPAFormInner() {
 
             {/* Empty state */}
             {!product && (
-              <div className="text-center py-12 text-[#94A3B8]">
+              <div className="text-center py-12 text-[#5A6472]">
                 <div className="text-5xl mb-3 opacity-25">📋</div>
                 <p className="text-sm">Pilih produk asuransi di atas untuk menampilkan form isian</p>
               </div>
@@ -771,7 +771,7 @@ function SPPAFormInner() {
                   <>📄 Kirim & Dapatkan Simulasi Gratis</>
                 )}
               </button>
-              <p className="text-center text-[0.68rem] text-[#94A3B8] mt-2.5">
+              <p className="text-center text-[0.68rem] text-[#5A6472] mt-2.5">
                 Dokumen akan disiapkan dan dikirim via WhatsApp. Respon dalam 1×24 jam kerja.
               </p>
             </div>
@@ -784,27 +784,27 @@ function SPPAFormInner() {
             <div className="px-6 py-4 border-b border-black/6 flex items-center gap-3">
               <div className="w-8 h-8 bg-gold/10 rounded-lg flex items-center justify-center flex-shrink-0">📎</div>
               <div>
-                <div className="text-[0.65rem] font-bold tracking-[2px] uppercase text-[#94A3B8]">Persiapan Dokumen</div>
+                <div className="text-[0.65rem] font-bold tracking-[2px] uppercase text-[#5A6472]">Persiapan Dokumen</div>
                 <div className="text-sm font-bold text-navy">{requirements.title}</div>
               </div>
             </div>
             <div className="px-6 py-5">
               {requirements.note && (
-                <p className="text-xs text-gold font-medium mb-3 leading-relaxed">ℹ️ {requirements.note}</p>
+                <p className="text-xs text-goldtext font-medium mb-3 leading-relaxed">ℹ️ {requirements.note}</p>
               )}
-              <p className="text-xs text-[#64748B] mb-4 leading-relaxed">
+              <p className="text-xs text-[#475569] mb-4 leading-relaxed">
                 Dokumen berikut umumnya dibutuhkan pihak asuransi untuk proses <em>underwriting</em>{" "}
                 <strong className="text-navy">{selectedProduct?.label}</strong>:
               </p>
               <ul className="space-y-2.5">
                 {requirements.items.map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5 text-sm text-navy/80">
-                    <span className="text-gold font-bold mt-0.5 flex-shrink-0">›</span>
+                    <span className="text-goldtext font-bold mt-0.5 flex-shrink-0">›</span>
                     <span className="leading-snug">{item}</span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-5 bg-cream rounded-xl px-4 py-3 text-xs text-[#64748B] leading-relaxed border border-[#D4C9B8]/50">
+              <div className="mt-5 bg-cream rounded-xl px-4 py-3 text-xs text-[#475569] leading-relaxed border border-[#D4C9B8]/50">
                 <strong className="text-navy">💡 Catatan:</strong> Dokumen dapat dikirim via WhatsApp setelah
                 konsultasi awal. Anda tidak perlu menyiapkan semua sekarang — konsultasi pertama bisa tanpa dokumen.
               </div>
@@ -812,7 +812,7 @@ function SPPAFormInner() {
           </div>
         )}
 
-        <p className="text-center text-[0.68rem] text-[#94A3B8] mt-8">
+        <p className="text-center text-[0.68rem] text-[#5A6472] mt-8">
           © {new Date().getFullYear()} AsuransiJogja.biz.id · Praktisi Asuransi Independen Yogyakarta
         </p>
       </div>
@@ -825,7 +825,7 @@ export default function SPPAForm() {
   return (
     <Suspense fallback={
       <div className="min-h-[calc(100vh-68px)] bg-cream flex items-center justify-center">
-        <div className="text-[#94A3B8] text-sm">Memuat form...</div>
+        <div className="text-[#5A6472] text-sm">Memuat form...</div>
       </div>
     }>
       <SPPAFormInner />

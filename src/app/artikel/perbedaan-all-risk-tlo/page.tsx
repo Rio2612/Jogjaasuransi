@@ -303,7 +303,7 @@ export default function ArtikelPerbedaanAllRiskTLO() {
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -323,8 +323,8 @@ export default function ArtikelPerbedaanAllRiskTLO() {
               <Link href="/asuransi-kendaraan" className="inline-flex items-center gap-1.5 bg-white/8 border border-white/15 text-white/70 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-white/12 transition-colors">
                 🚙 Asuransi Kendaraan
               </Link>
-              <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Perbandingan Produk</span>
+              <span className="text-white/60 text-xs">·</span>
+              <span className="text-white/60 text-xs">Perbandingan Produk</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
               Perbedaan All Risk dan TLO —<br />
@@ -335,7 +335,7 @@ export default function ArtikelPerbedaanAllRiskTLO() {
               <em>lebih tepat untuk kondisi kendaraan dan kebiasaan berkendara Anda</em>.
               Artikel ini membantu Anda memutuskan berdasarkan data nyata, bukan asumsi.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
@@ -374,10 +374,10 @@ export default function ArtikelPerbedaanAllRiskTLO() {
                 {tabelPerbandingan.map((row, i) => (
                   <tr key={row.aspek} className={`${i % 2 === 0 ? "bg-cream" : "bg-white"} ${row.highlight ? "border-l-2 border-gold/40" : ""}`}>
                     <td className="p-3.5 font-semibold text-navy text-xs align-top">{row.aspek}</td>
-                    <td className={`p-3.5 text-sm leading-relaxed align-top ${row.allRisk.startsWith("✓") ? "text-navy2 font-medium" : "text-[#64748B]"}`}>
+                    <td className={`p-3.5 text-sm leading-relaxed align-top ${row.allRisk.startsWith("✓") ? "text-navy2 font-medium" : "text-[#475569]"}`}>
                       {row.allRisk}
                     </td>
-                    <td className={`p-3.5 text-sm leading-relaxed align-top ${row.tlo.startsWith("✓") ? "text-navy2 font-medium" : row.tlo.startsWith("✕") ? "text-red-500" : "text-[#64748B]"}`}>
+                    <td className={`p-3.5 text-sm leading-relaxed align-top ${row.tlo.startsWith("✓") ? "text-navy2 font-medium" : row.tlo.startsWith("✕") ? "text-red-500" : "text-[#475569]"}`}>
                       {row.tlo}
                     </td>
                   </tr>
@@ -385,7 +385,7 @@ export default function ArtikelPerbedaanAllRiskTLO() {
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-[#94A3B8] mb-10">
+          <p className="text-xs text-[#5A6472] mb-10">
             * Rate premi sesuai Surat Edaran OJK tentang penetapan tarif premi asuransi kendaraan bermotor. Rate aktual tergantung wilayah, usia kendaraan, dan penggunaan.
           </p>
 
@@ -393,7 +393,7 @@ export default function ArtikelPerbedaanAllRiskTLO() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Simulasi Premi untuk 4 Jenis Kendaraan di Yogyakarta
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Angka konkret membantu lebih dari teori. Berikut simulasi premi berdasarkan kendaraan yang umum di Yogyakarta:
           </p>
           <div className="flex flex-col gap-4 mb-10">
@@ -402,7 +402,7 @@ export default function ArtikelPerbedaanAllRiskTLO() {
                 <div className="flex items-start justify-between gap-3 mb-4 flex-wrap">
                   <div>
                     <div className="font-heading font-bold text-navy text-[0.95rem] mb-0.5">{s.kendaraan}</div>
-                    <div className="text-xs text-[#94A3B8]">Nilai kendaraan: {s.nilaiKendaraan}</div>
+                    <div className="text-xs text-[#5A6472]">Nilai kendaraan: {s.nilaiKendaraan}</div>
                   </div>
                   <span className={`text-xs font-bold px-3 py-1 rounded-full flex-shrink-0 ${
                     s.rekomendasiType === "All Risk" ? "bg-blue-100 text-blue-700" :
@@ -418,11 +418,11 @@ export default function ArtikelPerbedaanAllRiskTLO() {
                     <div className="font-heading font-bold text-navy text-sm">{s.premiAllRisk}</div>
                   </div>
                   <div className="bg-white/60 rounded-xl p-3 border border-black/6">
-                    <div className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1">Premi TLO / tahun</div>
+                    <div className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-1">Premi TLO / tahun</div>
                     <div className="font-heading font-bold text-navy text-sm">{s.premiTLO}</div>
                   </div>
                 </div>
-                <p className="text-xs text-[#64748B] leading-relaxed">{s.alasan}</p>
+                <p className="text-xs text-[#475569] leading-relaxed">{s.alasan}</p>
               </div>
             ))}
           </div>
@@ -466,7 +466,7 @@ export default function ArtikelPerbedaanAllRiskTLO() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Perluasan yang Wajib Dipertimbangkan untuk Kendaraan di DIY
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+          <p className="text-[#475569] text-base leading-relaxed mb-5">
             Baik All Risk maupun TLO memiliki pengecualian standar. Perluasan berikut sangat
             relevan untuk kondisi spesifik Yogyakarta:
           </p>
@@ -488,7 +488,7 @@ export default function ArtikelPerbedaanAllRiskTLO() {
                         {p.tersediaTLO ? "✓ TLO" : "✕ TLO"}
                       </span>
                     </div>
-                    <p className="text-xs text-[#64748B] leading-relaxed">{p.penjelasan}</p>
+                    <p className="text-xs text-[#475569] leading-relaxed">{p.penjelasan}</p>
                   </div>
                 </div>
               </div>
@@ -508,10 +508,10 @@ export default function ArtikelPerbedaanAllRiskTLO() {
                   </span>
                   <span className="font-heading font-bold text-navy text-sm">{k.judul}</span>
                 </div>
-                <p className="text-sm text-[#64748B] leading-relaxed mb-3">{k.kronologi}</p>
+                <p className="text-sm text-[#475569] leading-relaxed mb-3">{k.kronologi}</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="bg-white/70 rounded-lg p-3 border border-black/6">
-                    <div className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1">
+                    <div className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-1">
                       ✅ Hasil Klaim
                     </div>
                     <p className="text-xs text-navy2 leading-relaxed font-medium">
@@ -522,7 +522,7 @@ export default function ArtikelPerbedaanAllRiskTLO() {
                     <div className="text-[0.65rem] font-bold uppercase tracking-wide text-amber-600 mb-1">
                       💡 {k.rekType === "Pelajaran" ? "Dengan All Risk + Banjir" : k.rekType === "All Risk" ? "Jika Hanya TLO" : "Jika All Risk"}
                     </div>
-                    <p className="text-xs text-[#64748B] leading-relaxed">
+                    <p className="text-xs text-[#475569] leading-relaxed">
                       {k.jikaHanyaTLO || k.jikaAllRisk || k.jikaAllRiskDenganBanjir}
                     </p>
                   </div>
@@ -536,7 +536,7 @@ export default function ArtikelPerbedaanAllRiskTLO() {
             <div className="font-heading text-navy font-bold text-base mb-2">
               Masih ragu All Risk atau TLO untuk kendaraan Anda?
             </div>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+            <p className="text-[#475569] text-sm leading-relaxed mb-4">
               Ceritakan merek, tahun, dan penggunaan kendaraan Anda — kami rekomendasikan produk yang paling tepat beserta estimasi premi. Gratis, tanpa tekanan.
             </p>
             <div className="flex gap-3 flex-wrap">
@@ -558,14 +558,14 @@ export default function ArtikelPerbedaanAllRiskTLO() {
                   {f.q}
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">{f.a}</p>
               </details>
             ))}
           </div>
 
           {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Produk & Artikel Terkait</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">Produk & Artikel Terkait</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { href: "/asuransi-kendaraan/mobil", icon: "🚗", judul: "Asuransi Mobil", desc: "Halaman produk — cakupan, premi, cara daftar" },
@@ -579,7 +579,7 @@ export default function ArtikelPerbedaanAllRiskTLO() {
                   <span className="text-xl flex-shrink-0">{a.icon}</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">{a.judul}</div>
-                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                    <div className="text-xs text-[#475569]">{a.desc}</div>
                   </div>
                 </Link>
               ))}

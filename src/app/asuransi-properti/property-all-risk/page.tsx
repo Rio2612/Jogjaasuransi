@@ -367,7 +367,7 @@ export default function PropertyAllRiskPage() {
             ].map((s) => (
               <div key={s.lbl}>
                 <div className="font-heading text-gold text-lg font-bold">{s.num}</div>
-                <div className="text-white/45 text-xs mt-0.5">{s.lbl}</div>
+                <div className="text-white/60 text-xs mt-0.5">{s.lbl}</div>
               </div>
             ))}
           </div>
@@ -439,7 +439,7 @@ export default function PropertyAllRiskPage() {
               ))}
             </div>
             <div className="grid grid-cols-[110px_1fr_1fr] gap-2 mt-4 pt-3 border-t border-black/8 text-[0.7rem]">
-              <span className="text-[#64748B]">Aspek</span>
+              <span className="text-[#475569]">Aspek</span>
               <span className="text-red-500 font-semibold">Kebakaran</span>
               <span className="text-green-700 font-semibold">PAR ✓</span>
             </div>
@@ -458,7 +458,7 @@ export default function PropertyAllRiskPage() {
             <br />
             Dijamin dalam Polis PAR?
           </h2>
-          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[500px] mx-auto mt-3">
             Cakupan berikut umumnya tersedia dalam polis PAR standar — detail perluasan
             dan pengecualian tergantung perusahaan asuransi yang dipilih
           </p>
@@ -473,7 +473,7 @@ export default function PropertyAllRiskPage() {
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">
                 {c.label}
               </div>
-              <p className="text-base leading-relaxed text-[#64748B]">{c.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{c.desc}</p>
             </div>
           ))}
         </div>
@@ -492,7 +492,7 @@ export default function PropertyAllRiskPage() {
                 </div>
               ))}
             </div>
-            <p className="text-xs text-[#64748B] mt-4 leading-relaxed">
+            <p className="text-xs text-[#475569] mt-4 leading-relaxed">
               Kami selalu menjelaskan seluruh klausul pengecualian secara rinci dan transparan
               sebelum Anda memutuskan membeli polis. Tidak ada "kejutan" saat klaim.
             </p>
@@ -522,7 +522,7 @@ export default function PropertyAllRiskPage() {
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">
                 {k.judul}
               </div>
-              <p className="text-sm leading-[1.75] text-[#64748B]">{k.isi}</p>
+              <p className="text-sm leading-[1.75] text-[#475569]">{k.isi}</p>
             </div>
           ))}
         </div>
@@ -550,7 +550,7 @@ export default function PropertyAllRiskPage() {
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">
                 {t.label}
               </div>
-              <p className="text-base leading-relaxed text-[#64748B]">{t.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{t.desc}</p>
             </div>
           ))}
         </div>
@@ -602,7 +602,7 @@ export default function PropertyAllRiskPage() {
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">
                 {p.label}
               </div>
-              <p className="text-base leading-relaxed text-[#64748B]">{p.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -619,7 +619,7 @@ export default function PropertyAllRiskPage() {
             <br />
             Property All Risk (PAR)
           </h2>
-          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[500px] mx-auto mt-3">
             Jawaban lengkap untuk pertanyaan yang paling sering diajukan pemilik
             properti komersial di Yogyakarta
           </p>
@@ -633,7 +633,7 @@ export default function PropertyAllRiskPage() {
                   +
                 </span>
               </summary>
-              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#475569] pb-4">{f.a}</p>
             </details>
           ))}
         </div>
@@ -658,7 +658,7 @@ export default function PropertyAllRiskPage() {
       {/* ── INTERNAL LINKS ───────────────────────────────────────────────── */}
       <section className="py-10 px-[5vw] bg-cream border-t border-black/5">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">
             Produk &amp; Artikel Terkait
           </p>
           <div className="flex gap-3 flex-wrap">

@@ -112,7 +112,7 @@ export default function AsuransiMobilBekasPage() {
 
       {/* BREADCRUMB */}
       <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-        <div className="flex items-center gap-2 text-sm text-[#64748B]">
+        <div className="flex items-center gap-2 text-sm text-[#475569]">
           <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
           <span className="text-gold/60">›</span>
           <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -154,7 +154,7 @@ export default function AsuransiMobilBekasPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-4">
             Apakah Mobil Bekas Bisa Diasuransikan All Risk?
           </h2>
-          <p className="text-[#64748B] leading-relaxed text-sm mb-6">
+          <p className="text-[#475569] leading-relaxed text-sm mb-6">
             Ya — dengan catatan. Perusahaan asuransi umumnya menetapkan batas usia kendaraan yang bisa mendapatkan All Risk. Berikut panduan umum berdasarkan usia kendaraan:
           </p>
           <div className="flex flex-col gap-3 mb-6">
@@ -172,15 +172,15 @@ export default function AsuransiMobilBekasPage() {
                     p.warna === "orange" ? "text-orange-600" : "text-red-600"
                   }`}>{p.rentang}</span>
                   <div className="flex gap-1 flex-wrap text-xs">
-                    <span className={`px-1.5 py-0.5 rounded font-semibold ${p.allrisk ? "bg-green-700/10 text-green-700" : "bg-black/8 text-[#94A3B8] line-through"}`}>All Risk</span>
+                    <span className={`px-1.5 py-0.5 rounded font-semibold ${p.allrisk ? "bg-green-700/10 text-green-700" : "bg-black/8 text-[#5A6472] line-through"}`}>All Risk</span>
                     <span className="px-1.5 py-0.5 rounded font-semibold bg-green-700/10 text-green-700">TLO</span>
                   </div>
                 </div>
-                <p className="text-sm text-[#64748B] leading-relaxed">{p.catatan}</p>
+                <p className="text-sm text-[#475569] leading-relaxed">{p.catatan}</p>
               </div>
             ))}
           </div>
-          <div className="bg-navy/5 border border-navy/10 rounded-lg p-4 text-sm text-[#64748B]">
+          <div className="bg-navy/5 border border-navy/10 rounded-lg p-4 text-sm text-[#475569]">
             <strong className="text-navy">Catatan penting:</strong> Batas usia ini bervariasi antar perusahaan asuransi. Beberapa perusahaan lebih fleksibel dengan mensyaratkan kondisi fisik yang baik (dibuktikan survei), bukan sekadar usia. Konsultasikan kebutuhan spesifik kendaraan Anda untuk mendapatkan rekomendasi yang tepat.
           </div>
         </section>
@@ -190,7 +190,7 @@ export default function AsuransiMobilBekasPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-4">
             Proses Survei Kendaraan Bekas: Apa yang Diperiksa?
           </h2>
-          <p className="text-[#64748B] text-sm leading-relaxed mb-6">
+          <p className="text-[#475569] text-sm leading-relaxed mb-6">
             Berbeda dengan kendaraan baru, mobil bekas wajib melalui proses survei sebelum polis diterbitkan. Ini bukan formalitas — survei menentukan nilai pertanggungan, syarat polis, dan apakah kendaraan bisa diterima oleh perusahaan asuransi.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
@@ -203,7 +203,7 @@ export default function AsuransiMobilBekasPage() {
               <div key={i} className="bg-white border border-black/8 rounded-card p-5">
                 <div className="text-2xl mb-3">{s.icon}</div>
                 <div className="font-heading text-navy font-bold text-sm mb-2">{s.judul}</div>
-                <p className="text-xs text-[#64748B] leading-relaxed">{s.isi}</p>
+                <p className="text-xs text-[#475569] leading-relaxed">{s.isi}</p>
               </div>
             ))}
           </div>
@@ -217,7 +217,7 @@ export default function AsuransiMobilBekasPage() {
                 <div className="flex-1">
                   <span className="font-semibold text-navy text-sm">{d.doc}</span>
                 </div>
-                <span className="text-xs text-[#64748B] text-right hidden sm:block">{d.keterangan}</span>
+                <span className="text-xs text-[#475569] text-right hidden sm:block">{d.keterangan}</span>
               </div>
             ))}
           </div>
@@ -228,7 +228,7 @@ export default function AsuransiMobilBekasPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-4">
             Menentukan Nilai Pertanggungan yang Tepat
           </h2>
-          <p className="text-[#64748B] text-sm leading-relaxed mb-6">
+          <p className="text-[#475569] text-sm leading-relaxed mb-6">
             Nilai pertanggungan adalah angka yang paling kritis dalam polis asuransi mobil bekas. Terlalu tinggi, Anda membayar premi berlebih. Terlalu rendah, ganti rugi tidak mencukupi.
           </p>
 
@@ -237,14 +237,14 @@ export default function AsuransiMobilBekasPage() {
             <div className="bg-gold/5 border border-gold/25 rounded-card p-6">
               <div className="font-heading text-navy font-bold mb-1">Agreed Value</div>
               <div className="text-xs text-gold font-semibold mb-3">Nilai disepakati di awal</div>
-              <p className="text-sm text-[#64748B] leading-relaxed mb-3">Nilai pertanggungan ditetapkan saat polis dibuat dan tidak berubah selama periode aktif. Jika terjadi total loss, Anda mendapat ganti rugi sesuai nilai yang disepakati.</p>
+              <p className="text-sm text-[#475569] leading-relaxed mb-3">Nilai pertanggungan ditetapkan saat polis dibuat dan tidak berubah selama periode aktif. Jika terjadi total loss, Anda mendapat ganti rugi sesuai nilai yang disepakati.</p>
               <div className="text-xs font-semibold text-green-700">✓ Lebih menguntungkan untuk pemilik</div>
             </div>
             <div className="bg-cream border border-black/8 rounded-card p-6">
               <div className="font-heading text-navy font-bold mb-1">Market Value</div>
-              <div className="text-xs text-[#64748B] font-semibold mb-3">Nilai pasar saat klaim</div>
-              <p className="text-sm text-[#64748B] leading-relaxed mb-3">Ganti rugi dihitung berdasarkan nilai pasar kendaraan pada saat klaim terjadi — yang terus turun akibat depresiasi. Setiap tahun nilai ini menyusut.</p>
-              <div className="text-xs font-semibold text-[#64748B]">→ Lebih umum tersedia untuk mobil bekas</div>
+              <div className="text-xs text-[#475569] font-semibold mb-3">Nilai pasar saat klaim</div>
+              <p className="text-sm text-[#475569] leading-relaxed mb-3">Ganti rugi dihitung berdasarkan nilai pasar kendaraan pada saat klaim terjadi — yang terus turun akibat depresiasi. Setiap tahun nilai ini menyusut.</p>
+              <div className="text-xs font-semibold text-[#475569]">→ Lebih umum tersedia untuk mobil bekas</div>
             </div>
           </div>
 
@@ -256,7 +256,7 @@ export default function AsuransiMobilBekasPage() {
                 <span className="text-gold font-bold text-sm flex-shrink-0 mt-0.5">{i + 1}.</span>
                 <div>
                   <div className="font-semibold text-navy text-sm mb-1">{t.tips}</div>
-                  <p className="text-xs text-[#64748B] leading-relaxed">{t.detail}</p>
+                  <p className="text-xs text-[#475569] leading-relaxed">{t.detail}</p>
                 </div>
               </div>
             ))}
@@ -268,7 +268,7 @@ export default function AsuransiMobilBekasPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-2">
             Estimasi Premi untuk Berbagai Kondisi Mobil Bekas
           </h2>
-          <p className="text-[#64748B] text-sm mb-8 leading-relaxed">
+          <p className="text-[#475569] text-sm mb-8 leading-relaxed">
             Simulasi berikut menggunakan tarif OJK Wilayah III (Yogyakarta) dengan nilai pertanggungan berdasarkan estimasi harga pasar saat ini.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -279,16 +279,16 @@ export default function AsuransiMobilBekasPage() {
             ].map((s, i) => (
               <div key={i} className="bg-white border border-black/8 rounded-card p-5">
                 <div className="font-heading text-navy font-bold text-sm mb-1">{s.label}</div>
-                <div className="text-xs text-[#64748B] mb-3">{s.nilai} · {s.kat}</div>
+                <div className="text-xs text-[#475569] mb-3">{s.nilai} · {s.kat}</div>
                 <div className="flex flex-col gap-2 text-xs border-t border-black/8 pt-3">
-                  <div className="flex justify-between"><span className="text-[#64748B]">All Risk</span><span className="font-semibold text-navy">{s.ar}</span></div>
-                  <div className="flex justify-between"><span className="text-[#64748B]">TLO</span><span className="font-semibold text-navy">{s.tlo}</span></div>
+                  <div className="flex justify-between"><span className="text-[#475569]">All Risk</span><span className="font-semibold text-navy">{s.ar}</span></div>
+                  <div className="flex justify-between"><span className="text-[#475569]">TLO</span><span className="font-semibold text-navy">{s.tlo}</span></div>
                   <div className="border-t border-black/6 pt-2 text-gold font-semibold">💡 {s.rekomendasi}</div>
                 </div>
               </div>
             ))}
           </div>
-          <p className="text-xs text-[#64748B] mt-4">
+          <p className="text-xs text-[#475569] mt-4">
             * Nilai pasar kendaraan bersifat estimasi dan bervariasi tergantung kondisi aktual. Untuk estimasi lebih akurat,{" "}
             <Link href="/asuransi-kendaraan" className="text-gold hover:underline">gunakan kalkulator premi OJK kami</Link>.
           </p>
@@ -303,7 +303,7 @@ export default function AsuransiMobilBekasPage() {
             {schemaFAQ.mainEntity.map((faq, i) => (
               <div key={i} className="py-5">
                 <h3 className="font-semibold text-navy text-[0.95rem] mb-2">{faq.name}</h3>
-                <p className="text-sm text-[#64748B] leading-[1.78]">{faq.acceptedAnswer.text}</p>
+                <p className="text-sm text-[#475569] leading-[1.78]">{faq.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
@@ -311,7 +311,7 @@ export default function AsuransiMobilBekasPage() {
 
         {/* INTERNAL LINKS */}
         <section className="py-10 border-b border-black/8">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">Artikel & Halaman Terkait</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">Artikel & Halaman Terkait</p>
           <div className="flex gap-3 flex-wrap">
             <Link href="/asuransi-kendaraan/mobil" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🚗 Panduan Lengkap Asuransi Mobil →</Link>
             <Link href="/artikel/perbedaan-all-risk-tlo" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">⚖️ All Risk vs TLO →</Link>
@@ -333,7 +333,7 @@ export default function AsuransiMobilBekasPage() {
             </div>
           </div>
         </section>
-        <div className="pb-8 text-xs text-[#94A3B8] leading-relaxed border-t border-black/5 pt-6">
+        <div className="pb-8 text-xs text-[#5A6472] leading-relaxed border-t border-black/5 pt-6">
           Estimasi premi dan nilai pasar kendaraan dalam artikel ini bersifat indikatif. Premi dan nilai pertanggungan final ditetapkan oleh perusahaan asuransi setelah survei. Nilai pasar kendaraan bekas dapat berbeda tergantung kondisi, lokasi, dan waktu penilaian.
         </div>
       </article>

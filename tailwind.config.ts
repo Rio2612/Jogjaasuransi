@@ -14,6 +14,13 @@ const config: Config = {
         gold:  "#C8963E",
         gold2: "#E8B96A",
         gold3: "#F5D99A",
+        // Darker gold used specifically for TEXT on light (white/cream) backgrounds.
+        // The base `gold` (#C8963E) only reaches ~2.7:1 contrast on white/cream,
+        // failing WCAG AA (4.5:1) for small text. This shade passes ~4.9-5.3:1
+        // while staying visually on-brand. Keep using `gold`/`gold2`/`gold3` for
+        // backgrounds, borders, and text on dark (navy) surfaces, where the
+        // original gold already has strong contrast.
+        goldtext: "#8A6520",
         cream: "#F9F6F1",
       },
       fontFamily: {

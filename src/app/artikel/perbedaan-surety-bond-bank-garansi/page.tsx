@@ -242,7 +242,7 @@ export default function ArtikelPerbedaanSuretyBondBankGaransi() {
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -259,8 +259,8 @@ export default function ArtikelPerbedaanSuretyBondBankGaransi() {
               <Link href="/asuransi-surety-bond" className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors">
                 📋 Surety Bond
               </Link>
-              <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Perbandingan & Edukasi</span>
+              <span className="text-white/60 text-xs">·</span>
+              <span className="text-white/60 text-xs">Perbandingan & Edukasi</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
               Surety Bond vs Bank Garansi —<br /><em className="not-italic text-gold">Mana yang Lebih Tepat</em><br />untuk Kontraktor?
@@ -268,7 +268,7 @@ export default function ArtikelPerbedaanSuretyBondBankGaransi() {
             <p className="text-white/80 text-base leading-[1.85] max-w-[540px] mb-6">
               Keduanya sama-sama diterima di tender pemerintah. Tapi mekanismenya sangat berbeda — dan perbedaan itu berdampak langsung pada likuiditas dan fleksibilitas operasional kontraktor. Artikel ini menjelaskan secara objektif tanpa memihak.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
@@ -296,20 +296,20 @@ export default function ArtikelPerbedaanSuretyBondBankGaransi() {
             <div className="bg-white rounded-card p-6 border border-black/8">
               <div className="text-3xl mb-3">🏛️</div>
               <div className="font-heading text-navy font-bold text-base mb-3">Bank Garansi</div>
-              <p className="text-sm text-[#64748B] leading-relaxed mb-3">
+              <p className="text-sm text-[#475569] leading-relaxed mb-3">
                 Instrumen jaminan yang diterbitkan oleh bank atas permintaan nasabah (kontraktor). Bank bertindak sebagai penjamin kepada pihak ketiga (pemilik proyek) bahwa jika nasabah wanprestasi, bank akan membayar sejumlah nilai yang dijaminkan.
               </p>
-              <p className="text-sm text-[#64748B] leading-relaxed">
+              <p className="text-sm text-[#475569] leading-relaxed">
                 Mekanisme penerbitannya mirip dengan kredit bank — bank mengevaluasi kemampuan bayar nasabah dan umumnya mensyaratkan agunan berupa deposito, tanah, atau bangunan senilai jaminan yang diminta.
               </p>
             </div>
             <div className="bg-white rounded-card p-6 border border-gold/20">
               <div className="text-3xl mb-3">📋</div>
               <div className="font-heading text-navy font-bold text-base mb-3">Surety Bond</div>
-              <p className="text-sm text-[#64748B] leading-relaxed mb-3">
+              <p className="text-sm text-[#475569] leading-relaxed mb-3">
                 Instrumen jaminan yang diterbitkan perusahaan asuransi (perusahaan surety) atas permintaan kontraktor (principal). Berbeda dengan asuransi biasa, surety bond melibatkan tiga pihak: principal (kontraktor), obligee (pemilik proyek), dan surety (perusahaan asuransi).
               </p>
-              <p className="text-sm text-[#64748B] leading-relaxed">
+              <p className="text-sm text-[#475569] leading-relaxed">
                 Perusahaan surety mengevaluasi kapasitas finansial, kualifikasi teknis, dan track record kontraktor — bukan nilai agunan. Secara prinsip lebih mirip dengan fasilitas kredit yang dijamin oleh kapasitas dan reputasi kontraktor.
               </p>
             </div>
@@ -319,7 +319,7 @@ export default function ArtikelPerbedaanSuretyBondBankGaransi() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Perbandingan Lengkap: 10 Aspek Kunci
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Berikut perbandingan mendalam dari berbagai aspek yang relevan untuk kontraktor di Yogyakarta:
           </p>
           <div className="overflow-x-auto mb-4">
@@ -335,20 +335,20 @@ export default function ArtikelPerbedaanSuretyBondBankGaransi() {
                 {tabelPerbandingan.map((row, i) => (
                   <tr key={row.aspek} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
                     <td className="p-3.5 font-semibold text-navy text-xs align-top">{row.aspek}</td>
-                    <td className="p-3.5 text-[#64748B] text-sm leading-relaxed align-top">{row.bank}</td>
+                    <td className="p-3.5 text-[#475569] text-sm leading-relaxed align-top">{row.bank}</td>
                     <td className="p-3.5 text-navy2 text-sm leading-relaxed align-top font-medium">{row.surety}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-[#94A3B8] mb-10">* Perbandingan bersifat umum. Kebijakan spesifik berbeda antar bank dan perusahaan surety.</p>
+          <p className="text-xs text-[#5A6472] mb-10">* Perbandingan bersifat umum. Kebijakan spesifik berbeda antar bank dan perusahaan surety.</p>
 
           {/* Aspek Likuiditas — Poin Terkuat */}
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Aspek Paling Kritis: Dampak terhadap Likuiditas
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+          <p className="text-[#475569] text-base leading-relaxed mb-5">
             Ini adalah perbedaan yang paling dirasakan langsung oleh kontraktor dalam operasional sehari-hari. Mari kita ilustrasikan dengan skenario konkret:
           </p>
           <div className="bg-cream rounded-card p-6 border border-black/8 mb-5">
@@ -384,7 +384,7 @@ export default function ArtikelPerbedaanSuretyBondBankGaransi() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Kasus Konkret: Pilih yang Mana?
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Tidak ada jawaban universal. Pilihan terbaik bergantung pada kondisi spesifik kontraktor. Berikut analisis untuk beberapa skenario umum:
           </p>
           <div className="flex flex-col gap-5 mb-10">
@@ -405,8 +405,8 @@ export default function ArtikelPerbedaanSuretyBondBankGaransi() {
                 </div>
                 <div className="p-5 grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <div className="text-xs font-semibold text-[#64748B] mb-1.5">Bank Garansi:</div>
-                    <p className="text-xs text-[#64748B] leading-relaxed">{k.bank}</p>
+                    <div className="text-xs font-semibold text-[#475569] mb-1.5">Bank Garansi:</div>
+                    <p className="text-xs text-[#475569] leading-relaxed">{k.bank}</p>
                   </div>
                   <div>
                     <div className="text-xs font-semibold text-navy mb-1.5">Surety Bond:</div>
@@ -430,7 +430,7 @@ export default function ArtikelPerbedaanSuretyBondBankGaransi() {
                 </div>
                 <div className="bg-green-50 px-5 py-3 flex gap-2 items-start">
                   <span className="text-green-600 font-bold text-sm flex-shrink-0 mt-0.5">✓</span>
-                  <span className="text-[#64748B] text-sm leading-relaxed">{m.benar}</span>
+                  <span className="text-[#475569] text-sm leading-relaxed">{m.benar}</span>
                 </div>
               </div>
             ))}
@@ -445,12 +445,12 @@ export default function ArtikelPerbedaanSuretyBondBankGaransi() {
               <div key={p.kondisi} className="bg-cream rounded-card p-5 border border-black/6 grid grid-cols-[auto_1fr] gap-4 items-start">
                 <span className="text-2xl">{p.icon}</span>
                 <div>
-                  <div className="text-xs text-[#64748B] mb-0.5">Kondisi:</div>
+                  <div className="text-xs text-[#475569] mb-0.5">Kondisi:</div>
                   <div className="font-heading text-navy font-bold text-sm mb-1">{p.kondisi}</div>
                   <div className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/20 text-gold text-xs font-bold px-2.5 py-1 rounded-full mb-2">
                     → {p.rekomendasi}
                   </div>
-                  <p className="text-xs text-[#64748B] leading-relaxed">{p.alasan}</p>
+                  <p className="text-xs text-[#475569] leading-relaxed">{p.alasan}</p>
                 </div>
               </div>
             ))}
@@ -459,7 +459,7 @@ export default function ArtikelPerbedaanSuretyBondBankGaransi() {
           {/* CTA Inline */}
           <div className="bg-gold/8 border border-gold/25 rounded-card p-6 mb-10">
             <div className="font-heading text-navy font-bold text-base mb-2">Tidak Yakin Mana yang Lebih Tepat?</div>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+            <p className="text-[#475569] text-sm leading-relaxed mb-4">
               Ceritakan kondisi perusahaan dan jenis tender yang sedang dipersiapkan. Kami bantu analisis dan rekomendasikan mana yang lebih sesuai — tanpa biaya konsultasi.
             </p>
             <div className="flex gap-3 flex-wrap">
@@ -483,14 +483,14 @@ export default function ArtikelPerbedaanSuretyBondBankGaransi() {
                   {f.q}
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">{f.a}</p>
               </details>
             ))}
           </div>
 
           {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Baca Juga</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">Baca Juga</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { href: "/asuransi-surety-bond", icon: "📋", judul: "Semua Produk Surety Bond", desc: "Bid Bond, Performance Bond, Advance Payment, Maintenance" },
@@ -502,7 +502,7 @@ export default function ArtikelPerbedaanSuretyBondBankGaransi() {
                   <span className="text-xl flex-shrink-0">{a.icon}</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">{a.judul}</div>
-                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                    <div className="text-xs text-[#475569]">{a.desc}</div>
                   </div>
                 </Link>
               ))}

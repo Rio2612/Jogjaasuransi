@@ -108,7 +108,7 @@ export default function CareerTimeline() {
               <p className={`text-xs mb-2 ${s.current ? "text-white/50" : "text-[#94a3b8]"}`}>
                 {s.period} · {s.location}
               </p>
-              <p className={`text-sm leading-relaxed ${s.current ? "text-white/80" : "text-[#64748B]"}`}>
+              <p className={`text-sm leading-relaxed ${s.current ? "text-white/80" : "text-[#475569]"}`}>
                 {s.desc}
               </p>
             </div>

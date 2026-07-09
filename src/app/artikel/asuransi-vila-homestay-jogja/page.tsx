@@ -365,7 +365,7 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
 
         {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -401,7 +401,7 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
             <p className="text-white/80 text-base leading-[1.85] max-w-[560px] mb-6">
               Dari homestay 2 kamar hingga hotel butik 30 kamar — properti yang disewakan kepada tamu memiliki risiko yang berbeda dari rumah tinggal biasa. Polis yang salah bukan hanya tidak efektif; klaim Anda bisa ditolak penuh karena kesalahan deklarasi.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
@@ -436,9 +436,9 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
                 <div className="text-2xl mb-2">{s.icon}</div>
                 <div className="font-heading font-bold text-navy text-sm mb-1">{s.nama}</div>
                 <div className={`text-[0.6rem] font-bold px-2 py-0.5 rounded-full border inline-block mb-2 ${s.warnaBadge}`}>{s.rentang}</div>
-                <div className="text-[0.65rem] text-[#94A3B8] mb-1">Nilai: {s.nilaiProperti}</div>
-                <div className="text-[0.65rem] text-[#94A3B8] mb-2">Pendapatan: {s.pendapatan}</div>
-                <p className="text-[0.65rem] text-[#64748B] leading-snug italic">{s.contoh}</p>
+                <div className="text-[0.65rem] text-[#5A6472] mb-1">Nilai: {s.nilaiProperti}</div>
+                <div className="text-[0.65rem] text-[#5A6472] mb-2">Pendapatan: {s.pendapatan}</div>
+                <p className="text-[0.65rem] text-[#475569] leading-snug italic">{s.contoh}</p>
               </div>
             ))}
           </div>
@@ -460,7 +460,7 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
                 {perbedaanRumahVsKomersial.map((row, i) => (
                   <tr key={row.aspek} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
                     <td className="p-3.5 font-semibold text-navy text-xs align-top">{row.aspek}</td>
-                    <td className="p-3.5 text-[#64748B] text-sm leading-relaxed align-top">{row.rumah}</td>
+                    <td className="p-3.5 text-[#475569] text-sm leading-relaxed align-top">{row.rumah}</td>
                     <td className={`p-3.5 text-sm leading-relaxed align-top ${row.aspek === "Jika Salah Dideklarasikan" ? "text-red-600 font-bold" : "text-navy2 font-medium"}`}>
                       {row.komersial}
                     </td>
@@ -474,7 +474,7 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             5 Lapisan Perlindungan — dan Siapa yang Membutuhkan Masing-masing
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Perlindungan optimal terdiri dari beberapa lapisan yang saling melengkapi.
             Skala properti menentukan lapisan mana yang wajib dan mana yang dianjurkan:
           </p>
@@ -490,7 +490,7 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-heading font-bold text-navy text-[0.95rem] mb-1">{l.nama}</div>
-                    <p className="text-sm text-[#64748B] leading-relaxed mb-3">{l.deskripsi}</p>
+                    <p className="text-sm text-[#475569] leading-relaxed mb-3">{l.deskripsi}</p>
                     <div className="flex flex-wrap gap-2 mb-3">
                       {l.wajib?.map((s) => (
                         <span key={s} className="text-[0.6rem] font-bold px-2 py-0.5 rounded-full bg-navy text-white">
@@ -505,7 +505,7 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       <div className="bg-white/60 rounded-lg p-2.5 border border-black/6">
-                        <div className="text-[0.6rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-0.5">Dasar nilai</div>
+                        <div className="text-[0.6rem] font-bold uppercase tracking-wide text-[#5A6472] mb-0.5">Dasar nilai</div>
                         <p className="text-xs text-navy2">{l.nilaiDasar}</p>
                       </div>
                       <div className="bg-gold/6 rounded-lg p-2.5 border border-gold/15">
@@ -533,7 +533,7 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
                 <div className="p-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                     <div>
-                      <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-2">Polis Wajib / Sangat Dianjurkan</p>
+                      <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-2">Polis Wajib / Sangat Dianjurkan</p>
                       <ul className="flex flex-col gap-1.5">
                         {r.polisWajib.map((item, i) => (
                           <li key={i} className="flex items-start gap-2">
@@ -544,12 +544,12 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
                       </ul>
                     </div>
                     <div>
-                      <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-2">Tambahan Dianjurkan</p>
+                      <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-2">Tambahan Dianjurkan</p>
                       <ul className="flex flex-col gap-1.5">
                         {r.polisDianjurkan.map((item, i) => (
                           <li key={i} className="flex items-start gap-2">
                             <span className="text-gold font-bold text-xs flex-shrink-0 mt-0.5">+</span>
-                            <span className="text-xs text-[#64748B] leading-snug">{item}</span>
+                            <span className="text-xs text-[#475569] leading-snug">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -557,12 +557,12 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
                   </div>
                   <div className="bg-white/60 rounded-xl p-3.5 border border-black/6 flex flex-col sm:flex-row gap-3">
                     <div className="flex-shrink-0">
-                      <div className="text-[0.65rem] text-[#94A3B8] uppercase tracking-wide font-semibold mb-0.5">Estimasi premi</div>
+                      <div className="text-[0.65rem] text-[#5A6472] uppercase tracking-wide font-semibold mb-0.5">Estimasi premi</div>
                       <div className="font-heading font-bold text-navy text-lg">{r.estimasiPremi}</div>
                     </div>
                     <div className="sm:border-l sm:border-black/10 sm:pl-3">
-                      <div className="text-[0.65rem] text-[#94A3B8] uppercase tracking-wide font-semibold mb-0.5">Contoh perhitungan</div>
-                      <p className="text-xs text-[#64748B] leading-relaxed">{r.contohHitung}</p>
+                      <div className="text-[0.65rem] text-[#5A6472] uppercase tracking-wide font-semibold mb-0.5">Contoh perhitungan</div>
+                      <p className="text-xs text-[#475569] leading-relaxed">{r.contohHitung}</p>
                     </div>
                   </div>
                 </div>
@@ -574,7 +574,7 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             3 Kasus Nyata dari Properti Penginapan di Yogyakarta
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Tiga skenario berikut menggambarkan konsekuensi nyata dari perlindungan yang lengkap vs tidak lengkap:
           </p>
           <div className="flex flex-col gap-4 mb-10">
@@ -585,15 +585,15 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
                   <span className={`text-[0.65rem] font-bold px-2 py-0.5 rounded-full border ${k.badge}`}>{k.segmen}</span>
                   <span className={`text-[0.65rem] font-bold px-2 py-0.5 rounded-full border ${k.badge}`}>{k.nilai}</span>
                 </div>
-                <p className="text-sm text-[#64748B] leading-relaxed mb-3">{k.kronologi}</p>
+                <p className="text-sm text-[#475569] leading-relaxed mb-3">{k.kronologi}</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="bg-amber-50 rounded-lg p-3 border border-amber-100">
                     <div className="text-[0.65rem] font-bold uppercase tracking-wide text-amber-600 mb-1">⚠️ Tanpa perlindungan lengkap</div>
-                    <p className="text-xs text-[#64748B] leading-relaxed">{k.tanpaPerlindunganLengkap}</p>
+                    <p className="text-xs text-[#475569] leading-relaxed">{k.tanpaPerlindunganLengkap}</p>
                   </div>
                   <div className="bg-green-50 rounded-lg p-3 border border-green-100">
                     <div className="text-[0.65rem] font-bold uppercase tracking-wide text-green-600 mb-1">✅ Dengan perlindungan lengkap</div>
-                    <p className="text-xs text-[#64748B] leading-relaxed">{k.denganPerlindunganLengkap}</p>
+                    <p className="text-xs text-[#475569] leading-relaxed">{k.denganPerlindunganLengkap}</p>
                   </div>
                 </div>
               </div>
@@ -612,7 +612,7 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
                 </span>
                 <div>
                   <p className="font-semibold text-navy text-sm mb-1">{t.judul}</p>
-                  <p className="text-xs text-[#64748B] leading-relaxed">{t.detail}</p>
+                  <p className="text-xs text-[#475569] leading-relaxed">{t.detail}</p>
                 </div>
               </div>
             ))}
@@ -623,7 +623,7 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
             <div className="font-heading text-navy font-bold text-base mb-2">
               Ingin review atau upgrade polis properti penginapan Anda?
             </div>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+            <p className="text-[#475569] text-sm leading-relaxed mb-4">
               Ceritakan skala dan kondisi properti Anda — kami evaluasi apakah perlindungan yang ada sudah memadai, dan rekomendasikan yang perlu ditambah. Gratis, tanpa komitmen.
             </p>
             <div className="flex gap-3 flex-wrap">
@@ -659,14 +659,14 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
                   {f.q}
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">{f.a}</p>
               </details>
             ))}
           </div>
 
           {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Produk & Artikel Terkait</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">Produk & Artikel Terkait</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { href: "/asuransi-properti/vila-homestay", icon: "🏡", judul: "Produk Asuransi Vila & Homestay", desc: "Detail cakupan, cara daftar, dan estimasi premi" },
@@ -684,7 +684,7 @@ export default function ArtikelAsuransiVilaHomestayJogja() {
                   <span className="text-xl flex-shrink-0">{a.icon}</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">{a.judul}</div>
-                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                    <div className="text-xs text-[#475569]">{a.desc}</div>
                   </div>
                 </Link>
               ))}

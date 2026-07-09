@@ -88,7 +88,7 @@ export default function CaraMenghitungNilaiPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFAQ) }} />
 
       <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-        <div className="flex items-center gap-2 text-xs text-[#64748B] flex-wrap">
+        <div className="flex items-center gap-2 text-xs text-[#475569] flex-wrap">
           <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
           <span className="text-gold/60">›</span>
           <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -101,12 +101,12 @@ export default function CaraMenghitungNilaiPage() {
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-gold/10 border border-gold/20 text-gold text-xs font-bold px-3 py-1 rounded-full">🧮 Panduan</span>
-            <span className="text-[#94A3B8] text-xs">⏱ 9 menit baca</span>
+            <span className="text-[#5A6472] text-xs">⏱ 9 menit baca</span>
           </div>
           <h1 className="font-heading text-[clamp(1.8rem,3.5vw,2.8rem)] text-navy leading-[1.2] mb-4">
             Cara Menghitung Nilai Asuransi<br />yang Tepat (Avoid Underinsurance)
           </h1>
-          <p className="text-[#64748B] text-lg leading-[1.85]">
+          <p className="text-[#475569] text-lg leading-[1.85]">
             Salah satu kesalahan paling umum dalam berasuransi adalah menetapkan nilai pertanggungan yang terlalu rendah untuk menghemat premi. Hasilnya: saat klaim terjadi, ganti rugi yang diterima jauh lebih kecil dari yang diharapkan. Fenomena ini disebut <strong className="text-navy">underinsurance</strong>.
           </p>
         </div>
@@ -114,7 +114,7 @@ export default function CaraMenghitungNilaiPage() {
         {/* PENJELASAN UNDERINSURANCE */}
         <section className="mb-12">
           <h2 className="font-heading text-[1.6rem] text-navy mb-4">Apa itu Underinsurance?</h2>
-          <p className="text-sm text-[#64748B] leading-relaxed mb-6">Underinsurance terjadi ketika nilai pertanggungan yang tercantum dalam polis lebih rendah dari nilai sebenarnya aset yang diasuransikan. Saat klaim, asuransi menerapkan <strong className="text-navy">klausul average (proporsional)</strong> — artinya klaim dibayar secara proporsional sesuai rasio pertanggungan.</p>
+          <p className="text-sm text-[#475569] leading-relaxed mb-6">Underinsurance terjadi ketika nilai pertanggungan yang tercantum dalam polis lebih rendah dari nilai sebenarnya aset yang diasuransikan. Saat klaim, asuransi menerapkan <strong className="text-navy">klausul average (proporsional)</strong> — artinya klaim dibayar secara proporsional sesuai rasio pertanggungan.</p>
 
           <div className="bg-navy rounded-xl p-6 text-white mb-4">
             <div className="font-heading text-gold text-[1rem] font-bold mb-4">📊 Contoh Kasus Underinsurance</div>
@@ -141,7 +141,7 @@ export default function CaraMenghitungNilaiPage() {
             {metodeHitungProperti.map(m => (
               <div key={m.metode} className="bg-cream rounded-xl p-5 border border-black/5">
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1.5">{m.metode}</div>
-                <p className="text-sm text-[#64748B] leading-relaxed">{m.penjelasan}</p>
+                <p className="text-sm text-[#475569] leading-relaxed">{m.penjelasan}</p>
               </div>
             ))}
           </div>
@@ -150,7 +150,7 @@ export default function CaraMenghitungNilaiPage() {
             {komponenNilaiProperti.map(k => (
               <div key={k.item} className="flex gap-3 p-3 bg-white rounded-lg border border-black/5">
                 <span className="text-gold font-bold flex-shrink-0">✓</span>
-                <div><span className="font-semibold text-navy text-sm">{k.item}</span><span className="text-[#64748B] text-xs ml-2">— {k.catatan}</span></div>
+                <div><span className="font-semibold text-navy text-sm">{k.item}</span><span className="text-[#475569] text-xs ml-2">— {k.catatan}</span></div>
               </div>
             ))}
           </div>
@@ -159,7 +159,7 @@ export default function CaraMenghitungNilaiPage() {
         {/* KENDARAAN */}
         <section className="mb-12">
           <h2 className="font-heading text-[1.6rem] text-navy mb-4">Menghitung Nilai Asuransi Kendaraan</h2>
-          <p className="text-sm text-[#64748B] mb-5 leading-relaxed">Untuk kendaraan, nilai pertanggungan mengacu pada <strong className="text-navy">harga pasar (market value)</strong> — harga yang bisa diperoleh jika kendaraan dijual saat ini. Panduan depresiasi umum:</p>
+          <p className="text-sm text-[#475569] mb-5 leading-relaxed">Untuk kendaraan, nilai pertanggungan mengacu pada <strong className="text-navy">harga pasar (market value)</strong> — harga yang bisa diperoleh jika kendaraan dijual saat ini. Panduan depresiasi umum:</p>
           <div className="overflow-x-auto rounded-xl border border-black/8">
             <table className="w-full border-collapse text-sm">
               <thead>
@@ -174,7 +174,7 @@ export default function CaraMenghitungNilaiPage() {
                   <tr key={n.tahun} className={i % 2 === 0 ? "bg-white" : "bg-cream"}>
                     <td className="p-3.5 font-semibold text-navy text-xs">{n.tahun}</td>
                     <td className="p-3.5 text-gold font-bold text-sm">{n.persentase}</td>
-                    <td className="p-3.5 text-[#64748B] text-sm">{n.keterangan}</td>
+                    <td className="p-3.5 text-[#475569] text-sm">{n.keterangan}</td>
                   </tr>
                 ))}
               </tbody>
@@ -191,14 +191,14 @@ export default function CaraMenghitungNilaiPage() {
                 <summary className="py-4 cursor-pointer font-semibold text-[0.92rem] text-navy flex justify-between items-center list-none">
                   {f.q}<span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+                <p className="text-base leading-[1.78] text-[#475569] pb-4">{f.a}</p>
               </details>
             ))}
           </div>
         </section>
 
         <section className="mb-10 p-6 bg-cream rounded-xl border border-black/6">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Artikel & Produk Terkait</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">Artikel & Produk Terkait</p>
           <div className="flex gap-3 flex-wrap">
             <Link href="/artikel/pentingnya-asuransi-dunia-usaha-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏢 Asuransi Dunia Usaha →</Link>
             <Link href="/asuransi-properti/property-all-risk" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏭 Property All Risk →</Link>

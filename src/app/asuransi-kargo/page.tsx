@@ -121,7 +121,7 @@ export default function AsuransiKargoPage() {
           </div>
           <div className="flex gap-8 mt-10 pt-8 border-t border-white/10">
             {[{num:"ICC A/B/C",lbl:"Standar Internasional"},{num:"4 Moda",lbl:"Darat·Laut·Udara·Multi"},{num:"Gratis",lbl:"Konsultasi & Analisis"}].map(s=>(
-              <div key={s.lbl}><div className="font-heading text-gold text-lg font-bold">{s.num}</div><div className="text-white/45 text-xs mt-0.5">{s.lbl}</div></div>
+              <div key={s.lbl}><div className="font-heading text-gold text-lg font-bold">{s.num}</div><div className="text-white/60 text-xs mt-0.5">{s.lbl}</div></div>
             ))}
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function AsuransiKargoPage() {
               <div className="text-3xl mb-2">{f.icon}</div>
               <div className="font-heading text-gold text-xl font-bold mb-1">{f.angka}</div>
               <div className="font-heading text-navy font-bold text-sm mb-2">{f.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{f.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -160,7 +160,7 @@ export default function AsuransiKargoPage() {
                 <div className="text-[2rem] mb-3">{c.icon}</div>
                 <div className="font-heading text-navy font-bold text-[1.15rem] mb-1">{c.title}</div>
                 <div className="text-gold text-xs font-semibold mb-3">{c.subtitle}</div>
-                <p className="text-sm leading-relaxed text-[#64748B] mb-4">{c.desc}</p>
+                <p className="text-sm leading-relaxed text-[#475569] mb-4">{c.desc}</p>
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {c.tags.map(t=><span key={t} className="bg-gold/8 border border-gold/15 text-navy2 text-xs px-2.5 py-1 rounded-full font-medium">{t}</span>)}
                 </div>
@@ -182,7 +182,7 @@ export default function AsuransiKargoPage() {
             <div key={m.label} className="bg-white rounded-card p-6 text-center border border-black/5 hover:-translate-y-1 transition-all">
               <div className="text-4xl mb-3">{m.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{m.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{m.detail}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{m.detail}</p>
             </div>
           ))}
         </div>
@@ -193,7 +193,7 @@ export default function AsuransiKargoPage() {
         <div className="text-center mb-10">
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Standar Internasional</div>
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-navy leading-[1.22]">Mengenal Klausul ICC —<br />Standar Polis Kargo Dunia</h2>
-          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">Institute Cargo Clauses (ICC) adalah standar internasional yang digunakan hampir seluruh perusahaan asuransi kargo di dunia</p>
+          <p className="text-base text-[#475569] max-w-[500px] mx-auto mt-3">Institute Cargo Clauses (ICC) adalah standar internasional yang digunakan hampir seluruh perusahaan asuransi kargo di dunia</p>
         </div>
         <div className="flex flex-col gap-5 max-w-3xl mx-auto">
           {klausulJaminan.map(k=>(
@@ -204,8 +204,8 @@ export default function AsuransiKargoPage() {
               </div>
               <div>
                 <div className="font-heading text-navy font-bold text-[1.1rem] mb-2">{k.nama}</div>
-                <p className="text-sm leading-relaxed text-[#64748B] mb-3">{k.desc}</p>
-                <div className="bg-white rounded-lg px-3 py-2 text-xs text-[#64748B] border border-black/5">
+                <p className="text-sm leading-relaxed text-[#475569] mb-3">{k.desc}</p>
+                <div className="bg-white rounded-lg px-3 py-2 text-xs text-[#475569] border border-black/5">
                   <strong className="text-navy">Cocok untuk:</strong> {k.cocok}
                 </div>
               </div>
@@ -224,7 +224,7 @@ export default function AsuransiKargoPage() {
           <div>
             <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Produk Sinergi</div>
             <h2 className="font-heading text-navy text-[1.5rem] mb-3">Kargo + Kendaraan +<br />Liability = Proteksi Logistik</h2>
-            <p className="text-base leading-relaxed text-[#64748B]">Bisnis pengiriman dan logistik membutuhkan proteksi berlapis — kendaraan pengangkut, muatan di dalam, dan tanggung jawab terhadap pihak ketiga jika terjadi kecelakaan.</p>
+            <p className="text-base leading-relaxed text-[#475569]">Bisnis pengiriman dan logistik membutuhkan proteksi berlapis — kendaraan pengangkut, muatan di dalam, dan tanggung jawab terhadap pihak ketiga jika terjadi kecelakaan.</p>
           </div>
           <div className="flex flex-col gap-3">
             {[
@@ -235,7 +235,7 @@ export default function AsuransiKargoPage() {
             ].map(l=>(
               <Link key={l.href} href={l.href} className="bg-white border border-black/8 rounded-xl p-3.5 flex items-center gap-3 no-underline hover:border-gold/40 transition-all group">
                 <span className="text-xl">{l.icon}</span>
-                <div><div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors">{l.title}</div><div className="text-xs text-[#64748B]">{l.sub}</div></div>
+                <div><div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors">{l.title}</div><div className="text-xs text-[#475569]">{l.sub}</div></div>
                 <span className="ml-auto text-gold text-sm">→</span>
               </Link>
             ))}
@@ -273,7 +273,7 @@ export default function AsuransiKargoPage() {
               <summary className="py-4 cursor-pointer font-semibold text-[0.92rem] text-navy flex justify-between items-center list-none">
                 {f.q}<span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
               </summary>
-              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#475569] pb-4">{f.a}</p>
             </details>
           ))}
         </div>

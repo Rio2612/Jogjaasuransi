@@ -22,7 +22,7 @@ export default function LinkedInCard() {
         <p className="font-heading font-bold text-navy leading-tight truncate">
           Rio Mardiansyah
         </p>
-        <p className="text-[#64748B] text-xs leading-snug truncate">
+        <p className="text-[#475569] text-xs leading-snug truncate">
           Praktisi Asuransi · 9+ Tahun di Industri Asuransi
         </p>
       </div>

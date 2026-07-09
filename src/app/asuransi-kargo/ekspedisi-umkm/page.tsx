@@ -77,7 +77,7 @@ export default function EkspedisiUmkmPage() {
           </div>
           <div className="flex gap-8 mt-10 pt-8 border-t border-white/10">
             {[{num:"UMKM",lbl:"Fokus Pelaku Usaha Lokal"},{num:"Terjangkau",lbl:"Premi Mulai 0,1%"},{num:"Gratis",lbl:"Konsultasi"}].map(s=>(
-              <div key={s.lbl}><div className="font-heading text-gold text-lg font-bold">{s.num}</div><div className="text-white/45 text-xs mt-0.5">{s.lbl}</div></div>
+              <div key={s.lbl}><div className="font-heading text-gold text-lg font-bold">{s.num}</div><div className="text-white/60 text-xs mt-0.5">{s.lbl}</div></div>
             ))}
           </div>
         </div>
@@ -111,7 +111,7 @@ export default function EkspedisiUmkmPage() {
             <div key={p.label} className="bg-cream rounded-card p-6 border border-black/6">
               <div className="text-3xl mb-3">{p.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{p.label}</div>
-              <div className="text-xs text-[#64748B] mb-2"><span className="font-semibold text-navy">Harga:</span> {p.harga}</div>
+              <div className="text-xs text-[#475569] mb-2"><span className="font-semibold text-navy">Harga:</span> {p.harga}</div>
               <div className={`text-xs font-bold px-2.5 py-1 rounded-full inline-block ${p.risiko.includes("Sangat")?"bg-red-100 text-red-700":p.risiko.includes("Tinggi")?"bg-orange-100 text-orange-700":"bg-yellow-100 text-yellow-700"}`}>
                 Risiko {p.risiko}
               </div>
@@ -130,7 +130,7 @@ export default function EkspedisiUmkmPage() {
           {platformMarketplace.map(p=>(
             <div key={p.nama} className="bg-white rounded-card p-5 border border-black/5 flex gap-4">
               <span className="text-2xl flex-shrink-0">{p.icon}</span>
-              <div><div className="font-heading text-navy font-bold text-sm mb-1">{p.nama}</div><p className="text-base leading-relaxed text-[#64748B]">{p.tip}</p></div>
+              <div><div className="font-heading text-navy font-bold text-sm mb-1">{p.nama}</div><p className="text-base leading-relaxed text-[#475569]">{p.tip}</p></div>
             </div>
           ))}
         </div>
@@ -148,7 +148,7 @@ export default function EkspedisiUmkmPage() {
               <div className="absolute top-4 right-5 font-heading text-[2rem] font-bold text-navy/8">{c.step}</div>
               <div className="text-3xl mb-3">{c.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{c.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{c.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{c.desc}</p>
             </div>
           ))}
         </div>
@@ -157,7 +157,7 @@ export default function EkspedisiUmkmPage() {
       {/* INTERNAL LINKS */}
       <section className="py-10 px-[5vw] bg-cream border-t border-black/5">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">Produk Terkait</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">Produk Terkait</p>
           <div className="flex gap-3 flex-wrap">
             <Link href="/asuransi-kargo/pengiriman-barang" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📦 Pengiriman Barang Darat →</Link>
             <Link href="/asuransi-kargo/kargo-udara-laut" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">✈️ Kargo Udara & Laut →</Link>
@@ -207,14 +207,14 @@ export default function EkspedisiUmkmPage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-[#94A3B8] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+            <p className="text-xs text-[#5A6472] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
           </div>
 
           <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
             <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
             <div>
               <div className="text-sm font-semibold text-navy">Ditinjau oleh Rio Mardiansyah</div>
-              <div className="text-xs text-[#64748B]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
+              <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
             </div>
           </div>
 

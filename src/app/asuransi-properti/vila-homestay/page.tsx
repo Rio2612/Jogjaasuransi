@@ -295,7 +295,7 @@ export default function VilaHomestayPage() {
             ].map((s) => (
               <div key={s.lbl}>
                 <div className="font-heading text-gold text-xl font-bold">{s.num}</div>
-                <div className="text-white/45 text-xs mt-0.5">{s.lbl}</div>
+                <div className="text-white/60 text-xs mt-0.5">{s.lbl}</div>
               </div>
             ))}
           </div>
@@ -328,13 +328,13 @@ export default function VilaHomestayPage() {
                   }`}
                 >
                   <span className="font-semibold text-navy">{r.aspek}</span>
-                  <span className="text-[#64748B]">{r.hunianTetap}</span>
+                  <span className="text-[#475569]">{r.hunianTetap}</span>
                   <span className="text-gold font-medium">{r.vilaHomestay}</span>
                 </div>
               ))}
               <div className="grid grid-cols-[120px_1fr_1fr] gap-3 mt-3 pt-3 border-t border-black/8 text-[0.7rem]">
-                <span className="text-[#94A3B8]">Aspek</span>
-                <span className="text-[#64748B] font-semibold">Hunian Tetap</span>
+                <span className="text-[#5A6472]">Aspek</span>
+                <span className="text-[#475569] font-semibold">Hunian Tetap</span>
                 <span className="text-gold font-semibold">Vila / Homestay ✓</span>
               </div>
             </div>
@@ -366,7 +366,7 @@ export default function VilaHomestayPage() {
             <br />
             Diantisipasi Pemilik Vila di Jogja
           </h2>
-          <p className="text-base text-[#64748B] max-w-[480px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[480px] mx-auto mt-3">
             Vila dan homestay memiliki eksposur risiko yang jauh lebih kompleks dibanding
             properti hunian biasa
           </p>
@@ -381,7 +381,7 @@ export default function VilaHomestayPage() {
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">
                 {r.label}
               </div>
-              <p className="text-base leading-relaxed text-[#64748B]">{r.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{r.desc}</p>
             </div>
           ))}
         </div>
@@ -450,7 +450,7 @@ export default function VilaHomestayPage() {
             <br />
             Berdasarkan Kawasan Vila di DIY
           </h2>
-          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[500px] mx-auto mt-3">
             Profil risiko berbeda di setiap kawasan — lokasi menentukan jenis perluasan
             yang paling relevan untuk properti Anda
           </p>
@@ -465,7 +465,7 @@ export default function VilaHomestayPage() {
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1">
                   📍 {z.zona}
                 </div>
-                <p className="text-xs text-[#64748B]">{z.unggulan}</p>
+                <p className="text-xs text-[#475569]">{z.unggulan}</p>
               </div>
               <div className="hidden lg:block text-gold/40 text-xl text-center">|</div>
               <div className="flex flex-wrap gap-1.5">
@@ -485,7 +485,7 @@ export default function VilaHomestayPage() {
               </div>
               <div className="hidden lg:block text-gold text-xl text-center">→</div>
               <div className="bg-gold/8 border border-gold/20 rounded-lg p-3">
-                <div className="text-xs text-[#64748B] mb-1 font-semibold">
+                <div className="text-xs text-[#475569] mb-1 font-semibold">
                   Rekomendasi:
                 </div>
                 <div className="text-xs text-navy2 font-medium">{z.rekomendasi}</div>
@@ -494,7 +494,7 @@ export default function VilaHomestayPage() {
           ))}
         </div>
         <div className="text-center mt-8">
-          <p className="text-sm text-[#64748B] mb-4">
+          <p className="text-sm text-[#475569] mb-4">
             Tidak yakin zona risiko vila Anda? Konsultasi gratis dengan Pak Rio.
           </p>
           <a
@@ -531,7 +531,7 @@ export default function VilaHomestayPage() {
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">
                 {p.label}
               </div>
-              <p className="text-base leading-relaxed text-[#64748B]">{p.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -558,7 +558,7 @@ export default function VilaHomestayPage() {
                   +
                 </span>
               </summary>
-              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#475569] pb-4">{f.a}</p>
             </details>
           ))}
         </div>
@@ -567,7 +567,7 @@ export default function VilaHomestayPage() {
       {/* ── INTERNAL LINKS ──────────────────────────────────────────────── */}
       <section className="py-10 px-[5vw] bg-cream border-t border-black/5">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">
             Produk &amp; Artikel Terkait
           </p>
           <div className="flex gap-3 flex-wrap">

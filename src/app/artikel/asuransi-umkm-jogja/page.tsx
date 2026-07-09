@@ -326,7 +326,7 @@ export default function ArtikelAsuransiUMKMJogja() {
 
         {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -364,8 +364,8 @@ export default function ArtikelAsuransiUMKMJogja() {
               >
                 🛡️ Liability
               </Link>
-              <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Panduan UMKM</span>
+              <span className="text-white/60 text-xs">·</span>
+              <span className="text-white/60 text-xs">Panduan UMKM</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
               Asuransi untuk UMKM di Jogja —<br />
@@ -378,7 +378,7 @@ export default function ArtikelAsuransiUMKMJogja() {
               satu kali makan di restoran. Panduan ini membantu Anda memilih yang tepat sesuai
               jenis dan skala usaha.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
@@ -408,18 +408,18 @@ export default function ArtikelAsuransiUMKMJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Mengapa UMKM di Yogyakarta Rentan Tanpa Asuransi?
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-4">
+          <p className="text-[#475569] text-base leading-relaxed mb-4">
             UMKM adalah tulang punggung ekonomi Yogyakarta — dari sentra kerajinan Kotagede,
             konveksi Bantul, kuliner Malioboro, hingga ribuan toko online yang beroperasi dari
             rumah-rumah di Sleman dan Kulon Progo. Namun sebagian besar beroperasi tanpa
             perlindungan asuransi sama sekali.
           </p>
-          <p className="text-[#64748B] text-base leading-relaxed mb-4">
+          <p className="text-[#475569] text-base leading-relaxed mb-4">
             Ironisnya, UMKM justru lebih rentan dibanding usaha besar. Perusahaan besar punya
             cadangan modal untuk pulih dari musibah. UMKM tidak. Satu kebakaran yang memusnahkan
             stok dan peralatan — tanpa asuransi — bisa mengakhiri usaha yang dibangun bertahun-tahun.
           </p>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             DIY juga memiliki karakteristik risiko yang spesifik: zona gempa aktif, banjir musiman
             di bantaran Code dan Progo, serta cuaca ekstrem yang makin sering terjadi. Semua ini
             adalah risiko yang bisa dimitigasi dengan asuransi yang tepat — dengan biaya yang
@@ -430,7 +430,7 @@ export default function ArtikelAsuransiUMKMJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             5 Jenis Asuransi yang Paling Relevan untuk UMKM Jogja
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Berikut penjelasan setiap produk — diurutkan dari yang paling prioritas bagi
             sebagian besar UMKM:
           </p>
@@ -448,11 +448,11 @@ export default function ArtikelAsuransiUMKMJogja() {
                         {p.prioritas}
                       </span>
                     </div>
-                    <p className="text-xs text-[#94A3B8] mb-2">{p.subJudul}</p>
-                    <p className="text-sm text-[#64748B] leading-relaxed mb-3">{p.deskripsi}</p>
+                    <p className="text-xs text-[#5A6472] mb-2">{p.subJudul}</p>
+                    <p className="text-sm text-[#475569] leading-relaxed mb-3">{p.deskripsi}</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
                       <div>
-                        <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1.5">
+                        <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-1.5">
                           Cocok untuk
                         </p>
                         <ul className="flex flex-col gap-1">
@@ -465,14 +465,14 @@ export default function ArtikelAsuransiUMKMJogja() {
                         </ul>
                       </div>
                       <div>
-                        <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1.5">
+                        <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-1.5">
                           Estimasi biaya
                         </p>
                         <div className="bg-white/70 rounded-lg p-3 border border-black/6">
                           <div className="font-heading font-bold text-navy text-sm mb-0.5">
                             {p.estimasiPremi}
                           </div>
-                          <div className="text-[0.65rem] text-[#94A3B8]">{p.dasarPerhitungan}</div>
+                          <div className="text-[0.65rem] text-[#5A6472]">{p.dasarPerhitungan}</div>
                         </div>
                       </div>
                     </div>
@@ -492,7 +492,7 @@ export default function ArtikelAsuransiUMKMJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Rekomendasi Berdasarkan Jenis Usaha Anda
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Setiap jenis UMKM memiliki risiko dan kebutuhan yang berbeda.
             Temukan profil yang paling mendekati usaha Anda:
           </p>
@@ -503,11 +503,11 @@ export default function ArtikelAsuransiUMKMJogja() {
                   <span className="text-2xl">{p.icon}</span>
                   <div>
                     <div className="font-heading font-bold text-navy text-sm">{p.profil}</div>
-                    <div className="text-xs text-[#94A3B8]">{p.omzet}</div>
+                    <div className="text-xs text-[#5A6472]">{p.omzet}</div>
                   </div>
                 </div>
                 <div className="mb-3">
-                  <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1.5">
+                  <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-1.5">
                     Prioritas utama
                   </p>
                   <ul className="flex flex-col gap-1">
@@ -520,20 +520,20 @@ export default function ArtikelAsuransiUMKMJogja() {
                   </ul>
                 </div>
                 <div className="mb-3">
-                  <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1.5">
+                  <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-1.5">
                     Tambahan dianjurkan
                   </p>
                   <ul className="flex flex-col gap-1">
                     {p.opsional.map((item, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <span className="text-gold font-bold text-xs flex-shrink-0 mt-0.5">+</span>
-                        <span className="text-xs text-[#64748B] leading-snug">{item}</span>
+                        <span className="text-xs text-[#475569] leading-snug">{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div className="bg-white/60 rounded-lg px-3 py-2 border border-black/6">
-                  <span className="text-[0.65rem] text-[#94A3B8] uppercase tracking-wide font-semibold">
+                  <span className="text-[0.65rem] text-[#5A6472] uppercase tracking-wide font-semibold">
                     Estimasi total
                   </span>
                   <div className="font-heading font-bold text-navy text-sm">{p.estimasiBiaya}</div>
@@ -546,7 +546,7 @@ export default function ArtikelAsuransiUMKMJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Kasus Nyata dari UMKM di Yogyakarta
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Tiga contoh berikut menggambarkan perbedaan antara UMKM yang memiliki asuransi
             dan yang tidak, ketika musibah benar-benar terjadi:
           </p>
@@ -570,10 +570,10 @@ export default function ArtikelAsuransiUMKMJogja() {
                     { label: "⚠️ Tanpa Asuransi", val: k.tanpaAsuransi },
                   ].map((item) => (
                     <div key={item.label} className="bg-white/60 rounded-lg p-3 border border-black/6">
-                      <div className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1">
+                      <div className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-1">
                         {item.label}
                       </div>
-                      <p className="text-xs text-[#64748B] leading-relaxed">{item.val}</p>
+                      <p className="text-xs text-[#475569] leading-relaxed">{item.val}</p>
                     </div>
                   ))}
                 </div>
@@ -585,7 +585,7 @@ export default function ArtikelAsuransiUMKMJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             5 Tips Memilih Asuransi yang Tepat untuk UMKM
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+          <p className="text-[#475569] text-base leading-relaxed mb-5">
             Agar premi tidak terasa sia-sia dan klaim bisa cair saat dibutuhkan:
           </p>
           <div className="flex flex-col gap-3 mb-10">
@@ -596,7 +596,7 @@ export default function ArtikelAsuransiUMKMJogja() {
                 </span>
                 <div>
                   <p className="font-semibold text-navy text-sm mb-1">{t.judul}</p>
-                  <p className="text-xs text-[#64748B] leading-relaxed">{t.detail}</p>
+                  <p className="text-xs text-[#475569] leading-relaxed">{t.detail}</p>
                 </div>
               </div>
             ))}
@@ -607,7 +607,7 @@ export default function ArtikelAsuransiUMKMJogja() {
             <div className="font-heading text-navy font-bold text-base mb-2">
               Tidak yakin asuransi apa yang dibutuhkan usaha Anda?
             </div>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+            <p className="text-[#475569] text-sm leading-relaxed mb-4">
               Ceritakan jenis usaha, lokasi, dan aset utama Anda — kami rekomendasikan
               kombinasi perlindungan paling efisien sesuai anggaran. Konsultasi gratis,
               tanpa tekanan.
@@ -647,14 +647,14 @@ export default function ArtikelAsuransiUMKMJogja() {
                     +
                   </span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">{f.a}</p>
               </details>
             ))}
           </div>
 
           {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">
               Produk & Artikel Terkait
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -706,7 +706,7 @@ export default function ArtikelAsuransiUMKMJogja() {
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">
                       {a.judul}
                     </div>
-                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                    <div className="text-xs text-[#475569]">{a.desc}</div>
                   </div>
                 </Link>
               ))}

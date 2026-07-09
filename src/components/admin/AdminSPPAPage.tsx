@@ -605,7 +605,7 @@ export default function AdminSPPAPage() {
             <div className="font-heading text-xl font-bold text-navy mb-1">
               Asuransi<span className="text-gold">Jogja</span>
             </div>
-            <div className="text-xs text-[#94A3B8] font-medium tracking-widest uppercase">Admin Dashboard</div>
+            <div className="text-xs text-[#5A6472] font-medium tracking-widest uppercase">Admin Dashboard</div>
           </div>
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
@@ -638,7 +638,7 @@ export default function AdminSPPAPage() {
       <div className="bg-navy px-6 py-3.5 flex items-center justify-between">
         <div className="font-heading text-base font-bold text-white">
           Asuransi<span className="text-gold">Jogja</span>
-          <span className="text-white/40 font-normal text-xs ml-3">/ Admin SPPA</span>
+          <span className="text-white/60 font-normal text-xs ml-3">/ Admin SPPA</span>
         </div>
         <button
           onClick={() => fetchData(secret)}
@@ -660,7 +660,7 @@ export default function AdminSPPAPage() {
           ].map(s => (
             <div key={s.label} className="bg-white rounded-xl border border-black/6 p-4 text-center">
               <div className={`font-heading text-2xl font-bold ${s.color}`}>{s.val}</div>
-              <div className="text-xs text-[#94A3B8] font-medium mt-0.5">{s.label}</div>
+              <div className="text-xs text-[#5A6472] font-medium mt-0.5">{s.label}</div>
             </div>
           ))}
         </div>
@@ -702,13 +702,13 @@ export default function AdminSPPAPage() {
           {/* Table */}
           <div className="flex-1 min-w-0">
             {loading ? (
-              <div className="bg-white rounded-xl border border-black/6 p-12 text-center text-[#94A3B8] text-sm">
+              <div className="bg-white rounded-xl border border-black/6 p-12 text-center text-[#5A6472] text-sm">
                 Memuat data...
               </div>
             ) : filtered.length === 0 ? (
               <div className="bg-white rounded-xl border border-black/6 p-12 text-center">
                 <div className="text-4xl mb-3 opacity-30">📋</div>
-                <p className="text-sm text-[#94A3B8]">Belum ada SPPA masuk</p>
+                <p className="text-sm text-[#5A6472]">Belum ada SPPA masuk</p>
               </div>
             ) : (
               <div className="bg-white rounded-xl border border-black/6 overflow-hidden">
@@ -716,7 +716,7 @@ export default function AdminSPPAPage() {
                   <thead>
                     <tr className="border-b border-black/6 bg-[#F8F9FB]">
                       {["ID", "Produk", "Nama", "WA", "Waktu", "Status", "Aksi"].map(h => (
-                        <th key={h} className="text-left px-4 py-3 text-xs font-bold text-[#94A3B8] uppercase tracking-wider whitespace-nowrap">
+                        <th key={h} className="text-left px-4 py-3 text-xs font-bold text-[#5A6472] uppercase tracking-wider whitespace-nowrap">
                           {h}
                         </th>
                       ))}
@@ -731,13 +731,13 @@ export default function AdminSPPAPage() {
                         }`}
                         onClick={() => setSelected(sub)}
                       >
-                        <td className="px-4 py-3 font-mono text-xs text-[#64748B]">{sub.id}</td>
+                        <td className="px-4 py-3 font-mono text-xs text-[#475569]">{sub.id}</td>
                         <td className="px-4 py-3 text-sm whitespace-nowrap">
-                          {PRODUCT_ICON[sub.product]} <span className="text-[#64748B] text-xs">{sub.productLabel}</span>
+                          {PRODUCT_ICON[sub.product]} <span className="text-[#475569] text-xs">{sub.productLabel}</span>
                         </td>
                         <td className="px-4 py-3 text-sm font-semibold text-navy">{sub.nama}</td>
-                        <td className="px-4 py-3 text-xs text-[#64748B] font-mono">{sub.whatsapp}</td>
-                        <td className="px-4 py-3 text-xs text-[#94A3B8] whitespace-nowrap">{formatDate(sub.submittedAt)}</td>
+                        <td className="px-4 py-3 text-xs text-[#475569] font-mono">{sub.whatsapp}</td>
+                        <td className="px-4 py-3 text-xs text-[#5A6472] whitespace-nowrap">{formatDate(sub.submittedAt)}</td>
                         <td className="px-4 py-3">
                           <span className={`inline-block text-[0.65rem] font-bold px-2 py-0.5 rounded-full border ${STATUS_STYLE[sub.status]}`}>
                             {STATUS_LABEL[sub.status]}
@@ -754,7 +754,7 @@ export default function AdminSPPAPage() {
                           ) : (
                             <span
                               title="Format PDF belum tersedia untuk produk ini"
-                              className="text-xs bg-[#F1F5F9] text-[#94A3B8] px-3 py-1.5 rounded-lg whitespace-nowrap cursor-not-allowed select-none"
+                              className="text-xs bg-[#F1F5F9] text-[#5A6472] px-3 py-1.5 rounded-lg whitespace-nowrap cursor-not-allowed select-none"
                             >
                               📄 PDF
                             </span>
@@ -777,34 +777,34 @@ export default function AdminSPPAPage() {
                     <div className="text-xs text-gold/70 font-bold tracking-widest uppercase mb-0.5">Detail SPPA</div>
                     <div className="text-white font-semibold text-sm">{selected.nama}</div>
                   </div>
-                  <button onClick={() => setSelected(null)} className="text-white/40 hover:text-white text-lg">✕</button>
+                  <button onClick={() => setSelected(null)} className="text-white/60 hover:text-white text-lg">✕</button>
                 </div>
                 <div className="p-5 space-y-4 max-h-[70vh] overflow-y-auto">
 
                   {/* Info dasar */}
                   <div className="space-y-2">
-                    <p className="text-xs font-bold text-[#94A3B8] uppercase tracking-wider">Data Pemohon</p>
+                    <p className="text-xs font-bold text-[#5A6472] uppercase tracking-wider">Data Pemohon</p>
                     <div className="text-xs space-y-1.5">
                       <div className="flex justify-between">
-                        <span className="text-[#64748B]">ID</span>
+                        <span className="text-[#475569]">ID</span>
                         <span className="font-mono text-navy font-medium">{selected.id}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-[#64748B]">Produk</span>
+                        <span className="text-[#475569]">Produk</span>
                         <span className="text-navy font-medium">{selected.productLabel}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-[#64748B]">WhatsApp</span>
+                        <span className="text-[#475569]">WhatsApp</span>
                         <a href={`https://wa.me/${selected.whatsapp}`} className="text-green-600 font-medium">{selected.whatsapp}</a>
                       </div>
                       {selected.email && (
                         <div className="flex justify-between">
-                          <span className="text-[#64748B]">Email</span>
+                          <span className="text-[#475569]">Email</span>
                           <span className="text-navy">{selected.email}</span>
                         </div>
                       )}
                       <div className="flex justify-between">
-                        <span className="text-[#64748B]">Waktu</span>
+                        <span className="text-[#475569]">Waktu</span>
                         <span className="text-navy">{formatDate(selected.submittedAt)}</span>
                       </div>
                     </div>
@@ -812,13 +812,13 @@ export default function AdminSPPAPage() {
 
                   {/* Field detail */}
                   <div className="space-y-2">
-                    <p className="text-xs font-bold text-[#94A3B8] uppercase tracking-wider">Detail Isian</p>
+                    <p className="text-xs font-bold text-[#5A6472] uppercase tracking-wider">Detail Isian</p>
                     <div className="space-y-1.5">
                       {Object.entries(selected.fields)
                         .filter(([, v]) => v && !(Array.isArray(v) && v.length === 0))
                         .map(([key, val]) => (
                           <div key={key} className="bg-[#F8F9FB] rounded-lg px-3 py-2">
-                            <div className="text-[0.65rem] text-[#94A3B8] font-medium">{selected.fieldLabels[key] || key}</div>
+                            <div className="text-[0.65rem] text-[#5A6472] font-medium">{selected.fieldLabels[key] || key}</div>
                             <div className="text-xs text-navy font-semibold mt-0.5">
                               {Array.isArray(val) ? val.join(", ") : val}
                             </div>
@@ -829,7 +829,7 @@ export default function AdminSPPAPage() {
 
                   {/* Status update */}
                   <div className="space-y-2">
-                    <p className="text-xs font-bold text-[#94A3B8] uppercase tracking-wider">Update Status</p>
+                    <p className="text-xs font-bold text-[#5A6472] uppercase tracking-wider">Update Status</p>
                     <div className="flex gap-2 flex-wrap">
                       {(["baru", "diproses", "selesai"] as const).map(st => (
                         <button
@@ -838,7 +838,7 @@ export default function AdminSPPAPage() {
                           className={`text-xs px-3 py-1.5 rounded-lg border font-semibold transition-all ${
                             selected.status === st
                               ? STATUS_STYLE[st] + " scale-105"
-                              : "bg-white border-black/10 text-[#64748B] hover:border-navy/30"
+                              : "bg-white border-black/10 text-[#475569] hover:border-navy/30"
                           }`}
                         >
                           {STATUS_LABEL[st]}
@@ -859,7 +859,7 @@ export default function AdminSPPAPage() {
                     ) : (
                       <div
                         title="Format PDF belum tersedia untuk produk ini"
-                        className="w-full bg-[#F1F5F9] text-[#94A3B8] text-xs font-semibold py-2.5 rounded-xl text-center cursor-not-allowed select-none"
+                        className="w-full bg-[#F1F5F9] text-[#5A6472] text-xs font-semibold py-2.5 rounded-xl text-center cursor-not-allowed select-none"
                       >
                         📄 Format PDF belum tersedia
                       </div>

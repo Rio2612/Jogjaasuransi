@@ -78,7 +78,7 @@ export default function EmployerLiabilityPage() {
           {kewajibanHukum.map(k=>(
             <div key={k.no} className="bg-white rounded-card p-6 border border-black/6 grid grid-cols-[80px_1fr] gap-4 items-start">
               <div className="bg-navy rounded-lg p-2 text-center"><div className="font-heading text-gold text-xs font-bold leading-tight">{k.no}</div></div>
-              <div><div className="font-heading text-navy font-bold text-[1rem] mb-1">UU {k.judul}</div><p className="text-base leading-relaxed text-[#64748B]">{k.isi}</p></div>
+              <div><div className="font-heading text-navy font-bold text-[1rem] mb-1">UU {k.judul}</div><p className="text-base leading-relaxed text-[#475569]">{k.isi}</p></div>
             </div>
           ))}
         </div>
@@ -98,7 +98,7 @@ export default function EmployerLiabilityPage() {
             <div key={c.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{c.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{c.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{c.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{c.desc}</p>
             </div>
           ))}
         </div>
@@ -117,7 +117,7 @@ export default function EmployerLiabilityPage() {
                 <div className="flex items-center gap-3"><span className="text-3xl">{s.icon}</span><div className="font-heading text-navy font-bold text-[1rem]">{s.label}</div></div>
                 <span className={`text-xs font-bold px-2.5 py-1 rounded-full flex-shrink-0 ${s.color}`}>{s.level}</span>
               </div>
-              <p className="text-base leading-relaxed text-[#64748B]">{s.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{s.desc}</p>
             </div>
           ))}
         </div>
@@ -126,7 +126,7 @@ export default function EmployerLiabilityPage() {
       {/* INTERNAL LINKS */}
       <section className="py-10 px-[5vw] bg-white border-t border-black/5">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">Produk Terkait</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">Produk Terkait</p>
           <div className="flex gap-3 flex-wrap">
             <Link href="/asuransi-liability/public-liability" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🤝 Public Liability →</Link>
             <Link href="/asuransi-liability/limbah-b3" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">⚗️ Liability Limbah B3 →</Link>
@@ -175,14 +175,14 @@ export default function EmployerLiabilityPage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-[#94A3B8] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+            <p className="text-xs text-[#5A6472] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
           </div>
 
           <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
             <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
             <div>
               <div className="text-sm font-semibold text-navy">Ditinjau oleh Rio Mardiansyah</div>
-              <div className="text-xs text-[#64748B]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
+              <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
             </div>
           </div>
 
