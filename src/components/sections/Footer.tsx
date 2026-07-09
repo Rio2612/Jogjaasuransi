@@ -9,7 +9,7 @@ export default function Footer() {
           <p className="text-sm leading-[1.75] text-white/60">Konsultan asuransi kerugian independen di Yogyakarta. Melayani individu, UMKM, dan korporasi dengan solusi perlindungan yang tepat, transparan, dan dapat diandalkan.</p>
         </div>
         <div>
-          <h4 className="text-[0.82rem] font-bold tracking-[1.2px] uppercase text-gold2 mb-4">Produk</h4>
+          <h3 className="text-[0.82rem] font-bold tracking-[1.2px] uppercase text-gold2 mb-4">Produk</h3>
           <ul className="flex flex-col gap-2">
             {["Asuransi Kendaraan","Asuransi Properti","Engineering Insurance","Asuransi Kargo","Liability Insurance","Surety Bond"].map(p => (
               <li key={p}><a href="#produk" className="text-sm text-white/50 no-underline hover:text-gold2 transition-colors">{p}</a></li>
@@ -17,7 +17,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="text-[0.82rem] font-bold tracking-[1.2px] uppercase text-gold2 mb-4">Layanan</h4>
+          <h3 className="text-[0.82rem] font-bold tracking-[1.2px] uppercase text-gold2 mb-4">Layanan</h3>
           <ul className="flex flex-col gap-2">
             {[
               { href: "#kalkulator", lbl: "Kalkulator Premi Mobil" },
@@ -30,7 +30,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="text-[0.82rem] font-bold tracking-[1.2px] uppercase text-gold2 mb-4">Kontak</h4>
+          <h3 className="text-[0.82rem] font-bold tracking-[1.2px] uppercase text-gold2 mb-4">Kontak</h3>
           <ul className="flex flex-col gap-2">
             <li><a href={`https://wa.me/${KONTAK.wa}`} className="text-sm text-white/50 no-underline hover:text-gold2 transition-colors">📱 {KONTAK.waDisplay}</a></li>
             <li><a href={`mailto:${KONTAK.email}`} className="text-sm text-white/50 no-underline hover:text-gold2 transition-colors">✉️ {KONTAK.email}</a></li>
