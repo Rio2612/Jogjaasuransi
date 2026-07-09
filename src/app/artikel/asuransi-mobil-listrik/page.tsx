@@ -327,7 +327,7 @@ export default function AsuransiMobilListrikPage() {
               </ul>
             </div>
             <div className="bg-red-600/7 border border-red-600/15 rounded-card p-5">
-              <div className="font-semibold text-red-600 text-sm mb-3">✗ Tidak Ditanggung Asuransi</div>
+              <div className="font-semibold text-red-700 text-sm mb-3">✗ Tidak Ditanggung Asuransi</div>
               <ul className="flex flex-col gap-2 text-sm text-[#475569]">
                 {[
                   "Degradasi kapasitas baterai karena usia/pemakaian",
@@ -336,7 +336,7 @@ export default function AsuransiMobilListrikPage() {
                   "Kerusakan software/firmware sistem baterai",
                 ].map((item, i) => (
                   <li key={i} className="flex gap-2">
-                    <span className="text-red-600 font-bold flex-shrink-0">✗</span>
+                    <span className="text-red-700 font-bold flex-shrink-0">✗</span>
                     {item}
                   </li>
                 ))}

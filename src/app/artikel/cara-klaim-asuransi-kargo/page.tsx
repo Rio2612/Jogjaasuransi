@@ -421,7 +421,7 @@ export default function ArtikelCaraKlaimKargo() {
                   <span className="text-red-500 text-sm flex-shrink-0">{k.icon}</span>
                   <div>
                     <span className="font-semibold text-red-700 text-sm">{k.kesalahan}</span>
-                    <div className="text-xs text-red-600 mt-0.5">Dampak: {k.dampak}</div>
+                    <div className="text-xs text-red-700 mt-0.5">Dampak: {k.dampak}</div>
                   </div>
                 </div>
                 <div className="bg-green-50 px-5 py-3 flex gap-2 items-start">

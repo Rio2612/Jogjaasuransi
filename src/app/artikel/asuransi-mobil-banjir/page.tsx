@@ -413,7 +413,7 @@ export default function AsuransiMobilBanjirPage() {
                   </div>
                   <div>
                     <div className="text-[#475569] mb-0.5">vs biaya perbaikan banjir:</div>
-                    <div className="text-red-600 font-bold">{b.vs}</div>
+                    <div className="text-red-700 font-bold">{b.vs}</div>
                   </div>
                 </div>
               </div>

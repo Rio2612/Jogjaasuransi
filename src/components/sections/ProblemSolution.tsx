@@ -22,7 +22,7 @@ export default function ProblemSolution() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
-          <h3 className="text-xs font-bold tracking-[1.5px] uppercase text-red-600 mb-5">✗ Masalah Umum</h3>
+          <h3 className="text-xs font-bold tracking-[1.5px] uppercase text-red-700 mb-5">✗ Masalah Umum</h3>
           <ul className="flex flex-col gap-3.5">
             {masalah.map(m => (
               <li key={m.ico} className="flex gap-3 items-start bg-red-600/7 border border-red-600/12 rounded-lg p-4 text-[1rem] leading-[1.65] text-navy2">

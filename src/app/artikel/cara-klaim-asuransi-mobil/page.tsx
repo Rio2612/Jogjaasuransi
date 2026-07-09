@@ -439,7 +439,7 @@ export default function ArtikelCaraKlaimAsuransiMobil() {
                 {kesalahanFatal.map((row, i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
                     <td className="p-3.5 font-semibold text-navy text-xs align-top">{row.kesalahan}</td>
-                    <td className="p-3.5 text-red-600 text-xs leading-relaxed align-top">{row.dampak}</td>
+                    <td className="p-3.5 text-red-700 text-xs leading-relaxed align-top">{row.dampak}</td>
                     <td className="p-3.5 text-[#475569] text-sm leading-relaxed align-top">{row.solusi}</td>
                   </tr>
                 ))}

@@ -216,7 +216,7 @@ export default function PentingnyaAsuransiUsahaPage() {
             {mitosVsFakta.map((m, i) => (
               <div key={i} className="rounded-xl border border-black/7 overflow-hidden">
                 <div className="bg-red-50 border-b border-black/5 px-5 py-3">
-                  <span className="text-xs font-bold text-red-600 uppercase tracking-wider">Mitos</span>
+                  <span className="text-xs font-bold text-red-700 uppercase tracking-wider">Mitos</span>
                   <p className="text-sm text-red-800 font-medium mt-1 italic">{m.mitos}</p>
                 </div>
                 <div className="bg-white px-5 py-3">

@@ -181,7 +181,7 @@ export default function ArtikelGugatanLiabilityPage() {
                       <p className="text-base leading-[1.8] text-[#475569]">{k.kronologi}</p>
                     </div>
                     <div className="bg-red-50 border border-red-100 rounded-xl p-4">
-                      <div className="text-xs font-bold tracking-widest uppercase text-red-600 mb-2">⚠️ Tuntutan & Dampak</div>
+                      <div className="text-xs font-bold tracking-widest uppercase text-red-700 mb-2">⚠️ Tuntutan & Dampak</div>
                       <p className="text-sm leading-[1.75] text-red-800">{k.tuntutan}</p>
                     </div>
                     <div className="bg-amber-50 border border-amber-100 rounded-xl p-4">
