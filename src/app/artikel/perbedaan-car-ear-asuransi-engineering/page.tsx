@@ -160,7 +160,7 @@ export default function ArtikelPerbedaanCARvsEAR() {
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -177,8 +177,8 @@ export default function ArtikelPerbedaanCARvsEAR() {
               <Link href="/asuransi-engineering" className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors">
                 ⚙️ Asuransi Engineering
               </Link>
-              <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Perbandingan Produk</span>
+              <span className="text-white/60 text-xs">·</span>
+              <span className="text-white/60 text-xs">Perbandingan Produk</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
               Perbedaan CAR dan EAR —<br /><em className="not-italic text-gold">Mana yang Tepat</em><br />untuk Proyek Anda?
@@ -186,7 +186,7 @@ export default function ArtikelPerbedaanCARvsEAR() {
             <p className="text-white/80 text-base leading-[1.85] max-w-[540px] mb-6">
               CAR dan EAR sama-sama disebut "asuransi engineering" — namun keduanya dirancang untuk risiko yang sangat berbeda. Salah pilih produk bukan hanya membuang premi, tapi bisa membuat klaim Anda ditolak.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
@@ -210,7 +210,7 @@ export default function ArtikelPerbedaanCARvsEAR() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Tabel Perbandingan Lengkap: CAR vs EAR
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Berikut perbandingan mendalam antara kedua produk dari berbagai aspek yang relevan untuk pengambilan keputusan:
           </p>
           <div className="overflow-x-auto mb-4">
@@ -226,20 +226,20 @@ export default function ArtikelPerbedaanCARvsEAR() {
                 {tabelPerbandingan.map((row, i) => (
                   <tr key={row.aspek} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
                     <td className="p-3.5 font-semibold text-navy text-xs align-top">{row.aspek}</td>
-                    <td className="p-3.5 text-[#64748B] text-sm leading-relaxed align-top">{row.car}</td>
+                    <td className="p-3.5 text-[#475569] text-sm leading-relaxed align-top">{row.car}</td>
                     <td className="p-3.5 text-navy2 text-sm leading-relaxed font-medium align-top">{row.ear}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-[#94A3B8] mb-10">* Rate adalah estimasi pasar. Premi aktual ditentukan underwriter berdasarkan dokumen proyek spesifik.</p>
+          <p className="text-xs text-[#5A6472] mb-10">* Rate adalah estimasi pasar. Premi aktual ditentukan underwriter berdasarkan dokumen proyek spesifik.</p>
 
           {/* Contoh Proyek Nyata */}
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Contoh Nyata: Proyek Ini Pakai CAR atau EAR?
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Teori seringkali tidak sejelas praktik. Berikut contoh proyek nyata di Yogyakarta dan penjelasan mengapa menggunakan produk tertentu:
           </p>
           <div className="flex flex-col gap-4 mb-10">
@@ -253,7 +253,7 @@ export default function ArtikelPerbedaanCARvsEAR() {
                         {c.jenis === "Combined CAR/EAR" ? "⚡ Combined CAR/EAR" : c.jenis === "CAR" ? "🏗️ CAR" : "⚙️ EAR"}
                       </span>
                     </div>
-                    <p className="text-sm text-[#64748B] leading-relaxed">{c.alasan}</p>
+                    <p className="text-sm text-[#475569] leading-relaxed">{c.alasan}</p>
                   </div>
                 </div>
               </div>
@@ -264,7 +264,7 @@ export default function ArtikelPerbedaanCARvsEAR() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Kapan Menggunakan Combined CAR/EAR?
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+          <p className="text-[#475569] text-base leading-relaxed mb-5">
             Combined CAR/EAR adalah satu polis yang menanggung pekerjaan sipil dan erection mesin sekaligus. Ini pilihan terbaik ketika:
           </p>
           <div className="flex flex-col gap-3 mb-6">
@@ -284,7 +284,7 @@ export default function ArtikelPerbedaanCARvsEAR() {
           {/* CTA Inline */}
           <div className="bg-gold/8 border border-gold/25 rounded-card p-6 mb-10">
             <div className="font-heading text-navy font-bold text-base mb-2">Masih bingung harus pilih yang mana?</div>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+            <p className="text-[#475569] text-sm leading-relaxed mb-4">
               Ceritakan jenis proyek Anda kepada kami — kami analisis dan rekomendasikan produk yang paling tepat secara gratis.
             </p>
             <div className="flex gap-3 flex-wrap">
@@ -308,14 +308,14 @@ export default function ArtikelPerbedaanCARvsEAR() {
                   {f.q}
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">{f.a}</p>
               </details>
             ))}
           </div>
 
           {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Pelajari Lebih Lanjut</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">Pelajari Lebih Lanjut</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { href: "/asuransi-engineering/contractor-all-risk", icon: "🏗️", judul: "Halaman Produk CAR", desc: "Cakupan lengkap, kalkulator premi, cara klaim CAR" },
@@ -327,7 +327,7 @@ export default function ArtikelPerbedaanCARvsEAR() {
                   <span className="text-xl flex-shrink-0">{a.icon}</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">{a.judul}</div>
-                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                    <div className="text-xs text-[#475569]">{a.desc}</div>
                   </div>
                 </Link>
               ))}

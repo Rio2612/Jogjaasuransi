@@ -35,7 +35,7 @@ export default function ArtikelEmployerLiabilityPanduanJogja() {
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -52,8 +52,8 @@ export default function ArtikelEmployerLiabilityPanduanJogja() {
               <Link href="/asuransi-liability/employer-liability" className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors">
                 🤝 Asuransi Liability
               </Link>
-              <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Panduan Lengkap</span>
+              <span className="text-white/60 text-xs">·</span>
+              <span className="text-white/60 text-xs">Panduan Lengkap</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
               Employer's Liability —<br /><em className="not-italic text-gold">Lapisan Proteksi</em><br />di Luar BPJS Ketenagakerjaan
@@ -61,7 +61,7 @@ export default function ArtikelEmployerLiabilityPanduanJogja() {
             <p className="text-white/80 text-base leading-[1.85] max-w-[540px] mb-6">
               BPJS Ketenagakerjaan menanggung klaim dasar kecelakaan kerja, tapi tidak melindungi perusahaan dari gugatan perdata tambahan. Panduan ini menjelaskan kapan Employer's Liability dibutuhkan dan bagaimana keduanya saling melengkapi.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Juni 2026</span>
@@ -107,20 +107,20 @@ export default function ArtikelEmployerLiabilityPanduanJogja() {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-[#94A3B8] mb-10">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+            <p className="text-xs text-[#5A6472] mb-10">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
 
             <div className="flex items-center gap-3 mb-10 pt-6 border-t border-black/8">
               <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
               <div>
                 <div className="text-sm font-semibold text-navy">Ditulis &amp; ditinjau oleh Rio Mardiansyah</div>
-                <div className="text-xs text-[#64748B]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
+                <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
               </div>
             </div>
 
             {/* CTA Inline */}
             <div className="bg-gold/8 border border-gold/25 rounded-card p-6 mb-10">
               <div className="font-heading text-navy font-bold text-base mb-2">Ingin Tahu Apakah Bisnis Anda Perlu Employer's Liability?</div>
-              <p className="text-[#64748B] text-sm leading-relaxed mb-4">Ceritakan jumlah karyawan dan jenis pekerjaan di perusahaan Anda, kami bantu evaluasi kebutuhan dan estimasi premi.</p>
+              <p className="text-[#475569] text-sm leading-relaxed mb-4">Ceritakan jumlah karyawan dan jenis pekerjaan di perusahaan Anda, kami bantu evaluasi kebutuhan dan estimasi premi.</p>
               <div className="flex gap-3 flex-wrap">
                 <a href={`https://wa.me/${KONTAK.wa}`} className="bg-gold text-navy px-5 py-2.5 rounded-lg font-bold text-sm no-underline hover:bg-gold2 transition-all">
                   💬 Konsultasi via WhatsApp
@@ -139,54 +139,54 @@ export default function ArtikelEmployerLiabilityPanduanJogja() {
                   Apakah Employer's Liability wajib secara hukum di Indonesia?
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">Tidak seperti BPJS Ketenagakerjaan yang wajib, Employer's Liability bersifat sukarela. Namun banyak perusahaan kontraktor mensyaratkannya untuk subkontraktor mereka, dan beberapa tender proyek besar mensyaratkan bukti polis ini sebagai bagian dari manajemen risiko K3.</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">Tidak seperti BPJS Ketenagakerjaan yang wajib, Employer's Liability bersifat sukarela. Namun banyak perusahaan kontraktor mensyaratkannya untuk subkontraktor mereka, dan beberapa tender proyek besar mensyaratkan bukti polis ini sebagai bagian dari manajemen risiko K3.</p>
               </details>
               <details className="group py-1">
                 <summary className="py-3 cursor-pointer font-semibold text-[0.9rem] text-navy flex justify-between items-center list-none">
                   Apakah polis ini menanggung kecelakaan di luar jam kerja?
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">Tidak. Polis ini hanya menanggung cedera atau kematian yang terjadi dalam konteks pekerjaan — baik di lokasi kerja maupun saat menjalankan tugas pekerjaan di luar lokasi (misalnya perjalanan dinas terkait pekerjaan).</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">Tidak. Polis ini hanya menanggung cedera atau kematian yang terjadi dalam konteks pekerjaan — baik di lokasi kerja maupun saat menjalankan tugas pekerjaan di luar lokasi (misalnya perjalanan dinas terkait pekerjaan).</p>
               </details>
               <details className="group py-1">
                 <summary className="py-3 cursor-pointer font-semibold text-[0.9rem] text-navy flex justify-between items-center list-none">
                   Bagaimana cara menurunkan premi Employer's Liability?
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">Mendokumentasikan program K3 perusahaan dengan baik, memiliki riwayat klaim rendah, dan menyediakan pelatihan keselamatan kerja rutin bisa membantu mendapatkan tarif premi yang lebih kompetitif saat underwriting maupun perpanjangan polis.</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">Mendokumentasikan program K3 perusahaan dengan baik, memiliki riwayat klaim rendah, dan menyediakan pelatihan keselamatan kerja rutin bisa membantu mendapatkan tarif premi yang lebih kompetitif saat underwriting maupun perpanjangan polis.</p>
               </details>
             </div>
 
             {/* Internal Links */}
             <div className="border-t border-black/8 pt-8">
-              <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Baca Juga</p>
+              <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">Baca Juga</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Link href="/asuransi-liability/employer-liability" className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
                   <span className="text-xl flex-shrink-0">🤝</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">Produk Employer's Liability</div>
-                    <div className="text-xs text-[#64748B]">Lihat detail produk dan cakupan</div>
+                    <div className="text-xs text-[#475569]">Lihat detail produk dan cakupan</div>
                   </div>
                 </Link>
                 <Link href="/asuransi-liability/public-liability" className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
                   <span className="text-xl flex-shrink-0">👥</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">Public Liability</div>
-                    <div className="text-xs text-[#64748B]">Proteksi terhadap tamu/pihak ketiga</div>
+                    <div className="text-xs text-[#475569]">Proteksi terhadap tamu/pihak ketiga</div>
                   </div>
                 </Link>
                 <Link href="/artikel/perbedaan-jenis-asuransi-liability" className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
                   <span className="text-xl flex-shrink-0">⚖️</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">Perbedaan Jenis Liability</div>
-                    <div className="text-xs text-[#64748B]">Pahami semua jenis liability</div>
+                    <div className="text-xs text-[#475569]">Pahami semua jenis liability</div>
                   </div>
                 </Link>
                 <Link href="/asuransi-liability" className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
                   <span className="text-xl flex-shrink-0">📋</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">Semua Produk Liability</div>
-                    <div className="text-xs text-[#64748B]">Lihat seluruh lini produk liability</div>
+                    <div className="text-xs text-[#475569]">Lihat seluruh lini produk liability</div>
                   </div>
                 </Link>
               </div>

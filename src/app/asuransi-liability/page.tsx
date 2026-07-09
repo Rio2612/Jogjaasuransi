@@ -160,7 +160,7 @@ export default function AsuransiLiabilityPage() {
           </div>
           <div className="flex gap-8 mt-10 pt-8 border-t border-white/10">
             {[{ num: "4", lbl: "Jenis Liability" }, { num: "B2B", lbl: "Fokus Bisnis Jogja" }, { num: "Gratis", lbl: "Analisis Risiko" }].map(s => (
-              <div key={s.lbl}><div className="font-heading text-gold text-xl font-bold">{s.num}</div><div className="text-white/45 text-xs mt-0.5">{s.lbl}</div></div>
+              <div key={s.lbl}><div className="font-heading text-gold text-xl font-bold">{s.num}</div><div className="text-white/60 text-xs mt-0.5">{s.lbl}</div></div>
             ))}
           </div>
         </div>
@@ -177,7 +177,7 @@ export default function AsuransiLiabilityPage() {
             <div key={m.title} className="bg-white rounded-card p-6 border border-black/5 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{m.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{m.title}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{m.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{m.desc}</p>
             </div>
           ))}
         </div>
@@ -198,7 +198,7 @@ export default function AsuransiLiabilityPage() {
                 <div className="text-[2rem] mb-3">{c.icon}</div>
                 <div className="font-heading text-navy font-bold text-[1.15rem] mb-1">{c.title}</div>
                 <div className="text-gold text-xs font-semibold mb-3">{c.subtitle}</div>
-                <p className="text-sm leading-relaxed text-[#64748B] mb-4">{c.desc}</p>
+                <p className="text-sm leading-relaxed text-[#475569] mb-4">{c.desc}</p>
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {c.tags.map(t => <span key={t} className="bg-gold/8 border border-gold/15 text-navy2 text-xs px-2.5 py-1 rounded-full font-medium">{t}</span>)}
                 </div>
@@ -214,10 +214,10 @@ export default function AsuransiLiabilityPage() {
         <div className="text-center mb-8">
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Panduan Cepat</div>
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">Seberapa Tinggi Risiko<br />Bisnis Anda?</h2>
-          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">Lihat peta risiko berdasarkan sektor — dan rekomendasi produk liability yang paling sesuai</p>
+          <p className="text-base text-[#475569] max-w-[500px] mx-auto mt-3">Lihat peta risiko berdasarkan sektor — dan rekomendasi produk liability yang paling sesuai</p>
         </div>
         <div className="max-w-3xl mx-auto overflow-hidden rounded-card border border-black/8 bg-white">
-          <div className="grid grid-cols-[1fr_80px_1fr] text-xs font-bold tracking-widest uppercase text-[#94A3B8] border-b border-black/6 px-5 py-3 bg-cream">
+          <div className="grid grid-cols-[1fr_80px_1fr] text-xs font-bold tracking-widest uppercase text-[#5A6472] border-b border-black/6 px-5 py-3 bg-cream">
             <span>Sektor Bisnis</span><span className="text-center">Risiko</span><span>Rekomendasi Produk</span>
           </div>
           {risikoMatrix.map((r, i) => (
@@ -228,12 +228,12 @@ export default function AsuransiLiabilityPage() {
                   {r.skor >= 9 ? "🔴 Kritis" : r.skor >= 7 ? "🟠 Tinggi" : "🟡 Sedang"}
                 </span>
               </div>
-              <span className="text-xs text-[#64748B] leading-snug">{r.rekomendasi}</span>
+              <span className="text-xs text-[#475569] leading-snug">{r.rekomendasi}</span>
             </div>
           ))}
         </div>
         <div className="mt-6 text-center">
-          <p className="text-sm text-[#64748B] mb-4">Tidak yakin sektor Anda masuk kategori mana? Hubungi kami untuk analisis risiko gratis.</p>
+          <p className="text-sm text-[#475569] mb-4">Tidak yakin sektor Anda masuk kategori mana? Hubungi kami untuk analisis risiko gratis.</p>
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-gold text-navy px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-gold2 transition-all no-underline inline-block">💬 Analisis Risiko Gratis</a>
         </div>
       </section>
@@ -249,7 +249,7 @@ export default function AsuransiLiabilityPage() {
             <div key={s.label} className="bg-cream rounded-card p-6 border border-black/5 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{s.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{s.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{s.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{s.desc}</p>
             </div>
           ))}
         </div>
@@ -263,12 +263,12 @@ export default function AsuransiLiabilityPage() {
             <Link href="/artikel/contoh-kasus-gugatan-liability-bisnis" className="bg-white border border-black/8 rounded-xl p-5 no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
               <div className="text-2xl mb-2">⚖️</div>
               <div className="font-heading text-navy font-semibold text-sm group-hover:text-gold transition-colors mb-1">Contoh Nyata Gugatan Liability Bisnis di Indonesia</div>
-              <p className="text-xs text-[#64748B] leading-relaxed">Kasus hotel, restoran, dan kontraktor yang pernah digugat — dan bagaimana asuransi menutup kerugiannya.</p>
+              <p className="text-xs text-[#475569] leading-relaxed">Kasus hotel, restoran, dan kontraktor yang pernah digugat — dan bagaimana asuransi menutup kerugiannya.</p>
             </Link>
             <Link href="/artikel/pentingnya-asuransi-dunia-usaha-jogja" className="bg-white border border-black/8 rounded-xl p-5 no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
               <div className="text-2xl mb-2">🏢</div>
               <div className="font-heading text-navy font-semibold text-sm group-hover:text-gold transition-colors mb-1">Pentingnya Asuransi untuk Dunia Usaha di Jogja</div>
-              <p className="text-xs text-[#64748B] leading-relaxed">Panduan lengkap proteksi bisnis dari risiko hukum, operasional, dan aset fisik di Yogyakarta.</p>
+              <p className="text-xs text-[#475569] leading-relaxed">Panduan lengkap proteksi bisnis dari risiko hukum, operasional, dan aset fisik di Yogyakarta.</p>
             </Link>
           </div>
         </div>
@@ -280,22 +280,22 @@ export default function AsuransiLiabilityPage() {
           <div>
             <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Sinergi Produk</div>
             <h2 className="font-heading text-navy text-[1.5rem] mb-3">Liability + Properti =<br />Proteksi Bisnis yang Lengkap</h2>
-            <p className="text-base leading-relaxed text-[#64748B]">Asuransi properti melindungi bangunan Anda. Asuransi liability melindungi bisnis Anda dari tuntutan pihak luar. Keduanya bekerja bersama untuk perlindungan total.</p>
+            <p className="text-base leading-relaxed text-[#475569]">Asuransi properti melindungi bangunan Anda. Asuransi liability melindungi bisnis Anda dari tuntutan pihak luar. Keduanya bekerja bersama untuk perlindungan total.</p>
           </div>
           <div className="flex flex-col gap-3">
             <Link href="/asuransi-properti/hotel-vila" className="bg-white border border-black/8 rounded-xl p-4 flex items-center gap-3 no-underline hover:border-gold/40 transition-all group">
               <span className="text-2xl">🏨</span>
-              <div><div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors">Asuransi Hotel & Vila</div><div className="text-xs text-[#64748B]">Proteksi properti wisata Anda</div></div>
+              <div><div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors">Asuransi Hotel & Vila</div><div className="text-xs text-[#475569]">Proteksi properti wisata Anda</div></div>
               <span className="ml-auto text-gold text-sm">→</span>
             </Link>
             <Link href="/asuransi-properti/property-all-risk" className="bg-white border border-black/8 rounded-xl p-4 flex items-center gap-3 no-underline hover:border-gold/40 transition-all group">
               <span className="text-2xl">🏢</span>
-              <div><div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors">Property All Risk (PAR)</div><div className="text-xs text-[#64748B]">Perlindungan fisik bangunan komersial</div></div>
+              <div><div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors">Property All Risk (PAR)</div><div className="text-xs text-[#475569]">Perlindungan fisik bangunan komersial</div></div>
               <span className="ml-auto text-gold text-sm">→</span>
             </Link>
             <Link href="/asuransi-properti" className="bg-white border border-black/8 rounded-xl p-4 flex items-center gap-3 no-underline hover:border-gold/40 transition-all group">
               <span className="text-2xl">🏠</span>
-              <div><div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors">Semua Asuransi Properti</div><div className="text-xs text-[#64748B]">Kebakaran, banjir, gempa bumi</div></div>
+              <div><div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors">Semua Asuransi Properti</div><div className="text-xs text-[#475569]">Kebakaran, banjir, gempa bumi</div></div>
               <span className="ml-auto text-gold text-sm">→</span>
             </Link>
           </div>
@@ -314,12 +314,12 @@ export default function AsuransiLiabilityPage() {
               <summary className="py-4 cursor-pointer font-semibold text-[0.92rem] text-navy flex justify-between items-center list-none">
                 {f.q}<span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
               </summary>
-              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#475569] pb-4">{f.a}</p>
             </details>
           ))}
         </div>
         <div className="mt-8 text-center">
-          <p className="text-sm text-[#64748B] mb-3">Masih ada pertanyaan? Konsultasikan langsung dengan kami — gratis.</p>
+          <p className="text-sm text-[#475569] mb-3">Masih ada pertanyaan? Konsultasikan langsung dengan kami — gratis.</p>
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-gold text-navy px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-gold2 transition-all no-underline inline-block">💬 Tanya via WhatsApp</a>
         </div>
       </section>

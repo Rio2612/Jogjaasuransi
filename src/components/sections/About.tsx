@@ -35,11 +35,11 @@ export default function About() {
 
         {/* TEKS */}
         <div>
-          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Tentang Praktisi</div>
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-goldtext mb-2">Tentang Praktisi</div>
           <h2 className="font-heading text-[clamp(1.9rem,3vw,2.9rem)] leading-[1.22] text-navy">
             Kenali Rio Mardiansyah,<br />Praktisi Asuransi Anda
           </h2>
-          <p className="text-lg leading-[1.85] text-[#64748B] max-w-[560px] mt-3">
+          <p className="text-lg leading-[1.85] text-[#475569] max-w-[560px] mt-3">
             Lebih dari sembilan tahun berkecimpung di dunia asuransi kerugian — dari Account Officer hingga Branch Manager — mengajarkan Rio satu hal: klien butuh mitra yang berpihak pada mereka, bukan agen yang sekadar mengejar komisi penjualan polis.
           </p>
           <ul className="flex flex-col gap-3 mt-5">
@@ -50,8 +50,8 @@ export default function About() {
               "Setiap konsultasi disampaikan apa adanya, termasuk hal-hal yang sering disembunyikan agen lain",
               "Hadir mendampingi klien tidak hanya saat membeli, tapi juga saat proses klaim berlangsung",
             ].map(li => (
-              <li key={li} className="flex gap-2.5 items-start text-[1rem] leading-[1.75] text-[#64748B]">
-                <span className="text-gold font-bold flex-shrink-0 mt-0.5">✓</span>{li}
+              <li key={li} className="flex gap-2.5 items-start text-[1rem] leading-[1.75] text-[#475569]">
+                <span className="text-goldtext font-bold flex-shrink-0 mt-0.5">✓</span>{li}
               </li>
             ))}
           </ul>
@@ -74,11 +74,11 @@ export default function About() {
       {/* PERJALANAN KARIER */}
       <div className="max-w-3xl mx-auto mt-24">
         <div className="text-center mb-12">
-          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Perjalanan Karier</div>
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-goldtext mb-2">Perjalanan Karier</div>
           <h2 className="font-heading text-[clamp(1.7rem,2.6vw,2.4rem)] leading-[1.22] text-navy mb-3">
             Dari Account Officer hingga Praktisi Digital
           </h2>
-          <p className="text-[#64748B] max-w-xl mx-auto">
+          <p className="text-[#475569] max-w-xl mx-auto">
             Setiap jenjang karier ini membentuk cara Rio memahami risiko dan mendampingi klien hari ini.
           </p>
         </div>

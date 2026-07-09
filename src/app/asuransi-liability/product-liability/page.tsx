@@ -208,14 +208,14 @@ export default function ProductLiabilityPage() {
         <div className="text-center mb-8">
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Jenis Cacat Produk</div>
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">3 Jenis Cacat Produk<br />yang Bisa Berujung Gugatan</h2>
-          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">Sesuai UU Perlindungan Konsumen No.8/1999, produsen bertanggung jawab atas tiga jenis cacat produk berikut</p>
+          <p className="text-base text-[#475569] max-w-[500px] mx-auto mt-3">Sesuai UU Perlindungan Konsumen No.8/1999, produsen bertanggung jawab atas tiga jenis cacat produk berikut</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto">
           {definisiCacatProduk.map(d => (
             <div key={d.label} className="bg-white rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{d.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{d.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{d.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{d.desc}</p>
             </div>
           ))}
         </div>
@@ -232,7 +232,7 @@ export default function ProductLiabilityPage() {
             <div key={c.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{c.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{c.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{c.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{c.desc}</p>
             </div>
           ))}
         </div>
@@ -269,7 +269,7 @@ export default function ProductLiabilityPage() {
           {regulasi.map(r => (
             <div key={r.kode} className="bg-cream rounded-card p-6 border border-black/6 grid grid-cols-[90px_1fr] gap-4 items-start">
               <div className="bg-navy rounded-lg p-2 text-center"><div className="font-heading text-gold text-[0.78rem] font-bold leading-tight">{r.kode}</div></div>
-              <div><div className="font-heading text-navy font-bold text-[0.95rem] mb-1">{r.nama}</div><p className="text-base leading-relaxed text-[#64748B]">{r.poin}</p></div>
+              <div><div className="font-heading text-navy font-bold text-[0.95rem] mb-1">{r.nama}</div><p className="text-base leading-relaxed text-[#475569]">{r.poin}</p></div>
             </div>
           ))}
         </div>
@@ -286,7 +286,7 @@ export default function ProductLiabilityPage() {
             <div key={i.label} className="bg-white rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{i.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{i.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{i.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{i.desc}</p>
             </div>
           ))}
         </div>
@@ -304,7 +304,7 @@ export default function ProductLiabilityPage() {
               <summary className="py-4 cursor-pointer font-semibold text-[0.92rem] text-navy flex justify-between items-center list-none">
                 {f.q}<span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
               </summary>
-              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#475569] pb-4">{f.a}</p>
             </details>
           ))}
         </div>
@@ -313,7 +313,7 @@ export default function ProductLiabilityPage() {
       {/* INTERNAL LINKS */}
       <section className="py-10 px-[5vw] bg-cream border-t border-black/5">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">Produk Terkait</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">Produk Terkait</p>
           <div className="flex gap-3 flex-wrap">
             <Link href="/asuransi-liability/public-liability" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🤝 Public Liability →</Link>
             <Link href="/asuransi-liability/employer-liability" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">👷 Employer Liability →</Link>
@@ -363,14 +363,14 @@ export default function ProductLiabilityPage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-[#94A3B8] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+            <p className="text-xs text-[#5A6472] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
           </div>
 
           <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
             <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
             <div>
               <div className="text-sm font-semibold text-navy">Ditinjau oleh Rio Mardiansyah</div>
-              <div className="text-xs text-[#64748B]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
+              <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
             </div>
           </div>
 

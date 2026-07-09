@@ -324,7 +324,7 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
 
         {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -356,8 +356,8 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
               >
                 ⚙️ Asuransi Engineering
               </Link>
-              <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Panduan Industri</span>
+              <span className="text-white/60 text-xs">·</span>
+              <span className="text-white/60 text-xs">Panduan Industri</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
               Asuransi Mesin Pabrik di Jogja —<br />
@@ -369,7 +369,7 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
               selama 2 minggu — kerugian yang jauh lebih besar dari biaya perbaikannya sendiri.
               Machinery Breakdown Insurance dirancang khusus untuk risiko ini.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
@@ -398,7 +398,7 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Apa itu Machinery Breakdown Insurance dan Mengapa Berbeda?
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-4">
+          <p className="text-[#475569] text-base leading-relaxed mb-4">
             Banyak pemilik pabrik di Yogyakarta mengira mesin mereka sudah terlindungi oleh
             asuransi kebakaran yang dimiliki pabrik. Anggapan ini berbahaya. Asuransi kebakaran
             menanggung mesin jika rusak akibat api, petir, atau bencana yang datang dari luar.
@@ -406,12 +406,12 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
             terbakar karena overvoltage, atau pressure vessel retak karena cacat material —
             asuransi kebakaran tidak menanggung sepeser pun.
           </p>
-          <p className="text-[#64748B] text-base leading-relaxed mb-4">
+          <p className="text-[#475569] text-base leading-relaxed mb-4">
             Inilah celah yang diisi oleh Machinery Breakdown Insurance. Produk ini dirancang
             khusus untuk kerusakan yang terjadi <em>dari dalam mesin</em> saat sedang beroperasi
             normal — risiko yang justru paling sering terjadi di pabrik aktif.
           </p>
-          <p className="text-[#64748B] text-base leading-relaxed mb-10">
+          <p className="text-[#475569] text-base leading-relaxed mb-10">
             Yogyakarta memiliki kawasan industri yang terus berkembang — dari sentra garmen
             di Bantul, industri makanan di Kulon Progo, hingga percetakan di Kota Yogyakarta.
             Mesin-mesin di kawasan ini beroperasi dalam kondisi iklim tropis lembap yang
@@ -434,7 +434,7 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
                 {apaYangDitanggung.map((item, i) => (
                   <li key={i}>
                     <p className="text-xs font-semibold text-navy leading-snug mb-0.5">{item.item}</p>
-                    <p className="text-[0.65rem] text-[#64748B] italic">{item.contoh}</p>
+                    <p className="text-[0.65rem] text-[#475569] italic">{item.contoh}</p>
                   </li>
                 ))}
               </ul>
@@ -460,7 +460,7 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             4 Perluasan yang Mengubah MBI Menjadi Perlindungan Menyeluruh
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Polis MBI standar hanya menanggung biaya perbaikan mesin. Untuk industri dengan
             risiko lebih kompleks, perluasan berikut sangat dianjurkan:
           </p>
@@ -471,14 +471,14 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
                   <span className="text-2xl flex-shrink-0">{p.icon}</span>
                   <div className="flex-1">
                     <div className="font-heading font-bold text-navy text-[0.95rem] mb-1">{p.nama}</div>
-                    <p className="text-sm text-[#64748B] leading-relaxed mb-3">{p.deskripsi}</p>
+                    <p className="text-sm text-[#475569] leading-relaxed mb-3">{p.deskripsi}</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       <div className="bg-white/60 rounded-lg p-2.5 border border-black/6">
-                        <div className="text-[0.6rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-0.5">Cocok untuk</div>
+                        <div className="text-[0.6rem] font-bold uppercase tracking-wide text-[#5A6472] mb-0.5">Cocok untuk</div>
                         <p className="text-xs text-navy2 leading-snug">{p.cocokUntuk}</p>
                       </div>
                       <div className="bg-white/60 rounded-lg p-2.5 border border-black/6">
-                        <div className="text-[0.6rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-0.5">Tambahan premi</div>
+                        <div className="text-[0.6rem] font-bold uppercase tracking-wide text-[#5A6472] mb-0.5">Tambahan premi</div>
                         <p className="text-sm font-bold text-navy">{p.estimasiTambahan}</p>
                       </div>
                     </div>
@@ -492,7 +492,7 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             MBI vs Property All Risk vs EAR — Mana yang Anda Butuhkan?
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+          <p className="text-[#475569] text-base leading-relaxed mb-5">
             Ketiganya sering membingungkan karena sama-sama bisa menanggung mesin.
             Berikut perbedaan yang perlu dipahami:
           </p>
@@ -511,8 +511,8 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
                   <tr key={row.aspek} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
                     <td className="p-3.5 font-semibold text-navy text-xs align-top">{row.aspek}</td>
                     <td className="p-3.5 text-navy2 text-sm leading-relaxed align-top font-medium">{row.mbi}</td>
-                    <td className="p-3.5 text-[#64748B] text-sm leading-relaxed align-top">{row.par}</td>
-                    <td className="p-3.5 text-[#64748B] text-sm leading-relaxed align-top">{row.ear}</td>
+                    <td className="p-3.5 text-[#475569] text-sm leading-relaxed align-top">{row.par}</td>
+                    <td className="p-3.5 text-[#475569] text-sm leading-relaxed align-top">{row.ear}</td>
                   </tr>
                 ))}
               </tbody>
@@ -532,7 +532,7 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Panduan per Jenis Industri di Yogyakarta
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Setiap industri memiliki profil risiko mesin yang berbeda. Berikut panduan
             spesifik untuk jenis industri yang umum di DIY:
           </p>
@@ -543,7 +543,7 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
                   <span className="text-2xl flex-shrink-0">{s.icon}</span>
                   <div>
                     <div className="font-heading font-bold text-navy text-[0.95rem]">{s.industri}</div>
-                    <div className="text-xs text-[#94A3B8]">📍 {s.lokasi}</div>
+                    <div className="text-xs text-[#5A6472]">📍 {s.lokasi}</div>
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
@@ -554,13 +554,13 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
                     { label: "Rekomendasi polis", val: s.rekomendasiPolis },
                   ].map((item) => (
                     <div key={item.label} className="bg-white/60 rounded-lg p-3 border border-black/6">
-                      <div className="text-[0.6rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-0.5">{item.label}</div>
+                      <div className="text-[0.6rem] font-bold uppercase tracking-wide text-[#5A6472] mb-0.5">{item.label}</div>
                       <p className="text-xs text-navy2 leading-snug">{item.val}</p>
                     </div>
                   ))}
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-[0.65rem] text-[#94A3B8] uppercase tracking-wide font-semibold">Estimasi premi:</span>
+                  <span className="text-[0.65rem] text-[#5A6472] uppercase tracking-wide font-semibold">Estimasi premi:</span>
                   <span className="text-xs font-bold text-navy">{s.estimasiPremi}</span>
                 </div>
               </div>
@@ -571,7 +571,7 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Tabel Estimasi Premi MBI
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+          <p className="text-[#475569] text-base leading-relaxed mb-5">
             Estimasi berdasarkan nilai mesin dan jenis mesin standar. Mesin khusus, usia tua,
             atau kondisi operasi ekstrem dapat menghasilkan rate berbeda:
           </p>
@@ -590,22 +590,22 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
                 {tabelEstimasiPremi.map((row, i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
                     <td className="p-3.5 font-bold text-navy text-xs align-middle">{row.nilaiMesin}</td>
-                    <td className="p-3.5 text-[#64748B] text-sm align-middle">{row.rateMin}</td>
-                    <td className="p-3.5 text-[#64748B] text-sm align-middle">{row.rateMax}</td>
+                    <td className="p-3.5 text-[#475569] text-sm align-middle">{row.rateMin}</td>
+                    <td className="p-3.5 text-[#475569] text-sm align-middle">{row.rateMax}</td>
                     <td className="p-3.5 align-middle">
                       {row.premiMin === "—" ? (
-                        <span className="text-xs text-[#94A3B8] italic">Negosiasi langsung</span>
+                        <span className="text-xs text-[#5A6472] italic">Negosiasi langsung</span>
                       ) : (
                         <span className="text-navy2 font-semibold text-xs">{row.premiMin} – {row.premiMaks}</span>
                       )}
                     </td>
-                    <td className="p-3.5 text-[#64748B] text-xs align-middle leading-snug">{row.jenisMesin}</td>
+                    <td className="p-3.5 text-[#475569] text-xs align-middle leading-snug">{row.jenisMesin}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-[#94A3B8] mb-10">
+          <p className="text-xs text-[#5A6472] mb-10">
             * Rate estimasi untuk mesin standar dalam kondisi baik dengan perawatan rutin.
             Mesin di atas usia 10 tahun atau kondisi operasi ekstrem dapat dikenai loading rate.
           </p>
@@ -614,7 +614,7 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Kasus Nyata — Mengapa MLOP dan DOS Bukan Sekadar Opsional
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Dua kasus berikut menggambarkan mengapa perluasan MBI sama pentingnya dengan
             polis dasar — dan betapa mahalnya tidak memilikinya:
           </p>
@@ -627,19 +627,19 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
                     Total nilai: {k.nilai}
                   </span>
                 </div>
-                <p className="text-sm text-[#64748B] leading-relaxed mb-4">{k.kronologi}</p>
+                <p className="text-sm text-[#475569] leading-relaxed mb-4">{k.kronologi}</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
                   <div className="bg-amber-50 rounded-lg p-3.5 border border-amber-100">
                     <div className="text-[0.65rem] font-bold uppercase tracking-wide text-amber-600 mb-1">
                       ⚠️ MBI Standar (tanpa perluasan)
                     </div>
-                    <p className="text-xs text-[#64748B] leading-relaxed">{k.tanpaMLOP}</p>
+                    <p className="text-xs text-[#475569] leading-relaxed">{k.tanpaMLOP}</p>
                   </div>
                   <div className="bg-green-50 rounded-lg p-3.5 border border-green-100">
                     <div className="text-[0.65rem] font-bold uppercase tracking-wide text-green-600 mb-1">
                       ✅ MBI + Perluasan Lengkap
                     </div>
-                    <p className="text-xs text-[#64748B] leading-relaxed">{k.denganMLOP}</p>
+                    <p className="text-xs text-[#475569] leading-relaxed">{k.denganMLOP}</p>
                   </div>
                 </div>
                 <div className="bg-navy/4 rounded-lg p-3 border border-navy/8">
@@ -668,7 +668,7 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
                   <tr key={i} className={`border-b border-black/5 ${i % 2 === 0 ? "bg-white" : "bg-cream/50"}`}>
                     <td className="p-3 text-sm text-navy2">{d.dok}</td>
                     <td className="p-3 text-center">
-                      <span className={`text-[0.65rem] font-bold px-2.5 py-1 rounded-full ${d.wajib ? "bg-navy text-white" : "bg-cream text-[#64748B] border border-black/10"}`}>
+                      <span className={`text-[0.65rem] font-bold px-2.5 py-1 rounded-full ${d.wajib ? "bg-navy text-white" : "bg-cream text-[#475569] border border-black/10"}`}>
                         {d.wajib ? "Wajib" : "Dianjurkan"}
                       </span>
                     </td>
@@ -683,7 +683,7 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
             <div className="font-heading text-navy font-bold text-base mb-2">
               Ingin estimasi premi MBI untuk mesin pabrik Anda?
             </div>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+            <p className="text-[#475569] text-sm leading-relaxed mb-4">
               Kirimkan daftar mesin (nama, merek, tahun, nilai) via WhatsApp — kami siapkan
               estimasi premi dan rekomendasi perluasan dalam 1 hari kerja.
             </p>
@@ -714,14 +714,14 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
                   {f.q}
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">{f.a}</p>
               </details>
             ))}
           </div>
 
           {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">
               Produk & Artikel Terkait
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -771,7 +771,7 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
                   <span className="text-xl flex-shrink-0">{a.icon}</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">{a.judul}</div>
-                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                    <div className="text-xs text-[#475569]">{a.desc}</div>
                   </div>
                 </Link>
               ))}

@@ -159,7 +159,7 @@ export default function CaraHitungPremiPage() {
 
       {/* BREADCRUMB */}
       <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-        <div className="flex items-center gap-2 text-sm text-[#64748B]">
+        <div className="flex items-center gap-2 text-sm text-[#475569]">
           <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
           <span className="text-gold/60">›</span>
           <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -201,7 +201,7 @@ export default function CaraHitungPremiPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-4">
             Dasar Regulasi: OJK SE No.6/SEOJK.05/2017
           </h2>
-          <p className="text-[#64748B] leading-relaxed text-sm mb-5">
+          <p className="text-[#475569] leading-relaxed text-sm mb-5">
             Premi asuransi kendaraan bermotor di Indonesia diatur dalam{" "}
             <strong className="text-navy">Surat Edaran OJK No.6/SEOJK.05/2017 tentang Penetapan Tarif Premi Referensi dan Ketentuan Biaya Akuisisi pada Lini Usaha Asuransi Kendaraan Bermotor</strong>. Regulasi ini menetapkan:
           </p>
@@ -214,7 +214,7 @@ export default function CaraHitungPremiPage() {
               <div key={i} className="bg-white border border-black/8 rounded-card p-5 text-center">
                 <div className="text-2xl mb-2">{k.icon}</div>
                 <div className="font-heading text-navy font-bold text-sm mb-2">{k.judul}</div>
-                <p className="text-xs text-[#64748B] leading-relaxed">{k.isi}</p>
+                <p className="text-xs text-[#475569] leading-relaxed">{k.isi}</p>
               </div>
             ))}
           </div>
@@ -241,7 +241,7 @@ export default function CaraHitungPremiPage() {
               <div key={i} className="bg-cream border border-black/8 rounded-card p-4 text-center">
                 <div className="text-xl mb-2">{v.icon}</div>
                 <div className="font-semibold text-navy text-sm mb-1">{v.label}</div>
-                <p className="text-xs text-[#64748B] leading-relaxed">{v.desc}</p>
+                <p className="text-xs text-[#475569] leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -258,7 +258,7 @@ export default function CaraHitungPremiPage() {
                 <div className="w-8 h-8 rounded-full bg-navy flex items-center justify-center flex-shrink-0 font-heading font-bold text-gold text-sm">{l.step}</div>
                 <div>
                   <div className="font-heading text-navy font-bold text-sm mb-1">{l.judul}</div>
-                  <p className="text-xs text-[#64748B] leading-relaxed">{l.desc}</p>
+                  <p className="text-xs text-[#475569] leading-relaxed">{l.desc}</p>
                 </div>
               </div>
             ))}
@@ -284,7 +284,7 @@ export default function CaraHitungPremiPage() {
                   <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-cream/40"}>
                     <td className="py-3 px-4 font-bold text-navy text-xs">{k.kat}</td>
                     <td className="py-3 px-4 text-xs text-gold font-semibold">{k.rentang}</td>
-                    <td className="py-3 px-4 text-xs text-[#64748B]">{k.contoh}</td>
+                    <td className="py-3 px-4 text-xs text-[#475569]">{k.contoh}</td>
                   </tr>
                 ))}
               </tbody>
@@ -297,7 +297,7 @@ export default function CaraHitungPremiPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-2">
             Tabel Tarif OJK — Wilayah III (Yogyakarta & Sekitarnya)
           </h2>
-          <p className="text-[#64748B] text-sm mb-6 leading-relaxed">
+          <p className="text-[#475569] text-sm mb-6 leading-relaxed">
             Tarif batas bawah untuk Wilayah III yang mencakup Jawa Tengah, DIY, Jawa Timur, Bali, dan sebagian besar luar Jawa:
           </p>
           <div className="overflow-x-auto rounded-card border border-black/8 mb-3">
@@ -317,14 +317,14 @@ export default function CaraHitungPremiPage() {
                     <td className="py-3 px-3 font-semibold text-navy">{r.kat}</td>
                     <td className="py-3 px-3 text-center text-gold font-bold">{r.ar}</td>
                     <td className="py-3 px-3 text-center text-gold/70">{r.arEV}</td>
-                    <td className="py-3 px-3 text-center text-[#64748B]">{r.tlo}</td>
-                    <td className="py-3 px-3 text-center text-[#64748B]/70">{r.tloEV}</td>
+                    <td className="py-3 px-3 text-center text-[#475569]">{r.tlo}</td>
+                    <td className="py-3 px-3 text-center text-[#475569]/70">{r.tloEV}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-[#64748B]">* Tarif batas bawah OJK SE No.6/SEOJK.05/2017. Tarif batas atas sekitar 20–40% lebih tinggi dari angka di atas. Konsultan independen membantu Anda mendapatkan penawaran dalam rentang yang kompetitif.</p>
+          <p className="text-xs text-[#475569]">* Tarif batas bawah OJK SE No.6/SEOJK.05/2017. Tarif batas atas sekitar 20–40% lebih tinggi dari angka di atas. Konsultan independen membantu Anda mendapatkan penawaran dalam rentang yang kompetitif.</p>
         </section>
 
         {/* CONTOH PERHITUNGAN */}
@@ -332,7 +332,7 @@ export default function CaraHitungPremiPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-2">
             Contoh Perhitungan Nyata
           </h2>
-          <p className="text-[#64748B] text-sm mb-8 leading-relaxed">
+          <p className="text-[#475569] text-sm mb-8 leading-relaxed">
             Tiga simulasi perhitungan premi menggunakan tarif batas bawah OJK untuk kendaraan konvensional (BBM):
           </p>
           <div className="flex flex-col gap-6">
@@ -343,10 +343,10 @@ export default function CaraHitungPremiPage() {
                 </div>
                 <div className="p-5">
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4 text-sm">
-                    <div><div className="text-xs text-[#64748B] mb-1">Nilai Kendaraan</div><div className="font-bold text-navy">{formatRp(c.nilai)}</div></div>
-                    <div><div className="text-xs text-[#64748B] mb-1">Wilayah</div><div className="font-bold text-navy">{c.wilayah}</div></div>
-                    <div><div className="text-xs text-[#64748B] mb-1">Kategori OJK</div><div className="font-bold text-navy">{c.kat}</div></div>
-                    <div><div className="text-xs text-[#64748B] mb-1">Tarif All Risk</div><div className="font-bold text-gold">{c.tarif}%</div></div>
+                    <div><div className="text-xs text-[#475569] mb-1">Nilai Kendaraan</div><div className="font-bold text-navy">{formatRp(c.nilai)}</div></div>
+                    <div><div className="text-xs text-[#475569] mb-1">Wilayah</div><div className="font-bold text-navy">{c.wilayah}</div></div>
+                    <div><div className="text-xs text-[#475569] mb-1">Kategori OJK</div><div className="font-bold text-navy">{c.kat}</div></div>
+                    <div><div className="text-xs text-[#475569] mb-1">Tarif All Risk</div><div className="font-bold text-gold">{c.tarif}%</div></div>
                   </div>
                   <div className="bg-navy rounded-lg p-4 flex flex-col sm:flex-row gap-4">
                     <div className="flex-1 text-center">
@@ -365,7 +365,7 @@ export default function CaraHitungPremiPage() {
               </div>
             ))}
           </div>
-          <div className="mt-6 bg-gold/5 border border-gold/20 rounded-lg p-4 text-sm text-[#64748B]">
+          <div className="mt-6 bg-gold/5 border border-gold/20 rounded-lg p-4 text-sm text-[#475569]">
             <strong className="text-navy">Ingin hitung kendaraan Anda sendiri?</strong>{" "}
             <Link href="/asuransi-kendaraan" className="text-gold hover:underline font-semibold">
               Gunakan kalkulator premi OJK interaktif kami
@@ -379,7 +379,7 @@ export default function CaraHitungPremiPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-4">
             Faktor Lain yang Mempengaruhi Premi Final
           </h2>
-          <p className="text-[#64748B] text-sm leading-relaxed mb-6">Rumus OJK menghasilkan estimasi dasar. Premi final yang ditawarkan perusahaan asuransi bisa berbeda karena beberapa faktor tambahan:</p>
+          <p className="text-[#475569] text-sm leading-relaxed mb-6">Rumus OJK menghasilkan estimasi dasar. Premi final yang ditawarkan perusahaan asuransi bisa berbeda karena beberapa faktor tambahan:</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               { icon: "🌊", faktor: "Perluasan jaminan", isi: "Menambahkan perluasan banjir (+0,05–0,20%), gempa bumi (+0,05–0,15%), atau SRCC akan menambah premi." },
@@ -391,7 +391,7 @@ export default function CaraHitungPremiPage() {
                 <span className="text-xl flex-shrink-0">{f.icon}</span>
                 <div>
                   <div className="font-semibold text-navy text-sm mb-1">{f.faktor}</div>
-                  <p className="text-xs text-[#64748B] leading-relaxed">{f.isi}</p>
+                  <p className="text-xs text-[#475569] leading-relaxed">{f.isi}</p>
                 </div>
               </div>
             ))}
@@ -405,7 +405,7 @@ export default function CaraHitungPremiPage() {
             {schemaFAQ.mainEntity.map((faq, i) => (
               <div key={i} className="py-5">
                 <h3 className="font-semibold text-navy text-[0.95rem] mb-2">{faq.name}</h3>
-                <p className="text-sm text-[#64748B] leading-[1.78]">{faq.acceptedAnswer.text}</p>
+                <p className="text-sm text-[#475569] leading-[1.78]">{faq.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
@@ -413,7 +413,7 @@ export default function CaraHitungPremiPage() {
 
         {/* INTERNAL LINKS */}
         <section className="py-10 border-b border-black/8">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">Artikel & Halaman Terkait</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">Artikel & Halaman Terkait</p>
           <div className="flex gap-3 flex-wrap">
             <Link href="/asuransi-kendaraan" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🧮 Kalkulator Premi OJK Interaktif →</Link>
             <Link href="/artikel/perbedaan-all-risk-tlo" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">⚖️ All Risk vs TLO →</Link>
@@ -435,7 +435,7 @@ export default function CaraHitungPremiPage() {
             </div>
           </div>
         </section>
-        <div className="pb-8 text-xs text-[#94A3B8] leading-relaxed border-t border-black/5 pt-6">
+        <div className="pb-8 text-xs text-[#5A6472] leading-relaxed border-t border-black/5 pt-6">
           Tarif dalam artikel ini mengacu OJK SE No.6/SEOJK.05/2017. Tarif referensi dapat berubah sewaktu-waktu sesuai kebijakan OJK. Premi final ditetapkan perusahaan asuransi dan dapat berbeda dari estimasi dalam artikel ini.
         </div>
       </article>

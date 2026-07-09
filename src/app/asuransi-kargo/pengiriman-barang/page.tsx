@@ -392,7 +392,7 @@ export default function PengirimanBarangPage() {
             ].map((s) => (
               <div key={s.lbl}>
                 <div className="font-heading text-gold text-lg font-bold">{s.num}</div>
-                <div className="text-white/45 text-xs mt-0.5">{s.lbl}</div>
+                <div className="text-white/60 text-xs mt-0.5">{s.lbl}</div>
               </div>
             ))}
           </div>
@@ -455,7 +455,7 @@ export default function PengirimanBarangPage() {
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">
             Apa yang Bisa Terjadi Selama Pengiriman?
           </h2>
-          <p className="text-base text-[#64748B] max-w-[480px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[480px] mx-auto mt-3">
             Setiap risiko di bawah ini bisa terjadi pada rute pengiriman dari Yogyakarta ke kota
             mana pun di Indonesia
           </p>
@@ -468,7 +468,7 @@ export default function PengirimanBarangPage() {
             >
               <div className="text-3xl mb-3">{r.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{r.label}</div>
-              <p className="text-sm leading-relaxed text-[#64748B]">{r.desc}</p>
+              <p className="text-sm leading-relaxed text-[#475569]">{r.desc}</p>
             </div>
           ))}
         </div>
@@ -483,7 +483,7 @@ export default function PengirimanBarangPage() {
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">
             Apa yang Terjadi Ketika Tidak Ada Asuransi?
           </h2>
-          <p className="text-base text-[#64748B] max-w-[480px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[480px] mx-auto mt-3">
             Tiga contoh kasus yang sering terjadi pada pelaku usaha di Yogyakarta — dan perbedaannya
             jika memiliki asuransi kargo
           </p>
@@ -502,7 +502,7 @@ export default function PengirimanBarangPage() {
               </div>
               <div className="p-6 space-y-4">
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-[#64748B] mb-1">
+                  <p className="text-xs font-bold uppercase tracking-widest text-[#475569] mb-1">
                     Kronologi
                   </p>
                   <p className="text-sm text-navy2 leading-relaxed">{k.kronologi}</p>
@@ -538,7 +538,7 @@ export default function PengirimanBarangPage() {
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">
             Jenis Barang yang Wajib Diasuransikan
           </h2>
-          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[500px] mx-auto mt-3">
             Bukan semua barang perlu diasuransikan dengan cara yang sama. Ini adalah panduan untuk
             produk-produk yang paling sering dikirim dari Yogyakarta
           </p>
@@ -551,16 +551,16 @@ export default function PengirimanBarangPage() {
             >
               <div className="text-3xl mb-3">{j.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{j.label}</div>
-              <p className="text-sm leading-relaxed text-[#64748B] flex-1 mb-4">{j.alasan}</p>
+              <p className="text-sm leading-relaxed text-[#475569] flex-1 mb-4">{j.alasan}</p>
               <div className="border-t border-black/6 pt-3 space-y-1.5">
                 <div className="flex justify-between items-center">
-                  <span className="text-xs text-[#64748B]">Klausul Rekomendasi</span>
+                  <span className="text-xs text-[#475569]">Klausul Rekomendasi</span>
                   <span className="text-xs font-bold text-navy bg-gold/15 px-2 py-0.5 rounded-full">
                     {j.klausul}
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-xs text-[#64748B]">Minimal Asuransikan</span>
+                  <span className="text-xs text-[#475569]">Minimal Asuransikan</span>
                   <span className="text-xs font-semibold text-navy">{j.minimalNilai}</span>
                 </div>
               </div>
@@ -578,7 +578,7 @@ export default function PengirimanBarangPage() {
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">
             Jenis Usaha yang Harus Memiliki Asuransi Pengiriman
           </h2>
-          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[500px] mx-auto mt-3">
             Apakah bisnis Anda masuk dalam kategori ini? Jika ya, pengiriman Anda sudah seharusnya
             terlindungi
           </p>
@@ -614,7 +614,7 @@ export default function PengirimanBarangPage() {
             <br />
             Pilih Klausul yang Tepat
           </h2>
-          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[500px] mx-auto mt-3">
             Klausul menentukan apa yang dijamin dan tidak dijamin. Memilih klausul yang salah bisa
             berarti klaim ditolak saat dibutuhkan
           </p>
@@ -633,7 +633,7 @@ export default function PengirimanBarangPage() {
                 </div>
               )}
               <div className="font-heading text-navy text-2xl font-bold mb-1">{k.klausul}</div>
-              <div className="text-sm font-semibold text-[#64748B] mb-1">{k.nama}</div>
+              <div className="text-sm font-semibold text-[#475569] mb-1">{k.nama}</div>
               <div className="text-xs text-navy/70 bg-white/60 px-3 py-1 rounded-full inline-block mb-4">
                 Cocok: {k.cocok}
               </div>
@@ -665,7 +665,7 @@ export default function PengirimanBarangPage() {
               </div>
 
               <div className="border-t border-black/10 pt-3">
-                <p className="text-xs text-[#64748B]">Estimasi Premi</p>
+                <p className="text-xs text-[#475569]">Estimasi Premi</p>
                 <p className="text-sm font-bold text-navy">{k.premi}</p>
               </div>
             </div>
@@ -707,7 +707,7 @@ export default function PengirimanBarangPage() {
             <br />
             Ini Cara Mengajukan Klaim yang Benar
           </h2>
-          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[500px] mx-auto mt-3">
             Banyak klaim ditolak bukan karena tidak dijamin — tetapi karena prosedur yang salah.
             Ikuti langkah ini dengan benar
           </p>
@@ -799,7 +799,7 @@ export default function PengirimanBarangPage() {
       {/* ══════════════ INTERNAL LINKS ══════════════ */}
       <section className="py-10 px-[5vw] bg-cream border-t border-black/5">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">
             Produk Terkait
           </p>
           <div className="flex gap-3 flex-wrap">

@@ -291,7 +291,7 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
 
         {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -317,15 +317,15 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
               >
                 📋 Surety Bond
               </Link>
-              <span className="text-white/30 text-xs">·</span>
+              <span className="text-white/60 text-xs">·</span>
               <Link
                 href="/asuransi-engineering/contractor-all-risk"
                 className="inline-flex items-center gap-1.5 bg-white/8 border border-white/15 text-white/70 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-white/12 transition-colors"
               >
                 🏗️ Asuransi Engineering
               </Link>
-              <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Panduan Praktis</span>
+              <span className="text-white/60 text-xs">·</span>
+              <span className="text-white/60 text-xs">Panduan Praktis</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
               Syarat Asuransi Tender<br />
@@ -336,7 +336,7 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
               Dari Jaminan Penawaran hingga Jaminan Pemeliharaan — ada 5 jenis dokumen jaminan yang wajib disiapkan kontraktor
               di berbagai tahapan tender pemerintah. Salah satu saja terlambat atau salah nilai, kontrak bisa batal.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
@@ -364,13 +364,13 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Dasar Hukum — Mengapa Jaminan Ini Wajib?
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-4">
+          <p className="text-[#475569] text-base leading-relaxed mb-4">
             Kewajiban asuransi dan jaminan dalam pengadaan barang/jasa pemerintah diatur dalam{" "}
             <strong className="text-navy">Peraturan Presiden Nomor 12 Tahun 2021</strong> tentang Pengadaan Barang/Jasa
             Pemerintah (perubahan atas Perpres 16/2018), yang kemudian dijabarkan lebih teknis melalui{" "}
             Peraturan LKPP Nomor 12 Tahun 2021 tentang Pedoman Pelaksanaan Pengadaan.
           </p>
-          <p className="text-[#64748B] text-base leading-relaxed mb-4">
+          <p className="text-[#475569] text-base leading-relaxed mb-4">
             Di lingkungan Pemerintah DIY — baik proyek APBN yang dikelola oleh BBWSO, Balai Pelaksana Jalan Nasional,
             maupun APBD DIY dan APBD kabupaten (Sleman, Bantul, Kulon Progo, Gunung Kidul) — ketentuan ini berlaku
             seragam. Pengalaman kami mendampingi kontraktor di Yogyakarta selama 8 tahun menunjukkan bahwa
@@ -389,7 +389,7 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             5 Jaminan Wajib Kontraktor — Beserta Nilai & Waktu Penyerahan
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Berikut kelima jenis jaminan secara lengkap, urut sesuai tahapan yang harus dilalui kontraktor:
           </p>
           <div className="flex flex-col gap-4 mb-10">
@@ -408,24 +408,24 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 mb-3">
                       <div>
-                        <span className="text-xs text-[#94A3B8] uppercase tracking-wide font-semibold">Kapan diserahkan</span>
+                        <span className="text-xs text-[#5A6472] uppercase tracking-wide font-semibold">Kapan diserahkan</span>
                         <p className="text-sm text-navy2 leading-snug mt-0.5">{j.kapan}</p>
                       </div>
                       <div>
-                        <span className="text-xs text-[#94A3B8] uppercase tracking-wide font-semibold">Nilai</span>
+                        <span className="text-xs text-[#5A6472] uppercase tracking-wide font-semibold">Nilai</span>
                         <p className="text-sm text-navy2 leading-snug mt-0.5">{j.nilai}</p>
                       </div>
                       <div>
-                        <span className="text-xs text-[#94A3B8] uppercase tracking-wide font-semibold">Masa berlaku</span>
+                        <span className="text-xs text-[#5A6472] uppercase tracking-wide font-semibold">Masa berlaku</span>
                         <p className="text-sm text-navy2 leading-snug mt-0.5">{j.masa}</p>
                       </div>
                       <div>
-                        <span className="text-xs text-[#94A3B8] uppercase tracking-wide font-semibold">Dasar hukum</span>
+                        <span className="text-xs text-[#5A6472] uppercase tracking-wide font-semibold">Dasar hukum</span>
                         <p className="text-sm text-navy2 leading-snug mt-0.5">{j.dasar}</p>
                       </div>
                     </div>
                     <div className="bg-white/60 rounded-lg px-3.5 py-2.5 border border-black/6 mb-3">
-                      <p className="text-xs text-[#64748B] leading-relaxed">
+                      <p className="text-xs text-[#475569] leading-relaxed">
                         <strong className="text-navy">💡 Catatan penting:</strong> {j.catatan}
                       </p>
                     </div>
@@ -445,7 +445,7 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Alur Lengkap: Kapan Masing-masing Jaminan Dibutuhkan?
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Berikut urutan kronologis pengajuan jaminan dari awal proses tender hingga selesai masa pemeliharaan:
           </p>
           <div className="flex flex-col gap-3 mb-10">
@@ -464,7 +464,7 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
                         {li + 1}
                       </span>
                       <div className="flex-1">
-                        <p className="text-sm text-[#64748B] leading-snug">{l.label}</p>
+                        <p className="text-sm text-[#475569] leading-snug">{l.label}</p>
                       </div>
                       {l.dokumen && (
                         <span className="flex-shrink-0 text-[0.65rem] font-bold px-2 py-0.5 rounded-full bg-gold/12 text-amber-700 border border-gold/20 whitespace-nowrap">
@@ -482,7 +482,7 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             5 Kesalahan yang Paling Sering Terjadi — dan Cara Menghindarinya
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Berdasarkan pengalaman mendampingi ratusan kontraktor di DIY, ini adalah kesalahan administrasi jaminan
             yang paling sering berujung pada penolakan panitia atau bahkan pembatalan kontrak:
           </p>
@@ -500,7 +500,7 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
                   <tr key={i} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
                     <td className="p-3.5 font-semibold text-navy text-xs align-top">{row.kesalahan}</td>
                     <td className="p-3.5 text-red-600 text-xs leading-relaxed align-top">{row.dampak}</td>
-                    <td className="p-3.5 text-[#64748B] text-sm leading-relaxed align-top">{row.solusi}</td>
+                    <td className="p-3.5 text-[#475569] text-sm leading-relaxed align-top">{row.solusi}</td>
                   </tr>
                 ))}
               </tbody>
@@ -511,7 +511,7 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Dokumen yang Perlu Disiapkan untuk Pengajuan Jaminan
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+          <p className="text-[#475569] text-base leading-relaxed mb-5">
             Semakin lengkap dokumen Anda dari awal, semakin cepat polis atau surat jaminan dapat diterbitkan.
             Berikut checklist dokumen yang umumnya dibutuhkan:
           </p>
@@ -529,13 +529,13 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
                     <td className="p-3 text-navy2 text-sm align-top">
                       <span className="text-gold mr-2">✓</span>{d.dok}
                     </td>
-                    <td className="p-3 text-[#64748B] text-xs align-top">{d.untuk}</td>
+                    <td className="p-3 text-[#475569] text-xs align-top">{d.untuk}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-[#94A3B8] mb-10">
+          <p className="text-xs text-[#5A6472] mb-10">
             * Dokumen di atas adalah standar umum. Beberapa underwriter mungkin meminta dokumen tambahan untuk proyek dengan
             nilai besar atau lokasi tertentu (misalnya kawasan rawan gempa di Kulon Progo atau Gunung Kidul).
           </p>
@@ -545,7 +545,7 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
             <div className="font-heading text-navy font-bold text-base mb-2">
               Butuh semua jaminan ini dalam satu layanan?
             </div>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+            <p className="text-[#475569] text-sm leading-relaxed mb-4">
               Kami bantu kontraktor DIY mengurus Jaminan Penawaran, Jaminan Pelaksanaan, Polis CAR, hingga Jaminan
               Pemeliharaan — dalam satu koordinasi. Konsultasi gratis, proses cepat, dan kami pantau masa berlaku semua
               jaminan Anda.
@@ -577,14 +577,14 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
                   {f.q}
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">{f.a}</p>
               </details>
             ))}
           </div>
 
           {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Pelajari Lebih Lanjut</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">Pelajari Lebih Lanjut</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 {
@@ -634,7 +634,7 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">
                       {a.judul}
                     </div>
-                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                    <div className="text-xs text-[#475569]">{a.desc}</div>
                   </div>
                 </Link>
               ))}

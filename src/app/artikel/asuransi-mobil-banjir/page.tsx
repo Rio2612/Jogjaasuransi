@@ -158,7 +158,7 @@ export default function AsuransiMobilBanjirPage() {
 
       {/* BREADCRUMB */}
       <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-        <div className="flex items-center gap-2 text-sm text-[#64748B]">
+        <div className="flex items-center gap-2 text-sm text-[#475569]">
           <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
           <span className="text-gold/60">›</span>
           <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -214,7 +214,7 @@ export default function AsuransiMobilBanjirPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-4">
             Mitos yang Berbahaya: "All Risk Pasti Cover Banjir"
           </h2>
-          <p className="text-[#64748B] leading-relaxed text-sm mb-6">
+          <p className="text-[#475569] leading-relaxed text-sm mb-6">
             Ini adalah kesalahpahaman yang paling umum dan paling mahal. Dalam dunia asuransi
             kendaraan Indonesia, banjir termasuk dalam kategori{" "}
             <strong className="text-navy">Natural Catastrophe</strong> yang memerlukan klausul
@@ -223,7 +223,7 @@ export default function AsuransiMobilBanjirPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="bg-red-600/7 border border-red-600/15 rounded-card p-5">
               <div className="font-semibold text-red-700 text-sm mb-3">✗ All Risk STANDAR (tanpa perluasan)</div>
-              <ul className="flex flex-col gap-2 text-sm text-[#64748B]">
+              <ul className="flex flex-col gap-2 text-sm text-[#475569]">
                 {[
                   "Kecelakaan, benturan, terguling — ✓",
                   "Pencurian — ✓",
@@ -238,7 +238,7 @@ export default function AsuransiMobilBanjirPage() {
             </div>
             <div className="bg-green-700/7 border border-green-700/15 rounded-card p-5">
               <div className="font-semibold text-green-700 text-sm mb-3">✓ All Risk + PERLUASAN BANJIR</div>
-              <ul className="flex flex-col gap-2 text-sm text-[#64748B]">
+              <ul className="flex flex-col gap-2 text-sm text-[#475569]">
                 {[
                   "Kecelakaan, benturan, terguling — ✓",
                   "Pencurian — ✓",
@@ -252,7 +252,7 @@ export default function AsuransiMobilBanjirPage() {
               </ul>
             </div>
           </div>
-          <div className="mt-5 bg-gold/5 border border-gold/20 rounded-lg p-4 text-sm text-[#64748B]">
+          <div className="mt-5 bg-gold/5 border border-gold/20 rounded-lg p-4 text-sm text-[#475569]">
             <strong className="text-navy">Biaya perluasan banjir:</strong> Premi tambahan untuk perluasan
             banjir umumnya berkisar antara 0,05%–0,20% dari nilai kendaraan per tahun. Untuk mobil
             Rp 300 juta, artinya tambahan Rp 150.000–600.000/tahun. Sangat terjangkau dibanding
@@ -265,7 +265,7 @@ export default function AsuransiMobilBanjirPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-4">
             Apa Itu Hydrolocking? Mengapa Ini Sangat Berbahaya
           </h2>
-          <p className="text-[#64748B] leading-relaxed text-sm mb-6">
+          <p className="text-[#475569] leading-relaxed text-sm mb-6">
             Hydrolocking adalah penyebab kerusakan terbesar sekaligus alasan paling umum klaim
             banjir ditolak. Memahami mekanismenya bisa menyelamatkan Anda dari kerugian ratusan juta.
           </p>
@@ -284,7 +284,7 @@ export default function AsuransiMobilBanjirPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-navy text-sm">{s.t}</div>
-                    <p className="text-xs text-[#64748B] mt-0.5">{s.d}</p>
+                    <p className="text-xs text-[#475569] mt-0.5">{s.d}</p>
                   </div>
                 </div>
               ))}
@@ -305,7 +305,7 @@ export default function AsuransiMobilBanjirPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-2">
             Langkah Klaim yang Benar Jika Mobil Terkena Banjir
           </h2>
-          <p className="text-[#64748B] text-sm mb-8 leading-relaxed">
+          <p className="text-[#475569] text-sm mb-8 leading-relaxed">
             Urutan langkah ini krusial. Kesalahan di langkah pertama bisa membuat seluruh klaim
             dibatalkan meskipun Anda memiliki perluasan banjir yang sah.
           </p>
@@ -339,7 +339,7 @@ export default function AsuransiMobilBanjirPage() {
                       {l.judul}
                     </span>
                   </div>
-                  <p className="text-sm text-[#64748B] leading-relaxed">{l.desc}</p>
+                  <p className="text-sm text-[#475569] leading-relaxed">{l.desc}</p>
                 </div>
               </div>
             ))}
@@ -351,7 +351,7 @@ export default function AsuransiMobilBanjirPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-2">
             Area Rawan Banjir di Yogyakarta yang Perlu Diwaspadai
           </h2>
-          <p className="text-[#64748B] text-sm mb-6 leading-relaxed">
+          <p className="text-[#475569] text-sm mb-6 leading-relaxed">
             Yogyakarta memiliki beberapa sungai besar yang melewati kawasan permukiman padat. Jika
             Anda tinggal atau sering memarkir kendaraan di area berikut, perluasan banjir sangat
             dianjurkan:
@@ -369,7 +369,7 @@ export default function AsuransiMobilBanjirPage() {
                 {areaBanjirJogja.map((a, i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-cream/40"}>
                     <td className="py-3 px-4 font-semibold text-navy text-xs">{a.area}</td>
-                    <td className="py-3 px-4 text-xs text-[#64748B]">{a.sungai}</td>
+                    <td className="py-3 px-4 text-xs text-[#475569]">{a.sungai}</td>
                     <td className="py-3 px-4 text-center">
                       <span
                         className={`text-xs font-semibold px-2 py-0.5 rounded-full ${
@@ -386,7 +386,7 @@ export default function AsuransiMobilBanjirPage() {
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-[#64748B] mt-3">
+          <p className="text-xs text-[#475569] mt-3">
             * Tingkat risiko bersifat umum dan dapat berbeda tergantung musim dan intensitas hujan.
             Lokasi di lereng Merapi juga berisiko banjir lahar dingin pada musim hujan.
           </p>
@@ -408,18 +408,18 @@ export default function AsuransiMobilBanjirPage() {
                 <div className="font-heading text-navy text-xl font-bold mb-3">{b.harga}</div>
                 <div className="flex flex-col gap-2 text-xs">
                   <div>
-                    <div className="text-[#64748B] mb-0.5">Tambahan premi perluasan:</div>
+                    <div className="text-[#475569] mb-0.5">Tambahan premi perluasan:</div>
                     <div className="text-green-700 font-bold">{b.tambahan}</div>
                   </div>
                   <div>
-                    <div className="text-[#64748B] mb-0.5">vs biaya perbaikan banjir:</div>
+                    <div className="text-[#475569] mb-0.5">vs biaya perbaikan banjir:</div>
                     <div className="text-red-600 font-bold">{b.vs}</div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          <div className="mt-5 bg-gold/5 border border-gold/20 rounded-lg p-4 text-sm text-[#64748B]">
+          <div className="mt-5 bg-gold/5 border border-gold/20 rounded-lg p-4 text-sm text-[#475569]">
             <strong className="text-navy">Kesimpulan:</strong> Dengan biaya tambahan yang sangat kecil,
             perluasan banjir memberikan perlindungan terhadap risiko kerugian yang bisa puluhan kali
             lebih besar. Untuk kendaraan yang diparkir di area rawan banjir Yogyakarta, ini bukan
@@ -436,7 +436,7 @@ export default function AsuransiMobilBanjirPage() {
             {schemaFAQ.mainEntity.map((faq, i) => (
               <div key={i} className="py-5">
                 <h3 className="font-semibold text-navy text-[0.95rem] mb-2">{faq.name}</h3>
-                <p className="text-sm text-[#64748B] leading-[1.78]">{faq.acceptedAnswer.text}</p>
+                <p className="text-sm text-[#475569] leading-[1.78]">{faq.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
@@ -444,7 +444,7 @@ export default function AsuransiMobilBanjirPage() {
 
         {/* INTERNAL LINKS */}
         <section className="py-10 border-b border-black/8">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">
             Artikel & Halaman Terkait
           </p>
           <div className="flex gap-3 flex-wrap">
@@ -500,7 +500,7 @@ export default function AsuransiMobilBanjirPage() {
         </section>
 
         {/* DISCLAIMER */}
-        <div className="pb-8 text-xs text-[#94A3B8] leading-relaxed border-t border-black/5 pt-6">
+        <div className="pb-8 text-xs text-[#5A6472] leading-relaxed border-t border-black/5 pt-6">
           Artikel ini disajikan sebagai panduan edukatif umum. Cakupan polis aktual bergantung pada
           ketentuan masing-masing perusahaan asuransi dan polis yang Anda miliki. Untuk kepastian
           cakupan, selalu konsultasikan dengan konsultan atau baca polis Anda secara lengkap.

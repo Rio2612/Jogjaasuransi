@@ -204,7 +204,7 @@ function KalkulatorCAR() {
             value={nilaiKontrak}
             onChange={(e) => setNilaiKontrak(e.target.value)}
           />
-          <span className="text-white/40 text-xs mt-1 block">Nilai pekerjaan sesuai kontrak (tanpa PPN)</span>
+          <span className="text-white/60 text-xs mt-1 block">Nilai pekerjaan sesuai kontrak (tanpa PPN)</span>
         </div>
         {error && <p className="text-red-400 text-sm mt-3">{error}</p>}
         <button
@@ -224,7 +224,7 @@ function KalkulatorCAR() {
               <span className="text-white/50 text-xs">Belum termasuk Section II TPL dan biaya polis</span>
               <span className="text-white/50 text-xs">*estimasi</span>
             </div>
-            <p className="text-white/40 text-xs mt-3 leading-relaxed">
+            <p className="text-white/60 text-xs mt-3 leading-relaxed">
               * Estimasi berdasarkan tarif referensi pasar. Premi final ditentukan perusahaan asuransi setelah review dokumen proyek lengkap.
             </p>
             <a
@@ -285,7 +285,7 @@ export default function ClientPage() {
             ].map((s) => (
               <div key={s.lbl}>
                 <div className="font-heading text-gold text-lg font-bold">{s.num}</div>
-                <div className="text-white/45 text-xs mt-0.5">{s.lbl}</div>
+                <div className="text-white/60 text-xs mt-0.5">{s.lbl}</div>
               </div>
             ))}
           </div>
@@ -343,7 +343,7 @@ export default function ClientPage() {
             <div key={r.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{r.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{r.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{r.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{r.desc}</p>
             </div>
           ))}
         </div>
@@ -366,8 +366,8 @@ export default function ClientPage() {
               <span className="text-2xl flex-shrink-0">{p.icon}</span>
               <div>
                 <div className="font-heading text-navy font-bold text-sm mb-1">{p.label}</div>
-                <div className="text-xs text-[#64748B]">Nilai: <span className="font-semibold text-navy">{p.nilai}</span></div>
-                <div className="text-xs text-[#64748B]">Durasi: <span className="font-semibold text-navy">{p.durasi}</span></div>
+                <div className="text-xs text-[#475569]">Nilai: <span className="font-semibold text-navy">{p.nilai}</span></div>
+                <div className="text-xs text-[#475569]">Durasi: <span className="font-semibold text-navy">{p.durasi}</span></div>
               </div>
             </div>
           ))}
@@ -388,7 +388,7 @@ export default function ClientPage() {
               <div className="bg-navy text-gold font-heading font-bold text-sm w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">{i + 1}</div>
               <div>
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1">{t.tahap}</div>
-                <p className="text-base leading-relaxed text-[#64748B]">{t.cover}</p>
+                <p className="text-base leading-relaxed text-[#475569]">{t.cover}</p>
               </div>
             </div>
           ))}
@@ -402,7 +402,7 @@ export default function ClientPage() {
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">
             Pengecualian dalam Polis CAR<br />yang Wajib Anda Pahami
           </h2>
-          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[500px] mx-auto mt-3">
             Memahami pengecualian sama pentingnya dengan memahami cakupan. Ini yang tidak ditanggung oleh polis CAR standar.
           </p>
         </div>
@@ -411,7 +411,7 @@ export default function ClientPage() {
             <div key={p.label} className="bg-white rounded-card p-6 border border-red-100">
               <div className="text-3xl mb-3">{p.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{p.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{p.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -436,7 +436,7 @@ export default function ClientPage() {
               <div className="bg-gold text-navy font-heading font-bold text-sm w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 flex-shrink-0">{i + 1}</div>
               <div>
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1">{s.judul}</div>
-                <p className="text-base leading-relaxed text-[#64748B]">{s.desc}</p>
+                <p className="text-base leading-relaxed text-[#475569]">{s.desc}</p>
               </div>
             </div>
           ))}
@@ -456,7 +456,7 @@ export default function ClientPage() {
             <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy mb-4">
               Dokumen Asuransi<br />yang Dibutuhkan Tender
             </h2>
-            <p className="text-sm leading-relaxed text-[#64748B] mb-5">
+            <p className="text-sm leading-relaxed text-[#475569] mb-5">
               Tender pemerintah DIY dan proyek swasta besar umumnya mensyaratkan dokumen asuransi berikut:
             </p>
             <ul className="flex flex-col gap-3">
@@ -473,7 +473,7 @@ export default function ClientPage() {
                 {dokumenPengajuan.map((d) => (
                   <div key={d.dok} className="bg-white rounded-lg p-3 border border-black/6">
                     <div className="font-semibold text-navy text-xs mb-0.5">{d.dok}</div>
-                    <div className="text-xs text-[#64748B]">{d.ket}</div>
+                    <div className="text-xs text-[#475569]">{d.ket}</div>
                   </div>
                 ))}
               </div>
@@ -519,7 +519,7 @@ export default function ClientPage() {
                 {f.q}
                 <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
               </summary>
-              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#475569] pb-4">{f.a}</p>
             </details>
           ))}
         </div>
@@ -528,7 +528,7 @@ export default function ClientPage() {
       {/* ── INTERNAL LINKS ───────────────────────────────────────────────────── */}
       <section className="py-10 px-[5vw] bg-cream border-t border-black/5">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">Produk & Artikel Terkait</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">Produk & Artikel Terkait</p>
           <div className="flex gap-3 flex-wrap">
             <Link href="/asuransi-engineering/erection-all-risk" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">⚙️ Erection All Risk →</Link>
             <Link href="/asuransi-engineering/machinery-breakdown" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🔧 Machinery Breakdown →</Link>
@@ -551,7 +551,7 @@ export default function ClientPage() {
           <p className="text-white/80 text-sm max-w-[460px] mx-auto mb-2">
             Konsultasi gratis CAR untuk proyek Anda di Yogyakarta — dari review nilai pertanggungan hingga dokumen tender siap pakai.
           </p>
-          <p className="text-white/45 text-xs mb-8">Melayani Yogyakarta, Sleman, Bantul, Kulon Progo, Gunung Kidul, dan sekitarnya</p>
+          <p className="text-white/60 text-xs mb-8">Melayani Yogyakarta, Sleman, Bantul, Kulon Progo, Gunung Kidul, dan sekitarnya</p>
           <a
             href={`https://wa.me/${KONTAK.wa}`}
             className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all"

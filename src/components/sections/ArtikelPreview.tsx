@@ -58,11 +58,11 @@ export default function ArtikelPreview() {
     <section className="py-[5.5rem] px-[5vw] bg-cream">
       <div className="mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
         <div>
-          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Edukasi Asuransi</div>
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-goldtext mb-2">Edukasi Asuransi</div>
           <h2 className="font-heading text-[clamp(1.9rem,3vw,2.9rem)] leading-[1.22] text-navy">
             Artikel &amp; Panduan<br />untuk Keputusan yang Tepat
           </h2>
-          <p className="text-[0.95rem] leading-[1.8] text-[#64748B] max-w-[560px] mt-3">
+          <p className="text-[0.95rem] leading-[1.8] text-[#475569] max-w-[560px] mt-3">
             Pahami asuransi sebelum membeli — cara klaim, perbedaan produk, dan tips praktis dari pengalaman 8 tahun sebagai praktisi asuransi di Yogyakarta.
           </p>
         </div>
@@ -82,13 +82,13 @@ export default function ArtikelPreview() {
               <div className="absolute top-0 left-0 right-0 h-[3px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               <div className="flex items-start justify-between mb-3">
                 <span className="text-2xl">{a.icon}</span>
-                <span className="bg-gold/10 border border-gold/20 text-gold text-[0.72rem] font-bold px-2 py-0.5 rounded-full">{a.kategori}</span>
+                <span className="bg-gold/10 border border-gold/20 text-goldtext text-[0.72rem] font-bold px-2 py-0.5 rounded-full">{a.kategori}</span>
               </div>
-              <h3 className="font-heading text-navy font-bold text-[0.98rem] leading-[1.35] mb-2 group-hover:text-gold transition-colors">{a.judul}</h3>
-              <p className="text-[0.82rem] leading-relaxed text-[#64748B] mb-4 line-clamp-3">{a.ringkasan}</p>
+              <h3 className="font-heading text-navy font-bold text-[0.98rem] leading-[1.35] mb-2 group-hover:text-goldtext transition-colors">{a.judul}</h3>
+              <p className="text-[0.82rem] leading-relaxed text-[#475569] mb-4 line-clamp-3">{a.ringkasan}</p>
               <div className="flex items-center justify-between mt-auto">
-                <span className="text-xs text-[#94A3B8]">⏱ {a.menit} baca</span>
-                <span className="text-gold text-sm font-semibold group-hover:translate-x-1 transition-transform inline-block">Baca →</span>
+                <span className="text-xs text-[#5A6472]">⏱ {a.menit} baca</span>
+                <span className="text-goldtext text-sm font-semibold group-hover:translate-x-1 transition-transform inline-block">Baca →</span>
               </div>
             </article>
           </Link>

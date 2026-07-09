@@ -68,7 +68,7 @@ export default function PublicLiabilityPage() {
           </div>
           <div className="flex gap-8 mt-10 pt-8 border-t border-white/10">
             {[{num:"Rp Miliar",lbl:"Potensi Gugatan"},{num:"Biaya",lbl:"Pengacara Tercover"},{num:"Gratis",lbl:"Analisis Risiko"}].map(s=>(
-              <div key={s.lbl}><div className="font-heading text-gold text-lg font-bold">{s.num}</div><div className="text-white/45 text-xs mt-0.5">{s.lbl}</div></div>
+              <div key={s.lbl}><div className="font-heading text-gold text-lg font-bold">{s.num}</div><div className="text-white/60 text-xs mt-0.5">{s.lbl}</div></div>
             ))}
           </div>
         </div>
@@ -85,7 +85,7 @@ export default function PublicLiabilityPage() {
             <div key={y.label} className="bg-white rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{y.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{y.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{y.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{y.desc}</p>
             </div>
           ))}
         </div>
@@ -96,7 +96,7 @@ export default function PublicLiabilityPage() {
         <div className="text-center mb-10">
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Contoh Kasus</div>
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">Skenario Nyata yang<br />Bisa Menimpa Bisnis Anda</h2>
-          <p className="text-base text-[#64748B] max-w-[480px] mx-auto mt-3">Semua skenario ini adalah kejadian riil yang telah menyebabkan gugatan hukum terhadap pelaku usaha di Indonesia</p>
+          <p className="text-base text-[#475569] max-w-[480px] mx-auto mt-3">Semua skenario ini adalah kejadian riil yang telah menyebabkan gugatan hukum terhadap pelaku usaha di Indonesia</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
           {skenarioKlaim.map(s=>(
@@ -125,7 +125,7 @@ export default function PublicLiabilityPage() {
             <div key={s.label} className="bg-white rounded-card p-6 border border-black/5 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{s.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{s.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{s.detail}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{s.detail}</p>
             </div>
           ))}
         </div>
@@ -134,7 +134,7 @@ export default function PublicLiabilityPage() {
       {/* INTERNAL LINKS */}
       <section className="py-10 px-[5vw] bg-white border-t border-black/5">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">Produk Terkait</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">Produk Terkait</p>
           <div className="flex gap-3 flex-wrap">
             <Link href="/asuransi-liability/employer-liability" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">👷 Employer Liability →</Link>
             <Link href="/asuransi-liability/limbah-b3" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">⚗️ Liability Limbah B3 →</Link>
@@ -184,14 +184,14 @@ export default function PublicLiabilityPage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-[#94A3B8] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+            <p className="text-xs text-[#5A6472] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
           </div>
 
           <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
             <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
             <div>
               <div className="text-sm font-semibold text-navy">Ditinjau oleh Rio Mardiansyah</div>
-              <div className="text-xs text-[#64748B]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
+              <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
             </div>
           </div>
 

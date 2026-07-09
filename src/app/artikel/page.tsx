@@ -340,7 +340,7 @@ export default function ArtikelIndexPage() {
 
       {/* BREADCRUMB */}
       <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-        <div className="flex items-center gap-2 text-xs text-[#64748B]">
+        <div className="flex items-center gap-2 text-xs text-[#475569]">
           <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
           <span className="text-gold/60">›</span>
           <span className="text-navy font-semibold">Artikel</span>
@@ -356,7 +356,7 @@ export default function ArtikelIndexPage() {
               className={`px-4 py-1.5 rounded-full border text-[0.82rem] font-semibold whitespace-nowrap ${
                 k === "Semua"
                   ? "bg-navy text-white border-navy"
-                  : "bg-white text-[#64748B] border-black/10"
+                  : "bg-white text-[#475569] border-black/10"
               }`}
             >
               {k}
@@ -402,9 +402,9 @@ export default function ArtikelIndexPage() {
                         <span className="bg-gold/10 border border-gold/20 text-gold text-[0.72rem] font-bold px-2 py-0.5 rounded-full">{a.kategori}</span>
                       </div>
                       <h3 className="font-heading text-navy font-bold text-[0.98rem] leading-[1.35] mb-2 group-hover:text-gold transition-colors">{a.judul}</h3>
-                      <p className="text-[0.82rem] leading-relaxed text-[#64748B] mb-4 line-clamp-3">{a.ringkasan}</p>
+                      <p className="text-[0.82rem] leading-relaxed text-[#475569] mb-4 line-clamp-3">{a.ringkasan}</p>
                       <div className="flex items-center justify-between mt-auto">
-                        <span className="text-xs text-[#94A3B8]">⏱ {a.menit} baca</span>
+                        <span className="text-xs text-[#5A6472]">⏱ {a.menit} baca</span>
                         <span className="text-gold text-sm font-semibold group-hover:translate-x-1 transition-transform inline-block">Baca →</span>
                       </div>
                     </article>
@@ -419,7 +419,7 @@ export default function ArtikelIndexPage() {
       {/* CTA */}
       <section className="py-16 px-[5vw] bg-cream text-center">
         <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.2rem)] text-navy mb-3">Masih Ada Pertanyaan?</h2>
-        <p className="text-base text-[#64748B] max-w-[440px] mx-auto mb-6">Konsultasi langsung dengan Pak Rio — gratis, tanpa tekanan, dan mendapat rekomendasi yang benar-benar sesuai kebutuhan Anda.</p>
+        <p className="text-base text-[#475569] max-w-[440px] mx-auto mb-6">Konsultasi langsung dengan Pak Rio — gratis, tanpa tekanan, dan mendapat rekomendasi yang benar-benar sesuai kebutuhan Anda.</p>
         <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Konsultasi Gratis via WhatsApp</a>
       </section>
     </>

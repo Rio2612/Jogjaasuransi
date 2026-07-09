@@ -115,7 +115,7 @@ export default function Header() {
                       key={s.href}
                       href={s.href}
                       onClick={() => setProdukOpen(false)}
-                      className="ml-8 text-[0.76rem] text-[#64748B] hover:text-gold py-[3px] transition-colors no-underline leading-snug"
+                      className="ml-8 text-[0.76rem] text-[#475569] hover:text-gold py-[3px] transition-colors no-underline leading-snug"
                     >
                       › {s.label}
                     </Link>
@@ -123,7 +123,7 @@ export default function Header() {
                 </div>
               ))}
               <div className="col-span-3 mt-3 pt-3 border-t border-black/6 flex items-center justify-between">
-                <Link href="/artikel" onClick={() => setProdukOpen(false)} className="text-[0.78rem] text-[#64748B] hover:text-gold transition-colors no-underline">
+                <Link href="/artikel" onClick={() => setProdukOpen(false)} className="text-[0.78rem] text-[#475569] hover:text-gold transition-colors no-underline">
                   📚 Artikel &amp; Edukasi Asuransi →
                 </Link>
                 <a href={`https://wa.me/${KONTAK.wa}`} onClick={() => setProdukOpen(false)} className="bg-gold text-navy text-[0.78rem] font-bold px-4 py-1.5 rounded-lg hover:bg-gold2 transition-colors no-underline">

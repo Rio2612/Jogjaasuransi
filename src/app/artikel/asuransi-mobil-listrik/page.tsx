@@ -145,7 +145,7 @@ export default function AsuransiMobilListrikPage() {
 
       {/* BREADCRUMB */}
       <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-        <div className="flex items-center gap-2 text-sm text-[#64748B]">
+        <div className="flex items-center gap-2 text-sm text-[#475569]">
           <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
           <span className="text-gold/60">›</span>
           <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -195,7 +195,7 @@ export default function AsuransiMobilListrikPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-4">
             Mengapa Asuransi EV Berbeda dari Kendaraan Konvensional?
           </h2>
-          <p className="text-[#64748B] leading-relaxed mb-6 text-sm">
+          <p className="text-[#475569] leading-relaxed mb-6 text-sm">
             OJK secara eksplisit membedakan tarif asuransi kendaraan listrik dari kendaraan
             berbahan bakar minyak. Ada tiga alasan utama yang menjadi dasar perbedaan ini:
           </p>
@@ -220,7 +220,7 @@ export default function AsuransiMobilListrikPage() {
               <div key={i} className="bg-white border border-black/8 rounded-card p-5">
                 <div className="text-2xl mb-3">{k.icon}</div>
                 <div className="font-heading text-navy font-bold text-sm mb-2">{k.judul}</div>
-                <p className="text-xs text-[#64748B] leading-relaxed">{k.isi}</p>
+                <p className="text-xs text-[#475569] leading-relaxed">{k.isi}</p>
               </div>
             ))}
           </div>
@@ -231,7 +231,7 @@ export default function AsuransiMobilListrikPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-2">
             Tarif OJK untuk Kendaraan Listrik
           </h2>
-          <p className="text-[#64748B] text-sm mb-8 leading-relaxed">
+          <p className="text-[#475569] text-sm mb-8 leading-relaxed">
             Berdasarkan SE OJK No.6/SEOJK.05/2017, tarif asuransi EV ditetapkan sekitar 10% lebih
             tinggi dari kendaraan konvensional di kategori harga yang sama. Berikut perbandingan
             tarif untuk Wilayah III (Yogyakarta dan Jawa Tengah/Timur/Bali):
@@ -249,7 +249,7 @@ export default function AsuransiMobilListrikPage() {
                 {perbedaanEVKonvensional.map((row, i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-cream/50"}>
                     <td className="py-3 px-4 font-semibold text-navy text-xs">{row.aspek}</td>
-                    <td className="py-3 px-4 text-center text-xs text-[#64748B]">{row.konvensional}</td>
+                    <td className="py-3 px-4 text-center text-xs text-[#475569]">{row.konvensional}</td>
                     <td className="py-3 px-4 text-center text-xs text-gold font-semibold">{row.ev}</td>
                   </tr>
                 ))}
@@ -263,7 +263,7 @@ export default function AsuransiMobilListrikPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-2">
             Estimasi Premi per Merek EV Populer
           </h2>
-          <p className="text-[#64748B] text-sm mb-8 leading-relaxed">
+          <p className="text-[#475569] text-sm mb-8 leading-relaxed">
             Berikut estimasi premi All Risk dan TLO untuk beberapa merek EV populer di Indonesia,
             berdasarkan tarif OJK Wilayah III. Estimasi ini sebelum diskon dan negosiasi.
           </p>
@@ -273,24 +273,24 @@ export default function AsuransiMobilListrikPage() {
                 <div className="flex items-start justify-between mb-3">
                   <div>
                     <div className="font-heading text-navy font-bold">{m.merek}</div>
-                    <div className="text-xs text-[#64748B]">{m.harga} · {m.kat}</div>
+                    <div className="text-xs text-[#475569]">{m.harga} · {m.kat}</div>
                   </div>
                   <span className="text-lg">⚡</span>
                 </div>
                 <div className="flex flex-col gap-2 text-sm border-t border-black/8 pt-3">
                   <div className="flex justify-between">
-                    <span className="text-[#64748B]">All Risk (est.)</span>
+                    <span className="text-[#475569]">All Risk (est.)</span>
                     <span className="text-navy font-semibold">{m.estimasiAR}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-[#64748B]">TLO (est.)</span>
+                    <span className="text-[#475569]">TLO (est.)</span>
                     <span className="text-navy font-semibold">{m.estimasiTLO}</span>
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          <p className="text-xs text-[#64748B] mt-4 leading-relaxed">
+          <p className="text-xs text-[#475569] mt-4 leading-relaxed">
             * Estimasi mengacu tarif OJK Wilayah III. Harga kendaraan berdasarkan kisaran pasar 2026.
             Premi final tergantung perusahaan asuransi dan kondisi kendaraan.{" "}
             <Link href="/asuransi-kendaraan" className="text-gold hover:underline">
@@ -305,14 +305,14 @@ export default function AsuransiMobilListrikPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-4">
             Pertanyaan Paling Penting: Baterai EV Ditanggung Asuransi?
           </h2>
-          <p className="text-[#64748B] text-sm leading-relaxed mb-6">
+          <p className="text-[#475569] text-sm leading-relaxed mb-6">
             Ini pertanyaan yang paling sering diajukan pemilik EV — dan jawabannya bergantung pada
             penyebab kerusakan baterai:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
             <div className="bg-green-700/7 border border-green-700/15 rounded-card p-5">
               <div className="font-semibold text-green-700 text-sm mb-3">✓ Ditanggung Asuransi</div>
-              <ul className="flex flex-col gap-2 text-sm text-[#64748B]">
+              <ul className="flex flex-col gap-2 text-sm text-[#475569]">
                 {[
                   "Kerusakan baterai akibat benturan/kecelakaan",
                   "Kerusakan sistem elektrikal akibat banjir (dengan perluasan)",
@@ -328,7 +328,7 @@ export default function AsuransiMobilListrikPage() {
             </div>
             <div className="bg-red-600/7 border border-red-600/15 rounded-card p-5">
               <div className="font-semibold text-red-600 text-sm mb-3">✗ Tidak Ditanggung Asuransi</div>
-              <ul className="flex flex-col gap-2 text-sm text-[#64748B]">
+              <ul className="flex flex-col gap-2 text-sm text-[#475569]">
                 {[
                   "Degradasi kapasitas baterai karena usia/pemakaian",
                   "Kerusakan sel baterai karena overcharging (kelalaian)",
@@ -343,7 +343,7 @@ export default function AsuransiMobilListrikPage() {
               </ul>
             </div>
           </div>
-          <div className="bg-navy/5 border border-navy/10 rounded-lg p-4 text-sm text-[#64748B]">
+          <div className="bg-navy/5 border border-navy/10 rounded-lg p-4 text-sm text-[#475569]">
             <strong className="text-navy">Catatan penting:</strong> Garansi baterai pabrikan (umumnya 8 tahun
             atau 160.000 km) dan asuransi kendaraan adalah dua instrumen berbeda yang saling melengkapi.
             Pabrikan menanggung cacat produksi dan degradasi di luar normal; asuransi menanggung kerusakan
@@ -362,7 +362,7 @@ export default function AsuransiMobilListrikPage() {
                 <span className="text-2xl flex-shrink-0">{t.icon}</span>
                 <div>
                   <div className="font-heading text-navy font-bold mb-2">{t.judul}</div>
-                  <p className="text-sm text-[#64748B] leading-relaxed">{t.isi}</p>
+                  <p className="text-sm text-[#475569] leading-relaxed">{t.isi}</p>
                 </div>
               </div>
             ))}
@@ -378,7 +378,7 @@ export default function AsuransiMobilListrikPage() {
             {schemaFAQ.mainEntity.map((faq, i) => (
               <div key={i} className="py-5">
                 <h3 className="font-semibold text-navy text-[0.95rem] mb-2">{faq.name}</h3>
-                <p className="text-sm text-[#64748B] leading-[1.78]">{faq.acceptedAnswer.text}</p>
+                <p className="text-sm text-[#475569] leading-[1.78]">{faq.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
@@ -386,7 +386,7 @@ export default function AsuransiMobilListrikPage() {
 
         {/* INTERNAL LINKS */}
         <section className="py-10 border-b border-black/8">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">
             Artikel & Halaman Terkait
           </p>
           <div className="flex gap-3 flex-wrap">

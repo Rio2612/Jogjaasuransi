@@ -256,7 +256,7 @@ export default function KalkulatorProperti() {
             <span className="text-white/65 text-xs mt-1 block">Nilai penggantian bangunan (bukan harga tanah)</span>
           </div>
           <div>
-            <label className={labelCls}>Nilai Perabotan (Rp) <span className="text-white/35 font-normal text-xs">— opsional</span></label>
+            <label className={labelCls}>Nilai Perabotan (Rp) <span className="text-white/60 font-normal text-xs">— opsional</span></label>
             <input
               type="text"
               inputMode="numeric"
@@ -469,7 +469,7 @@ export default function KalkulatorProperti() {
               className={`block text-center py-3.5 rounded-lg font-bold text-sm no-underline transition-all ${
                 formValid
                   ? "bg-[#25D366] text-white hover:opacity-90 cursor-pointer"
-                  : "bg-[#25D366]/30 text-white/40 cursor-not-allowed"
+                  : "bg-[#25D366]/30 text-white/60 cursor-not-allowed"
               }`}
             >
               💬 Kirim ke WhatsApp &amp; Dapatkan Penawaran Resmi

@@ -191,7 +191,7 @@ function KalkulatorMB() {
             value={nilaiMesin}
             onChange={(e) => setNilaiMesin(e.target.value)}
           />
-          <span className="text-white/40 text-xs mt-1 block">Nilai penggantian mesin baru (bukan nilai buku / harga beli)</span>
+          <span className="text-white/60 text-xs mt-1 block">Nilai penggantian mesin baru (bukan nilai buku / harga beli)</span>
         </div>
         <div className="mt-5">
           <label className={labelCls}>Perluasan (Opsional)</label>
@@ -219,7 +219,7 @@ function KalkulatorMB() {
                 <span className="text-white/50 text-xs">✓ Termasuk Business Interruption</span>
               </div>
             )}
-            <p className="text-white/40 text-xs mt-3 leading-relaxed">
+            <p className="text-white/60 text-xs mt-3 leading-relaxed">
               * Estimasi berdasarkan tarif referensi pasar. Premi final ditentukan setelah survei kondisi mesin.
             </p>
             <a
@@ -280,7 +280,7 @@ export default function ClientPage() {
             ].map((s) => (
               <div key={s.lbl}>
                 <div className="font-heading text-gold text-lg font-bold">{s.num}</div>
-                <div className="text-white/45 text-xs mt-0.5">{s.lbl}</div>
+                <div className="text-white/60 text-xs mt-0.5">{s.lbl}</div>
               </div>
             ))}
           </div>
@@ -294,7 +294,7 @@ export default function ClientPage() {
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">
             Asuransi Kebakaran Tidak Cukup —<br />Ini Bedanya dengan MB
           </h2>
-          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[500px] mx-auto mt-3">
             Banyak pemilik pabrik mengira mesinnya sudah terlindungi karena ada asuransi kebakaran. Kenyataannya, lebih dari 90% kerusakan mesin bukan disebabkan kebakaran.
           </p>
         </div>
@@ -311,7 +311,7 @@ export default function ClientPage() {
               {bedaMBvsKebakaran.map((b, i) => (
                 <tr key={b.aspek} className={i % 2 === 0 ? "bg-white" : "bg-cream"}>
                   <td className="p-4 font-semibold text-navy text-xs">{b.aspek}</td>
-                  <td className="p-4 text-[#64748B] text-sm leading-relaxed">{b.kebakaran}</td>
+                  <td className="p-4 text-[#475569] text-sm leading-relaxed">{b.kebakaran}</td>
                   <td className="p-4 text-navy2 text-sm leading-relaxed font-medium">{b.mb}</td>
                 </tr>
               ))}
@@ -338,7 +338,7 @@ export default function ClientPage() {
             <div key={p.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{p.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{p.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{p.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -357,7 +357,7 @@ export default function ClientPage() {
             <div key={d.title} className="bg-white rounded-card p-6 border border-black/5 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{d.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{d.title}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{d.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{d.desc}</p>
             </div>
           ))}
         </div>
@@ -415,7 +415,7 @@ export default function ClientPage() {
             <div key={m.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{m.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{m.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{m.contoh}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{m.contoh}</p>
             </div>
           ))}
         </div>
@@ -428,7 +428,7 @@ export default function ClientPage() {
           <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">
             Estimasi Biaya Perbaikan<br />Mesin Industri Umum
           </h2>
-          <p className="text-base text-[#64748B] max-w-[460px] mx-auto mt-2">
+          <p className="text-base text-[#475569] max-w-[460px] mx-auto mt-2">
             Angka di bawah adalah estimasi pasar — biaya aktual sangat bergantung pada kondisi dan ketersediaan suku cadang
           </p>
         </div>
@@ -439,7 +439,7 @@ export default function ClientPage() {
               <div className="hidden md:block text-gold/30">|</div>
               <div>
                 <div className="font-heading text-gold font-bold text-base">{b.biaya}</div>
-                <div className="text-xs text-[#64748B] mt-0.5">{b.keterangan}</div>
+                <div className="text-xs text-[#475569] mt-0.5">{b.keterangan}</div>
               </div>
             </div>
           ))}
@@ -466,7 +466,7 @@ export default function ClientPage() {
               <div className="bg-gold text-navy font-heading font-bold text-sm w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">{i + 1}</div>
               <div>
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1">{s.judul}</div>
-                <p className="text-base leading-relaxed text-[#64748B]">{s.desc}</p>
+                <p className="text-base leading-relaxed text-[#475569]">{s.desc}</p>
               </div>
             </div>
           ))}
@@ -493,7 +493,7 @@ export default function ClientPage() {
                 {f.q}
                 <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
               </summary>
-              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#475569] pb-4">{f.a}</p>
             </details>
           ))}
         </div>
@@ -502,7 +502,7 @@ export default function ClientPage() {
       {/* ── INTERNAL LINKS ───────────────────────────────────────────────────── */}
       <section className="py-10 px-[5vw] bg-white border-t border-black/5">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">Produk & Artikel Terkait</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">Produk & Artikel Terkait</p>
           <div className="flex gap-3 flex-wrap">
             <Link href="/asuransi-engineering/contractor-all-risk" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏗️ Contractor All Risk →</Link>
             <Link href="/asuransi-engineering/erection-all-risk" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">⚙️ Erection All Risk →</Link>
