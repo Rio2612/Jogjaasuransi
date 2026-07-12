@@ -34,7 +34,7 @@ const sektorJogja = [
 const mitosVsFakta = [
   { mitos: "\"Usaha saya masih kecil, belum butuh asuransi\"", fakta: "Justru UMKM yang paling rentan — tidak punya cadangan modal besar untuk menutup kerugian mendadak. Satu kebakaran kecil bisa mengakhiri usaha yang dibangun bertahun-tahun." },
   { mitos: "\"Premi asuransi terlalu mahal\"", fakta: "Dibandingkan risiko yang ditanggung, premi asuransi sangat terjangkau. Asuransi kebakaran untuk ruko senilai Rp 500 juta bisa di bawah Rp 2 juta per tahun." },
-  { mitos: "\"Klaim asuransi susah, pasti ditolak\"", fakta: "Klaim ditolak biasanya karena kesalahan prosedur atau dokumen tidak lengkap — bukan karena perusahaan asuransi mencari alasan menolak. Dengan konsultan yang tepat, klaim bisa berjalan lancar." },
+  { mitos: "\"Klaim asuransi susah, pasti ditolak\"", fakta: "Klaim ditolak biasanya karena kesalahan prosedur atau dokumen tidak lengkap — bukan karena perusahaan asuransi mencari alasan menolak. Dengan praktisi yang tepat, klaim bisa berjalan lancar." },
   { mitos: "\"Sudah ada BPJS, tidak perlu asuransi lagi\"", fakta: "BPJS Ketenagakerjaan menanggung kecelakaan kerja pekerja. Tapi asuransi bisnis menanggung aset, operasional, dan tanggung jawab hukum perusahaan — dua hal yang berbeda." },
 ];
 
@@ -118,13 +118,13 @@ const langkahMulai = [
   },
   {
     no: "03",
-    judul: "Minta estimasi premi dari konsultan independen, bukan cuma satu agen",
-    detail: "Konsultan independen bisa membandingkan beberapa perusahaan asuransi sekaligus untuk mendapatkan cakupan terbaik dengan premi paling efisien — tanpa Anda harus repot menghubungi banyak pihak sendiri.",
+    judul: "Minta estimasi premi dari praktisi independen, bukan cuma satu agen",
+    detail: "Praktisi independen bisa membandingkan beberapa perusahaan asuransi sekaligus untuk mendapatkan cakupan terbaik dengan premi paling efisien — tanpa Anda harus repot menghubungi banyak pihak sendiri.",
   },
   {
     no: "04",
     judul: "Baca klausul pengecualian sebelum tanda tangan",
-    detail: "Sebagian besar sengketa klaim terjadi karena pemilik usaha tidak menyadari adanya pengecualian tertentu dalam polis. Pastikan konsultan Anda menjelaskan pengecualian utama di awal — bukan setelah klaim ditolak.",
+    detail: "Sebagian besar sengketa klaim terjadi karena pemilik usaha tidak menyadari adanya pengecualian tertentu dalam polis. Pastikan praktisi Anda menjelaskan pengecualian utama di awal — bukan setelah klaim ditolak.",
   },
 ];
 

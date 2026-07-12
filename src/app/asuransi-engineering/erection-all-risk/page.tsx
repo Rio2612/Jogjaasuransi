@@ -112,7 +112,7 @@ const schemaEAR = {
           "@type": "HowToStep",
           position: 1,
           name: "Laporkan Segera (24–48 Jam)",
-          text: "Hubungi konsultan via WhatsApp begitu insiden terjadi selama proses erection atau commissioning. Jangan lanjutkan pekerjaan di area yang rusak sebelum dilaporkan.",
+          text: "Hubungi praktisi via WhatsApp begitu insiden terjadi selama proses erection atau commissioning. Jangan lanjutkan pekerjaan di area yang rusak sebelum dilaporkan.",
         },
         {
           "@type": "HowToStep",
@@ -136,7 +136,7 @@ const schemaEAR = {
           "@type": "HowToStep",
           position: 5,
           name: "Survei & Persetujuan Klaim",
-          text: "Loss adjuster survei kerusakan bersama teknisi. Konsultan mendampingi untuk memastikan nilai klaim dinilai secara akurat dan adil.",
+          text: "Loss adjuster survei kerusakan bersama teknisi. Praktisi mendampingi untuk memastikan nilai klaim dinilai secara akurat dan adil.",
         },
       ],
     },

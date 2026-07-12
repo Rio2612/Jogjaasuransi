@@ -98,7 +98,7 @@ const schemaArtikel = {
           name: "Bagaimana jika tamu merusak properti — ditanggung asuransi?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Kerusakan yang disengaja (vandalisme) bisa ditanggung jika ada klausul RSMD dalam polis. Kerusakan tidak sengaja oleh tamu umumnya tidak dicakup polis properti standar — lebih tepat diselesaikan melalui deposit tamu atau proteksi host dari platform (AirCover, dll). Beberapa insurer menawarkan endorsement 'accidental damage' — diskusikan opsi ini dengan konsultan.",
+            text: "Kerusakan yang disengaja (vandalisme) bisa ditanggung jika ada klausul RSMD dalam polis. Kerusakan tidak sengaja oleh tamu umumnya tidak dicakup polis properti standar — lebih tepat diselesaikan melalui deposit tamu atau proteksi host dari platform (AirCover, dll). Beberapa insurer menawarkan endorsement 'accidental damage' — diskusikan opsi ini dengan praktisi.",
           },
         },
       ],
@@ -324,7 +324,7 @@ const tipsAirbnbOTA = [
   {
     no: "5",
     judul: "Review polis setiap kali ada perubahan properti atau pendapatan signifikan",
-    detail: "Renovasi besar, penambahan kolam renang, atau kenaikan tarif yang signifikan mengubah profil risiko dan nilai pertanggungan. Review tahunan dengan konsultan memastikan tidak ada gap perlindungan.",
+    detail: "Renovasi besar, penambahan kolam renang, atau kenaikan tarif yang signifikan mengubah profil risiko dan nilai pertanggungan. Review tahunan dengan praktisi memastikan tidak ada gap perlindungan.",
   },
 ];
 

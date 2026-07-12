@@ -63,7 +63,7 @@ const schemaFAQ = {
       acceptedAnswer: {
         "@type": "Answer",
         text:
-          "Hal terpenting pertama: JANGAN menghidupkan mesin. Menyalakan mesin yang sudah kemasukan air adalah penyebab utama hydrolocking dan membatalkan klaim asuransi. Segera dokumentasikan kondisi kendaraan dengan foto/video, hubungi konsultan asuransi atau agen Anda, dan tunggu surveyor sebelum memindahkan kendaraan.",
+          "Hal terpenting pertama: JANGAN menghidupkan mesin. Menyalakan mesin yang sudah kemasukan air adalah penyebab utama hydrolocking dan membatalkan klaim asuransi. Segera dokumentasikan kondisi kendaraan dengan foto/video, hubungi praktisi asuransi atau agen Anda, dan tunggu surveyor sebelum memindahkan kendaraan.",
       },
     },
     {
@@ -105,7 +105,7 @@ const langkahKlaim = [
   {
     step: "03",
     icon: "📱",
-    judul: "Hubungi Konsultan/Agen",
+    judul: "Hubungi Praktisi/Agen",
     desc: "Segera WhatsApp kami. Kami akan memandu langkah selanjutnya dan memastikan proses klaim dilakukan dengan benar dari awal.",
     warning: false,
   },
@@ -503,7 +503,7 @@ export default function AsuransiMobilBanjirPage() {
         <div className="pb-8 text-xs text-[#94A3B8] leading-relaxed border-t border-black/5 pt-6">
           Artikel ini disajikan sebagai panduan edukatif umum. Cakupan polis aktual bergantung pada
           ketentuan masing-masing perusahaan asuransi dan polis yang Anda miliki. Untuk kepastian
-          cakupan, selalu konsultasikan dengan konsultan atau baca polis Anda secara lengkap.
+          cakupan, selalu konsultasikan dengan praktisi atau baca polis Anda secara lengkap.
         </div>
       </article>
 

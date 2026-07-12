@@ -113,7 +113,7 @@ const tipsEV = [
   {
     icon: "🏭",
     judul: "Pastikan bengkel rekanan tersedia untuk merek Anda",
-    isi: "Tidak semua bengkel rekanan asuransi mampu menangani kendaraan listrik. Sebelum membeli polis, tanyakan kepada konsultan apakah ada bengkel authorized merek EV Anda yang menjadi rekanan perusahaan asuransi tersebut.",
+    isi: "Tidak semua bengkel rekanan asuransi mampu menangani kendaraan listrik. Sebelum membeli polis, tanyakan kepada praktisi apakah ada bengkel authorized merek EV Anda yang menjadi rekanan perusahaan asuransi tersebut.",
   },
   {
     icon: "📋",

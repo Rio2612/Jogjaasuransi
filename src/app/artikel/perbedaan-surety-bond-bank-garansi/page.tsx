@@ -12,7 +12,7 @@ import { KONTAK } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Perbedaan Surety Bond dan Bank Garansi – Mana yang Lebih Menguntungkan Kontraktor? | Asuransi Jogja",
   description:
-    "Penjelasan lengkap perbedaan Surety Bond (dari perusahaan asuransi) dan Bank Garansi. Proses, agunan, biaya, dan mana yang lebih cocok untuk kontraktor di Yogyakarta. Edukasi dari konsultan asuransi independen.",
+    "Penjelasan lengkap perbedaan Surety Bond (dari perusahaan asuransi) dan Bank Garansi. Proses, agunan, biaya, dan mana yang lebih cocok untuk kontraktor di Yogyakarta. Edukasi dari praktisi asuransi independen.",
   keywords:
     "perbedaan surety bond bank garansi, surety bond vs bank garansi kontraktor, jaminan tender asuransi atau bank, keuntungan surety bond untuk kontraktor, bank garansi vs surety bond DIY",
   alternates: {
@@ -229,7 +229,7 @@ const faqItems = [
   },
   {
     q: "Bagaimana jika limit surety saya tidak cukup untuk semua proyek yang sedang berjalan?",
-    a: "Limit surety bisa ditingkatkan seiring berkembangnya track record dan kapasitas finansial perusahaan. Jika limit saat ini tidak mencukupi, ada beberapa opsi: kombinasikan dengan bank garansi untuk sebagian proyek, fokus pada proyek prioritas, atau konsultasikan dengan konsultan untuk strategi pengelolaan limit yang optimal.",
+    a: "Limit surety bisa ditingkatkan seiring berkembangnya track record dan kapasitas finansial perusahaan. Jika limit saat ini tidak mencukupi, ada beberapa opsi: kombinasikan dengan bank garansi untuk sebagian proyek, fokus pada proyek prioritas, atau konsultasikan dengan praktisi untuk strategi pengelolaan limit yang optimal.",
   },
 ];
 

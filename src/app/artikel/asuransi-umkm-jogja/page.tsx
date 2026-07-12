@@ -285,7 +285,7 @@ const tipsMemilih = [
     no: "5",
     judul: "Simpan polis dan nomor klaim di tempat yang mudah diakses",
     detail:
-      "Saat musibah terjadi, kondisi panik adalah yang paling buruk untuk mencari dokumen. Simpan soft copy polis di cloud (Google Drive atau WhatsApp), dan catat nomor konsultan serta prosedur klaim di tempat yang mudah diakses semua anggota keluarga atau karyawan.",
+      "Saat musibah terjadi, kondisi panik adalah yang paling buruk untuk mencari dokumen. Simpan soft copy polis di cloud (Google Drive atau WhatsApp), dan catat nomor praktisi serta prosedur klaim di tempat yang mudah diakses semua anggota keluarga atau karyawan.",
   },
 ];
 
@@ -729,7 +729,7 @@ export default function ArtikelAsuransiUMKMJogja() {
               Hari Ini — Mulai dari Rp 300 Ribu
             </h2>
             <p className="text-white/75 text-sm max-w-[440px] mx-auto mb-8">
-              Konsultasi gratis dengan Rio MD — konsultan asuransi UMKM berpengalaman di
+              Konsultasi gratis dengan Rio MD — praktisi asuransi UMKM berpengalaman di
               Yogyakarta. Kami bantu pilihkan perlindungan yang tepat, tidak lebih dan tidak kurang.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">

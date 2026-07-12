@@ -5,7 +5,7 @@ import { KONTAK } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Asuransi Kos-Kosan Jogja: Panduan Lengkap untuk Pemilik Kos di Yogyakarta",
   description:
-    "Panduan lengkap asuransi kos-kosan di Yogyakarta. Risiko nyata kawasan Seturan, Jakal, Sleman; simulasi premi, cara klaim, tips underinsurance, dan FAQ. Konsultasi gratis konsultan lokal.",
+    "Panduan lengkap asuransi kos-kosan di Yogyakarta. Risiko nyata kawasan Seturan, Jakal, Sleman; simulasi premi, cara klaim, tips underinsurance, dan FAQ. Konsultasi gratis praktisi lokal.",
   keywords:
     "asuransi kos jogja, asuransi kos-kosan yogyakarta, asuransi kebakaran kos sleman, proteksi properti kos jogja, asuransi bangunan kos, premi asuransi kos, asuransi kos seturan, kos dekat ugm asuransi, perlindungan investasi properti kos, asuransi kos jalan kaliurang",
   alternates: { canonical: "https://asuransijogja.biz.id/artikel/asuransi-kos-jogja" },
@@ -56,7 +56,7 @@ const faqKos = [
   },
   {
     q: "Apa yang harus dilakukan jika terjadi kebakaran di kos saya?",
-    a: "Langkah pertama: pastikan keselamatan seluruh penghuni. Setelah aman, hubungi konsultan atau perusahaan asuransi maksimal 3×24 jam, dokumentasikan kerusakan dengan foto/video sebelum ada pembersihan, kumpulkan surat keterangan kebakaran dari Damkar Kota/Kabupaten, dan siapkan dokumen polis beserta KPT dan IMB.",
+    a: "Langkah pertama: pastikan keselamatan seluruh penghuni. Setelah aman, hubungi praktisi atau perusahaan asuransi maksimal 3×24 jam, dokumentasikan kerusakan dengan foto/video sebelum ada pembersihan, kumpulkan surat keterangan kebakaran dari Damkar Kota/Kabupaten, dan siapkan dokumen polis beserta KPT dan IMB.",
   },
   {
     q: "Apakah kos yang belum memiliki IMB tetap bisa diasuransikan?",
@@ -68,7 +68,7 @@ const faqKos = [
   },
   {
     q: "Berapa lama proses klaim asuransi kebakaran kos cair?",
-    a: "Klaim kebakaran standar dengan dokumen lengkap umumnya selesai dalam 14–30 hari kerja sejak survei adjustor. Dengan pendampingan konsultan yang berpengalaman, proses bisa lebih cepat karena semua dokumen disiapkan dengan benar sejak awal.",
+    a: "Klaim kebakaran standar dengan dokumen lengkap umumnya selesai dalam 14–30 hari kerja sejak survei adjustor. Dengan pendampingan praktisi yang berpengalaman, proses bisa lebih cepat karena semua dokumen disiapkan dengan benar sejak awal.",
   },
 ];
 
@@ -342,7 +342,7 @@ export default function ArtikelAsuransiKosPage() {
             <div className="flex items-start gap-3">
               <span className="text-2xl flex-shrink-0">💡</span>
               <div>
-                <div className="font-semibold text-navy mb-1">Tips dari Konsultan</div>
+                <div className="font-semibold text-navy mb-1">Tips dari Praktisi</div>
                 <p className="text-sm leading-[1.75] text-[#475569]">
                   Pemilik kos di kawasan Sleman (Jakal, Seturan, Pogung) <strong>wajib</strong> menambahkan
                   perluasan gempa. Pemilik kos di Bantul wajib tambah gempa Zona 5 sekaligus perluasan banjir.
@@ -377,7 +377,7 @@ export default function ArtikelAsuransiKosPage() {
               Tidak Yakin Produk Mana yang Tepat?
             </div>
             <p className="text-white/75 text-sm leading-relaxed mb-5 max-w-[420px] mx-auto">
-              Konsultasi langsung dengan Pak Rio — konsultan asuransi kerugian lokal di Yogyakarta.
+              Konsultasi langsung dengan Pak Rio — praktisi asuransi kerugian lokal di Yogyakarta.
               Gratis, tanpa tekanan, dan rekomendasi berdasarkan kondisi kos Anda yang sebenarnya.
             </p>
             <a
@@ -521,7 +521,7 @@ export default function ArtikelAsuransiKosPage() {
             <p className="text-sm leading-[1.75] text-[#475569]">
               <strong className="text-navy">Catatan penting:</strong> Salah satu keluhan tersering
               pemilik kos yang mengalami klaim adalah tidak tahu bahwa banjir atau gempa tidak
-              otomatis dijamin. Konsultan kami selalu memastikan semua klausul pengecualian
+              otomatis dijamin. Praktisi kami selalu memastikan semua klausul pengecualian
               dijelaskan secara transparan sebelum polis diterbitkan — termasuk implikasi
               <strong className="text-navy"> coinsurance clause</strong> yang bisa mengurangi
               pembayaran klaim jika nilai pertanggungan terlalu rendah.
@@ -578,7 +578,7 @@ export default function ArtikelAsuransiKosPage() {
           <p className="text-base leading-[1.85] text-[#475569] mb-6">
             Banyak pemilik kos yang ragu membeli asuransi karena khawatir proses klaimnya rumit.
             Kenyataannya, klaim bisa berjalan lancar jika prosedurnya dipahami sejak awal dan
-            dilakukan bersama konsultan yang berpengalaman:
+            dilakukan bersama praktisi yang berpengalaman:
           </p>
 
           <div className="flex flex-col gap-4 mb-8">
@@ -590,7 +590,7 @@ export default function ArtikelAsuransiKosPage() {
               },
               {
                 no: "02",
-                judul: "Laporkan ke Konsultan/Asuransi Maksimal 3×24 Jam",
+                judul: "Laporkan ke Praktisi/Asuransi Maksimal 3×24 Jam",
                 isi: "Keterlambatan pelaporan bisa menjadi alasan klaim ditolak. Jika Anda klien Asuransi Jogja, cukup WhatsApp Pak Rio dan kami akan memandu seluruh prosesnya dari awal.",
               },
               {
@@ -606,7 +606,7 @@ export default function ArtikelAsuransiKosPage() {
               {
                 no: "05",
                 judul: "Pendampingan Survei oleh Adjustor",
-                isi: "Perusahaan asuransi mengirim loss adjustor untuk memverifikasi kerusakan. Hadiri proses ini bersama konsultan Anda. Konsultan yang berpihak pada Anda akan memastikan penilaian kerugian dilakukan secara adil dan lengkap.",
+                isi: "Perusahaan asuransi mengirim loss adjustor untuk memverifikasi kerusakan. Hadiri proses ini bersama praktisi Anda. Praktisi yang berpihak pada Anda akan memastikan penilaian kerugian dilakukan secara adil dan lengkap.",
               },
               {
                 no: "06",
@@ -631,9 +631,9 @@ export default function ArtikelAsuransiKosPage() {
             ))}
           </div>
 
-          {/* SECTION 8 — KONSULTAN vs AGEN */}
+          {/* SECTION 8 — PRAKTISI vs AGEN */}
           <h2 className="font-heading text-[1.65rem] text-navy font-bold mb-4 mt-12 leading-tight">
-            Konsultan vs Agen Asuransi: Mana yang Lebih Menguntungkan Pemilik Kos?
+            Praktisi vs Agen Asuransi: Mana yang Lebih Menguntungkan Pemilik Kos?
           </h2>
           <p className="text-base leading-[1.85] text-[#475569] mb-4">
             Membeli asuransi langsung dari agen pemasaran perusahaan memang mudah. Tapi ada
@@ -646,7 +646,7 @@ export default function ArtikelAsuransiKosPage() {
                 <tr className="bg-navy text-white">
                   <th className="text-left px-4 py-3 rounded-tl-[10px] font-semibold">Aspek</th>
                   <th className="text-left px-4 py-3 font-semibold">Agen Perusahaan Asuransi</th>
-                  <th className="text-left px-4 py-3 rounded-tr-[10px] font-semibold">Konsultan Independen</th>
+                  <th className="text-left px-4 py-3 rounded-tr-[10px] font-semibold">Praktisi Independen</th>
                 </tr>
               </thead>
               <tbody>

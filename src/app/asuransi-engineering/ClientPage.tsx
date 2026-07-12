@@ -288,7 +288,7 @@ export default function ClientPage() {
             </h1>
             <p className="text-white/80 text-base leading-[1.85] mb-7 max-w-[520px]">
               CAR untuk proyek gedung dan infrastruktur. EAR untuk instalasi mesin dan struktur baja.
-              Machinery Breakdown untuk mesin yang sudah beroperasi. Satu konsultan untuk semua kebutuhan
+              Machinery Breakdown untuk mesin yang sudah beroperasi. Satu praktisi untuk semua kebutuhan
               engineering insurance Anda di DIY.
             </p>
             {/* Stat strip */}
@@ -607,7 +607,7 @@ export default function ClientPage() {
                 icon: "🛡️",
                 judul: "Pendampingan Klaim Hingga Selesai",
                 detail:
-                  "Jika terjadi musibah, kami tidak menghilang. Kami mendampingi seluruh proses klaim — dari pelaporan, koordinasi loss adjuster, hingga dana klaim diterima. Klaim yang didampingi konsultan berpengalaman terbukti lebih cepat dan lebih adil.",
+                  "Jika terjadi musibah, kami tidak menghilang. Kami mendampingi seluruh proses klaim — dari pelaporan, koordinasi loss adjuster, hingga dana klaim diterima. Klaim yang didampingi praktisi berpengalaman terbukti lebih cepat dan lebih adil.",
               },
               {
                 icon: "📍",
@@ -761,7 +761,7 @@ export default function ClientPage() {
               Kami Siap Bantu Hari Ini
             </h2>
             <p className="text-white/75 text-sm max-w-[420px] mx-auto mb-8">
-              Konsultasi gratis dengan Rio MD, konsultan asuransi engineering berpengalaman 11+ tahun
+              Konsultasi gratis dengan Rio MD, praktisi asuransi engineering berpengalaman 11+ tahun
               di Yogyakarta. Estimasi premi siap dalam 1 hari kerja.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">

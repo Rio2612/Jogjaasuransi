@@ -87,7 +87,7 @@ export function buildEmailHtml(sub: SPPASubmission): string {
                   <td style="padding:16px 20px;">
                     <div style="font-size:13px;font-weight:700;color:#166534;margin-bottom:4px;">✅ Permintaan Berhasil Diterima</div>
                     <div style="font-size:13px;color:#15803D;line-height:1.6;">
-                      Tim konsultan kami sedang menyiapkan dokumen simulasi. Kami akan menghubungi Anda
+                      Tim praktisi kami sedang menyiapkan dokumen simulasi. Kami akan menghubungi Anda
                       dalam <strong>1×24 jam kerja</strong> melalui WhatsApp atau email ini.
                     </div>
                   </td>
@@ -114,7 +114,7 @@ export function buildEmailHtml(sub: SPPASubmission): string {
               </div>
               <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;">
                 ${[
-                  ["📋", "Analisis Kebutuhan", "Konsultan kami akan mempelajari data Anda dan memilih produk yang paling sesuai."],
+                  ["📋", "Analisis Kebutuhan", "Praktisi kami akan mempelajari data Anda dan memilih produk yang paling sesuai."],
                   ["📄", "Penyiapan Dokumen", "Dokumen Simulasi & Estimasi Premi disiapkan khusus berdasarkan data Anda."],
                   ["💬", "Konfirmasi via WhatsApp", "Kami menghubungi Anda via WhatsApp untuk penjelasan lebih lanjut dan tanya jawab."],
                   ["✅", "Penerbitan Polis Resmi", "Jika Anda setuju, kami proses penerbitan polis resmi dari perusahaan asuransi pilihan."],
@@ -150,7 +150,7 @@ export function buildEmailHtml(sub: SPPASubmission): string {
                     <div style="font-size:12px;color:#78716C;line-height:1.7;">
                       Email ini merupakan konfirmasi penerimaan permintaan, bukan penawaran resmi (quotation) maupun polis asuransi.
                       Dokumen simulasi bersifat indikatif dan dapat berubah setelah survei objek dan analisis risiko lebih lanjut.
-                      Sebagai <strong>konsultan asuransi independen</strong>, kami tidak menerbitkan polis secara langsung.
+                      Sebagai <strong>praktisi asuransi independen</strong>, kami tidak menerbitkan polis secara langsung.
                     </div>
                   </td>
                 </tr>

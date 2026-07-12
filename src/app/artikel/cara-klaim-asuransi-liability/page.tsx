@@ -52,10 +52,10 @@ const schemaArtikel = {
       description: "Langkah-langkah mengajukan klaim asuransi liability agar proses berjalan lancar dan tidak ditolak.",
       totalTime: "P14D",
       step: [
-        { "@type": "HowToStep", position: 1, name: "Jangan Akui Tanggung Jawab", text: "Hindari pernyataan atau tindakan apapun yang bisa diinterpretasikan sebagai pengakuan bersalah sebelum berkonsultasi dengan konsultan asuransi." },
-        { "@type": "HowToStep", position: 2, name: "Laporkan dalam 24–48 Jam", text: "Hubungi konsultan asuransi segera setelah insiden terjadi atau setelah menerima surat tuntutan dari pihak ketiga." },
+        { "@type": "HowToStep", position: 1, name: "Jangan Akui Tanggung Jawab", text: "Hindari pernyataan atau tindakan apapun yang bisa diinterpretasikan sebagai pengakuan bersalah sebelum berkonsultasi dengan praktisi asuransi." },
+        { "@type": "HowToStep", position: 2, name: "Laporkan dalam 24–48 Jam", text: "Hubungi praktisi asuransi segera setelah insiden terjadi atau setelah menerima surat tuntutan dari pihak ketiga." },
         { "@type": "HowToStep", position: 3, name: "Dokumentasikan Insiden", text: "Kumpulkan semua bukti: foto lokasi kejadian, laporan saksi, laporan medis, dan surat tuntutan yang diterima." },
-        { "@type": "HowToStep", position: 4, name: "Serahkan ke Konsultan", text: "Konsultan meneruskan klaim ke perusahaan asuransi dan mendampingi proses investigasi oleh loss adjuster." },
+        { "@type": "HowToStep", position: 4, name: "Serahkan ke Praktisi", text: "Praktisi meneruskan klaim ke perusahaan asuransi dan mendampingi proses investigasi oleh loss adjuster." },
         { "@type": "HowToStep", position: 5, name: "Negosiasi dan Penyelesaian", text: "Perusahaan asuransi bernegosiasi dengan penuntut. Tertanggung tidak perlu langsung berhadapan dengan tuntutan hukum." },
       ],
     },
@@ -67,7 +67,7 @@ const schemaArtikel = {
           name: "Apa yang harus dilakukan pertama kali saat menerima surat tuntutan liability?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Langkah pertama: jangan balas surat tuntutan atau buat pernyataan apapun tanpa berkonsultasi dengan konsultan asuransi Anda. Hubungi konsultan dalam 24 jam. Salinan surat tuntutan, amplop berperangko, dan semua dokumentasi terkait insiden harus diserahkan kepada konsultan.",
+            text: "Langkah pertama: jangan balas surat tuntutan atau buat pernyataan apapun tanpa berkonsultasi dengan praktisi asuransi Anda. Hubungi praktisi dalam 24 jam. Salinan surat tuntutan, amplop berperangko, dan semua dokumentasi terkait insiden harus diserahkan kepada praktisi.",
           },
         },
         {
@@ -75,7 +75,7 @@ const schemaArtikel = {
           name: "Berapa lama proses klaim asuransi liability diselesaikan?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Klaim liability yang tidak disengketakan biasanya selesai dalam 30–90 hari setelah semua dokumen lengkap. Klaim yang melibatkan proses hukum atau nilai besar bisa memakan waktu 6–24 bulan. Pendampingan konsultan yang berpengalaman terbukti mempercepat proses secara signifikan.",
+            text: "Klaim liability yang tidak disengketakan biasanya selesai dalam 30–90 hari setelah semua dokumen lengkap. Klaim yang melibatkan proses hukum atau nilai besar bisa memakan waktu 6–24 bulan. Pendampingan praktisi yang berpengalaman terbukti mempercepat proses secara signifikan.",
           },
         },
         {
@@ -83,7 +83,7 @@ const schemaArtikel = {
           name: "Apakah klaim liability bisa ditolak meski polis aktif?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Ya. Alasan penolakan yang paling umum: pelaporan terlambat (di luar batas waktu yang ditentukan polis), insiden masuk kategori pengecualian polis, tertanggung sudah membuat pengakuan bersalah sebelum melapor, atau tertanggung sudah membayar klaim sendiri tanpa persetujuan insurer. Itulah mengapa langkah pertama selalu harus menghubungi konsultan — bukan langsung bereaksi terhadap penuntut.",
+            text: "Ya. Alasan penolakan yang paling umum: pelaporan terlambat (di luar batas waktu yang ditentukan polis), insiden masuk kategori pengecualian polis, tertanggung sudah membuat pengakuan bersalah sebelum melapor, atau tertanggung sudah membayar klaim sendiri tanpa persetujuan insurer. Itulah mengapa langkah pertama selalu harus menghubungi praktisi — bukan langsung bereaksi terhadap penuntut.",
           },
         },
       ],
@@ -99,7 +99,7 @@ const langkahKlaim = [
     ikon: "🚫",
     judul: "JANGAN: Akui Tanggung Jawab atau Buat Pernyataan",
     tipe: "warning",
-    detail: "Ini adalah aturan nomor satu dalam klaim liability. Apapun yang terjadi — meski Anda merasa bersalah — jangan pernah membuat pernyataan tertulis atau lisan yang mengakui tanggung jawab sebelum berkonsultasi dengan konsultan. Kata-kata seperti 'maaf, itu salah kami' bisa digunakan sebagai bukti dalam proses hukum dan mempersulit posisi insurer.",
+    detail: "Ini adalah aturan nomor satu dalam klaim liability. Apapun yang terjadi — meski Anda merasa bersalah — jangan pernah membuat pernyataan tertulis atau lisan yang mengakui tanggung jawab sebelum berkonsultasi dengan praktisi. Kata-kata seperti 'maaf, itu salah kami' bisa digunakan sebagai bukti dalam proses hukum dan mempersulit posisi insurer.",
     warna: "bg-red-50 border-red-200",
     warnaNo: "bg-red-100 text-red-700",
     warnaIkon: "text-red-500",
@@ -107,9 +107,9 @@ const langkahKlaim = [
   {
     no: "02",
     ikon: "📞",
-    judul: "Hubungi Konsultan Asuransi dalam 24–48 Jam",
+    judul: "Hubungi Praktisi Asuransi dalam 24–48 Jam",
     tipe: "action",
-    detail: "Segera hubungi konsultan via WhatsApp begitu insiden terjadi atau begitu Anda menerima surat tuntutan dari pihak ketiga. Sebagian besar polis liability mensyaratkan pelaporan dalam batas waktu tertentu — melampaui batas ini bisa menjadi alasan penolakan klaim meski insiden terbukti tertanggung.",
+    detail: "Segera hubungi praktisi via WhatsApp begitu insiden terjadi atau begitu Anda menerima surat tuntutan dari pihak ketiga. Sebagian besar polis liability mensyaratkan pelaporan dalam batas waktu tertentu — melampaui batas ini bisa menjadi alasan penolakan klaim meski insiden terbukti tertanggung.",
     warna: "bg-blue-50 border-blue-200",
     warnaNo: "bg-blue-100 text-blue-700",
     warnaIkon: "text-blue-500",
@@ -127,9 +127,9 @@ const langkahKlaim = [
   {
     no: "04",
     ikon: "📄",
-    judul: "Serahkan Dokumen Klaim ke Konsultan",
+    judul: "Serahkan Dokumen Klaim ke Praktisi",
     tipe: "action",
-    detail: "Konsultan akan memandu pengisian formulir klaim dan meneruskan ke perusahaan asuransi. Jangan langsung menghubungi perusahaan asuransi tanpa melalui konsultan — jalur yang tepat memastikan klaim diproses dengan benar sejak awal.",
+    detail: "Praktisi akan memandu pengisian formulir klaim dan meneruskan ke perusahaan asuransi. Jangan langsung menghubungi perusahaan asuransi tanpa melalui praktisi — jalur yang tepat memastikan klaim diproses dengan benar sejak awal.",
     warna: "bg-purple-50 border-purple-200",
     warnaNo: "bg-purple-100 text-purple-700",
     warnaIkon: "text-purple-500",
@@ -139,7 +139,7 @@ const langkahKlaim = [
     ikon: "🔍",
     judul: "Investigasi oleh Loss Adjuster",
     tipe: "process",
-    detail: "Perusahaan asuransi menunjuk loss adjuster independen untuk menginvestigasi insiden — mewawancarai saksi, mengevaluasi bukti, dan menilai besaran klaim. Konsultan kami mendampingi proses ini untuk memastikan investigasi berjalan objektif dan kepentingan Anda terlindungi.",
+    detail: "Perusahaan asuransi menunjuk loss adjuster independen untuk menginvestigasi insiden — mewawancarai saksi, mengevaluasi bukti, dan menilai besaran klaim. Praktisi kami mendampingi proses ini untuk memastikan investigasi berjalan objektif dan kepentingan Anda terlindungi.",
     warna: "bg-slate-50 border-slate-200",
     warnaNo: "bg-slate-100 text-slate-700",
     warnaIkon: "text-slate-500",
@@ -235,7 +235,7 @@ const kesalahanFatal = [
   {
     kesalahan: "Terlambat melapor — di atas 48 jam setelah insiden",
     dampak: "Banyak polis mencantumkan batas waktu pelaporan. Terlambat = alasan penolakan klaim yang sah",
-    solusi: "Hubungi konsultan segera, bahkan jika belum ada tuntutan resmi. Lebih baik lapor terlalu awal daripada terlambat.",
+    solusi: "Hubungi praktisi segera, bahkan jika belum ada tuntutan resmi. Lebih baik lapor terlalu awal daripada terlambat.",
   },
   {
     kesalahan: "Membayar klaim sendiri tanpa persetujuan insurer",
@@ -250,13 +250,13 @@ const kesalahanFatal = [
   {
     kesalahan: "Merespons surat tuntutan tanpa konsultasi hukum/asuransi",
     dampak: "Respons yang salah bisa diinterpretasikan sebagai pengakuan atau bisa melemahkan posisi hukum Anda",
-    solusi: "Teruskan semua surat tuntutan ke konsultan. Jangan balas langsung — biarkan insurer yang menangani komunikasi dengan penuntut.",
+    solusi: "Teruskan semua surat tuntutan ke praktisi. Jangan balas langsung — biarkan insurer yang menangani komunikasi dengan penuntut.",
   },
 ];
 
 const timelineKlaim = [
   { hari: "H+0", aksi: "Insiden terjadi atau surat tuntutan diterima", tipe: "start" },
-  { hari: "H+1", aksi: "Hubungi konsultan — laporkan insiden", tipe: "action" },
+  { hari: "H+1", aksi: "Hubungi praktisi — laporkan insiden", tipe: "action" },
   { hari: "H+2–7", aksi: "Kumpulkan dan serahkan dokumen lengkap", tipe: "action" },
   { hari: "H+7–14", aksi: "Insurer menunjuk loss adjuster — investigasi dimulai", tipe: "process" },
   { hari: "H+14–30", aksi: "Investigasi selesai — insurer evaluasi klaim", tipe: "process" },
@@ -279,11 +279,11 @@ const faqItems = [
   },
   {
     q: "Bagaimana jika penuntut langsung menghubungi saya, bukan melalui pengacara?",
-    a: "Tetap terapkan prinsip yang sama: tunjukkan empati, dengarkan, tapi jangan buat komitmen finansial apapun. Sampaikan bahwa Anda akan menindaklanjuti dan segera hubungi konsultan. Penyelesaian langsung (di luar jalur asuransi) boleh saja dilakukan, tapi harus dengan persetujuan insurer terlebih dahulu jika nilai penyelesaian akan diklaim ke polis.",
+    a: "Tetap terapkan prinsip yang sama: tunjukkan empati, dengarkan, tapi jangan buat komitmen finansial apapun. Sampaikan bahwa Anda akan menindaklanjuti dan segera hubungi praktisi. Penyelesaian langsung (di luar jalur asuransi) boleh saja dilakukan, tapi harus dengan persetujuan insurer terlebih dahulu jika nilai penyelesaian akan diklaim ke polis.",
   },
   {
     q: "Apakah asuransi liability menanggung klaim yang terjadi sebelum polis terbit?",
-    a: "Tidak untuk insiden yang sudah diketahui sebelum polis terbit. Polis liability standar bersifat 'claims-made' atau 'occurrence-based'. Untuk claims-made: klaim harus diajukan selama masa berlaku polis. Untuk occurrence-based: insiden harus terjadi selama masa berlaku polis. Konsultasikan jenis basis polis Anda dengan konsultan untuk memastikan tidak ada gap perlindungan.",
+    a: "Tidak untuk insiden yang sudah diketahui sebelum polis terbit. Polis liability standar bersifat 'claims-made' atau 'occurrence-based'. Untuk claims-made: klaim harus diajukan selama masa berlaku polis. Untuk occurrence-based: insiden harus terjadi selama masa berlaku polis. Konsultasikan jenis basis polis Anda dengan praktisi untuk memastikan tidak ada gap perlindungan.",
   },
 ];
 
@@ -338,7 +338,7 @@ export default function ArtikelCaraKlaimLiability() {
           {/* Lead */}
           <div className="bg-gold/6 border-l-4 border-gold rounded-r-xl p-5 mb-6">
             <p className="text-navy2 text-sm leading-relaxed">
-              <strong className="text-navy">Aturan Paling Penting:</strong> Begitu insiden terjadi atau surat tuntutan diterima — <strong>jangan buat pernyataan apapun, jangan bayar apapun</strong>, dan <strong>hubungi konsultan asuransi dalam 24 jam</strong>. Tiga hal ini menentukan apakah klaim Anda berhasil atau gugur sebelum dimulai.
+              <strong className="text-navy">Aturan Paling Penting:</strong> Begitu insiden terjadi atau surat tuntutan diterima — <strong>jangan buat pernyataan apapun, jangan bayar apapun</strong>, dan <strong>hubungi praktisi asuransi dalam 24 jam</strong>. Tiga hal ini menentukan apakah klaim Anda berhasil atau gugur sebelum dimulai.
             </p>
           </div>
 
@@ -417,7 +417,7 @@ export default function ArtikelCaraKlaimLiability() {
             Dokumen Klaim per Jenis Liability
           </h2>
           <p className="text-[#64748B] text-base leading-relaxed mb-6">
-            Dokumen yang dibutuhkan berbeda tergantung jenis polis. Siapkan semua ini sebelum menghubungi konsultan:
+            Dokumen yang dibutuhkan berbeda tergantung jenis polis. Siapkan semua ini sebelum menghubungi praktisi:
           </p>
           <div className="flex flex-col gap-4 mb-10">
             {dokumenPerJenis.map((d) => (

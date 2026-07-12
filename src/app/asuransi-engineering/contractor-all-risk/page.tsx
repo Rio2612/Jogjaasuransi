@@ -112,7 +112,7 @@ const schemaCAR = {
           "@type": "HowToStep",
           position: 1,
           name: "Laporkan Segera (24–48 Jam)",
-          text: "Hubungi konsultan asuransi via WhatsApp begitu insiden terjadi. Jangan perbaiki kerusakan sebelum dilaporkan — ini syarat klaim yang sering menyebabkan klaim ditolak.",
+          text: "Hubungi praktisi asuransi via WhatsApp begitu insiden terjadi. Jangan perbaiki kerusakan sebelum dilaporkan — ini syarat klaim yang sering menyebabkan klaim ditolak.",
         },
         {
           "@type": "HowToStep",
@@ -130,7 +130,7 @@ const schemaCAR = {
           "@type": "HowToStep",
           position: 4,
           name: "Survei oleh Loss Adjuster",
-          text: "Perusahaan asuransi mengirim loss adjuster untuk survei kerusakan. Konsultan mendampingi untuk memastikan klaim dinilai secara adil.",
+          text: "Perusahaan asuransi mengirim loss adjuster untuk survei kerusakan. Praktisi mendampingi untuk memastikan klaim dinilai secara adil.",
         },
         {
           "@type": "HowToStep",
@@ -198,7 +198,7 @@ const schemaCAR = {
           name: "Bagaimana cara klaim CAR jika terjadi kerusakan akibat banjir?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Segera hubungi konsultan (24–48 jam setelah kejadian). Jangan bersihkan kerusakan sebelum dilaporkan. Ambil dokumentasi foto/video. Konsultan akan memandu pengisian form klaim, koordinasi dengan loss adjuster, dan pendampingan hingga klaim cair.",
+            text: "Segera hubungi praktisi (24–48 jam setelah kejadian). Jangan bersihkan kerusakan sebelum dilaporkan. Ambil dokumentasi foto/video. Praktisi akan memandu pengisian form klaim, koordinasi dengan loss adjuster, dan pendampingan hingga klaim cair.",
           },
         },
         {

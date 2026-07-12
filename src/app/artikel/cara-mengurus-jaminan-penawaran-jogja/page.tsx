@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cara Mengurus Jaminan Penawaran (Bid Bond) Jogja – Syarat & Alur Lengkap",
     description:
-      "Panduan syarat, dokumen, dan alur pengajuan Bid Bond untuk tender di Yogyakarta. Edukasi dari konsultan asuransi independen.",
+      "Panduan syarat, dokumen, dan alur pengajuan Bid Bond untuk tender di Yogyakarta. Edukasi dari praktisi asuransi independen.",
     url: "https://asuransijogja.biz.id/artikel/cara-mengurus-jaminan-penawaran-jogja",
     type: "article",
   },
@@ -54,7 +54,7 @@ const schema = {
       step: [
         { "@type": "HowToStep", position: 1, name: "Baca RKS dan Identifikasi Syarat Jaminan", text: "Baca seluruh Rencana Kerja dan Syarat-Syarat (RKS). Catat nilai jaminan yang diminta (umumnya 1–3% dari nilai HPS), masa berlaku, dan format dokumen yang diterima panitia." },
         { "@type": "HowToStep", position: 2, name: "Siapkan Dokumen Perusahaan", text: "Kumpulkan dokumen yang dibutuhkan: akta pendirian perusahaan dan perubahannya, NPWP, NIB, laporan keuangan 2 tahun terakhir, SBU/IUJK yang masih berlaku, dan KTP direktur." },
-        { "@type": "HowToStep", position: 3, name: "Hubungi Konsultan Surety Bond", text: "Sampaikan informasi: nama paket tender, nomor pengumuman, nilai HPS, masa berlaku jaminan yang diminta, dan kirimkan dokumen perusahaan. Konsultan akan memproses dan menghubungkan dengan perusahaan surety." },
+        { "@type": "HowToStep", position: 3, name: "Hubungi Praktisi Surety Bond", text: "Sampaikan informasi: nama paket tender, nomor pengumuman, nilai HPS, masa berlaku jaminan yang diminta, dan kirimkan dokumen perusahaan. Praktisi akan memproses dan menghubungkan dengan perusahaan surety." },
         { "@type": "HowToStep", position: 4, name: "Review Draft Jaminan", text: "Periksa draft Jaminan Penawaran sebelum dicetak: nama tertanggung, nama penerima jaminan, nama paket tender, nilai jaminan, dan masa berlaku. Konfirmasi jika ada yang perlu dikoreksi." },
         { "@type": "HowToStep", position: 5, name: "Terima Dokumen Jaminan", text: "Setelah disetujui, dokumen Jaminan Penawaran dicetak di atas kertas segel perusahaan surety. File digital (PDF) dikirim online, dokumen asli dikirim melalui kurir atau ojol ke alamat Anda." },
         { "@type": "HowToStep", position: 6, name: "Lampirkan ke Dokumen Penawaran", text: "Sertakan dokumen Jaminan Penawaran asli atau hasil scan (sesuai ketentuan tender) dalam amplop dokumen penawaran atau upload di SPSE sebelum batas waktu yang ditentukan." },
@@ -126,7 +126,7 @@ const alurPengajuan = [
     step: "01",
     judul: "Baca RKS — Temukan Klausul Jaminan",
     icon: "📖",
-    desc: "Sebelum menghubungi konsultan, baca seluruh RKS terlebih dahulu. Cari bagian yang membahas 'Jaminan Penawaran'. Catat: nilai jaminan yang diminta (% HPS atau nominal), masa berlaku jaminan, format yang diterima (asli atau bisa scan), dan nama penerima jaminan.",
+    desc: "Sebelum menghubungi praktisi, baca seluruh RKS terlebih dahulu. Cari bagian yang membahas 'Jaminan Penawaran'. Catat: nilai jaminan yang diminta (% HPS atau nominal), masa berlaku jaminan, format yang diterima (asli atau bisa scan), dan nama penerima jaminan.",
     penting: "Jangan asumsikan syaratnya — setiap paket tender bisa berbeda. Ada yang minta 1%, ada yang 3%, ada yang minta masa berlaku 30 hari, ada 60 hari.",
   },
   {
@@ -134,20 +134,20 @@ const alurPengajuan = [
     judul: "Siapkan Dokumen Perusahaan",
     icon: "📁",
     desc: "Kumpulkan semua dokumen yang dibutuhkan dalam format digital (scan atau foto resolusi baik). Untuk perusahaan yang sudah pernah mengurus jaminan sebelumnya, dokumen ini biasanya sudah tersimpan — tinggal cek masa berlaku SBU dan IUJK.",
-    penting: "SBU yang sudah habis masa berlakunya adalah penyebab paling umum pengajuan jaminan ditolak atau tertunda. Cek dulu sebelum menghubungi konsultan.",
+    penting: "SBU yang sudah habis masa berlakunya adalah penyebab paling umum pengajuan jaminan ditolak atau tertunda. Cek dulu sebelum menghubungi praktisi.",
   },
   {
     step: "03",
-    judul: "Konsultasikan ke Konsultan Surety Bond",
+    judul: "Konsultasikan ke Praktisi Surety Bond",
     icon: "💬",
-    desc: "Hubungi konsultan asuransi melalui WhatsApp. Sampaikan: nama paket tender dan instansi penerima, nilai HPS dan nilai jaminan yang diminta, tanggal penutupan penawaran, serta kirimkan dokumen perusahaan yang sudah disiapkan.",
-    penting: "Sampaikan informasi selengkap mungkin di awal. Semakin lengkap informasi, semakin cepat konsultan bisa membantu memproses.",
+    desc: "Hubungi praktisi asuransi melalui WhatsApp. Sampaikan: nama paket tender dan instansi penerima, nilai HPS dan nilai jaminan yang diminta, tanggal penutupan penawaran, serta kirimkan dokumen perusahaan yang sudah disiapkan.",
+    penting: "Sampaikan informasi selengkap mungkin di awal. Semakin lengkap informasi, semakin cepat praktisi bisa membantu memproses.",
   },
   {
     step: "04",
-    judul: "Konsultan Proses ke Perusahaan Surety",
+    judul: "Praktisi Proses ke Perusahaan Surety",
     icon: "⚙️",
-    desc: "Konsultan akan meneruskan pengajuan ke perusahaan surety (asuransi) yang paling sesuai. Perusahaan surety akan menganalisis profil dan kapasitas perusahaan Anda berdasarkan dokumen yang dikirimkan.",
+    desc: "Praktisi akan meneruskan pengajuan ke perusahaan surety (asuransi) yang paling sesuai. Perusahaan surety akan menganalisis profil dan kapasitas perusahaan Anda berdasarkan dokumen yang dikirimkan.",
     penting: "Proses analisis ini yang menentukan apakah jaminan bisa diterbitkan. Perusahaan dengan laporan keuangan sehat dan SBU sesuai umumnya lebih cepat disetujui.",
   },
   {
@@ -223,7 +223,7 @@ const faqItems = [
   },
   {
     q: "Bagaimana cara mengkonfirmasi keaslian Jaminan Penawaran jika panitia mempertanyakannya?",
-    a: "Dokumen Jaminan Penawaran dari perusahaan surety yang berizin OJK bisa dikonfirmasi keasliannya melalui kontak resmi perusahaan surety yang tercantum dalam dokumen. Konsultan kami juga bisa membantu proses konfirmasi jika diperlukan.",
+    a: "Dokumen Jaminan Penawaran dari perusahaan surety yang berizin OJK bisa dikonfirmasi keasliannya melalui kontak resmi perusahaan surety yang tercantum dalam dokumen. Praktisi kami juga bisa membantu proses konfirmasi jika diperlukan.",
   },
 ];
 
@@ -392,7 +392,7 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
           </div>
           <div className="bg-navy rounded-xl p-5 text-white mb-10">
             <p className="text-sm text-white/80">
-              <strong className="text-gold">💡 Tips dari Konsultan:</strong> Jika ada keraguan tentang format atau isi dokumen, hubungi panitia pengadaan untuk konfirmasi sebelum batas upload. Lebih baik bertanya terlebih dahulu daripada dokumen ditolak di tahap evaluasi administrasi.
+              <strong className="text-gold">💡 Tips dari Praktisi:</strong> Jika ada keraguan tentang format atau isi dokumen, hubungi panitia pengadaan untuk konfirmasi sebelum batas upload. Lebih baik bertanya terlebih dahulu daripada dokumen ditolak di tahap evaluasi administrasi.
             </p>
           </div>
 

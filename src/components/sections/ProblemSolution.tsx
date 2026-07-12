@@ -16,7 +16,7 @@ export default function ProblemSolution() {
   return (
     <section id="problem" className="py-[5.5rem] px-[5vw] bg-cream">
       <div className="text-center mb-12">
-        <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Mengapa Butuh Konsultan?</div>
+        <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Mengapa Butuh Praktisi?</div>
         <h2 className="font-heading text-[clamp(1.9rem,3vw,2.9rem)] leading-[1.22] text-navy">Masalah Nyata,<br />Solusi Konkret</h2>
         <p className="text-[0.95rem] leading-[1.8] text-[#64748B] max-w-[560px] mx-auto mt-3">Membeli asuransi kerugian tanpa panduan yang tepat bisa berujung pada perlindungan yang tidak memadai saat klaim dibutuhkan.</p>
       </div>

@@ -7,7 +7,7 @@ import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Asuransi Kendaraan Jogja – Mobil, Truk & Armada | Asuransi Jogja",
-  description: "Konsultan asuransi kendaraan bermotor di Yogyakarta. All Risk, TLO, kendaraan niaga, dump truk, hingga armada fleet. Tarif OJK, klaim mudah. Konsultasi gratis.",
+  description: "Praktisi asuransi kendaraan bermotor di Yogyakarta. All Risk, TLO, kendaraan niaga, dump truk, hingga armada fleet. Tarif OJK, klaim mudah. Konsultasi gratis.",
   keywords: "asuransi kendaraan jogja, asuransi mobil yogyakarta, asuransi truk jogja, asuransi armada fleet yogyakarta, asuransi motor vehicle jogja",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-kendaraan" },
   openGraph: { title: "Asuransi Kendaraan Jogja – Mobil, Truk & Armada", url: "https://asuransijogja.biz.id/asuransi-kendaraan" },
@@ -173,7 +173,7 @@ export default function AsuransiKendaraanPage() {
           <div className="text-base leading-[1.85] text-[#475569] space-y-4">
             <p>Yogyakarta sebagai kota dengan kepadatan lalu lintas tinggi dan curah hujan ekstrem musiman (terutama November–Maret) membuat risiko kecelakaan, banjir, dan pencurian kendaraan nyata bagi pemilik kendaraan pribadi maupun perusahaan. Asuransi kendaraan bermotor bukan sekadar syarat leasing, tapi instrumen pengelolaan risiko keuangan.</p>
             <p>Secara garis besar produk kendaraan terbagi 3 segmen: kendaraan pribadi (mobil harian), kendaraan niaga berat (dump truk, tronton untuk proyek/tambang), dan armada/fleet korporasi (5+ unit operasional). Setiap segmen punya profil risiko, tarif, dan skema klaim berbeda meski sama-sama mengacu tarif referensi OJK SE No.6/SEOJK.05/2017.</p>
-            <p>Sebagai konsultan independen, kami tidak terikat satu perusahaan asuransi sehingga bisa membandingkan penawaran dari beberapa perusahaan sekaligus untuk mendapatkan kombinasi premi dan cakupan terbaik sesuai profil risiko kendaraan Anda.</p>
+            <p>Sebagai praktisi independen, kami tidak terikat satu perusahaan asuransi sehingga bisa membandingkan penawaran dari beberapa perusahaan sekaligus untuk mendapatkan kombinasi premi dan cakupan terbaik sesuai profil risiko kendaraan Anda.</p>
           </div>
 
           <div className="bg-white border border-black/8 rounded-card p-6 mt-8">

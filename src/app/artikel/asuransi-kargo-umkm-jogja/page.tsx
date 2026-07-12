@@ -89,7 +89,7 @@ const schemaArtikel = {
           name: "Bagaimana cara klaim asuransi kargo jika barang rusak saat pengiriman?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Langkah klaim: (1) Jangan terima paket dalam kondisi rusak tanpa membuat catatan keberatan (nota keberatan) kepada kurir di tempat. (2) Dokumentasikan kerusakan dengan foto lengkap — kondisi luar kemasan dan isi barang. (3) Laporkan ke konsultan asuransi dalam 24–48 jam. (4) Isi formulir klaim dan lampirkan invoice, bukti pengiriman, foto kerusakan, dan nota keberatan. Proses klaim umumnya selesai dalam 5–14 hari kerja.",
+            text: "Langkah klaim: (1) Jangan terima paket dalam kondisi rusak tanpa membuat catatan keberatan (nota keberatan) kepada kurir di tempat. (2) Dokumentasikan kerusakan dengan foto lengkap — kondisi luar kemasan dan isi barang. (3) Laporkan ke praktisi asuransi dalam 24–48 jam. (4) Isi formulir klaim dan lampirkan invoice, bukti pengiriman, foto kerusakan, dan nota keberatan. Proses klaim umumnya selesai dalam 5–14 hari kerja.",
           },
         },
       ],
@@ -115,7 +115,7 @@ const perbandinganAsuransi = [
   {
     aspek: "Proses Klaim",
     ekspedisiStandar: "Via CS ekspedisi — lambat, sering ditolak dengan alasan prosedural",
-    polisKhusus: "Via konsultan yang mendampingi — lebih cepat dan adil",
+    polisKhusus: "Via praktisi yang mendampingi — lebih cepat dan adil",
     unggul: true,
   },
   {
@@ -242,7 +242,7 @@ const langkahKlaim = [
   {
     no: "03",
     ikon: "📞",
-    judul: "Laporkan ke Konsultan dalam 24–48 Jam",
+    judul: "Laporkan ke Praktisi dalam 24–48 Jam",
     detail:
       "Hubungi kami via WhatsApp segera setelah menerima laporan dari pembeli atau menemukan kerusakan. Pelaporan tepat waktu adalah syarat klaim — keterlambatan melapor bisa menjadi alasan penolakan klaim.",
     warna: "bg-blue-50 border-blue-200",

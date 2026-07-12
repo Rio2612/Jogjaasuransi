@@ -5,7 +5,7 @@ import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Asuransi Kargo Jogja – Pengiriman Barang, Ekspor Impor & UMKM | Asuransi Jogja",
-  description: "Konsultan asuransi kargo dan pengiriman barang di Yogyakarta. Lindungi kiriman Anda via darat, laut, dan udara. Marine cargo, inland transit, asuransi ekspedisi UMKM. Konsultasi gratis.",
+  description: "Praktisi asuransi kargo dan pengiriman barang di Yogyakarta. Lindungi kiriman Anda via darat, laut, dan udara. Marine cargo, inland transit, asuransi ekspedisi UMKM. Konsultasi gratis.",
   keywords: "asuransi kargo jogja, asuransi pengiriman barang yogyakarta, marine cargo jogja, asuransi ekspedisi yogyakarta, asuransi kargo UMKM jogja, inland transit insurance yogyakarta",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-kargo" },
   openGraph: {

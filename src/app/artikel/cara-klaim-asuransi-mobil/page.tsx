@@ -53,7 +53,7 @@ const schemaArtikel = {
       totalTime: "P7D",
       step: [
         { "@type": "HowToStep", position: 1, name: "Amankan Diri & Dokumentasi", text: "Pastikan keselamatan, hubungi polisi jika perlu, foto kondisi kendaraan dari semua sudut sebelum dipindahkan." },
-        { "@type": "HowToStep", position: 2, name: "Lapor ke Konsultan dalam 3×24 Jam", text: "Hubungi konsultan asuransi dalam 3 hari — melewati batas ini bisa jadi alasan penolakan klaim." },
+        { "@type": "HowToStep", position: 2, name: "Lapor ke Praktisi dalam 3×24 Jam", text: "Hubungi praktisi asuransi dalam 3 hari — melewati batas ini bisa jadi alasan penolakan klaim." },
         { "@type": "HowToStep", position: 3, name: "Lengkapi Dokumen Klaim", text: "Siapkan formulir klaim, STNK, SIM, KTP, polis, dan dokumen pendukung sesuai jenis klaim." },
         { "@type": "HowToStep", position: 4, name: "Survei Kendaraan", text: "Bawa kendaraan ke bengkel rekanan atau tunggu surveyor insurer datang ke lokasi." },
         { "@type": "HowToStep", position: 5, name: "Perbaikan & Pengambilan", text: "Kendaraan diperbaiki di bengkel rekanan. Bayar deductible saat pengambilan kendaraan." },
@@ -104,9 +104,9 @@ const langkahKlaimKecelakaan = [
   },
   {
     no: "02", ikon: "📞",
-    judul: "Hubungi Konsultan dalam 3×24 Jam",
+    judul: "Hubungi Praktisi dalam 3×24 Jam",
     tipe: "urgent",
-    detail: "Hubungi konsultan asuransi segera — meski dokumen belum lengkap. Laporkan dulu, lengkapi dokumen belakangan. Batas waktu 3 hari adalah syarat klaim yang tidak bisa ditawar. Konsultan akan memandu langkah selanjutnya.",
+    detail: "Hubungi praktisi asuransi segera — meski dokumen belum lengkap. Laporkan dulu, lengkapi dokumen belakangan. Batas waktu 3 hari adalah syarat klaim yang tidak bisa ditawar. Praktisi akan memandu langkah selanjutnya.",
     warna: "bg-amber-50 border-amber-200",
     warnaNo: "bg-amber-100 text-amber-700",
   },
@@ -114,7 +114,7 @@ const langkahKlaimKecelakaan = [
     no: "03", ikon: "📄",
     judul: "Siapkan & Serahkan Dokumen",
     tipe: "action",
-    detail: "Dokumen standar: formulir klaim (dari konsultan), fotokopi STNK, SIM pengemudi saat kejadian, KTP tertanggung, polis asuransi, dan foto kerusakan. Untuk kecelakaan dengan pihak ketiga: tambah surat keterangan kepolisian.",
+    detail: "Dokumen standar: formulir klaim (dari praktisi), fotokopi STNK, SIM pengemudi saat kejadian, KTP tertanggung, polis asuransi, dan foto kerusakan. Untuk kecelakaan dengan pihak ketiga: tambah surat keterangan kepolisian.",
     warna: "bg-blue-50 border-blue-200",
     warnaNo: "bg-blue-100 text-blue-700",
   },
@@ -155,7 +155,7 @@ const skenarioKhusus = [
       "Serahkan kunci cadangan asli kepada insurer (beberapa insurer mensyaratkan ini)",
       "Proses klaim kehilangan lebih lama — biasanya 60–90 hari tunggu hasil penyelidikan polisi",
     ],
-    catatan: "Jika kendaraan ditemukan kembali dalam kondisi rusak selama proses klaim kehilangan, laporkan segera ke konsultan — ada prosedur khusus untuk skenario ini.",
+    catatan: "Jika kendaraan ditemukan kembali dalam kondisi rusak selama proses klaim kehilangan, laporkan segera ke praktisi — ada prosedur khusus untuk skenario ini.",
     warna: "border-amber-200 bg-amber-50/30",
   },
   {
@@ -178,7 +178,7 @@ const skenarioKhusus = [
       "Tukar data dengan pengemudi lain: nama, nomor telepon, nomor polisi, insurer",
       "Jangan tandatangani surat pernyataan apapun di lokasi tanpa konsultasi",
       "Minta surat keterangan kepolisian — penting untuk klaim TPL dan klaim kerusakan",
-      "Laporkan ke konsultan meski Anda tidak bersalah — proses TPL perlu koordinasi",
+      "Laporkan ke praktisi meski Anda tidak bersalah — proses TPL perlu koordinasi",
       "Jika ada tuntutan dari pihak ketiga, terapkan prinsip yang sama dengan klaim liability",
     ],
     catatan: "Jika Anda yang bersalah dan tidak punya perluasan TPL, Anda bertanggung jawab penuh atas kerusakan kendaraan/properti pihak ketiga. Perluasan TPL sangat dianjurkan.",
@@ -229,12 +229,12 @@ const kesalahanFatal = [
   {
     kesalahan: "Memperbaiki kendaraan sebelum disurvei insurer",
     dampak: "Insurer tidak bisa menilai kerusakan asli → klaim ditolak atau dibayar jauh lebih kecil",
-    solusi: "Hubungi konsultan dulu, minta izin perbaikan. Untuk kerusakan darurat, foto dan dokumentasi sangat lengkap sebelum perbaikan apapun.",
+    solusi: "Hubungi praktisi dulu, minta izin perbaikan. Untuk kerusakan darurat, foto dan dokumentasi sangat lengkap sebelum perbaikan apapun.",
   },
   {
     kesalahan: "Laporan terlambat — lebih dari 3×24 jam",
     dampak: "Menjadi alasan sah penolakan klaim meski insiden nyata dan polis aktif",
-    solusi: "Lapor segera meski dokumen belum lengkap. Konsultan bisa membantu melengkapi dokumen belakangan.",
+    solusi: "Lapor segera meski dokumen belum lengkap. Praktisi bisa membantu melengkapi dokumen belakangan.",
   },
   {
     kesalahan: "Pengemudi tidak memiliki SIM sah saat kejadian",
@@ -272,7 +272,7 @@ const faqItems = [
   },
   {
     q: "Bagaimana jika bengkel rekanan kualitas kerjanya kurang memuaskan?",
-    a: "Jangan tandatangani berita acara selesai jika ada perbaikan yang tidak memuaskan. Sampaikan keberatan secara tertulis kepada konsultan dan insurer sebelum kendaraan diambil. Insurer berkewajiban memastikan perbaikan sesuai standar. Kami selalu mendampingi klien dalam proses ini untuk memastikan kualitas perbaikan yang adil.",
+    a: "Jangan tandatangani berita acara selesai jika ada perbaikan yang tidak memuaskan. Sampaikan keberatan secara tertulis kepada praktisi dan insurer sebelum kendaraan diambil. Insurer berkewajiban memastikan perbaikan sesuai standar. Kami selalu mendampingi klien dalam proses ini untuk memastikan kualitas perbaikan yang adil.",
   },
 ];
 
@@ -338,7 +338,7 @@ export default function ArtikelCaraKlaimAsuransiMobil() {
           <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-10 flex gap-3">
             <span className="text-lg flex-shrink-0">⚠️</span>
             <p className="text-sm text-red-700 leading-relaxed">
-              <strong>Baru mengalami insiden sekarang?</strong> Hentikan semua aktivitas dan hubungi konsultan asuransi segera via WhatsApp. Jangan perbaiki, jangan bersihkan kerusakan, jangan tandatangani pernyataan apapun sebelum berkonsultasi.
+              <strong>Baru mengalami insiden sekarang?</strong> Hentikan semua aktivitas dan hubungi praktisi asuransi segera via WhatsApp. Jangan perbaiki, jangan bersihkan kerusakan, jangan tandatangani pernyataan apapun sebelum berkonsultasi.
             </p>
           </div>
 
@@ -455,7 +455,7 @@ export default function ArtikelCaraKlaimAsuransiMobil() {
             </p>
             <div className="flex gap-3 flex-wrap">
               <a href={`https://wa.me/${KONTAK.wa}`} className="bg-gold text-navy px-5 py-2.5 rounded-lg font-bold text-sm no-underline hover:bg-gold2 transition-all">
-                💬 Hubungi Konsultan Sekarang
+                💬 Hubungi Praktisi Sekarang
               </a>
               <Link href="/asuransi-kendaraan/mobil" className="border border-navy/20 text-navy px-5 py-2.5 rounded-lg text-sm no-underline hover:border-gold hover:text-gold transition-all">
                 🚗 Lihat Produk Asuransi Mobil →

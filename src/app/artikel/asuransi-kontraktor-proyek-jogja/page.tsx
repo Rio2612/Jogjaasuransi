@@ -94,10 +94,10 @@ const schemaArtikel = {
         },
         {
           "@type": "Question",
-          name: "Bisakah semua asuransi kontraktor diurus oleh satu konsultan?",
+          name: "Bisakah semua asuransi kontraktor diurus oleh satu praktisi?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Ya, dan ini justru yang paling efisien. Menggunakan satu konsultan untuk CAR, Surety Bond, dan Employer Liability memudahkan koordinasi, monitoring masa berlaku, dan penanganan klaim. Kami di Asuransi Jogja menangani semua kebutuhan asuransi kontraktor dalam satu layanan terintegrasi.",
+            text: "Ya, dan ini justru yang paling efisien. Menggunakan satu praktisi untuk CAR, Surety Bond, dan Employer Liability memudahkan koordinasi, monitoring masa berlaku, dan penanganan klaim. Kami di Asuransi Jogja menangani semua kebutuhan asuransi kontraktor dalam satu layanan terintegrasi.",
           },
         },
       ],
@@ -290,11 +290,11 @@ const kasusNyata = [
     jenis: "Konsekuensi tanpa persiapan jaminan",
     nilai: "Kontrak batal + masuk daftar hitam",
     kronologi:
-      "Kontraktor kecil di Gunung Kidul ditetapkan sebagai pemenang tender proyek irigasi Rp 1,5 miliar. Karena tidak memiliki konsultan yang membantu, proses pengurusan Jaminan Pelaksanaan terlambat 3 hari dari batas waktu 14 hari kerja.",
+      "Kontraktor kecil di Gunung Kidul ditetapkan sebagai pemenang tender proyek irigasi Rp 1,5 miliar. Karena tidak memiliki praktisi yang membantu, proses pengurusan Jaminan Pelaksanaan terlambat 3 hari dari batas waktu 14 hari kerja.",
     hasil:
       "PPK membatalkan kontrak dan mencairkan Jaminan Penawaran. Kontraktor dimasukkan dalam daftar hitam LKPP selama 2 tahun — tidak bisa mengikuti tender manapun selama periode tersebut.",
     pelajaran:
-      "Jaminan Pelaksanaan harus sudah siap sebelum penetapan pemenang diumumkan — bukan baru diurus setelah menang. Konsultan yang berpengalaman akan mempersiapkan ini jauh sebelumnya.",
+      "Jaminan Pelaksanaan harus sudah siap sebelum penetapan pemenang diumumkan — bukan baru diurus setelah menang. Praktisi yang berpengalaman akan mempersiapkan ini jauh sebelumnya.",
     badge: "bg-red-50 text-red-700 border-red-100",
   },
 ];
@@ -305,7 +305,7 @@ const timelineProyek = [
     ikon: "📋",
     waktu: "H-7 sebelum pemasukan penawaran",
     aksi: "Siapkan Jaminan Penawaran",
-    detail: "Hubungi konsultan minimal 3 hari sebelum deadline pemasukan dokumen.",
+    detail: "Hubungi praktisi minimal 3 hari sebelum deadline pemasukan dokumen.",
     produk: "Jaminan Penawaran",
     hrefProduk: "/asuransi-surety-bond/jaminan-penawaran",
     warna: "border-l-purple-400",
@@ -325,7 +325,7 @@ const timelineProyek = [
     ikon: "✍️",
     waktu: "Bersamaan atau sebelum kontrak ditandatangani",
     aksi: "Siapkan dokumen untuk CAR & Jaminan Uang Muka",
-    detail: "Berikan RAB, gambar, dan jadwal kepada konsultan untuk proses underwriting CAR.",
+    detail: "Berikan RAB, gambar, dan jadwal kepada praktisi untuk proses underwriting CAR.",
     produk: "Asuransi CAR",
     hrefProduk: "/asuransi-engineering/contractor-all-risk",
     warna: "border-l-blue-400",
@@ -375,7 +375,7 @@ const timelineProyek = [
 const faqItems = [
   {
     q: "Apakah kontraktor subkontrak perlu asuransi sendiri?",
-    a: "Tergantung struktur kontrak. Dalam banyak proyek pemerintah, polis CAR kontraktor utama sudah mencakup pekerjaan subkontraktor selama dikerjakan di lokasi proyek yang sama. Namun jika subkontraktor bekerja di luar site atau memiliki kontrak terpisah dengan owner, mereka perlu polis CAR sendiri. Konfirmasi ke konsultan sebelum memutuskan.",
+    a: "Tergantung struktur kontrak. Dalam banyak proyek pemerintah, polis CAR kontraktor utama sudah mencakup pekerjaan subkontraktor selama dikerjakan di lokasi proyek yang sama. Namun jika subkontraktor bekerja di luar site atau memiliki kontrak terpisah dengan owner, mereka perlu polis CAR sendiri. Konfirmasi ke praktisi sebelum memutuskan.",
   },
   {
     q: "Bagaimana jika proyek melebihi batas waktu kontrak — apakah polis CAR masih berlaku?",
@@ -387,11 +387,11 @@ const faqItems = [
   },
   {
     q: "Apa yang harus dilakukan kontraktor jika terjadi kecelakaan kerja di proyek?",
-    a: "Langkah pertama: pastikan korban mendapat pertolongan medis segera. Langkah kedua: laporkan ke BPJS Ketenagakerjaan dalam 2x24 jam (kewajiban hukum). Langkah ketiga: jika kontraktor memiliki Employer Liability, laporkan juga ke konsultan asuransi. Jangan membuat pernyataan atau kesepakatan finansial dengan keluarga korban sebelum berkonsultasi dengan konsultan — ini bisa mempengaruhi proses klaim.",
+    a: "Langkah pertama: pastikan korban mendapat pertolongan medis segera. Langkah kedua: laporkan ke BPJS Ketenagakerjaan dalam 2x24 jam (kewajiban hukum). Langkah ketiga: jika kontraktor memiliki Employer Liability, laporkan juga ke praktisi asuransi. Jangan membuat pernyataan atau kesepakatan finansial dengan keluarga korban sebelum berkonsultasi dengan praktisi — ini bisa mempengaruhi proses klaim.",
   },
   {
     q: "Bagaimana cara kontraktor mendapatkan premi lebih murah tanpa mengurangi cakupan?",
-    a: "Ada beberapa strategi: (1) siapkan dokumen proyek selengkap mungkin — underwriter memberi rate lebih baik untuk proyek yang risikonya terukur, (2) pertimbangkan deductible lebih besar untuk proyek risiko rendah, (3) konsolidasi ke Annual CAR jika mengerjakan banyak proyek dalam setahun, (4) bangun track record klaim bersih — loyalitas multi-tahun biasanya mendapat NCD. Konsultan yang bernegosiasi langsung ke underwriter juga bisa mendapat rate 10–20% lebih baik dibanding beli langsung.",
+    a: "Ada beberapa strategi: (1) siapkan dokumen proyek selengkap mungkin — underwriter memberi rate lebih baik untuk proyek yang risikonya terukur, (2) pertimbangkan deductible lebih besar untuk proyek risiko rendah, (3) konsolidasi ke Annual CAR jika mengerjakan banyak proyek dalam setahun, (4) bangun track record klaim bersih — loyalitas multi-tahun biasanya mendapat NCD. Praktisi yang bernegosiasi langsung ke underwriter juga bisa mendapat rate 10–20% lebih baik dibanding beli langsung.",
   },
 ];
 
@@ -840,7 +840,7 @@ export default function ArtikelAsuransiKontraktorJogja() {
           />
           <div className="relative z-10">
             <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.2rem)] text-white leading-[1.22] mb-4">
-              Satu Konsultan untuk Semua<br />
+              Satu Praktisi untuk Semua<br />
               Kebutuhan Asuransi Kontraktor Anda
             </h2>
             <p className="text-white/75 text-sm max-w-[460px] mx-auto mb-8">

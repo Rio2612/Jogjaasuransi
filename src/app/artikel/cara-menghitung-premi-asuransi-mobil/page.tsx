@@ -324,7 +324,7 @@ export default function CaraHitungPremiPage() {
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-[#64748B]">* Tarif batas bawah OJK SE No.6/SEOJK.05/2017. Tarif batas atas sekitar 20–40% lebih tinggi dari angka di atas. Konsultan independen membantu Anda mendapatkan penawaran dalam rentang yang kompetitif.</p>
+          <p className="text-xs text-[#64748B]">* Tarif batas bawah OJK SE No.6/SEOJK.05/2017. Tarif batas atas sekitar 20–40% lebih tinggi dari angka di atas. Praktisi independen membantu Anda mendapatkan penawaran dalam rentang yang kompetitif.</p>
         </section>
 
         {/* CONTOH PERHITUNGAN */}
@@ -430,7 +430,7 @@ export default function CaraHitungPremiPage() {
               <div className="font-heading text-white font-bold mb-1">Rio MD</div>
               <div className="text-gold2 text-xs mb-3">Praktisi Asuransi Independen · Yogyakarta · 8 Tahun Pengalaman</div>
               <p className="text-white/65 text-sm leading-relaxed">
-                Memahami cara kerja tarif OJK memberi Anda daya tawar yang lebih baik saat membeli polis. Sebagai konsultan independen, saya membantu klien memverifikasi kewajaran penawaran yang diterima dan memastikan mereka tidak membayar lebih dari yang seharusnya.
+                Memahami cara kerja tarif OJK memberi Anda daya tawar yang lebih baik saat membeli polis. Sebagai praktisi independen, saya membantu klien memverifikasi kewajaran penawaran yang diterima dan memastikan mereka tidak membayar lebih dari yang seharusnya.
               </p>
             </div>
           </div>

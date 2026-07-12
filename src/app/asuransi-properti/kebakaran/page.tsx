@@ -63,7 +63,7 @@ const schemaFAQ = {
       name: "Bagaimana cara mengajukan klaim asuransi kebakaran?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Langkah klaim: (1) Pastikan keselamatan seluruh penghuni; (2) Hubungi Pemadam Kebakaran dan minta surat keterangan kebakaran; (3) Laporkan ke konsultan atau perusahaan asuransi maksimal 3×24 jam setelah kejadian; (4) Dokumentasikan kerusakan dengan foto dan video sebelum ada pembersihan; (5) Kumpulkan dokumen: polis, KTP, IMB/PBG, foto kerusakan, dan surat keterangan damkar; (6) Tunggu proses survei dari adjustor; (7) Terima ganti rugi setelah persetujuan.",
+        text: "Langkah klaim: (1) Pastikan keselamatan seluruh penghuni; (2) Hubungi Pemadam Kebakaran dan minta surat keterangan kebakaran; (3) Laporkan ke praktisi atau perusahaan asuransi maksimal 3×24 jam setelah kejadian; (4) Dokumentasikan kerusakan dengan foto dan video sebelum ada pembersihan; (5) Kumpulkan dokumen: polis, KTP, IMB/PBG, foto kerusakan, dan surat keterangan damkar; (6) Tunggu proses survei dari adjustor; (7) Terima ganti rugi setelah persetujuan.",
       },
     },
     {
@@ -310,7 +310,7 @@ const faqItems = [
   },
   {
     q: "Bagaimana cara mengajukan klaim asuransi kebakaran?",
-    a: "Pastikan keselamatan penghuni terlebih dahulu. Hubungi Pemadam Kebakaran dan minta surat keterangan. Laporkan ke konsultan atau perusahaan asuransi maksimal 3×24 jam. Dokumentasikan kerusakan dengan foto/video sebelum ada pembersihan. Siapkan dokumen: polis, KTP, IMB/PBG, dan surat keterangan damkar. Konsultan kami mendampingi seluruh proses klaim.",
+    a: "Pastikan keselamatan penghuni terlebih dahulu. Hubungi Pemadam Kebakaran dan minta surat keterangan. Laporkan ke praktisi atau perusahaan asuransi maksimal 3×24 jam. Dokumentasikan kerusakan dengan foto/video sebelum ada pembersihan. Siapkan dokumen: polis, KTP, IMB/PBG, dan surat keterangan damkar. Praktisi kami mendampingi seluruh proses klaim.",
   },
   {
     q: "Apakah kebakaran karena kelalaian penghuni kos tetap bisa diklaim?",

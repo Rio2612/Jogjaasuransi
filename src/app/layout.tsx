@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     template: "%s | Asuransi Jogja",
   },
   description:
-    "Asuransi Jogja – Konsultan asuransi kerugian independen di Yogyakarta. Melayani asuransi kendaraan, properti, engineering, kargo, liability, dan surety bond untuk personal dan korporasi.",
+    "Asuransi Jogja – Praktisi asuransi kerugian independen di Yogyakarta. Melayani asuransi kendaraan, properti, engineering, kargo, liability, dan surety bond untuk personal dan korporasi.",
   keywords:
-    "asuransi jogja, asuransi kerugian yogyakarta, konsultan asuransi jogja, asuransi mobil jogja, asuransi kebakaran jogja, asuransi properti jogja, asuransi kos jogja",
+    "asuransi jogja, asuransi kerugian yogyakarta, praktisi asuransi jogja, asuransi mobil jogja, asuransi kebakaran jogja, asuransi properti jogja, asuransi kos jogja",
   authors: [{ name: "Rio MD" }],
   alternates: { canonical: BASE_URL },
   openGraph: {

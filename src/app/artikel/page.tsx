@@ -4,12 +4,12 @@ import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Artikel Edukasi Asuransi – Tips & Panduan untuk Anda",
-  description: "Artikel dan panduan asuransi dari konsultan Yogyakarta. Pelajari cara klaim, asuransi kendaraan, properti, engineering, liability, surety bond, dan tips asuransi bisnis.",
+  description: "Artikel dan panduan asuransi dari praktisi Yogyakarta. Pelajari cara klaim, asuransi kendaraan, properti, engineering, liability, surety bond, dan tips asuransi bisnis.",
   keywords: "artikel asuransi jogja, edukasi asuransi yogyakarta, tips asuransi, cara klaim asuransi mobil, asuransi kendaraan jogja, asuransi properti jogja, asuransi engineering, surety bond jogja",
   alternates: { canonical: "https://asuransijogja.biz.id/artikel" },
   openGraph: {
     title: "Artikel Edukasi Asuransi – Asuransi Jogja",
-    description: "Panduan dan tips asuransi dari konsultan berpengalaman di Yogyakarta.",
+    description: "Panduan dan tips asuransi dari praktisi berpengalaman di Yogyakarta.",
     url: "https://asuransijogja.biz.id/artikel",
   },
 };
@@ -291,7 +291,7 @@ const schemaArtikelList = {
   "@type": "CollectionPage",
   "name": "Artikel Edukasi Asuransi – Asuransi Jogja",
   "url": "https://asuransijogja.biz.id/artikel",
-  "description": "Kumpulan artikel dan panduan asuransi dari konsultan asuransi kerugian di Yogyakarta.",
+  "description": "Kumpulan artikel dan panduan asuransi dari praktisi asuransi kerugian di Yogyakarta.",
   "publisher": { "@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id" },
   "mainEntity": {
     "@type": "ItemList",

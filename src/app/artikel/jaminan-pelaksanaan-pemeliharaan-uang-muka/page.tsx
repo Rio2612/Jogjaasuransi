@@ -92,7 +92,7 @@ export default function ArtikelJaminanPelaksanaanPemeliharaanUangMuka() {
 
             <div className="bg-cream border border-black/8 rounded-card p-6 mb-8">
               <div className="text-gold text-xs font-bold uppercase tracking-wider mb-2">📖 Studi Kasus: Satu Kontraktor, Tiga Jaminan dalam Satu Siklus Proyek</div>
-              <p className="text-sm leading-relaxed text-[#475569]">Seorang kontraktor di Bantul memenangkan tender pembangunan gedung dinas senilai Rp 2,8 miliar. Sesuai siklus normal: jaminan pelaksanaan 5% (Rp 140 juta) diterbitkan saat tanda tangan kontrak; jaminan uang muka 20% (Rp 560 juta) diterbitkan saat mencairkan modal kerja awal; dan jaminan pemeliharaan 5% (Rp 140 juta) diterbitkan saat PHO untuk menggantikan retensi. Dengan merencanakan ketiganya sejak awal bersama konsultan, kontraktor menghindari keterlambatan administrasi di setiap fase proyek.</p>
+              <p className="text-sm leading-relaxed text-[#475569]">Seorang kontraktor di Bantul memenangkan tender pembangunan gedung dinas senilai Rp 2,8 miliar. Sesuai siklus normal: jaminan pelaksanaan 5% (Rp 140 juta) diterbitkan saat tanda tangan kontrak; jaminan uang muka 20% (Rp 560 juta) diterbitkan saat mencairkan modal kerja awal; dan jaminan pemeliharaan 5% (Rp 140 juta) diterbitkan saat PHO untuk menggantikan retensi. Dengan merencanakan ketiganya sejak awal bersama praktisi, kontraktor menghindari keterlambatan administrasi di setiap fase proyek.</p>
             </div>
 
             <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">🧮 Estimasi Biaya 3 Jenis Jaminan (Ilustrasi, Nilai Kontrak Rp 2 Miliar)</h2>

@@ -313,7 +313,7 @@ const komponenPromiDetail = [
 const faqItems = [
   {
     q: "Apakah premi CAR bisa dinegosiasi?",
-    a: "Ya, sampai batas tertentu. Rate CAR ditentukan oleh underwriter berdasarkan profil risiko proyek — namun kontraktor dengan track record bersih, nilai deductible yang lebih besar, atau volume bisnis yang signifikan memiliki ruang negosiasi. Konsultan kami bernegosiasi langsung dengan underwriter atas nama klien, bukan sekadar meneruskan penawaran.",
+    a: "Ya, sampai batas tertentu. Rate CAR ditentukan oleh underwriter berdasarkan profil risiko proyek — namun kontraktor dengan track record bersih, nilai deductible yang lebih besar, atau volume bisnis yang signifikan memiliki ruang negosiasi. Praktisi kami bernegosiasi langsung dengan underwriter atas nama klien, bukan sekadar meneruskan penawaran.",
   },
   {
     q: "Kenapa rate penawaran dari satu insurer bisa sangat berbeda dengan insurer lain?",
@@ -616,7 +616,7 @@ export default function ArtikelPremiCAR() {
               },
               {
                 no: "4",
-                judul: "Gunakan konsultan yang bernegosiasi langsung dengan underwriter",
+                judul: "Gunakan praktisi yang bernegosiasi langsung dengan underwriter",
                 detail: "Tidak semua broker/agen memiliki akses negosiasi langsung. Kami di Asuransi Jogja bernegosiasi ke underwriter atas nama klien, bukan hanya meneruskan penawaran dari sistem.",
               },
               {

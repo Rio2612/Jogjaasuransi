@@ -225,7 +225,7 @@ const keunggulanVsBankGaransi = [
 const alurPengajuan = [
   {
     no: "01",
-    judul: "Hubungi Konsultan via WA",
+    judul: "Hubungi Praktisi via WA",
     detail:
       "Beritahu jenis jaminan yang dibutuhkan, nilai proyek, dan tenggat waktu. Kami langsung konfirmasi ketersediaan dan estimasi premi hari itu juga.",
     ikon: "💬",

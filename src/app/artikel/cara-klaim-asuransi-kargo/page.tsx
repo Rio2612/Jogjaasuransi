@@ -54,7 +54,7 @@ const schema = {
       step: [
         { "@type": "HowToStep", position: 1, name: "Dokumentasikan Kerusakan Segera", text: "Saat menerima kiriman dalam kondisi bermasalah, dokumentasikan segera sebelum menandatangani tanda terima. Foto kondisi kemasan luar, dalam, dan barang yang rusak dari berbagai sudut." },
         { "@type": "HowToStep", position: 2, name: "Buat Catatan pada Tanda Terima", text: "Jangan tandatangani tanda terima tanpa catatan jika ada kerusakan. Tulis 'diterima dengan kondisi rusak/tidak sesuai' pada formulir tanda terima ekspedisi sebelum menandatangani." },
-        { "@type": "HowToStep", position: 3, name: "Hubungi Konsultan Asuransi", text: "Hubungi konsultan asuransi untuk mendapatkan panduan prosedur klaim yang berlaku pada polis Anda. Sampaikan kronologi kejadian dan dokumentasi yang sudah dikumpulkan." },
+        { "@type": "HowToStep", position: 3, name: "Hubungi Praktisi Asuransi", text: "Hubungi praktisi asuransi untuk mendapatkan panduan prosedur klaim yang berlaku pada polis Anda. Sampaikan kronologi kejadian dan dokumentasi yang sudah dikumpulkan." },
         { "@type": "HowToStep", position: 4, name: "Siapkan Dokumen Klaim", text: "Kumpulkan seluruh dokumen yang diperlukan: sertifikat asuransi, resi pengiriman, invoice/faktur barang, foto kerusakan, dan formulir klaim yang diisi lengkap." },
         { "@type": "HowToStep", position: 5, name: "Kirim Formulir dan Dokumen Klaim", text: "Submit formulir klaim beserta semua dokumen pendukung ke perusahaan asuransi sesuai prosedur yang berlaku — umumnya bisa dikirim via email atau langsung ke kantor." },
         { "@type": "HowToStep", position: 6, name: "Survei Loss Adjuster (jika diperlukan)", text: "Untuk klaim dengan nilai signifikan, perusahaan asuransi mungkin mengirim loss adjuster untuk memverifikasi kerusakan. Siapkan barang dan kemasan yang rusak untuk diperiksa." },
@@ -111,7 +111,7 @@ const langkahKlaim = [
   {
     no: "03",
     icon: "💬",
-    judul: "Hubungi Konsultan Asuransi untuk Panduan",
+    judul: "Hubungi Praktisi Asuransi untuk Panduan",
     kapan: "Sesegera mungkin — idealnya hari yang sama",
     isi: "Sebelum mengisi formulir apapun atau berkomunikasi resmi dengan perusahaan asuransi, hubungi kami terlebih dahulu. Kami akan menjelaskan prosedur klaim yang berlaku pada polis Anda, dokumen apa yang dibutuhkan, dan cara terbaik menyampaikan kronologi kejadian.",
     aksi: [
@@ -120,13 +120,13 @@ const langkahKlaim = [
       "Sampaikan nomor polis atau sertifikat asuransi yang berlaku",
       "Tanyakan batas waktu pelaporan yang berlaku pada polis Anda",
     ],
-    warning: "Sebagai konsultan, kami membantu Anda memahami prosedur dan dokumen yang diperlukan — bukan menggantikan proses klaim formal yang tetap dilakukan langsung ke perusahaan asuransi.",
+    warning: "Sebagai praktisi, kami membantu Anda memahami prosedur dan dokumen yang diperlukan — bukan menggantikan proses klaim formal yang tetap dilakukan langsung ke perusahaan asuransi.",
   },
   {
     no: "04",
     icon: "📁",
     judul: "Kumpulkan Seluruh Dokumen yang Diperlukan",
-    kapan: "Setelah mendapat panduan dari konsultan",
+    kapan: "Setelah mendapat panduan dari praktisi",
     isi: "Kelengkapan dokumen adalah faktor terbesar yang menentukan lancar tidaknya proses klaim. Siapkan semua dokumen berikut sebelum mengisi formulir klaim.",
     aksi: [
       "Sertifikat asuransi kargo (polis atau certificate of insurance)",
@@ -163,7 +163,7 @@ const langkahKlaim = [
       "Simpan barang dan kemasan yang rusak — jangan dibuang selama proses berlangsung",
       "Siapkan dokumen tambahan jika diminta",
       "Responsif jika ada pertanyaan dari tim klaim perusahaan asuransi",
-      "Hubungi konsultan jika ada ketidakjelasan dalam proses",
+      "Hubungi praktisi jika ada ketidakjelasan dalam proses",
     ],
     warning: "Proses verifikasi membutuhkan waktu yang bervariasi tergantung kompleksitas kasus. Tanyakan estimasi waktu kepada tim klaim di awal.",
   },
@@ -262,7 +262,7 @@ const dokumenPerKasus = [
 const faqItems = [
   {
     q: "Berapa lama batas waktu mengajukan klaim asuransi kargo?",
-    a: "Batas waktu pelaporan klaim kargo umumnya 3–7 hari kerja sejak barang diterima dalam kondisi rusak, atau sejak diketahui barang hilang. Untuk kerusakan tersembunyi yang baru terlihat saat dibuka, batasnya sering lebih ketat — 3 hari. Batas waktu pasti selalu mengacu pada ketentuan dalam polis. Hubungi konsultan Anda segera setelah kejadian.",
+    a: "Batas waktu pelaporan klaim kargo umumnya 3–7 hari kerja sejak barang diterima dalam kondisi rusak, atau sejak diketahui barang hilang. Untuk kerusakan tersembunyi yang baru terlihat saat dibuka, batasnya sering lebih ketat — 3 hari. Batas waktu pasti selalu mengacu pada ketentuan dalam polis. Hubungi praktisi Anda segera setelah kejadian.",
   },
   {
     q: "Bagaimana cara mengklaim jika barang dikirim ke pembeli dan rusak saat diterima pembeli?",
@@ -274,15 +274,15 @@ const faqItems = [
   },
   {
     q: "Apakah ada deductible dalam asuransi kargo?",
-    a: "Tergantung polis. Beberapa polis kargo memiliki deductible (jumlah yang menjadi tanggungan tertanggung sendiri per klaim), sementara beberapa tidak. Besaran deductible jika ada biasanya relatif kecil untuk kargo. Cek ketentuan ini dalam polis Anda atau tanyakan kepada konsultan saat membeli.",
+    a: "Tergantung polis. Beberapa polis kargo memiliki deductible (jumlah yang menjadi tanggungan tertanggung sendiri per klaim), sementara beberapa tidak. Besaran deductible jika ada biasanya relatif kecil untuk kargo. Cek ketentuan ini dalam polis Anda atau tanyakan kepada praktisi saat membeli.",
   },
   {
     q: "Apakah pengemasan yang buruk bisa menyebabkan klaim ditolak?",
     a: "Ya, ini salah satu alasan paling umum klaim kargo ditolak. Jika terbukti kerusakan disebabkan pengemasan yang tidak memadai — bukan karena penanganan kasar dari pihak pengiriman — perusahaan asuransi berhak menolak klaim. Standar pengemasan yang 'memadai' bergantung pada jenis barang dan kondisi pengiriman.",
   },
   {
-    q: "Bisa kah konsultan membantu jika klaim saya ditolak?",
-    a: "Kami bisa membantu menjelaskan alasan penolakan berdasarkan ketentuan polis dan memberikan perspektif dari sisi konsultan asuransi. Jika ada ketidaksesuaian dalam proses klaim, kami bisa membantu Anda memahami opsi yang tersedia — termasuk mengajukan banding sesuai mekanisme yang berlaku di perusahaan asuransi.",
+    q: "Bisa kah praktisi membantu jika klaim saya ditolak?",
+    a: "Kami bisa membantu menjelaskan alasan penolakan berdasarkan ketentuan polis dan memberikan perspektif dari sisi praktisi asuransi. Jika ada ketidaksesuaian dalam proses klaim, kami bisa membantu Anda memahami opsi yang tersedia — termasuk mengajukan banding sesuai mekanisme yang berlaku di perusahaan asuransi.",
   },
 ];
 

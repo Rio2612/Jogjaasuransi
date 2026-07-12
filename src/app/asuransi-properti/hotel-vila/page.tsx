@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Asuransi Hotel & Guest House Jogja – Proteksi Properti Wisata DIY",
     description:
-      "Solusi asuransi lengkap untuk hotel, guest house, resort, dan penginapan skala besar di Yogyakarta. Konsultasi gratis dengan konsultan lokal.",
+      "Solusi asuransi lengkap untuk hotel, guest house, resort, dan penginapan skala besar di Yogyakarta. Konsultasi gratis dengan praktisi lokal.",
     url: "https://asuransijogja.biz.id/asuransi-properti/hotel-vila",
     type: "website",
   },
@@ -71,7 +71,7 @@ const schemaFAQ = {
       name: "Bagaimana cara mengklaim jika tamu cedera di area hotel?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Jika terjadi insiden yang melibatkan cedera tamu: (1) Prioritaskan penanganan medis korban; (2) Dokumentasikan kejadian dengan foto/video kondisi lokasi; (3) Buat berita acara kejadian; (4) Laporkan ke perusahaan asuransi dalam 3×24 jam melalui konsultan; (5) Jangan membuat pernyataan pengakuan kesalahan sebelum berkonsultasi dengan konsultan asuransi — ini bisa mempengaruhi proses klaim liability.",
+        text: "Jika terjadi insiden yang melibatkan cedera tamu: (1) Prioritaskan penanganan medis korban; (2) Dokumentasikan kejadian dengan foto/video kondisi lokasi; (3) Buat berita acara kejadian; (4) Laporkan ke perusahaan asuransi dalam 3×24 jam melalui praktisi; (5) Jangan membuat pernyataan pengakuan kesalahan sebelum berkonsultasi dengan praktisi asuransi — ini bisa mempengaruhi proses klaim liability.",
       },
     },
     {
@@ -79,7 +79,7 @@ const schemaFAQ = {
       name: "Apakah asuransi hotel berlaku selama proses renovasi?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Kondisi ini perlu dikomunikasikan ke perusahaan asuransi. Renovasi berskala besar bisa mempengaruhi validitas polis PAR karena mengubah struktur bangunan. Solusinya adalah menginformasikan rencana renovasi ke konsultan asuransi sebelum pekerjaan dimulai, sehingga bisa diatur endorsement atau cakupan tambahan selama masa konstruksi, seperti Contractor All Risk (CAR).",
+        text: "Kondisi ini perlu dikomunikasikan ke perusahaan asuransi. Renovasi berskala besar bisa mempengaruhi validitas polis PAR karena mengubah struktur bangunan. Solusinya adalah menginformasikan rencana renovasi ke praktisi asuransi sebelum pekerjaan dimulai, sehingga bisa diatur endorsement atau cakupan tambahan selama masa konstruksi, seperti Contractor All Risk (CAR).",
       },
     },
     {
@@ -276,7 +276,7 @@ const faqItems = [
   },
   {
     q: "Bagaimana cara mengklaim jika tamu cedera di area hotel?",
-    a: "Prioritaskan penanganan medis korban terlebih dahulu. Dokumentasikan kondisi lokasi kejadian dengan foto/video. Buat berita acara kejadian yang detail. Laporkan ke konsultan asuransi dalam 3×24 jam. Jangan membuat pernyataan pengakuan kesalahan sebelum berkonsultasi — ini bisa mempengaruhi proses klaim liability. Konsultan kami mendampingi seluruh proses.",
+    a: "Prioritaskan penanganan medis korban terlebih dahulu. Dokumentasikan kondisi lokasi kejadian dengan foto/video. Buat berita acara kejadian yang detail. Laporkan ke praktisi asuransi dalam 3×24 jam. Jangan membuat pernyataan pengakuan kesalahan sebelum berkonsultasi — ini bisa mempengaruhi proses klaim liability. Praktisi kami mendampingi seluruh proses.",
   },
   {
     q: "Apakah asuransi hotel berlaku selama proses renovasi?",

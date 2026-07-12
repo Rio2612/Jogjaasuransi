@@ -147,10 +147,10 @@ const tabelPremi = [
 ];
 
 const langkahKlaim = [
-  { no: "01", ikon: "📞", judul: "Laporkan dalam 3×24 Jam", detail: "Hubungi konsultan segera setelah kejadian. Jangan bersihkan atau perbaiki kerusakan sebelum dilaporkan dan disurveii — ini sering menjadi alasan penolakan klaim.", warna: "bg-red-50 border-red-200" },
+  { no: "01", ikon: "📞", judul: "Laporkan dalam 3×24 Jam", detail: "Hubungi praktisi segera setelah kejadian. Jangan bersihkan atau perbaiki kerusakan sebelum dilaporkan dan disurveii — ini sering menjadi alasan penolakan klaim.", warna: "bg-red-50 border-red-200" },
   { no: "02", ikon: "📸", judul: "Dokumentasi Kerusakan", detail: "Foto semua bagian rumah yang rusak dari berbagai sudut. Catat daftar barang yang rusak atau hilang beserta estimasi nilai. Video juga sangat membantu.", warna: "bg-amber-50 border-amber-200" },
-  { no: "03", ikon: "📄", judul: "Isi Formulir & Lampirkan Dokumen", detail: "Formulir klaim, polis asli, KTP pemilik, foto kerusakan, dan estimasi biaya perbaikan dari kontraktor. Konsultan membantu kelengkapan dokumen.", warna: "bg-blue-50 border-blue-200" },
-  { no: "04", ikon: "🔍", judul: "Survei oleh Loss Adjuster", detail: "Loss adjuster dari insurer akan datang ke lokasi untuk menilai kerusakan. Konsultan kami mendampingi untuk memastikan penilaian adil dan akurat.", warna: "bg-purple-50 border-purple-200" },
+  { no: "03", ikon: "📄", judul: "Isi Formulir & Lampirkan Dokumen", detail: "Formulir klaim, polis asli, KTP pemilik, foto kerusakan, dan estimasi biaya perbaikan dari kontraktor. Praktisi membantu kelengkapan dokumen.", warna: "bg-blue-50 border-blue-200" },
+  { no: "04", ikon: "🔍", judul: "Survei oleh Loss Adjuster", detail: "Loss adjuster dari insurer akan datang ke lokasi untuk menilai kerusakan. Praktisi kami mendampingi untuk memastikan penilaian adil dan akurat.", warna: "bg-purple-50 border-purple-200" },
   { no: "05", ikon: "✅", judul: "Persetujuan & Pembayaran", detail: "Setelah klaim disetujui, dana ditransfer ke rekening tertanggung dikurangi deductible. Proses 14–30 hari kerja untuk klaim standar.", warna: "bg-green-50 border-green-200" },
 ];
 
@@ -165,7 +165,7 @@ const faqItems = [
   },
   {
     q: "Apakah pagar dan taman juga bisa diasuransikan?",
-    a: "Pagar permanen umumnya bisa dimasukkan dalam nilai pertanggungan bangunan. Taman, tanaman, dan elemen lanskap biasanya tidak tercakup dalam polis kebakaran standar. Untuk aset outdoor yang ingin diasuransikan, diskusikan spesifik dengan konsultan karena cakupan bervariasi antar insurer.",
+    a: "Pagar permanen umumnya bisa dimasukkan dalam nilai pertanggungan bangunan. Taman, tanaman, dan elemen lanskap biasanya tidak tercakup dalam polis kebakaran standar. Untuk aset outdoor yang ingin diasuransikan, diskusikan spesifik dengan praktisi karena cakupan bervariasi antar insurer.",
   },
   {
     q: "Rumah kos atau kontrakan — bisa diasuransikan oleh pemilik?",

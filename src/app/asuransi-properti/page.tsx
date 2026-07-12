@@ -9,7 +9,7 @@ import { KONTAK } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Asuransi Properti Jogja – Rumah, Kos, Ruko, Vila & Gedung Komersial | Asuransi Jogja",
   description:
-    "Konsultan asuransi properti independen di Yogyakarta. Lindungi rumah, kos, ruko, vila, dan gedung komersial dari kebakaran, banjir, gempa Merapi, dan risiko katastrofe. Kalkulator premi gratis. Konsultasi tanpa biaya.",
+    "Praktisi asuransi properti independen di Yogyakarta. Lindungi rumah, kos, ruko, vila, dan gedung komersial dari kebakaran, banjir, gempa Merapi, dan risiko katastrofe. Kalkulator premi gratis. Konsultasi tanpa biaya.",
   keywords:
     "asuransi properti jogja, asuransi kebakaran yogyakarta, asuransi rumah jogja, property all risk jogja, asuransi kos yogyakarta, asuransi vila jogja, asuransi ruko yogyakarta, asuransi gedung komersial jogja, asuransi banjir gempa yogyakarta, nilai pertanggungan properti, kalkulator premi asuransi properti",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-properti" },
@@ -84,10 +84,10 @@ const schemaFAQ = {
     },
     {
       "@type": "Question",
-      name: "Apa perbedaan konsultan asuransi independen dengan agen perusahaan asuransi?",
+      name: "Apa perbedaan praktisi asuransi independen dengan agen perusahaan asuransi?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Agen perusahaan asuransi hanya menjual produk dari satu perusahaan dan bekerja untuk kepentingan perusahaan tersebut. Konsultan asuransi independen (seperti Asuransi Jogja) tidak terikat pada perusahaan manapun, bisa membandingkan produk dari berbagai insurer berlisensi OJK, dan mendampingi klien saat proses klaim.",
+        text: "Agen perusahaan asuransi hanya menjual produk dari satu perusahaan dan bekerja untuk kepentingan perusahaan tersebut. Praktisi asuransi independen (seperti Asuransi Jogja) tidak terikat pada perusahaan manapun, bisa membandingkan produk dari berbagai insurer berlisensi OJK, dan mendampingi klien saat proses klaim.",
       },
     },
   ],
@@ -192,8 +192,8 @@ const faqItems = [
     a: "Penerbitan polis: rumah tinggal standar biasanya 1–2 hari kerja setelah dokumen lengkap; properti komersial atau PAR umumnya 3–5 hari kerja setelah survei. Proses klaim: lapor maksimal 3×24 jam setelah kejadian, survei loss adjuster, evaluasi dokumen, lalu pencairan. Klaim sederhana selesai dalam 14–30 hari kerja; klaim besar 30–60 hari.",
   },
   {
-    q: "Apa perbedaan konsultan asuransi independen dengan agen asuransi biasa?",
-    a: "Agen perusahaan asuransi hanya menjual produk dari satu perusahaan dan bekerja untuk kepentingan perusahaan tersebut — termasuk saat klaim. Konsultan independen seperti Asuransi Jogja tidak terikat pada satu perusahaan, bisa membandingkan penawaran dari berbagai insurer berlisensi OJK, menjelaskan semua klausul pengecualian secara jujur, dan mendampingi klien saat proses klaim.",
+    q: "Apa perbedaan praktisi asuransi independen dengan agen asuransi biasa?",
+    a: "Agen perusahaan asuransi hanya menjual produk dari satu perusahaan dan bekerja untuk kepentingan perusahaan tersebut — termasuk saat klaim. Praktisi independen seperti Asuransi Jogja tidak terikat pada satu perusahaan, bisa membandingkan penawaran dari berbagai insurer berlisensi OJK, menjelaskan semua klausul pengecualian secara jujur, dan mendampingi klien saat proses klaim.",
   },
   {
     q: "Apakah vila atau properti yang disewakan via Airbnb dan Tiket.com bisa diasuransikan?",
@@ -207,7 +207,7 @@ const prosesKlaim = [
     no: "01",
     icon: "📞",
     judul: "Lapor dalam 3×24 Jam",
-    desc: "Hubungi konsultan atau perusahaan asuransi maksimal 3 hari setelah kejadian. Keterlambatan pelaporan bisa menjadi alasan klaim ditolak.",
+    desc: "Hubungi praktisi atau perusahaan asuransi maksimal 3 hari setelah kejadian. Keterlambatan pelaporan bisa menjadi alasan klaim ditolak.",
   },
   {
     no: "02",
@@ -225,7 +225,7 @@ const prosesKlaim = [
     no: "04",
     icon: "🔍",
     judul: "Survei Loss Adjuster",
-    desc: "Adjustor dari perusahaan asuransi verifikasi kerusakan di lapangan. Konsultan kami hadir mendampingi untuk memastikan proses berjalan adil.",
+    desc: "Adjustor dari perusahaan asuransi verifikasi kerusakan di lapangan. Praktisi kami hadir mendampingi untuk memastikan proses berjalan adil.",
   },
   {
     no: "05",
@@ -259,7 +259,7 @@ export default function AsuransiPropertiPage() {
           </h1>
           <p className="text-white/85 text-base leading-[1.85] max-w-[520px] mb-8">
             Rumah, kos, ruko, vila, hingga gedung komersial — semua aset properti Anda
-            layak mendapat perlindungan yang tepat. Konsultan independen berlisensi OJK,
+            layak mendapat perlindungan yang tepat. Praktisi independen berpengalaman,
             analisis risiko lokasi, dan pendampingan klaim penuh.
           </p>
           <div className="flex gap-4 flex-wrap">
@@ -431,7 +431,7 @@ export default function AsuransiPropertiPage() {
             <span className="text-xl flex-shrink-0">🤝</span>
             <div>
               <div className="font-semibold text-navy text-sm mb-1">
-                Konsultan Kami Mendampingi Seluruh Proses Klaim
+                Praktisi Kami Mendampingi Seluruh Proses Klaim
               </div>
               <p className="text-sm text-[#64748B] leading-relaxed">
                 Berbeda dengan membeli polis langsung dari agen perusahaan asuransi, klien
@@ -450,7 +450,7 @@ export default function AsuransiPropertiPage() {
         <div className="text-center mb-10">
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Keunggulan Kami</div>
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-navy leading-[1.22]">
-            Mengapa Pilih<br />Konsultan Independen?
+            Mengapa Pilih<br />Praktisi Independen?
           </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto mb-10">
@@ -463,17 +463,17 @@ export default function AsuransiPropertiPage() {
           ))}
         </div>
 
-        {/* Perbandingan konsultan vs agen */}
+        {/* Perbandingan praktisi vs agen */}
         <div className="max-w-4xl mx-auto overflow-x-auto">
           <div className="font-heading text-navy font-bold text-[0.95rem] mb-3 text-center">
-            Konsultan Independen vs Agen Perusahaan Asuransi
+            Praktisi Independen vs Agen Perusahaan Asuransi
           </div>
           <table className="w-full border-collapse text-sm">
             <thead>
               <tr className="bg-navy text-white">
                 <th className="text-left px-4 py-3 rounded-tl-[10px] font-semibold">Aspek</th>
                 <th className="text-left px-4 py-3 font-semibold">Agen Perusahaan Asuransi</th>
-                <th className="text-left px-4 py-3 rounded-tr-[10px] font-semibold text-gold">Konsultan Independen ✓</th>
+                <th className="text-left px-4 py-3 rounded-tr-[10px] font-semibold text-gold">Praktisi Independen ✓</th>
               </tr>
             </thead>
             <tbody>

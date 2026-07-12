@@ -55,7 +55,7 @@ const schemaFAQ = {
       name: "Apa saja yang dikecualikan dalam polis PAR?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Pengecualian umum PAR meliputi: keausan dan penyusutan normal, cacat bawaan atau kesalahan desain bangunan, kerugian akibat perang dan nuklir, kerugian non-fisik seperti kehilangan profit (kecuali ada Business Interruption), dan risiko yang secara eksplisit dikecualikan di dalam polis. Konsultan kami akan menjelaskan seluruh pengecualian secara transparan sebelum polis diterbitkan.",
+        text: "Pengecualian umum PAR meliputi: keausan dan penyusutan normal, cacat bawaan atau kesalahan desain bangunan, kerugian akibat perang dan nuklir, kerugian non-fisik seperti kehilangan profit (kecuali ada Business Interruption), dan risiko yang secara eksplisit dikecualikan di dalam polis. Praktisi kami akan menjelaskan seluruh pengecualian secara transparan sebelum polis diterbitkan.",
       },
     },
     {
@@ -71,7 +71,7 @@ const schemaFAQ = {
       name: "Bagaimana cara menentukan nilai pertanggungan yang tepat untuk polis PAR?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Nilai pertanggungan PAR harus berdasarkan replacement cost (biaya penggantian) — yaitu biaya membangun ulang atau mengganti properti dengan spesifikasi setara di harga saat ini, bukan harga pasar atau harga beli. Underinsurance (nilai terlalu rendah) akan berakibat pada ganti rugi yang proporsional, bukan penuh. Konsultan kami membantu menghitung nilai yang benar.",
+        text: "Nilai pertanggungan PAR harus berdasarkan replacement cost (biaya penggantian) — yaitu biaya membangun ulang atau mengganti properti dengan spesifikasi setara di harga saat ini, bukan harga pasar atau harga beli. Underinsurance (nilai terlalu rendah) akan berakibat pada ganti rugi yang proporsional, bukan penuh. Praktisi kami membantu menghitung nilai yang benar.",
       },
     },
     {
@@ -283,7 +283,7 @@ const faqItems = [
   },
   {
     q: "Bagaimana cara menentukan nilai pertanggungan yang tepat untuk PAR?",
-    a: "Nilai pertanggungan harus berdasarkan replacement cost — biaya membangun ulang atau mengganti properti dengan spesifikasi setara di harga material dan upah saat ini, bukan harga pasar atau harga beli yang sudah termasuk nilai tanah. Underinsurance akan berakibat ganti rugi yang proporsional, bukan penuh. Konsultan kami membantu menghitung nilai yang tepat.",
+    a: "Nilai pertanggungan harus berdasarkan replacement cost — biaya membangun ulang atau mengganti properti dengan spesifikasi setara di harga material dan upah saat ini, bukan harga pasar atau harga beli yang sudah termasuk nilai tanah. Underinsurance akan berakibat ganti rugi yang proporsional, bukan penuh. Praktisi kami membantu menghitung nilai yang tepat.",
   },
   {
     q: "Berapa lama proses penerbitan polis PAR?",

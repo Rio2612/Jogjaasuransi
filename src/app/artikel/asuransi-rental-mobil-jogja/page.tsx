@@ -121,7 +121,7 @@ const tipsProteksi = [
     icon: "🔄",
     tip: "Upgrade ke Polis Kendaraan Komersial",
     detail:
-      "Hubungi konsultan asuransi dan minta konversi atau penggantian polis ke kategori kendaraan niaga / komersial. Selisih preminya jauh lebih kecil dibanding potensi kerugian saat klaim ditolak.",
+      "Hubungi praktisi asuransi dan minta konversi atau penggantian polis ke kategori kendaraan niaga / komersial. Selisih preminya jauh lebih kecil dibanding potensi kerugian saat klaim ditolak.",
   },
   {
     icon: "🚐",

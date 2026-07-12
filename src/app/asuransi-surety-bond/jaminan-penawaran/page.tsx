@@ -170,7 +170,7 @@ export default function JaminanPenawaranPage() {
           <div className="text-base leading-[1.85] text-[#475569] space-y-4">
             <p>Jaminan Penawaran (Bid Bond) adalah syarat administrasi wajib untuk mengikuti lelang/tender proyek pemerintah maupun swasta di Yogyakarta, baik melalui LPSE DIY, Kota Yogyakarta, Sleman, maupun Bantul. Nilainya umumnya 1–3% dari nilai penawaran dan diterbitkan sebagai surety bond dari perusahaan asuransi/penjaminan.</p>
             <p>Tanpa bid bond yang valid, dokumen penawaran kontraktor otomatis gugur secara administrasi, terlepas seberapa kompetitif harga yang diajukan. Karena itu kecepatan proses penerbitan menjadi krusial, terutama jika deadline submission tender sangat ketat.</p>
-            <p>Sebagai konsultan independen, kami membantu kontraktor membandingkan beberapa penerbit jaminan untuk mendapatkan proses tercepat (umumnya 1 hari kerja) dengan biaya penjaminan paling kompetitif.</p>
+            <p>Sebagai praktisi independen, kami membantu kontraktor membandingkan beberapa penerbit jaminan untuk mendapatkan proses tercepat (umumnya 1 hari kerja) dengan biaya penjaminan paling kompetitif.</p>
           </div>
 
           <div className="bg-white border border-black/8 rounded-card p-6 mt-8">

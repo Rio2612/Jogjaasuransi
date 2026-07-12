@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Form Permintaan Penawaran Asuransi (SPPA) – Asuransi Jogja",
     description:
-      "Isi form SPPA online untuk mendapatkan penawaran premi yang akurat. Konsultasi gratis dari konsultan asuransi kerugian terpercaya di Yogyakarta.",
+      "Isi form SPPA online untuk mendapatkan penawaran premi yang akurat. Konsultasi gratis dari praktisi asuransi kerugian terpercaya di Yogyakarta.",
     url: `${BASE_URL}/sppa`,
     siteName: "Asuransi Jogja",
     locale: "id_ID",

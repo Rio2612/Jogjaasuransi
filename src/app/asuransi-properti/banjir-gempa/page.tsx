@@ -63,7 +63,7 @@ const schemaFAQ = {
       name: "Bagaimana proses klaim jika properti saya terkena banjir atau gempa?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Langkah pertama: laporkan kejadian ke konsultan atau perusahaan asuransi dalam 3×24 jam. Dokumentasikan kerusakan dengan foto dan video sebelum ada pembersihan. Siapkan dokumen: polis, KTP, bukti kepemilikan properti, laporan dari BPBD atau instansi terkait, dan estimasi biaya perbaikan. Konsultan kami mendampingi seluruh proses klaim hingga dana cair.",
+        text: "Langkah pertama: laporkan kejadian ke praktisi atau perusahaan asuransi dalam 3×24 jam. Dokumentasikan kerusakan dengan foto dan video sebelum ada pembersihan. Siapkan dokumen: polis, KTP, bukti kepemilikan properti, laporan dari BPBD atau instansi terkait, dan estimasi biaya perbaikan. Praktisi kami mendampingi seluruh proses klaim hingga dana cair.",
       },
     },
     {
@@ -277,7 +277,7 @@ const faqItems = [
   },
   {
     q: "Bagaimana proses klaim jika terkena banjir atau gempa?",
-    a: "Laporkan kejadian ke konsultan atau perusahaan asuransi dalam 3×24 jam. Dokumentasikan kerusakan dengan foto dan video sebelum ada pembersihan. Siapkan dokumen: polis, KTP, bukti kepemilikan, laporan BPBD atau pihak berwenang, dan estimasi biaya perbaikan. Konsultan kami mendampingi seluruh proses klaim tanpa biaya tambahan.",
+    a: "Laporkan kejadian ke praktisi atau perusahaan asuransi dalam 3×24 jam. Dokumentasikan kerusakan dengan foto dan video sebelum ada pembersihan. Siapkan dokumen: polis, KTP, bukti kepemilikan, laporan BPBD atau pihak berwenang, dan estimasi biaya perbaikan. Praktisi kami mendampingi seluruh proses klaim tanpa biaya tambahan.",
   },
   {
     q: "Apakah kerusakan akibat lahar dingin pasca-erupsi Merapi bisa diklaim?",
@@ -524,7 +524,7 @@ export default function BanjirGempaPage() {
             <strong className="text-gold">endorsement</strong> pada polis kebakaran atau PAR
             yang sudah ada. Perluasan gempa bumi umumnya diterbitkan sebagai{" "}
             <strong className="text-gold">polis terpisah</strong> (khusus Kelas 1/beton).
-            Perluasan vulkanik adalah endorsement tambahan di polis gempa. Konsultan kami
+            Perluasan vulkanik adalah endorsement tambahan di polis gempa. Praktisi kami
             memandu seluruh proses agar tidak ada celah perlindungan.
           </p>
         </div>
@@ -639,7 +639,7 @@ export default function BanjirGempaPage() {
         </div>
         <div className="mt-6 max-w-4xl mx-auto bg-gold/8 border border-gold/20 rounded-xl p-5">
           <p className="text-sm text-navy2 leading-relaxed">
-            <strong className="text-gold">💡 Rekomendasi Konsultan:</strong> Untuk properti
+            <strong className="text-gold">💡 Rekomendasi Praktisi:</strong> Untuk properti
             di Yogyakarta, minimal tambahkan perluasan gempa bumi dan banjir. Jika properti
             berada di Sleman Utara atau dekat aliran sungai berhulu Merapi, tambahkan juga
             perluasan vulkanik. Biaya totalnya jauh lebih kecil dari potensi kerugian yang

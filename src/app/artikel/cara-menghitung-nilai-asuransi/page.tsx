@@ -39,7 +39,7 @@ const nilaiKendaraan = [
   { tahun: "0–1 tahun", persentase: "95–100%", keterangan: "Harga OTR baru dikurangi depresiasi minimal" },
   { tahun: "1–2 tahun", persentase: "85–90%", keterangan: "Nilai pasar kendaraan bekas kondisi baik" },
   { tahun: "2–3 tahun", persentase: "75–80%", keterangan: "Acuan harga OLX / marketplace kendaraan" },
-  { tahun: "3–5 tahun", persentase: "65–75%", keterangan: "Konsultasikan dengan dealer atau konsultan asuransi" },
+  { tahun: "3–5 tahun", persentase: "65–75%", keterangan: "Konsultasikan dengan dealer atau praktisi asuransi" },
   { tahun: "> 5 tahun", persentase: "50–65%", keterangan: "Tergantung kondisi dan merek kendaraan" },
 ];
 

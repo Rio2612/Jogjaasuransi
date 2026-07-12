@@ -157,7 +157,7 @@ const schemaMB = {
           name: "Bagaimana cara mengajukan klaim Machinery Breakdown?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Segera hubungi konsultan (24–48 jam setelah mesin rusak). Jangan langsung perbaiki mesin sebelum dilaporkan. Dokumentasikan kerusakan dengan foto/video. Siapkan laporan teknisi dan estimasi biaya perbaikan. Kami mendampingi seluruh proses hingga klaim cair.",
+            text: "Segera hubungi praktisi (24–48 jam setelah mesin rusak). Jangan langsung perbaiki mesin sebelum dilaporkan. Dokumentasikan kerusakan dengan foto/video. Siapkan laporan teknisi dan estimasi biaya perbaikan. Kami mendampingi seluruh proses hingga klaim cair.",
           },
         },
         {
@@ -183,7 +183,7 @@ const schemaMB = {
           "@type": "HowToStep",
           position: 1,
           name: "Laporkan dalam 24–48 Jam",
-          text: "Hubungi konsultan asuransi segera setelah mesin mengalami kerusakan mendadak. Jangan lakukan perbaikan sebelum mendapat persetujuan dari perusahaan asuransi.",
+          text: "Hubungi praktisi asuransi segera setelah mesin mengalami kerusakan mendadak. Jangan lakukan perbaikan sebelum mendapat persetujuan dari perusahaan asuransi.",
         },
         {
           "@type": "HowToStep",

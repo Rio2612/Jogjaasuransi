@@ -216,12 +216,12 @@ const kesalahanUmum = [
   {
     kesalahan: "Jaminan sudah kedaluwarsa saat diserahkan",
     dampak: "Panitia menolak dokumen penawaran — gugur administrasi",
-    solusi: "Pastikan masa berlaku jaminan minimal sampai batas waktu sanggah + 14 hari. Koordinasikan tanggal dengan konsultan sebelum cetak.",
+    solusi: "Pastikan masa berlaku jaminan minimal sampai batas waktu sanggah + 14 hari. Koordinasikan tanggal dengan praktisi sebelum cetak.",
   },
   {
     kesalahan: "Nama tertanggung tidak sesuai persis dengan nama di SIUJK/NIB",
     dampak: "PPK menolak polis — kontraktor harus urus endorsement atau cetak ulang",
-    solusi: "Berikan copy SIUJK dan akta perusahaan terbaru kepada konsultan sebelum proses penerbitan jaminan.",
+    solusi: "Berikan copy SIUJK dan akta perusahaan terbaru kepada praktisi sebelum proses penerbitan jaminan.",
   },
   {
     kesalahan: "Polis CAR tidak mencantumkan Principal Clause (nama owner)",
@@ -236,7 +236,7 @@ const kesalahanUmum = [
   {
     kesalahan: "Lupa memperpanjang jaminan saat proyek terlambat",
     dampak: "Jaminan kedaluwarsa di tengah proyek — PPK bisa mencairkan jaminan pelaksanaan",
-    solusi: "Pasang reminder 30 hari sebelum jatuh tempo. Konsultan kami membantu monitoring masa berlaku semua jaminan aktif Anda.",
+    solusi: "Pasang reminder 30 hari sebelum jatuh tempo. Praktisi kami membantu monitoring masa berlaku semua jaminan aktif Anda.",
   },
 ];
 
@@ -264,8 +264,8 @@ const faqItems = [
     a: "Premi surety bond sangat terjangkau karena fungsinya sebagai penjaminan, bukan asuransi kerugian. Jaminan Penawaran umumnya berkisar Rp 100–500 ribu tergantung nilai dan masa berlaku. Jaminan Pelaksanaan berkisar 0,2–0,8% dari nilai jaminan per tahun. Hubungi kami untuk simulasi biaya berdasarkan nilai proyek spesifik Anda.",
   },
   {
-    q: "Bolehkah kontraktor menggunakan satu konsultan asuransi untuk semua jenis jaminan?",
-    a: "Sangat disarankan. Menggunakan satu konsultan untuk semua kebutuhan jaminan — dari Jaminan Penawaran, CAR, hingga Jaminan Pemeliharaan — memudahkan koordinasi, monitoring masa berlaku, dan penanganan jika ada perpanjangan atau klaim. Kami di Asuransi Jogja menangani semua jenis jaminan kontraktor dalam satu layanan terintegrasi.",
+    q: "Bolehkah kontraktor menggunakan satu praktisi asuransi untuk semua jenis jaminan?",
+    a: "Sangat disarankan. Menggunakan satu praktisi untuk semua kebutuhan jaminan — dari Jaminan Penawaran, CAR, hingga Jaminan Pemeliharaan — memudahkan koordinasi, monitoring masa berlaku, dan penanganan jika ada perpanjangan atau klaim. Kami di Asuransi Jogja menangani semua jenis jaminan kontraktor dalam satu layanan terintegrasi.",
   },
   {
     q: "Apa itu PPK dan mengapa nama PPK penting dalam polis?",
@@ -656,7 +656,7 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
               Siap Ikut Tender?<br />Kami Urus Semua Jaminannya
             </h2>
             <p className="text-white/75 text-sm max-w-[440px] mx-auto mb-8">
-              Dari Jaminan Penawaran hingga Jaminan Pemeliharaan — satu konsultan, satu koordinasi.
+              Dari Jaminan Penawaran hingga Jaminan Pemeliharaan — satu praktisi, satu koordinasi.
               Kontraktor DIY yang bekerja sama dengan kami tidak pernah melewatkan tenggat jaminan.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">

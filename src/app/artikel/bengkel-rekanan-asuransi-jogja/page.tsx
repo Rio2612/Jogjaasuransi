@@ -79,9 +79,9 @@ const alurKlaim = [
   {
     step: "02",
     icon: "📞",
-    label: "Hubungi Asuransi atau Konsultan dalam 1×24 Jam",
+    label: "Hubungi Asuransi atau Praktisi dalam 1×24 Jam",
     detail:
-      "Pelaporan kejadian memiliki batas waktu — umumnya 3×24 jam, tapi makin cepat makin baik. Hubungi konsultan atau call center asuransi Anda. Mereka akan memberikan nomor laporan dan instruksi bengkel mana yang bisa dituju. Jangan bawa kendaraan ke bengkel manapun sebelum mendapat arahan resmi.",
+      "Pelaporan kejadian memiliki batas waktu — umumnya 3×24 jam, tapi makin cepat makin baik. Hubungi praktisi atau call center asuransi Anda. Mereka akan memberikan nomor laporan dan instruksi bengkel mana yang bisa dituju. Jangan bawa kendaraan ke bengkel manapun sebelum mendapat arahan resmi.",
   },
   {
     step: "03",
@@ -166,7 +166,7 @@ const kesalahanFatal = [
     kesalahan: "Melapor Lebih dari 3×24 Jam Setelah Kejadian",
     dampak:
       "Hampir semua polis mencantumkan batas waktu pelaporan 3×24 jam. Melewati batas ini adalah alasan resmi penolakan klaim yang sangat umum terjadi.",
-    solusi: "Hubungi asuransi atau konsultan segera setelah kejadian — bahkan dari lokasi kejadian jika memungkinkan.",
+    solusi: "Hubungi asuransi atau praktisi segera setelah kejadian — bahkan dari lokasi kejadian jika memungkinkan.",
   },
   {
     icon: "🔧",
@@ -224,16 +224,16 @@ const tipsMemilih = [
   },
   {
     icon: "💬",
-    tip: "Minta Rekomendasi Konsultan Sebelum Memutuskan",
+    tip: "Minta Rekomendasi Praktisi Sebelum Memutuskan",
     detail:
-      "Konsultan asuransi yang berpengalaman di Jogja biasanya memiliki pengetahuan lapangan tentang bengkel rekanan mana yang benar-benar memberikan pelayanan baik — dan mana yang sering menimbulkan keluhan. Manfaatkan pengetahuan ini sebelum membawa kendaraan Anda.",
+      "Praktisi asuransi yang berpengalaman di Jogja biasanya memiliki pengetahuan lapangan tentang bengkel rekanan mana yang benar-benar memberikan pelayanan baik — dan mana yang sering menimbulkan keluhan. Manfaatkan pengetahuan ini sebelum membawa kendaraan Anda.",
   },
 ];
 
 const faqBengkel = [
   {
     q: "Bolehkah saya memilih bengkel rekanan sendiri, tidak harus yang ditunjuk asuransi?",
-    a: "Tergantung polis Anda. Beberapa produk All Risk memberikan fleksibilitas memilih dari daftar bengkel rekanan yang tersedia — Anda bisa memilih mana yang paling dekat atau paling Anda percaya. Namun beberapa polis menunjuk bengkel secara langsung. Tanyakan ke konsultan atau baca klausul polis Anda sebelum terjadi klaim, bukan setelah.",
+    a: "Tergantung polis Anda. Beberapa produk All Risk memberikan fleksibilitas memilih dari daftar bengkel rekanan yang tersedia — Anda bisa memilih mana yang paling dekat atau paling Anda percaya. Namun beberapa polis menunjuk bengkel secara langsung. Tanyakan ke praktisi atau baca klausul polis Anda sebelum terjadi klaim, bukan setelah.",
   },
   {
     q: "Apa yang harus saya lakukan jika kualitas perbaikan bengkel rekanan mengecewakan?",
@@ -355,7 +355,7 @@ export default function BengkelRekananPage() {
               💡 <strong>Catatan penting:</strong> Setiap perusahaan asuransi
               memiliki jaringan bengkel rekanan dan prosedur yang berbeda.
               Panduan ini adalah acuan umum — selalu konfirmasi detail spesifik
-              ke polis Anda atau konsultan asuransi sebelum terjadi kejadian.
+              ke polis Anda atau praktisi asuransi sebelum terjadi kejadian.
             </p>
           </div>
         </div>

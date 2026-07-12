@@ -119,7 +119,7 @@ const faqItems = [
   },
   {
     q: "Apakah ada diskon premi untuk kontraktor yang punya track record klaim bersih?",
-    a: "Ya, beberapa perusahaan asuransi memberikan no-claim discount (NCD) atau experience rating adjustment bagi kontraktor dengan riwayat klaim yang baik. Sebagai konsultan independen, kami membantu Anda memanfaatkan track record klaim untuk mendapatkan premi yang lebih efisien.",
+    a: "Ya, beberapa perusahaan asuransi memberikan no-claim discount (NCD) atau experience rating adjustment bagi kontraktor dengan riwayat klaim yang baik. Sebagai praktisi independen, kami membantu Anda memanfaatkan track record klaim untuk mendapatkan premi yang lebih efisien.",
   },
 ];
 

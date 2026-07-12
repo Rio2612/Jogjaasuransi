@@ -3,16 +3,16 @@ import Link from "next/link";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Kendaraan Jogja – Konsultan Independen, Premi OJK, Klaim Mudah",
+  title: "Asuransi Kendaraan Jogja – Praktisi Independen, Premi OJK, Klaim Mudah",
   description:
     "Layanan asuransi kendaraan bermotor di Yogyakarta oleh praktisi asuransi independen berpengalaman 8 tahun. Mobil, truk, armada fleet. Tarif OJK, klaim didampingi. Konsultasi gratis.",
   keywords:
-    "asuransi kendaraan Jogja, asuransi mobil Yogyakarta, konsultan asuransi kendaraan Yogyakarta, asuransi mobil plat AB, asuransi kendaraan wilayah III, asuransi mobil Sleman Bantul",
+    "asuransi kendaraan Jogja, asuransi mobil Yogyakarta, praktisi asuransi kendaraan Yogyakarta, asuransi mobil plat AB, asuransi kendaraan wilayah III, asuransi mobil Sleman Bantul",
   alternates: { canonical: "https://asuransijogja.biz.id/artikel/asuransi-kendaraan-jogja" },
   openGraph: {
-    title: "Asuransi Kendaraan Jogja – Konsultan Independen Terpercaya",
+    title: "Asuransi Kendaraan Jogja – Praktisi Independen Terpercaya",
     description:
-      "Konsultan asuransi kendaraan bermotor di Yogyakarta. Tarif OJK transparan, klaim didampingi penuh, tersedia untuk plat AB dan seluruh wilayah DIY.",
+      "Praktisi asuransi kendaraan bermotor di Yogyakarta. Tarif OJK transparan, klaim didampingi penuh, tersedia untuk plat AB dan seluruh wilayah DIY.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-kendaraan-jogja",
   },
 };
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 const schemaArticle = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Asuransi Kendaraan Jogja – Konsultan Independen, Premi OJK, Klaim Mudah",
-  description: "Panduan dan layanan asuransi kendaraan bermotor di Yogyakarta oleh konsultan independen.",
+  headline: "Asuransi Kendaraan Jogja – Praktisi Independen, Premi OJK, Klaim Mudah",
+  description: "Panduan dan layanan asuransi kendaraan bermotor di Yogyakarta oleh praktisi independen.",
   url: "https://asuransijogja.biz.id/artikel/asuransi-kendaraan-jogja",
   datePublished: "2025-05-01",
   dateModified: "2025-05-01",
@@ -34,7 +34,7 @@ const schemaLocalBusiness = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "InsuranceAgency"],
   name: "Asuransi Jogja",
-  description: "Konsultan asuransi kerugian independen di Yogyakarta, spesialis asuransi kendaraan bermotor.",
+  description: "Praktisi asuransi kerugian independen di Yogyakarta, spesialis asuransi kendaraan bermotor.",
   url: "https://asuransijogja.biz.id",
   telephone: "+6287781658231",
   email: "rio@asuransijogja.biz.id",
@@ -68,15 +68,15 @@ const schemaFAQ = {
     },
     {
       "@type": "Question",
-      name: "Apakah ada konsultan asuransi kendaraan independen di Jogja?",
+      name: "Apakah ada praktisi asuransi kendaraan independen di Jogja?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ya. Asuransi Jogja dikelola oleh praktisi asuransi independen yang beroperasi di Yogyakarta dengan pengalaman 8 tahun. Sebagai konsultan independen (bukan agen terikat satu perusahaan), kami bisa membandingkan produk dari berbagai perusahaan asuransi dan merekomendasikan yang paling sesuai untuk kebutuhan Anda.",
+        text: "Ya. Asuransi Jogja dikelola oleh praktisi asuransi independen yang beroperasi di Yogyakarta dengan pengalaman 8 tahun. Sebagai praktisi independen (bukan agen terikat satu perusahaan), kami bisa membandingkan produk dari berbagai perusahaan asuransi dan merekomendasikan yang paling sesuai untuk kebutuhan Anda.",
       },
     },
     {
       "@type": "Question",
-      name: "Apakah konsultan asuransi di Jogja bisa membantu proses klaim?",
+      name: "Apakah praktisi asuransi di Jogja bisa membantu proses klaim?",
       acceptedAnswer: {
         "@type": "Answer",
         text: "Ya. Kami mendampingi klien dari awal pengajuan klaim hingga dana ganti rugi cair — tanpa biaya tambahan. Termasuk membantu persiapan dokumen, komunikasi dengan perusahaan asuransi, dan memastikan klaim tidak ditolak karena alasan prosedural.",
@@ -145,16 +145,16 @@ export default function AsuransiKendaraanJogjaPage() {
         <div className="relative z-10 max-w-3xl">
           <div className="flex items-center gap-2 mb-4">
             <span className="text-xs font-bold tracking-[2px] uppercase text-gold2 bg-gold/10 border border-gold/25 px-3 py-1 rounded-full">
-              Lokal · Yogyakarta · Konsultan Independen
+              Lokal · Yogyakarta · Praktisi Independen
             </span>
           </div>
           <h1 className="font-heading text-[clamp(2rem,3.5vw,3rem)] text-white leading-[1.18] mb-4">
             Asuransi Kendaraan di Jogja:<br />
-            <em className="not-italic text-gold">Konsultan Independen</em>,<br />
+            <em className="not-italic text-gold">Praktisi Independen</em>,<br />
             Tarif OJK, Klaim Didampingi
           </h1>
           <p className="text-white/80 text-base leading-[1.85] max-w-[580px] mb-6">
-            Mencari konsultan asuransi kendaraan terpercaya di Yogyakarta? Kami adalah konsultan independen — tidak terikat satu perusahaan asuransi manapun — yang membantu pemilik kendaraan di seluruh DIY menemukan perlindungan terbaik sesuai kebutuhan dan anggaran.
+            Mencari praktisi asuransi kendaraan terpercaya di Yogyakarta? Kami adalah praktisi independen — tidak terikat satu perusahaan asuransi manapun — yang membantu pemilik kendaraan di seluruh DIY menemukan perlindungan terbaik sesuai kebutuhan dan anggaran.
           </p>
           <div className="grid grid-cols-3 gap-4 mb-6 max-w-sm">
             {[{ num: "10+", lbl: "Tahun Pengalaman" }, { num: "DIY", lbl: "Area Layanan" }, { num: "Gratis", lbl: "Konsultasi" }].map(s => (
@@ -263,7 +263,7 @@ export default function AsuransiKendaraanJogjaPage() {
         {/* KEUNGGULAN */}
         <section className="py-12 border-b border-black/8">
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-8">
-            Mengapa Memilih Konsultan Independen di Jogja?
+            Mengapa Memilih Praktisi Independen di Jogja?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {keunggulan.map((k, i) => (

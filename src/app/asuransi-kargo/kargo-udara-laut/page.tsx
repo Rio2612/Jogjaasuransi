@@ -151,7 +151,7 @@ export default function KargoUdaraLautPage() {
         <div className="absolute inset-0" style={{background:"radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,150,62,0.1) 0%, transparent 65%)"}} />
         <div className="relative z-10">
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-white leading-[1.22] mb-4">Ekspor Jogja ke Seluruh Dunia —<br />Terlindungi Penuh</h2>
-          <p className="text-white/80 text-sm max-w-[460px] mx-auto mb-8">Urus asuransi marine cargo dan air freight bersama konsultan berpengalaman. Konsultasi gratis, premi kompetitif.</p>
+          <p className="text-white/80 text-sm max-w-[460px] mx-auto mb-8">Urus asuransi marine cargo dan air freight bersama praktisi berpengalaman. Konsultasi gratis, premi kompetitif.</p>
           <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-8 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">💬 Konsultasi Marine Cargo</a>
         </div>
       </section>
