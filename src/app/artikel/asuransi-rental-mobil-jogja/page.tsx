@@ -177,7 +177,7 @@ export default function ArtikelRentalMobilPage() {
 
       {/* BREADCRUMB */}
       <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-        <div className="flex items-center gap-2 text-xs text-[#64748B] flex-wrap">
+        <div className="flex items-center gap-2 text-xs text-[#475569] flex-wrap">
           <Link href="/" className="hover:text-gold transition-colors no-underline">
             Beranda
           </Link>
@@ -200,12 +200,12 @@ export default function ArtikelRentalMobilPage() {
             <span className="bg-gold/10 border border-gold/20 text-gold text-xs font-bold px-3 py-1 rounded-full">
               🚗 Kendaraan Komersial
             </span>
-            <span className="text-[#94A3B8] text-xs">⏱ 8 menit baca</span>
+            <span className="text-[#5A6472] text-xs">⏱ 8 menit baca</span>
           </div>
           <h1 className="font-heading text-[clamp(1.8rem,3.5vw,2.8rem)] text-navy leading-[1.2] mb-4">
             Pentingnya Asuransi Khusus<br />untuk Bisnis Rental Mobil di Jogja
           </h1>
-          <p className="text-[#64748B] text-lg leading-[1.85]">
+          <p className="text-[#475569] text-lg leading-[1.85]">
             Yogyakarta adalah salah satu kota wisata paling padat di Indonesia —
             dan bisnis rental mobil tumbuh pesat seiring meningkatnya wisatawan
             yang lebih memilih fleksibilitas kendaraan pribadi dibanding
@@ -231,7 +231,7 @@ export default function ArtikelRentalMobilPage() {
           <h2 className="font-heading text-[1.6rem] text-navy mb-4">
             Jogja, Kota Wisata yang Menghidupi Ribuan Unit Rental
           </h2>
-          <p className="text-[#64748B] text-base leading-[1.85] mb-4">
+          <p className="text-[#475569] text-base leading-[1.85] mb-4">
             Berdasarkan data kunjungan wisata DIY, jutaan wisatawan datang ke
             Yogyakarta setiap tahun. Sebagian besar dari mereka — terutama
             keluarga dan rombongan — menyewa kendaraan untuk menjelajah dari
@@ -239,14 +239,14 @@ export default function ArtikelRentalMobilPage() {
             Merapi. Permintaan ini menghidupi ekosistem rental mobil yang
             tersebar dari Jalan Magelang hingga kawasan Bandara YIA di Kulonprogo.
           </p>
-          <p className="text-[#64748B] text-base leading-[1.85] mb-4">
+          <p className="text-[#475569] text-base leading-[1.85] mb-4">
             Bagi pemilik rental, setiap unit kendaraan adalah aset produktif.
             Satu unit Toyota Avanza atau Innova yang beroperasi penuh bisa
             menghasilkan Rp 15–30 juta per bulan. Dengan nilai aset kendaraan
             rata-rata Rp 150–350 juta per unit, wajar jika pemilik rental
             mengasuransikan armadanya.
           </p>
-          <p className="text-[#64748B] text-base leading-[1.85]">
+          <p className="text-[#475569] text-base leading-[1.85]">
             <strong className="text-navy">Masalahnya ada di kata "mengasuransikan".</strong>{" "}
             Banyak pemilik rental membeli polis All Risk atau TLO standar — jenis
             yang sama dengan yang dipakai pemilik mobil pribadi. Ini adalah
@@ -259,7 +259,7 @@ export default function ArtikelRentalMobilPage() {
           <h2 className="font-heading text-[1.6rem] text-navy mb-4">
             Mengapa Polis Asuransi Mobil Pribadi Tidak Cukup?
           </h2>
-          <p className="text-[#64748B] text-base leading-[1.85] mb-6">
+          <p className="text-[#475569] text-base leading-[1.85] mb-6">
             Ini bukan soal kuantitas perlindungan — ini soal <em>jenis</em>{" "}
             penggunaan yang dijamin. Setiap polis asuransi kendaraan bermotor
             memiliki klausul yang mendefinisikan untuk apa kendaraan boleh
@@ -294,7 +294,7 @@ export default function ArtikelRentalMobilPage() {
                     <td className="p-4 font-semibold text-navy text-xs align-top">
                       {b.aspek}
                     </td>
-                    <td className="p-4 text-[#64748B] text-sm leading-relaxed align-top">
+                    <td className="p-4 text-[#475569] text-sm leading-relaxed align-top">
                       {b.personal}
                     </td>
                     <td className="p-4 text-navy2 text-sm leading-relaxed font-medium align-top">
@@ -308,7 +308,7 @@ export default function ArtikelRentalMobilPage() {
 
           <div className="p-4 bg-red-50 border-l-4 border-red-500 rounded-r-xl">
             <p className="text-sm text-navy2">
-              <strong className="text-red-600">⚠️ Peringatan krusial:</strong>{" "}
+              <strong className="text-red-700">⚠️ Peringatan krusial:</strong>{" "}
               Jika kendaraan Anda diasuransikan dengan polis personal namun
               terbukti sedang digunakan untuk tujuan komersial saat kejadian,
               perusahaan asuransi <strong>berhak menolak klaim sepenuhnya</strong>{" "}
@@ -343,7 +343,7 @@ export default function ArtikelRentalMobilPage() {
           <h2 className="font-heading text-[1.6rem] text-navy mb-2">
             6 Risiko Nyata yang Mengintai Pengusaha Rental di Jogja
           </h2>
-          <p className="text-sm text-[#64748B] mb-6">
+          <p className="text-sm text-[#475569] mb-6">
             …yang tidak akan dikompensasi oleh polis personal biasa
           </p>
           <div className="flex flex-col gap-5">
@@ -361,7 +361,7 @@ export default function ArtikelRentalMobilPage() {
                   <div className="font-heading text-navy font-bold text-lg mb-2 flex items-center gap-2">
                     {r.icon} {r.judul}
                   </div>
-                  <p className="text-base leading-[1.8] text-[#64748B]">
+                  <p className="text-base leading-[1.8] text-[#475569]">
                     {r.detail}
                   </p>
                 </div>
@@ -375,7 +375,7 @@ export default function ArtikelRentalMobilPage() {
           <h2 className="font-heading text-[1.6rem] text-navy mb-4">
             Faktor Lokal Jogja yang Memperparah Eksposur Risiko
           </h2>
-          <p className="text-[#64748B] text-base leading-[1.85] mb-4">
+          <p className="text-[#475569] text-base leading-[1.85] mb-4">
             Yogyakarta bukan kota biasa. Ada beberapa karakteristik lokal yang
             secara spesifik meningkatkan profil risiko kendaraan rental di sini
             dibanding kota lain.
@@ -415,7 +415,7 @@ export default function ArtikelRentalMobilPage() {
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1.5">
                   {item.judul}
                 </div>
-                <p className="text-base leading-relaxed text-[#64748B]">
+                <p className="text-base leading-relaxed text-[#475569]">
                   {item.detail}
                 </p>
               </div>
@@ -432,24 +432,24 @@ export default function ArtikelRentalMobilPage() {
             <p className="text-sm font-semibold text-navy mb-3">
               📌 Ilustrasi Kasus (komposit dari pengalaman lapangan):
             </p>
-            <p className="text-base leading-[1.85] text-[#64748B] mb-3">
+            <p className="text-base leading-[1.85] text-[#475569] mb-3">
               Pak Budi memiliki 3 unit kendaraan yang ia sewakan. Ketiganya
               diasuransikan All Risk dengan premi masing-masing sekitar Rp 4
               juta per tahun. Pada suatu hari Lebaran, salah satu unitnya mengalami
               kecelakaan cukup parah di Jalan Solo — dikendarai oleh seorang
               penyewa dari Jakarta. Total estimasi perbaikan: <strong>Rp 38 juta.</strong>
             </p>
-            <p className="text-base leading-[1.85] text-[#64748B] mb-3">
+            <p className="text-base leading-[1.85] text-[#475569] mb-3">
               Ketika klaim diajukan, surveyor asuransi menemukan bahwa kendaraan
               sedang dalam status sewa (ada bukti transfer pembayaran sewa di
               WhatsApp penyewa). Klaim{" "}
-              <strong className="text-red-600">ditolak seluruhnya</strong>{" "}
+              <strong className="text-red-700">ditolak seluruhnya</strong>{" "}
               berdasarkan klausul penggunaan komersial yang tidak tercakup dalam
               polis personal. Pak Budi harus menanggung Rp 38 juta dari kantong
               sendiri — ditambah kehilangan pendapatan sewa selama 3 minggu
               kendaraan di bengkel.
             </p>
-            <p className="text-base leading-[1.85] text-[#64748B]">
+            <p className="text-base leading-[1.85] text-[#475569]">
               Total kerugian riil:{" "}
               <strong className="text-navy">lebih dari Rp 50 juta</strong> —
               dari aset yang sudah "diasuransikan" dan rutin dibayar preminya.
@@ -470,7 +470,7 @@ export default function ArtikelRentalMobilPage() {
           <h2 className="font-heading text-[1.6rem] text-navy mb-2">
             5 Langkah Proteksi yang Tepat untuk Bisnis Rental Anda
           </h2>
-          <p className="text-sm text-[#64748B] mb-6">
+          <p className="text-sm text-[#475569] mb-6">
             Dari yang paling mendesak hingga yang bersifat jangka panjang
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -483,7 +483,7 @@ export default function ArtikelRentalMobilPage() {
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1.5">
                   {t.tip}
                 </div>
-                <p className="text-base leading-relaxed text-[#64748B]">
+                <p className="text-base leading-relaxed text-[#475569]">
                   {t.detail}
                 </p>
               </div>
@@ -496,7 +496,7 @@ export default function ArtikelRentalMobilPage() {
           <h2 className="font-heading text-[1.6rem] text-navy mb-4">
             Berapa Selisih Premi Polis Personal vs Komersial?
           </h2>
-          <p className="text-[#64748B] text-base leading-[1.85] mb-4">
+          <p className="text-[#475569] text-base leading-[1.85] mb-4">
             Ini pertanyaan yang sering muncul — dan jawabannya lebih
             menggembirakan dari yang banyak orang bayangkan. Selisih premi
             antara polis personal dan polis komersial untuk kendaraan sejenis
@@ -505,13 +505,13 @@ export default function ArtikelRentalMobilPage() {
             polis komersial, tergantung jenis kendaraan, wilayah operasional,
             dan perusahaan asuransi yang dipilih.
           </p>
-          <p className="text-[#64748B] text-base leading-[1.85] mb-4">
+          <p className="text-[#475569] text-base leading-[1.85] mb-4">
             Dengan asumsi polis All Risk personal untuk Avanza senilai Rp 200
             juta di wilayah Jogja (Wilayah 3) berkisar Rp 3,5–4,5 juta per
             tahun, maka polis komersial setara mungkin berada di kisaran Rp
             4,5–6 juta per tahun. Selisih Rp 1–2 juta per tahun per unit.
           </p>
-          <p className="text-[#64748B] text-base leading-[1.85]">
+          <p className="text-[#475569] text-base leading-[1.85]">
             Dibandingkan dengan risiko menanggung klaim yang ditolak senilai
             puluhan juta rupiah — investasi tambahan Rp 1–2 juta per tahun
             adalah keputusan keuangan yang sangat masuk akal.{" "}
@@ -529,7 +529,7 @@ export default function ArtikelRentalMobilPage() {
           <h2 className="font-heading text-[1.6rem] text-navy mb-4">
             Punya Lebih dari 5 Unit? Saatnya Beralih ke Asuransi Fleet
           </h2>
-          <p className="text-[#64748B] text-base leading-[1.85] mb-4">
+          <p className="text-[#475569] text-base leading-[1.85] mb-4">
             Jika bisnis rental Anda sudah berkembang ke 5 unit kendaraan atau
             lebih, ada opsi yang jauh lebih efisien daripada mengelola belasan
             polis terpisah:{" "}
@@ -560,7 +560,7 @@ export default function ArtikelRentalMobilPage() {
               ))}
             </ul>
           </div>
-          <p className="text-[#64748B] text-base leading-[1.85]">
+          <p className="text-[#475569] text-base leading-[1.85]">
             Untuk detail lebih lanjut tentang bagaimana skema fleet bekerja dan
             apakah bisnis Anda sudah memenuhi syarat, baca panduan lengkapnya
             di halaman{" "}
@@ -578,21 +578,21 @@ export default function ArtikelRentalMobilPage() {
           <h2 className="font-heading text-[1.6rem] text-navy mb-4">
             Kesimpulan: Proteksi yang Benar Dimulai dari Polis yang Tepat
           </h2>
-          <p className="text-[#64748B] text-base leading-[1.85] mb-4">
+          <p className="text-[#475569] text-base leading-[1.85] mb-4">
             Bisnis rental mobil di Yogyakarta adalah peluang yang nyata dan
             menguntungkan — tapi juga penuh risiko yang tidak boleh diremehkan.
             Setiap hari kendaraan Anda berada di tangan orang yang berbeda, di
             jalan yang tidak selalu ramah, dengan intensitas operasional yang
             jauh melampaui kendaraan pribadi.
           </p>
-          <p className="text-[#64748B] text-base leading-[1.85] mb-4">
+          <p className="text-[#475569] text-base leading-[1.85] mb-4">
             Polis asuransi yang tepat bukan sekadar kewajiban administratif —
             ini adalah fondasi keberlanjutan bisnis Anda. Satu klaim besar yang
             ditolak bisa menghapus keuntungan berbulan-bulan. Sebaliknya, dengan
             polis komersial yang sesuai, setiap insiden menjadi kejadian yang
             dapat diselesaikan tanpa mengancam arus kas bisnis.
           </p>
-          <p className="text-[#64748B] text-base leading-[1.85]">
+          <p className="text-[#475569] text-base leading-[1.85]">
             Langkah pertama yang paling penting: periksa polis Anda sekarang.
             Jika masih menggunakan polis personal untuk kendaraan yang
             disewakan, segera konsultasikan perubahan yang dibutuhkan.{" "}
@@ -607,7 +607,7 @@ export default function ArtikelRentalMobilPage() {
 
         {/* ── INTERNAL LINKS ── */}
         <section className="mb-10 p-6 bg-cream rounded-xl border border-black/6">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">
             Artikel &amp; Produk Terkait
           </p>
           <div className="flex gap-3 flex-wrap">

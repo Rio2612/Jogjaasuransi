@@ -398,7 +398,7 @@ export default function KebakeranPage() {
             ].map((s) => (
               <div key={s.lbl}>
                 <div className="font-heading text-gold text-xl font-bold">{s.num}</div>
-                <div className="text-white/45 text-xs mt-0.5">{s.lbl}</div>
+                <div className="text-white/60 text-xs mt-0.5">{s.lbl}</div>
               </div>
             ))}
           </div>
@@ -415,7 +415,7 @@ export default function KebakeranPage() {
             <h2 className="font-heading text-[clamp(1.6rem,2.5vw,2.3rem)] text-navy">
               Standar FLEXAS —<br />5 Risiko yang Selalu Dijamin
             </h2>
-            <p className="text-base text-[#64748B] max-w-[480px] mx-auto mt-3">
+            <p className="text-base text-[#475569] max-w-[480px] mx-auto mt-3">
               Setiap polis asuransi kebakaran di Indonesia minimal menjamin 5 risiko ini
               sesuai standar AAUI (Asosiasi Asuransi Umum Indonesia)
             </p>
@@ -431,7 +431,7 @@ export default function KebakeranPage() {
                   {f.label}
                 </div>
                 <div className="text-gold text-xs font-semibold mb-2">{f.sublabel}</div>
-                <p className="text-xs text-[#64748B] leading-relaxed">{f.desc}</p>
+                <p className="text-xs text-[#475569] leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -454,7 +454,7 @@ export default function KebakeranPage() {
                   <div className="h-1.5 bg-navy/8 rounded-full overflow-hidden">
                     <div className={`h-full bg-gold rounded-full ${p.bar}`} />
                   </div>
-                  <p className="text-xs text-[#64748B] mt-1 leading-relaxed">{p.desc}</p>
+                  <p className="text-xs text-[#475569] mt-1 leading-relaxed">{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -496,7 +496,7 @@ export default function KebakeranPage() {
                 <div className="font-heading text-navy font-bold text-[1.2rem] mb-2">
                   {p.title}
                 </div>
-                <p className="text-sm leading-relaxed text-[#64748B] mb-4">{p.desc}</p>
+                <p className="text-sm leading-relaxed text-[#475569] mb-4">{p.desc}</p>
                 <ul className="flex flex-col gap-2 mb-4">
                   {p.manfaat.map((m) => (
                     <li key={m} className="flex gap-2 text-base text-navy2">
@@ -506,7 +506,7 @@ export default function KebakeranPage() {
                   ))}
                 </ul>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <div className="bg-white rounded-lg px-4 py-2.5 text-xs text-[#64748B] border border-black/5 flex-1">
+                  <div className="bg-white rounded-lg px-4 py-2.5 text-xs text-[#475569] border border-black/5 flex-1">
                     <strong className="text-navy">Cocok untuk:</strong> {p.cocok}
                   </div>
                   <Link
@@ -533,7 +533,7 @@ export default function KebakeranPage() {
             <br />
             Sesuai Risiko Lokasi Anda
           </h2>
-          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[500px] mx-auto mt-3">
             FLEXAS hanyalah titik awal. Yogyakarta memiliki risiko unik yang membutuhkan
             perluasan tambahan agar perlindungan benar-benar menyeluruh.
           </p>
@@ -553,7 +553,7 @@ export default function KebakeranPage() {
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">
                 {item.label}
               </div>
-              <p className="text-sm leading-[1.75] text-[#64748B]">{item.detail}</p>
+              <p className="text-sm leading-[1.75] text-[#475569]">{item.detail}</p>
             </div>
           ))}
         </div>
@@ -603,7 +603,7 @@ export default function KebakeranPage() {
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">
                 {p.label}
               </div>
-              <p className="text-base leading-relaxed text-[#64748B]">{p.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -620,7 +620,7 @@ export default function KebakeranPage() {
             <br />
             Asuransi Kebakaran
           </h2>
-          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[500px] mx-auto mt-3">
             Jawaban untuk pertanyaan paling umum dari pemilik properti di Yogyakarta
           </p>
         </div>
@@ -633,7 +633,7 @@ export default function KebakeranPage() {
                   +
                 </span>
               </summary>
-              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#475569] pb-4">{f.a}</p>
             </details>
           ))}
         </div>
@@ -657,7 +657,7 @@ export default function KebakeranPage() {
       {/* ── INTERNAL LINKS ───────────────────────────────────────────────── */}
       <section className="py-10 px-[5vw] bg-white border-t border-black/5">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">
             Produk &amp; Artikel Terkait
           </p>
           <div className="flex gap-3 flex-wrap">

@@ -328,7 +328,7 @@ export default function ClientPage() {
 
         {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <span className="text-navy font-semibold">Surety Bond</span>
@@ -410,7 +410,7 @@ export default function ClientPage() {
                 <div className="font-heading font-bold text-navy text-xs group-hover:text-gold transition-colors mb-1 leading-snug">
                   {p.nama}
                 </div>
-                <div className="text-[0.65rem] text-[#94A3B8] leading-tight mb-2">{p.tagline}</div>
+                <div className="text-[0.65rem] text-[#5A6472] leading-tight mb-2">{p.tagline}</div>
                 <div className={`text-[0.6rem] font-bold px-2 py-0.5 rounded-full border inline-block ${p.warnaBadge}`}>
                   {p.nilaiJaminan}
                 </div>
@@ -440,7 +440,7 @@ export default function ClientPage() {
                   className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all border ${
                     activeTab === p.id
                       ? "bg-navy text-white border-navy shadow-sm"
-                      : "bg-white text-[#64748B] border-black/10 hover:text-navy hover:border-navy/30"
+                      : "bg-white text-[#475569] border-black/10 hover:text-navy hover:border-navy/30"
                   }`}
                 >
                   <span>{p.icon}</span>
@@ -466,12 +466,12 @@ export default function ClientPage() {
                         {produkAktif.highlight}
                       </span>
                     </div>
-                    <p className="text-[#64748B] text-sm leading-relaxed max-w-[520px]">
+                    <p className="text-[#475569] text-sm leading-relaxed max-w-[520px]">
                       {produkAktif.deskripsi}
                     </p>
                   </div>
                   <div className="text-right flex-shrink-0">
-                    <div className="text-xs text-[#94A3B8] uppercase tracking-wide font-semibold mb-0.5">Proses</div>
+                    <div className="text-xs text-[#5A6472] uppercase tracking-wide font-semibold mb-0.5">Proses</div>
                     <div className="font-heading font-bold text-navy text-lg">{produkAktif.prosesHari}</div>
                   </div>
                 </div>
@@ -481,7 +481,7 @@ export default function ClientPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 divide-y sm:divide-y-0 sm:divide-x divide-black/6">
                 {/* Kiri — spesifikasi */}
                 <div className="p-6">
-                  <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">
+                  <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">
                     Spesifikasi Jaminan
                   </p>
                   <div className="flex flex-col gap-3">
@@ -492,7 +492,7 @@ export default function ClientPage() {
                       { label: "Dasar hukum", val: produkAktif.dasarHukum },
                     ].map((item) => (
                       <div key={item.label}>
-                        <span className="text-[0.65rem] text-[#94A3B8] uppercase tracking-wide font-semibold block mb-0.5">
+                        <span className="text-[0.65rem] text-[#5A6472] uppercase tracking-wide font-semibold block mb-0.5">
                           {item.label}
                         </span>
                         <span className="text-sm text-navy2 leading-snug">{item.val}</span>
@@ -503,7 +503,7 @@ export default function ClientPage() {
 
                 {/* Kanan — dokumen + risiko */}
                 <div className="p-6">
-                  <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-3">
+                  <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-3">
                     Dokumen yang Dibutuhkan
                   </p>
                   <ul className="flex flex-col gap-2 mb-5">
@@ -524,7 +524,7 @@ export default function ClientPage() {
 
               {/* Footer CTA */}
               <div className="px-6 py-4 bg-cream/60 border-t border-black/6 flex items-center justify-between flex-wrap gap-3">
-                <p className="text-xs text-[#64748B]">
+                <p className="text-xs text-[#475569]">
                   Proses cepat — dokumen bisa dikirim via WhatsApp
                 </p>
                 <div className="flex gap-2.5">
@@ -553,7 +553,7 @@ export default function ClientPage() {
             <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-3">
               Surety Bond vs Bank Garansi
             </h2>
-            <p className="text-[#64748B] text-base leading-relaxed max-w-[560px]">
+            <p className="text-[#475569] text-base leading-relaxed max-w-[560px]">
               Keduanya memiliki kedudukan hukum yang setara. Tapi ada perbedaan praktis yang
               penting bagi kontraktor:
             </p>
@@ -577,11 +577,11 @@ export default function ClientPage() {
                 {keunggulanVsBankGaransi.map((row, i) => (
                   <tr key={row.aspek} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
                     <td className="p-3.5 font-semibold text-navy text-xs align-top">{row.aspek}</td>
-                    <td className={`p-3.5 text-sm leading-relaxed align-top ${row.unggul ? "text-navy2 font-medium" : "text-[#64748B]"}`}>
+                    <td className={`p-3.5 text-sm leading-relaxed align-top ${row.unggul ? "text-navy2 font-medium" : "text-[#475569]"}`}>
                       {row.unggul && <span className="text-gold mr-1.5">✓</span>}
                       {row.suretyBond}
                     </td>
-                    <td className="p-3.5 text-[#64748B] text-sm leading-relaxed align-top">
+                    <td className="p-3.5 text-[#475569] text-sm leading-relaxed align-top">
                       {row.bankGaransi}
                     </td>
                   </tr>
@@ -635,10 +635,10 @@ export default function ClientPage() {
                   {tabelPerbandingan.map((row, i) => (
                     <tr key={row.aspek} className={i % 2 === 0 ? "bg-white" : "bg-cream/70"}>
                       <td className="p-3 font-semibold text-navy text-xs align-top">{row.aspek}</td>
-                      <td className="p-3 text-[#64748B] text-xs leading-snug align-top">{row.penawaran}</td>
+                      <td className="p-3 text-[#475569] text-xs leading-snug align-top">{row.penawaran}</td>
                       <td className="p-3 text-navy2 text-xs leading-snug font-medium align-top">{row.pelaksanaan}</td>
-                      <td className="p-3 text-[#64748B] text-xs leading-snug align-top">{row.uangMuka}</td>
-                      <td className="p-3 text-[#64748B] text-xs leading-snug align-top">{row.pemeliharaan}</td>
+                      <td className="p-3 text-[#475569] text-xs leading-snug align-top">{row.uangMuka}</td>
+                      <td className="p-3 text-[#475569] text-xs leading-snug align-top">{row.pemeliharaan}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -665,8 +665,8 @@ export default function ClientPage() {
                   <div className="font-heading text-gold font-bold text-2xl mb-1">{l.no}</div>
                   <div className="text-2xl mb-2">{l.ikon}</div>
                   <div className="font-semibold text-navy text-sm mb-2">{l.judul}</div>
-                  <p className="text-xs text-[#64748B] leading-relaxed mb-3">{l.detail}</p>
-                  <div className="inline-flex items-center gap-1.5 text-[0.65rem] font-bold text-[#94A3B8] bg-cream rounded-full px-2.5 py-1 border border-black/6">
+                  <p className="text-xs text-[#475569] leading-relaxed mb-3">{l.detail}</p>
+                  <div className="inline-flex items-center gap-1.5 text-[0.65rem] font-bold text-[#5A6472] bg-cream rounded-full px-2.5 py-1 border border-black/6">
                     ⏱️ {l.durasi}
                   </div>
                 </div>
@@ -682,7 +682,7 @@ export default function ClientPage() {
               <div className="font-heading font-bold text-navy text-base mb-1">
                 Perlu jaminan hari ini?
               </div>
-              <p className="text-[#64748B] text-sm">
+              <p className="text-[#475569] text-sm">
                 Kirim dokumen via WhatsApp sekarang — surat jaminan bisa terbit hari ini
                 untuk dokumen yang masuk sebelum pukul 12.00.
               </p>
@@ -721,7 +721,7 @@ export default function ClientPage() {
                   </span>
                 </button>
                 {openFaq === i && (
-                  <p className="text-sm leading-[1.78] text-[#64748B] pb-4 pr-8">{f.a}</p>
+                  <p className="text-sm leading-[1.78] text-[#475569] pb-4 pr-8">{f.a}</p>
                 )}
               </div>
             ))}
@@ -731,7 +731,7 @@ export default function ClientPage() {
         {/* ── Artikel Terkait ── */}
         <section className="py-12 px-[5vw] bg-cream">
           <div className="max-w-[900px] mx-auto">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-5">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-5">
               Artikel & Panduan
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -743,13 +743,13 @@ export default function ClientPage() {
                 >
                   <span className="text-xl flex-shrink-0">{a.icon}</span>
                   <div>
-                    <div className="text-[0.65rem] font-bold text-[#94A3B8] uppercase tracking-wide mb-0.5">
+                    <div className="text-[0.65rem] font-bold text-[#5A6472] uppercase tracking-wide mb-0.5">
                       {a.badge}
                     </div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">
                       {a.judul}
                     </div>
-                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                    <div className="text-xs text-[#475569]">{a.desc}</div>
                   </div>
                 </Link>
               ))}
@@ -759,7 +759,7 @@ export default function ClientPage() {
 
         {/* ── Sub-produk Cards ── */}
         <section className="py-14 px-[5vw] max-w-[900px] mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-5">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-5">
             Halaman Produk Lengkap
           </p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -773,7 +773,7 @@ export default function ClientPage() {
                 <div className="font-heading font-bold text-navy text-xs group-hover:text-gold transition-colors mb-1 leading-snug">
                   {p.nama}
                 </div>
-                <div className="text-[0.6rem] text-[#64748B] leading-tight mb-3">{p.tagline}</div>
+                <div className="text-[0.6rem] text-[#475569] leading-tight mb-3">{p.tagline}</div>
                 <div className="text-gold text-xs font-semibold group-hover:underline">
                   Detail & cara urus →
                 </div>

@@ -295,7 +295,7 @@ export default function ArtikelCaraKlaimKargo() {
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -312,8 +312,8 @@ export default function ArtikelCaraKlaimKargo() {
               <Link href="/asuransi-kargo" className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors">
                 📦 Asuransi Kargo
               </Link>
-              <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Panduan Klaim</span>
+              <span className="text-white/60 text-xs">·</span>
+              <span className="text-white/60 text-xs">Panduan Klaim</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
               Cara Klaim Asuransi Kargo —<br /><em className="not-italic text-gold">Panduan Lengkap</em><br />agar Ganti Rugi Cair
@@ -321,7 +321,7 @@ export default function ArtikelCaraKlaimKargo() {
             <p className="text-white/80 text-base leading-[1.85] max-w-[540px] mb-6">
               Klaim asuransi kargo sering gagal bukan karena kejadiannya tidak nyata, tapi karena prosedur yang salah sejak menit pertama. Panduan ini menjelaskan langkah yang benar — dari momen barang diterima dalam kondisi rusak hingga dana ganti rugi masuk ke rekening.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
@@ -345,7 +345,7 @@ export default function ArtikelCaraKlaimKargo() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             7 Langkah Mengajukan Klaim Asuransi Kargo
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-8">
+          <p className="text-[#475569] text-base leading-relaxed mb-8">
             Ikuti urutan ini dengan benar. Melewati satu langkah atau melakukannya tidak berurutan bisa memperlemah posisi klaim Anda:
           </p>
           <div className="flex flex-col gap-5 mb-10">
@@ -361,7 +361,7 @@ export default function ArtikelCaraKlaimKargo() {
                       <span className="font-heading text-navy font-bold text-sm">{l.judul}</span>
                     </div>
                     <div className="text-xs text-gold font-semibold mb-2">⏰ Kapan: {l.kapan}</div>
-                    <p className="text-sm text-[#64748B] leading-relaxed mb-3">{l.isi}</p>
+                    <p className="text-sm text-[#475569] leading-relaxed mb-3">{l.isi}</p>
                     <div className="bg-cream rounded-xl p-4 mb-3">
                       <div className="text-xs font-semibold text-navy mb-2">Yang harus dilakukan:</div>
                       <ul className="flex flex-col gap-1.5">
@@ -385,7 +385,7 @@ export default function ArtikelCaraKlaimKargo() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Dokumen Klaim Berdasarkan Jenis Kasus
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Dokumen yang dibutuhkan sedikit berbeda tergantung jenis masalah yang terjadi:
           </p>
           <div className="flex flex-col gap-5 mb-10">
@@ -411,7 +411,7 @@ export default function ArtikelCaraKlaimKargo() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             6 Kesalahan yang Sering Menyebabkan Klaim Ditolak
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Sebagian besar penolakan klaim kargo sebenarnya bisa dihindari. Berikut kesalahan yang paling sering terjadi:
           </p>
           <div className="flex flex-col gap-4 mb-10">
@@ -421,12 +421,12 @@ export default function ArtikelCaraKlaimKargo() {
                   <span className="text-red-500 text-sm flex-shrink-0">{k.icon}</span>
                   <div>
                     <span className="font-semibold text-red-700 text-sm">{k.kesalahan}</span>
-                    <div className="text-xs text-red-600 mt-0.5">Dampak: {k.dampak}</div>
+                    <div className="text-xs text-red-700 mt-0.5">Dampak: {k.dampak}</div>
                   </div>
                 </div>
                 <div className="bg-green-50 px-5 py-3 flex gap-2 items-start">
                   <span className="text-green-600 font-bold text-sm flex-shrink-0">✓</span>
-                  <span className="text-sm text-[#64748B] leading-relaxed">{k.solusi}</span>
+                  <span className="text-sm text-[#475569] leading-relaxed">{k.solusi}</span>
                 </div>
               </div>
             ))}
@@ -435,7 +435,7 @@ export default function ArtikelCaraKlaimKargo() {
           {/* CTA Inline */}
           <div className="bg-gold/8 border border-gold/25 rounded-card p-6 mb-10">
             <div className="font-heading text-navy font-bold text-base mb-2">Butuh Panduan Klaim Sekarang?</div>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+            <p className="text-[#475569] text-sm leading-relaxed mb-4">
               Hubungi kami via WhatsApp. Ceritakan kondisi kiriman yang bermasalah dan kami bantu jelaskan prosedur yang perlu Anda lakukan berdasarkan polis yang berlaku.
             </p>
             <div className="flex gap-3 flex-wrap">
@@ -459,14 +459,14 @@ export default function ArtikelCaraKlaimKargo() {
                   {f.q}
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">{f.a}</p>
               </details>
             ))}
           </div>
 
           {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Baca Juga</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">Baca Juga</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { href: "/asuransi-kargo", icon: "📦", judul: "Semua Produk Asuransi Kargo", desc: "Kargo darat, udara, dan marine cargo" },
@@ -478,7 +478,7 @@ export default function ArtikelCaraKlaimKargo() {
                   <span className="text-xl flex-shrink-0">{a.icon}</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">{a.judul}</div>
-                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                    <div className="text-xs text-[#475569]">{a.desc}</div>
                   </div>
                 </Link>
               ))}

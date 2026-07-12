@@ -296,7 +296,7 @@ export default function ArtikelCaraKlaimLiability() {
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -313,8 +313,8 @@ export default function ArtikelCaraKlaimLiability() {
               <Link href="/asuransi-liability" className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors">
                 🛡️ Asuransi Liability
               </Link>
-              <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Panduan Klaim</span>
+              <span className="text-white/60 text-xs">·</span>
+              <span className="text-white/60 text-xs">Panduan Klaim</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
               Cara Klaim Asuransi Liability —<br />
@@ -323,7 +323,7 @@ export default function ArtikelCaraKlaimLiability() {
             <p className="text-white/80 text-base leading-[1.85] max-w-[540px] mb-6">
               Klaim liability berbeda dari klaim asuransi lain. Ada aturan yang jika dilanggar di langkah pertama, seluruh klaim bisa gugur — meski polis Anda aktif dan insiden jelas-jelas tertanggung.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
@@ -354,7 +354,7 @@ export default function ArtikelCaraKlaimLiability() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             7 Langkah Klaim Asuransi Liability yang Benar
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Urutan ini sangat penting. Jangan melompat ke langkah selanjutnya sebelum langkah sebelumnya selesai:
           </p>
           <div className="flex flex-col gap-3 mb-10">
@@ -366,7 +366,7 @@ export default function ArtikelCaraKlaimLiability() {
                 </div>
                 <div>
                   <p className="font-semibold text-navy text-sm mb-1">{l.judul}</p>
-                  <p className="text-xs text-[#64748B] leading-relaxed">{l.detail}</p>
+                  <p className="text-xs text-[#475569] leading-relaxed">{l.detail}</p>
                 </div>
               </div>
             ))}
@@ -376,7 +376,7 @@ export default function ArtikelCaraKlaimLiability() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Estimasi Timeline Proses Klaim
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+          <p className="text-[#475569] text-base leading-relaxed mb-5">
             Seberapa lama proses klaim liability berlangsung tergantung kompleksitas kasus dan apakah ada sengketa:
           </p>
           <div className="flex flex-col gap-0 mb-10">
@@ -388,7 +388,7 @@ export default function ArtikelCaraKlaimLiability() {
                     t.tipe === "action" ? "bg-gold text-navy" :
                     t.tipe === "process" ? "bg-navy2 text-white" :
                     t.tipe === "result" ? "bg-green-600 text-white" :
-                    "bg-[#94A3B8] text-white"
+                    "bg-[#5A6472] text-white"
                   }`}>
                     {i + 1}
                   </div>
@@ -416,7 +416,7 @@ export default function ArtikelCaraKlaimLiability() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Dokumen Klaim per Jenis Liability
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Dokumen yang dibutuhkan berbeda tergantung jenis polis. Siapkan semua ini sebelum menghubungi praktisi:
           </p>
           <div className="flex flex-col gap-4 mb-10">
@@ -428,7 +428,7 @@ export default function ArtikelCaraKlaimLiability() {
                 </div>
                 <div className="p-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-2">Dokumen Utama</p>
+                    <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-2">Dokumen Utama</p>
                     <ul className="flex flex-col gap-1.5">
                       {d.dokumenUmum.map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
@@ -439,12 +439,12 @@ export default function ArtikelCaraKlaimLiability() {
                     </ul>
                   </div>
                   <div>
-                    <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-2">Dokumen Pendukung</p>
+                    <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-2">Dokumen Pendukung</p>
                     <ul className="flex flex-col gap-1.5">
                       {d.dokumenTambahan.map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <span className="text-gold font-bold text-xs flex-shrink-0 mt-0.5">+</span>
-                          <span className="text-xs text-[#64748B] leading-snug">{item}</span>
+                          <span className="text-xs text-[#475569] leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -458,7 +458,7 @@ export default function ArtikelCaraKlaimLiability() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             5 Kesalahan Fatal yang Membuat Klaim Ditolak
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Berdasarkan pengalaman mendampingi klaim di Yogyakarta — ini adalah kesalahan yang paling sering berakibat fatal:
           </p>
           <div className="overflow-x-auto mb-10">
@@ -474,8 +474,8 @@ export default function ArtikelCaraKlaimLiability() {
                 {kesalahanFatal.map((row, i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
                     <td className="p-3.5 font-semibold text-navy text-xs align-top">{row.kesalahan}</td>
-                    <td className="p-3.5 text-red-600 text-xs leading-relaxed align-top">{row.dampak}</td>
-                    <td className="p-3.5 text-[#64748B] text-sm leading-relaxed align-top">{row.solusi}</td>
+                    <td className="p-3.5 text-red-700 text-xs leading-relaxed align-top">{row.dampak}</td>
+                    <td className="p-3.5 text-[#475569] text-sm leading-relaxed align-top">{row.solusi}</td>
                   </tr>
                 ))}
               </tbody>
@@ -485,7 +485,7 @@ export default function ArtikelCaraKlaimLiability() {
           {/* CTA Inline */}
           <div className="bg-gold/8 border border-gold/25 rounded-card p-6 mb-10">
             <div className="font-heading text-navy font-bold text-base mb-2">Sedang menghadapi tuntutan dari pihak ketiga?</div>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+            <p className="text-[#475569] text-sm leading-relaxed mb-4">
               Hubungi kami segera via WhatsApp — jangan buat keputusan apapun sebelum berkonsultasi. Kami bantu pastikan langkah pertama Anda benar.
             </p>
             <div className="flex gap-3 flex-wrap">
@@ -507,14 +507,14 @@ export default function ArtikelCaraKlaimLiability() {
                   {f.q}
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">{f.a}</p>
               </details>
             ))}
           </div>
 
           {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Produk & Artikel Terkait</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">Produk & Artikel Terkait</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { href: "/asuransi-liability/public-liability", icon: "👥", judul: "Public Liability", desc: "Detail cakupan, premi, dan panduan mendaftar" },
@@ -528,7 +528,7 @@ export default function ArtikelCaraKlaimLiability() {
                   <span className="text-xl flex-shrink-0">{a.icon}</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">{a.judul}</div>
-                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                    <div className="text-xs text-[#475569]">{a.desc}</div>
                   </div>
                 </Link>
               ))}

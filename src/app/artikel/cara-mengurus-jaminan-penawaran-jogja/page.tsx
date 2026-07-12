@@ -236,7 +236,7 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -253,8 +253,8 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
               <Link href="/asuransi-surety-bond/jaminan-penawaran" className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors">
                 📋 Jaminan Penawaran
               </Link>
-              <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Panduan Syarat & Alur</span>
+              <span className="text-white/60 text-xs">·</span>
+              <span className="text-white/60 text-xs">Panduan Syarat & Alur</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
               Cara Mengurus Jaminan Penawaran<br /><em className="not-italic text-gold">(Bid Bond) di Jogja</em> —<br />Syarat, Alur & Tips Agar Lancar
@@ -262,7 +262,7 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
             <p className="text-white/80 text-base leading-[1.85] max-w-[540px] mb-6">
               Jaminan Penawaran adalah dokumen pertama yang wajib ada sebelum penawaran Anda bahkan dibuka oleh panitia. Tanpanya, peluang proyek hangus di meja administrasi. Panduan ini menjelaskan semua yang perlu Anda tahu — dari syarat dokumen hingga hal-hal yang sering menjadi penghambat.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
@@ -286,13 +286,13 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Apa Itu Jaminan Penawaran dan Mengapa Wajib Ada?
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-4">
+          <p className="text-[#475569] text-base leading-relaxed mb-4">
             Jaminan Penawaran adalah dokumen jaminan yang dikeluarkan perusahaan surety (asuransi) atas permintaan kontraktor (disebut <em>principal</em>) kepada pemilik proyek (disebut <em>obligee</em>). Isinya menyatakan: jika kontraktor ini menang tender tapi kemudian menolak menandatangani kontrak atau menarik penawaran, maka perusahaan surety akan memberikan kompensasi kepada pemilik proyek.
           </p>
-          <p className="text-[#64748B] text-base leading-relaxed mb-4">
+          <p className="text-[#475569] text-base leading-relaxed mb-4">
             Bagi pemilik proyek — terutama instansi pemerintah — ini adalah mekanisme seleksi serius. Peserta tender yang tidak bersedia menyerahkan Jaminan Penawaran dianggap tidak memiliki komitmen yang cukup untuk mengikuti proses pengadaan.
           </p>
-          <p className="text-[#64748B] text-base leading-relaxed mb-8">
+          <p className="text-[#475569] text-base leading-relaxed mb-8">
             Berdasarkan <strong>Perpres No. 12 Tahun 2021</strong> tentang Pengadaan Barang/Jasa Pemerintah, Jaminan Penawaran wajib dilampirkan dalam dokumen penawaran untuk seluruh paket pengadaan konstruksi di atas nilai tertentu. Tanpa dokumen ini, penawaran dinyatakan tidak memenuhi syarat administrasi dan langsung gugur.
           </p>
 
@@ -300,7 +300,7 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Syarat yang Harus Dipenuhi Kontraktor
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Sebelum mengajukan Jaminan Penawaran, ada syarat mendasar dari sisi perusahaan Anda yang harus terpenuhi. Perusahaan surety akan mengevaluasi hal-hal berikut sebelum memutuskan menerbitkan jaminan:
           </p>
           <div className="flex flex-col gap-4 mb-10">
@@ -309,7 +309,7 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
                 <div className="bg-navy text-gold font-heading font-bold text-xs w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">{i + 1}</div>
                 <div>
                   <div className="font-heading text-navy font-bold text-sm mb-1">{s.syarat}</div>
-                  <p className="text-sm text-[#64748B] leading-relaxed">{s.detail}</p>
+                  <p className="text-sm text-[#475569] leading-relaxed">{s.detail}</p>
                 </div>
               </div>
             ))}
@@ -319,7 +319,7 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Dokumen yang Perlu Disiapkan
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Berikut daftar lengkap dokumen yang umumnya dibutuhkan untuk pengajuan Jaminan Penawaran. Semua dikirim dalam format digital (foto atau scan) melalui WhatsApp atau email:
           </p>
           <div className="flex flex-col gap-5 mb-10">
@@ -335,7 +335,7 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
                       <span className="text-gold font-bold flex-shrink-0 mt-0.5">✓</span>
                       <div>
                         <div className="font-semibold text-navy text-sm">{item.dok}</div>
-                        <div className="text-xs text-[#64748B] leading-relaxed mt-0.5">{item.ket}</div>
+                        <div className="text-xs text-[#475569] leading-relaxed mt-0.5">{item.ket}</div>
                       </div>
                     </div>
                   ))}
@@ -348,7 +348,7 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Alur Pengajuan Step-by-Step
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Berikut alur lengkap dari membaca RKS hingga dokumen siap dilampirkan ke penawaran:
           </p>
           <div className="flex flex-col gap-4 mb-10">
@@ -363,7 +363,7 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
                       <span className="text-xl">{a.icon}</span>
                       <span className="font-heading text-navy font-bold text-sm">{a.judul}</span>
                     </div>
-                    <p className="text-sm text-[#64748B] leading-relaxed mb-3">{a.desc}</p>
+                    <p className="text-sm text-[#475569] leading-relaxed mb-3">{a.desc}</p>
                     <div className="bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
                       <p className="text-xs text-amber-800 leading-relaxed">
                         <strong>⚠️ Perhatikan:</strong> {a.penting}
@@ -379,7 +379,7 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Checklist: Periksa Dokumen Sebelum Dilampirkan ke Penawaran
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Setelah menerima dokumen Jaminan Penawaran, lakukan verifikasi mandiri sebelum memasukkan ke amplop penawaran atau mengupload ke SPSE. Kesalahan kecil di tahap ini bisa berakibat fatal:
           </p>
           <div className="flex flex-col gap-2.5 mb-6">
@@ -399,7 +399,7 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
           {/* CTA Inline */}
           <div className="bg-gold/8 border border-gold/25 rounded-card p-6 mb-10">
             <div className="font-heading text-navy font-bold text-base mb-2">Ada Tender yang Sedang Disiapkan?</div>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+            <p className="text-[#475569] text-sm leading-relaxed mb-4">
               Konsultasikan kebutuhan Jaminan Penawaran Anda. Ceritakan paket tender, nilai HPS, dan batas waktu — kami bantu pastikan semua dokumen sesuai sebelum dilampirkan.
             </p>
             <div className="flex gap-3 flex-wrap">
@@ -423,14 +423,14 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
                   {f.q}
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">{f.a}</p>
               </details>
             ))}
           </div>
 
           {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Baca Juga</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">Baca Juga</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { href: "/asuransi-surety-bond/jaminan-penawaran", icon: "📋", judul: "Halaman Produk Jaminan Penawaran", desc: "Informasi lengkap Bid Bond — fungsi, nilai, dan syarat" },
@@ -442,7 +442,7 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
                   <span className="text-xl flex-shrink-0">{a.icon}</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">{a.judul}</div>
-                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                    <div className="text-xs text-[#475569]">{a.desc}</div>
                   </div>
                 </Link>
               ))}

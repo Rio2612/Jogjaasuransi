@@ -307,7 +307,7 @@ export default function BengkelRekananPage() {
 
       {/* BREADCRUMB */}
       <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-        <div className="flex items-center gap-2 text-xs text-[#64748B] flex-wrap">
+        <div className="flex items-center gap-2 text-xs text-[#475569] flex-wrap">
           <Link href="/" className="hover:text-gold transition-colors no-underline">
             Beranda
           </Link>
@@ -330,13 +330,13 @@ export default function BengkelRekananPage() {
             <span className="bg-gold/10 border border-gold/20 text-gold text-xs font-bold px-3 py-1 rounded-full">
               🔧 Klaim Kendaraan
             </span>
-            <span className="text-[#94A3B8] text-xs">⏱ 10 menit baca</span>
+            <span className="text-[#5A6472] text-xs">⏱ 10 menit baca</span>
           </div>
           <h1 className="font-heading text-[clamp(1.8rem,3.5vw,2.8rem)] text-navy leading-[1.2] mb-4">
             Bengkel Rekanan Asuransi di Jogja:<br />
             Panduan Lengkap Klaim Tanpa Ribet
           </h1>
-          <p className="text-[#64748B] text-lg leading-[1.85] mb-4">
+          <p className="text-[#475569] text-lg leading-[1.85] mb-4">
             Saat kendaraan rusak dan Anda mengajukan klaim, ada satu keputusan
             yang lebih menentukan dari yang kebanyakan orang sadari: ke mana
             kendaraan itu dibawa untuk diperbaiki. Salah pilih bengkel — atau
@@ -344,7 +344,7 @@ export default function BengkelRekananPage() {
             dalam ketidakpastian, atau lebih buruk, menanggung sebagian biaya
             yang seharusnya ditanggung asuransi.
           </p>
-          <p className="text-[#64748B] text-lg leading-[1.85]">
+          <p className="text-[#475569] text-lg leading-[1.85]">
             Panduan ini tidak hanya menjelaskan apa itu bengkel rekanan —
             tapi juga hak-hak Anda sebagai tertanggung, kesalahan fatal yang
             sering terjadi, dan bagaimana memastikan proses klaim berjalan
@@ -365,7 +365,7 @@ export default function BengkelRekananPage() {
           <h2 className="font-heading text-[1.6rem] text-navy mb-4">
             Apa Sebenarnya Bengkel Rekanan Itu?
           </h2>
-          <p className="text-[#64748B] text-base leading-[1.85] mb-4">
+          <p className="text-[#475569] text-base leading-[1.85] mb-4">
             Bengkel rekanan adalah bengkel yang telah menandatangani{" "}
             <strong className="text-navy">
               Perjanjian Kerja Sama (PKS)
@@ -375,14 +375,14 @@ export default function BengkelRekananPage() {
             tertentu, menggunakan suku cadang yang disepakati, dan menyelesaikan
             pekerjaan dalam waktu yang telah ditetapkan.
           </p>
-          <p className="text-[#64748B] text-base leading-[1.85] mb-4">
+          <p className="text-[#475569] text-base leading-[1.85] mb-4">
             Sebagai imbalannya, bengkel mendapatkan aliran pekerjaan yang stabil
             dari jaringan nasabah asuransi — dan pembayaran langsung dari
             perusahaan asuransi, bukan dari pemilik kendaraan. Inilah yang
             disebut mekanisme{" "}
             <strong className="text-navy">cashless</strong>.
           </p>
-          <p className="text-[#64748B] text-base leading-[1.85]">
+          <p className="text-[#475569] text-base leading-[1.85]">
             Di Yogyakarta, jaringan bengkel rekanan cukup beragam — mulai dari
             bengkel resmi pabrikan (ATPM) hingga bengkel independen bersertifikat
             yang tersebar di berbagai wilayah seperti Sleman, Bantul, Kota Jogja,
@@ -396,7 +396,7 @@ export default function BengkelRekananPage() {
           <h2 className="font-heading text-[1.6rem] text-navy mb-4">
             Bengkel Rekanan vs Bengkel Umum: Perbedaan yang Perlu Anda Tahu
           </h2>
-          <p className="text-[#64748B] text-base leading-[1.85] mb-6">
+          <p className="text-[#475569] text-base leading-[1.85] mb-6">
             Beberapa polis All Risk membolehkan Anda menggunakan bengkel
             non-rekanan — tapi prosesnya sangat berbeda, dan perbedaan itu
             tidak hanya soal kenyamanan.
@@ -428,7 +428,7 @@ export default function BengkelRekananPage() {
                     <td className="p-4 text-navy2 text-sm leading-relaxed font-medium align-top">
                       {b.rekanan}
                     </td>
-                    <td className="p-4 text-[#64748B] text-sm leading-relaxed align-top">
+                    <td className="p-4 text-[#475569] text-sm leading-relaxed align-top">
                       {b.umum}
                     </td>
                   </tr>
@@ -453,7 +453,7 @@ export default function BengkelRekananPage() {
           <h2 className="font-heading text-[1.6rem] text-navy mb-2">
             7 Langkah Alur Klaim di Bengkel Rekanan
           </h2>
-          <p className="text-sm text-[#64748B] mb-6">
+          <p className="text-sm text-[#475569] mb-6">
             Dari lokasi kejadian hingga kunci kendaraan kembali di tangan Anda
           </p>
           <div className="flex flex-col gap-5">
@@ -471,7 +471,7 @@ export default function BengkelRekananPage() {
                   <div className="font-heading text-navy font-bold text-lg mb-2 flex items-center gap-2">
                     {a.icon} {a.label}
                   </div>
-                  <p className="text-base leading-[1.8] text-[#64748B]">
+                  <p className="text-base leading-[1.8] text-[#475569]">
                     {a.detail}
                   </p>
                 </div>
@@ -485,7 +485,7 @@ export default function BengkelRekananPage() {
           <h2 className="font-heading text-[1.6rem] text-navy mb-2">
             Hak-Hak Anda sebagai Tertanggung yang Sering Tidak Diketahui
           </h2>
-          <p className="text-sm text-[#64748B] mb-6">
+          <p className="text-sm text-[#475569] mb-6">
             Pemilik kendaraan sering merasa tidak berdaya saat berurusan dengan
             bengkel rekanan dan asuransi — padahal Anda memiliki hak yang cukup
             kuat
@@ -500,7 +500,7 @@ export default function BengkelRekananPage() {
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1.5">
                   {h.hak}
                 </div>
-                <p className="text-base leading-relaxed text-[#64748B]">
+                <p className="text-base leading-relaxed text-[#475569]">
                   {h.penjelasan}
                 </p>
               </div>
@@ -525,7 +525,7 @@ export default function BengkelRekananPage() {
           <h2 className="font-heading text-[1.6rem] text-navy mb-2">
             5 Kesalahan Fatal yang Bisa Membuat Klaim Anda Ditolak
           </h2>
-          <p className="text-sm text-[#64748B] mb-6">
+          <p className="text-sm text-[#475569] mb-6">
             …dan cara mudah menghindari semuanya
           </p>
           <div className="flex flex-col gap-4">
@@ -540,7 +540,7 @@ export default function BengkelRekananPage() {
                     <div className="font-heading text-navy font-bold text-[0.95rem] mb-1.5">
                       {k.kesalahan}
                     </div>
-                    <p className="text-base leading-relaxed text-[#64748B] mb-2">
+                    <p className="text-base leading-relaxed text-[#475569] mb-2">
                       <strong className="text-red-500">Dampak:</strong>{" "}
                       {k.dampak}
                     </p>
@@ -560,7 +560,7 @@ export default function BengkelRekananPage() {
           <h2 className="font-heading text-[1.6rem] text-navy mb-4">
             6 Tips Memilih Bengkel Rekanan yang Tepat di Jogja
           </h2>
-          <p className="text-[#64748B] text-base leading-[1.85] mb-6">
+          <p className="text-[#475569] text-base leading-[1.85] mb-6">
             Tidak semua bengkel rekanan setara kualitasnya — meskipun
             semuanya sudah lolos seleksi asuransi. Memilih dengan cermat
             sebelum kejadian jauh lebih baik daripada menyesal saat kendaraan
@@ -576,7 +576,7 @@ export default function BengkelRekananPage() {
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1.5">
                   {t.tip}
                 </div>
-                <p className="text-base leading-relaxed text-[#64748B]">
+                <p className="text-base leading-relaxed text-[#475569]">
                   {t.detail}
                 </p>
               </div>
@@ -589,7 +589,7 @@ export default function BengkelRekananPage() {
           <h2 className="font-heading text-[1.6rem] text-navy mb-4">
             Kondisi Khusus di Yogyakarta yang Perlu Diperhatikan
           </h2>
-          <p className="text-[#64748B] text-base leading-[1.85] mb-4">
+          <p className="text-[#475569] text-base leading-[1.85] mb-4">
             Yogyakarta memiliki karakteristik yang sedikit berbeda dari
             kota besar lain seperti Jakarta atau Surabaya dalam hal jaringan
             bengkel rekanan.
@@ -629,7 +629,7 @@ export default function BengkelRekananPage() {
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1.5">
                   {item.judul}
                 </div>
-                <p className="text-base leading-relaxed text-[#64748B]">
+                <p className="text-base leading-relaxed text-[#475569]">
                   {item.detail}
                 </p>
               </div>
@@ -664,7 +664,7 @@ export default function BengkelRekananPage() {
                     +
                   </span>
                 </summary>
-                <p className="text-base leading-[1.78] text-[#64748B] pb-4">
+                <p className="text-base leading-[1.78] text-[#475569] pb-4">
                   {f.a}
                 </p>
               </details>
@@ -674,7 +674,7 @@ export default function BengkelRekananPage() {
 
         {/* ── INTERNAL LINKS ── */}
         <section className="mb-10 p-6 bg-cream rounded-xl border border-black/6">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">
             Artikel &amp; Produk Terkait
           </p>
           <div className="flex gap-3 flex-wrap">

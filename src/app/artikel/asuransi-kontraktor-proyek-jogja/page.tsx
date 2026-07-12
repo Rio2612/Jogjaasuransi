@@ -368,7 +368,7 @@ const timelineProyek = [
     detail: "Jaminan Pemeliharaan dikembalikan. Proyek selesai secara administratif.",
     produk: null,
     hrefProduk: null,
-    warna: "border-l-[#94A3B8]",
+    warna: "border-l-[#5A6472]",
   },
 ];
 
@@ -409,7 +409,7 @@ export default function ArtikelAsuransiKontraktorJogja() {
 
         {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -447,8 +447,8 @@ export default function ArtikelAsuransiKontraktorJogja() {
               >
                 🛡️ Liability
               </Link>
-              <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Panduan A–Z</span>
+              <span className="text-white/60 text-xs">·</span>
+              <span className="text-white/60 text-xs">Panduan A–Z</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
               Panduan Lengkap Asuransi<br />
@@ -460,7 +460,7 @@ export default function ArtikelAsuransiKontraktorJogja() {
               tidak semuanya wajib, dan tidak semua dibutuhkan di waktu yang sama. Panduan ini
               menjelaskan mana yang wajib, mana yang dianjurkan, kapan dibutuhkan, dan berapa biayanya.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
@@ -489,19 +489,19 @@ export default function ArtikelAsuransiKontraktorJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Mengapa Asuransi Bukan Sekadar Formalitas Tender?
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-4">
+          <p className="text-[#475569] text-base leading-relaxed mb-4">
             Banyak kontraktor di Yogyakarta mengurus asuransi hanya karena diwajibkan panitia
             tender — bukan karena benar-benar memahami manfaatnya. Padahal risiko di lapangan
             sangat nyata: banjir yang merusak pekerjaan yang sudah terpasang, pekerja yang jatuh
             dan menuntut ganti rugi, atau material yang dicuri dari lokasi proyek.
           </p>
-          <p className="text-[#64748B] text-base leading-relaxed mb-4">
+          <p className="text-[#475569] text-base leading-relaxed mb-4">
             Yogyakarta memiliki karakteristik risiko yang spesifik. Kawasan lereng Merapi di Sleman
             utara rawan lahar hujan. Kawasan pesisir di Bantul dan Kulon Progo rawan banjir rob dan
             gelombang tinggi. Seluruh DIY berada di zona gempa aktif — pengingat Gempa 2006 yang
             merusak ribuan bangunan masih relevan hingga hari ini.
           </p>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Kontraktor yang tidak memiliki asuransi yang tepat menanggung semua risiko ini sendiri.
             Untuk proyek Rp 5 miliar, satu kejadian besar bisa menghapus seluruh margin keuntungan
             bahkan menyebabkan kerugian bersih.
@@ -511,7 +511,7 @@ export default function ArtikelAsuransiKontraktorJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Matriks Kebutuhan: Asuransi Mana untuk Jenis Proyek Apa?
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Gunakan tabel ini sebagai referensi cepat. Kolom menunjukkan jenis proyek, baris
             menunjukkan jenis asuransi:
           </p>
@@ -546,7 +546,7 @@ export default function ArtikelAsuransiKontraktorJogja() {
                       >
                         {row.jenis}
                       </Link>
-                      <p className="text-[0.65rem] text-[#94A3B8] leading-tight">{row.keterangan}</p>
+                      <p className="text-[0.65rem] text-[#5A6472] leading-tight">{row.keterangan}</p>
                     </td>
                     {[row.proyekPemerintah, row.proyekSwastaBesar, row.proyekSwastaKecil, row.proyekIndustri].map(
                       (val, j) => (
@@ -566,7 +566,7 @@ export default function ArtikelAsuransiKontraktorJogja() {
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-[#94A3B8] mb-10">
+          <p className="text-xs text-[#5A6472] mb-10">
             ✓ = Wajib atau sangat dianjurkan. — = Tidak relevan atau opsional.
             Tabel di atas adalah panduan umum — kondisi kontrak spesifik bisa berbeda.
           </p>
@@ -575,7 +575,7 @@ export default function ArtikelAsuransiKontraktorJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Timeline Lengkap: Kapan Mengurus Asuransi Apa?
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Kesalahan paling umum kontraktor adalah mengurus asuransi terlambat. Berikut urutan
             kronologis yang harus diikuti — dari sebelum tender hingga FHO:
           </p>
@@ -595,12 +595,12 @@ export default function ArtikelAsuransiKontraktorJogja() {
                 <div className={`pb-6 flex-1 border-l-2 pl-4 ${t.warna}`} style={{ marginLeft: "-1px" }}>
                   <div className="flex items-start gap-3 flex-wrap mb-1">
                     <span className="font-heading font-bold text-navy text-sm">{t.fase}</span>
-                    <span className="text-[0.65rem] text-[#94A3B8] bg-cream border border-black/8 px-2 py-0.5 rounded-full">
+                    <span className="text-[0.65rem] text-[#5A6472] bg-cream border border-black/8 px-2 py-0.5 rounded-full">
                       {t.waktu}
                     </span>
                   </div>
                   <p className="font-semibold text-navy2 text-sm mb-1">{t.aksi}</p>
-                  <p className="text-xs text-[#64748B] leading-relaxed mb-2">{t.detail}</p>
+                  <p className="text-xs text-[#475569] leading-relaxed mb-2">{t.detail}</p>
                   {t.produk && t.hrefProduk && (
                     <Link
                       href={t.hrefProduk}
@@ -618,7 +618,7 @@ export default function ArtikelAsuransiKontraktorJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Kebutuhan Asuransi Berdasarkan Profil Kontraktor
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Kebutuhan berbeda signifikan tergantung skala dan jenis pekerjaan.
             Temukan profil yang paling mendekati kondisi Anda:
           </p>
@@ -629,12 +629,12 @@ export default function ArtikelAsuransiKontraktorJogja() {
                   <span className="text-2xl">{p.icon}</span>
                   <div>
                     <div className="font-heading font-bold text-navy text-[0.95rem]">{p.profil}</div>
-                    <div className="text-xs text-[#64748B] mt-0.5">{p.nilaiProyek}</div>
+                    <div className="text-xs text-[#475569] mt-0.5">{p.nilaiProyek}</div>
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                   <div>
-                    <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-2">
+                    <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-2">
                       Wajib / Sangat Dianjurkan
                     </p>
                     <ul className="flex flex-col gap-1.5">
@@ -647,14 +647,14 @@ export default function ArtikelAsuransiKontraktorJogja() {
                     </ul>
                   </div>
                   <div>
-                    <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-2">
+                    <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-2">
                       Dianjurkan / Kondisional
                     </p>
                     <ul className="flex flex-col gap-1.5">
                       {p.asuransiDianjurkan.map((item, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <span className="text-gold font-bold text-xs flex-shrink-0 mt-0.5">+</span>
-                          <span className="text-xs text-[#64748B] leading-snug">{item}</span>
+                          <span className="text-xs text-[#475569] leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -662,16 +662,16 @@ export default function ArtikelAsuransiKontraktorJogja() {
                 </div>
                 <div className="flex flex-wrap gap-3 items-start">
                   <div className="bg-white/70 rounded-lg px-3.5 py-2.5 border border-black/6 flex-1 min-w-[200px]">
-                    <div className="text-[0.65rem] text-[#94A3B8] uppercase tracking-wide font-semibold mb-0.5">
+                    <div className="text-[0.65rem] text-[#5A6472] uppercase tracking-wide font-semibold mb-0.5">
                       Estimasi total biaya asuransi
                     </div>
                     <div className="font-heading font-bold text-navy text-sm">{p.estimasiBiaya}</div>
                   </div>
                   <div className="bg-white/70 rounded-lg px-3.5 py-2.5 border border-black/6 flex-[2] min-w-[200px]">
-                    <div className="text-[0.65rem] text-[#94A3B8] uppercase tracking-wide font-semibold mb-0.5">
+                    <div className="text-[0.65rem] text-[#5A6472] uppercase tracking-wide font-semibold mb-0.5">
                       Contoh
                     </div>
-                    <p className="text-xs text-[#64748B] leading-relaxed">{p.contoh}</p>
+                    <p className="text-xs text-[#475569] leading-relaxed">{p.contoh}</p>
                   </div>
                 </div>
               </div>
@@ -682,7 +682,7 @@ export default function ArtikelAsuransiKontraktorJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Kasus Nyata — Apa yang Terjadi Jika Ada (dan Tidak Ada) Asuransi
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Berikut tiga kasus dari pengalaman kami mendampingi kontraktor di Yogyakarta — dua
             berakhir baik karena asuransi yang tepat, satu berakhir buruk karena tidak siap:
           </p>
@@ -707,10 +707,10 @@ export default function ArtikelAsuransiKontraktorJogja() {
                     { label: "💡 Pelajaran", val: k.pelajaran },
                   ].map((item) => (
                     <div key={item.label} className="bg-white/60 rounded-lg p-3 border border-black/6">
-                      <div className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1">
+                      <div className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-1">
                         {item.label}
                       </div>
-                      <p className="text-xs text-[#64748B] leading-relaxed">{item.val}</p>
+                      <p className="text-xs text-[#475569] leading-relaxed">{item.val}</p>
                     </div>
                   ))}
                 </div>
@@ -723,7 +723,7 @@ export default function ArtikelAsuransiKontraktorJogja() {
             <div className="font-heading text-navy font-bold text-base mb-2">
               Ingin tahu kebutuhan asuransi spesifik untuk proyek Anda?
             </div>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+            <p className="text-[#475569] text-sm leading-relaxed mb-4">
               Ceritakan jenis proyek, nilai kontrak, dan apakah proyek pemerintah atau swasta —
               kami rekomendasikan kombinasi perlindungan yang paling efisien dan sesuai anggaran.
             </p>
@@ -762,14 +762,14 @@ export default function ArtikelAsuransiKontraktorJogja() {
                     +
                   </span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">{f.a}</p>
               </details>
             ))}
           </div>
 
           {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">
               Panduan & Produk Terkait
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -821,7 +821,7 @@ export default function ArtikelAsuransiKontraktorJogja() {
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">
                       {a.judul}
                     </div>
-                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                    <div className="text-xs text-[#475569]">{a.desc}</div>
                   </div>
                 </Link>
               ))}

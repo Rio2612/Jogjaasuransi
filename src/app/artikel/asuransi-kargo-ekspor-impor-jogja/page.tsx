@@ -35,7 +35,7 @@ export default function ArtikelAsuransiKargoEksporImporJogja() {
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -52,8 +52,8 @@ export default function ArtikelAsuransiKargoEksporImporJogja() {
               <Link href="/asuransi-kargo/kargo-udara-laut" className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors">
                 📦 Asuransi Kargo
               </Link>
-              <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Panduan Lengkap</span>
+              <span className="text-white/60 text-xs">·</span>
+              <span className="text-white/60 text-xs">Panduan Lengkap</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
               Asuransi Kargo Ekspor-Impor —<br /><em className="not-italic text-gold">Panduan Klausul ICC</em><br />untuk Jalur Udara & Laut
@@ -61,7 +61,7 @@ export default function ArtikelAsuransiKargoEksporImporJogja() {
             <p className="text-white/80 text-base leading-[1.85] max-w-[540px] mb-6">
               Setiap moda pengiriman ekspor — laut maupun udara — punya profil risiko berbeda, dan klausul ICC yang dipilih akan menentukan seberapa luas proteksi yang Anda dapatkan. Panduan ini membantu eksportir DIY memilih dengan tepat.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Juni 2026</span>
@@ -107,20 +107,20 @@ export default function ArtikelAsuransiKargoEksporImporJogja() {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-[#94A3B8] mb-10">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+            <p className="text-xs text-[#5A6472] mb-10">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
 
             <div className="flex items-center gap-3 mb-10 pt-6 border-t border-black/8">
               <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
               <div>
                 <div className="text-sm font-semibold text-navy">Ditulis &amp; ditinjau oleh Rio Mardiansyah</div>
-                <div className="text-xs text-[#64748B]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
+                <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
               </div>
             </div>
 
             {/* CTA Inline */}
             <div className="bg-gold/8 border border-gold/25 rounded-card p-6 mb-10">
               <div className="font-heading text-navy font-bold text-base mb-2">Mengekspor Barang dan Butuh Proteksi Marine Cargo?</div>
-              <p className="text-[#64748B] text-sm leading-relaxed mb-4">Ceritakan jenis barang, nilai, dan moda pengiriman Anda, kami bantu pilih klausul ICC yang sesuai dan hitung estimasi premi.</p>
+              <p className="text-[#475569] text-sm leading-relaxed mb-4">Ceritakan jenis barang, nilai, dan moda pengiriman Anda, kami bantu pilih klausul ICC yang sesuai dan hitung estimasi premi.</p>
               <div className="flex gap-3 flex-wrap">
                 <a href={`https://wa.me/${KONTAK.wa}`} className="bg-gold text-navy px-5 py-2.5 rounded-lg font-bold text-sm no-underline hover:bg-gold2 transition-all">
                   💬 Konsultasi via WhatsApp
@@ -139,54 +139,54 @@ export default function ArtikelAsuransiKargoEksporImporJogja() {
                   Klausul ICC mana yang paling cocok untuk kerajinan ekspor?
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">ICC-A umumnya paling direkomendasikan untuk barang kerajinan dan furnitur karena rentan terhadap berbagai jenis kerusakan selama pengiriman jarak jauh, dan selisih premi dengan ICC-C relatif kecil dibanding manfaat proteksinya.</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">ICC-A umumnya paling direkomendasikan untuk barang kerajinan dan furnitur karena rentan terhadap berbagai jenis kerusakan selama pengiriman jarak jauh, dan selisih premi dengan ICC-C relatif kecil dibanding manfaat proteksinya.</p>
               </details>
               <details className="group py-1">
                 <summary className="py-3 cursor-pointer font-semibold text-[0.9rem] text-navy flex justify-between items-center list-none">
                   Apakah kargo udara otomatis lebih aman dari kargo laut?
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">Waktu tempuh yang lebih singkat memang mengurangi eksposur terhadap cuaca, namun penanganan yang cepat dan berkali-kali (multiple handling) di kargo udara tetap membawa risiko kerusakan fisik, terutama untuk barang yang rapuh.</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">Waktu tempuh yang lebih singkat memang mengurangi eksposur terhadap cuaca, namun penanganan yang cepat dan berkali-kali (multiple handling) di kargo udara tetap membawa risiko kerusakan fisik, terutama untuk barang yang rapuh.</p>
               </details>
               <details className="group py-1">
                 <summary className="py-3 cursor-pointer font-semibold text-[0.9rem] text-navy flex justify-between items-center list-none">
                   Apakah nilai pertanggungan harus sama dengan nilai invoice?
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">Idealnya nilai pertanggungan mengikuti nilai CIF (invoice plus biaya asuransi dan freight) sesuai praktik perdagangan internasional, bukan hanya nilai barang FOB, agar seluruh biaya yang sudah dikeluarkan juga terlindungi jika terjadi klaim total.</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">Idealnya nilai pertanggungan mengikuti nilai CIF (invoice plus biaya asuransi dan freight) sesuai praktik perdagangan internasional, bukan hanya nilai barang FOB, agar seluruh biaya yang sudah dikeluarkan juga terlindungi jika terjadi klaim total.</p>
               </details>
             </div>
 
             {/* Internal Links */}
             <div className="border-t border-black/8 pt-8">
-              <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Baca Juga</p>
+              <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">Baca Juga</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Link href="/asuransi-kargo/kargo-udara-laut" className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
                   <span className="text-xl flex-shrink-0">📦</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">Produk Kargo Udara & Laut</div>
-                    <div className="text-xs text-[#64748B]">Lihat detail produk dan klausul ICC</div>
+                    <div className="text-xs text-[#475569]">Lihat detail produk dan klausul ICC</div>
                   </div>
                 </Link>
                 <Link href="/asuransi-kargo/ekspedisi-umkm" className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
                   <span className="text-xl flex-shrink-0">📮</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">Kargo Ekspedisi UMKM</div>
-                    <div className="text-xs text-[#64748B]">Untuk pengiriman domestik skala kecil</div>
+                    <div className="text-xs text-[#475569]">Untuk pengiriman domestik skala kecil</div>
                   </div>
                 </Link>
                 <Link href="/artikel/cara-klaim-asuransi-kargo" className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
                   <span className="text-xl flex-shrink-0">📋</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">Cara Klaim Asuransi Kargo</div>
-                    <div className="text-xs text-[#64748B]">Panduan proses klaim lengkap</div>
+                    <div className="text-xs text-[#475569]">Panduan proses klaim lengkap</div>
                   </div>
                 </Link>
                 <Link href="/asuransi-kargo" className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
                   <span className="text-xl flex-shrink-0">📋</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">Semua Produk Kargo</div>
-                    <div className="text-xs text-[#64748B]">Lihat seluruh lini produk kargo</div>
+                    <div className="text-xs text-[#475569]">Lihat seluruh lini produk kargo</div>
                   </div>
                 </Link>
               </div>

@@ -347,7 +347,7 @@ export default function ArtikelPremiCAR() {
 
         {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -373,8 +373,8 @@ export default function ArtikelPremiCAR() {
               >
                 🏗️ Contractor All Risk
               </Link>
-              <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Panduan Premi & Biaya</span>
+              <span className="text-white/60 text-xs">·</span>
+              <span className="text-white/60 text-xs">Panduan Premi & Biaya</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
               Berapa Premi Asuransi CAR<br />
@@ -387,7 +387,7 @@ export default function ArtikelPremiCAR() {
               tahun — tapi angka ini bisa berbeda signifikan tergantung jenis pekerjaan, lokasi proyek, dan perluasan
               yang diminta. Berikut panduan lengkap agar Anda bisa memperkirakan biaya sebelum konsultasi.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
@@ -427,7 +427,7 @@ export default function ArtikelPremiCAR() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Tabel Estimasi Premi CAR Berdasarkan Nilai Kontrak
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Berikut rentang premi berdasarkan skala proyek, menggunakan rate pasar yang berlaku
             untuk jenis pekerjaan sipil standar di wilayah Yogyakarta:
           </p>
@@ -456,18 +456,18 @@ export default function ArtikelPremiCAR() {
                 {tabelEstimasi.map((row, i) => (
                   <tr key={i} className={row.warna}>
                     <td className="p-3.5 font-bold text-navy text-xs align-middle">{row.nilaiKontrak}</td>
-                    <td className="p-3.5 text-[#64748B] text-sm align-middle">{row.rateMin}</td>
-                    <td className="p-3.5 text-[#64748B] text-sm align-middle">{row.rateMax}</td>
+                    <td className="p-3.5 text-[#475569] text-sm align-middle">{row.rateMin}</td>
+                    <td className="p-3.5 text-[#475569] text-sm align-middle">{row.rateMax}</td>
                     <td className="p-3.5 align-middle">
                       {row.premiMin === "—" ? (
-                        <span className="text-xs text-[#94A3B8] italic">Negosiasi langsung</span>
+                        <span className="text-xs text-[#5A6472] italic">Negosiasi langsung</span>
                       ) : (
                         <span className="text-navy2 font-semibold text-xs">
                           {row.premiMin} – {row.premiMax}
                         </span>
                       )}
                     </td>
-                    <td className="p-3.5 text-[#64748B] text-xs align-middle leading-snug">
+                    <td className="p-3.5 text-[#475569] text-xs align-middle leading-snug">
                       {row.catatan}
                     </td>
                   </tr>
@@ -475,11 +475,11 @@ export default function ArtikelPremiCAR() {
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-[#94A3B8] mb-3">
+          <p className="text-xs text-[#5A6472] mb-3">
             * Estimasi untuk polis CAR tanpa perluasan Gempa/Banjir dan dengan limit TPL standar Rp 500 juta.
             Penambahan perluasan dan peningkatan limit TPL akan meningkatkan premi.
           </p>
-          <p className="text-xs text-[#94A3B8] mb-10">
+          <p className="text-xs text-[#5A6472] mb-10">
             ** Rate untuk proyek di atas Rp 50 miliar ditentukan case-by-case oleh underwriter.
           </p>
 
@@ -487,7 +487,7 @@ export default function ArtikelPremiCAR() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Apa Saja yang Membentuk Premi CAR?
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Premi CAR bukan satu angka tunggal — melainkan akumulasi dari beberapa komponen dan
             perluasan yang dipilih. Memahami ini membantu Anda mengoptimalkan cakupan tanpa
             membayar lebih dari yang dibutuhkan:
@@ -509,7 +509,7 @@ export default function ArtikelPremiCAR() {
                       {k.wajib ? "STANDAR" : "OPSIONAL"}
                     </span>
                   </div>
-                  <p className="text-xs text-[#64748B] leading-relaxed">{k.deskripsi}</p>
+                  <p className="text-xs text-[#475569] leading-relaxed">{k.deskripsi}</p>
                 </div>
               </div>
             ))}
@@ -519,7 +519,7 @@ export default function ArtikelPremiCAR() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             8 Faktor yang Menentukan Rate CAR Anda
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Dua proyek dengan nilai kontrak yang sama bisa mendapat premi yang sangat berbeda.
             Ini adalah faktor-faktor yang paling berpengaruh pada rate yang ditetapkan underwriter:
           </p>
@@ -537,7 +537,7 @@ export default function ArtikelPremiCAR() {
                     </span>
                   </div>
                 </div>
-                <p className="text-xs text-[#64748B] leading-relaxed">{f.detail}</p>
+                <p className="text-xs text-[#475569] leading-relaxed">{f.detail}</p>
               </div>
             ))}
           </div>
@@ -546,7 +546,7 @@ export default function ArtikelPremiCAR() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Contoh Perhitungan Nyata — 3 Proyek di Yogyakarta
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Berikut ilustrasi perhitungan premi berdasarkan profil proyek nyata yang pernah kami
             tangani di Yogyakarta. Nama proyek dan angka telah dibulatkan untuk kerahasiaan:
           </p>
@@ -569,7 +569,7 @@ export default function ArtikelPremiCAR() {
                     { label: "Rate Applied", val: c.rateApplied },
                   ].map((item) => (
                     <div key={item.label}>
-                      <span className="text-[0.65rem] text-[#94A3B8] uppercase tracking-wide font-semibold block">
+                      <span className="text-[0.65rem] text-[#5A6472] uppercase tracking-wide font-semibold block">
                         {item.label}
                       </span>
                       <span className="text-xs text-navy2 leading-snug">{item.val}</span>
@@ -578,11 +578,11 @@ export default function ArtikelPremiCAR() {
                 </div>
                 <div className="bg-white/70 rounded-xl p-3.5 border border-black/6 flex items-start gap-3">
                   <div>
-                    <div className="text-xs text-[#94A3B8] uppercase tracking-wide font-semibold mb-0.5">
+                    <div className="text-xs text-[#5A6472] uppercase tracking-wide font-semibold mb-0.5">
                       Estimasi Premi
                     </div>
                     <div className="font-heading font-bold text-navy text-xl mb-2">{c.estimasiPremi}</div>
-                    <p className="text-xs text-[#64748B] leading-relaxed">{c.catatanPremi}</p>
+                    <p className="text-xs text-[#475569] leading-relaxed">{c.catatanPremi}</p>
                   </div>
                 </div>
               </div>
@@ -593,7 +593,7 @@ export default function ArtikelPremiCAR() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Tips Mengoptimalkan Biaya Premi CAR
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+          <p className="text-[#475569] text-base leading-relaxed mb-5">
             Premi yang murah bukan selalu yang terbaik — tapi premi yang tepat untuk cakupan yang
             dibutuhkan adalah target yang bisa dicapai dengan strategi yang benar:
           </p>
@@ -631,7 +631,7 @@ export default function ArtikelPremiCAR() {
                 </span>
                 <div>
                   <p className="font-semibold text-navy text-sm mb-1">{t.judul}</p>
-                  <p className="text-xs text-[#64748B] leading-relaxed">{t.detail}</p>
+                  <p className="text-xs text-[#475569] leading-relaxed">{t.detail}</p>
                 </div>
               </div>
             ))}
@@ -642,7 +642,7 @@ export default function ArtikelPremiCAR() {
             <div className="font-heading text-navy font-bold text-base mb-2">
               Ingin tahu estimasi premi untuk proyek Anda?
             </div>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+            <p className="text-[#475569] text-sm leading-relaxed mb-4">
               Ceritakan nilai kontrak, jenis pekerjaan, lokasi, dan durasi proyek Anda —
               kami siapkan estimasi premi dalam 1 hari kerja. Gratis, tanpa komitmen.
             </p>
@@ -675,14 +675,14 @@ export default function ArtikelPremiCAR() {
                     +
                   </span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">{f.a}</p>
               </details>
             ))}
           </div>
 
           {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">
               Pelajari Lebih Lanjut
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -722,7 +722,7 @@ export default function ArtikelPremiCAR() {
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">
                       {a.judul}
                     </div>
-                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                    <div className="text-xs text-[#475569]">{a.desc}</div>
                   </div>
                 </Link>
               ))}

@@ -240,7 +240,7 @@ export default function ArtikelPerbedaanJenisLiability() {
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -257,8 +257,8 @@ export default function ArtikelPerbedaanJenisLiability() {
               <Link href="/asuransi-liability" className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors">
                 🛡️ Asuransi Liability
               </Link>
-              <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Perbandingan Produk</span>
+              <span className="text-white/60 text-xs">·</span>
+              <span className="text-white/60 text-xs">Perbandingan Produk</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
               Perbedaan Jenis Asuransi Liability —<br />
@@ -267,7 +267,7 @@ export default function ArtikelPerbedaanJenisLiability() {
             <p className="text-white/80 text-base leading-[1.85] max-w-[540px] mb-6">
               Semua disebut "asuransi liability" — tapi masing-masing melindungi dari tuntutan yang berbeda, dari pihak yang berbeda. Salah pilih produk berarti klaim Anda tidak tertanggung saat dibutuhkan.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
@@ -295,7 +295,7 @@ export default function ArtikelPerbedaanJenisLiability() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             4 Jenis Asuransi Liability — Penjelasan Lengkap
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Berikut penjelasan masing-masing jenis, termasuk siapa yang bisa menuntut, apa yang ditanggung, dan contoh kasus nyata:
           </p>
           <div className="flex flex-col gap-5 mb-10">
@@ -310,11 +310,11 @@ export default function ArtikelPerbedaanJenisLiability() {
                       <span className="font-heading font-bold text-navy text-[0.95rem]">{p.nama}</span>
                       <span className={`text-[0.6rem] font-bold px-2 py-0.5 rounded-full border ${p.warnaBadge}`}>{p.subNama}</span>
                     </div>
-                    <p className="text-sm text-[#64748B] leading-relaxed mb-4">{p.deskripsi}</p>
+                    <p className="text-sm text-[#475569] leading-relaxed mb-4">{p.deskripsi}</p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
                       <div>
-                        <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1.5">Yang ditanggung</p>
+                        <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-1.5">Yang ditanggung</p>
                         <ul className="flex flex-col gap-1">
                           {p.apaYangDitanggung.map((item, i) => (
                             <li key={i} className="flex items-start gap-2">
@@ -325,12 +325,12 @@ export default function ArtikelPerbedaanJenisLiability() {
                         </ul>
                       </div>
                       <div>
-                        <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1.5">Tidak ditanggung</p>
+                        <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-1.5">Tidak ditanggung</p>
                         <ul className="flex flex-col gap-1">
                           {p.tidakDitanggung.map((item, i) => (
                             <li key={i} className="flex items-start gap-2">
                               <span className="text-red-400 flex-shrink-0 font-bold text-xs mt-0.5">✕</span>
-                              <span className="text-xs text-[#64748B]">{item}</span>
+                              <span className="text-xs text-[#475569]">{item}</span>
                             </li>
                           ))}
                         </ul>
@@ -338,13 +338,13 @@ export default function ArtikelPerbedaanJenisLiability() {
                     </div>
 
                     <div className="bg-white/60 rounded-xl p-3.5 border border-black/6 mb-3">
-                      <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1">Contoh kasus</p>
+                      <p className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-1">Contoh kasus</p>
                       <p className="text-xs text-navy2 leading-relaxed">{p.contohKasus}</p>
                     </div>
 
                     <div className="flex items-center justify-between flex-wrap gap-2">
                       <div>
-                        <span className="text-[0.65rem] text-[#94A3B8] uppercase tracking-wide font-semibold">Estimasi premi: </span>
+                        <span className="text-[0.65rem] text-[#5A6472] uppercase tracking-wide font-semibold">Estimasi premi: </span>
                         <span className="text-xs font-bold text-navy">{p.estimasiPremi}</span>
                       </div>
                       <Link href={p.href} className="inline-flex items-center gap-1.5 text-xs font-semibold text-gold hover:text-gold2 transition-colors no-underline">
@@ -376,22 +376,22 @@ export default function ArtikelPerbedaanJenisLiability() {
                 {tabelPerbandingan.map((row, i) => (
                   <tr key={row.aspek} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
                     <td className="p-3 font-semibold text-navy text-xs align-top">{row.aspek}</td>
-                    <td className="p-3 text-[#64748B] text-xs leading-snug align-top">{row.public}</td>
+                    <td className="p-3 text-[#475569] text-xs leading-snug align-top">{row.public}</td>
                     <td className="p-3 text-navy2 text-xs leading-snug align-top">{row.employer}</td>
-                    <td className="p-3 text-[#64748B] text-xs leading-snug align-top">{row.product}</td>
-                    <td className="p-3 text-[#64748B] text-xs leading-snug align-top">{row.b3}</td>
+                    <td className="p-3 text-[#475569] text-xs leading-snug align-top">{row.product}</td>
+                    <td className="p-3 text-[#475569] text-xs leading-snug align-top">{row.b3}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-[#94A3B8] mb-10">* Estimasi premi tergantung skala usaha, omzet, limit liability, dan profil risiko spesifik.</p>
+          <p className="text-xs text-[#5A6472] mb-10">* Estimasi premi tergantung skala usaha, omzet, limit liability, dan profil risiko spesifik.</p>
 
           {/* Matriks jenis usaha */}
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Jenis Usaha Anda Butuh Liability Apa?
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+          <p className="text-[#475569] text-base leading-relaxed mb-5">
             Gunakan tabel referensi cepat ini berdasarkan jenis bisnis:
           </p>
           <div className="overflow-x-auto mb-10">
@@ -418,7 +418,7 @@ export default function ArtikelPerbedaanJenisLiability() {
                         }
                       </td>
                     ))}
-                    <td className="p-3 text-[0.65rem] text-[#94A3B8] leading-snug">{row.catatan}</td>
+                    <td className="p-3 text-[0.65rem] text-[#5A6472] leading-snug">{row.catatan}</td>
                   </tr>
                 ))}
               </tbody>
@@ -428,7 +428,7 @@ export default function ArtikelPerbedaanJenisLiability() {
           {/* CTA Inline */}
           <div className="bg-gold/8 border border-gold/25 rounded-card p-6 mb-10">
             <div className="font-heading text-navy font-bold text-base mb-2">Tidak yakin kombinasi mana yang tepat untuk bisnis Anda?</div>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+            <p className="text-[#475569] text-sm leading-relaxed mb-4">
               Ceritakan jenis usaha, jumlah karyawan, dan apakah ada produksi sendiri — kami rekomendasikan kombinasi liability yang paling efisien.
             </p>
             <div className="flex gap-3 flex-wrap">
@@ -450,14 +450,14 @@ export default function ArtikelPerbedaanJenisLiability() {
                   {f.q}
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">{f.a}</p>
               </details>
             ))}
           </div>
 
           {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Produk & Artikel Terkait</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">Produk & Artikel Terkait</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { href: "/asuransi-liability/public-liability", icon: "👥", judul: "Public Liability", desc: "Detail cakupan, estimasi premi, dan cara klaim" },
@@ -471,7 +471,7 @@ export default function ArtikelPerbedaanJenisLiability() {
                   <span className="text-xl flex-shrink-0">{a.icon}</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">{a.judul}</div>
-                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                    <div className="text-xs text-[#475569]">{a.desc}</div>
                   </div>
                 </Link>
               ))}

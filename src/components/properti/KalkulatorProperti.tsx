@@ -222,8 +222,8 @@ export default function KalkulatorProperti() {
         {/* ─── INPUT FORM ─── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className={labelCls}>Jenis Properti</label>
-            <select className={selectCls} value={jenis} onChange={e => { setJenis(e.target.value); setHasil(null); setShowForm(false); }}>
+            <label className={labelCls} htmlFor="kp-jenis">Jenis Properti</label>
+            <select id="kp-jenis" className={selectCls} value={jenis} onChange={e => { setJenis(e.target.value); setHasil(null); setShowForm(false); }}>
               <option value="rumah"  style={{background:"#163352"}}>🏡 Rumah Tinggal</option>
               <option value="kos"    style={{background:"#163352"}}>🏘️ Kos-kosan</option>
               <option value="ruko"   style={{background:"#163352"}}>🏪 Ruko / Toko</option>
@@ -232,8 +232,8 @@ export default function KalkulatorProperti() {
             </select>
           </div>
           <div>
-            <label className={labelCls}>Kelas Konstruksi</label>
-            <select className={selectCls} value={kelas} onChange={e => handleKelasChange(e.target.value)}>
+            <label className={labelCls} htmlFor="kp-kelas">Kelas Konstruksi</label>
+            <select id="kp-kelas" className={selectCls} value={kelas} onChange={e => handleKelasChange(e.target.value)}>
               <option value="kelas1" style={{background:"#163352"}}>Kelas 1 – Beton / Bata</option>
               <option value="kelas2" style={{background:"#163352"}}>Kelas 2 – Semi Permanen</option>
               <option value="kelas3" style={{background:"#163352"}}>Kelas 3 – Kayu / Bambu</option>
@@ -256,7 +256,7 @@ export default function KalkulatorProperti() {
             <span className="text-white/65 text-xs mt-1 block">Nilai penggantian bangunan (bukan harga tanah)</span>
           </div>
           <div>
-            <label className={labelCls}>Nilai Perabotan (Rp) <span className="text-white/35 font-normal text-xs">— opsional</span></label>
+            <label className={labelCls}>Nilai Perabotan (Rp) <span className="text-white/60 font-normal text-xs">— opsional</span></label>
             <input
               type="text"
               inputMode="numeric"
@@ -303,8 +303,9 @@ export default function KalkulatorProperti() {
 
           {gempa && gempaBisaDipilih && (
             <div className="mt-4">
-              <label className={labelCls}>Wilayah / Kabupaten</label>
+              <label className={labelCls} htmlFor="kp-wilayah">Wilayah / Kabupaten</label>
               <select
+                id="kp-wilayah"
                 className={selectCls}
                 value={wilayah}
                 onChange={e => setWilayah(e.target.value)}
@@ -468,7 +469,7 @@ export default function KalkulatorProperti() {
               className={`block text-center py-3.5 rounded-lg font-bold text-sm no-underline transition-all ${
                 formValid
                   ? "bg-[#25D366] text-white hover:opacity-90 cursor-pointer"
-                  : "bg-[#25D366]/30 text-white/40 cursor-not-allowed"
+                  : "bg-[#25D366]/30 text-white/60 cursor-not-allowed"
               }`}
             >
               💬 Kirim ke WhatsApp &amp; Dapatkan Penawaran Resmi

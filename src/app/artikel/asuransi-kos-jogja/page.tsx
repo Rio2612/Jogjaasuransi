@@ -191,7 +191,7 @@ export default function ArtikelAsuransiKosPage() {
                 ].map(([k, r, p], i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
                     <td className="px-4 py-3 font-semibold text-navy">{k}</td>
-                    <td className="px-4 py-3 text-[#64748B]">{r}</td>
+                    <td className="px-4 py-3 text-[#475569]">{r}</td>
                     <td className="px-4 py-3 text-gold font-medium">{p}</td>
                   </tr>
                 ))}
@@ -260,7 +260,7 @@ export default function ArtikelAsuransiKosPage() {
                 <div className="font-heading text-navy font-bold text-[1rem] mb-1">
                   {r.judul}
                 </div>
-                <p className="text-sm leading-[1.7] text-[#64748B]">{r.isi}</p>
+                <p className="text-sm leading-[1.7] text-[#475569]">{r.isi}</p>
               </div>
             ))}
           </div>
@@ -326,13 +326,13 @@ export default function ArtikelAsuransiKosPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div className="bg-orange-50 border border-orange-200 rounded-[14px] p-5">
               <div className="font-heading text-orange-800 font-bold text-sm mb-2">🌋 Zona 4 — Sleman, Kulon Progo, Gunungkidul, Kota Yogyakarta</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">
+              <p className="text-xs leading-relaxed text-[#475569]">
                 Tarif gempa untuk kos/ruko: <strong className="text-orange-700">±0,143‰</strong> dari nilai pertanggungan per tahun. Kos di Jakal, Seturan, Condongcatur masuk zona ini.
               </p>
             </div>
             <div className="bg-red-50 border border-red-200 rounded-[14px] p-5">
               <div className="font-heading text-red-800 font-bold text-sm mb-2">🌋 Zona 5 — Bantul (risiko lebih tinggi)</div>
-              <p className="text-xs leading-relaxed text-[#64748B]">
+              <p className="text-xs leading-relaxed text-[#475569]">
                 Tarif gempa untuk kos/ruko: <strong className="text-red-700">±0,190‰</strong> dari nilai pertanggungan per tahun. Kos di Sewon, Imogiri, Bantul kota masuk zona ini.
               </p>
             </div>
@@ -421,16 +421,16 @@ export default function ArtikelAsuransiKosPage() {
                 ].map(([s, n, kb, gm, tot], i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
                     <td className="px-3 py-3 text-navy font-medium text-xs">{s}</td>
-                    <td className="px-3 py-3 text-[#64748B] text-xs">{n}</td>
-                    <td className="px-3 py-3 text-[#64748B] text-xs">{kb}</td>
-                    <td className="px-3 py-3 text-[#64748B] text-xs">{gm}</td>
+                    <td className="px-3 py-3 text-[#475569] text-xs">{n}</td>
+                    <td className="px-3 py-3 text-[#475569] text-xs">{kb}</td>
+                    <td className="px-3 py-3 text-[#475569] text-xs">{gm}</td>
                     <td className="px-3 py-3 text-gold font-bold text-xs">{tot}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-[#94A3B8] mb-6 leading-relaxed">
+          <p className="text-xs text-[#5A6472] mb-6 leading-relaxed">
             * Kelas 2 (semi-permanen) tidak memenuhi syarat untuk perluasan gempa bumi sesuai ketentuan
             produk standard. Biaya administrasi polis (Rp 30.000–40.000 per polis) belum termasuk dalam angka di atas.
             Premi final ditentukan perusahaan asuransi setelah evaluasi. Gunakan{" "}
@@ -509,7 +509,7 @@ export default function ArtikelAsuransiKosPage() {
                   "Kerusakan akibat pemeliharaan yang diabaikan",
                 ].map((i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-[#475569]">
-                    <span className="text-red-600 font-bold flex-shrink-0 mt-0.5">✗</span>
+                    <span className="text-red-700 font-bold flex-shrink-0 mt-0.5">✗</span>
                     {i}
                   </li>
                 ))}
@@ -625,7 +625,7 @@ export default function ArtikelAsuransiKosPage() {
                   <div className="font-heading text-navy font-bold text-[1rem] mb-1">
                     {step.judul}
                   </div>
-                  <p className="text-sm leading-[1.7] text-[#64748B]">{step.isi}</p>
+                  <p className="text-sm leading-[1.7] text-[#475569]">{step.isi}</p>
                 </div>
               </div>
             ))}
@@ -660,7 +660,7 @@ export default function ArtikelAsuransiKosPage() {
                 ].map(([a, b, c], i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
                     <td className="px-4 py-3 font-semibold text-navy">{a}</td>
-                    <td className="px-4 py-3 text-[#64748B]">{b}</td>
+                    <td className="px-4 py-3 text-[#475569]">{b}</td>
                     <td className="px-4 py-3 text-green-700 font-medium">{c}</td>
                   </tr>
                 ))}
@@ -714,7 +714,7 @@ export default function ArtikelAsuransiKosPage() {
                   <span>{f.q}</span>
                   <span className="text-gold text-xl flex-shrink-0 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-5 pr-8">{f.a}</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-5 pr-8">{f.a}</p>
               </details>
             ))}
           </div>

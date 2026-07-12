@@ -129,7 +129,7 @@ export default function AsuransiKendaraanJogjaPage() {
 
       {/* BREADCRUMB */}
       <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-        <div className="flex items-center gap-2 text-sm text-[#64748B]">
+        <div className="flex items-center gap-2 text-sm text-[#475569]">
           <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
           <span className="text-gold/60">›</span>
           <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -160,7 +160,7 @@ export default function AsuransiKendaraanJogjaPage() {
             {[{ num: "10+", lbl: "Tahun Pengalaman" }, { num: "DIY", lbl: "Area Layanan" }, { num: "Gratis", lbl: "Konsultasi" }].map(s => (
               <div key={s.lbl} className="text-center">
                 <div className="font-heading text-gold text-xl font-bold">{s.num}</div>
-                <div className="text-white/45 text-xs">{s.lbl}</div>
+                <div className="text-white/60 text-xs">{s.lbl}</div>
               </div>
             ))}
           </div>
@@ -178,7 +178,7 @@ export default function AsuransiKendaraanJogjaPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-4">
             Mengapa Asuransi Kendaraan Penting di Yogyakarta?
           </h2>
-          <p className="text-[#64748B] leading-relaxed text-sm mb-6">
+          <p className="text-[#475569] leading-relaxed text-sm mb-6">
             Yogyakarta adalah salah satu kota dengan kepadatan kendaraan bermotor tertinggi di Indonesia, terutama sepeda motor. Kondisi lalu lintas yang padat — khususnya di kawasan Malioboro, Jalan Kaliurang, Ring Road, dan area kampus — meningkatkan risiko kecelakaan secara signifikan.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
@@ -191,7 +191,7 @@ export default function AsuransiKendaraanJogjaPage() {
               <div key={i} className="bg-white border border-black/8 rounded-card p-5">
                 <div className="text-2xl mb-3">{k.icon}</div>
                 <div className="font-heading text-navy font-bold text-sm mb-2">{k.judul}</div>
-                <p className="text-xs text-[#64748B] leading-relaxed">{k.isi}</p>
+                <p className="text-xs text-[#475569] leading-relaxed">{k.isi}</p>
               </div>
             ))}
           </div>
@@ -202,7 +202,7 @@ export default function AsuransiKendaraanJogjaPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-4">
             Tarif OJK untuk Plat AB dan Wilayah III
           </h2>
-          <p className="text-[#64748B] text-sm leading-relaxed mb-6">
+          <p className="text-[#475569] text-sm leading-relaxed mb-6">
             Kendaraan berplat AB (Yogyakarta/DIY) masuk dalam <strong className="text-navy">Wilayah III</strong> pengelompokan tarif OJK — bersama dengan kendaraan dari Jawa Tengah, Jawa Timur, Bali, Kalimantan, Sulawesi, Maluku, dan Papua. Wilayah III memiliki tarif referensi yang sedikit lebih rendah dibanding Wilayah I dan II.
           </p>
           <div className="overflow-x-auto rounded-card border border-black/8 mb-4">
@@ -225,13 +225,13 @@ export default function AsuransiKendaraanJogjaPage() {
                   <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-cream/40"}>
                     <td className="py-3 px-4 font-semibold text-navy">{r.kat}</td>
                     <td className="py-3 px-4 text-center text-gold font-semibold">{r.ar}</td>
-                    <td className="py-3 px-4 text-center text-[#64748B]">{r.tlo}</td>
+                    <td className="py-3 px-4 text-center text-[#475569]">{r.tlo}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-[#64748B]">
+          <p className="text-xs text-[#475569]">
             * Tarif batas bawah berdasarkan OJK SE No.6/SEOJK.05/2017 untuk kendaraan konvensional. Tarif EV sekitar 10% lebih tinggi. Tarif ini merupakan batas minimum — perusahaan asuransi bisa menawarkan di bawah tarif batas atas dengan diskon khusus.{" "}
             <Link href="/asuransi-kendaraan" className="text-gold hover:underline">Gunakan kalkulator kami</Link> untuk estimasi lengkap.
           </p>
@@ -271,7 +271,7 @@ export default function AsuransiKendaraanJogjaPage() {
                 <span className="text-2xl flex-shrink-0">{k.icon}</span>
                 <div>
                   <div className="font-heading text-navy font-bold text-sm mb-1">{k.judul}</div>
-                  <p className="text-xs text-[#64748B] leading-relaxed">{k.isi}</p>
+                  <p className="text-xs text-[#475569] leading-relaxed">{k.isi}</p>
                 </div>
               </div>
             ))}
@@ -283,14 +283,14 @@ export default function AsuransiKendaraanJogjaPage() {
           <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-4">
             Area Layanan di Daerah Istimewa Yogyakarta
           </h2>
-          <p className="text-[#64748B] text-sm leading-relaxed mb-6">
+          <p className="text-[#475569] text-sm leading-relaxed mb-6">
             Kami melayani klien di seluruh kabupaten dan kota di DIY. Konsultasi awal bisa dilakukan secara online via WhatsApp tanpa perlu tatap muka.
           </p>
           <div className="flex flex-col divide-y divide-black/6 border border-black/8 rounded-card overflow-hidden">
             {wilayahLayanan.map((w, i) => (
               <div key={i} className={`flex flex-col sm:flex-row sm:items-start gap-2 px-5 py-4 ${i % 2 === 0 ? "bg-white" : "bg-cream/40"}`}>
                 <div className="font-semibold text-navy text-sm min-w-[180px]">📍 {w.wilayah}</div>
-                <div className="text-xs text-[#64748B]">{w.kecamatan}</div>
+                <div className="text-xs text-[#475569]">{w.kecamatan}</div>
               </div>
             ))}
           </div>
@@ -303,7 +303,7 @@ export default function AsuransiKendaraanJogjaPage() {
             {schemaFAQ.mainEntity.map((faq, i) => (
               <div key={i} className="py-5">
                 <h3 className="font-semibold text-navy text-[0.95rem] mb-2">{faq.name}</h3>
-                <p className="text-sm text-[#64748B] leading-[1.78]">{faq.acceptedAnswer.text}</p>
+                <p className="text-sm text-[#475569] leading-[1.78]">{faq.acceptedAnswer.text}</p>
               </div>
             ))}
           </div>
@@ -311,7 +311,7 @@ export default function AsuransiKendaraanJogjaPage() {
 
         {/* INTERNAL LINKS */}
         <section className="py-10 border-b border-black/8">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">Artikel & Halaman Terkait</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">Artikel & Halaman Terkait</p>
           <div className="flex gap-3 flex-wrap">
             <Link href="/asuransi-kendaraan" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🚗 Semua Produk Asuransi Kendaraan →</Link>
             <Link href="/artikel/perbedaan-all-risk-tlo" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">⚖️ All Risk vs TLO →</Link>

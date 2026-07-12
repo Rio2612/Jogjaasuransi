@@ -279,7 +279,7 @@ export default function AsuransiPropertiPage() {
             ].map((s) => (
               <div key={s.lbl}>
                 <div className="font-heading text-gold text-xl font-bold">{s.num}</div>
-                <div className="text-white/45 text-xs mt-0.5">{s.lbl}</div>
+                <div className="text-white/60 text-xs mt-0.5">{s.lbl}</div>
                 
               </div>
             ))}
@@ -294,7 +294,7 @@ export default function AsuransiPropertiPage() {
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-navy leading-[1.22] mb-3">
             Yogyakarta: Kota Budaya<br />dengan Risiko yang Nyata
           </h2>
-          <p className="text-base text-[#64748B] leading-relaxed max-w-[600px] mb-8">
+          <p className="text-base text-[#475569] leading-relaxed max-w-[600px] mb-8">
             Di balik keindahan Malioboro dan kemegahan Prambanan, Yogyakarta menyimpan
             risiko geologi dan cuaca yang tidak boleh diabaikan pemilik properti.
           </p>
@@ -326,8 +326,8 @@ export default function AsuransiPropertiPage() {
                 <div className="text-3xl mb-3">{r.icon}</div>
                 <div className="font-heading text-navy font-bold text-[1.1rem] mb-1">{r.label}</div>
                 <div className="font-heading text-gold text-[1.4rem] font-bold leading-none mb-0.5">{r.stat}</div>
-                <div className="text-[#94A3B8] text-xs mb-3">{r.statLabel}</div>
-                <p className="text-sm leading-relaxed text-[#64748B]">{r.desc}</p>
+                <div className="text-[#5A6472] text-xs mb-3">{r.statLabel}</div>
+                <p className="text-sm leading-relaxed text-[#475569]">{r.desc}</p>
               </div>
             ))}
           </div>
@@ -365,7 +365,7 @@ export default function AsuransiPropertiPage() {
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-navy leading-[1.22]">
             Pilih Perlindungan<br />yang Tepat untuk Anda
           </h2>
-          <p className="text-base text-[#64748B] max-w-[480px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[480px] mx-auto mt-3">
             Setiap jenis properti memiliki profil risiko yang berbeda — kami bantu Anda
             menemukan produk yang paling sesuai
           </p>
@@ -379,7 +379,7 @@ export default function AsuransiPropertiPage() {
                 <div className="text-[2rem] mb-3">{c.icon}</div>
                 <div className="font-heading text-navy font-bold text-[1.15rem] mb-1">{c.title}</div>
                 <div className="text-gold text-xs font-semibold mb-3">{c.subtitle}</div>
-                <p className="text-sm leading-relaxed text-[#64748B] mb-4">{c.desc}</p>
+                <p className="text-sm leading-relaxed text-[#475569] mb-4">{c.desc}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {c.tags.map((t) => (
                     <span key={t} className="bg-gold/8 border border-gold/15 text-navy2 text-xs px-2.5 py-1 rounded-full font-medium">{t}</span>
@@ -404,7 +404,7 @@ export default function AsuransiPropertiPage() {
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-navy leading-[1.22]">
             Bagaimana Cara Klaim<br />Asuransi Properti?
           </h2>
-          <p className="text-base text-[#64748B] max-w-[480px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[480px] mx-auto mt-3">
             Klaim yang lancar dimulai dari persiapan yang baik. Berikut tahapan yang
             perlu Anda ikuti jika terjadi musibah pada properti Anda
           </p>
@@ -422,7 +422,7 @@ export default function AsuransiPropertiPage() {
               <div className="font-heading text-navy font-bold text-[0.92rem] mb-2 leading-snug">
                 {step.judul}
               </div>
-              <p className="text-xs leading-[1.65] text-[#64748B]">{step.desc}</p>
+              <p className="text-xs leading-[1.65] text-[#475569]">{step.desc}</p>
             </div>
           ))}
         </div>
@@ -433,7 +433,7 @@ export default function AsuransiPropertiPage() {
               <div className="font-semibold text-navy text-sm mb-1">
                 Praktisi Kami Mendampingi Seluruh Proses Klaim
               </div>
-              <p className="text-sm text-[#64748B] leading-relaxed">
+              <p className="text-sm text-[#475569] leading-relaxed">
                 Berbeda dengan membeli polis langsung dari agen perusahaan asuransi, klien
                 Asuransi Jogja mendapat pendampingan penuh dari tahap pelaporan hingga
                 pencairan dana — termasuk koordinasi dengan{" "}
@@ -458,7 +458,7 @@ export default function AsuransiPropertiPage() {
             <div key={w.title} className="bg-white rounded-card p-6 text-center hover:-translate-y-1 hover:shadow-lg transition-all border border-black/5">
               <div className="text-3xl mb-3">{w.icon}</div>
               <div className="font-heading text-navy font-bold text-[1.05rem] mb-2">{w.title}</div>
-              <p className="text-sm leading-relaxed text-[#64748B]">{w.desc}</p>
+              <p className="text-sm leading-relaxed text-[#475569]">{w.desc}</p>
             </div>
           ))}
         </div>
@@ -487,7 +487,7 @@ export default function AsuransiPropertiPage() {
               ].map(([a, b, c], i) => (
                 <tr key={i} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
                   <td className="px-4 py-3 font-semibold text-navy">{a}</td>
-                  <td className="px-4 py-3 text-[#94A3B8]">{b}</td>
+                  <td className="px-4 py-3 text-[#5A6472]">{b}</td>
                   <td className="px-4 py-3 text-green-700 font-medium">{c}</td>
                 </tr>
               ))}
@@ -511,7 +511,7 @@ export default function AsuransiPropertiPage() {
                 <span>{f.q}</span>
                 <span className="text-gold text-xl flex-shrink-0 transition-transform group-open:rotate-45 mt-0.5">+</span>
               </summary>
-              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#475569] pb-4">{f.a}</p>
             </details>
           ))}
         </div>
@@ -528,7 +528,7 @@ export default function AsuransiPropertiPage() {
               <h2 className="font-heading text-navy text-[1.5rem] mb-3">
                 Properti + Liability =<br />Proteksi Bisnis Lengkap
               </h2>
-              <p className="text-sm leading-relaxed text-[#64748B]">
+              <p className="text-sm leading-relaxed text-[#475569]">
                 Asuransi properti melindungi bangunan dari kerusakan fisik. Asuransi
                 liability melindungi dari tuntutan hukum tamu, karyawan, dan pihak ketiga.
                 Keduanya saling melengkapi untuk pemilik hotel, ruko, vila, dan properti
@@ -540,7 +540,7 @@ export default function AsuransiPropertiPage() {
                 <span className="text-2xl">🤝</span>
                 <div>
                   <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors">Public Liability</div>
-                  <div className="text-xs text-[#64748B]">Perlindungan jika tamu cedera di properti Anda</div>
+                  <div className="text-xs text-[#475569]">Perlindungan jika tamu cedera di properti Anda</div>
                 </div>
                 <span className="ml-auto text-gold text-sm">→</span>
               </Link>
@@ -548,7 +548,7 @@ export default function AsuransiPropertiPage() {
                 <span className="text-2xl">🏨</span>
                 <div>
                   <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors">Asuransi Hotel & Vila Wisata</div>
-                  <div className="text-xs text-[#64748B]">Solusi khusus properti pariwisata Yogyakarta</div>
+                  <div className="text-xs text-[#475569]">Solusi khusus properti pariwisata Yogyakarta</div>
                 </div>
                 <span className="ml-auto text-gold text-sm">→</span>
               </Link>
@@ -556,7 +556,7 @@ export default function AsuransiPropertiPage() {
                 <span className="text-2xl">⚖️</span>
                 <div>
                   <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors">Semua Asuransi Liability</div>
-                  <div className="text-xs text-[#64748B]">Public, Employer, dan Environmental Liability</div>
+                  <div className="text-xs text-[#475569]">Public, Employer, dan Environmental Liability</div>
                 </div>
                 <span className="ml-auto text-gold text-sm">→</span>
               </Link>
@@ -606,7 +606,7 @@ export default function AsuransiPropertiPage() {
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors leading-snug mb-1">
                       {a.title}
                     </div>
-                    <div className="text-xs text-[#64748B] leading-snug">{a.desc}</div>
+                    <div className="text-xs text-[#475569] leading-snug">{a.desc}</div>
                   </div>
                 </Link>
               ))}

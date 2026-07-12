@@ -41,8 +41,8 @@ export default function KalkulatorKendaraan() {
       <div className="bg-white/5 border border-gold/20 rounded-[20px] p-8 max-w-[680px] mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className={lbl}>Plat Kendaraan</label>
-            <select className={sel} onChange={e => { const o=e.target.options[e.target.selectedIndex]; setPlatValue(o.value as Wilayah); setPlatText(o.text); }}>
+            <label className={lbl} htmlFor="kk-plat">Plat Kendaraan</label>
+            <select id="kk-plat" className={sel} onChange={e => { const o=e.target.options[e.target.selectedIndex]; setPlatValue(o.value as Wilayah); setPlatText(o.text); }}>
               {PLAT_DATA.map((item,i) => "group" in item
                 ? <optgroup key={i} label={(item as PlatGroup).group} style={{background:"#163352"}}>
                     {(item as PlatGroup).options.map(o=><option key={o.label} value={o.value} style={{background:"#163352"}}>{o.label}</option>)}
@@ -52,22 +52,22 @@ export default function KalkulatorKendaraan() {
             </select>
           </div>
           <div>
-            <label className={lbl}>Jenis Kendaraan</label>
-            <select className={sel} value={jenis} onChange={e=>setJenis(e.target.value as JenisKendaraan)}>
+            <label className={lbl} htmlFor="kk-jenis">Jenis Kendaraan</label>
+            <select id="kk-jenis" className={sel} value={jenis} onChange={e=>setJenis(e.target.value as JenisKendaraan)}>
               <option value="konvensional" style={{background:"#163352"}}>Mobil Konvensional (BBM)</option>
               <option value="listrik" style={{background:"#163352"}}>Mobil Listrik (EV)</option>
             </select>
           </div>
           <div>
-            <label className={lbl}>Jenis Perlindungan</label>
-            <select className={sel} value={tipe} onChange={e=>setTipe(e.target.value as TipePerlindungan)}>
+            <label className={lbl} htmlFor="kk-tipe">Jenis Perlindungan</label>
+            <select id="kk-tipe" className={sel} value={tipe} onChange={e=>setTipe(e.target.value as TipePerlindungan)}>
               <option value="allrisk" style={{background:"#163352"}}>Comprehensive / All Risk</option>
               <option value="tlo" style={{background:"#163352"}}>TLO (Total Loss Only)</option>
             </select>
           </div>
           <div>
-            <label className={lbl}>Periode Asuransi</label>
-            <select className={sel} value={periode} onChange={e=>setPeriode(Number(e.target.value))}>
+            <label className={lbl} htmlFor="kk-periode">Periode Asuransi</label>
+            <select id="kk-periode" className={sel} value={periode} onChange={e=>setPeriode(Number(e.target.value))}>
               <option value={12} style={{background:"#163352"}}>1 Tahun (12 bulan)</option>
               <option value={6}  style={{background:"#163352"}}>6 Bulan</option>
               <option value={3}  style={{background:"#163352"}}>3 Bulan</option>
@@ -77,7 +77,7 @@ export default function KalkulatorKendaraan() {
         <div className="mt-5">
           <label className={lbl}>Harga Kendaraan (Rp)</label>
           <input type="number" placeholder="Contoh: 250000000" className={inp} value={hargaStr} onChange={e=>setHargaStr(e.target.value)} />
-          <span className="text-white/40 text-xs mt-1 block">Masukkan harga pasar kendaraan saat ini</span>
+          <span className="text-white/60 text-xs mt-1 block">Masukkan harga pasar kendaraan saat ini</span>
         </div>
         {error && <p className="text-red-400 text-sm mt-3">{error}</p>}
         <button onClick={hitung} className="w-full bg-gold text-navy py-3.5 rounded-lg font-bold text-[0.95rem] mt-6 hover:bg-gold2 hover:-translate-y-px transition-all cursor-pointer border-none">
@@ -94,7 +94,7 @@ export default function KalkulatorKendaraan() {
               {hasil.premiPeriode && <div className="flex justify-between text-sm"><span className="text-white/65">Estimasi ({hasil.periodeLabel})</span><span className="text-white font-semibold">{formatRp(hasil.premiPeriode)}</span></div>}
               <div className="flex justify-between text-sm"><span className="text-white/65">Own Risk / Kejadian</span><span className="text-white font-semibold">{formatRp(hasil.or)}</span></div>
             </div>
-            <p className="text-white/40 text-xs mt-4 leading-relaxed">* Estimasi berdasarkan tarif referensi OJK. Premi final ditentukan perusahaan asuransi.</p>
+            <p className="text-white/60 text-xs mt-4 leading-relaxed">* Estimasi berdasarkan tarif referensi OJK. Premi final ditentukan perusahaan asuransi.</p>
             <a href={`https://wa.me/${KONTAK.wa}?text=${hasil.waMsg}`} className="block text-center mt-4 bg-[#25D366] text-white py-3 rounded-lg font-bold text-sm no-underline hover:opacity-90 transition-opacity">
               💬 Dapatkan Penawaran Resmi via WhatsApp
             </a>

@@ -16,13 +16,13 @@ export default function ProblemSolution() {
   return (
     <section id="problem" className="py-[5.5rem] px-[5vw] bg-cream">
       <div className="text-center mb-12">
-        <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Mengapa Butuh Praktisi?</div>
+        <div className="text-xs font-bold tracking-[2.5px] uppercase text-goldtext mb-2">Mengapa Butuh Praktisi?</div>
         <h2 className="font-heading text-[clamp(1.9rem,3vw,2.9rem)] leading-[1.22] text-navy">Masalah Nyata,<br />Solusi Konkret</h2>
-        <p className="text-[0.95rem] leading-[1.8] text-[#64748B] max-w-[560px] mx-auto mt-3">Membeli asuransi kerugian tanpa panduan yang tepat bisa berujung pada perlindungan yang tidak memadai saat klaim dibutuhkan.</p>
+        <p className="text-[0.95rem] leading-[1.8] text-[#475569] max-w-[560px] mx-auto mt-3">Membeli asuransi kerugian tanpa panduan yang tepat bisa berujung pada perlindungan yang tidak memadai saat klaim dibutuhkan.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
-          <h3 className="text-xs font-bold tracking-[1.5px] uppercase text-red-600 mb-5">✗ Masalah Umum</h3>
+          <h3 className="text-xs font-bold tracking-[1.5px] uppercase text-red-700 mb-5">✗ Masalah Umum</h3>
           <ul className="flex flex-col gap-3.5">
             {masalah.map(m => (
               <li key={m.ico} className="flex gap-3 items-start bg-red-600/7 border border-red-600/12 rounded-lg p-4 text-[1rem] leading-[1.65] text-navy2">

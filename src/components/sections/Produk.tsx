@@ -21,9 +21,9 @@ export default function Produk() {
     <section id="produk" className="py-[5.5rem] px-[5vw] bg-white">
       <div className="mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
         <div>
-          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Produk Unggulan</div>
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-goldtext mb-2">Produk Unggulan</div>
           <h2 className="font-heading text-[clamp(1.9rem,3vw,2.9rem)] leading-[1.22] text-navy">Solusi Perlindungan<br />untuk Setiap Kebutuhan</h2>
-          <p className="text-[0.95rem] leading-[1.8] text-[#64748B] max-w-[560px] mt-3">Kami menyediakan seluruh lini produk asuransi kerugian — dari kebutuhan personal sehari-hari hingga perlindungan skala industri di Yogyakarta.</p>
+          <p className="text-[0.95rem] leading-[1.8] text-[#475569] max-w-[560px] mt-3">Kami menyediakan seluruh lini produk asuransi kerugian — dari kebutuhan personal sehari-hari hingga perlindungan skala industri di Yogyakarta.</p>
         </div>
       </div>
 
@@ -34,7 +34,7 @@ export default function Produk() {
             key={c.id}
             onClick={() => setActiveId(c.id)}
             className={`px-[18px] py-2 rounded-full border text-[0.92rem] font-semibold cursor-pointer transition-all ${
-              activeId === c.id ? "bg-navy text-white border-navy" : "bg-white text-[#64748B] border-black/10 hover:bg-navy hover:text-white hover:border-navy"
+              activeId === c.id ? "bg-navy text-white border-navy" : "bg-white text-[#475569] border-black/10 hover:bg-navy hover:text-white hover:border-navy"
             }`}
           >
             {c.icon} {c.label}
@@ -49,13 +49,13 @@ export default function Produk() {
             <div className="absolute top-0 left-0 right-0 h-[3px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             <div className="text-[1.6rem] mb-3">{p.icon}</div>
             <div className="font-heading text-lg font-bold text-navy mb-2">{p.name}</div>
-            <p className="text-[1rem] leading-[1.7] text-[#64748B]">{p.desc}</p>
+            <p className="text-[1rem] leading-[1.7] text-[#475569]">{p.desc}</p>
             {p.href.startsWith("#") ? (
-              <a href={p.href} className="inline-flex items-center gap-1 text-gold text-[0.92rem] font-semibold mt-3 hover:gap-2 transition-all no-underline">
+              <a href={p.href} className="inline-flex items-center gap-1 text-goldtext text-[0.92rem] font-semibold mt-3 hover:gap-2 transition-all no-underline">
                 Hitung premi →
               </a>
             ) : (
-              <Link href={p.href} className="inline-flex items-center gap-1 text-gold text-[0.92rem] font-semibold mt-3 hover:gap-2 transition-all no-underline">
+              <Link href={p.href} className="inline-flex items-center gap-1 text-goldtext text-[0.92rem] font-semibold mt-3 hover:gap-2 transition-all no-underline">
                 Pelajari lebih lanjut →
               </Link>
             )}
@@ -70,13 +70,13 @@ export default function Produk() {
           className="inline-flex items-center gap-2 bg-cream border border-gold/30 text-navy font-semibold text-[0.95rem] px-5 py-2.5 rounded-full hover:bg-gold/10 hover:border-gold transition-all no-underline group"
         >
           Lihat semua produk {active.icon} {active.label}
-          <span className="text-gold group-hover:translate-x-1 transition-transform inline-block">→</span>
+          <span className="text-goldtext group-hover:translate-x-1 transition-transform inline-block">→</span>
         </Link>
       </div>
 
       {/* ALL CLUSTER QUICK LINKS */}
       <div className="mt-12 pt-10 border-t border-black/6">
-        <div className="text-xs font-bold tracking-[2.5px] uppercase text-[#94A3B8] mb-5">Semua Cluster Produk</div>
+        <div className="text-xs font-bold tracking-[2.5px] uppercase text-[#5A6472] mb-5">Semua Cluster Produk</div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
           {Object.entries(PILLAR_HREFS).map(([id, href]) => {
             const cluster = CLUSTERS.find(c => c.id === id)!;

@@ -186,7 +186,7 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -218,7 +218,7 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
               Yogyakarta adalah kota dengan risiko gempa tinggi, banjir musiman, dan kepadatan bangunan yang membuat risiko kebakaran mudah merambat. Rumah Anda bisa terlindungi mulai dari{" "}
               <strong className="text-gold2">Rp 150 ribu per tahun</strong>.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
@@ -241,10 +241,10 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Mengapa Rumah di Yogyakarta Perlu Perlindungan Lebih?
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-4">
+          <p className="text-[#475569] text-base leading-relaxed mb-4">
             Yogyakarta bukan sekadar kota wisata — ini adalah salah satu kota dengan profil risiko bencana paling kompleks di Jawa. Terletak di zona pertemuan lempeng tektonik aktif, kawasan sekitar Sesar Opak membentang dari Bantul hingga Prambanan. Gempa 2006 dengan magnitudo 5,9 SR merusak lebih dari 150.000 rumah dan menewaskan lebih dari 5.700 jiwa — semua dalam 57 detik.
           </p>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Selain gempa, kepadatan bangunan di kawasan Kota Yogyakarta membuat risiko kebakaran sangat tinggi — satu percikan api di gang sempit bisa merambat ke puluhan rumah. Sementara dataran rendah Bantul dan Kulon Progo rutin mengalami banjir setiap musim hujan. Kombinasi risiko ini membuat asuransi rumah bukan sekadar pengeluaran tambahan — ini perlindungan dasar.
           </p>
 
@@ -252,7 +252,7 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Profil Risiko per Wilayah di DIY
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+          <p className="text-[#475569] text-base leading-relaxed mb-5">
             Rekomendasi perluasan berbeda-beda tergantung lokasi rumah Anda:
           </p>
           <div className="flex flex-col gap-3 mb-10">
@@ -266,7 +266,7 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div>
-                    <p className="text-[0.6rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1">Risiko utama</p>
+                    <p className="text-[0.6rem] font-bold uppercase tracking-wide text-[#5A6472] mb-1">Risiko utama</p>
                     <ul className="flex flex-col gap-0.5">
                       {r.risikoUtama.map((item, i) => (
                         <li key={i} className="text-xs text-navy2 flex items-center gap-1.5">
@@ -276,10 +276,10 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
                     </ul>
                   </div>
                   <div>
-                    <p className="text-[0.6rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1">Risiko tambahan</p>
+                    <p className="text-[0.6rem] font-bold uppercase tracking-wide text-[#5A6472] mb-1">Risiko tambahan</p>
                     <ul className="flex flex-col gap-0.5">
                       {r.risikoTambahan.map((item, i) => (
-                        <li key={i} className="text-xs text-[#64748B] flex items-center gap-1.5">
+                        <li key={i} className="text-xs text-[#475569] flex items-center gap-1.5">
                           <span className="text-amber-400 font-bold">•</span>{item}
                         </li>
                       ))}
@@ -298,7 +298,7 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Cara Menentukan Nilai Pertanggungan yang Tepat
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+          <p className="text-[#475569] text-base leading-relaxed mb-5">
             Kesalahan terbesar pemilik rumah adalah mengasuransikan berdasarkan harga beli atau NJOP — bukan biaya membangun ulang. Jika terjadi kerusakan total, Anda membutuhkan dana untuk membangun ulang — bukan untuk membeli tanah baru.
           </p>
           <div className="flex flex-col gap-3 mb-6">
@@ -308,10 +308,10 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
                   <span className="flex-shrink-0 w-6 h-6 rounded-lg bg-navy/8 flex items-center justify-center text-xs font-bold text-navy">{i + 1}</span>
                   <div className="flex-1">
                     <div className="font-semibold text-navy text-sm mb-1">{k.komponen}</div>
-                    <p className="text-xs text-[#64748B] mb-2">{k.deskripsi}</p>
+                    <p className="text-xs text-[#475569] mb-2">{k.deskripsi}</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       <div className="bg-cream rounded-lg p-2.5">
-                        <p className="text-[0.6rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-0.5">Cara hitung</p>
+                        <p className="text-[0.6rem] font-bold uppercase tracking-wide text-[#5A6472] mb-0.5">Cara hitung</p>
                         <p className="text-xs text-navy2">{k.caraHitung}</p>
                       </div>
                       <div className="bg-gold/8 rounded-lg p-2.5">
@@ -350,16 +350,16 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
                 {tabelPremi.map((row, i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
                     <td className="p-3 font-bold text-navy text-xs">{row.nilaiRumah}</td>
-                    <td className="p-3 text-[#64748B] text-xs">{row.kebakaran}</td>
-                    <td className="p-3 text-[#64748B] text-xs">{row.tambahGempa}</td>
-                    <td className="p-3 text-[#64748B] text-xs">{row.tambahBanjir}</td>
+                    <td className="p-3 text-[#475569] text-xs">{row.kebakaran}</td>
+                    <td className="p-3 text-[#475569] text-xs">{row.tambahGempa}</td>
+                    <td className="p-3 text-[#475569] text-xs">{row.tambahBanjir}</td>
                     <td className="p-3 text-navy2 font-semibold text-xs">{row.totalLengkap}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-[#94A3B8] mb-10">* Estimasi untuk bangunan konstruksi permanen kelas I–II di wilayah DIY. Rate aktual ditentukan insurer berdasarkan konstruksi, lokasi, dan riwayat klaim.</p>
+          <p className="text-xs text-[#5A6472] mb-10">* Estimasi untuk bangunan konstruksi permanen kelas I–II di wilayah DIY. Rate aktual ditentukan insurer berdasarkan konstruksi, lokasi, dan riwayat klaim.</p>
 
           {/* Cara klaim */}
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
@@ -369,12 +369,12 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
             {langkahKlaim.map((l) => (
               <div key={l.no} className={`rounded-xl p-4 border flex gap-4 ${l.warna}`}>
                 <div className="flex-shrink-0 text-center min-w-[36px]">
-                  <div className="text-[0.65rem] font-bold text-center mb-1 text-[#94A3B8]">{l.no}</div>
+                  <div className="text-[0.65rem] font-bold text-center mb-1 text-[#5A6472]">{l.no}</div>
                   <div className="text-xl">{l.ikon}</div>
                 </div>
                 <div>
                   <p className="font-semibold text-navy text-sm mb-1">{l.judul}</p>
-                  <p className="text-xs text-[#64748B] leading-relaxed">{l.detail}</p>
+                  <p className="text-xs text-[#475569] leading-relaxed">{l.detail}</p>
                 </div>
               </div>
             ))}
@@ -383,7 +383,7 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
           {/* CTA */}
           <div className="bg-gold/8 border border-gold/25 rounded-card p-6 mb-10">
             <div className="font-heading text-navy font-bold text-base mb-2">Berapa premi untuk rumah Anda?</div>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+            <p className="text-[#475569] text-sm leading-relaxed mb-4">
               Beritahu lokasi, luas, dan perkiraan nilai bangunan rumah Anda — kami hitung estimasi premi lengkap dengan rekomendasi perluasan sesuai wilayah dalam 1 hari kerja.
             </p>
             <div className="flex gap-3 flex-wrap">
@@ -405,14 +405,14 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
                   {f.q}
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">{f.a}</p>
               </details>
             ))}
           </div>
 
           {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Produk & Artikel Terkait</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">Produk & Artikel Terkait</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { href: "/asuransi-properti/kebakaran", icon: "🔥", judul: "Asuransi Kebakaran", desc: "Detail cakupan, estimasi premi, dan cara daftar" },
@@ -426,7 +426,7 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
                   <span className="text-xl flex-shrink-0">{a.icon}</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">{a.judul}</div>
-                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                    <div className="text-xs text-[#475569]">{a.desc}</div>
                   </div>
                 </Link>
               ))}

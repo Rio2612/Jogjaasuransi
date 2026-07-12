@@ -82,7 +82,7 @@ export default function AsuransiKendaraanPage() {
           </div>
           <div className="flex gap-8 pt-8 border-t border-white/10">
             {[{num:"Tarif OJK",lbl:"Transparan & Resmi"},{num:"All Risk",lbl:"Perlindungan Terluas"},{num:"Gratis",lbl:"Konsultasi & Analisis"}].map(s=>(
-              <div key={s.lbl}><div className="font-heading text-gold text-lg font-bold">{s.num}</div><div className="text-white/45 text-xs mt-0.5">{s.lbl}</div></div>
+              <div key={s.lbl}><div className="font-heading text-gold text-lg font-bold">{s.num}</div><div className="text-white/60 text-xs mt-0.5">{s.lbl}</div></div>
             ))}
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function AsuransiKendaraanPage() {
                 <div className="text-[2rem] mb-3">{c.icon}</div>
                 <div className="font-heading text-navy font-bold text-[1.15rem] mb-1">{c.title}</div>
                 <div className="text-gold text-xs font-semibold mb-3">{c.subtitle}</div>
-                <p className="text-sm leading-relaxed text-[#64748B] mb-4">{c.desc}</p>
+                <p className="text-sm leading-relaxed text-[#475569] mb-4">{c.desc}</p>
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {c.tags.map(t=><span key={t} className="bg-gold/8 border border-gold/15 text-navy2 text-xs px-2.5 py-1 rounded-full font-medium">{t}</span>)}
                 </div>
@@ -128,7 +128,7 @@ export default function AsuransiKendaraanPage() {
             <div key={w.title} className="bg-white rounded-card p-6 text-center hover:-translate-y-1 hover:shadow-lg transition-all border border-black/5">
               <div className="text-3xl mb-3">{w.icon}</div>
               <div className="font-heading text-navy font-bold text-[1.05rem] mb-2">{w.title}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{w.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{w.desc}</p>
             </div>
           ))}
         </div>
@@ -146,7 +146,7 @@ export default function AsuransiKendaraanPage() {
               <summary className="py-4 cursor-pointer font-semibold text-[0.92rem] text-navy flex justify-between items-center list-none">
                 {f.q}<span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
               </summary>
-              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#475569] pb-4">{f.a}</p>
             </details>
           ))}
         </div>
@@ -195,14 +195,14 @@ export default function AsuransiKendaraanPage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-[#94A3B8] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+            <p className="text-xs text-[#5A6472] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
           </div>
 
           <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
             <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
             <div>
               <div className="text-sm font-semibold text-navy">Ditinjau oleh Rio Mardiansyah</div>
-              <div className="text-xs text-[#64748B]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
+              <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
             </div>
           </div>
 

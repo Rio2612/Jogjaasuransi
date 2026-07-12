@@ -153,7 +153,7 @@ export default function PentingnyaAsuransiUsahaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }} />
 
       <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-        <div className="flex items-center gap-2 text-xs text-[#64748B] flex-wrap">
+        <div className="flex items-center gap-2 text-xs text-[#475569] flex-wrap">
           <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
           <span className="text-gold/60">›</span>
           <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -166,15 +166,15 @@ export default function PentingnyaAsuransiUsahaPage() {
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-4">
             <span className="bg-gold/10 border border-gold/20 text-gold text-xs font-bold px-3 py-1 rounded-full">🏢 Bisnis</span>
-            <span className="text-[#94A3B8] text-xs">⏱ 9 menit baca</span>
+            <span className="text-[#5A6472] text-xs">⏱ 9 menit baca</span>
           </div>
           <h1 className="font-heading text-[clamp(1.8rem,3.5vw,2.8rem)] text-navy leading-[1.2] mb-4">
             Pentingnya Asuransi di<br />Dunia Usaha Yogyakarta
           </h1>
-          <p className="text-[#64748B] text-lg leading-[1.85] mb-4">
+          <p className="text-[#475569] text-lg leading-[1.85] mb-4">
             Yogyakarta adalah salah satu kota dengan ekosistem bisnis paling dinamis di Indonesia — dari warung makan hingga hotel bintang, dari kontraktor lokal hingga pabrik manufaktur. Namun di balik pertumbuhan itu, banyak pelaku usaha belum memiliki proteksi memadai terhadap risiko yang bisa datang kapan saja.
           </p>
-          <p className="text-[#64748B] text-base leading-[1.85]">
+          <p className="text-[#475569] text-base leading-[1.85]">
             Posisi geografis DIY di jalur patahan Opak dan lereng Gunung Merapi membuat risiko properti di wilayah ini bukan sekadar teori — melainkan pertimbangan operasional nyata bagi pemilik usaha. Ditambah pertumbuhan sektor pariwisata, konstruksi, dan manufaktur yang pesat, kebutuhan atas proteksi risiko usaha di Yogyakarta terus meningkat, baik untuk memenuhi syarat tender/vendor maupun untuk melindungi kelangsungan usaha itu sendiri.
           </p>
         </div>
@@ -187,7 +187,7 @@ export default function PentingnyaAsuransiUsahaPage() {
                 <span className="text-3xl">{r.icon}</span>
                 <div>
                   <div className="font-heading text-navy font-bold text-[1rem] mb-1">{r.risiko}</div>
-                  <p className="text-xs text-[#64748B] leading-relaxed mb-2">{r.dampak}</p>
+                  <p className="text-xs text-[#475569] leading-relaxed mb-2">{r.dampak}</p>
                   <div className="text-xs font-semibold text-gold">→ Solusi: {r.solusi}</div>
                 </div>
               </div>
@@ -197,13 +197,13 @@ export default function PentingnyaAsuransiUsahaPage() {
 
         <section className="mb-12">
           <h2 className="font-heading text-[1.6rem] text-navy mb-2">Sektor Usaha di Jogja &amp; Kebutuhan Asuransinya</h2>
-          <p className="text-sm text-[#64748B] mb-6">Setiap jenis usaha memiliki profil risiko yang berbeda. Berikut pemetaan umum untuk sektor-sektor dominan di Yogyakarta:</p>
+          <p className="text-sm text-[#475569] mb-6">Setiap jenis usaha memiliki profil risiko yang berbeda. Berikut pemetaan umum untuk sektor-sektor dominan di Yogyakarta:</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {sektorJogja.map(s => (
               <div key={s.sektor} className="bg-white rounded-xl p-5 border border-black/7">
                 <div className="text-2xl mb-2">{s.icon}</div>
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1.5">{s.sektor}</div>
-                <div className="text-xs text-[#64748B] leading-relaxed mb-2"><strong>Risiko dominan:</strong> {s.risiko}</div>
+                <div className="text-xs text-[#475569] leading-relaxed mb-2"><strong>Risiko dominan:</strong> {s.risiko}</div>
                 <div className="text-xs font-medium text-gold">{s.produk}</div>
               </div>
             ))}
@@ -216,7 +216,7 @@ export default function PentingnyaAsuransiUsahaPage() {
             {mitosVsFakta.map((m, i) => (
               <div key={i} className="rounded-xl border border-black/7 overflow-hidden">
                 <div className="bg-red-50 border-b border-black/5 px-5 py-3">
-                  <span className="text-xs font-bold text-red-600 uppercase tracking-wider">Mitos</span>
+                  <span className="text-xs font-bold text-red-700 uppercase tracking-wider">Mitos</span>
                   <p className="text-sm text-red-800 font-medium mt-1 italic">{m.mitos}</p>
                 </div>
                 <div className="bg-white px-5 py-3">
@@ -230,14 +230,14 @@ export default function PentingnyaAsuransiUsahaPage() {
 
         <section className="mb-12">
           <h2 className="font-heading text-[1.6rem] text-navy mb-2">4 Langkah Memulai Proteksi Usaha Anda</h2>
-          <p className="text-sm text-[#64748B] mb-6">Tidak perlu langsung membeli semua jenis polis. Mulai dari yang paling relevan dengan cara berikut:</p>
+          <p className="text-sm text-[#475569] mb-6">Tidak perlu langsung membeli semua jenis polis. Mulai dari yang paling relevan dengan cara berikut:</p>
           <div className="flex flex-col gap-4">
             {langkahMulai.map(l => (
               <div key={l.no} className="flex gap-4 bg-white rounded-xl p-5 border border-black/7">
                 <div className="font-heading text-gold text-2xl font-bold flex-shrink-0">{l.no}</div>
                 <div>
                   <div className="font-heading text-navy font-bold text-[0.98rem] mb-1.5">{l.judul}</div>
-                  <p className="text-xs text-[#64748B] leading-relaxed">{l.detail}</p>
+                  <p className="text-xs text-[#475569] leading-relaxed">{l.detail}</p>
                 </div>
               </div>
             ))}
@@ -261,7 +261,7 @@ export default function PentingnyaAsuransiUsahaPage() {
         </section>
 
         <section className="mb-10 p-6 bg-cream rounded-xl border border-black/6">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Produk Terkait</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">Produk Terkait</p>
           <div className="flex gap-3 flex-wrap">
             <Link href="/asuransi-properti" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏠 Asuransi Properti →</Link>
             <Link href="/asuransi-liability" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🛡️ Asuransi Liability →</Link>

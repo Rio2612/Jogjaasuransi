@@ -360,7 +360,7 @@ export default function HotelVilaPage() {
             ].map((s) => (
               <div key={s.lbl}>
                 <div className="font-heading text-gold text-xl font-bold">{s.num}</div>
-                <div className="text-white/45 text-xs mt-0.5">{s.lbl}</div>
+                <div className="text-white/60 text-xs mt-0.5">{s.lbl}</div>
               </div>
             ))}
           </div>
@@ -419,7 +419,7 @@ export default function HotelVilaPage() {
                   {l.judul}
                 </div>
                 <div className="text-gold text-xs font-semibold mb-3">{l.produk}</div>
-                <p className="text-sm leading-[1.75] text-[#64748B] mb-4">{l.desc}</p>
+                <p className="text-sm leading-[1.75] text-[#475569] mb-4">{l.desc}</p>
                 <span
                   className={`text-xs font-bold px-2.5 py-1 rounded-full ${
                     l.wajib
@@ -446,7 +446,7 @@ export default function HotelVilaPage() {
             <br />
             Properti Wisata di Yogyakarta
           </h2>
-          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[500px] mx-auto mt-3">
             Hotel dan vila memiliki profil risiko yang jauh lebih kompleks dari properti
             biasa karena faktor tamu, operasional 24 jam, dan fasilitas yang beragam
           </p>
@@ -461,7 +461,7 @@ export default function HotelVilaPage() {
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">
                 {r.label}
               </div>
-              <p className="text-base leading-relaxed text-[#64748B]">{r.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{r.desc}</p>
             </div>
           ))}
         </div>
@@ -574,7 +574,7 @@ export default function HotelVilaPage() {
               <br />
               untuk Penawaran Akurat
             </h2>
-            <p className="text-sm leading-relaxed text-[#64748B] mb-5">
+            <p className="text-sm leading-relaxed text-[#475569] mb-5">
               Semakin lengkap data yang Anda berikan, semakin akurat penawaran yang bisa
               kami siapkan. Tidak perlu semuanya siap sebelum konsultasi — kami bisa
               bantu memandu prosesnya.
@@ -613,7 +613,7 @@ export default function HotelVilaPage() {
               <div className="font-heading text-navy text-base font-semibold mb-3">
                 💼 Employer&apos;s Liability untuk Karyawan Hotel
               </div>
-              <p className="text-xs leading-relaxed text-[#64748B] mb-4">
+              <p className="text-xs leading-relaxed text-[#475569] mb-4">
                 Hotel adalah bisnis padat karya. Karyawan yang mengalami kecelakaan
                 kerja — koki terluka di dapur, housekeeping terpeleset — berhak atas
                 kompensasi yang menjadi tanggung jawab pengusaha. Employer&apos;s Liability
@@ -655,7 +655,7 @@ export default function HotelVilaPage() {
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">
                 {p.label}
               </div>
-              <p className="text-base leading-relaxed text-[#64748B]">{p.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -672,7 +672,7 @@ export default function HotelVilaPage() {
             <br />
             Asuransi Hotel &amp; Vila
           </h2>
-          <p className="text-base text-[#64748B] max-w-[500px] mx-auto mt-3">
+          <p className="text-base text-[#475569] max-w-[500px] mx-auto mt-3">
             Pertanyaan yang paling sering diajukan pemilik hotel dan properti wisata
             di Yogyakarta
           </p>
@@ -686,7 +686,7 @@ export default function HotelVilaPage() {
                   +
                 </span>
               </summary>
-              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#475569] pb-4">{f.a}</p>
             </details>
           ))}
         </div>
@@ -710,7 +710,7 @@ export default function HotelVilaPage() {
       {/* ── INTERNAL LINKS ───────────────────────────────────────────────── */}
       <section className="py-10 px-[5vw] bg-white border-t border-black/5">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">
             Produk &amp; Artikel Terkait
           </p>
           <div className="flex gap-3 flex-wrap">

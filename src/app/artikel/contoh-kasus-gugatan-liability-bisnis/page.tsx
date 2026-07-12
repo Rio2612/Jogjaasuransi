@@ -117,7 +117,7 @@ export default function ArtikelGugatanLiabilityPage() {
       <div className="pt-[68px]">
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B]">
+          <div className="flex items-center gap-2 text-sm text-[#475569]">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -155,10 +155,10 @@ export default function ArtikelGugatanLiabilityPage() {
                 <strong className="text-gold">Catatan Redaksi:</strong> Kasus-kasus berikut merupakan representasi dari insiden yang umum terjadi di industri masing-masing di Indonesia, termasuk beberapa kasus yang telah terdokumentasi di media lokal. Nama dan detail spesifik disamarkan untuk keperluan privasi. Tujuan artikel ini adalah edukasi — membantu pelaku usaha memahami risiko nyata yang mereka hadapi.
               </p>
             </div>
-            <p className="text-base leading-[1.85] text-[#64748B] mb-4">
+            <p className="text-base leading-[1.85] text-[#475569] mb-4">
               Banyak pelaku usaha di Yogyakarta yang baru menyadari pentingnya <Link href="/asuransi-liability" className="text-gold hover:text-gold2 transition-colors no-underline font-semibold">asuransi liability</Link> setelah menghadapi gugatan hukum secara langsung. Pada titik itu, seringkali sudah terlambat — biaya hukum sudah menguras kas, reputasi rusak, dan operasional terganggu.
             </p>
-            <p className="text-base leading-[1.85] text-[#64748B]">
+            <p className="text-base leading-[1.85] text-[#475569]">
               Artikel ini mengumpulkan 6 studi kasus dari berbagai sektor bisnis — masing-masing dengan kronologi, nilai tuntutan, dan pelajaran yang bisa diterapkan sekarang.
             </p>
           </div>
@@ -177,11 +177,11 @@ export default function ArtikelGugatanLiabilityPage() {
                   </div>
                   <div className="p-6 flex flex-col gap-4">
                     <div>
-                      <div className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-2">Kronologi</div>
-                      <p className="text-base leading-[1.8] text-[#64748B]">{k.kronologi}</p>
+                      <div className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-2">Kronologi</div>
+                      <p className="text-base leading-[1.8] text-[#475569]">{k.kronologi}</p>
                     </div>
                     <div className="bg-red-50 border border-red-100 rounded-xl p-4">
-                      <div className="text-xs font-bold tracking-widest uppercase text-red-600 mb-2">⚠️ Tuntutan & Dampak</div>
+                      <div className="text-xs font-bold tracking-widest uppercase text-red-700 mb-2">⚠️ Tuntutan & Dampak</div>
                       <p className="text-sm leading-[1.75] text-red-800">{k.tuntutan}</p>
                     </div>
                     <div className="bg-amber-50 border border-amber-100 rounded-xl p-4">
@@ -189,7 +189,7 @@ export default function ArtikelGugatanLiabilityPage() {
                       <p className="text-sm leading-[1.75] text-amber-900">{k.pelajaran}</p>
                     </div>
                     <div className="flex items-center justify-between flex-wrap gap-3 pt-2 border-t border-black/5">
-                      <span className="text-xs text-[#64748B]">Produk yang sesuai:</span>
+                      <span className="text-xs text-[#475569]">Produk yang sesuai:</span>
                       <Link href={k.produk.href} className="bg-gold/10 border border-gold/25 text-navy font-semibold text-xs px-4 py-2 rounded-full hover:bg-gold/20 hover:border-gold/50 transition-all no-underline">
                         🛡️ {k.produk.label} →
                       </Link>
@@ -233,10 +233,10 @@ export default function ArtikelGugatanLiabilityPage() {
         <section className="py-14 px-[5vw] bg-white">
           <div className="max-w-[750px] mx-auto">
             <h2 className="font-heading text-navy text-[1.4rem] mb-4">Kesimpulan: Asuransi Liability Bukan Opsi, Ini Kebutuhan</h2>
-            <p className="text-base leading-[1.85] text-[#64748B] mb-4">
+            <p className="text-base leading-[1.85] text-[#475569] mb-4">
               Dari keenam kasus di atas, pola yang sama terulang: bisnis yang tidak memiliki <Link href="/asuransi-liability" className="text-gold hover:text-gold2 transition-colors no-underline font-semibold">asuransi liability</Link> harus menanggung biaya hukum yang jauh melebihi pendapatan tahunan mereka. Beberapa bahkan harus tutup permanen.
             </p>
-            <p className="text-base leading-[1.85] text-[#64748B] mb-8">
+            <p className="text-base leading-[1.85] text-[#475569] mb-8">
               Sebaliknya, dengan premi yang relatif terjangkau, pemegang polis cukup melaporkan insiden — dan seluruh proses hukum, biaya pengacara, serta pembayaran ganti rugi ditangani oleh perusahaan asuransi.
             </p>
 
@@ -244,22 +244,22 @@ export default function ArtikelGugatanLiabilityPage() {
               <Link href="/asuransi-liability/public-liability" className="bg-cream border border-black/8 rounded-xl p-5 no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
                 <div className="text-2xl mb-2">🤝</div>
                 <div className="font-heading text-navy font-semibold text-sm group-hover:text-gold transition-colors mb-1">Asuransi Public Liability</div>
-                <p className="text-xs text-[#64748B]">Untuk hotel, restoran, tempat wisata, dan bisnis yang berinteraksi langsung dengan publik</p>
+                <p className="text-xs text-[#475569]">Untuk hotel, restoran, tempat wisata, dan bisnis yang berinteraksi langsung dengan publik</p>
               </Link>
               <Link href="/asuransi-liability/employer-liability" className="bg-cream border border-black/8 rounded-xl p-5 no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
                 <div className="text-2xl mb-2">👷</div>
                 <div className="font-heading text-navy font-semibold text-sm group-hover:text-gold transition-colors mb-1">Asuransi Employer Liability</div>
-                <p className="text-xs text-[#64748B]">Untuk kontraktor, pabrik, dan semua bisnis yang mempekerjakan karyawan dengan risiko kerja</p>
+                <p className="text-xs text-[#475569]">Untuk kontraktor, pabrik, dan semua bisnis yang mempekerjakan karyawan dengan risiko kerja</p>
               </Link>
               <Link href="/asuransi-liability/product-liability" className="bg-cream border border-black/8 rounded-xl p-5 no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
                 <div className="text-2xl mb-2">📦</div>
                 <div className="font-heading text-navy font-semibold text-sm group-hover:text-gold transition-colors mb-1">Asuransi Product Liability</div>
-                <p className="text-xs text-[#64748B]">Untuk produsen, UMKM, dan importir yang memasarkan produk fisik kepada konsumen</p>
+                <p className="text-xs text-[#475569]">Untuk produsen, UMKM, dan importir yang memasarkan produk fisik kepada konsumen</p>
               </Link>
               <Link href="/asuransi-liability/limbah-b3" className="bg-cream border border-black/8 rounded-xl p-5 no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
                 <div className="text-2xl mb-2">⚗️</div>
                 <div className="font-heading text-navy font-semibold text-sm group-hover:text-gold transition-colors mb-1">Liability Limbah B3</div>
-                <p className="text-xs text-[#64748B]">Untuk industri yang menghasilkan atau mengelola bahan berbahaya dan beracun</p>
+                <p className="text-xs text-[#475569]">Untuk industri yang menghasilkan atau mengelola bahan berbahaya dan beracun</p>
               </Link>
             </div>
 
@@ -273,7 +273,7 @@ export default function ArtikelGugatanLiabilityPage() {
         {/* ARTIKEL TERKAIT */}
         <section className="py-10 px-[5vw] bg-cream border-t border-black/5">
           <div className="max-w-[750px] mx-auto">
-            <div className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">Artikel Terkait</div>
+            <div className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">Artikel Terkait</div>
             <div className="flex gap-3 flex-wrap">
               <Link href="/artikel/pentingnya-asuransi-dunia-usaha-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏢 Asuransi untuk Dunia Usaha Jogja →</Link>
               <Link href="/asuransi-liability" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🛡️ Semua Produk Liability →</Link>

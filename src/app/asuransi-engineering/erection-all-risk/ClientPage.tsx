@@ -149,8 +149,8 @@ function KalkulatorEAR() {
       <div className="bg-white/5 border border-gold/20 rounded-[20px] p-8 max-w-[680px] mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label className={labelCls}>Jenis Instalasi</label>
-            <select className={selectCls} value={jenisInstalasi} onChange={(e) => setJenisInstalasi(e.target.value)}>
+            <label className={labelCls} htmlFor="ear-jenis">Jenis Instalasi</label>
+            <select id="ear-jenis" className={selectCls} value={jenisInstalasi} onChange={(e) => setJenisInstalasi(e.target.value)}>
               <option value="mesin" style={{ background: "#163352" }}>🏭 Mesin Industri / Pabrik</option>
               <option value="struktur" style={{ background: "#163352" }}>🏗️ Struktur Baja</option>
               <option value="listrik" style={{ background: "#163352" }}>⚡ Instalasi Listrik / Panel HV</option>
@@ -159,8 +159,8 @@ function KalkulatorEAR() {
             </select>
           </div>
           <div>
-            <label className={labelCls}>Limit TPL (Pihak Ketiga)</label>
-            <select className={selectCls} value={limitTPL} onChange={(e) => setLimitTPL(e.target.value)}>
+            <label className={labelCls} htmlFor="ear-limit">Limit TPL (Pihak Ketiga)</label>
+            <select id="ear-limit" className={selectCls} value={limitTPL} onChange={(e) => setLimitTPL(e.target.value)}>
               <option value="5" style={{ background: "#163352" }}>Rp 5 Miliar</option>
               <option value="10" style={{ background: "#163352" }}>Rp 10 Miliar</option>
               <option value="25" style={{ background: "#163352" }}>Rp 25 Miliar</option>
@@ -177,7 +177,7 @@ function KalkulatorEAR() {
             value={nilaiInstalasi}
             onChange={(e) => setNilaiInstalasi(e.target.value)}
           />
-          <span className="text-white/40 text-xs mt-1 block">Nilai peralatan + jasa pemasangan (tanpa PPN)</span>
+          <span className="text-white/60 text-xs mt-1 block">Nilai peralatan + jasa pemasangan (tanpa PPN)</span>
         </div>
         <div className="mt-5">
           <label className={labelCls}>Perluasan (Opsional)</label>
@@ -200,7 +200,7 @@ function KalkulatorEAR() {
               <span className="text-gold2 font-semibold text-sm">Estimasi Premi</span>
               <span className="text-gold text-[1.1rem] font-bold">{fmt(hasil.min)} – {fmt(hasil.max)}</span>
             </div>
-            <p className="text-white/40 text-xs mt-3 leading-relaxed">
+            <p className="text-white/60 text-xs mt-3 leading-relaxed">
               * Estimasi berdasarkan tarif referensi pasar. Premi final ditentukan perusahaan asuransi setelah review dokumen teknis.
             </p>
             <a
@@ -261,7 +261,7 @@ export default function ClientPage() {
             ].map((s) => (
               <div key={s.lbl}>
                 <div className="font-heading text-gold text-lg font-bold">{s.num}</div>
-                <div className="text-white/45 text-xs mt-0.5">{s.lbl}</div>
+                <div className="text-white/60 text-xs mt-0.5">{s.lbl}</div>
               </div>
             ))}
           </div>
@@ -289,7 +289,7 @@ export default function ClientPage() {
               {bedaCARvsEAR.map((b, i) => (
                 <tr key={b.aspek} className={i % 2 === 0 ? "bg-white" : "bg-cream"}>
                   <td className="p-4 font-semibold text-navy text-xs">{b.aspek}</td>
-                  <td className="p-4 text-[#64748B] text-sm leading-relaxed">{b.car}</td>
+                  <td className="p-4 text-[#475569] text-sm leading-relaxed">{b.car}</td>
                   <td className="p-4 text-navy2 text-sm leading-relaxed font-medium">{b.ear}</td>
                 </tr>
               ))}
@@ -317,7 +317,7 @@ export default function ClientPage() {
               <div className="absolute top-4 right-4 font-heading text-[2rem] font-bold text-navy/8">{i + 1}</div>
               <div className="text-3xl mb-3">{t.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{t.tahap}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{t.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{t.desc}</p>
             </div>
           ))}
         </div>
@@ -336,7 +336,7 @@ export default function ClientPage() {
             <div key={r.label} className="bg-white rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{r.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{r.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{r.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{r.desc}</p>
             </div>
           ))}
         </div>
@@ -358,7 +358,7 @@ export default function ClientPage() {
             <div key={j.label} className="bg-cream rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{j.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{j.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{j.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{j.desc}</p>
             </div>
           ))}
         </div>
@@ -377,7 +377,7 @@ export default function ClientPage() {
             <div key={p.label} className="bg-white rounded-card p-6 border border-red-100">
               <div className="text-3xl mb-3">{p.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{p.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{p.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -397,7 +397,7 @@ export default function ClientPage() {
               <div className="bg-gold text-navy font-heading font-bold text-sm w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">{i + 1}</div>
               <div>
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1">{s.judul}</div>
-                <p className="text-base leading-relaxed text-[#64748B]">{s.desc}</p>
+                <p className="text-base leading-relaxed text-[#475569]">{s.desc}</p>
               </div>
             </div>
           ))}
@@ -418,7 +418,7 @@ export default function ClientPage() {
               <span className="text-3xl">{ind.icon}</span>
               <div>
                 <div className="font-heading text-navy font-bold text-[1rem] mb-1">{ind.sektor}</div>
-                <p className="text-base leading-relaxed text-[#64748B]">{ind.contoh}</p>
+                <p className="text-base leading-relaxed text-[#475569]">{ind.contoh}</p>
               </div>
             </div>
           ))}
@@ -440,7 +440,7 @@ export default function ClientPage() {
                 {f.q}
                 <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
               </summary>
-              <p className="text-base leading-[1.78] text-[#64748B] pb-4">{f.a}</p>
+              <p className="text-base leading-[1.78] text-[#475569] pb-4">{f.a}</p>
             </details>
           ))}
         </div>
@@ -449,7 +449,7 @@ export default function ClientPage() {
       {/* ── INTERNAL LINKS ───────────────────────────────────────────────────── */}
       <section className="py-10 px-[5vw] bg-cream border-t border-black/5">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">Produk & Artikel Terkait</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">Produk & Artikel Terkait</p>
           <div className="flex gap-3 flex-wrap">
             <Link href="/asuransi-engineering/contractor-all-risk" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏗️ Contractor All Risk →</Link>
             <Link href="/asuransi-engineering/machinery-breakdown" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🔧 Machinery Breakdown →</Link>

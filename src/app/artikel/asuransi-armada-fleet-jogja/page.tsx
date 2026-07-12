@@ -35,7 +35,7 @@ export default function ArtikelAsuransiArmadaFleetJogja() {
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -52,8 +52,8 @@ export default function ArtikelAsuransiArmadaFleetJogja() {
               <Link href="/asuransi-kendaraan/armada-fleet" className="inline-flex items-center gap-1.5 bg-gold/10 border border-gold/30 text-gold3 text-xs font-semibold px-3 py-1 rounded-full no-underline hover:bg-gold/20 transition-colors">
                 🚐 Asuransi Kendaraan
               </Link>
-              <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Panduan Lengkap</span>
+              <span className="text-white/60 text-xs">·</span>
+              <span className="text-white/60 text-xs">Panduan Lengkap</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
               Asuransi Armada / Fleet —<br /><em className="not-italic text-gold">Kapan Perusahaan Anda</em><br />Perlu Konsolidasi Polis?
@@ -61,7 +61,7 @@ export default function ArtikelAsuransiArmadaFleetJogja() {
             <p className="text-white/80 text-base leading-[1.85] max-w-[540px] mb-6">
               Mengelola asuransi 5, 10, atau 20 kendaraan operasional secara terpisah membuang waktu dan uang. Panduan ini menjelaskan kapan saatnya beralih ke polis fleet terkonsolidasi, bagaimana perhitungannya, dan apa saja yang perlu disiapkan.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Juni 2026</span>
@@ -107,20 +107,20 @@ export default function ArtikelAsuransiArmadaFleetJogja() {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-[#94A3B8] mb-10">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+            <p className="text-xs text-[#5A6472] mb-10">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
 
             <div className="flex items-center gap-3 mb-10 pt-6 border-t border-black/8">
               <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
               <div>
                 <div className="text-sm font-semibold text-navy">Ditulis &amp; ditinjau oleh Rio Mardiansyah</div>
-                <div className="text-xs text-[#64748B]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
+                <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
               </div>
             </div>
 
             {/* CTA Inline */}
             <div className="bg-gold/8 border border-gold/25 rounded-card p-6 mb-10">
               <div className="font-heading text-navy font-bold text-base mb-2">Ingin Konsolidasi Polis Kendaraan Perusahaan?</div>
-              <p className="text-[#64748B] text-sm leading-relaxed mb-4">Kirimkan daftar kendaraan dan polis existing Anda, kami bantu hitung potensi penghematan dari konsolidasi ke polis fleet.</p>
+              <p className="text-[#475569] text-sm leading-relaxed mb-4">Kirimkan daftar kendaraan dan polis existing Anda, kami bantu hitung potensi penghematan dari konsolidasi ke polis fleet.</p>
               <div className="flex gap-3 flex-wrap">
                 <a href={`https://wa.me/${KONTAK.wa}`} className="bg-gold text-navy px-5 py-2.5 rounded-lg font-bold text-sm no-underline hover:bg-gold2 transition-all">
                   💬 Konsultasi via WhatsApp
@@ -139,54 +139,54 @@ export default function ArtikelAsuransiArmadaFleetJogja() {
                   Berapa minimal unit kendaraan untuk membuat polis fleet?
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">Umumnya perusahaan asuransi mensyaratkan minimal 5 unit untuk dianggap sebagai fleet, meski beberapa penerbit polis bersedia mulai dari 3 unit dengan syarat tertentu. Di bawah itu, asuransi per unit biasanya masih lebih praktis.</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">Umumnya perusahaan asuransi mensyaratkan minimal 5 unit untuk dianggap sebagai fleet, meski beberapa penerbit polis bersedia mulai dari 3 unit dengan syarat tertentu. Di bawah itu, asuransi per unit biasanya masih lebih praktis.</p>
               </details>
               <details className="group py-1">
                 <summary className="py-3 cursor-pointer font-semibold text-[0.9rem] text-navy flex justify-between items-center list-none">
                   Apakah tanggal jatuh tempo polis existing yang berbeda-beda jadi masalah?
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">Tidak. Saat konsolidasi, kami bisa membantu menyusun jadwal transisi sehingga setiap kendaraan tetap terlindungi tanpa gap, baru kemudian disatukan ke satu tanggal jatuh tempo pada saat semua polis existing berakhir.</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">Tidak. Saat konsolidasi, kami bisa membantu menyusun jadwal transisi sehingga setiap kendaraan tetap terlindungi tanpa gap, baru kemudian disatukan ke satu tanggal jatuh tempo pada saat semua polis existing berakhir.</p>
               </details>
               <details className="group py-1">
                 <summary className="py-3 cursor-pointer font-semibold text-[0.9rem] text-navy flex justify-between items-center list-none">
                   Bisakah menambah kendaraan baru di tengah periode polis fleet?
                   <span className="text-gold text-xl flex-shrink-0 ml-4 transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">Bisa. Sebagian besar polis fleet mengizinkan penambahan unit di tengah jalan dengan penyesuaian premi secara proporsional (pro-rata), tanpa perlu menerbitkan polis baru dari awal.</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">Bisa. Sebagian besar polis fleet mengizinkan penambahan unit di tengah jalan dengan penyesuaian premi secara proporsional (pro-rata), tanpa perlu menerbitkan polis baru dari awal.</p>
               </details>
             </div>
 
             {/* Internal Links */}
             <div className="border-t border-black/8 pt-8">
-              <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">Baca Juga</p>
+              <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">Baca Juga</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Link href="/asuransi-kendaraan/armada-fleet" className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
                   <span className="text-xl flex-shrink-0">🚐</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">Produk Asuransi Armada/Fleet</div>
-                    <div className="text-xs text-[#64748B]">Lihat detail produk dan cakupan</div>
+                    <div className="text-xs text-[#475569]">Lihat detail produk dan cakupan</div>
                   </div>
                 </Link>
                 <Link href="/asuransi-kendaraan/dump-truk-niaga" className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
                   <span className="text-xl flex-shrink-0">🚛</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">Dump Truk & Kendaraan Niaga</div>
-                    <div className="text-xs text-[#64748B]">Untuk kendaraan proyek/tambang</div>
+                    <div className="text-xs text-[#475569]">Untuk kendaraan proyek/tambang</div>
                   </div>
                 </Link>
                 <Link href="/asuransi-kendaraan/mobil" className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
                   <span className="text-xl flex-shrink-0">🚗</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">Asuransi Mobil Pribadi</div>
-                    <div className="text-xs text-[#64748B]">Untuk kendaraan non-operasional</div>
+                    <div className="text-xs text-[#475569]">Untuk kendaraan non-operasional</div>
                   </div>
                 </Link>
                 <Link href="/asuransi-kendaraan" className="bg-cream border border-black/8 rounded-xl p-4 flex gap-3 items-start no-underline hover:border-gold/40 hover:-translate-y-0.5 transition-all group">
                   <span className="text-xl flex-shrink-0">📋</span>
                   <div>
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">Semua Produk Kendaraan</div>
-                    <div className="text-xs text-[#64748B]">Lihat seluruh lini produk kendaraan</div>
+                    <div className="text-xs text-[#475569]">Lihat seluruh lini produk kendaraan</div>
                   </div>
                 </Link>
               </div>

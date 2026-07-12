@@ -353,7 +353,7 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
 
         {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
-          <div className="flex items-center gap-2 text-sm text-[#64748B] flex-wrap">
+          <div className="flex items-center gap-2 text-sm text-[#475569] flex-wrap">
             <Link href="/" className="hover:text-gold transition-colors no-underline">Beranda</Link>
             <span className="text-gold/60">›</span>
             <Link href="/artikel" className="hover:text-gold transition-colors no-underline">Artikel</Link>
@@ -385,8 +385,8 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
               >
                 🚚 Ekspedisi UMKM
               </Link>
-              <span className="text-white/30 text-xs">·</span>
-              <span className="text-white/40 text-xs">Panduan Praktis</span>
+              <span className="text-white/60 text-xs">·</span>
+              <span className="text-white/60 text-xs">Panduan Praktis</span>
             </div>
             <h1 className="font-heading text-[clamp(1.9rem,3.5vw,3rem)] text-white leading-[1.2] mb-5">
               Asuransi Kargo untuk UMKM<br />
@@ -400,7 +400,7 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
               senilai Rp 5 juta, itu berarti maksimal Rp 300 ribu. Polis kargo khusus
               menanggung nilai penuh — dengan premi mulai Rp 50 ribu per pengiriman.
             </p>
-            <div className="flex gap-3 text-xs text-white/40 flex-wrap">
+            <div className="flex gap-3 text-xs text-white/60 flex-wrap">
               <span>✍️ Rio MD — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
@@ -428,7 +428,7 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Asuransi Ekspedisi Standar vs Polis Kargo Khusus — Apa Bedanya?
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Banyak UMKM mengira asuransi bawaan ekspedisi sudah cukup. Berikut perbandingan
             nyata yang sering menjadi kejutan tidak menyenangkan saat klaim:
           </p>
@@ -451,10 +451,10 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
                 {perbandinganAsuransi.map((row, i) => (
                   <tr key={row.aspek} className={i % 2 === 0 ? "bg-cream" : "bg-white"}>
                     <td className="p-3.5 font-semibold text-navy text-xs align-top">{row.aspek}</td>
-                    <td className="p-3.5 text-[#64748B] text-sm leading-relaxed align-top">
+                    <td className="p-3.5 text-[#475569] text-sm leading-relaxed align-top">
                       {row.ekspedisiStandar}
                     </td>
-                    <td className={`p-3.5 text-sm leading-relaxed align-top ${row.unggul ? "text-navy2 font-medium" : "text-[#64748B]"}`}>
+                    <td className={`p-3.5 text-sm leading-relaxed align-top ${row.unggul ? "text-navy2 font-medium" : "text-[#475569]"}`}>
                       {row.unggul && <span className="text-gold mr-1.5 font-bold">✓</span>}
                       {row.polisKhusus}
                     </td>
@@ -463,7 +463,7 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-[#94A3B8] mb-10">
+          <p className="text-xs text-[#5A6472] mb-10">
             * Ketentuan asuransi ekspedisi bervariasi antar perusahaan dan bisa berubah. Selalu
             baca syarat dan ketentuan sebelum mengandalkan perlindungan ekspedisi.
           </p>
@@ -472,7 +472,7 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             3 Jenis Polis Kargo yang Relevan untuk UMKM
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Pilihan polis disesuaikan dengan frekuensi dan skala pengiriman usaha Anda:
           </p>
           <div className="flex flex-col gap-4 mb-10">
@@ -489,16 +489,16 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
                   <span className="text-2xl flex-shrink-0">{p.icon}</span>
                   <div className="flex-1">
                     <div className="font-heading font-bold text-navy text-[0.95rem] mb-1">{p.jenis}</div>
-                    <p className="text-sm text-[#64748B] leading-relaxed mb-3">{p.deskripsi}</p>
+                    <p className="text-sm text-[#475569] leading-relaxed mb-3">{p.deskripsi}</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div className="bg-white/60 rounded-lg p-3 border border-black/6">
-                        <div className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1">
+                        <div className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-1">
                           Cocok untuk
                         </div>
                         <p className="text-xs text-navy2 leading-snug">{p.cocokUntuk}</p>
                       </div>
                       <div className="bg-white/60 rounded-lg p-3 border border-black/6">
-                        <div className="text-[0.65rem] font-bold uppercase tracking-wide text-[#94A3B8] mb-1">
+                        <div className="text-[0.65rem] font-bold uppercase tracking-wide text-[#5A6472] mb-1">
                           Estimasi premi
                         </div>
                         <p className="text-sm font-bold text-navy">{p.estimasiPremi}</p>
@@ -514,7 +514,7 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Produk UMKM Jogja yang Paling Perlu Perlindungan Kargo
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Setiap jenis barang memiliki risiko pengiriman yang berbeda. Berikut panduan
             per kategori produk yang umum dikirim UMKM Yogyakarta:
           </p>
@@ -525,12 +525,12 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
                   <span className="text-xl">{b.icon}</span>
                   <span className="font-heading font-bold text-navy text-sm">{b.kategori}</span>
                 </div>
-                <p className="text-xs text-[#64748B] mb-2">{b.contoh}</p>
+                <p className="text-xs text-[#475569] mb-2">{b.contoh}</p>
                 <div className="mb-2">
                   <span className="text-[0.6rem] font-bold uppercase tracking-wide text-red-500">
                     Risiko utama:
                   </span>
-                  <p className="text-xs text-[#64748B] mt-0.5">{b.risiko}</p>
+                  <p className="text-xs text-[#475569] mt-0.5">{b.risiko}</p>
                 </div>
                 <div className="bg-cream rounded-lg p-2.5 border border-black/5">
                   <span className="text-[0.6rem] font-bold uppercase tracking-wide text-gold">
@@ -546,7 +546,7 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Cara Klaim Asuransi Kargo — 5 Langkah yang Benar
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Kesalahan dalam proses klaim — terutama di langkah pertama — adalah penyebab
             terbesar klaim kargo ditolak. Ikuti langkah berikut dengan cermat:
           </p>
@@ -561,7 +561,7 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
                 </div>
                 <div>
                   <p className="font-semibold text-navy text-sm mb-1">{l.judul}</p>
-                  <p className="text-xs text-[#64748B] leading-relaxed">{l.detail}</p>
+                  <p className="text-xs text-[#475569] leading-relaxed">{l.detail}</p>
                 </div>
               </div>
             ))}
@@ -579,7 +579,7 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Tips Packaging yang Membantu Proses Klaim
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-5">
+          <p className="text-[#475569] text-base leading-relaxed mb-5">
             Packing yang baik bukan hanya mencegah kerusakan — tapi juga memperkuat posisi
             Anda saat mengajukan klaim:
           </p>
@@ -591,7 +591,7 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
                 </span>
                 <div>
                   <p className="font-semibold text-navy text-sm mb-0.5">{t.tip}</p>
-                  <p className="text-xs text-[#64748B] leading-relaxed">{t.detail}</p>
+                  <p className="text-xs text-[#475569] leading-relaxed">{t.detail}</p>
                 </div>
               </div>
             ))}
@@ -601,7 +601,7 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
           <h2 className="font-heading text-[clamp(1.3rem,2vw,1.7rem)] text-navy mb-4">
             Kasus Nyata — Perbedaan yang Sangat Signifikan
           </h2>
-          <p className="text-[#64748B] text-base leading-relaxed mb-6">
+          <p className="text-[#475569] text-base leading-relaxed mb-6">
             Dua kasus berikut menggambarkan secara konkret mengapa polis kargo terpisah
             jauh lebih baik dari asuransi bawaan ekspedisi:
           </p>
@@ -613,21 +613,21 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
                   <span className={`text-[0.65rem] font-bold px-2 py-0.5 rounded-full border ${k.badge}`}>
                     Nilai: {k.nilai}
                   </span>
-                  <span className="text-[0.65rem] text-[#94A3B8]">via {k.moda}</span>
+                  <span className="text-[0.65rem] text-[#5A6472]">via {k.moda}</span>
                 </div>
-                <p className="text-sm text-[#64748B] leading-relaxed mb-4">{k.kronologi}</p>
+                <p className="text-sm text-[#475569] leading-relaxed mb-4">{k.kronologi}</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
                   <div className="bg-red-50 rounded-lg p-3.5 border border-red-100">
                     <div className="text-[0.65rem] font-bold uppercase tracking-wide text-red-500 mb-1">
                       ❌ Dengan Asuransi Ekspedisi
                     </div>
-                    <p className="text-xs text-[#64748B] leading-relaxed">{k.asuransiEkspedisi}</p>
+                    <p className="text-xs text-[#475569] leading-relaxed">{k.asuransiEkspedisi}</p>
                   </div>
                   <div className="bg-green-50 rounded-lg p-3.5 border border-green-100">
                     <div className="text-[0.65rem] font-bold uppercase tracking-wide text-green-600 mb-1">
                       ✅ Dengan Polis Kargo Khusus
                     </div>
-                    <p className="text-xs text-[#64748B] leading-relaxed">{k.polisKhusus}</p>
+                    <p className="text-xs text-[#475569] leading-relaxed">{k.polisKhusus}</p>
                   </div>
                 </div>
                 <div className="bg-navy/4 rounded-lg p-3 border border-navy/8">
@@ -644,7 +644,7 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
             <div className="font-heading text-navy font-bold text-base mb-2">
               Kirim lebih dari 10 paket per bulan?
             </div>
-            <p className="text-[#64748B] text-sm leading-relaxed mb-4">
+            <p className="text-[#475569] text-sm leading-relaxed mb-4">
               Open Cover adalah solusi paling efisien untuk Anda. Ceritakan estimasi
               volume dan nilai pengiriman per bulan — kami hitung premi tahunan yang
               paling hemat. Konsultasi gratis.
@@ -678,14 +678,14 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
                     +
                   </span>
                 </summary>
-                <p className="text-sm leading-[1.78] text-[#64748B] pb-3">{f.a}</p>
+                <p className="text-sm leading-[1.78] text-[#475569] pb-3">{f.a}</p>
               </details>
             ))}
           </div>
 
           {/* Internal Links */}
           <div className="border-t border-black/8 pt-8">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#94A3B8] mb-4">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#5A6472] mb-4">
               Produk & Artikel Terkait
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -737,7 +737,7 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
                     <div className="font-semibold text-navy text-sm group-hover:text-gold transition-colors mb-0.5">
                       {a.judul}
                     </div>
-                    <div className="text-xs text-[#64748B]">{a.desc}</div>
+                    <div className="text-xs text-[#475569]">{a.desc}</div>
                   </div>
                 </Link>
               ))}

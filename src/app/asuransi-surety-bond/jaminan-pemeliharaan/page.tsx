@@ -64,7 +64,7 @@ export default function JaminanPemeliharaanPage() {
           </div>
           <div className="flex gap-8 mt-10 pt-8 border-t border-white/10">
             {[{num:"5%",lbl:"Dari Nilai Kontrak"},{num:"6–12 Bln",lbl:"Masa Pemeliharaan Umum"},{num:"PHO→FHO",lbl:"Periode Aktif"}].map(s=>(
-              <div key={s.lbl}><div className="font-heading text-gold text-xl font-bold">{s.num}</div><div className="text-white/45 text-xs mt-0.5">{s.lbl}</div></div>
+              <div key={s.lbl}><div className="font-heading text-gold text-xl font-bold">{s.num}</div><div className="text-white/60 text-xs mt-0.5">{s.lbl}</div></div>
             ))}
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function JaminanPemeliharaanPage() {
             <div key={f.label} className="bg-white rounded-card p-6 border border-black/6 hover:-translate-y-1 transition-all">
               <div className="text-3xl mb-3">{f.icon}</div>
               <div className="font-heading text-navy font-bold text-[1rem] mb-2">{f.label}</div>
-              <p className="text-base leading-relaxed text-[#64748B]">{f.desc}</p>
+              <p className="text-base leading-relaxed text-[#475569]">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -97,7 +97,7 @@ export default function JaminanPemeliharaanPage() {
               <div className="bg-navy text-gold font-heading font-bold text-sm w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">{i+1}</div>
               <div>
                 <div className="font-heading text-navy font-bold text-[0.95rem] mb-1">{b.tahap}</div>
-                <p className="text-base leading-relaxed text-[#64748B]">{b.desc}</p>
+                <p className="text-base leading-relaxed text-[#475569]">{b.desc}</p>
               </div>
             </div>
           ))}
@@ -121,7 +121,7 @@ export default function JaminanPemeliharaanPage() {
 
       <section className="py-10 px-[5vw] bg-white border-t border-black/5">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#64748B] mb-4">Jaminan Lainnya</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">Jaminan Lainnya</p>
           <div className="flex gap-3 flex-wrap">
             <Link href="/asuransi-surety-bond/jaminan-penawaran" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📋 Jaminan Penawaran →</Link>
             <Link href="/asuransi-surety-bond/jaminan-pelaksanaan" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏗️ Jaminan Pelaksanaan →</Link>
@@ -170,14 +170,14 @@ export default function JaminanPemeliharaanPage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-[#94A3B8] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+            <p className="text-xs text-[#5A6472] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
           </div>
 
           <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
             <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
             <div>
               <div className="text-sm font-semibold text-navy">Ditinjau oleh Rio Mardiansyah</div>
-              <div className="text-xs text-[#64748B]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
+              <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
             </div>
           </div>
 
