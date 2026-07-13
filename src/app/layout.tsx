@@ -79,7 +79,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         "alternateName": "AsuransiJogja.biz.id",
         "description": "Praktisi asuransi independen di Yogyakarta dengan 9+ tahun pengalaman.",
         "url": BASE_URL,
-        "telephone": "+6287781658231",
+        "telephone": "+628131556592",
         "email": "rio@asuransijogja.biz.id",
         "founder": { "@type": "Person", "name": "Rio Mardiansyah", "alternateName": "Rio MD", "sameAs": ["https://www.linkedin.com/in/riomardiansyah"] },
         "address": {
@@ -107,7 +107,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Surety Bond", "url": `${BASE_URL}/asuransi-surety-bond` } },
           ],
         },
-        "sameAs": [`https://wa.me/6287781658231`],
+        "sameAs": [`https://wa.me/628131556592`],
       },
       {
         "@type": "WebSite",

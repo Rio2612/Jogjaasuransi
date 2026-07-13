@@ -77,7 +77,7 @@ const schemaCAR = {
         "@type": "InsuranceAgency",
         "@id": "https://asuransijogja.biz.id/#organization",
         name: "Asuransi Jogja",
-        telephone: "+6287781658231",
+        telephone: "+628131556592",
       },
       areaServed: [
         { "@type": "City", name: "Yogyakarta" },

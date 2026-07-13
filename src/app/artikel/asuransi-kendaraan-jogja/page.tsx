@@ -40,7 +40,7 @@ const schemaLocalBusiness = {
   name: "Asuransi Jogja",
   description: "Praktisi asuransi kerugian independen di Yogyakarta, spesialis asuransi kendaraan bermotor.",
   url: "https://asuransijogja.biz.id",
-  telephone: "+6287781658231",
+  telephone: "+628131556592",
   email: "rio@asuransijogja.biz.id",
   address: {
     "@type": "PostalAddress",
