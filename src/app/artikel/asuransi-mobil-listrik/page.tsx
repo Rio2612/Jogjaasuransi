@@ -187,7 +187,7 @@ export default function AsuransiMobilListrikPage() {
           <div className="flex items-center gap-4 text-sm text-white/50">
             <span>Oleh <strong className="text-white/75">Rio Mardiansyah</strong> — Praktisi Asuransi Independen</span>
             <span>·</span>
-            <span>8 tahun pengalaman</span>
+            <span>9+ tahun pengalaman</span>
           </div>
         </div>
       </section>
@@ -429,7 +429,7 @@ export default function AsuransiMobilListrikPage() {
             </div>
             <div>
               <div className="font-heading text-white font-bold mb-1">Rio Mardiansyah</div>
-              <div className="text-gold2 text-xs mb-3">Praktisi Asuransi Independen · Yogyakarta · 8 Tahun Pengalaman</div>
+              <div className="text-gold2 text-xs mb-3">Praktisi Asuransi Independen · Yogyakarta · 9+ Tahun Pengalaman</div>
               <p className="text-white/65 text-sm leading-relaxed">
                 Saya membantu pemilik kendaraan listrik di Yogyakarta memilih produk asuransi yang
                 tepat — termasuk memastikan ada bengkel rekanan yang mampu menangani EV merek Anda.

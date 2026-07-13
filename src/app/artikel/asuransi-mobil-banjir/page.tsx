@@ -493,7 +493,7 @@ export default function AsuransiMobilBanjirPage() {
             </div>
             <div>
               <div className="font-heading text-white font-bold mb-1">Rio Mardiansyah</div>
-              <div className="text-gold2 text-xs mb-3">Praktisi Asuransi Independen · Yogyakarta · 8 Tahun Pengalaman</div>
+              <div className="text-gold2 text-xs mb-3">Praktisi Asuransi Independen · Yogyakarta · 9+ Tahun Pengalaman</div>
               <p className="text-white/65 text-sm leading-relaxed">
                 Saya sering mendampingi proses klaim banjir di Yogyakarta, dan kesalahan paling umum
                 yang saya lihat adalah pemilik yang menghidupkan mesin setelah terendam. Artikel ini

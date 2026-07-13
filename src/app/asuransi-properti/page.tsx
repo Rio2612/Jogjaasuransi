@@ -150,7 +150,7 @@ const whyItems = [
   {
     icon: "🏛️",
     title: "Paham Risiko Lokal Jogja",
-    desc: "8 tahun melayani klien di Yogyakarta. Kami memahami betul risiko banjir Kali Code, zona seismik Bantul, dan kondisi bangunan lokal.",
+    desc: "9+ tahun melayani klien di Yogyakarta. Kami memahami betul risiko banjir Kali Code, zona seismik Bantul, dan kondisi bangunan lokal.",
   },
   {
     icon: "🎯",
@@ -277,7 +277,7 @@ export default function AsuransiPropertiPage() {
           {/* Trust signals */}
           <div className="flex items-center gap-6 mt-8 pt-8 border-t border-white/10 flex-wrap">
             {[
-              { num: "10+", lbl: "Tahun Pengalaman" },
+              { num: "9+", lbl: "Tahun Pengalaman" },
               { num: "OJK", lbl: "Insurer Berlisensi" },
               { num: "Gratis", lbl: "Konsultasi & Klaim" },
             ].map((s) => (

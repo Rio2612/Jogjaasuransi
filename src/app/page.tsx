@@ -16,7 +16,7 @@ import CTAPenawaran from "@/components/ui/CTAPenawaran";
 
 export const metadata: Metadata = {
   title: "Asuransi Jogja – Praktisi Asuransi Terpercaya di Yogyakarta",
-  description: "Praktisi asuransi independen di Yogyakarta. Kendaraan, properti, engineering, kargo, liability, surety bond. Konsultasi GRATIS, 8 tahun pengalaman.",
+  description: "Praktisi asuransi independen di Yogyakarta. Kendaraan, properti, engineering, kargo, liability, surety bond. Konsultasi GRATIS, 9+ tahun pengalaman.",
   alternates: { canonical: "https://asuransijogja.biz.id" },
 };
 

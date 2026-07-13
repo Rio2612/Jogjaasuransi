@@ -330,7 +330,7 @@ export default function AsuransiMobilBekasPage() {
             <div className="w-12 h-12 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center flex-shrink-0 font-heading font-bold text-gold text-lg">R</div>
             <div>
               <div className="font-heading text-white font-bold mb-1">Rio Mardiansyah</div>
-              <div className="text-gold2 text-xs mb-3">Praktisi Asuransi Independen · Yogyakarta · 8 Tahun Pengalaman</div>
+              <div className="text-gold2 text-xs mb-3">Praktisi Asuransi Independen · Yogyakarta · 9+ Tahun Pengalaman</div>
               <p className="text-white/65 text-sm leading-relaxed">
                 Saya membantu pemilik kendaraan bekas di Yogyakarta menemukan produk asuransi yang tepat — termasuk memilih antara All Risk dan TLO berdasarkan kondisi nyata kendaraan, bukan sekadar preferensi. Konsultasi gratis, tanpa komitmen.
               </p>

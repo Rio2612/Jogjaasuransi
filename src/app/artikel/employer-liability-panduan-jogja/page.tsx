@@ -112,7 +112,7 @@ export default function ArtikelEmployerLiabilityPanduanJogja() {
               <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
               <div>
                 <div className="text-sm font-semibold text-navy">Ditulis &amp; ditinjau oleh Rio Mardiansyah</div>
-                <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
+                <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 9+ Tahun Pengalaman · Berbasis di Yogyakarta</div>
               </div>
             </div>
 

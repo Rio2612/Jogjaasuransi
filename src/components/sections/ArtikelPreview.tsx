@@ -63,7 +63,7 @@ export default function ArtikelPreview() {
             Artikel &amp; Panduan<br />untuk Keputusan yang Tepat
           </h2>
           <p className="text-[0.95rem] leading-[1.8] text-[#475569] max-w-[560px] mt-3">
-            Pahami asuransi sebelum membeli — cara klaim, perbedaan produk, dan tips praktis dari pengalaman 8 tahun sebagai praktisi asuransi di Yogyakarta.
+            Pahami asuransi sebelum membeli — cara klaim, perbedaan produk, dan tips praktis dari pengalaman 9+ tahun sebagai praktisi asuransi di Yogyakarta.
           </p>
         </div>
         <Link

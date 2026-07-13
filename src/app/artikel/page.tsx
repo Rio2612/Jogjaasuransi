@@ -333,7 +333,7 @@ export default function ArtikelIndexPage() {
             Artikel &amp; Panduan<br /><em className="not-italic text-gold">Asuransi untuk Anda</em>
           </h1>
           <p className="text-white/85 text-sm leading-[1.85] max-w-[480px]">
-            Pahami asuransi sebelum membeli. Artikel berikut ditulis berdasarkan pengalaman 8 tahun sebagai praktisi asuransi di Yogyakarta.
+            Pahami asuransi sebelum membeli. Artikel berikut ditulis berdasarkan pengalaman 9+ tahun sebagai praktisi asuransi di Yogyakarta.
           </p>
           <div className="flex gap-3 mt-6 flex-wrap">
             <span className="bg-gold/15 border border-gold/30 text-gold2 text-xs font-semibold px-3 py-1.5 rounded-full">{ARTIKEL.length} Artikel</span>

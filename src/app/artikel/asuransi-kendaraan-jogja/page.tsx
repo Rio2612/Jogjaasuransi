@@ -5,7 +5,7 @@ import { KONTAK } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Asuransi Kendaraan Jogja – Praktisi Independen, Premi OJK, Klaim Mudah",
   description:
-    "Layanan asuransi kendaraan bermotor di Yogyakarta oleh praktisi asuransi independen berpengalaman 8 tahun. Mobil, truk, armada fleet. Tarif OJK, klaim didampingi. Konsultasi gratis.",
+    "Layanan asuransi kendaraan bermotor di Yogyakarta oleh praktisi asuransi independen berpengalaman 9+ tahun. Mobil, truk, armada fleet. Tarif OJK, klaim didampingi. Konsultasi gratis.",
   keywords:
     "asuransi kendaraan Jogja, asuransi mobil Yogyakarta, praktisi asuransi kendaraan Yogyakarta, asuransi mobil plat AB, asuransi kendaraan wilayah III, asuransi mobil Sleman Bantul",
   alternates: { canonical: "https://asuransijogja.biz.id/artikel/asuransi-kendaraan-jogja" },
@@ -75,7 +75,7 @@ const schemaFAQ = {
       name: "Apakah ada praktisi asuransi kendaraan independen di Jogja?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Ya. Asuransi Jogja dikelola oleh praktisi asuransi independen yang beroperasi di Yogyakarta dengan pengalaman 8 tahun. Sebagai praktisi independen (bukan agen terikat satu perusahaan), kami bisa membandingkan produk dari berbagai perusahaan asuransi dan merekomendasikan yang paling sesuai untuk kebutuhan Anda.",
+        text: "Ya. Asuransi Jogja dikelola oleh praktisi asuransi independen yang beroperasi di Yogyakarta dengan pengalaman 9+ tahun. Sebagai praktisi independen (bukan agen terikat satu perusahaan), kami bisa membandingkan produk dari berbagai perusahaan asuransi dan merekomendasikan yang paling sesuai untuk kebutuhan Anda.",
       },
     },
     {
@@ -161,7 +161,7 @@ export default function AsuransiKendaraanJogjaPage() {
             Mencari praktisi asuransi kendaraan terpercaya di Yogyakarta? Kami adalah praktisi independen — tidak terikat satu perusahaan asuransi manapun — yang membantu pemilik kendaraan di seluruh DIY menemukan perlindungan terbaik sesuai kebutuhan dan anggaran.
           </p>
           <div className="grid grid-cols-3 gap-4 mb-6 max-w-sm">
-            {[{ num: "10+", lbl: "Tahun Pengalaman" }, { num: "DIY", lbl: "Area Layanan" }, { num: "Gratis", lbl: "Konsultasi" }].map(s => (
+            {[{ num: "9+", lbl: "Tahun Pengalaman" }, { num: "DIY", lbl: "Area Layanan" }, { num: "Gratis", lbl: "Konsultasi" }].map(s => (
               <div key={s.lbl} className="text-center">
                 <div className="font-heading text-gold text-xl font-bold">{s.num}</div>
                 <div className="text-white/60 text-xs">{s.lbl}</div>
@@ -331,7 +331,7 @@ export default function AsuransiKendaraanJogjaPage() {
             <div className="w-12 h-12 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center flex-shrink-0 font-heading font-bold text-gold text-lg">R</div>
             <div>
               <div className="font-heading text-white font-bold mb-1">Rio Mardiansyah</div>
-              <div className="text-gold2 text-xs mb-3">Praktisi Asuransi Independen · Berbasis di Yogyakarta · 8 Tahun Pengalaman</div>
+              <div className="text-gold2 text-xs mb-3">Praktisi Asuransi Independen · Berbasis di Yogyakarta · 9+ Tahun Pengalaman</div>
               <p className="text-white/65 text-sm leading-relaxed">
                 Saya telah membantu ratusan pemilik kendaraan di Yogyakarta dan sekitarnya menemukan perlindungan asuransi yang tepat — mulai dari mobil pribadi, dump truk proyek, hingga armada puluhan unit. Tidak ada biaya konsultasi, tidak ada tekanan untuk membeli produk tertentu.
               </p>

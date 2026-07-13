@@ -432,7 +432,7 @@ export default function CaraHitungPremiPage() {
             <div className="w-12 h-12 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center flex-shrink-0 font-heading font-bold text-gold text-lg">R</div>
             <div>
               <div className="font-heading text-white font-bold mb-1">Rio Mardiansyah</div>
-              <div className="text-gold2 text-xs mb-3">Praktisi Asuransi Independen · Yogyakarta · 8 Tahun Pengalaman</div>
+              <div className="text-gold2 text-xs mb-3">Praktisi Asuransi Independen · Yogyakarta · 9+ Tahun Pengalaman</div>
               <p className="text-white/65 text-sm leading-relaxed">
                 Memahami cara kerja tarif OJK memberi Anda daya tawar yang lebih baik saat membeli polis. Sebagai praktisi independen, saya membantu klien memverifikasi kewajaran penawaran yang diterima dan memastikan mereka tidak membayar lebih dari yang seharusnya.
               </p>
