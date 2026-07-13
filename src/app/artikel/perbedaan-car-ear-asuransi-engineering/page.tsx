@@ -5,12 +5,10 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Perbedaan CAR dan EAR dalam Asuransi Engineering – Mana yang Tepat? | Asuransi Jogja",
+  title: "Perbedaan CAR dan EAR dalam Asuransi Engineering – Mana yang Tepat?",
   description:
     "Penjelasan lengkap perbedaan Contractor All Risk (CAR) dan Erection All Risk (EAR). Kapan harus pakai CAR, kapan EAR, dan kapan Combined CAR/EAR. Dilengkapi tabel perbandingan dan contoh proyek nyata.",
   keywords:
@@ -23,6 +21,9 @@ export const metadata: Metadata = {
     description: "Kapan harus pakai CAR, kapan EAR? Tabel perbandingan lengkap dan contoh proyek nyata di Yogyakarta.",
     url: "https://asuransijogja.biz.id/artikel/perbedaan-car-ear-asuransi-engineering",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Perbedaan CAR dan EAR dalam Asuransi Engineering" }],
   },
 };
 
@@ -41,7 +42,7 @@ const schemaArtikel = {
       "@type": "Article",
       headline: "Perbedaan CAR dan EAR dalam Asuransi Engineering",
       description: "Penjelasan lengkap perbedaan Contractor All Risk dan Erection All Risk — kapan pakai yang mana dan pilihan Combined CAR/EAR.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
+      author: { "@type": "Person", name: "Rio Mardiansyah", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-02-15",
       dateModified: "2025-06-01",
@@ -155,8 +156,6 @@ export default function ArtikelPerbedaanCARvsEAR() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }} />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -187,7 +186,7 @@ export default function ArtikelPerbedaanCARvsEAR() {
               CAR dan EAR sama-sama disebut "asuransi engineering" — namun keduanya dirancang untuk risiko yang sangat berbeda. Salah pilih produk bukan hanya membuang premi, tapi bisa membuat klaim Anda ditolak.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
@@ -350,8 +349,7 @@ export default function ArtikelPerbedaanCARvsEAR() {
             </a>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

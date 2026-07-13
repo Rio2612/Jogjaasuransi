@@ -761,7 +761,7 @@ export default function ClientPage() {
               Kami Siap Bantu Hari Ini
             </h2>
             <p className="text-white/75 text-sm max-w-[420px] mx-auto mb-8">
-              Konsultasi gratis dengan Rio MD, praktisi asuransi engineering berpengalaman 11+ tahun
+              Konsultasi gratis dengan Rio Mardiansyah, praktisi asuransi engineering berpengalaman 11+ tahun
               di Yogyakarta. Estimasi premi siap dalam 1 hari kerja.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">

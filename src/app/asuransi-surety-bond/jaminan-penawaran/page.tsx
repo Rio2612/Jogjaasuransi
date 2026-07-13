@@ -4,11 +4,18 @@ import SuretyLayout from "@/components/surety/SuretyLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Jaminan Penawaran (Bid Bond) Jogja – Syarat Tender LPSE DIY | Asuransi Jogja",
+  title: "Jaminan Penawaran (Bid Bond) Jogja – Syarat Tender LPSE DIY",
   description: "Jaminan Penawaran (Bid Bond) di Yogyakarta untuk tender pemerintah LPSE DIY, Kota Yogyakarta, Sleman, Bantul. Proses cepat 1 hari. Nilai 1–3% dari penawaran. Konsultasi gratis.",
   keywords: "jaminan penawaran jogja, bid bond yogyakarta, surety bond tender LPSE DIY, jaminan penawaran tender pemerintah yogyakarta, bid bond kontraktor jogja, jaminan ikut tender DIY",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-penawaran" },
-  openGraph: { title: "Jaminan Penawaran (Bid Bond) Jogja – LPSE DIY", url: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-penawaran" },
+  openGraph: {
+    title: "Jaminan Penawaran (Bid Bond) Jogja – LPSE DIY",
+    url: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-penawaran",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Jaminan Penawaran (Bid Bond) Jogja – LPSE DIY" }],
+  },
 };
 
 const fungsiUtama = [

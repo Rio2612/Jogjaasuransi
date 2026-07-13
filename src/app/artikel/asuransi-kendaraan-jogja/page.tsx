@@ -14,6 +14,10 @@ export const metadata: Metadata = {
     description:
       "Praktisi asuransi kendaraan bermotor di Yogyakarta. Tarif OJK transparan, klaim didampingi penuh, tersedia untuk plat AB dan seluruh wilayah DIY.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-kendaraan-jogja",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Kendaraan Jogja – Praktisi Independen Terpercaya" }],
   },
 };
 
@@ -25,7 +29,7 @@ const schemaArticle = {
   url: "https://asuransijogja.biz.id/artikel/asuransi-kendaraan-jogja",
   datePublished: "2025-05-01",
   dateModified: "2025-05-01",
-  author: { "@type": "Person", name: "Rio MD", url: "https://asuransijogja.biz.id" },
+  author: { "@type": "Person", name: "Rio Mardiansyah", url: "https://asuransijogja.biz.id" },
   publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
   mainEntityOfPage: "https://asuransijogja.biz.id/artikel/asuransi-kendaraan-jogja",
 };
@@ -326,7 +330,7 @@ export default function AsuransiKendaraanJogjaPage() {
           <div className="bg-navy rounded-card p-6 flex gap-5 items-start">
             <div className="w-12 h-12 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center flex-shrink-0 font-heading font-bold text-gold text-lg">R</div>
             <div>
-              <div className="font-heading text-white font-bold mb-1">Rio MD</div>
+              <div className="font-heading text-white font-bold mb-1">Rio Mardiansyah</div>
               <div className="text-gold2 text-xs mb-3">Praktisi Asuransi Independen · Berbasis di Yogyakarta · 8 Tahun Pengalaman</div>
               <p className="text-white/65 text-sm leading-relaxed">
                 Saya telah membantu ratusan pemilik kendaraan di Yogyakarta dan sekitarnya menemukan perlindungan asuransi yang tepat — mulai dari mobil pribadi, dump truk proyek, hingga armada puluhan unit. Tidak ada biaya konsultasi, tidak ada tekanan untuk membeli produk tertentu.

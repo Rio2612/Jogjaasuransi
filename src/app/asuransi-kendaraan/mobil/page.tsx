@@ -4,10 +4,19 @@ import KendaraanLayout from "@/components/kendaraan/KendaraanLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Mobil Jogja – All Risk & TLO, Mobil Listrik | Asuransi Jogja",
+  title: "Asuransi Mobil Jogja – All Risk & TLO, Mobil Listrik",
   description: "Asuransi mobil di Yogyakarta. All Risk dan TLO untuk mobil BBM maupun listrik (EV). Tarif resmi OJK, klaim mudah, pendampingan penuh. Hitung premi online gratis.",
   keywords: "asuransi mobil jogja, asuransi all risk yogyakarta, asuransi TLO jogja, asuransi mobil listrik yogyakarta, premi asuransi mobil OJK jogja",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-kendaraan/mobil" },
+  openGraph: {
+    title: "Asuransi Mobil Jogja – All Risk & TLO, Mobil Listrik",
+    description: "Asuransi mobil di Yogyakarta. All Risk dan TLO untuk mobil BBM maupun listrik (EV). Tarif resmi OJK, klaim mudah, pendampingan penuh. Hitung premi online gratis.",
+    url: "https://asuransijogja.biz.id/asuransi-kendaraan/mobil",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Mobil Jogja – All Risk & TLO, Mobil Listrik" }],
+  },
 };
 
 const perbedaan = [

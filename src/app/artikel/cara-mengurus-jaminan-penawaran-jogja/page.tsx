@@ -5,12 +5,10 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Cara Mengurus Jaminan Penawaran (Bid Bond) Jogja – Syarat & Alur Lengkap | Asuransi Jogja",
+  title: "Cara Mengurus Jaminan Penawaran (Bid Bond) Jogja – Syarat & Alur Lengkap",
   description:
     "Panduan lengkap cara mengurus Jaminan Penawaran (Bid Bond) di Yogyakarta untuk tender pemerintah dan swasta. Syarat dokumen, alur pengajuan, dan tips agar polis terbit tepat waktu sebelum batas upload. Konsultasi gratis.",
   keywords:
@@ -24,6 +22,9 @@ export const metadata: Metadata = {
       "Panduan syarat, dokumen, dan alur pengajuan Bid Bond untuk tender di Yogyakarta. Edukasi dari praktisi asuransi independen.",
     url: "https://asuransijogja.biz.id/artikel/cara-mengurus-jaminan-penawaran-jogja",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Cara Mengurus Jaminan Penawaran (Bid Bond) Jogja – Syarat & Alur Lengkap" }],
   },
 };
 
@@ -42,7 +43,7 @@ const schema = {
       "@type": "Article",
       headline: "Cara Mengurus Jaminan Penawaran (Bid Bond) Jogja – Syarat & Alur Lengkap",
       description: "Panduan lengkap cara mengurus Jaminan Penawaran untuk tender pemerintah dan swasta di Yogyakarta.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
+      author: { "@type": "Person", name: "Rio Mardiansyah", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-04-01",
       dateModified: "2025-06-01",
@@ -231,8 +232,6 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -263,7 +262,7 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
               Jaminan Penawaran adalah dokumen pertama yang wajib ada sebelum penawaran Anda bahkan dibuka oleh panitia. Tanpanya, peluang proyek hangus di meja administrasi. Panduan ini menjelaskan semua yang perlu Anda tahu — dari syarat dokumen hingga hal-hal yang sering menjadi penghambat.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
@@ -465,8 +464,7 @@ export default function ArtikelCaraMengurusJaminanPenawaran() {
             </a>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

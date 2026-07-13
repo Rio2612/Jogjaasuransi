@@ -14,6 +14,10 @@ export const metadata: Metadata = {
     description:
       "All Risk tidak otomatis cover banjir. Pelajari cara kerja perluasan banjir, apa itu hydrolocking, dan bagaimana mengklaim dengan benar.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-mobil-banjir",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Mobil Kena Banjir: Klaim, Cakupan & Tips Penting" }],
   },
 };
 
@@ -26,7 +30,7 @@ const schemaArticle = {
   url: "https://asuransijogja.biz.id/artikel/asuransi-mobil-banjir",
   datePublished: "2025-05-01",
   dateModified: "2025-05-01",
-  author: { "@type": "Person", name: "Rio MD", url: "https://asuransijogja.biz.id" },
+  author: { "@type": "Person", name: "Rio Mardiansyah", url: "https://asuransijogja.biz.id" },
   publisher: {
     "@type": "Organization",
     name: "Asuransi Jogja",
@@ -200,7 +204,7 @@ export default function AsuransiMobilBanjirPage() {
             <strong className="text-red-300">jangan nyalakan mesin</strong> sebelum membaca panduan ini.
           </div>
           <div className="flex items-center gap-4 text-sm text-white/50">
-            <span>Oleh <strong className="text-white/75">Rio MD</strong> — Praktisi Asuransi Independen</span>
+            <span>Oleh <strong className="text-white/75">Rio Mardiansyah</strong> — Praktisi Asuransi Independen</span>
             <span>·</span>
             <span>Yogyakarta</span>
           </div>
@@ -488,7 +492,7 @@ export default function AsuransiMobilBanjirPage() {
               R
             </div>
             <div>
-              <div className="font-heading text-white font-bold mb-1">Rio MD</div>
+              <div className="font-heading text-white font-bold mb-1">Rio Mardiansyah</div>
               <div className="text-gold2 text-xs mb-3">Praktisi Asuransi Independen · Yogyakarta · 8 Tahun Pengalaman</div>
               <p className="text-white/65 text-sm leading-relaxed">
                 Saya sering mendampingi proses klaim banjir di Yogyakarta, dan kesalahan paling umum

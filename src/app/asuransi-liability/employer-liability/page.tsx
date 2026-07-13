@@ -4,10 +4,19 @@ import LiabilityLayout from "@/components/liability/LiabilityLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Employer Liability Jogja – Perlindungan Karyawan | Asuransi Jogja",
+  title: "Asuransi Employer Liability Jogja – Perlindungan Karyawan",
   description: "Asuransi Employer Liability di Yogyakarta. Perlindungan hukum pengusaha atas kecelakaan dan penyakit akibat kerja yang dialami karyawan. Konsultasi gratis.",
   keywords: "employer liability jogja, asuransi kecelakaan kerja yogyakarta, tanggung jawab pengusaha karyawan jogja, workmen compensation yogyakarta",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-liability/employer-liability" },
+  openGraph: {
+    title: "Asuransi Employer Liability Jogja – Perlindungan Karyawan",
+    description: "Asuransi Employer Liability di Yogyakarta. Perlindungan hukum pengusaha atas kecelakaan dan penyakit akibat kerja yang dialami karyawan. Konsultasi gratis.",
+    url: "https://asuransijogja.biz.id/asuransi-liability/employer-liability",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Employer Liability Jogja – Perlindungan Karyawan" }],
+  },
 };
 
 const kewajibanHukum = [

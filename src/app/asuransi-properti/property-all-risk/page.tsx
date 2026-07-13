@@ -4,7 +4,7 @@ import PropertyLayout from "@/components/properti/PropertyLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Property All Risk (PAR) Jogja – Proteksi Komprehensif Properti Komersial | Asuransi Jogja",
+  title: "Asuransi Property All Risk (PAR) Jogja – Proteksi Komprehensif Properti Komersial",
   description:
     "Asuransi Property All Risk (PAR) di Yogyakarta untuk gedung kantor, hotel, pabrik, ruko, dan fasilitas komersial. Proteksi all-perils termasuk kebakaran, banjir, gempa Merapi, kerusuhan. Konsultasi gratis.",
   keywords:
@@ -18,6 +18,9 @@ export const metadata: Metadata = {
       "Proteksi all-perils untuk properti komersial di Yogyakarta. Kebakaran, banjir, gempa, kerusuhan — semua dalam satu polis.",
     url: "https://asuransijogja.biz.id/asuransi-properti/property-all-risk",
     type: "website",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Property All Risk (PAR) Jogja – Proteksi Komprehensif" }],
   },
 };
 

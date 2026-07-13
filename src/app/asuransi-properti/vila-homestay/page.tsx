@@ -4,7 +4,7 @@ import PropertyLayout from "@/components/properti/PropertyLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Vila & Homestay Jogja – Properti Wisata Airbnb DIY | Asuransi Jogja",
+  title: "Asuransi Vila & Homestay Jogja – Properti Wisata Airbnb DIY",
   description:
     "Asuransi properti khusus vila dan homestay di Yogyakarta. Proteksi kebakaran, banjir, gempa Merapi, kerusakan tamu, hingga liability. Cocok untuk host Airbnb & Tiket.com. Konsultasi gratis.",
   keywords:
@@ -18,6 +18,9 @@ export const metadata: Metadata = {
       "Lindungi vila dan homestay Anda di Yogyakarta dari kebakaran, banjir, gempa, hingga kerusakan tamu. Konsultasi gratis.",
     url: "https://asuransijogja.biz.id/asuransi-properti/vila-homestay",
     type: "website",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Vila & Homestay Jogja – Proteksi Properti Wisata Airbnb" }],
   },
 };
 

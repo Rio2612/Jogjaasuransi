@@ -4,7 +4,7 @@ import LiabilityLayout from "@/components/liability/LiabilityLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Liability Jogja – Tanggung Jawab Hukum Bisnis | Asuransi Jogja",
+  title: "Asuransi Liability Jogja – Tanggung Jawab Hukum Bisnis",
   description:
     "Asuransi liability di Yogyakarta untuk hotel, restoran, tempat wisata, dan industri. Public Liability, Employer Liability, Product Liability, hingga Pencemaran Limbah B3. Konsultasi gratis.",
   keywords:
@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Asuransi Liability Jogja – Tanggung Jawab Hukum Bisnis",
     url: "https://asuransijogja.biz.id/asuransi-liability",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Liability Jogja – Tanggung Jawab Hukum Bisnis" }],
   },
 };
 

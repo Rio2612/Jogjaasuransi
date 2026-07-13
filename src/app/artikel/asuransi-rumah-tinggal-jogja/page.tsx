@@ -5,12 +5,10 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Rumah Tinggal di Jogja – Panduan Proteksi Hunian dari Kebakaran & Gempa | Asuransi Jogja",
+  title: "Asuransi Rumah Tinggal di Jogja – Panduan Proteksi Hunian dari Kebakaran & Gempa",
   description:
     "Panduan lengkap asuransi rumah tinggal di Yogyakarta: jenis perlindungan, estimasi premi, cara klaim, dan mengapa perluasan gempa wajib untuk DIY. Mulai dari Rp 150 ribu per tahun untuk rumah Rp 300 juta.",
   keywords:
@@ -24,6 +22,9 @@ export const metadata: Metadata = {
       "Rumah di Yogyakarta berisiko gempa, banjir, dan kebakaran. Panduan memilih asuransi rumah yang tepat dengan estimasi biaya nyata.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-rumah-tinggal-jogja",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Rumah Tinggal di Jogja – Panduan Proteksi Hunian" }],
   },
 };
 
@@ -46,7 +47,7 @@ const schemaArtikel = {
       "@type": "Article",
       headline: "Asuransi Rumah Tinggal di Jogja – Panduan Proteksi Hunian dari Kebakaran & Gempa",
       description: "Panduan lengkap asuransi rumah tinggal di Yogyakarta termasuk estimasi premi, jenis perlindungan, dan cara klaim.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
+      author: { "@type": "Person", name: "Rio Mardiansyah", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-05-10",
       dateModified: "2025-06-01",
@@ -181,8 +182,6 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }} />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -219,7 +218,7 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
               <strong className="text-gold2">Rp 150 ribu per tahun</strong>.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
@@ -442,7 +441,7 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
               Rumah Anda Layak Terlindungi —<br />Mulai dari Rp 150 Ribu per Tahun
             </h2>
             <p className="text-white/75 text-sm max-w-[420px] mx-auto mb-8">
-              Jangan tunggu sampai kebakaran atau gempa terjadi. Konsultasi gratis dengan Rio MD — kami bantu pilihkan perlindungan yang tepat untuk lokasi dan nilai rumah Anda.
+              Jangan tunggu sampai kebakaran atau gempa terjadi. Konsultasi gratis dengan Rio Mardiansyah — kami bantu pilihkan perlindungan yang tepat untuk lokasi dan nilai rumah Anda.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">
@@ -457,8 +456,7 @@ export default function ArtikelAsuransiRumahTinggalJogja() {
             </div>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

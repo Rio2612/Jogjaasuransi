@@ -5,12 +5,10 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Cara Klaim Asuransi Liability – Panduan Lengkap dari Laporan hingga Dana Cair | Asuransi Jogja",
+  title: "Cara Klaim Asuransi Liability – Panduan Lengkap dari Laporan hingga Dana Cair",
   description:
     "Panduan step-by-step cara klaim asuransi liability (Public, Employer, Product) di Yogyakarta. Dokumen yang dibutuhkan, kesalahan yang harus dihindari, dan tips agar klaim tidak ditolak. Berdasarkan pengalaman nyata mendampingi bisnis di DIY.",
   keywords:
@@ -23,6 +21,9 @@ export const metadata: Metadata = {
     description: "Panduan praktis cara klaim asuransi liability di Yogyakarta. Dokumen wajib, kesalahan fatal, dan tips agar proses klaim berjalan lancar.",
     url: "https://asuransijogja.biz.id/artikel/cara-klaim-asuransi-liability",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Cara Klaim Asuransi Liability – Panduan Lengkap dari Laporan hingga Dana Cair" }],
   },
 };
 
@@ -41,7 +42,7 @@ const schemaArtikel = {
       "@type": "Article",
       headline: "Cara Klaim Asuransi Liability – Panduan Lengkap dari Laporan hingga Dana Cair",
       description: "Panduan step-by-step cara klaim asuransi liability di Yogyakarta termasuk dokumen yang dibutuhkan dan kesalahan yang harus dihindari.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
+      author: { "@type": "Person", name: "Rio Mardiansyah", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-05-01",
       dateModified: "2025-06-01",
@@ -291,8 +292,6 @@ export default function ArtikelCaraKlaimLiability() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }} />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -324,7 +323,7 @@ export default function ArtikelCaraKlaimLiability() {
               Klaim liability berbeda dari klaim asuransi lain. Ada aturan yang jika dilanggar di langkah pertama, seluruh klaim bisa gugur — meski polis Anda aktif dan insiden jelas-jelas tertanggung.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
@@ -556,8 +555,7 @@ export default function ArtikelCaraKlaimLiability() {
             </div>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

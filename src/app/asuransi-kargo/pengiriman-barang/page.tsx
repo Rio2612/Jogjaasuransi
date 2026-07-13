@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Asuransi Pengiriman Barang Darat Jogja – Panduan Lengkap Inland Transit 2025",
     url: "https://asuransijogja.biz.id/asuransi-kargo/pengiriman-barang",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Pengiriman Barang Darat Jogja – Panduan Lengkap Inland Transit 2025" }],
   },
 };
 

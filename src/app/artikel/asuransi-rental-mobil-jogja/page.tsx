@@ -18,6 +18,10 @@ export const metadata: Metadata = {
     description:
       "Asuransi mobil pribadi tidak dirancang untuk kendaraan komersial. Pelajari risiko yang mengancam bisnis rental Anda dan proteksi yang tepat.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-rental-mobil-jogja",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Pentingnya Asuransi Khusus untuk Bisnis Rental Mobil di Jogja" }],
   },
 };
 
@@ -151,7 +155,7 @@ const schemaArtikel = {
   description:
     "Mengapa asuransi mobil pribadi tidak cukup untuk kendaraan sewaan dan risiko apa yang mengancam bisnis rental di Yogyakarta.",
   url: "https://asuransijogja.biz.id/artikel/asuransi-rental-mobil-jogja",
-  author: { "@type": "Person", name: "Rio MD" },
+  author: { "@type": "Person", name: "Rio Mardiansyah" },
   publisher: {
     "@type": "Organization",
     name: "Asuransi Jogja",

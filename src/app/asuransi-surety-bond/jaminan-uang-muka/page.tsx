@@ -4,11 +4,18 @@ import SuretyLayout from "@/components/surety/SuretyLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Jaminan Uang Muka (Advance Payment Bond) Jogja – Kontraktor DIY | Asuransi Jogja",
+  title: "Jaminan Uang Muka (Advance Payment Bond) Jogja – Kontraktor DIY",
   description: "Jaminan Uang Muka (Advance Payment Bond) di Yogyakarta. Syarat pencairan uang muka proyek pemerintah DIY. Nilai sesuai uang muka diterima. Proses cepat. Konsultasi gratis.",
   keywords: "jaminan uang muka jogja, advance payment bond yogyakarta, jaminan UM proyek pemerintah DIY, surety bond uang muka kontraktor jogja, APB tender yogyakarta",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-uang-muka" },
-  openGraph: { title: "Jaminan Uang Muka (Advance Payment Bond) Jogja", url: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-uang-muka" },
+  openGraph: {
+    title: "Jaminan Uang Muka (Advance Payment Bond) Jogja",
+    url: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-uang-muka",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Jaminan Uang Muka (Advance Payment Bond) Jogja" }],
+  },
 };
 
 const mekanismeUM = [

@@ -4,11 +4,18 @@ import SuretyLayout from "@/components/surety/SuretyLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Jaminan Pelaksanaan (Performance Bond) Jogja – Garansi Kontrak | Asuransi Jogja",
+  title: "Jaminan Pelaksanaan (Performance Bond) Jogja – Garansi Kontrak",
   description: "Jaminan Pelaksanaan (Performance Bond) di Yogyakarta. Garansi kontraktor menyelesaikan proyek sesuai kontrak. Nilai 5% dari kontrak. Untuk proyek APBN, APBD DIY, dan swasta.",
   keywords: "jaminan pelaksanaan jogja, performance bond yogyakarta, jaminan kontrak konstruksi jogja, performance bond kontraktor DIY, surety bond pelaksanaan proyek yogyakarta",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-pelaksanaan" },
-  openGraph: { title: "Jaminan Pelaksanaan (Performance Bond) Jogja", url: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-pelaksanaan" },
+  openGraph: {
+    title: "Jaminan Pelaksanaan (Performance Bond) Jogja",
+    url: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-pelaksanaan",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Jaminan Pelaksanaan (Performance Bond) Jogja" }],
+  },
 };
 
 const fungsiPB = [

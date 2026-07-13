@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Contoh Kasus Gugatan Liability Bisnis di Indonesia | Asuransi Jogja",
+  title: "Contoh Kasus Gugatan Liability Bisnis di Indonesia",
   description:
     "Kumpulan studi kasus nyata gugatan liability terhadap hotel, restoran, kontraktor, dan UMKM di Indonesia. Pelajari risiko hukum bisnis Anda dan cara melindunginya.",
   keywords:
@@ -14,6 +12,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contoh Kasus Gugatan Liability Bisnis di Indonesia",
     url: "https://asuransijogja.biz.id/artikel/contoh-kasus-gugatan-liability-bisnis",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Contoh Kasus Gugatan Liability Bisnis di Indonesia" }],
   },
 };
 
@@ -113,8 +115,6 @@ const semuaKasus = [
 export default function ArtikelGugatanLiabilityPage() {
   return (
     <>
-      <Header />
-      <div className="pt-[68px]">
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
           <div className="flex items-center gap-2 text-sm text-[#475569]">
@@ -281,8 +281,7 @@ export default function ArtikelGugatanLiabilityPage() {
             </div>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

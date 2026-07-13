@@ -4,13 +4,17 @@ import KargoLayout from "@/components/kargo/KargoLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Kargo Udara & Laut Jogja – Marine Cargo & Air Freight | Asuransi Jogja",
+  title: "Asuransi Kargo Udara & Laut Jogja – Marine Cargo & Air Freight",
   description: "Asuransi marine cargo dan air freight di Yogyakarta. Proteksi ekspor impor, kargo kapal antarpulau, dan pengiriman udara internasional. Klausul ICC-A tersedia. Konsultasi gratis.",
   keywords: "marine cargo jogja, asuransi kargo laut yogyakarta, air freight insurance jogja, asuransi ekspor impor yogyakarta, asuransi kargo kapal jogja, ICC-A marine cargo",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-kargo/kargo-udara-laut" },
   openGraph: {
     title: "Asuransi Kargo Udara & Laut Jogja – Marine Cargo & Air Freight",
     url: "https://asuransijogja.biz.id/asuransi-kargo/kargo-udara-laut",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Kargo Udara & Laut Jogja – Marine Cargo & Air Freight" }],
   },
 };
 

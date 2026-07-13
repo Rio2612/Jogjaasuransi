@@ -5,12 +5,10 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi untuk UMKM di Jogja – Panduan Lengkap Pelaku Usaha | Asuransi Jogja",
+  title: "Asuransi untuk UMKM di Jogja – Panduan Lengkap Pelaku Usaha",
   description:
     "Panduan lengkap asuransi untuk UMKM di Yogyakarta: asuransi toko, gudang, kargo pengiriman, kendaraan operasional, dan liability. Mulai dari Rp 300 ribu per tahun. Cocok untuk warung, toko, konveksi, katering, dan usaha rumahan.",
   keywords:
@@ -24,6 +22,9 @@ export const metadata: Metadata = {
       "Jenis asuransi apa yang dibutuhkan UMKM di Yogyakarta? Dari asuransi toko hingga kargo pengiriman — panduan praktis dengan estimasi biaya.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-umkm-jogja",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi untuk UMKM di Jogja – Panduan Lengkap Pelaku Usaha" }],
   },
 };
 
@@ -48,7 +49,7 @@ const schemaArtikel = {
       headline: "Asuransi untuk UMKM di Jogja – Panduan Lengkap Pelaku Usaha",
       description:
         "Panduan lengkap jenis asuransi yang dibutuhkan UMKM di Yogyakarta, estimasi biaya, dan cara memilih yang sesuai anggaran.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
+      author: { "@type": "Person", name: "Rio Mardiansyah", jobTitle: "Praktisi Asuransi" },
       publisher: {
         "@type": "Organization",
         name: "Asuransi Jogja",
@@ -321,8 +322,6 @@ export default function ArtikelAsuransiUMKMJogja() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }}
       />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -379,7 +378,7 @@ export default function ArtikelAsuransiUMKMJogja() {
               jenis dan skala usaha.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
@@ -729,7 +728,7 @@ export default function ArtikelAsuransiUMKMJogja() {
               Hari Ini — Mulai dari Rp 300 Ribu
             </h2>
             <p className="text-white/75 text-sm max-w-[440px] mx-auto mb-8">
-              Konsultasi gratis dengan Rio MD — praktisi asuransi UMKM berpengalaman di
+              Konsultasi gratis dengan Rio Mardiansyah — praktisi asuransi UMKM berpengalaman di
               Yogyakarta. Kami bantu pilihkan perlindungan yang tepat, tidak lebih dan tidak kurang.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
@@ -754,8 +753,7 @@ export default function ArtikelAsuransiUMKMJogja() {
             </div>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

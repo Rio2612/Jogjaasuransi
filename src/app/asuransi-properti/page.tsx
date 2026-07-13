@@ -7,7 +7,7 @@ import { KONTAK } from "@/lib/data";
 
 
 export const metadata: Metadata = {
-  title: "Asuransi Properti Jogja – Rumah, Kos, Ruko, Vila & Gedung Komersial | Asuransi Jogja",
+  title: "Asuransi Properti Jogja – Rumah, Kos, Ruko, Vila & Gedung Komersial",
   description:
     "Praktisi asuransi properti independen di Yogyakarta. Lindungi rumah, kos, ruko, vila, dan gedung komersial dari kebakaran, banjir, gempa Merapi, dan risiko katastrofe. Kalkulator premi gratis. Konsultasi tanpa biaya.",
   keywords:
@@ -18,6 +18,10 @@ export const metadata: Metadata = {
     description:
       "Solusi perlindungan properti lengkap di Yogyakarta. Kebakaran, PAR, banjir, gempa, hingga Business Interruption. Kalkulator premi & konsultasi gratis.",
     url: "https://asuransijogja.biz.id/asuransi-properti",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Properti Jogja – Rumah, Kos, Ruko, Vila & Gedung" }],
   },
 };
 

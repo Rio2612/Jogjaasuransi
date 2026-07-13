@@ -2,12 +2,10 @@
 // SILO: mendukung pillar terkait — ditambahkan untuk menutup gap konten silo
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Employer's Liability di Jogja – Panduan Tanggung Jawab kepada Karyawan | Asuransi Jogja",
+  title: "Asuransi Employer's Liability di Jogja – Panduan Tanggung Jawab kepada Karyawan",
   description:
     "Panduan lengkap Employer's Liability untuk perusahaan konstruksi, manufaktur, dan pergudangan di Yogyakarta. Perbedaan dengan BPJS Ketenagakerjaan, cakupan, dan estimasi premi.",
   keywords:
@@ -21,17 +19,18 @@ export const metadata: Metadata = {
       "Memahami perbedaan Employer's Liability dengan BPJS Ketenagakerjaan dan kapan perusahaan membutuhkannya.",
     url: "https://asuransijogja.biz.id/artikel/employer-liability-panduan-jogja",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Employer's Liability di Jogja — Panduan Tanggung Jawab kepada Karyawan" }],
   },
 };
 
-const schema = {"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://asuransijogja.biz.id"}, {"@type": "ListItem", "position": 2, "name": "Artikel", "item": "https://asuransijogja.biz.id/artikel"}, {"@type": "ListItem", "position": 3, "name": "Asuransi Employer's Liability di Jogja", "item": "https://asuransijogja.biz.id/artikel/employer-liability-panduan-jogja"}]}, {"@type": "Article", "headline": "Asuransi Employer's Liability di Jogja – Panduan Tanggung Jawab kepada Karyawan", "description": "Panduan lengkap Employer's Liability untuk perusahaan konstruksi, manufaktur, dan pergudangan di Yogyakarta. Perbedaan dengan BPJS Ketenagakerjaan, cakupan, dan estimasi premi.", "author": {"@type": "Person", "name": "Rio MD", "jobTitle": "Praktisi Asuransi"}, "publisher": {"@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id"}, "datePublished": "2026-06-29", "dateModified": "2026-06-29"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Apakah Employer's Liability wajib secara hukum di Indonesia?", "acceptedAnswer": {"@type": "Answer", "text": "Tidak seperti BPJS Ketenagakerjaan yang wajib, Employer's Liability bersifat sukarela. Namun banyak perusahaan kontraktor mensyaratkannya untuk subkontraktor mereka, dan beberapa tender proyek besar mensyaratkan bukti polis ini sebagai bagian dari manajemen risiko K3."}}, {"@type": "Question", "name": "Apakah polis ini menanggung kecelakaan di luar jam kerja?", "acceptedAnswer": {"@type": "Answer", "text": "Tidak. Polis ini hanya menanggung cedera atau kematian yang terjadi dalam konteks pekerjaan — baik di lokasi kerja maupun saat menjalankan tugas pekerjaan di luar lokasi (misalnya perjalanan dinas terkait pekerjaan)."}}, {"@type": "Question", "name": "Bagaimana cara menurunkan premi Employer's Liability?", "acceptedAnswer": {"@type": "Answer", "text": "Mendokumentasikan program K3 perusahaan dengan baik, memiliki riwayat klaim rendah, dan menyediakan pelatihan keselamatan kerja rutin bisa membantu mendapatkan tarif premi yang lebih kompetitif saat underwriting maupun perpanjangan polis."}}]}]};
+const schema = {"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://asuransijogja.biz.id"}, {"@type": "ListItem", "position": 2, "name": "Artikel", "item": "https://asuransijogja.biz.id/artikel"}, {"@type": "ListItem", "position": 3, "name": "Asuransi Employer's Liability di Jogja", "item": "https://asuransijogja.biz.id/artikel/employer-liability-panduan-jogja"}]}, {"@type": "Article", "headline": "Asuransi Employer's Liability di Jogja – Panduan Tanggung Jawab kepada Karyawan", "description": "Panduan lengkap Employer's Liability untuk perusahaan konstruksi, manufaktur, dan pergudangan di Yogyakarta. Perbedaan dengan BPJS Ketenagakerjaan, cakupan, dan estimasi premi.", "author": {"@type": "Person", "name": "Rio Mardiansyah", "jobTitle": "Praktisi Asuransi"}, "publisher": {"@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id"}, "datePublished": "2026-06-29", "dateModified": "2026-06-29"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Apakah Employer's Liability wajib secara hukum di Indonesia?", "acceptedAnswer": {"@type": "Answer", "text": "Tidak seperti BPJS Ketenagakerjaan yang wajib, Employer's Liability bersifat sukarela. Namun banyak perusahaan kontraktor mensyaratkannya untuk subkontraktor mereka, dan beberapa tender proyek besar mensyaratkan bukti polis ini sebagai bagian dari manajemen risiko K3."}}, {"@type": "Question", "name": "Apakah polis ini menanggung kecelakaan di luar jam kerja?", "acceptedAnswer": {"@type": "Answer", "text": "Tidak. Polis ini hanya menanggung cedera atau kematian yang terjadi dalam konteks pekerjaan — baik di lokasi kerja maupun saat menjalankan tugas pekerjaan di luar lokasi (misalnya perjalanan dinas terkait pekerjaan)."}}, {"@type": "Question", "name": "Bagaimana cara menurunkan premi Employer's Liability?", "acceptedAnswer": {"@type": "Answer", "text": "Mendokumentasikan program K3 perusahaan dengan baik, memiliki riwayat klaim rendah, dan menyediakan pelatihan keselamatan kerja rutin bisa membantu mendapatkan tarif premi yang lebih kompetitif saat underwriting maupun perpanjangan polis."}}]}]};
 
 export default function ArtikelEmployerLiabilityPanduanJogja() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -62,7 +61,7 @@ export default function ArtikelEmployerLiabilityPanduanJogja() {
               BPJS Ketenagakerjaan menanggung klaim dasar kecelakaan kerja, tapi tidak melindungi perusahaan dari gugatan perdata tambahan. Panduan ini menjelaskan kapan Employer's Liability dibutuhkan dan bagaimana keduanya saling melengkapi.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Juni 2026</span>
               <span>·</span>
@@ -207,8 +206,7 @@ export default function ArtikelEmployerLiabilityPanduanJogja() {
             </a>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

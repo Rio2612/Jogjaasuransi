@@ -5,12 +5,10 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Cara Klaim Asuransi Kargo – Panduan Lengkap agar Dana Ganti Rugi Cair | Asuransi Jogja",
+  title: "Cara Klaim Asuransi Kargo – Panduan Lengkap agar Dana Ganti Rugi Cair",
   description:
     "Panduan lengkap cara mengajukan klaim asuransi kargo jika barang kiriman rusak atau hilang. Dokumen yang dibutuhkan, langkah-langkah klaim, kesalahan yang harus dihindari, dan tips agar klaim tidak ditolak.",
   keywords:
@@ -24,6 +22,9 @@ export const metadata: Metadata = {
       "Langkah-langkah mengajukan klaim asuransi kargo dengan benar. Dokumen yang diperlukan dan kesalahan yang sering menyebabkan klaim ditolak.",
     url: "https://asuransijogja.biz.id/artikel/cara-klaim-asuransi-kargo",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Cara Klaim Asuransi Kargo – Panduan Agar Klaim Tidak Ditolak" }],
   },
 };
 
@@ -42,7 +43,7 @@ const schema = {
       "@type": "Article",
       headline: "Cara Klaim Asuransi Kargo – Panduan Lengkap agar Dana Ganti Rugi Cair",
       description: "Panduan langkah demi langkah mengajukan klaim asuransi kargo jika barang kiriman rusak atau hilang.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
+      author: { "@type": "Person", name: "Rio Mardiansyah", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-05-15",
       dateModified: "2025-06-01",
@@ -290,8 +291,6 @@ export default function ArtikelCaraKlaimKargo() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -322,7 +321,7 @@ export default function ArtikelCaraKlaimKargo() {
               Klaim asuransi kargo sering gagal bukan karena kejadiannya tidak nyata, tapi karena prosedur yang salah sejak menit pertama. Panduan ini menjelaskan langkah yang benar — dari momen barang diterima dalam kondisi rusak hingga dana ganti rugi masuk ke rekening.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
@@ -501,8 +500,7 @@ export default function ArtikelCaraKlaimKargo() {
             </a>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

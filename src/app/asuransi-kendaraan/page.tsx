@@ -6,11 +6,18 @@ import CTAPenawaran from "@/components/ui/CTAPenawaran";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Kendaraan Jogja – Mobil, Truk & Armada | Asuransi Jogja",
+  title: "Asuransi Kendaraan Jogja – Mobil, Truk & Armada",
   description: "Praktisi asuransi kendaraan bermotor di Yogyakarta. All Risk, TLO, kendaraan niaga, dump truk, hingga armada fleet. Tarif OJK, klaim mudah. Konsultasi gratis.",
   keywords: "asuransi kendaraan jogja, asuransi mobil yogyakarta, asuransi truk jogja, asuransi armada fleet yogyakarta, asuransi motor vehicle jogja",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-kendaraan" },
-  openGraph: { title: "Asuransi Kendaraan Jogja – Mobil, Truk & Armada", url: "https://asuransijogja.biz.id/asuransi-kendaraan" },
+  openGraph: {
+    title: "Asuransi Kendaraan Jogja – Mobil, Truk & Armada",
+    url: "https://asuransijogja.biz.id/asuransi-kendaraan",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Kendaraan Jogja – Mobil, Truk & Armada" }],
+  },
 };
 
 const clusters = [

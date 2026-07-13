@@ -5,12 +5,10 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Mesin Pabrik di Jogja – Machinery Breakdown untuk Industri DIY | Asuransi Jogja",
+  title: "Asuransi Mesin Pabrik di Jogja – Machinery Breakdown untuk Industri DIY",
   description:
     "Panduan lengkap asuransi mesin pabrik (Machinery Breakdown) di Yogyakarta. Apa yang ditanggung, apa yang tidak, estimasi premi, perbedaan dengan asuransi kebakaran, dan kasus nyata kerusakan mesin industri di DIY.",
   keywords:
@@ -24,6 +22,9 @@ export const metadata: Metadata = {
       "Mesin pabrik yang rusak mendadak bisa menghentikan produksi berhari-hari. Pelajari bagaimana Machinery Breakdown Insurance melindungi industri di Yogyakarta.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-mesin-pabrik-jogja",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Mesin Pabrik di Jogja – Machinery Breakdown untuk Industri DIY" }],
   },
 };
 
@@ -48,7 +49,7 @@ const schemaArtikel = {
       headline: "Asuransi Mesin Pabrik di Jogja – Machinery Breakdown untuk Industri DIY",
       description:
         "Panduan lengkap Machinery Breakdown Insurance untuk pabrik dan industri manufaktur di Yogyakarta — cakupan, estimasi premi, dan kasus nyata.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
+      author: { "@type": "Person", name: "Rio Mardiansyah", jobTitle: "Praktisi Asuransi" },
       publisher: {
         "@type": "Organization",
         name: "Asuransi Jogja",
@@ -319,8 +320,6 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }}
       />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -370,7 +369,7 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
               Machinery Breakdown Insurance dirancang khusus untuk risiko ini.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
@@ -818,8 +817,7 @@ export default function ArtikelAsuransiMesinPabrikJogja() {
             </div>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

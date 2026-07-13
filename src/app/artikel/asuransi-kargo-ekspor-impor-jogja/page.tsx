@@ -2,12 +2,10 @@
 // SILO: mendukung pillar terkait — ditambahkan untuk menutup gap konten silo
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Kargo Ekspor-Impor Udara & Laut di Jogja – Panduan ICC Clause | Asuransi Jogja",
+  title: "Asuransi Kargo Ekspor-Impor Udara & Laut di Jogja – Panduan ICC Clause",
   description:
     "Panduan asuransi marine cargo untuk eksportir kerajinan, furnitur, dan tekstil di Yogyakarta. Perbedaan klausul ICC A/B/C, jalur udara vs laut, dan estimasi premi.",
   keywords:
@@ -21,17 +19,18 @@ export const metadata: Metadata = {
       "Panduan lengkap asuransi marine cargo untuk eksportir di Yogyakarta, termasuk perbedaan klausul ICC A, B, dan C.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-kargo-ekspor-impor-jogja",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Kargo Ekspor-Impor Udara & Laut — Panduan Klausul ICC" }],
   },
 };
 
-const schema = {"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://asuransijogja.biz.id"}, {"@type": "ListItem", "position": 2, "name": "Artikel", "item": "https://asuransijogja.biz.id/artikel"}, {"@type": "ListItem", "position": 3, "name": "Asuransi Kargo Ekspor-Impor Udara & Laut di Jogja", "item": "https://asuransijogja.biz.id/artikel/asuransi-kargo-ekspor-impor-jogja"}]}, {"@type": "Article", "headline": "Asuransi Kargo Ekspor-Impor Udara & Laut di Jogja – Panduan ICC Clause", "description": "Panduan asuransi marine cargo untuk eksportir kerajinan, furnitur, dan tekstil di Yogyakarta. Perbedaan klausul ICC A/B/C, jalur udara vs laut, dan estimasi premi.", "author": {"@type": "Person", "name": "Rio MD", "jobTitle": "Praktisi Asuransi"}, "publisher": {"@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id"}, "datePublished": "2026-06-29", "dateModified": "2026-06-29"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Klausul ICC mana yang paling cocok untuk kerajinan ekspor?", "acceptedAnswer": {"@type": "Answer", "text": "ICC-A umumnya paling direkomendasikan untuk barang kerajinan dan furnitur karena rentan terhadap berbagai jenis kerusakan selama pengiriman jarak jauh, dan selisih premi dengan ICC-C relatif kecil dibanding manfaat proteksinya."}}, {"@type": "Question", "name": "Apakah kargo udara otomatis lebih aman dari kargo laut?", "acceptedAnswer": {"@type": "Answer", "text": "Waktu tempuh yang lebih singkat memang mengurangi eksposur terhadap cuaca, namun penanganan yang cepat dan berkali-kali (multiple handling) di kargo udara tetap membawa risiko kerusakan fisik, terutama untuk barang yang rapuh."}}, {"@type": "Question", "name": "Apakah nilai pertanggungan harus sama dengan nilai invoice?", "acceptedAnswer": {"@type": "Answer", "text": "Idealnya nilai pertanggungan mengikuti nilai CIF (invoice plus biaya asuransi dan freight) sesuai praktik perdagangan internasional, bukan hanya nilai barang FOB, agar seluruh biaya yang sudah dikeluarkan juga terlindungi jika terjadi klaim total."}}]}]};
+const schema = {"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://asuransijogja.biz.id"}, {"@type": "ListItem", "position": 2, "name": "Artikel", "item": "https://asuransijogja.biz.id/artikel"}, {"@type": "ListItem", "position": 3, "name": "Asuransi Kargo Ekspor-Impor Udara & Laut di Jogja", "item": "https://asuransijogja.biz.id/artikel/asuransi-kargo-ekspor-impor-jogja"}]}, {"@type": "Article", "headline": "Asuransi Kargo Ekspor-Impor Udara & Laut di Jogja – Panduan ICC Clause", "description": "Panduan asuransi marine cargo untuk eksportir kerajinan, furnitur, dan tekstil di Yogyakarta. Perbedaan klausul ICC A/B/C, jalur udara vs laut, dan estimasi premi.", "author": {"@type": "Person", "name": "Rio Mardiansyah", "jobTitle": "Praktisi Asuransi"}, "publisher": {"@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id"}, "datePublished": "2026-06-29", "dateModified": "2026-06-29"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Klausul ICC mana yang paling cocok untuk kerajinan ekspor?", "acceptedAnswer": {"@type": "Answer", "text": "ICC-A umumnya paling direkomendasikan untuk barang kerajinan dan furnitur karena rentan terhadap berbagai jenis kerusakan selama pengiriman jarak jauh, dan selisih premi dengan ICC-C relatif kecil dibanding manfaat proteksinya."}}, {"@type": "Question", "name": "Apakah kargo udara otomatis lebih aman dari kargo laut?", "acceptedAnswer": {"@type": "Answer", "text": "Waktu tempuh yang lebih singkat memang mengurangi eksposur terhadap cuaca, namun penanganan yang cepat dan berkali-kali (multiple handling) di kargo udara tetap membawa risiko kerusakan fisik, terutama untuk barang yang rapuh."}}, {"@type": "Question", "name": "Apakah nilai pertanggungan harus sama dengan nilai invoice?", "acceptedAnswer": {"@type": "Answer", "text": "Idealnya nilai pertanggungan mengikuti nilai CIF (invoice plus biaya asuransi dan freight) sesuai praktik perdagangan internasional, bukan hanya nilai barang FOB, agar seluruh biaya yang sudah dikeluarkan juga terlindungi jika terjadi klaim total."}}]}]};
 
 export default function ArtikelAsuransiKargoEksporImporJogja() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -62,7 +61,7 @@ export default function ArtikelAsuransiKargoEksporImporJogja() {
               Setiap moda pengiriman ekspor — laut maupun udara — punya profil risiko berbeda, dan klausul ICC yang dipilih akan menentukan seberapa luas proteksi yang Anda dapatkan. Panduan ini membantu eksportir DIY memilih dengan tepat.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Juni 2026</span>
               <span>·</span>
@@ -207,8 +206,7 @@ export default function ArtikelAsuransiKargoEksporImporJogja() {
             </a>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

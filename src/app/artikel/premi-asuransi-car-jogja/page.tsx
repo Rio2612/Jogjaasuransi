@@ -5,12 +5,10 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Berapa Premi Asuransi CAR di Jogja? Tabel Estimasi + Faktor Penentu | Asuransi Jogja",
+  title: "Berapa Premi Asuransi CAR di Jogja? Tabel Estimasi + Faktor Penentu",
   description:
     "Tabel estimasi premi Contractor All Risk (CAR) untuk berbagai skala proyek di Yogyakarta. Rate 0,15–0,5% dari nilai kontrak, faktor yang mempengaruhi harga, dan contoh perhitungan nyata proyek gedung, jalan, dan infrastruktur DIY.",
   keywords:
@@ -24,6 +22,9 @@ export const metadata: Metadata = {
       "Tabel estimasi premi CAR untuk proyek Rp 500 juta hingga Rp 50 miliar di Yogyakarta, beserta faktor yang mempengaruhi rate dan contoh perhitungan nyata.",
     url: "https://asuransijogja.biz.id/artikel/premi-asuransi-car-jogja",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Berapa Premi Asuransi CAR di Jogja? Tabel Estimasi + Faktor Penentu" }],
   },
 };
 
@@ -48,7 +49,7 @@ const schemaArtikel = {
       headline: "Berapa Premi Asuransi CAR di Jogja? Tabel Estimasi + Faktor Penentu",
       description:
         "Tabel estimasi premi Contractor All Risk untuk berbagai skala proyek di Yogyakarta, beserta faktor penentu rate dan contoh perhitungan nyata.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
+      author: { "@type": "Person", name: "Rio Mardiansyah", jobTitle: "Praktisi Asuransi" },
       publisher: {
         "@type": "Organization",
         name: "Asuransi Jogja",
@@ -342,8 +343,6 @@ export default function ArtikelPremiCAR() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }}
       />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -388,7 +387,7 @@ export default function ArtikelPremiCAR() {
               yang diminta. Berikut panduan lengkap agar Anda bisa memperkirakan biaya sebelum konsultasi.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
@@ -765,8 +764,7 @@ export default function ArtikelPremiCAR() {
           </div>
         </section>
 
-      </div>
-      <Footer />
+
     </>
   );
 }

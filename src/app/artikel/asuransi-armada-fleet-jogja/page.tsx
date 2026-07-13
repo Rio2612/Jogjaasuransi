@@ -2,12 +2,10 @@
 // SILO: mendukung pillar terkait — ditambahkan untuk menutup gap konten silo
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Armada / Fleet Perusahaan di Jogja – Panduan Konsolidasi Polis | Asuransi Jogja",
+  title: "Asuransi Armada / Fleet Perusahaan di Jogja – Panduan Konsolidasi Polis",
   description:
     "Panduan lengkap asuransi armada/fleet untuk perusahaan di Yogyakarta dengan 5+ kendaraan operasional. Cara konsolidasi polis, perhitungan premi, dan manfaat dibanding asuransi per unit.",
   keywords:
@@ -21,17 +19,18 @@ export const metadata: Metadata = {
       "Cara mengonsolidasikan asuransi kendaraan operasional perusahaan menjadi satu polis fleet yang lebih efisien dan murah.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-armada-fleet-jogja",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Armada/Fleet Perusahaan di Jogja — Panduan Konsolidasi Polis" }],
   },
 };
 
-const schema = {"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://asuransijogja.biz.id"}, {"@type": "ListItem", "position": 2, "name": "Artikel", "item": "https://asuransijogja.biz.id/artikel"}, {"@type": "ListItem", "position": 3, "name": "Asuransi Armada / Fleet Perusahaan di Jogja", "item": "https://asuransijogja.biz.id/artikel/asuransi-armada-fleet-jogja"}]}, {"@type": "Article", "headline": "Asuransi Armada / Fleet Perusahaan di Jogja – Panduan Konsolidasi Polis", "description": "Panduan lengkap asuransi armada/fleet untuk perusahaan di Yogyakarta dengan 5+ kendaraan operasional. Cara konsolidasi polis, perhitungan premi, dan manfaat dibanding asuransi per unit.", "author": {"@type": "Person", "name": "Rio MD", "jobTitle": "Praktisi Asuransi"}, "publisher": {"@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id"}, "datePublished": "2026-06-29", "dateModified": "2026-06-29"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Berapa minimal unit kendaraan untuk membuat polis fleet?", "acceptedAnswer": {"@type": "Answer", "text": "Umumnya perusahaan asuransi mensyaratkan minimal 5 unit untuk dianggap sebagai fleet, meski beberapa penerbit polis bersedia mulai dari 3 unit dengan syarat tertentu. Di bawah itu, asuransi per unit biasanya masih lebih praktis."}}, {"@type": "Question", "name": "Apakah tanggal jatuh tempo polis existing yang berbeda-beda jadi masalah?", "acceptedAnswer": {"@type": "Answer", "text": "Tidak. Saat konsolidasi, kami bisa membantu menyusun jadwal transisi sehingga setiap kendaraan tetap terlindungi tanpa gap, baru kemudian disatukan ke satu tanggal jatuh tempo pada saat semua polis existing berakhir."}}, {"@type": "Question", "name": "Bisakah menambah kendaraan baru di tengah periode polis fleet?", "acceptedAnswer": {"@type": "Answer", "text": "Bisa. Sebagian besar polis fleet mengizinkan penambahan unit di tengah jalan dengan penyesuaian premi secara proporsional (pro-rata), tanpa perlu menerbitkan polis baru dari awal."}}]}]};
+const schema = {"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://asuransijogja.biz.id"}, {"@type": "ListItem", "position": 2, "name": "Artikel", "item": "https://asuransijogja.biz.id/artikel"}, {"@type": "ListItem", "position": 3, "name": "Asuransi Armada / Fleet Perusahaan di Jogja", "item": "https://asuransijogja.biz.id/artikel/asuransi-armada-fleet-jogja"}]}, {"@type": "Article", "headline": "Asuransi Armada / Fleet Perusahaan di Jogja – Panduan Konsolidasi Polis", "description": "Panduan lengkap asuransi armada/fleet untuk perusahaan di Yogyakarta dengan 5+ kendaraan operasional. Cara konsolidasi polis, perhitungan premi, dan manfaat dibanding asuransi per unit.", "author": {"@type": "Person", "name": "Rio Mardiansyah", "jobTitle": "Praktisi Asuransi"}, "publisher": {"@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id"}, "datePublished": "2026-06-29", "dateModified": "2026-06-29"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Berapa minimal unit kendaraan untuk membuat polis fleet?", "acceptedAnswer": {"@type": "Answer", "text": "Umumnya perusahaan asuransi mensyaratkan minimal 5 unit untuk dianggap sebagai fleet, meski beberapa penerbit polis bersedia mulai dari 3 unit dengan syarat tertentu. Di bawah itu, asuransi per unit biasanya masih lebih praktis."}}, {"@type": "Question", "name": "Apakah tanggal jatuh tempo polis existing yang berbeda-beda jadi masalah?", "acceptedAnswer": {"@type": "Answer", "text": "Tidak. Saat konsolidasi, kami bisa membantu menyusun jadwal transisi sehingga setiap kendaraan tetap terlindungi tanpa gap, baru kemudian disatukan ke satu tanggal jatuh tempo pada saat semua polis existing berakhir."}}, {"@type": "Question", "name": "Bisakah menambah kendaraan baru di tengah periode polis fleet?", "acceptedAnswer": {"@type": "Answer", "text": "Bisa. Sebagian besar polis fleet mengizinkan penambahan unit di tengah jalan dengan penyesuaian premi secara proporsional (pro-rata), tanpa perlu menerbitkan polis baru dari awal."}}]}]};
 
 export default function ArtikelAsuransiArmadaFleetJogja() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -62,7 +61,7 @@ export default function ArtikelAsuransiArmadaFleetJogja() {
               Mengelola asuransi 5, 10, atau 20 kendaraan operasional secara terpisah membuang waktu dan uang. Panduan ini menjelaskan kapan saatnya beralih ke polis fleet terkonsolidasi, bagaimana perhitungannya, dan apa saja yang perlu disiapkan.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Juni 2026</span>
               <span>·</span>
@@ -207,8 +206,7 @@ export default function ArtikelAsuransiArmadaFleetJogja() {
             </a>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

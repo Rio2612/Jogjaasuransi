@@ -18,6 +18,10 @@ export const metadata: Metadata = {
     description:
       "Dari cashless vs reimbursement hingga hak tertanggung yang sering tidak diketahui — panduan praktis bengkel rekanan asuransi di Yogyakarta.",
     url: "https://asuransijogja.biz.id/artikel/bengkel-rekanan-asuransi-jogja",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Bengkel Rekanan Asuransi di Jogja: Panduan Lengkap Klaim Tanpa Ribet" }],
   },
 };
 
@@ -265,7 +269,7 @@ const schemaArtikel = {
   dateModified: "2025-06-01",
   author: {
     "@type": "Person",
-    name: "Rio MD",
+    name: "Rio Mardiansyah",
     url: "https://asuransijogja.biz.id",
   },
   publisher: {

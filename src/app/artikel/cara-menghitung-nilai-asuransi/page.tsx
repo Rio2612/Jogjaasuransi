@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cara Menghitung Nilai Asuransi yang Tepat – Hindari Underinsurance",
     url: "https://asuransijogja.biz.id/artikel/cara-menghitung-nilai-asuransi",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Cara Menghitung Nilai Asuransi yang Tepat – Hindari Underinsurance" }],
   },
 };
 
@@ -64,7 +68,7 @@ const schemaArtikel = {
   "headline": "Cara Menghitung Nilai Asuransi yang Tepat – Hindari Underinsurance",
   "description": "Panduan lengkap cara menghitung nilai pertanggungan asuransi yang benar untuk kendaraan, properti, dan aset bisnis.",
   "url": "https://asuransijogja.biz.id/artikel/cara-menghitung-nilai-asuransi",
-  "author": { "@type": "Person", "name": "Rio MD" },
+  "author": { "@type": "Person", "name": "Rio Mardiansyah" },
   "publisher": { "@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id" },
   "inLanguage": "id-ID",
 };
