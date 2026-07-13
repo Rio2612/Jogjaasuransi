@@ -4,7 +4,7 @@ import PropertyLayout from "@/components/properti/PropertyLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Banjir & Gempa Bumi Jogja – Perluasan Properti Wajib DIY | Asuransi Jogja",
+  title: "Asuransi Banjir & Gempa Bumi Jogja – Perluasan Properti Wajib DIY",
   description:
     "Asuransi perluasan banjir dan gempa bumi untuk properti di Yogyakarta. Proteksi risiko Merapi, patahan Opak, banjir Kali Code & Kali Opak. Endorsement yang wajib dimiliki pemilik properti DIY. Konsultasi gratis.",
   keywords:
@@ -18,6 +18,9 @@ export const metadata: Metadata = {
       "Proteksi bencana alam untuk properti di Yogyakarta: banjir, gempa, erupsi Merapi, lahar dingin, angin topan. Konsultasi gratis.",
     url: "https://asuransijogja.biz.id/asuransi-properti/banjir-gempa",
     type: "website",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Banjir & Gempa Bumi Jogja – Perluasan Properti Wajib DIY" }],
   },
 };
 

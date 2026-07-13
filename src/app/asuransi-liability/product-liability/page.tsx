@@ -4,12 +4,22 @@ import LiabilityLayout from "@/components/liability/LiabilityLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Product Liability Jogja – Perlindungan Cacat Produk | Asuransi Jogja",
+  title: "Asuransi Product Liability Jogja – Perlindungan Cacat Produk",
   description:
     "Asuransi Product Liability di Yogyakarta. Perlindungan hukum produsen, UMKM, dan importir dari gugatan konsumen atas produk cacat atau berbahaya. Konsultasi gratis.",
   keywords:
     "product liability jogja, asuransi cacat produk yogyakarta, tanggung jawab produk indonesia, asuransi produsen jogja, product liability umkm, asuransi makanan minuman jogja, perlindungan konsumen asuransi, recall asuransi produk",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-liability/product-liability" },
+  openGraph: {
+    title: "Asuransi Product Liability Jogja – Perlindungan Cacat Produk",
+    description:
+      "Asuransi Product Liability di Yogyakarta. Perlindungan hukum produsen, UMKM, dan importir dari gugatan konsumen atas produk cacat atau berbahaya. Konsultasi gratis.",
+    url: "https://asuransijogja.biz.id/asuransi-liability/product-liability",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Product Liability Jogja – Perlindungan Cacat Produk" }],
+  },
 };
 
 const definisiCacatProduk = [

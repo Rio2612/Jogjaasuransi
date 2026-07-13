@@ -4,10 +4,19 @@ import LiabilityLayout from "@/components/liability/LiabilityLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Public Liability Jogja – Hotel, Restoran & Wisata | Asuransi Jogja",
+  title: "Asuransi Public Liability Jogja – Hotel, Restoran & Wisata",
   description: "Asuransi Public Liability di Yogyakarta untuk hotel, restoran, tempat wisata, dan bisnis publik. Lindungi bisnis Anda dari tuntutan cedera tamu dan kerugian pihak ketiga.",
   keywords: "public liability jogja, asuransi tanggung jawab publik yogyakarta, asuransi tamu hotel jogja, asuransi restoran yogyakarta, liability wisata jogja",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-liability/public-liability" },
+  openGraph: {
+    title: "Asuransi Public Liability Jogja – Hotel, Restoran & Wisata",
+    description: "Asuransi Public Liability di Yogyakarta untuk hotel, restoran, tempat wisata, dan bisnis publik. Lindungi bisnis Anda dari tuntutan cedera tamu dan kerugian pihak ketiga.",
+    url: "https://asuransijogja.biz.id/asuransi-liability/public-liability",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Public Liability Jogja – Hotel, Restoran & Wisata" }],
+  },
 };
 
 const skenarioKlaim = [

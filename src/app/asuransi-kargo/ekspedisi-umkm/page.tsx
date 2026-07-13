@@ -4,13 +4,17 @@ import KargoLayout from "@/components/kargo/KargoLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Kargo UMKM & Ekspedisi Jogja – Penjual Online | Asuransi Jogja",
+  title: "Asuransi Kargo UMKM & Ekspedisi Jogja – Penjual Online",
   description: "Asuransi kargo khusus UMKM dan penjual online di Yogyakarta. Lindungi produk batik, kerajinan, makanan, dan kiriman marketplace dari kerusakan dan kehilangan. Premi terjangkau.",
   keywords: "asuransi kargo UMKM jogja, asuransi pengiriman online yogyakarta, asuransi penjual marketplace jogja, asuransi toko online yogyakarta, asuransi kiriman batik jogja",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-kargo/ekspedisi-umkm" },
   openGraph: {
     title: "Asuransi Kargo UMKM Jogja – Penjual Online & Pengrajin",
     url: "https://asuransijogja.biz.id/asuransi-kargo/ekspedisi-umkm",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Kargo UMKM Jogja – Penjual Online & Pengrajin" }],
   },
 };
 

@@ -4,11 +4,18 @@ import SuretyLayout from "@/components/surety/SuretyLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Jaminan Pemeliharaan (Maintenance Bond) Jogja – Garansi Pascaproyek | Asuransi Jogja",
+  title: "Jaminan Pemeliharaan (Maintenance Bond) Jogja – Garansi Pascaproyek",
   description: "Jaminan Pemeliharaan (Maintenance Bond) di Yogyakarta. Garansi perbaikan cacat setelah serah terima proyek. Nilai 5% dari kontrak. Masa berlaku hingga FHO. Konsultasi gratis.",
   keywords: "jaminan pemeliharaan jogja, maintenance bond yogyakarta, jaminan garansi proyek DIY, defect liability bond jogja, surety bond pemeliharaan kontraktor yogyakarta",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-pemeliharaan" },
-  openGraph: { title: "Jaminan Pemeliharaan (Maintenance Bond) Jogja", url: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-pemeliharaan" },
+  openGraph: {
+    title: "Jaminan Pemeliharaan (Maintenance Bond) Jogja",
+    url: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-pemeliharaan",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Jaminan Pemeliharaan (Maintenance Bond) Jogja" }],
+  },
 };
 
 const fungsiMB = [

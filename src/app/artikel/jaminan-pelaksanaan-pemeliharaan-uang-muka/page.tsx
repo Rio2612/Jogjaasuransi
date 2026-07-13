@@ -2,12 +2,10 @@
 // SILO: mendukung pillar terkait — ditambahkan untuk menutup gap konten silo
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Siklus Jaminan Proyek: Pelaksanaan, Uang Muka & Pemeliharaan di Jogja | Asuransi Jogja",
+  title: "Siklus Jaminan Proyek: Pelaksanaan, Uang Muka & Pemeliharaan di Jogja",
   description:
     "Panduan lengkap 3 jenis jaminan proyek setelah menang tender: jaminan pelaksanaan, jaminan uang muka, dan jaminan pemeliharaan. Kapan masing-masing dibutuhkan dan estimasi biayanya.",
   keywords:
@@ -21,17 +19,18 @@ export const metadata: Metadata = {
       "Memahami 3 jenis jaminan yang dibutuhkan kontraktor setelah menang tender, dari mulai proyek hingga masa pemeliharaan selesai.",
     url: "https://asuransijogja.biz.id/artikel/jaminan-pelaksanaan-pemeliharaan-uang-muka",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Siklus Jaminan Proyek di Jogja — Pelaksanaan, Uang Muka & Pemeliharaan" }],
   },
 };
 
-const schema = {"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://asuransijogja.biz.id"}, {"@type": "ListItem", "position": 2, "name": "Artikel", "item": "https://asuransijogja.biz.id/artikel"}, {"@type": "ListItem", "position": 3, "name": "Siklus Jaminan Proyek: Pelaksanaan, Uang Muka & Pemeliharaan di Jogja | Asuransi Jogja", "item": "https://asuransijogja.biz.id/artikel/jaminan-pelaksanaan-pemeliharaan-uang-muka"}]}, {"@type": "Article", "headline": "Siklus Jaminan Proyek: Pelaksanaan, Uang Muka & Pemeliharaan di Jogja", "description": "Panduan lengkap 3 jenis jaminan proyek setelah menang tender: jaminan pelaksanaan, jaminan uang muka, dan jaminan pemeliharaan. Kapan masing-masing dibutuhkan dan estimasi biayanya.", "author": {"@type": "Person", "name": "Rio MD", "jobTitle": "Praktisi Asuransi"}, "publisher": {"@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id"}, "datePublished": "2026-06-29", "dateModified": "2026-06-29"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Apakah ketiga jaminan ini harus diterbitkan dari perusahaan yang sama?", "acceptedAnswer": {"@type": "Answer", "text": "Tidak harus, namun menggunakan satu penerbit untuk seluruh siklus proyek biasanya lebih efisien karena underwriter sudah memiliki data dan riwayat kontraktor, sehingga proses penerbitan jaminan berikutnya bisa lebih cepat."}}, {"@type": "Question", "name": "Apa yang terjadi jika kontraktor tidak mengambil uang muka?", "acceptedAnswer": {"@type": "Answer", "text": "Jika kontraktor tidak mengambil opsi uang muka dari pemberi kerja, maka jaminan uang muka tidak diperlukan. Hanya jaminan pelaksanaan dan jaminan pemeliharaan yang tetap wajib dalam siklus proyek standar."}}, {"@type": "Question", "name": "Bisakah jaminan pemeliharaan menggantikan retensi yang sudah dipotong?", "acceptedAnswer": {"@type": "Answer", "text": "Pada banyak kontrak, ya — kontraktor bisa mengajukan penggantian retensi yang sudah dipotong dengan jaminan pemeliharaan, sehingga dana retensi yang tertahan bisa dicairkan lebih cepat kepada kontraktor."}}]}]};
+const schema = {"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://asuransijogja.biz.id"}, {"@type": "ListItem", "position": 2, "name": "Artikel", "item": "https://asuransijogja.biz.id/artikel"}, {"@type": "ListItem", "position": 3, "name": "Siklus Jaminan Proyek: Pelaksanaan, Uang Muka & Pemeliharaan di Jogja | Asuransi Jogja", "item": "https://asuransijogja.biz.id/artikel/jaminan-pelaksanaan-pemeliharaan-uang-muka"}]}, {"@type": "Article", "headline": "Siklus Jaminan Proyek: Pelaksanaan, Uang Muka & Pemeliharaan di Jogja", "description": "Panduan lengkap 3 jenis jaminan proyek setelah menang tender: jaminan pelaksanaan, jaminan uang muka, dan jaminan pemeliharaan. Kapan masing-masing dibutuhkan dan estimasi biayanya.", "author": {"@type": "Person", "name": "Rio Mardiansyah", "jobTitle": "Praktisi Asuransi"}, "publisher": {"@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id"}, "datePublished": "2026-06-29", "dateModified": "2026-06-29"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Apakah ketiga jaminan ini harus diterbitkan dari perusahaan yang sama?", "acceptedAnswer": {"@type": "Answer", "text": "Tidak harus, namun menggunakan satu penerbit untuk seluruh siklus proyek biasanya lebih efisien karena underwriter sudah memiliki data dan riwayat kontraktor, sehingga proses penerbitan jaminan berikutnya bisa lebih cepat."}}, {"@type": "Question", "name": "Apa yang terjadi jika kontraktor tidak mengambil uang muka?", "acceptedAnswer": {"@type": "Answer", "text": "Jika kontraktor tidak mengambil opsi uang muka dari pemberi kerja, maka jaminan uang muka tidak diperlukan. Hanya jaminan pelaksanaan dan jaminan pemeliharaan yang tetap wajib dalam siklus proyek standar."}}, {"@type": "Question", "name": "Bisakah jaminan pemeliharaan menggantikan retensi yang sudah dipotong?", "acceptedAnswer": {"@type": "Answer", "text": "Pada banyak kontrak, ya — kontraktor bisa mengajukan penggantian retensi yang sudah dipotong dengan jaminan pemeliharaan, sehingga dana retensi yang tertahan bisa dicairkan lebih cepat kepada kontraktor."}}]}]};
 
 export default function ArtikelJaminanPelaksanaanPemeliharaanUangMuka() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -62,7 +61,7 @@ export default function ArtikelJaminanPelaksanaanPemeliharaanUangMuka() {
               Setelah memenangkan tender, kontraktor masih perlu melewati 3 fase jaminan: pelaksanaan, uang muka, dan pemeliharaan. Panduan ini menjelaskan kapan masing-masing dibutuhkan dan bagaimana ketiganya saling terkait dalam siklus hidup sebuah proyek.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Juni 2026</span>
               <span>·</span>
@@ -207,8 +206,7 @@ export default function ArtikelJaminanPelaksanaanPemeliharaanUangMuka() {
             </a>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

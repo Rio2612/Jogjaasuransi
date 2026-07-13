@@ -14,6 +14,10 @@ export const metadata: Metadata = {
     description:
       "Mobil bekas tetap bisa diasuransikan — bahkan All Risk. Pelajari batas usia, proses survei, dan cara menentukan nilai pertanggungan yang tepat.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-mobil-bekas",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Mobil Bekas: Bisa All Risk? Berapa Premi? Panduan Lengkap" }],
   },
 };
 
@@ -25,7 +29,7 @@ const schemaArticle = {
   url: "https://asuransijogja.biz.id/artikel/asuransi-mobil-bekas",
   datePublished: "2025-05-01",
   dateModified: "2025-05-01",
-  author: { "@type": "Person", name: "Rio MD", url: "https://asuransijogja.biz.id" },
+  author: { "@type": "Person", name: "Rio Mardiansyah", url: "https://asuransijogja.biz.id" },
   publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
   mainEntityOfPage: "https://asuransijogja.biz.id/artikel/asuransi-mobil-bekas",
 };
@@ -140,7 +144,7 @@ export default function AsuransiMobilBekasPage() {
             Banyak pemilik mobil bekas berasumsi kendaraan second tidak bisa diasuransikan secara penuh. Kenyataannya, mobil bekas tetap bisa mendapatkan All Risk — dengan beberapa syarat usia, kondisi, dan proses survei yang perlu Anda pahami sebelum membeli polis.
           </p>
           <div className="flex items-center gap-4 text-sm text-white/50">
-            <span>Oleh <strong className="text-white/75">Rio MD</strong> — Praktisi Asuransi Independen</span>
+            <span>Oleh <strong className="text-white/75">Rio Mardiansyah</strong> — Praktisi Asuransi Independen</span>
             <span>·</span>
             <span>Yogyakarta</span>
           </div>
@@ -325,7 +329,7 @@ export default function AsuransiMobilBekasPage() {
           <div className="bg-navy rounded-card p-6 flex gap-5 items-start">
             <div className="w-12 h-12 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center flex-shrink-0 font-heading font-bold text-gold text-lg">R</div>
             <div>
-              <div className="font-heading text-white font-bold mb-1">Rio MD</div>
+              <div className="font-heading text-white font-bold mb-1">Rio Mardiansyah</div>
               <div className="text-gold2 text-xs mb-3">Praktisi Asuransi Independen · Yogyakarta · 8 Tahun Pengalaman</div>
               <p className="text-white/65 text-sm leading-relaxed">
                 Saya membantu pemilik kendaraan bekas di Yogyakarta menemukan produk asuransi yang tepat — termasuk memilih antara All Risk dan TLO berdasarkan kondisi nyata kendaraan, bukan sekadar preferensi. Konsultasi gratis, tanpa komitmen.

@@ -6,7 +6,7 @@ import SPPAForm from "@/components/sections/SPPAForm";
 const BASE_URL = "https://asuransijogja.biz.id";
 
 export const metadata: Metadata = {
-  title: "Form Permintaan Penawaran Asuransi (SPPA) | Asuransi Jogja",
+  title: "Form Permintaan Penawaran Asuransi (SPPA)",
   description:
     "Ajukan permintaan penawaran asuransi kerugian secara online. Kendaraan, properti, engineering, kargo, liability, surety bond. Gratis, cepat, tanpa tekanan.",
   alternates: { canonical: `${BASE_URL}/sppa` },
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     siteName: "Asuransi Jogja",
     locale: "id_ID",
     type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Form Permintaan Penawaran Asuransi (SPPA) – Asuransi Jogja" }],
   },
 };
 

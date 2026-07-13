@@ -5,12 +5,10 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Kargo untuk UMKM di Jogja – Proteksi Pengiriman Barang | Asuransi Jogja",
+  title: "Asuransi Kargo untuk UMKM di Jogja – Proteksi Pengiriman Barang",
   description:
     "Panduan lengkap asuransi kargo untuk UMKM dan toko online di Yogyakarta. Bedanya asuransi ekspedisi standar vs polis kargo khusus, estimasi premi, cara klaim, dan tips Open Cover untuk pengiriman rutin. Mulai Rp 50 ribu per pengiriman.",
   keywords:
@@ -24,6 +22,9 @@ export const metadata: Metadata = {
       "Asuransi ekspedisi standar tidak cukup. Pelajari perbedaannya dengan polis kargo khusus UMKM, estimasi biaya, dan cara klaim yang benar.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-kargo-umkm-jogja",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Kargo untuk UMKM di Jogja – Proteksi Pengiriman Barang" }],
   },
 };
 
@@ -48,7 +49,7 @@ const schemaArtikel = {
       headline: "Asuransi Kargo untuk UMKM di Jogja – Proteksi Pengiriman Barang",
       description:
         "Panduan lengkap asuransi kargo untuk UMKM di Yogyakarta: perbedaan dengan asuransi ekspedisi standar, estimasi premi, Open Cover, dan cara klaim.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
+      author: { "@type": "Person", name: "Rio Mardiansyah", jobTitle: "Praktisi Asuransi" },
       publisher: {
         "@type": "Organization",
         name: "Asuransi Jogja",
@@ -348,8 +349,6 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }}
       />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -401,7 +400,7 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
               menanggung nilai penuh — dengan premi mulai Rp 50 ribu per pengiriman.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
@@ -780,8 +779,7 @@ export default function ArtikelAsuransiKargoUMKMJogja() {
             </div>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

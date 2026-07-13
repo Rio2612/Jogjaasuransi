@@ -5,12 +5,10 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Syarat Asuransi Tender Pemerintah DIY – Panduan Lengkap Kontraktor | Asuransi Jogja",
+  title: "Syarat Asuransi Tender Pemerintah DIY – Panduan Lengkap Kontraktor",
   description:
     "Panduan lengkap syarat asuransi untuk tender pemerintah di Yogyakarta: Jaminan Penawaran, Jaminan Pelaksanaan, CAR, dan Jaminan Pemeliharaan. Dasar hukum Perpres 12/2021, urutan pengajuan, dan tips agar dokumen asuransi tidak ditolak panitia.",
   keywords:
@@ -24,6 +22,9 @@ export const metadata: Metadata = {
       "Jaminan apa saja yang wajib disiapkan kontraktor sebelum dan sesudah menang tender pemerintah di Yogyakarta? Lengkap dengan dasar hukum dan urutan pengajuan.",
     url: "https://asuransijogja.biz.id/artikel/syarat-asuransi-tender-pemerintah-diy",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Syarat Asuransi Tender Pemerintah DIY – Panduan Lengkap Kontraktor" }],
   },
 };
 
@@ -48,7 +49,7 @@ const schemaArtikel = {
       headline: "Syarat Asuransi Tender Pemerintah DIY – Panduan Lengkap Kontraktor",
       description:
         "Panduan lengkap jenis asuransi dan jaminan yang wajib disiapkan kontraktor untuk mengikuti dan melaksanakan tender pemerintah di Yogyakarta.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
+      author: { "@type": "Person", name: "Rio Mardiansyah", jobTitle: "Praktisi Asuransi" },
       publisher: {
         "@type": "Organization",
         name: "Asuransi Jogja",
@@ -286,8 +287,6 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }}
       />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -337,7 +336,7 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
               di berbagai tahapan tender pemerintah. Salah satu saja terlambat atau salah nilai, kontrak bisa batal.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
@@ -675,8 +674,7 @@ export default function ArtikelSyaratAsuransiTenderDIY() {
             </div>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

@@ -4,7 +4,7 @@ import PropertyLayout from "@/components/properti/PropertyLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Hotel & Guest House Jogja – Proteksi Properti Wisata DIY | Asuransi Jogja",
+  title: "Asuransi Hotel & Guest House Jogja – Proteksi Properti Wisata DIY",
   description:
     "Asuransi properti untuk hotel, guest house, dan resort di Yogyakarta. PAR komprehensif, kebakaran, banjir, gempa Merapi, business interruption, hingga public liability tamu. Konsultasi gratis.",
   keywords:
@@ -18,6 +18,9 @@ export const metadata: Metadata = {
       "Solusi asuransi lengkap untuk hotel, guest house, resort, dan penginapan skala besar di Yogyakarta. Konsultasi gratis dengan praktisi lokal.",
     url: "https://asuransijogja.biz.id/asuransi-properti/hotel-vila",
     type: "website",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Hotel & Guest House Jogja – Proteksi Properti Wisata DIY" }],
   },
 };
 

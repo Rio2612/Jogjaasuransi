@@ -15,6 +15,9 @@ export const metadata: Metadata = {
       "Panduan lengkap asuransi kos-kosan di Yogyakarta. Risiko nyata, simulasi premi, cara klaim, FAQ.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-kos-jogja",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Kos-Kosan Jogja: Panduan Lengkap untuk Pemilik Kos di Yogyakarta" }],
   },
 };
 
@@ -28,7 +31,7 @@ const schemaArtikel = {
   url: "https://asuransijogja.biz.id/artikel/asuransi-kos-jogja",
   datePublished: "2025-01-01",
   dateModified: "2025-06-01",
-  author: { "@type": "Person", name: "Rio MD" },
+  author: { "@type": "Person", name: "Rio Mardiansyah" },
   publisher: {
     "@type": "Organization",
     name: "Asuransi Jogja",
@@ -116,7 +119,7 @@ export default function ArtikelAsuransiKosPage() {
           </h1>
 
           <div className="flex items-center gap-4 text-sm text-white/50">
-            <span>✍️ Rio MD – Praktisi Asuransi</span>
+            <span>✍️ Rio Mardiansyah – Praktisi Asuransi</span>
             <span>·</span>
             <span>⏱ 12 menit baca</span>
           </div>

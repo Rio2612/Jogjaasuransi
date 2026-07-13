@@ -2,12 +2,10 @@
 // SILO: mendukung pillar terkait — ditambahkan untuk menutup gap konten silo
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Truk Niaga & Dump Truk di Jogja – Panduan Lengkap Proyek & Tambang | Asuransi Jogja",
+  title: "Asuransi Truk Niaga & Dump Truk di Jogja – Panduan Lengkap Proyek & Tambang",
   description:
     "Panduan asuransi dump truk, tronton, dan truk mixer untuk kontraktor dan pengangkut material di DIY. Cakupan risiko, syarat tender, dan estimasi premi kendaraan niaga berat.",
   keywords:
@@ -21,17 +19,18 @@ export const metadata: Metadata = {
       "Panduan lengkap asuransi kendaraan niaga berat untuk kontraktor dan pengangkut material di Yogyakarta.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-truk-niaga-jogja",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Truk Niaga & Dump Truk di Jogja — Panduan Proyek dan Tambang" }],
   },
 };
 
-const schema = {"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://asuransijogja.biz.id"}, {"@type": "ListItem", "position": 2, "name": "Artikel", "item": "https://asuransijogja.biz.id/artikel"}, {"@type": "ListItem", "position": 3, "name": "Asuransi Truk Niaga & Dump Truk di Jogja", "item": "https://asuransijogja.biz.id/artikel/asuransi-truk-niaga-jogja"}]}, {"@type": "Article", "headline": "Asuransi Truk Niaga & Dump Truk di Jogja – Panduan Lengkap Proyek & Tambang", "description": "Panduan asuransi dump truk, tronton, dan truk mixer untuk kontraktor dan pengangkut material di DIY. Cakupan risiko, syarat tender, dan estimasi premi kendaraan niaga berat.", "author": {"@type": "Person", "name": "Rio MD", "jobTitle": "Praktisi Asuransi"}, "publisher": {"@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id"}, "datePublished": "2026-06-29", "dateModified": "2026-06-29"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Apakah dump truk proyek bisa diasuransikan TLO saja?", "acceptedAnswer": {"@type": "Answer", "text": "Bisa, terutama untuk truk berusia di atas 7-8 tahun. Namun karena nilai dan biaya perbaikan kendaraan niaga umumnya tinggi, banyak kontraktor tetap memilih All Risk untuk mengurangi risiko menanggung sendiri biaya perbaikan parsial."}}, {"@type": "Question", "name": "Apakah perlu perluasan khusus untuk truk yang beroperasi di area tambang?", "acceptedAnswer": {"@type": "Answer", "text": "Sangat disarankan menambahkan perluasan risiko medan berat dan act of God, karena jalan tambang memiliki risiko kecelakaan dan kerusakan mekanis lebih tinggi dibanding jalan raya umum."}}, {"@type": "Question", "name": "Apakah asuransi kendaraan niaga bisa jadi syarat tender proyek?", "acceptedAnswer": {"@type": "Answer", "text": "Ya, banyak kontraktor utama atau instansi pemberi proyek mensyaratkan bukti asuransi kendaraan niaga yang masih berlaku sebagai bagian dari dokumen administrasi kontraktor pelaksana atau subkontraktor."}}]}]};
+const schema = {"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://asuransijogja.biz.id"}, {"@type": "ListItem", "position": 2, "name": "Artikel", "item": "https://asuransijogja.biz.id/artikel"}, {"@type": "ListItem", "position": 3, "name": "Asuransi Truk Niaga & Dump Truk di Jogja", "item": "https://asuransijogja.biz.id/artikel/asuransi-truk-niaga-jogja"}]}, {"@type": "Article", "headline": "Asuransi Truk Niaga & Dump Truk di Jogja – Panduan Lengkap Proyek & Tambang", "description": "Panduan asuransi dump truk, tronton, dan truk mixer untuk kontraktor dan pengangkut material di DIY. Cakupan risiko, syarat tender, dan estimasi premi kendaraan niaga berat.", "author": {"@type": "Person", "name": "Rio Mardiansyah", "jobTitle": "Praktisi Asuransi"}, "publisher": {"@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id"}, "datePublished": "2026-06-29", "dateModified": "2026-06-29"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Apakah dump truk proyek bisa diasuransikan TLO saja?", "acceptedAnswer": {"@type": "Answer", "text": "Bisa, terutama untuk truk berusia di atas 7-8 tahun. Namun karena nilai dan biaya perbaikan kendaraan niaga umumnya tinggi, banyak kontraktor tetap memilih All Risk untuk mengurangi risiko menanggung sendiri biaya perbaikan parsial."}}, {"@type": "Question", "name": "Apakah perlu perluasan khusus untuk truk yang beroperasi di area tambang?", "acceptedAnswer": {"@type": "Answer", "text": "Sangat disarankan menambahkan perluasan risiko medan berat dan act of God, karena jalan tambang memiliki risiko kecelakaan dan kerusakan mekanis lebih tinggi dibanding jalan raya umum."}}, {"@type": "Question", "name": "Apakah asuransi kendaraan niaga bisa jadi syarat tender proyek?", "acceptedAnswer": {"@type": "Answer", "text": "Ya, banyak kontraktor utama atau instansi pemberi proyek mensyaratkan bukti asuransi kendaraan niaga yang masih berlaku sebagai bagian dari dokumen administrasi kontraktor pelaksana atau subkontraktor."}}]}]};
 
 export default function ArtikelAsuransiTrukNiagaJogja() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -62,7 +61,7 @@ export default function ArtikelAsuransiTrukNiagaJogja() {
               Dump truk dan tronton proyek bekerja dalam kondisi jalan berat dan medan menanjak, jauh berbeda dari mobil pribadi. Panduan ini menjelaskan apa yang perlu dipahami kontraktor sebelum mengasuransikan kendaraan niaga berat di DIY.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Juni 2026</span>
               <span>·</span>
@@ -207,8 +206,7 @@ export default function ArtikelAsuransiTrukNiagaJogja() {
             </a>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

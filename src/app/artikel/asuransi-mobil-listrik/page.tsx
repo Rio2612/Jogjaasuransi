@@ -14,6 +14,10 @@ export const metadata: Metadata = {
     description:
       "Tarif OJK khusus EV, cakupan baterai, own risk, dan panduan memilih asuransi kendaraan listrik yang tepat.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-mobil-listrik",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Mobil Listrik (EV) — Panduan Lengkap 2026" }],
   },
 };
 
@@ -26,7 +30,7 @@ const schemaArticle = {
   url: "https://asuransijogja.biz.id/artikel/asuransi-mobil-listrik",
   datePublished: "2026-05-01",
   dateModified: "2026-05-01",
-  author: { "@type": "Person", name: "Rio MD", url: "https://asuransijogja.biz.id" },
+  author: { "@type": "Person", name: "Rio Mardiansyah", url: "https://asuransijogja.biz.id" },
   publisher: {
     "@type": "Organization",
     name: "Asuransi Jogja",
@@ -181,7 +185,7 @@ export default function AsuransiMobilListrikPage() {
             keterbatasan bengkel rekanan. Panduan ini menjelaskan semuanya secara jujur.
           </p>
           <div className="flex items-center gap-4 text-sm text-white/50">
-            <span>Oleh <strong className="text-white/75">Rio MD</strong> — Praktisi Asuransi Independen</span>
+            <span>Oleh <strong className="text-white/75">Rio Mardiansyah</strong> — Praktisi Asuransi Independen</span>
             <span>·</span>
             <span>8 tahun pengalaman</span>
           </div>
@@ -424,7 +428,7 @@ export default function AsuransiMobilListrikPage() {
               R
             </div>
             <div>
-              <div className="font-heading text-white font-bold mb-1">Rio MD</div>
+              <div className="font-heading text-white font-bold mb-1">Rio Mardiansyah</div>
               <div className="text-gold2 text-xs mb-3">Praktisi Asuransi Independen · Yogyakarta · 8 Tahun Pengalaman</div>
               <p className="text-white/65 text-sm leading-relaxed">
                 Saya membantu pemilik kendaraan listrik di Yogyakarta memilih produk asuransi yang

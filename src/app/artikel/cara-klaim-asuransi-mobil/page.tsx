@@ -5,12 +5,10 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Cara Klaim Asuransi Mobil – Panduan Lengkap dari Insiden hingga Dana Cair | Asuransi Jogja",
+  title: "Cara Klaim Asuransi Mobil – Panduan Lengkap dari Insiden hingga Dana Cair",
   description:
     "Panduan step-by-step cara klaim asuransi mobil di Yogyakarta: kecelakaan, kehilangan, hingga kerusakan banjir. Dokumen yang dibutuhkan, batas waktu pelaporan, kesalahan fatal yang harus dihindari, dan tips agar klaim tidak ditolak.",
   keywords:
@@ -23,6 +21,9 @@ export const metadata: Metadata = {
     description: "Baru mengalami kecelakaan atau kehilangan kendaraan? Panduan langkah demi langkah agar klaim asuransi mobil Anda tidak ditolak.",
     url: "https://asuransijogja.biz.id/artikel/cara-klaim-asuransi-mobil",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Cara Klaim Asuransi Mobil – Panduan Lengkap dari Insiden hingga Dana Cair" }],
   },
 };
 
@@ -41,7 +42,7 @@ const schemaArtikel = {
       "@type": "Article",
       headline: "Cara Klaim Asuransi Mobil – Panduan Lengkap dari Insiden hingga Dana Cair",
       description: "Panduan step-by-step cara klaim asuransi mobil di Yogyakarta untuk kecelakaan, kehilangan, dan kerusakan banjir.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
+      author: { "@type": "Person", name: "Rio Mardiansyah", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-05-25",
       dateModified: "2025-06-01",
@@ -280,8 +281,6 @@ export default function ArtikelCaraKlaimAsuransiMobil() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }} />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -313,7 +312,7 @@ export default function ArtikelCaraKlaimAsuransiMobil() {
               Satu kesalahan di langkah pertama — memperbaiki kendaraan sebelum melapor, atau menghubungi insurer terlambat — bisa membuat klaim yang seharusnya cair menjadi ditolak. Panduan ini memastikan Anda melakukan hal yang benar dari awal.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
@@ -521,8 +520,7 @@ export default function ArtikelCaraKlaimAsuransiMobil() {
             </div>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

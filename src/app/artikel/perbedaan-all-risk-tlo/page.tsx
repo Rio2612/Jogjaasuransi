@@ -5,12 +5,10 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Perbedaan Asuransi All Risk dan TLO – Mana yang Lebih Tepat untuk Mobil Anda? | Asuransi Jogja",
+  title: "Perbedaan Asuransi All Risk dan TLO – Mana yang Lebih Tepat untuk Mobil Anda?",
   description:
     "Penjelasan lengkap perbedaan asuransi mobil All Risk (Comprehensive) vs TLO (Total Loss Only). Tabel perbandingan, simulasi premi untuk mobil di Yogyakarta, kapan pilih mana, dan contoh kasus klaim nyata.",
   keywords:
@@ -24,6 +22,9 @@ export const metadata: Metadata = {
       "All Risk vs TLO — tabel perbandingan lengkap, simulasi premi, dan panduan memilih berdasarkan kondisi nyata pemilik mobil di Yogyakarta.",
     url: "https://asuransijogja.biz.id/artikel/perbedaan-all-risk-tlo",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Perbedaan Asuransi All Risk dan TLO – Mana yang Lebih Tepat untuk Mobil Anda?" }],
   },
 };
 
@@ -46,7 +47,7 @@ const schemaArtikel = {
       "@type": "Article",
       headline: "Perbedaan Asuransi All Risk dan TLO – Mana yang Lebih Tepat untuk Mobil Anda?",
       description: "Panduan lengkap perbedaan asuransi kendaraan All Risk dan TLO dengan tabel perbandingan, simulasi premi, dan panduan memilih.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
+      author: { "@type": "Person", name: "Rio Mardiansyah", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-05-20",
       dateModified: "2025-06-01",
@@ -298,8 +299,6 @@ export default function ArtikelPerbedaanAllRiskTLO() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }} />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -336,7 +335,7 @@ export default function ArtikelPerbedaanAllRiskTLO() {
               Artikel ini membantu Anda memutuskan berdasarkan data nyata, bukan asumsi.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
@@ -607,8 +606,7 @@ export default function ArtikelPerbedaanAllRiskTLO() {
             </div>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

@@ -11,6 +11,10 @@ export const metadata: Metadata = {
     title: "Artikel Edukasi Asuransi – Asuransi Jogja",
     description: "Panduan dan tips asuransi dari praktisi berpengalaman di Yogyakarta.",
     url: "https://asuransijogja.biz.id/artikel",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Artikel Edukasi Asuransi – Asuransi Jogja" }],
   },
 };
 

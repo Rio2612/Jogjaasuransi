@@ -4,10 +4,19 @@ import LiabilityLayout from "@/components/liability/LiabilityLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Liability Limbah B3 & Pencemaran Lingkungan Jogja | Asuransi Jogja",
+  title: "Asuransi Liability Limbah B3 & Pencemaran Lingkungan Jogja",
   description: "Asuransi environmental liability dan limbah B3 di Yogyakarta. Perlindungan dari tuntutan pencemaran lingkungan, kebocoran bahan kimia, dan kewajiban pemulihan. Konsultasi gratis.",
   keywords: "asuransi limbah b3 jogja, environmental liability yogyakarta, asuransi pencemaran lingkungan jogja, pollution liability yogyakarta, asuransi industri kimia jogja",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-liability/limbah-b3" },
+  openGraph: {
+    title: "Asuransi Liability Limbah B3 & Pencemaran Lingkungan Jogja",
+    description: "Asuransi environmental liability dan limbah B3 di Yogyakarta. Perlindungan dari tuntutan pencemaran lingkungan, kebocoran bahan kimia, dan kewajiban pemulihan. Konsultasi gratis.",
+    url: "https://asuransijogja.biz.id/asuransi-liability/limbah-b3",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Liability Limbah B3 & Pencemaran Lingkungan Jogja" }],
+  },
 };
 
 const definisiB3 = [

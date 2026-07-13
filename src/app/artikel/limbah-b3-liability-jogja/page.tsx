@@ -2,12 +2,10 @@
 // SILO: mendukung pillar terkait — ditambahkan untuk menutup gap konten silo
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Liability Limbah B3 di Jogja – Proteksi Pencemaran Lingkungan | Asuransi Jogja",
+  title: "Asuransi Liability Limbah B3 di Jogja – Proteksi Pencemaran Lingkungan",
   description:
     "Panduan asuransi liability pencemaran lingkungan dan limbah B3 untuk industri tekstil, percetakan, dan manufaktur di DIY. Cakupan clean-up cost, kompensasi pihak ketiga, dan estimasi premi.",
   keywords:
@@ -21,17 +19,18 @@ export const metadata: Metadata = {
       "Panduan asuransi liability pencemaran lingkungan untuk industri yang menghasilkan limbah B3 di Yogyakarta.",
     url: "https://asuransijogja.biz.id/artikel/limbah-b3-liability-jogja",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Liability Limbah B3 di Jogja — Proteksi Pencemaran Lingkungan" }],
   },
 };
 
-const schema = {"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://asuransijogja.biz.id"}, {"@type": "ListItem", "position": 2, "name": "Artikel", "item": "https://asuransijogja.biz.id/artikel"}, {"@type": "ListItem", "position": 3, "name": "Asuransi Liability Limbah B3 di Jogja", "item": "https://asuransijogja.biz.id/artikel/limbah-b3-liability-jogja"}]}, {"@type": "Article", "headline": "Asuransi Liability Limbah B3 di Jogja – Proteksi Pencemaran Lingkungan", "description": "Panduan asuransi liability pencemaran lingkungan dan limbah B3 untuk industri tekstil, percetakan, dan manufaktur di DIY. Cakupan clean-up cost, kompensasi pihak ketiga, dan estimasi premi.", "author": {"@type": "Person", "name": "Rio MD", "jobTitle": "Praktisi Asuransi"}, "publisher": {"@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id"}, "datePublished": "2026-06-29", "dateModified": "2026-06-29"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Apakah pencemaran bertahap (gradual pollution) juga ditanggung?", "acceptedAnswer": {"@type": "Answer", "text": "Tergantung skema polis. Sebagian polis liability lingkungan menanggung pencemaran bertahap selama bisa dibuktikan terjadi dalam periode polis aktif, namun ini biasanya memerlukan klausul perluasan khusus — pastikan didiskusikan saat pembelian polis."}}, {"@type": "Question", "name": "Apakah polis properti standar sudah cukup menanggung risiko ini?", "acceptedAnswer": {"@type": "Answer", "text": "Umumnya tidak. Asuransi properti standar biasanya mengecualikan secara eksplisit klaim akibat pencemaran lingkungan, sehingga perusahaan dengan risiko limbah B3 perlu polis liability lingkungan terpisah."}}, {"@type": "Question", "name": "Apakah perusahaan kecil/UMKM juga perlu polis ini?", "acceptedAnswer": {"@type": "Answer", "text": "Jika usaha menghasilkan limbah B3 dalam jumlah kecil pun (misalnya bengkel dengan limbah oli/aki), risiko gugatan tetap ada meski skala kecil. Limit liability yang lebih rendah biasanya tersedia dengan premi yang proporsional lebih terjangkau."}}]}]};
+const schema = {"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://asuransijogja.biz.id"}, {"@type": "ListItem", "position": 2, "name": "Artikel", "item": "https://asuransijogja.biz.id/artikel"}, {"@type": "ListItem", "position": 3, "name": "Asuransi Liability Limbah B3 di Jogja", "item": "https://asuransijogja.biz.id/artikel/limbah-b3-liability-jogja"}]}, {"@type": "Article", "headline": "Asuransi Liability Limbah B3 di Jogja – Proteksi Pencemaran Lingkungan", "description": "Panduan asuransi liability pencemaran lingkungan dan limbah B3 untuk industri tekstil, percetakan, dan manufaktur di DIY. Cakupan clean-up cost, kompensasi pihak ketiga, dan estimasi premi.", "author": {"@type": "Person", "name": "Rio Mardiansyah", "jobTitle": "Praktisi Asuransi"}, "publisher": {"@type": "Organization", "name": "Asuransi Jogja", "url": "https://asuransijogja.biz.id"}, "datePublished": "2026-06-29", "dateModified": "2026-06-29"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Apakah pencemaran bertahap (gradual pollution) juga ditanggung?", "acceptedAnswer": {"@type": "Answer", "text": "Tergantung skema polis. Sebagian polis liability lingkungan menanggung pencemaran bertahap selama bisa dibuktikan terjadi dalam periode polis aktif, namun ini biasanya memerlukan klausul perluasan khusus — pastikan didiskusikan saat pembelian polis."}}, {"@type": "Question", "name": "Apakah polis properti standar sudah cukup menanggung risiko ini?", "acceptedAnswer": {"@type": "Answer", "text": "Umumnya tidak. Asuransi properti standar biasanya mengecualikan secara eksplisit klaim akibat pencemaran lingkungan, sehingga perusahaan dengan risiko limbah B3 perlu polis liability lingkungan terpisah."}}, {"@type": "Question", "name": "Apakah perusahaan kecil/UMKM juga perlu polis ini?", "acceptedAnswer": {"@type": "Answer", "text": "Jika usaha menghasilkan limbah B3 dalam jumlah kecil pun (misalnya bengkel dengan limbah oli/aki), risiko gugatan tetap ada meski skala kecil. Limit liability yang lebih rendah biasanya tersedia dengan premi yang proporsional lebih terjangkau."}}]}]};
 
 export default function ArtikelLimbahB3LiabilityJogja() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -62,7 +61,7 @@ export default function ArtikelLimbahB3LiabilityJogja() {
               Regulasi lingkungan hidup yang semakin ketat membuat risiko gugatan pencemaran semakin nyata bagi industri yang menghasilkan limbah B3. Panduan ini menjelaskan apa yang ditanggung polis ini dan siapa yang membutuhkannya.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Juni 2026</span>
               <span>·</span>
@@ -207,8 +206,7 @@ export default function ArtikelLimbahB3LiabilityJogja() {
             </a>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

@@ -5,12 +5,10 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Panduan Lengkap Asuransi Kontraktor di Jogja – Semua yang Perlu Anda Tahu | Asuransi Jogja",
+  title: "Panduan Lengkap Asuransi Kontraktor di Jogja – Semua yang Perlu Anda Tahu",
   description:
     "Panduan A–Z asuransi untuk kontraktor di Yogyakarta: CAR, EAR, Surety Bond, Liability, hingga Machinery Breakdown. Kapan dibutuhkan, berapa biayanya, dan konsekuensi jika tidak punya. Berdasarkan Perpres 12/2021 dan pengalaman 11+ tahun di DIY.",
   keywords:
@@ -24,6 +22,9 @@ export const metadata: Metadata = {
       "Semua jenis asuransi yang dibutuhkan kontraktor di Yogyakarta — dari tender hingga selesai proyek. Berdasarkan Perpres 12/2021 dan pengalaman nyata di DIY.",
     url: "https://asuransijogja.biz.id/artikel/asuransi-kontraktor-proyek-jogja",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Panduan Lengkap Asuransi Kontraktor di Jogja" }],
   },
 };
 
@@ -48,7 +49,7 @@ const schemaArtikel = {
       headline: "Panduan Lengkap Asuransi Kontraktor di Jogja – Semua yang Perlu Anda Tahu",
       description:
         "Panduan A–Z asuransi untuk kontraktor di Yogyakarta mencakup CAR, EAR, Surety Bond, Employer Liability, hingga Machinery Breakdown.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
+      author: { "@type": "Person", name: "Rio Mardiansyah", jobTitle: "Praktisi Asuransi" },
       publisher: {
         "@type": "Organization",
         name: "Asuransi Jogja",
@@ -404,8 +405,6 @@ export default function ArtikelAsuransiKontraktorJogja() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }}
       />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* ── Breadcrumb ── */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -461,7 +460,7 @@ export default function ArtikelAsuransiKontraktorJogja() {
               menjelaskan mana yang wajib, mana yang dianjurkan, kapan dibutuhkan, dan berapa biayanya.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
@@ -870,8 +869,7 @@ export default function ArtikelAsuransiKontraktorJogja() {
             </div>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

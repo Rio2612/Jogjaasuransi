@@ -4,7 +4,7 @@ import PropertyLayout from "@/components/properti/PropertyLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Kebakaran Jogja – Rumah, Kos, Ruko & Bangunan Komersial | Asuransi Jogja",
+  title: "Asuransi Kebakaran Jogja – Rumah, Kos, Ruko & Bangunan Komersial",
   description:
     "Asuransi kebakaran di Yogyakarta untuk rumah tinggal, kos-kosan, ruko, gudang, dan bangunan komersial. Jaminan FLEXAS, perluasan banjir & gempa, premi terjangkau, klaim mudah. Konsultasi gratis.",
   keywords:
@@ -18,6 +18,9 @@ export const metadata: Metadata = {
       "Lindungi properti Anda dari kebakaran di Yogyakarta. Jaminan FLEXAS, perluasan banjir & gempa, premi mulai ratusan ribu per tahun.",
     url: "https://asuransijogja.biz.id/asuransi-properti/kebakaran",
     type: "website",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Kebakaran Jogja – Rumah, Kos, Ruko & Bangunan Komersial" }],
   },
 };
 

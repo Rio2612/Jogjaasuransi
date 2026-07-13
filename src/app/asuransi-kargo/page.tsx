@@ -4,7 +4,7 @@ import KargoLayout from "@/components/kargo/KargoLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Kargo Jogja – Pengiriman Barang, Ekspor Impor & UMKM | Asuransi Jogja",
+  title: "Asuransi Kargo Jogja – Pengiriman Barang, Ekspor Impor & UMKM",
   description: "Praktisi asuransi kargo dan pengiriman barang di Yogyakarta. Lindungi kiriman Anda via darat, laut, dan udara. Marine cargo, inland transit, asuransi ekspedisi UMKM. Konsultasi gratis.",
   keywords: "asuransi kargo jogja, asuransi pengiriman barang yogyakarta, marine cargo jogja, asuransi ekspedisi yogyakarta, asuransi kargo UMKM jogja, inland transit insurance yogyakarta",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-kargo" },
@@ -12,6 +12,10 @@ export const metadata: Metadata = {
     title: "Asuransi Kargo Jogja – Darat, Laut & Udara",
     description: "Proteksi pengiriman barang Anda dari risiko kerusakan, kehilangan, dan keterlambatan. Melayani UMKM hingga perusahaan ekspor-impor di Yogyakarta.",
     url: "https://asuransijogja.biz.id/asuransi-kargo",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Kargo Jogja – Darat, Laut & Udara" }],
   },
 };
 

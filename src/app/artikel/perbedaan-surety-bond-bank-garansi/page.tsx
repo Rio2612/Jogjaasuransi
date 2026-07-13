@@ -5,12 +5,10 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Perbedaan Surety Bond dan Bank Garansi – Mana yang Lebih Menguntungkan Kontraktor? | Asuransi Jogja",
+  title: "Perbedaan Surety Bond dan Bank Garansi – Mana yang Lebih Menguntungkan Kontraktor?",
   description:
     "Penjelasan lengkap perbedaan Surety Bond (dari perusahaan asuransi) dan Bank Garansi. Proses, agunan, biaya, dan mana yang lebih cocok untuk kontraktor di Yogyakarta. Edukasi dari praktisi asuransi independen.",
   keywords:
@@ -24,6 +22,9 @@ export const metadata: Metadata = {
       "Perbandingan mendalam Surety Bond vs Bank Garansi dari sisi proses, agunan, biaya, dan penerimaan di tender pemerintah DIY.",
     url: "https://asuransijogja.biz.id/artikel/perbedaan-surety-bond-bank-garansi",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Perbedaan Surety Bond dan Bank Garansi – Mana yang Tepat?" }],
   },
 };
 
@@ -42,7 +43,7 @@ const schema = {
       "@type": "Article",
       headline: "Perbedaan Surety Bond dan Bank Garansi – Mana yang Lebih Menguntungkan Kontraktor?",
       description: "Perbandingan mendalam antara Surety Bond dari perusahaan asuransi dan Bank Garansi dari bank — dari sisi proses, agunan, biaya, dan fleksibilitas.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
+      author: { "@type": "Person", name: "Rio Mardiansyah", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-04-15",
       dateModified: "2025-06-01",
@@ -237,8 +238,6 @@ export default function ArtikelPerbedaanSuretyBondBankGaransi() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -269,7 +268,7 @@ export default function ArtikelPerbedaanSuretyBondBankGaransi() {
               Keduanya sama-sama diterima di tender pemerintah. Tapi mekanismenya sangat berbeda — dan perbedaan itu berdampak langsung pada likuiditas dan fleksibilitas operasional kontraktor. Artikel ini menjelaskan secara objektif tanpa memihak.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
@@ -525,8 +524,7 @@ export default function ArtikelPerbedaanSuretyBondBankGaransi() {
             </a>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

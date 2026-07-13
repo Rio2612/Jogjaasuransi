@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pentingnya Asuransi di Dunia Usaha Yogyakarta",
     url: "https://asuransijogja.biz.id/artikel/pentingnya-asuransi-dunia-usaha-jogja",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Pentingnya Asuransi di Dunia Usaha Yogyakarta" }],
   },
 };
 
@@ -59,7 +63,7 @@ const schemaArtikel = {
       headline: "Pentingnya Asuransi di Dunia Usaha Yogyakarta",
       description: "Panduan risiko usaha di Yogyakarta dan jenis asuransi bisnis yang dibutuhkan UMKM dan korporasi.",
       url: "https://asuransijogja.biz.id/artikel/pentingnya-asuransi-dunia-usaha-jogja",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
+      author: { "@type": "Person", name: "Rio Mardiansyah", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-11-05",
       dateModified: "2026-07-05",

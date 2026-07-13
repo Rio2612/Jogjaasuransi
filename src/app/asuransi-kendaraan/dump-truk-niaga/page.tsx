@@ -4,10 +4,19 @@ import KendaraanLayout from "@/components/kendaraan/KendaraanLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Dump Truk & Kendaraan Niaga Jogja | Asuransi Jogja",
+  title: "Asuransi Dump Truk & Kendaraan Niaga Jogja",
   description: "Asuransi kendaraan niaga berat di Yogyakarta. Dump truk, tronton, truk mixer, truk ekspedisi. All Risk & TLO untuk kendaraan proyek dan logistik. Konsultasi gratis.",
   keywords: "asuransi dump truk jogja, asuransi truk yogyakarta, asuransi kendaraan niaga jogja, asuransi tronton yogyakarta, asuransi kendaraan proyek jogja",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-kendaraan/dump-truk-niaga" },
+  openGraph: {
+    title: "Asuransi Dump Truk & Kendaraan Niaga Jogja",
+    description: "Asuransi kendaraan niaga berat di Yogyakarta. Dump truk, tronton, truk mixer, truk ekspedisi. All Risk & TLO untuk kendaraan proyek dan logistik. Konsultasi gratis.",
+    url: "https://asuransijogja.biz.id/asuransi-kendaraan/dump-truk-niaga",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Dump Truk & Kendaraan Niaga Jogja" }],
+  },
 };
 
 const jenisKendaraan = [

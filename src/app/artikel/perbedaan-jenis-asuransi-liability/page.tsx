@@ -5,12 +5,10 @@
 
 import type { Metadata } from "next";
 import Link from "next/link";
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Perbedaan Jenis Asuransi Liability – Public, Employer, Product & Limbah B3 | Asuransi Jogja",
+  title: "Perbedaan Jenis Asuransi Liability – Public, Employer, Product & Limbah B3",
   description:
     "Penjelasan lengkap perbedaan Public Liability, Employer Liability, Product Liability, dan Limbah B3 Liability. Kapan masing-masing dibutuhkan, contoh kasus nyata, dan panduan memilih untuk bisnis di Yogyakarta.",
   keywords:
@@ -24,6 +22,9 @@ export const metadata: Metadata = {
       "Bingung memilih antara Public Liability, Employer Liability, dan Product Liability? Panduan lengkap beserta contoh kasus nyata di Yogyakarta.",
     url: "https://asuransijogja.biz.id/artikel/perbedaan-jenis-asuransi-liability",
     type: "article",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Perbedaan Jenis Asuransi Liability – Public, Employer, Product & Limbah B3" }],
   },
 };
 
@@ -46,7 +47,7 @@ const schemaArtikel = {
       "@type": "Article",
       headline: "Perbedaan Jenis Asuransi Liability – Public, Employer, Product & Limbah B3",
       description: "Panduan lengkap perbedaan empat jenis asuransi liability dan kapan masing-masing dibutuhkan untuk bisnis di Yogyakarta.",
-      author: { "@type": "Person", name: "Rio MD", jobTitle: "Praktisi Asuransi" },
+      author: { "@type": "Person", name: "Rio Mardiansyah", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-04-25",
       dateModified: "2025-06-01",
@@ -235,8 +236,6 @@ export default function ArtikelPerbedaanJenisLiability() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaArtikel) }} />
-      <Header />
-      <div className="pt-[68px]">
 
         {/* Breadcrumb */}
         <div className="bg-cream border-b border-black/8 px-[5vw] py-3">
@@ -268,7 +267,7 @@ export default function ArtikelPerbedaanJenisLiability() {
               Semua disebut "asuransi liability" — tapi masing-masing melindungi dari tuntutan yang berbeda, dari pihak yang berbeda. Salah pilih produk berarti klaim Anda tidak tertanggung saat dibutuhkan.
             </p>
             <div className="flex gap-3 text-xs text-white/60 flex-wrap">
-              <span>✍️ Rio MD — Praktisi Asuransi</span>
+              <span>✍️ Rio Mardiansyah — Praktisi Asuransi</span>
               <span>·</span>
               <span>📅 Diperbarui Juni 2025</span>
               <span>·</span>
@@ -487,7 +486,7 @@ export default function ArtikelPerbedaanJenisLiability() {
               Bisnis Anda Butuh Perlindungan Liability —<br />Mulai dari yang Paling Relevan
             </h2>
             <p className="text-white/75 text-sm max-w-[420px] mx-auto mb-8">
-              Konsultasi gratis dengan Rio MD. Kami analisis risiko bisnis Anda dan rekomendasikan kombinasi liability yang paling efisien.
+              Konsultasi gratis dengan Rio Mardiansyah. Kami analisis risiko bisnis Anda dan rekomendasikan kombinasi liability yang paling efisien.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <a href={`https://wa.me/${KONTAK.wa}`} className="bg-[#25D366] text-white px-7 py-3.5 rounded-lg font-bold text-sm inline-flex items-center gap-2 no-underline hover:opacity-90 transition-all">
@@ -499,8 +498,7 @@ export default function ArtikelPerbedaanJenisLiability() {
             </div>
           </div>
         </section>
-      </div>
-      <Footer />
+
     </>
   );
 }

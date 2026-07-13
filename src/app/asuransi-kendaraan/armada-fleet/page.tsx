@@ -4,10 +4,19 @@ import KendaraanLayout from "@/components/kendaraan/KendaraanLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Armada Fleet Jogja – Kendaraan Perusahaan | Asuransi Jogja",
+  title: "Asuransi Armada Fleet Jogja – Kendaraan Perusahaan",
   description: "Asuransi fleet / armada kendaraan perusahaan di Yogyakarta. Satu polis untuk banyak unit, premi lebih efisien, pengelolaan terpusat. Untuk bisnis logistik, kontraktor, dan korporasi.",
   keywords: "asuransi fleet jogja, asuransi armada kendaraan yogyakarta, asuransi kendaraan perusahaan jogja, fleet insurance yogyakarta, asuransi operasional bisnis jogja",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-kendaraan/armada-fleet" },
+  openGraph: {
+    title: "Asuransi Armada Fleet Jogja – Kendaraan Perusahaan",
+    description: "Asuransi fleet / armada kendaraan perusahaan di Yogyakarta. Satu polis untuk banyak unit, premi lebih efisien, pengelolaan terpusat. Untuk bisnis logistik, kontraktor, dan korporasi.",
+    url: "https://asuransijogja.biz.id/asuransi-kendaraan/armada-fleet",
+    siteName: "Asuransi Jogja",
+    locale: "id_ID",
+    type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Armada Fleet Jogja – Kendaraan Perusahaan" }],
+  },
 };
 
 const keunggulanFleet = [
