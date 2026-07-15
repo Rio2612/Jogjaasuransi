@@ -23,7 +23,7 @@ export default function LinkedInCard() {
           Rio Mardiansyah
         </p>
         <p className="text-[#475569] text-xs leading-snug truncate">
-          Praktisi Asuransi · 9+ Tahun di Industri Asuransi
+          Praktisi Asuransi · 8+ Tahun di Industri Asuransi
         </p>
       </div>
 

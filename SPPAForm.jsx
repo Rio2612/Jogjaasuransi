@@ -251,7 +251,7 @@ export default function SPPAForm() {
             Permintaan Terkirim!
           </h2>
           <p className="text-sm text-[#64748B] leading-relaxed mb-6">
-            Data Anda telah diteruskan ke WhatsApp kami. Tim konsultan akan segera menghubungi Anda untuk pembahasan lebih lanjut.
+            Data Anda telah diteruskan ke WhatsApp kami. Tim praktisi akan segera menghubungi Anda untuk pembahasan lebih lanjut.
           </p>
           <button
             onClick={() => { setSubmitted(false); setForm({ nama: "", whatsapp: "", agree: false }); setProduct(""); }}
@@ -412,7 +412,7 @@ export default function SPPAForm() {
                 )}
               </button>
               <p className="text-center text-[0.7rem] text-[#94A3B8] mt-2.5">
-                Data dikirim langsung ke konsultan kami. Respon dalam 1×24 jam kerja.
+                Data dikirim langsung ke praktisi kami. Respon dalam 1×24 jam kerja.
               </p>
             </div>
           )}
@@ -448,7 +448,7 @@ export default function SPPAForm() {
         )}
 
         <p className="text-center text-[0.7rem] text-[#94A3B8] mt-6">
-          © 2025 AsuransiJogja.biz.id · Konsultan Asuransi Kerugian Independen Yogyakarta
+          © 2025 AsuransiJogja.biz.id · Praktisi Asuransi Kerugian Independen Yogyakarta
         </p>
       </div>
     </div>

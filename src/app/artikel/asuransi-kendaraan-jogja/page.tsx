@@ -161,7 +161,7 @@ export default function AsuransiKendaraanJogjaPage() {
             Mencari praktisi asuransi kendaraan terpercaya di Yogyakarta? Kami adalah praktisi independen — tidak terikat satu perusahaan asuransi manapun — yang membantu pemilik kendaraan di seluruh DIY menemukan perlindungan terbaik sesuai kebutuhan dan anggaran.
           </p>
           <div className="grid grid-cols-3 gap-4 mb-6 max-w-sm">
-            {[{ num: "10+", lbl: "Tahun Pengalaman" }, { num: "DIY", lbl: "Area Layanan" }, { num: "Gratis", lbl: "Konsultasi" }].map(s => (
+            {[{ num: "8+", lbl: "Tahun Pengalaman" }, { num: "DIY", lbl: "Area Layanan" }, { num: "Gratis", lbl: "Konsultasi" }].map(s => (
               <div key={s.lbl} className="text-center">
                 <div className="font-heading text-gold text-xl font-bold">{s.num}</div>
                 <div className="text-white/60 text-xs">{s.lbl}</div>

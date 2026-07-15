@@ -371,7 +371,7 @@ export default function ClientPage() {
               {[
                 { angka: "1–2", label: "Hari terbit" },
                 { angka: "4", label: "Jenis jaminan" },
-                { angka: "11+", label: "Tahun pengalaman" },
+                { angka: "8+", label: "Tahun pengalaman" },
                 { angka: "Gratis", label: "Konsultasi" },
               ].map((s) => (
                 <div key={s.label}>

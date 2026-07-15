@@ -277,7 +277,7 @@ export default function AsuransiPropertiPage() {
           {/* Trust signals */}
           <div className="flex items-center gap-6 mt-8 pt-8 border-t border-white/10 flex-wrap">
             {[
-              { num: "10+", lbl: "Tahun Pengalaman" },
+              { num: "8+", lbl: "Tahun Pengalaman" },
               { num: "OJK", lbl: "Insurer Berlisensi" },
               { num: "Gratis", lbl: "Konsultasi & Klaim" },
             ].map((s) => (

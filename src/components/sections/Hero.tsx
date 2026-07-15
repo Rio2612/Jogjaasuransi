@@ -57,7 +57,7 @@ export default function Hero() {
             </div>
             <div className="grid grid-cols-3 gap-2 pt-4 border-t border-gold/15">
               {[
-                { num: "10+", lbl: "Tahun Pengalaman" },
+                { num: "8+", lbl: "Tahun Pengalaman" },
                 { num: "100%", lbl: "Independen" },
                 { num: "Gratis", lbl: "Konsultasi" },
               ].map(s => (

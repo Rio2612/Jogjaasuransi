@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: BASE_URL },
   openGraph: {
     title: "Asuransi Jogja – Praktisi Asuransi Terpercaya",
-    description: "Praktisi asuransi independen di Yogyakarta. Konsultasi GRATIS, 9+ tahun pengalaman.",
+    description: "Praktisi asuransi independen di Yogyakarta. Konsultasi GRATIS, 8+ tahun pengalaman.",
     url: BASE_URL,
     siteName: "Asuransi Jogja",
     locale: "id_ID",
@@ -77,7 +77,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         "@id": `${BASE_URL}/#organization`,
         "name": "Asuransi Jogja",
         "alternateName": "AsuransiJogja.biz.id",
-        "description": "Praktisi asuransi independen di Yogyakarta dengan 9+ tahun pengalaman.",
+        "description": "Praktisi asuransi independen di Yogyakarta dengan 8+ tahun pengalaman.",
         "url": BASE_URL,
         "telephone": "+6287781658231",
         "email": "rio@asuransijogja.biz.id",

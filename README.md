@@ -1,6 +1,6 @@
 # Asuransi Jogja — Website Next.js 15
 
-Website konsultan asuransi kerugian Rio Mardiansyah, dibangun dengan Next.js 15 + TypeScript + Tailwind CSS.
+Website praktisi asuransi kerugian Rio Mardiansyah, dibangun dengan Next.js 15 + TypeScript + Tailwind CSS.
 
 ## Stack
 - **Next.js 15** (App Router)

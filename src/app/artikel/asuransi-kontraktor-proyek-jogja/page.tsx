@@ -10,7 +10,7 @@ import { KONTAK } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Panduan Lengkap Asuransi Kontraktor di Jogja – Semua yang Perlu Anda Tahu",
   description:
-    "Panduan A–Z asuransi untuk kontraktor di Yogyakarta: CAR, EAR, Surety Bond, Liability, hingga Machinery Breakdown. Kapan dibutuhkan, berapa biayanya, dan konsekuensi jika tidak punya. Berdasarkan Perpres 12/2021 dan pengalaman 11+ tahun di DIY.",
+    "Panduan A–Z asuransi untuk kontraktor di Yogyakarta: CAR, EAR, Surety Bond, Liability, hingga Machinery Breakdown. Kapan dibutuhkan, berapa biayanya, dan konsekuensi jika tidak punya. Berdasarkan Perpres 12/2021 dan pengalaman 8+ tahun di DIY.",
   keywords:
     "asuransi kontraktor jogja, asuransi proyek konstruksi yogyakarta, CAR surety bond kontraktor DIY, jenis asuransi kontraktor indonesia, asuransi wajib kontraktor pemerintah yogyakarta, panduan asuransi proyek jogja",
   alternates: {

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Surety Bond Jogja – Jaminan Penawaran, Pelaksanaan, Uang Muka & Pemeliharaan",
     description:
-      "Surety bond untuk kontraktor di Yogyakarta. Diterima LKPP, proses 1–2 hari, premi terjangkau. Konsultasi gratis dengan praktisi berpengalaman 11+ tahun.",
+      "Surety bond untuk kontraktor di Yogyakarta. Diterima LKPP, proses 1–2 hari, premi terjangkau. Konsultasi gratis dengan praktisi berpengalaman 8+ tahun.",
     url: "https://asuransijogja.biz.id/asuransi-surety-bond",
     type: "website",
     images: [

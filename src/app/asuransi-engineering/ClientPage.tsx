@@ -294,7 +294,7 @@ export default function ClientPage() {
             {/* Stat strip */}
             <div className="flex flex-wrap gap-x-7 gap-y-3 mb-8">
               {[
-                { angka: "11+", label: "Tahun pengalaman" },
+                { angka: "8+", label: "Tahun pengalaman" },
                 { angka: "1–3", label: "Hari polis terbit" },
                 { angka: "3", label: "Produk engineering" },
                 { angka: "Gratis", label: "Konsultasi awal" },
@@ -589,7 +589,7 @@ export default function ClientPage() {
                 icon: "🎯",
                 judul: "Spesialis Engineering Insurance",
                 detail:
-                  "Kami fokus pada asuransi properti, engineering, dan surety bond — bukan generalis. Pengalaman 11+ tahun mengurus CAR, EAR, dan MB di Yogyakarta membuat kami memahami kebutuhan spesifik kontraktor dan pelaku industri di DIY.",
+                  "Kami fokus pada asuransi properti, engineering, dan surety bond — bukan generalis. Pengalaman 8+ tahun mengurus CAR, EAR, dan MB di Yogyakarta membuat kami memahami kebutuhan spesifik kontraktor dan pelaku industri di DIY.",
               },
               {
                 icon: "⚡",
@@ -761,7 +761,7 @@ export default function ClientPage() {
               Kami Siap Bantu Hari Ini
             </h2>
             <p className="text-white/75 text-sm max-w-[420px] mx-auto mb-8">
-              Konsultasi gratis dengan Rio Mardiansyah, praktisi asuransi engineering berpengalaman 11+ tahun
+              Konsultasi gratis dengan Rio Mardiansyah, praktisi asuransi engineering berpengalaman 8+ tahun
               di Yogyakarta. Estimasi premi siap dalam 1 hari kerja.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">

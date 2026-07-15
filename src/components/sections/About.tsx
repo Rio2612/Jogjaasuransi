@@ -28,7 +28,7 @@ export default function About() {
             <div className="text-gold2 text-sm font-medium mt-0.5">Praktisi Asuransi</div>
             <div className="flex items-center gap-2 mt-2 flex-wrap">
               <span className="bg-gold text-navy text-xs font-bold px-3 py-1 rounded-full">📍 Yogyakarta, DIY</span>
-              <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">9+ Tahun</span>
+              <span className="bg-white/15 text-white text-xs font-semibold px-3 py-1 rounded-full">8+ Tahun</span>
             </div>
           </div>
         </div>
@@ -40,11 +40,11 @@ export default function About() {
             Kenali Rio Mardiansyah,<br />Praktisi Asuransi Anda
           </h2>
           <p className="text-lg leading-[1.85] text-[#475569] max-w-[560px] mt-3">
-            Lebih dari sembilan tahun berkecimpung di dunia asuransi kerugian — dari Account Officer hingga Branch Manager — mengajarkan Rio satu hal: klien butuh mitra yang berpihak pada mereka, bukan agen yang sekadar mengejar komisi penjualan polis.
+            Delapan tahun berkecimpung di dunia asuransi kerugian — dari Account Officer hingga Branch Manager — mengajarkan Rio satu hal: klien butuh mitra yang berpihak pada mereka, bukan agen yang sekadar mengejar komisi penjualan polis.
           </p>
           <ul className="flex flex-col gap-3 mt-5">
             {[
-              "9+ tahun pengalaman langsung di lini asuransi kerugian, dari Account Officer hingga Branch Manager",
+              "8+ tahun pengalaman langsung di lini asuransi kerugian, dari Account Officer hingga Branch Manager",
               "Klien dari kalangan pribadi, pelaku usaha kecil, hingga perusahaan skala menengah",
               "Familiar dengan hampir semua produk asuransi kerugian — dari kendaraan hingga surety bond",
               "Setiap konsultasi disampaikan apa adanya, termasuk hal-hal yang sering disembunyikan agen lain",
