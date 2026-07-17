@@ -206,7 +206,7 @@ export default function SPPAForm() {
 
   const handleChange = (id, val) => setForm(prev => ({ ...prev, [id]: val }));
 
-  const waNumber = "6287781658231";
+  const waNumber = "628131556592";
 
   const handleSubmit = (e) => {
     e.preventDefault();
