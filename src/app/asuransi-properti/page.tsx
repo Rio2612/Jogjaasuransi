@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: "Asuransi Jogja",
     locale: "id_ID",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Properti Jogja – Rumah, Kos, Ruko, Vila & Gedung" }],
+    images: [{ url: "/og/og-properti.png", width: 1200, height: 630, alt: "Asuransi Properti Jogja – Rumah, Kos, Ruko, Vila & Gedung" }],
   },
 };
 
