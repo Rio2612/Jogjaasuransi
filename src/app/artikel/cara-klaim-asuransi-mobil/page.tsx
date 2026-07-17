@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "article",
     siteName: "Asuransi Jogja",
     locale: "id_ID",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Cara Klaim Asuransi Mobil – Panduan Lengkap dari Insiden hingga Dana Cair" }],
+    images: [{ url: "/og/og-kendaraan.png", width: 1200, height: 630, alt: "Cara Klaim Asuransi Mobil – Panduan Lengkap dari Insiden hingga Dana Cair" }],
   },
 };
 

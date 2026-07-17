@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     type: "article",
     siteName: "Asuransi Jogja",
     locale: "id_ID",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Rumah Tinggal di Jogja – Panduan Proteksi Hunian" }],
+    images: [{ url: "/og/og-properti.png", width: 1200, height: 630, alt: "Asuransi Rumah Tinggal di Jogja – Panduan Proteksi Hunian" }],
   },
 };
 

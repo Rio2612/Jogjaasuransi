@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Asuransi Jogja",
     locale: "id_ID",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Vila & Homestay Jogja – Proteksi Properti Wisata Airbnb" }],
+    images: [{ url: "/og/og-properti.png", width: 1200, height: 630, alt: "Asuransi Vila & Homestay Jogja – Proteksi Properti Wisata Airbnb" }],
   },
 };
 

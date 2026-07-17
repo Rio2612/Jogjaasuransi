@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://asuransijogja.biz.id/og-surety-bond.png",
+        url: "https://asuransijogja.biz.id/og/og-surety-bond.png",
         width: 1200,
         height: 630,
         alt: "Surety Bond Yogyakarta",

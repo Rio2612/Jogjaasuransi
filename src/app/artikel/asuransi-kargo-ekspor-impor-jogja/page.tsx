@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: "article",
     siteName: "Asuransi Jogja",
     locale: "id_ID",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Kargo Ekspor-Impor Udara & Laut — Panduan Klausul ICC" }],
+    images: [{ url: "/og/og-kargo.png", width: 1200, height: 630, alt: "Asuransi Kargo Ekspor-Impor Udara & Laut — Panduan Klausul ICC" }],
   },
 };
 

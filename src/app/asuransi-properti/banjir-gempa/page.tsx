@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Asuransi Jogja",
     locale: "id_ID",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Banjir & Gempa Bumi Jogja – Perluasan Properti Wajib DIY" }],
+    images: [{ url: "/og/og-properti.png", width: 1200, height: 630, alt: "Asuransi Banjir & Gempa Bumi Jogja – Perluasan Properti Wajib DIY" }],
   },
 };
 

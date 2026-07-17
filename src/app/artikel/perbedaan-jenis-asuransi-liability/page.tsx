@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     type: "article",
     siteName: "Asuransi Jogja",
     locale: "id_ID",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Perbedaan Jenis Asuransi Liability – Public, Employer, Product & Limbah B3" }],
+    images: [{ url: "/og/og-liability.png", width: 1200, height: 630, alt: "Perbedaan Jenis Asuransi Liability – Public, Employer, Product & Limbah B3" }],
   },
 };
 

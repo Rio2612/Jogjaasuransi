@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://asuransijogja.biz.id/og-mb.png",
+        url: "https://asuransijogja.biz.id/og/og-engineering.png",
         width: 1200,
         height: 630,
         alt: "Asuransi Machinery Breakdown Yogyakarta",

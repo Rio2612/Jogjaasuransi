@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: "Asuransi Jogja",
     locale: "id_ID",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Bengkel Rekanan Asuransi di Jogja: Panduan Lengkap Klaim Tanpa Ribet" }],
+    images: [{ url: "/og/og-kendaraan.png", width: 1200, height: 630, alt: "Bengkel Rekanan Asuransi di Jogja: Panduan Lengkap Klaim Tanpa Ribet" }],
   },
 };
 

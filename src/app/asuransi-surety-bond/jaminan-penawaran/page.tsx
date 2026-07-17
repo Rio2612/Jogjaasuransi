@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "Asuransi Jogja",
     locale: "id_ID",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Jaminan Penawaran (Bid Bond) Jogja – LPSE DIY" }],
+    images: [{ url: "/og/og-surety-bond.png", width: 1200, height: 630, alt: "Jaminan Penawaran (Bid Bond) Jogja – LPSE DIY" }],
   },
 };
 

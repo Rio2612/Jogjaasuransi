@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: "article",
     siteName: "Asuransi Jogja",
     locale: "id_ID",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Employer's Liability di Jogja — Panduan Tanggung Jawab kepada Karyawan" }],
+    images: [{ url: "/og/og-liability.png", width: 1200, height: 630, alt: "Employer's Liability di Jogja — Panduan Tanggung Jawab kepada Karyawan" }],
   },
 };
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "Asuransi Jogja",
     locale: "id_ID",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Asuransi Kargo UMKM Jogja – Penjual Online & Pengrajin" }],
+    images: [{ url: "/og/og-kargo.png", width: 1200, height: 630, alt: "Asuransi Kargo UMKM Jogja – Penjual Online & Pengrajin" }],
   },
 };
 
