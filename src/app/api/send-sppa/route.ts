@@ -205,7 +205,7 @@ export async function POST(req: NextRequest) {
     console.log("[send-sppa] Tersimpan ke Redis:", submission.id);
 
     // 2. Kirim WA + Email bersamaan — semua di-await agar tidak mati di Vercel serverless
-    const adminWA = process.env.ADMIN_WA || "6287781658231";
+    const adminWA = process.env.ADMIN_WA || "628131556592";
     const [adminSent, clientSent, emailSent] = await Promise.all([
       sendWA(adminWA, buildAdminMessage(submission)),
       sendWA(submission.whatsapp, buildClientMessage(submission)),

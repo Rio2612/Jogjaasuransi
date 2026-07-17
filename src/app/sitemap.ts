@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     // ─── BERANDA ─────────────────────────────────────────────────────────────
     { url: base, lastModified: now, changeFrequency: "monthly", priority: 1 },
+    { url: `${base}/sppa`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
 
     // ─── PROPERTI ────────────────────────────────────────────────────────────
     { url: `${base}/asuransi-properti`,                        lastModified: now, changeFrequency: "monthly", priority: 0.9  },

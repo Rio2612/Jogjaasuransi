@@ -1,7 +1,7 @@
 // ─── KONTAK ───────────────────────────────────────────────────────────────────
 export const KONTAK = {
   wa: "628131556592",
-  waDisplay: "0877-8165-8231",
+  waDisplay: "0813-1556-592",
   email: "rio@asuransijogja.biz.id",
   kota: "Yogyakarta, Daerah Istimewa Yogyakarta",
 } as const;

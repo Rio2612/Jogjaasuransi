@@ -220,7 +220,7 @@ function letterheadHTML(): string {
       <div class="lh-sub">Praktisi Asuransi Independen · Yogyakarta</div>
     </div>
     <div class="lh-contact">
-      📱 0877-8165-8231 (Rio Mardiansyah)<br/>
+      📱 0813-1556-592 (Rio Mardiansyah)<br/>
       ✉️ rio@asuransijogja.biz.id · 🌐 asuransijogja.biz.id
     </div>
   </div>`;

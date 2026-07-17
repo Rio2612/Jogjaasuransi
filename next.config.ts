@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Next.js Image Optimization
   images: {
-    domains: ["asuransijogja.biz.id"],
+    remotePatterns: [{ protocol: "https", hostname: "asuransijogja.biz.id" }],
     formats: ["image/avif", "image/webp"],
   },
 
