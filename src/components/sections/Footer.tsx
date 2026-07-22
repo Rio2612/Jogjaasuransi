@@ -34,7 +34,7 @@ export default function Footer() {
           <ul className="flex flex-col gap-2">
             <li><a href={`https://wa.me/${KONTAK.wa}`} className="text-sm text-white/50 no-underline hover:text-gold2 transition-colors">📱 {KONTAK.waDisplay}</a></li>
             <li><a href={`mailto:${KONTAK.email}`} className="text-sm text-white/50 no-underline hover:text-gold2 transition-colors">✉️ {KONTAK.email}</a></li>
-            <li><span className="text-sm text-white/50">📍 Yogyakarta, DIY</span></li>
+            <li><a href={KONTAK.mapsUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 no-underline hover:text-gold2 transition-colors">📍 Yogyakarta, DIY – Lihat di Google Maps</a></li>
           </ul>
         </div>
       </div>

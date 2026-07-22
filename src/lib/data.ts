@@ -4,6 +4,7 @@ export const KONTAK = {
   waDisplay: "0813-1556-592",
   email: "rio@asuransijogja.biz.id",
   kota: "Yogyakarta, Daerah Istimewa Yogyakarta",
+  mapsUrl: "https://maps.app.goo.gl/rHkgxFKcc4NdsvAY8?g_st=ac",
 } as const;
 
 // ─── PRODUK CLUSTERS ─────────────────────────────────────────────────────────
