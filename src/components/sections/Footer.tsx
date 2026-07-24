@@ -49,7 +49,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="text-gold2 hover:text-gold no-underline"
           >
-            Web Klaten
+            rio (webkalten)
           </a>
         </div>
       </div>
