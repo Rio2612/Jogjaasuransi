@@ -41,6 +41,17 @@ export default function Footer() {
       <div className="pt-5 flex justify-between items-center flex-wrap gap-3">
         <div className="text-[0.88rem] text-white/55">© {new Date().getFullYear()} Asuransi Jogja – Rio Mardiansyah. Seluruh hak cipta dilindungi.</div>
         <div className="text-[0.88rem] text-white/55">Praktisi Asuransi Independen · Yogyakarta</div>
+        <div className="text-[0.88rem] text-white/55">
+          Dibuat oleh{' '}
+          <a
+            href="https://webklaten.biz.id/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gold2 hover:text-gold no-underline"
+          >
+            Web Klaten
+          </a>
+        </div>
       </div>
     </footer>
   );
