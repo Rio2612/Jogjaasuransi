@@ -33,6 +33,9 @@ const NAV_CLUSTERS = [
     { href: "/asuransi-liability/product-liability", label: "Product Liability" },
     { href: "/asuransi-liability/limbah-b3", label: "Limbah B3" },
   ]},
+  { href: "/asuransi-event", icon: "🎪", label: "Asuransi Event", sub: [
+    { href: "/asuransi-event/konser-festival-musik", label: "Konser & Festival Musik" },
+  ]},
   { href: "/asuransi-surety-bond", icon: "📋", label: "Surety Bond", sub: [
     { href: "/asuransi-surety-bond/jaminan-penawaran", label: "Jaminan Penawaran" },
     { href: "/asuransi-surety-bond/jaminan-pelaksanaan", label: "Jaminan Pelaksanaan" },

@@ -56,6 +56,12 @@ export const CLUSTERS: Cluster[] = [
     ],
   },
   {
+    id: "event", label: "Event", icon: "🎪",
+    produk: [
+      { icon: "🎤", name: "Asuransi Konser & Festival Musik", desc: "Paket 4-in-1 — Public Liability, Event Cancellation, Personal Accident, dan Property All Risk — disusun mengikuti standar rider kontrak artis internasional.", href: "/asuransi-event/konser-festival-musik" },
+    ],
+  },
+  {
     id: "surety", label: "Surety Bond", icon: "📋",
     produk: [
       { icon: "📋", name: "Jaminan Penawaran (Bid Bond)", desc: "Jaminan bagi peserta tender bahwa kontraktor akan melaksanakan kontrak jika menang. Wajib untuk mengikuti lelang proyek pemerintah maupun swasta.", href: "/asuransi-surety-bond/jaminan-penawaran" },

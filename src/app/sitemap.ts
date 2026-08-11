@@ -30,6 +30,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/asuransi-liability/product-liability`,     lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/asuransi-liability/limbah-b3`,             lastModified: now, changeFrequency: "monthly", priority: 0.85 },
 
+    // ─── EVENT ───────────────────────────────────────────────────────────────
+    { url: `${base}/asuransi-event`,                           lastModified: now, changeFrequency: "monthly", priority: 0.9  },
+    { url: `${base}/asuransi-event/konser-festival-musik`,     lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+
     // ─── KARGO ───────────────────────────────────────────────────────────────
     { url: `${base}/asuransi-kargo`,                           lastModified: now, changeFrequency: "monthly", priority: 0.9  },
     { url: `${base}/asuransi-kargo/pengiriman-barang`,         lastModified: now, changeFrequency: "monthly", priority: 0.8  },
@@ -93,6 +97,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Vila + Hotel digabung → satu artikel definitif (mencegah kanibalisasi)
     { url: `${base}/artikel/asuransi-vila-homestay-jogja`,            lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/artikel/asuransi-kos-jogja`,                      lastModified: now, changeFrequency: "monthly", priority: 0.78 },
+
+    // ─── ARTIKEL — EVENT CLUSTER ──────────────────────────────────────────────
+    { url: `${base}/artikel/syarat-dokumen-asuransi-event-musik-jogja`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
 
     // ─── ARTIKEL — EDUKASI & HOW-TO ──────────────────────────────────────────
     { url: `${base}/artikel/cara-menghitung-nilai-asuransi`,          lastModified: now, changeFrequency: "monthly", priority: 0.75 },

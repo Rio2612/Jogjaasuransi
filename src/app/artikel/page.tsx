@@ -286,9 +286,19 @@ const ARTIKEL = [
     ringkasan: "Banyak pemegang polis rugi besar bukan karena tidak punya asuransi, tapi karena nilai pertanggungannya terlalu kecil. Pelajari cara menghitung nilai asuransi yang benar.",
     menit: "9 menit",
   },
+
+  // ── Event ──────────────────────────────────────────────────────────────────
+  {
+    slug: "syarat-dokumen-asuransi-event-musik-jogja",
+    icon: "📝",
+    kategori: "Event",
+    judul: "Syarat & Data Asuransi Konser/Festival Musik Jogja – Checklist Lengkap",
+    ringkasan: "Sebelum polis event musik bisa diproses, EO/promotor perlu menyiapkan sejumlah data dan dokumen. Panduan lengkap dari data acara hingga nilai pertanggungan tiap komponen.",
+    menit: "7 menit",
+  },
 ];
 
-const KATEGORI_LIST = ["Semua", "Kendaraan", "Properti", "Engineering", "Liability", "Surety Bond", "Bisnis", "Panduan"];
+const KATEGORI_LIST = ["Semua", "Kendaraan", "Properti", "Engineering", "Liability", "Event", "Surety Bond", "Bisnis", "Panduan"];
 
 const schemaArtikelList = {
   "@context": "https://schema.org",
@@ -314,6 +324,7 @@ const INTERNAL_LINKS: Record<string, { href: string; label: string }[]> = {
   Properti:    [{ href: "/asuransi-properti", label: "Asuransi Properti" }, { href: "/asuransi-properti/kebakaran", label: "Kebakaran" }, { href: "/asuransi-properti/banjir-gempa", label: "Banjir & Gempa" }],
   Engineering: [{ href: "/asuransi-engineering", label: "Engineering Insurance" }, { href: "/asuransi-engineering/contractor-all-risk", label: "Contractor All Risk" }, { href: "/asuransi-engineering/machinery-breakdown", label: "Machinery Breakdown" }],
   Liability:   [{ href: "/asuransi-liability", label: "Liability Insurance" }, { href: "/asuransi-liability/public-liability", label: "Public Liability" }, { href: "/asuransi-liability/limbah-b3", label: "Limbah B3" }],
+  Event:       [{ href: "/asuransi-event", label: "Asuransi Event" }, { href: "/asuransi-event/konser-festival-musik", label: "Konser & Festival Musik" }],
   "Surety Bond":[{ href: "/asuransi-surety-bond", label: "Surety Bond" }, { href: "/asuransi-surety-bond/jaminan-penawaran", label: "Jaminan Penawaran" }, { href: "/asuransi-surety-bond/jaminan-pelaksanaan", label: "Jaminan Pelaksanaan" }],
   Bisnis:      [{ href: "/asuransi-properti", label: "Asuransi Properti" }, { href: "/asuransi-kargo", label: "Asuransi Kargo" }, { href: "/asuransi-liability", label: "Liability Insurance" }],
   Panduan:     [{ href: "/asuransi-kendaraan", label: "Asuransi Kendaraan" }, { href: "/asuransi-properti", label: "Asuransi Properti" }, { href: "/asuransi-engineering", label: "Engineering Insurance" }],
