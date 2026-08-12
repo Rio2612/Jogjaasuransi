@@ -159,36 +159,33 @@ export default function ArmadaFleetPage() {
         </div>
       </section>
 
-      {/* PENJELASAN LENGKAP, STUDI KASUS & ESTIMASI PREMI */}
+      {/* KUALIFIKASI & CARA MULAI — konten unik khusus halaman produk, beda dari artikel panduan */}
       <section className="py-16 px-[5vw] bg-cream">
         <div className="max-w-3xl mx-auto">
-          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Panduan Lengkap</div>
-          <h2 className="font-heading text-[clamp(1.6rem,2.6vw,2.2rem)] text-navy leading-[1.25] mb-5">Asuransi Armada / Fleet untuk Perusahaan di Yogyakarta</h2>
-          <div className="text-base leading-[1.85] text-[#475569] space-y-4">
-            <p>Perusahaan dengan 5 unit kendaraan operasional atau lebih — baik untuk distribusi, operasional sales, maupun transportasi karyawan — menghadapi kompleksitas administrasi jika setiap kendaraan diasuransikan secara terpisah dengan tanggal jatuh tempo berbeda-beda.</p>
-            <p>Polis fleet/armada menggabungkan seluruh kendaraan dalam satu polis dengan satu tanggal jatuh tempo, satu kontak underwriter, dan biasanya potongan premi korporat karena volume. Ini sangat membantu divisi keuangan dan GA dalam mengelola anggaran proteksi kendaraan tahunan.</p>
-            <p>Underwriter biasanya juga melihat riwayat klaim gabungan (fleet loss ratio) sehingga perusahaan dengan rekam jejak klaim rendah bisa mendapat diskon tambahan saat perpanjangan polis tahun berikutnya.</p>
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Sebelum Mengajukan</div>
+          <h2 className="font-heading text-[clamp(1.6rem,2.6vw,2.2rem)] text-navy leading-[1.25] mb-5">Apakah Armada Anda Memenuhi Syarat Fleet?</h2>
+          <p className="text-base leading-[1.85] text-[#475569] mb-6">
+            Bukan semua kumpulan kendaraan otomatis diterima sebagai fleet oleh underwriter. Berikut yang biasanya kami cek di awal sebelum mengajukan penawaran ke perusahaan asuransi:
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            {[
+              { icon: "🔢", judul: "Minimal 5 Unit Aktif", desc: "Di bawah 5 unit, sebagian besar underwriter masih memproses sebagai polis satuan — bukan skema fleet." },
+              { icon: "🏢", judul: "Atas Nama Badan Usaha", desc: "Idealnya STNK/BPKB atas nama PT/CV yang sama, bukan campuran nama pribadi direksi." },
+              { icon: "📄", judul: "Riwayat Klaim per Unit", desc: "Siapkan data klaim 1–2 tahun terakhir jika ada — mempercepat proses underwriting dan bisa jadi dasar diskon." },
+              { icon: "🗺️", judul: "Wilayah Operasional Jelas", desc: "Rute atau area operasional (dalam kota, antarkota, luar DIY) memengaruhi rate karena terkait profil risiko." },
+            ].map(q => (
+              <div key={q.judul} className="bg-white rounded-card p-5 border border-black/8">
+                <div className="text-2xl mb-2">{q.icon}</div>
+                <div className="font-heading text-navy font-bold text-sm mb-1">{q.judul}</div>
+                <p className="text-xs text-[#475569] leading-relaxed">{q.desc}</p>
+              </div>
+            ))}
           </div>
 
-          <div className="bg-white border border-black/8 rounded-card p-6 mt-8">
-            <div className="text-gold text-xs font-bold uppercase tracking-wider mb-2">📖 Studi Kasus: Konsolidasi 8 Unit Kendaraan Operasional Perusahaan Distribusi</div>
-            <p className="text-sm leading-relaxed text-[#475569]">Sebuah perusahaan distribusi FMCG di Yogyakarta sebelumnya mengasuransikan 8 unit mobil boks secara terpisah di 3 perusahaan asuransi berbeda dengan tanggal jatuh tempo yang tidak sinkron, menyulitkan rekonsiliasi anggaran. Setelah dikonsolidasi menjadi satu polis fleet, total premi tahunan turun sekitar 12% dibanding total premi individual sebelumnya, dan proses administrasi klaim menjadi satu pintu.</p>
-          </div>
-
-          <div className="mt-8">
-            <div className="font-heading text-navy font-bold text-[1.05rem] mb-3">🧮 Estimasi Premi Fleet Berdasarkan Jumlah Unit (Ilustrasi, Nilai Rata-Rata Rp 200 jt/unit)</div>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm border border-black/8 rounded-card overflow-hidden bg-white">
-                <thead><tr className="bg-navy text-white"><th className="p-3 text-left font-semibold">Jumlah Unit</th><th className="p-3 text-left font-semibold">Total Nilai Pertanggungan</th><th className="p-3 text-left font-semibold">Estimasi Premi/Tahun</th></tr></thead>
-                <tbody>
-                  <tr><td className="p-3 border-t border-black/8">5 unit</td><td className="p-3 border-t border-black/8">Rp 1.000.000.000</td><td className="p-3 border-t border-black/8">Rp 28.000.000 – Rp 38.000.000</td></tr>
-                  <tr><td className="p-3 border-t border-black/8">10 unit</td><td className="p-3 border-t border-black/8">Rp 2.000.000.000</td><td className="p-3 border-t border-black/8">Rp 52.000.000 – Rp 70.000.000</td></tr>
-                  <tr><td className="p-3 border-t border-black/8">20 unit</td><td className="p-3 border-t border-black/8">Rp 4.000.000.000</td><td className="p-3 border-t border-black/8">Rp 96.000.000 – Rp 128.000.000</td></tr>
-                  
-                </tbody>
-              </table>
-            </div>
-            <p className="text-xs text-[#5A6472] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+          <div className="bg-white border border-black/8 rounded-card p-6">
+            <div className="text-gold text-xs font-bold uppercase tracking-wider mb-2">💬 Yang Sering Ditanyakan Calon Klien Fleet</div>
+            <p className="text-sm leading-relaxed text-[#475569]">Pertanyaan paling umum bukan soal harga, tapi soal transisi: &ldquo;Kendaraan kami masih punya sisa masa polis di beberapa perusahaan asuransi berbeda, apa harus tunggu semua habis dulu?&rdquo; Jawabannya tidak — kami bisa menyusun jadwal konsolidasi bertahap sehingga tidak ada unit yang sempat tanpa proteksi selama masa transisi ke satu polis fleet.</p>
           </div>
 
           <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
@@ -203,7 +200,7 @@ export default function ArmadaFleetPage() {
             <Link href="/asuransi-kendaraan" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🚗 Semua Produk Kendaraan →</Link>
             <Link href="/asuransi-kendaraan/dump-truk-niaga" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🚛 Dump Truk & Niaga →</Link>
             <Link href="/asuransi-liability/public-liability" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🤝 Public Liability →</Link>
-            <Link href="/artikel/asuransi-armada-fleet-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📖 Panduan Konsolidasi Polis Fleet →</Link>
+            <Link href="/artikel/asuransi-armada-fleet-jogja" className="bg-gold/10 border border-gold/40 text-navy font-semibold text-sm px-4 py-2 rounded-full hover:bg-gold/20 transition-colors no-underline">📖 Studi Kasus & Simulasi Premi Lengkap →</Link>
           </div>
         </div>
       </section>

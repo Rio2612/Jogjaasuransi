@@ -220,6 +220,8 @@ export default function AsuransiKendaraanPage() {
             <Link href="/artikel/perbedaan-all-risk-tlo" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">⚖️ All Risk vs TLO →</Link>
             <Link href="/artikel/asuransi-armada-fleet-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🚐 Panduan Armada/Fleet →</Link>
             <Link href="/artikel/asuransi-truk-niaga-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🚛 Panduan Truk Niaga →</Link>
+            <Link href="/artikel/asuransi-kendaraan-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏙️ Kenapa Pilih Praktisi Independen? →</Link>
+            <Link href="/artikel/bengkel-rekanan-asuransi-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🔧 Bengkel Rekanan di Jogja →</Link>
           </div>
         </div>
       </section>

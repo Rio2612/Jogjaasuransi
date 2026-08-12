@@ -266,7 +266,7 @@ const schemaArtikel = {
     "Panduan mendalam tentang bengkel rekanan asuransi di Yogyakarta: mekanisme cashless, alur klaim, hak tertanggung, dan tips memilih bengkel yang tepat.",
   url: "https://asuransijogja.biz.id/artikel/bengkel-rekanan-asuransi-jogja",
   datePublished: "2025-01-15",
-  dateModified: "2025-06-01",
+  dateModified: "2026-08-12",
   author: {
     "@type": "Person",
     name: "Rio Mardiansyah",

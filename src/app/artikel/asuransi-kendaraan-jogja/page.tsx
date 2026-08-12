@@ -28,7 +28,7 @@ const schemaArticle = {
   description: "Panduan dan layanan asuransi kendaraan bermotor di Yogyakarta oleh praktisi independen.",
   url: "https://asuransijogja.biz.id/artikel/asuransi-kendaraan-jogja",
   datePublished: "2025-05-01",
-  dateModified: "2025-05-01",
+  dateModified: "2026-08-12",
   author: { "@type": "Person", name: "Rio Mardiansyah", url: "https://asuransijogja.biz.id" },
   publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
   mainEntityOfPage: "https://asuransijogja.biz.id/artikel/asuransi-kendaraan-jogja",
@@ -241,26 +241,52 @@ export default function AsuransiKendaraanJogjaPage() {
           </p>
         </section>
 
-        {/* PRODUK TERSEDIA */}
-        <section className="py-12 border-b border-black/8">
-          <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-8">
-            Produk Asuransi Kendaraan yang Kami Layani di Jogja
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {/* PRODUK TERSEDIA — ringkas, detail lengkap ada di halaman produk masing-masing */}
+        <section className="py-10 border-b border-black/8">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">Produk yang Kami Layani</p>
+          <div className="flex gap-3 flex-wrap">
             {produkKendaraan.map((p) => (
-              <Link key={p.href} href={p.href} className="no-underline group">
-                <div className="border border-black/8 rounded-card p-6 h-full hover:shadow-lg hover:-translate-y-1 hover:border-gold/30 transition-all bg-white relative overflow-hidden">
-                  <div className="absolute top-0 left-0 right-0 h-[3px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                  <div className="text-3xl mb-3">{p.icon}</div>
-                  <div className="font-heading text-navy font-bold mb-1">{p.judul}</div>
-                  <div className="text-gold text-xs font-semibold mb-3">{p.sub}</div>
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {p.tags.map(t => <span key={t} className="bg-gold/8 border border-gold/15 text-navy2 text-xs px-2 py-0.5 rounded-full">{t}</span>)}
-                  </div>
-                  <div className="text-gold text-sm font-semibold group-hover:gap-2 transition-all">Pelajari →</div>
-                </div>
+              <Link key={p.href} href={p.href} className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">
+                {p.icon} {p.judul} →
               </Link>
             ))}
+          </div>
+        </section>
+
+        {/* PRAKTISI INDEPENDEN VS ALTERNATIF LAIN — angle unik, tidak ada di halaman produk */}
+        <section className="py-12 border-b border-black/8">
+          <h2 className="font-heading text-[clamp(1.5rem,2.5vw,2rem)] text-navy mb-4">
+            Praktisi Independen vs Agen Tunggal vs Beli Online — Bedanya Apa?
+          </h2>
+          <p className="text-[#475569] text-sm leading-relaxed mb-6">
+            Calon klien di Jogja sering bingung memilih dari mana membeli polis. Ketiganya sama-sama sah, tapi cakupan bantuan yang Anda dapat sangat berbeda:
+          </p>
+          <div className="overflow-x-auto rounded-card border border-black/8">
+            <table className="w-full text-xs">
+              <thead>
+                <tr className="bg-navy text-white">
+                  <th className="text-left py-3 px-4 font-semibold text-white/70">Aspek</th>
+                  <th className="text-center py-3 px-4 font-semibold text-gold">Praktisi Independen</th>
+                  <th className="text-center py-3 px-4 font-semibold">Agen Tunggal</th>
+                  <th className="text-center py-3 px-4 font-semibold">Beli Online</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { aspek: "Pilihan Produk", indie: "Bisa bandingkan beberapa perusahaan asuransi", agen: "Hanya 1 perusahaan asuransi", online: "Terbatas pada mitra platform" },
+                  { aspek: "Pendampingan Klaim", indie: "Didampingi langsung dari lapor sampai cair", agen: "Tergantung kesediaan agen", online: "Umumnya self-service via aplikasi" },
+                  { aspek: "Rekomendasi Bengkel Rekanan", indie: "Tahu bengkel yang benar-benar cocok di DIY", agen: "Sesuai daftar 1 perusahaan saja", online: "Tidak selalu ada panduan lokal" },
+                  { aspek: "Kontak Saat Ada Masalah", indie: "Satu nomor WhatsApp, respons langsung", agen: "Tergantung jam kerja agen", online: "Call center umum, tidak personal" },
+                ].map((r, i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-cream/40"}>
+                    <td className="py-3 px-4 font-semibold text-navy">{r.aspek}</td>
+                    <td className="py-3 px-4 text-center text-gold font-medium">{r.indie}</td>
+                    <td className="py-3 px-4 text-center text-[#475569]">{r.agen}</td>
+                    <td className="py-3 px-4 text-center text-[#475569]">{r.online}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </section>
 

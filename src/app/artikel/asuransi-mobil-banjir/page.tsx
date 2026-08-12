@@ -29,7 +29,7 @@ const schemaArticle = {
     "Panduan lengkap asuransi kendaraan bermotor untuk risiko banjir di Yogyakarta.",
   url: "https://asuransijogja.biz.id/artikel/asuransi-mobil-banjir",
   datePublished: "2025-05-01",
-  dateModified: "2025-05-01",
+  dateModified: "2026-08-12",
   author: { "@type": "Person", name: "Rio Mardiansyah", url: "https://asuransijogja.biz.id" },
   publisher: {
     "@type": "Organization",
@@ -475,6 +475,12 @@ export default function AsuransiMobilBanjirPage() {
               className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline"
             >
               ⚠️ Kenapa Klaim Bisa Ditolak? →
+            </Link>
+            <Link
+              href="/artikel/bengkel-rekanan-asuransi-jogja"
+              className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline"
+            >
+              🔧 Bengkel Rekanan di Jogja →
             </Link>
             <Link
               href="/asuransi-kendaraan"
