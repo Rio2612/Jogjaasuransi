@@ -693,6 +693,24 @@ export default function BanjirGempaPage() {
         </div>
       </section>
 
+      {/* ── STUDI KASUS & REVIEWER — sinyal pengalaman langsung ─────────────── */}
+      <section className="py-16 px-[5vw] bg-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-cream border border-black/8 rounded-card p-6">
+            <div className="text-gold text-xs font-bold uppercase tracking-wider mb-2">📖 Studi Kasus: Rumah di Bantul Terendam Luapan Kali Opak</div>
+            <p className="text-sm leading-relaxed text-[#475569]">Seorang klien pemilik rumah di kawasan Sewon, Bantul — tidak jauh dari aliran Kali Opak — sempat menunda mengambil perluasan banjir karena menganggap wilayahnya "tidak pernah kena". Dua musim hujan kemudian, luapan sungai merendam lantai dasar rumahnya setinggi 40 cm. Karena polis kebakaran yang dipegang belum memiliki perluasan banjir, kerusakan lantai, perabot, dan instalasi listrik senilai sekitar Rp 45 juta tidak dapat diklaim. Kasus ini menjadi salah satu alasan kami selalu menekankan perluasan banjir sebagai prioritas, bukan opsional, untuk properti di sepanjang Kali Code, Kali Opak, dan Kali Progo.</p>
+          </div>
+
+          <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
+            <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
+            <div>
+              <div className="text-sm font-semibold text-navy">Ditinjau oleh Rio Mardiansyah</div>
+              <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta · Diperbarui Agustus 2026</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── INTERNAL LINKS ───────────────────────────────────────────────── */}
       <section className="py-10 px-[5vw] bg-cream border-t border-black/5">
         <div className="max-w-4xl mx-auto">

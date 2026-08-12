@@ -320,6 +320,7 @@ export default function AsuransiMobilBekasPage() {
             <Link href="/asuransi-kendaraan/mobil" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🚗 Panduan Lengkap Asuransi Mobil →</Link>
             <Link href="/artikel/perbedaan-all-risk-tlo" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">⚖️ All Risk vs TLO →</Link>
             <Link href="/artikel/cara-klaim-asuransi-mobil" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">⚠️ Kenapa Klaim Bisa Ditolak? →</Link>
+            <Link href="/artikel/bengkel-rekanan-asuransi-jogja" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🔧 Bengkel Rekanan di Jogja →</Link>
             <Link href="/asuransi-kendaraan" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🧮 Kalkulator Premi OJK →</Link>
           </div>
         </section>

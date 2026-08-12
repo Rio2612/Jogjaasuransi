@@ -50,7 +50,7 @@ const schemaArtikel = {
       author: { "@type": "Person", name: "Rio Mardiansyah", jobTitle: "Praktisi Asuransi" },
       publisher: { "@type": "Organization", name: "Asuransi Jogja", url: "https://asuransijogja.biz.id" },
       datePublished: "2025-05-20",
-      dateModified: "2025-06-01",
+      dateModified: "2026-08-12",
     },
     {
       "@type": "FAQPage",

@@ -118,6 +118,10 @@ export default function AsuransiMobilPage() {
               </div>
             ))}
           </div>
+          <p className="text-xs text-[#475569] text-center mt-4">
+            Ini ringkasan cepat. Untuk tabel lengkap, simulasi premi per merek mobil, dan studi kasus klaim nyata —{" "}
+            <Link href="/artikel/perbedaan-all-risk-tlo" className="text-gold font-semibold hover:underline">baca perbandingan lengkap All Risk vs TLO →</Link>
+          </p>
         </div>
       </section>
 
@@ -201,6 +205,8 @@ export default function AsuransiMobilPage() {
           <div className="flex gap-3 flex-wrap">
             <Link href="/asuransi-kendaraan/dump-truk-niaga" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🚛 Dump Truk & Kendaraan Niaga →</Link>
             <Link href="/asuransi-kendaraan/armada-fleet" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🚐 Armada / Fleet →</Link>
+            <Link href="/artikel/asuransi-kendaraan-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏙️ Kenapa Praktisi Independen? →</Link>
+            <Link href="/artikel/bengkel-rekanan-asuransi-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🔧 Bengkel Rekanan →</Link>
             <Link href="/asuransi-kendaraan" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">← Semua Asuransi Kendaraan</Link>
           </div>
         </div>

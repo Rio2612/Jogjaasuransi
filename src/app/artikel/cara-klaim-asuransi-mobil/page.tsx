@@ -482,8 +482,10 @@ export default function ArtikelCaraKlaimAsuransiMobil() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 { href: "/asuransi-kendaraan/mobil", icon: "🚗", judul: "Asuransi Mobil", desc: "All Risk dan TLO — detail cakupan dan cara daftar" },
+                { href: "/artikel/asuransi-kendaraan-jogja", icon: "🏙️", judul: "Asuransi Kendaraan Jogja", desc: "Kenapa pilih praktisi independen dibanding agen tunggal" },
                 { href: "/artikel/perbedaan-all-risk-tlo", icon: "📊", judul: "Perbedaan All Risk vs TLO", desc: "Panduan memilih jenis asuransi yang tepat untuk mobil Anda" },
                 { href: "/artikel/asuransi-mobil-banjir", icon: "🌊", judul: "Asuransi Mobil dari Banjir", desc: "Mengapa perluasan banjir wajib untuk kendaraan di DIY" },
+                { href: "/artikel/bengkel-rekanan-asuransi-jogja", icon: "🔧", judul: "Bengkel Rekanan Asuransi di Jogja", desc: "Cara kerja cashless dan hak Anda saat mobil masuk bengkel klaim" },
                 { href: "/artikel/cara-menghitung-premi-asuransi-mobil", icon: "💰", judul: "Cara Menghitung Premi Asuransi Mobil", desc: "Simulasi premi All Risk dan TLO berbagai kendaraan" },
                 { href: "/asuransi-kendaraan/dump-truk-niaga", icon: "🚛", judul: "Asuransi Kendaraan Niaga", desc: "Klaim untuk dump truk dan kendaraan komersial" },
                 { href: "/asuransi-kendaraan/armada-fleet", icon: "🚌", judul: "Asuransi Armada & Fleet", desc: "Proteksi dan klaim untuk banyak kendaraan sekaligus" },
