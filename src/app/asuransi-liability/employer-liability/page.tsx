@@ -155,43 +155,40 @@ export default function EmployerLiabilityPage() {
         </div>
       </section>
 
-      {/* PENJELASAN LENGKAP, STUDI KASUS & ESTIMASI PREMI */}
+      {/* KESIAPAN SEBELUM MENGAJUKAN — konten unik, beda dari artikel panduan */}
       <section className="py-16 px-[5vw] bg-cream">
         <div className="max-w-3xl mx-auto">
-          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Panduan Lengkap</div>
-          <h2 className="font-heading text-[clamp(1.6rem,2.6vw,2.2rem)] text-navy leading-[1.25] mb-5">Asuransi Employer's Liability: Tanggung Jawab kepada Karyawan</h2>
-          <div className="text-base leading-[1.85] text-[#475569] space-y-4">
-            <p>Employer's Liability melindungi perusahaan dari tuntutan hukum dan kompensasi karyawan yang mengalami cedera, sakit, atau meninggal akibat kecelakaan kerja yang berkaitan dengan pekerjaan mereka. Ini berbeda dari BPJS Ketenagakerjaan yang menanggung klaim dasar — polis ini memberikan lapisan proteksi tambahan terutama untuk klaim yang melebihi limit BPJS atau gugatan perdata terpisah.</p>
-            <p>Industri dengan risiko kerja fisik tinggi seperti konstruksi, manufaktur, dan pergudangan di Yogyakarta sangat dianjurkan memiliki lapisan ini, terutama jika mempekerjakan banyak pekerja lapangan atau buruh harian yang rentan kecelakaan kerja.</p>
-            <p>Premi dihitung berdasarkan jumlah karyawan, jenis pekerjaan (klasifikasi risiko manual handling vs kantor), dan total payroll tahunan perusahaan.</p>
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Sebelum Mengajukan</div>
+          <h2 className="font-heading text-[clamp(1.6rem,2.6vw,2.2rem)] text-navy leading-[1.25] mb-5">Data yang Kami Butuhkan untuk Kutip Premi Employer's Liability</h2>
+          <p className="text-base leading-[1.85] text-[#475569] mb-6">
+            Underwriter menilai risiko dari profil tenaga kerja Anda, bukan cuma jumlah karyawan. Siapkan hal berikut:
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            {[
+              { icon: "👷", judul: "Klasifikasi Pekerjaan", desc: "Manual handling di lapangan dan kerja kantor dinilai risiko berbeda — pisahkan jumlah per klasifikasi." },
+              { icon: "💰", judul: "Total Payroll Tahunan", desc: "Sebagian perusahaan asuransi menghitung premi berbasis persentase dari total gaji, bukan flat per kepala." },
+              { icon: "🩹", judul: "Riwayat Kecelakaan Kerja", desc: "Data insiden 2–3 tahun terakhir (jika ada) membantu mempercepat proses dan bisa jadi dasar negosiasi rate." },
+              { icon: "🏥", judul: "Cakupan BPJS Ketenagakerjaan Saat Ini", desc: "Kami perlu tahu limit BPJS yang sudah aktif supaya polis ini benar pas menutup gap, tidak tumpang tindih." },
+            ].map(q => (
+              <div key={q.judul} className="bg-white rounded-card p-5 border border-black/8">
+                <div className="text-2xl mb-2">{q.icon}</div>
+                <div className="font-heading text-navy font-bold text-sm mb-1">{q.judul}</div>
+                <p className="text-xs text-[#475569] leading-relaxed">{q.desc}</p>
+              </div>
+            ))}
           </div>
 
-          <div className="bg-white border border-black/8 rounded-card p-6 mt-8">
-            <div className="text-gold text-xs font-bold uppercase tracking-wider mb-2">📖 Studi Kasus: Pekerja Bangunan Cedera Akibat Jatuh dari Scaffolding</div>
-            <p className="text-sm leading-relaxed text-[#475569]">Seorang pekerja proyek renovasi gedung komersial di Yogyakarta mengalami patah tulang akibat jatuh dari scaffolding setinggi 4 meter. Selain klaim BPJS Ketenagakerjaan yang menanggung biaya medis dasar, keluarga pekerja mengajukan tuntutan tambahan kepada kontraktor terkait kelalaian K3. Karena kontraktor memiliki polis Employer's Liability, biaya kompensasi tambahan dan biaya hukum ditanggung polis, melindungi cash flow perusahaan dari kerugian besar yang tidak terduga.</p>
-          </div>
-
-          <div className="mt-8">
-            <div className="font-heading text-navy font-bold text-[1.05rem] mb-3">🧮 Estimasi Premi Employer's Liability (Ilustrasi, per Tahun)</div>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm border border-black/8 rounded-card overflow-hidden bg-white">
-                <thead><tr className="bg-navy text-white"><th className="p-3 text-left font-semibold">Jumlah Karyawan</th><th className="p-3 text-left font-semibold">Sektor</th><th className="p-3 text-left font-semibold">Estimasi Premi/Tahun</th></tr></thead>
-                <tbody>
-                  <tr><td className="p-3 border-t border-black/8">1–25 karyawan</td><td className="p-3 border-t border-black/8">Konstruksi/manufaktur</td><td className="p-3 border-t border-black/8">Rp 3.500.000 – Rp 7.000.000</td></tr>
-                  <tr><td className="p-3 border-t border-black/8">26–75 karyawan</td><td className="p-3 border-t border-black/8">Konstruksi/manufaktur</td><td className="p-3 border-t border-black/8">Rp 9.000.000 – Rp 18.000.000</td></tr>
-                  <tr><td className="p-3 border-t border-black/8">1–50 karyawan</td><td className="p-3 border-t border-black/8">Kantor/jasa (risiko rendah)</td><td className="p-3 border-t border-black/8">Rp 1.500.000 – Rp 4.000.000</td></tr>
-                  
-                </tbody>
-              </table>
-            </div>
-            <p className="text-xs text-[#5A6472] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+          <div className="bg-white border border-black/8 rounded-card p-6">
+            <div className="text-gold text-xs font-bold uppercase tracking-wider mb-2">💬 Pertanyaan yang Sering Muncul dari HR/GA</div>
+            <p className="text-sm leading-relaxed text-[#475569]">&ldquo;Karyawan kami sudah didaftarkan BPJS Ketenagakerjaan lengkap, apa masih perlu ini?&rdquo; — Perlu, karena BPJS punya batas santunan dan tidak menanggung tuntutan hukum perdata dari keluarga korban akibat dugaan kelalaian K3 perusahaan. Employer's Liability menutup celah itu, bukan menggantikan BPJS.</p>
           </div>
 
           <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
             <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
             <div>
               <div className="text-sm font-semibold text-navy">Ditinjau oleh Rio Mardiansyah</div>
-              <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
+              <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta · Diperbarui Agustus 2026</div>
             </div>
           </div>
 
@@ -199,7 +196,7 @@ export default function EmployerLiabilityPage() {
             <Link href="/asuransi-liability" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🤝 Semua Produk Liability →</Link>
             <Link href="/asuransi-liability/public-liability" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">👥 Public Liability →</Link>
             <Link href="/artikel/perbedaan-jenis-asuransi-liability" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">⚖️ Perbedaan Jenis Liability →</Link>
-            <Link href="/artikel/employer-liability-panduan-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📖 Panduan Lengkap Employer Liability →</Link>
+            <Link href="/artikel/employer-liability-panduan-jogja" className="bg-gold/10 border border-gold/40 text-navy font-semibold text-sm px-4 py-2 rounded-full hover:bg-gold/20 transition-colors no-underline">📖 Studi Kasus & Simulasi Premi Lengkap →</Link>
           </div>
         </div>
       </section>

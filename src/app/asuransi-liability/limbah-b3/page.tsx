@@ -175,43 +175,40 @@ export default function LimbahB3Page() {
         </div>
       </section>
 
-      {/* PENJELASAN LENGKAP, STUDI KASUS & ESTIMASI PREMI */}
+      {/* KESIAPAN SEBELUM MENGAJUKAN — konten unik, beda dari artikel panduan */}
       <section className="py-16 px-[5vw] bg-cream">
         <div className="max-w-3xl mx-auto">
-          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Panduan Lengkap</div>
-          <h2 className="font-heading text-[clamp(1.6rem,2.6vw,2.2rem)] text-navy leading-[1.25] mb-5">Asuransi Liability Limbah B3 & Pencemaran Lingkungan</h2>
-          <div className="text-base leading-[1.85] text-[#475569] space-y-4">
-            <p>Perusahaan yang menghasilkan, mengangkut, atau mengolah limbah Bahan Berbahaya dan Beracun (B3) — termasuk industri tekstil, percetakan, bengkel besar, dan pabrik kecil di kawasan industri DIY — menghadapi risiko tuntutan hukum jika terjadi pencemaran lingkungan baik tiba-tiba (sudden) maupun bertahap (gradual pollution).</p>
-            <p>Polis ini menanggung biaya pembersihan (clean-up cost), kompensasi pihak ketiga yang terdampak pencemaran, dan biaya hukum terkait gugatan lingkungan — sesuatu yang tidak dicakup oleh asuransi properti atau public liability standar.</p>
-            <p>Mengingat regulasi lingkungan hidup yang makin ketat, memiliki lapisan proteksi ini juga membantu perusahaan menunjukkan komitmen kepatuhan kepada regulator dan mitra bisnis/buyer ekspor.</p>
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Sebelum Mengajukan</div>
+          <h2 className="font-heading text-[clamp(1.6rem,2.6vw,2.2rem)] text-navy leading-[1.25] mb-5">Data yang Kami Butuhkan untuk Kutip Premi Liability Limbah B3</h2>
+          <p className="text-base leading-[1.85] text-[#475569] mb-6">
+            Underwriter environmental liability menilai risiko dari proses produksi Anda, bukan cuma skala usaha. Siapkan hal berikut:
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            {[
+              { icon: "🧪", judul: "Jenis & Volume Limbah", desc: "Limbah cair, padat, atau gas — dan estimasi volume per bulan menentukan kelas risiko." },
+              { icon: "📜", judul: "Izin Lingkungan (AMDAL/UKL-UPL)", desc: "Salinan izin yang masih berlaku biasanya jadi syarat wajib underwriting, bukan opsional." },
+              { icon: "🏭", judul: "Sistem Pengolahan Limbah", desc: "Ada tidaknya IPAL atau sistem pengolahan internal memengaruhi rate — sistem yang tersertifikasi biasanya dapat rate lebih baik." },
+              { icon: "📍", judul: "Jarak ke Sumber Air/Pemukiman", desc: "Lokasi pabrik dekat sungai atau permukiman padat menaikkan eksposur risiko pencemaran pihak ketiga." },
+            ].map(q => (
+              <div key={q.judul} className="bg-white rounded-card p-5 border border-black/8">
+                <div className="text-2xl mb-2">{q.icon}</div>
+                <div className="font-heading text-navy font-bold text-sm mb-1">{q.judul}</div>
+                <p className="text-xs text-[#475569] leading-relaxed">{q.desc}</p>
+              </div>
+            ))}
           </div>
 
-          <div className="bg-white border border-black/8 rounded-card p-6 mt-8">
-            <div className="text-gold text-xs font-bold uppercase tracking-wider mb-2">📖 Studi Kasus: Kebocoran Limbah Cair Pabrik Tekstil ke Saluran Irigasi</div>
-            <p className="text-sm leading-relaxed text-[#475569]">Sebuah pabrik tekstil skala menengah di Sleman mengalami kebocoran tangki penampungan limbah cair yang mencemari saluran irigasi sawah warga sekitar. Selain biaya pembersihan saluran senilai puluhan juta rupiah, warga terdampak mengajukan klaim kompensasi atas gagal panen. Karena perusahaan memiliki polis liability limbah B3, biaya clean-up dan kompensasi pihak ketiga ditanggung polis, sehingga operasional pabrik tidak terganggu oleh beban finansial mendadak.</p>
-          </div>
-
-          <div className="mt-8">
-            <div className="font-heading text-navy font-bold text-[1.05rem] mb-3">🧮 Estimasi Premi Liability Limbah B3 (Ilustrasi, per Tahun)</div>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm border border-black/8 rounded-card overflow-hidden bg-white">
-                <thead><tr className="bg-navy text-white"><th className="p-3 text-left font-semibold">Skala Usaha</th><th className="p-3 text-left font-semibold">Limit Liability</th><th className="p-3 text-left font-semibold">Estimasi Premi/Tahun</th></tr></thead>
-                <tbody>
-                  <tr><td className="p-3 border-t border-black/8">UMKM/bengkel skala menengah</td><td className="p-3 border-t border-black/8">Rp 500.000.000</td><td className="p-3 border-t border-black/8">Rp 4.000.000 – Rp 8.000.000</td></tr>
-                  <tr><td className="p-3 border-t border-black/8">Pabrik skala menengah</td><td className="p-3 border-t border-black/8">Rp 2.000.000.000</td><td className="p-3 border-t border-black/8">Rp 14.000.000 – Rp 24.000.000</td></tr>
-                  <tr><td className="p-3 border-t border-black/8">Industri skala besar</td><td className="p-3 border-t border-black/8">Rp 5.000.000.000</td><td className="p-3 border-t border-black/8">Rp 30.000.000 – Rp 50.000.000</td></tr>
-                  
-                </tbody>
-              </table>
-            </div>
-            <p className="text-xs text-[#5A6472] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+          <div className="bg-white border border-black/8 rounded-card p-6">
+            <div className="text-gold text-xs font-bold uppercase tracking-wider mb-2">💬 Pertanyaan yang Sering Muncul dari Pemilik Pabrik</div>
+            <p className="text-sm leading-relaxed text-[#475569]">&ldquo;Asuransi properti kami sudah ada, apa itu tidak cukup?&rdquo; — Tidak. Polis properti umumnya menanggung kerusakan aset milik sendiri, sedangkan tuntutan pihak ketiga akibat pencemaran (biaya clean-up saluran warga, kompensasi gagal panen, dsb.) masuk ranah liability, bukan properti — dua polis ini saling melengkapi, bukan saling menggantikan.</p>
           </div>
 
           <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
             <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
             <div>
               <div className="text-sm font-semibold text-navy">Ditinjau oleh Rio Mardiansyah</div>
-              <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
+              <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta · Diperbarui Agustus 2026</div>
             </div>
           </div>
 
@@ -219,7 +216,7 @@ export default function LimbahB3Page() {
             <Link href="/asuransi-liability" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🤝 Semua Produk Liability →</Link>
             <Link href="/asuransi-liability/product-liability" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📦 Product Liability →</Link>
             <Link href="/artikel/contoh-kasus-gugatan-liability-bisnis" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📖 Studi Kasus Gugatan Liability →</Link>
-            <Link href="/artikel/limbah-b3-liability-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏭 Panduan Lengkap Liability Limbah B3 →</Link>
+            <Link href="/artikel/limbah-b3-liability-jogja" className="bg-gold/10 border border-gold/40 text-navy font-semibold text-sm px-4 py-2 rounded-full hover:bg-gold/20 transition-colors no-underline">📖 Studi Kasus & Simulasi Premi Lengkap →</Link>
           </div>
         </div>
       </section>
