@@ -160,43 +160,40 @@ export default function KargoUdaraLautPage() {
         </div>
       </section>
 
-      {/* PENJELASAN LENGKAP, STUDI KASUS & ESTIMASI PREMI */}
+      {/* KESIAPAN SEBELUM MENGAJUKAN — konten unik, beda dari artikel panduan klausul ICC */}
       <section className="py-16 px-[5vw] bg-cream">
         <div className="max-w-3xl mx-auto">
-          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Panduan Lengkap</div>
-          <h2 className="font-heading text-[clamp(1.6rem,2.6vw,2.2rem)] text-navy leading-[1.25] mb-5">Asuransi Kargo Udara & Laut untuk Ekspor-Impor di Yogyakarta</h2>
-          <div className="text-base leading-[1.85] text-[#475569] space-y-4">
-            <p>Pelaku usaha ekspor-impor di DIY — mulai dari kerajinan, furnitur, hingga produk tekstil — mengirimkan barang melalui pelabuhan untuk jalur laut atau bandara untuk jalur udara. Setiap moda memiliki profil risiko berbeda: kargo laut menghadapi risiko cuaca, pembusukan, dan penanganan pelabuhan; kargo udara menghadapi risiko penanganan cepat namun nilai barang per kiriman sering lebih tinggi.</p>
-            <p>Polis marine cargo dengan klausul ICC (Institute Cargo Clauses) A, B, atau C memberikan tingkat proteksi berbeda — ICC-A paling komprehensif (all risks), sementara ICC-C hanya menanggung risiko mayor seperti kebakaran dan tenggelam kapal.</p>
-            <p>Untuk barang ekspor bernilai tinggi seperti kerajinan seni atau elektronik, ICC-A sangat direkomendasikan karena selisih premi dengan ICC-C relatif kecil dibanding risiko kerugian totalnya.</p>
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Sebelum Mengajukan</div>
+          <h2 className="font-heading text-[clamp(1.6rem,2.6vw,2.2rem)] text-navy leading-[1.25] mb-5">Dokumen & Data yang Kami Butuhkan untuk Kutip Premi</h2>
+          <p className="text-base leading-[1.85] text-[#475569] mb-6">
+            Supaya proses penerbitan polis marine cargo tidak bolak-balik, siapkan hal berikut sebelum menghubungi kami:
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            {[
+              { icon: "📄", judul: "Invoice / Packing List", desc: "Nilai barang per pengiriman, jadi dasar penentuan sum insured dan premi." },
+              { icon: "🚢", judul: "Moda & Rute Pengiriman", desc: "Laut, udara, atau kombinasi (transhipment) — tiap rute punya profil risiko beda." },
+              { icon: "📦", judul: "Jenis & Kemasan Barang", desc: "Barang pecah belah, elektronik, atau tekstil butuh klausul dan syarat kemasan berbeda." },
+              { icon: "🗓️", judul: "Frekuensi Pengiriman", desc: "Sekali kirim (single shipment) atau rutin bulanan — memengaruhi pilihan antara polis per-pengiriman atau open policy." },
+            ].map(q => (
+              <div key={q.judul} className="bg-white rounded-card p-5 border border-black/8">
+                <div className="text-2xl mb-2">{q.icon}</div>
+                <div className="font-heading text-navy font-bold text-sm mb-1">{q.judul}</div>
+                <p className="text-xs text-[#475569] leading-relaxed">{q.desc}</p>
+              </div>
+            ))}
           </div>
 
-          <div className="bg-white border border-black/8 rounded-card p-6 mt-8">
-            <div className="text-gold text-xs font-bold uppercase tracking-wider mb-2">📖 Studi Kasus: Kontainer Kerajinan Ekspor Rusak Akibat Cuaca Buruk di Laut</div>
-            <p className="text-sm leading-relaxed text-[#475569]">Seorang eksportir furnitur dan kerajinan kayu di Bantul mengirim satu kontainer senilai Rp 450 juta melalui jalur laut ke Eropa. Akibat cuaca buruk yang menyebabkan air laut masuk ke kontainer, sebagian barang mengalami kerusakan kelembaban. Dengan polis marine cargo ICC-A yang menanggung risiko air laut, klaim kerugian sekitar Rp 95 juta berhasil diproses dengan dokumentasi survei pelabuhan, dan dana ganti rugi cair dalam waktu sekitar 3 minggu.</p>
-          </div>
-
-          <div className="mt-8">
-            <div className="font-heading text-navy font-bold text-[1.05rem] mb-3">🧮 Estimasi Premi Marine Cargo (Ilustrasi, per Pengiriman)</div>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm border border-black/8 rounded-card overflow-hidden bg-white">
-                <thead><tr className="bg-navy text-white"><th className="p-3 text-left font-semibold">Nilai Barang</th><th className="p-3 text-left font-semibold">Klausul</th><th className="p-3 text-left font-semibold">Estimasi Premi</th></tr></thead>
-                <tbody>
-                  <tr><td className="p-3 border-t border-black/8">Rp 200.000.000</td><td className="p-3 border-t border-black/8">ICC-C</td><td className="p-3 border-t border-black/8">Rp 300.000 – Rp 500.000</td></tr>
-                  <tr><td className="p-3 border-t border-black/8">Rp 200.000.000</td><td className="p-3 border-t border-black/8">ICC-A</td><td className="p-3 border-t border-black/8">Rp 500.000 – Rp 800.000</td></tr>
-                  <tr><td className="p-3 border-t border-black/8">Rp 500.000.000 (kargo udara)</td><td className="p-3 border-t border-black/8">ICC-A</td><td className="p-3 border-t border-black/8">Rp 1.250.000 – Rp 2.000.000</td></tr>
-                  
-                </tbody>
-              </table>
-            </div>
-            <p className="text-xs text-[#5A6472] mt-2">*Estimasi premi bersifat indikatif berdasarkan pola tarif acuan OJK dan komponen risiko umum untuk ilustrasi — bukan penawaran resmi. Premi final ditentukan setelah survei dan underwriting oleh perusahaan asuransi.</p>
+          <div className="bg-white border border-black/8 rounded-card p-6">
+            <div className="text-gold text-xs font-bold uppercase tracking-wider mb-2">💬 Pertanyaan yang Sering Muncul Sebelum Booking Polis</div>
+            <p className="text-sm leading-relaxed text-[#475569]">&ldquo;Kalau kirim rutin tiap bulan ke buyer yang sama, apa harus beli polis baru tiap kali?&rdquo; — Tidak selalu. Untuk pengiriman rutin, open policy (polis payung tahunan) lebih efisien: Anda cukup melaporkan nilai tiap pengiriman ke perusahaan asuransi tanpa menerbitkan polis baru setiap kali, dan tarif sudah disepakati di awal.</p>
           </div>
 
           <div className="flex items-center gap-3 mt-8 pt-6 border-t border-black/8">
             <div className="w-11 h-11 rounded-full bg-navy text-gold flex items-center justify-center font-heading font-bold flex-shrink-0">RM</div>
             <div>
               <div className="text-sm font-semibold text-navy">Ditinjau oleh Rio Mardiansyah</div>
-              <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
+              <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta · Diperbarui Agustus 2026</div>
             </div>
           </div>
 
@@ -204,7 +201,7 @@ export default function KargoUdaraLautPage() {
             <Link href="/asuransi-kargo" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📦 Semua Produk Kargo →</Link>
             <Link href="/asuransi-kargo/pengiriman-barang" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🚚 Kargo Darat/Inland Transit →</Link>
             <Link href="/artikel/asuransi-kargo-umkm-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🛵 Kargo untuk UMKM →</Link>
-            <Link href="/artikel/asuransi-kargo-ekspor-impor-jogja" className="bg-white border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📦 Panduan Klausul ICC Lengkap →</Link>
+            <Link href="/artikel/asuransi-kargo-ekspor-impor-jogja" className="bg-gold/10 border border-gold/40 text-navy font-semibold text-sm px-4 py-2 rounded-full hover:bg-gold/20 transition-colors no-underline">📖 Studi Kasus & Simulasi Premi Lengkap →</Link>
           </div>
         </div>
       </section>
