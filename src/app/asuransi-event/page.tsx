@@ -28,6 +28,14 @@ const produkEvent = [
     desc: "Public Liability, Event Cancellation, Personal Accident, dan Property All Risk dalam satu paket — disusun mengikuti standar rider kontrak artis internasional.",
     tags: ["Festival Internasional", "Konser Tunggal", "Event Korporat", "Wedding Performer"],
   },
+  {
+    href: "/asuransi-event/motocross-grasstrack",
+    icon: "🏍️", batik: "◈",
+    title: "Motocross & Grasstrack",
+    subtitle: "Pembalap · Panitia · Penonton",
+    desc: "Personal Accident pembalap, Public Liability, Personal Accident panitia/marshal, dan Property — untuk event resmi IMI maupun grasstrack komunitas.",
+    tags: ["Kejurda/Kejurnas", "Grasstrack Komunitas", "Klub Motor", "Sirkuit Sementara"],
+  },
 ];
 
 const mengapaEvent = [
@@ -129,7 +137,7 @@ export default function AsuransiEventPage() {
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Produk Asuransi Event</div>
           <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-navy">Paket Proteksi untuk<br />Event Musik Anda</h2>
         </div>
-        <div className="grid grid-cols-1 gap-6 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {produkEvent.map(c => (
             <Link key={c.href} href={c.href} className="no-underline group">
               <div className="border border-black/8 rounded-card p-7 h-full hover:shadow-[0_12px_40px_rgba(13,33,55,0.1)] hover:-translate-y-1.5 hover:border-gold/30 transition-all relative overflow-hidden bg-white">

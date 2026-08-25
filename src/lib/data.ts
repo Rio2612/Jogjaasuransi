@@ -59,6 +59,7 @@ export const CLUSTERS: Cluster[] = [
     id: "event", label: "Event", icon: "🎪",
     produk: [
       { icon: "🎤", name: "Asuransi Konser & Festival Musik", desc: "Paket 4-in-1 — Public Liability, Event Cancellation, Personal Accident, dan Property All Risk — disusun mengikuti standar rider kontrak artis internasional.", href: "/asuransi-event/konser-festival-musik" },
+      { icon: "🏍️", name: "Asuransi Event Motocross & Grasstrack", desc: "Personal Accident pembalap, Public Liability, Personal Accident panitia/marshal, dan Property — untuk event resmi IMI maupun grasstrack komunitas.", href: "/asuransi-event/motocross-grasstrack" },
     ],
   },
   {

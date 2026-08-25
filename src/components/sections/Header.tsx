@@ -35,6 +35,7 @@ const NAV_CLUSTERS = [
   ]},
   { href: "/asuransi-event", icon: "🎪", label: "Asuransi Event", sub: [
     { href: "/asuransi-event/konser-festival-musik", label: "Konser & Festival Musik" },
+    { href: "/asuransi-event/motocross-grasstrack", label: "Motocross & Grasstrack" },
   ]},
   { href: "/asuransi-surety-bond", icon: "📋", label: "Surety Bond", sub: [
     { href: "/asuransi-surety-bond/jaminan-penawaran", label: "Jaminan Penawaran" },

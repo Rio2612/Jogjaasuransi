@@ -33,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ─── EVENT ───────────────────────────────────────────────────────────────
     { url: `${base}/asuransi-event`,                           lastModified: now, changeFrequency: "monthly", priority: 0.9  },
     { url: `${base}/asuransi-event/konser-festival-musik`,     lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/asuransi-event/motocross-grasstrack`,      lastModified: now, changeFrequency: "monthly", priority: 0.85 },
 
     // ─── KARGO ───────────────────────────────────────────────────────────────
     { url: `${base}/asuransi-kargo`,                           lastModified: now, changeFrequency: "monthly", priority: 0.9  },

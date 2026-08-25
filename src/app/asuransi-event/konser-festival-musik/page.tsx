@@ -166,6 +166,7 @@ export default function EventKonserMusikPage() {
         <div className="max-w-4xl mx-auto">
           <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-4">Produk Terkait</p>
           <div className="flex gap-3 flex-wrap">
+            <Link href="/asuransi-event/motocross-grasstrack" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏍️ Motocross & Grasstrack →</Link>
             <Link href="/artikel/syarat-dokumen-asuransi-event-musik-jogja" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">📝 Syarat & Data yang Dibutuhkan →</Link>
             <Link href="/asuransi-liability/public-liability" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🤝 Public Liability →</Link>
             <Link href="/asuransi-properti/property-all-risk" className="bg-cream border border-black/8 text-navy2 text-sm px-4 py-2 rounded-full hover:border-gold hover:text-gold transition-colors no-underline">🏢 Property All Risk →</Link>
