@@ -72,7 +72,49 @@ export default function EventKonserMusikPage() {
     ]}>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Beranda\", \"item\": \"https://asuransijogja.biz.id\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Asuransi Event\", \"item\": \"https://asuransijogja.biz.id/asuransi-event\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Konser & Festival Musik\", \"item\": \"https://asuransijogja.biz.id/asuransi-event/konser-festival-musik\"}]}" }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Beranda", item: "https://asuransijogja.biz.id" },
+                { "@type": "ListItem", position: 2, name: "Asuransi Event", item: "https://asuransijogja.biz.id/asuransi-event" },
+                { "@type": "ListItem", position: 3, name: "Konser & Festival Musik", item: "https://asuransijogja.biz.id/asuransi-event/konser-festival-musik" },
+              ],
+            },
+            {
+              "@type": "Service",
+              "@id": "https://asuransijogja.biz.id/asuransi-event/konser-festival-musik/#service",
+              name: "Asuransi Konser & Festival Musik Yogyakarta",
+              alternateName: "Asuransi Event Musik Jogja",
+              description: "Layanan konsultasi dan penerbitan polis paket asuransi event musik di Yogyakarta — Public Liability, Event Cancellation, Personal Accident, dan Property All Risk — sesuai standar rider kontrak artis internasional.",
+              provider: {
+                "@type": "InsuranceAgency",
+                "@id": "https://asuransijogja.biz.id/#organization",
+                name: "Asuransi Jogja",
+                telephone: "+628131556592",
+              },
+              areaServed: [
+                { "@type": "City", name: "Yogyakarta" },
+                { "@type": "AdministrativeArea", name: "Daerah Istimewa Yogyakarta" },
+                { "@type": "City", name: "Sleman" },
+                { "@type": "City", name: "Bantul" },
+                { "@type": "City", name: "Kulon Progo" },
+              ],
+              serviceType: "Event Insurance",
+              offers: {
+                "@type": "Offer",
+                description: "Estimasi premi bergantung skala event dan nilai pertanggungan tiap komponen. Konsultasi gratis.",
+                priceCurrency: "IDR",
+                eligibleRegion: {
+                  "@type": "AdministrativeArea",
+                  name: "Daerah Istimewa Yogyakarta",
+                },
+              },
+            },
+          ],
+        }) }}
       />
 
       {/* HERO */}

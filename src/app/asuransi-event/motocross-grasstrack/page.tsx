@@ -31,10 +31,34 @@ const schema = {
       ],
     },
     {
-      "@type": "Product",
-      name: "Asuransi Event Motocross & Grasstrack",
-      description: "Paket asuransi untuk event motocross dan grasstrack — Personal Accident pembalap, Public Liability, Personal Accident panitia/marshal, dan Property.",
-      brand: { "@type": "Organization", name: "Asuransi Jogja" },
+      "@type": "Service",
+      "@id": "https://asuransijogja.biz.id/asuransi-event/motocross-grasstrack/#service",
+      name: "Asuransi Event Motocross & Grasstrack Yogyakarta",
+      alternateName: "Asuransi Balap Motor Jogja",
+      description: "Layanan konsultasi dan penerbitan polis asuransi untuk event motocross dan grasstrack di Yogyakarta — Personal Accident pembalap, Public Liability, Personal Accident panitia/marshal, dan Property peralatan.",
+      provider: {
+        "@type": "InsuranceAgency",
+        "@id": "https://asuransijogja.biz.id/#organization",
+        name: "Asuransi Jogja",
+        telephone: "+628131556592",
+      },
+      areaServed: [
+        { "@type": "City", name: "Yogyakarta" },
+        { "@type": "AdministrativeArea", name: "Daerah Istimewa Yogyakarta" },
+        { "@type": "City", name: "Sleman" },
+        { "@type": "City", name: "Bantul" },
+        { "@type": "City", name: "Kulon Progo" },
+      ],
+      serviceType: "Event Insurance",
+      offers: {
+        "@type": "Offer",
+        description: "Estimasi premi dihitung dari jumlah peserta terdaftar dan limit santunan per komponen. Konsultasi gratis.",
+        priceCurrency: "IDR",
+        eligibleRegion: {
+          "@type": "AdministrativeArea",
+          name: "Daerah Istimewa Yogyakarta",
+        },
+      },
     },
   ],
 };
