@@ -234,7 +234,7 @@ export default function ArtikelGugatanLiabilityPage() {
           <div className="max-w-[750px] mx-auto">
             <h2 className="font-heading text-navy text-[1.4rem] mb-4">Kesimpulan: Asuransi Liability Bukan Opsi, Ini Kebutuhan</h2>
             <p className="text-base leading-[1.85] text-[#475569] mb-4">
-              Dari keenam kasus di atas, pola yang sama terulang: bisnis yang tidak memiliki <Link href="/asuransi-liability" className="text-gold hover:text-gold2 transition-colors no-underline font-semibold">asuransi liability</Link> harus menanggung biaya hukum yang jauh melebihi pendapatan tahunan mereka. Beberapa bahkan harus tutup permanen.
+              Dari keenam kasus di atas, pola yang sama terulang: bisnis yang tidak memiliki <Link href="/asuransi-liability" className="text-gold hover:text-gold2 transition-colors no-underline font-semibold">asuransi tanggung gugat</Link> harus menanggung biaya hukum yang jauh melebihi pendapatan tahunan mereka. Beberapa bahkan harus tutup permanen.
             </p>
             <p className="text-base leading-[1.85] text-[#475569] mb-8">
               Sebaliknya, dengan premi yang relatif terjangkau, pemegang polis cukup melaporkan insiden — dan seluruh proses hukum, biaya pengacara, serta pembayaran ganti rugi ditangani oleh perusahaan asuransi.
