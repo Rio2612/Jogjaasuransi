@@ -4,19 +4,20 @@ import LiabilityLayout from "@/components/liability/LiabilityLayout";
 import { KONTAK } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Asuransi Liability Jogja – Tanggung Jawab Hukum Bisnis",
+  title: "Asuransi Tanggung Gugat Hukum Perusahaan",
   description:
-    "Asuransi liability di Yogyakarta untuk hotel, restoran, tempat wisata, dan industri. Public Liability, Employer Liability, Product Liability, hingga Pencemaran Limbah B3. Konsultasi gratis.",
+    "Asuransi tanggung gugat hukum perusahaan di Yogyakarta: public, employer, product liability & limbah B3. Lindungi bisnis dari gugatan pihak ketiga. Konsultasi gratis.",
   keywords:
-    "asuransi liability jogja, public liability yogyakarta, asuransi tanggung jawab hukum jogja, employer liability yogyakarta, asuransi limbah b3 jogja, product liability indonesia, ganti rugi pihak ketiga, asuransi tanggung gugat, indemnity insurance jogja, professional indemnity yogyakarta, biaya pengacara asuransi, polis liability bisnis",
+    "asuransi tanggung gugat hukum perusahaan, asuransi liability jogja, public liability yogyakarta, asuransi tanggung jawab hukum jogja, employer liability yogyakarta, asuransi limbah b3 jogja, product liability indonesia, ganti rugi pihak ketiga, asuransi tanggung gugat, indemnity insurance jogja, professional indemnity yogyakarta, biaya pengacara asuransi, polis liability bisnis",
   alternates: { canonical: "https://asuransijogja.biz.id/asuransi-liability" },
   openGraph: {
-    title: "Asuransi Liability Jogja – Tanggung Jawab Hukum Bisnis",
+    title: "Asuransi Tanggung Gugat Hukum Perusahaan | Liability Jogja",
+    description: "Asuransi tanggung gugat hukum perusahaan di Yogyakarta: public, employer, product liability & limbah B3. Lindungi bisnis dari gugatan pihak ketiga.",
     url: "https://asuransijogja.biz.id/asuransi-liability",
     siteName: "Asuransi Jogja",
     locale: "id_ID",
     type: "website",
-    images: [{ url: "/og/og-liability.png", width: 1200, height: 630, alt: "Asuransi Liability Jogja – Tanggung Jawab Hukum Bisnis" }],
+    images: [{ url: "/og/og-liability.png", width: 1200, height: 630, alt: "Asuransi Tanggung Gugat Hukum Perusahaan – Liability Jogja" }],
   },
 };
 
@@ -99,6 +100,14 @@ const risikoMatrix = [
 
 const faqItems = [
   {
+    q: "Apa itu asuransi tanggung gugat hukum perusahaan?",
+    a: "Asuransi tanggung gugat (liability insurance) menanggung ganti rugi yang secara hukum harus dibayar perusahaan kepada pihak ketiga akibat kelalaian, seperti cedera tamu atau kerusakan harta benda orang lain, termasuk biaya pembelaan hukumnya sesuai polis. Ini berbeda dari asuransi properti yang melindungi aset milik perusahaan sendiri.",
+  },
+  {
+    q: "Apa bedanya asuransi tanggung gugat dengan asuransi properti?",
+    a: "Asuransi properti mengganti kerusakan aset Anda sendiri, misalnya bangunan dan isinya. Asuransi tanggung gugat mengganti kewajiban Anda kepada orang lain yang dirugikan oleh operasional bisnis Anda. Bisnis yang berinteraksi dengan publik umumnya perlu keduanya.",
+  },
+  {
     q: "Apa itu asuransi liability dan apa bedanya dengan asuransi properti?",
     a: "Asuransi properti melindungi aset fisik Anda (bangunan, isi). Asuransi liability melindungi Anda dari kewajiban hukum — jika bisnis Anda menyebabkan kerugian atau cedera pada pihak lain. Keduanya berbeda dan saling melengkapi.",
   },
@@ -153,7 +162,7 @@ export default function AsuransiLiabilityPage() {
             <span className="text-gold text-[0.5rem]">◆</span>Asuransi Liability · Yogyakarta
           </div>
           <h1 className="font-heading text-[clamp(2.4rem,4vw,3.8rem)] text-white leading-[1.15] mb-5">
-            Lindungi Bisnis Anda<br /><em className="not-italic text-gold">dari Tuntutan Hukum</em><br />Pihak Ketiga
+            Asuransi Tanggung Gugat<br /><em className="not-italic text-gold">Hukum Perusahaan:</em><br />Lindungi Bisnis dari Gugatan Pihak Ketiga
           </h1>
           <p className="text-white/85 text-base leading-[1.85] max-w-[540px] mb-8">
             Yogyakarta dikunjungi jutaan wisatawan setiap tahun. Hotel, restoran, tempat wisata, dan bisnis apa pun yang berinteraksi dengan publik menanggung risiko <strong className="text-gold2">tanggung gugat</strong> yang nyata — satu insiden bisa berujung gugatan miliaran rupiah.
@@ -167,6 +176,23 @@ export default function AsuransiLiabilityPage() {
               <div key={s.lbl}><div className="font-heading text-gold text-xl font-bold">{s.num}</div><div className="text-white/60 text-xs mt-0.5">{s.lbl}</div></div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* APA ITU TANGGUNG GUGAT HUKUM PERUSAHAAN */}
+      <section className="py-16 px-[5vw] bg-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-xs font-bold tracking-[2.5px] uppercase text-gold mb-2">Pengertian</div>
+          <h2 className="font-heading text-[clamp(1.8rem,2.8vw,2.5rem)] text-navy mb-5">Apa Itu Asuransi Tanggung Gugat<br />Hukum Perusahaan?</h2>
+          <p className="text-base leading-[1.85] text-[#475569] mb-4">
+            Asuransi tanggung gugat hukum perusahaan adalah polis liability yang menanggung ganti rugi yang wajib dibayar bisnis Anda kepada pihak ketiga akibat kelalaian atau kegiatan operasional, ditambah biaya pembelaan hukum sesuai ketentuan polis. Pihak ketiga bisa berupa tamu, pelanggan, warga sekitar, kontraktor, atau karyawan.
+          </p>
+          <p className="text-base leading-[1.85] text-[#475569] mb-4">
+            Dasar tuntutannya biasanya perbuatan melawan hukum dalam Pasal 1365 KUH Perdata, dan Pasal 1367 menegaskan perusahaan dapat dimintai tanggung jawab atas kelalaian karyawannya. Untuk produk yang merugikan konsumen, berlaku juga UU Perlindungan Konsumen. Tanpa polis, ganti rugi dan biaya hukum keluar dari kas perusahaan.
+          </p>
+          <p className="text-base leading-[1.85] text-[#475569] mb-4">
+            Polis ini tidak menanggung kerusakan aset milik sendiri (itu wilayah asuransi properti) dan tidak menanggung tindakan yang disengaja. Pelajari contoh nyatanya di <Link href="/artikel/contoh-kasus-gugatan-liability-bisnis" className="text-gold hover:text-gold2 transition-colors no-underline font-semibold">kasus gugatan liability bisnis</Link>, atau lihat <Link href="/artikel/perbedaan-jenis-asuransi-liability" className="text-gold hover:text-gold2 transition-colors no-underline font-semibold">perbedaan jenis asuransi liability</Link> untuk memilih yang sesuai.
+          </p>
         </div>
       </section>
 
