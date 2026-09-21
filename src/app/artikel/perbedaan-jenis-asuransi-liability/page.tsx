@@ -435,7 +435,7 @@ export default function ArtikelPerbedaanJenisLiability() {
                 💬 Konsultasi via WA — Gratis
               </a>
               <Link href="/asuransi-liability" className="border border-navy/20 text-navy px-5 py-2.5 rounded-lg text-sm no-underline hover:border-gold hover:text-gold transition-all">
-                🛡️ Lihat Semua Produk Liability →
+                🛡️ Lihat Asuransi Tanggung Gugat Hukum Perusahaan →
               </Link>
             </div>
           </div>
