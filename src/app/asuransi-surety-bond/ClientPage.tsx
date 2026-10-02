@@ -101,7 +101,7 @@ const produkSuretyBond = [
     nama: "Jaminan Pemeliharaan",
     inggris: "Maintenance Bond",
     tagline: "Saat serah terima pertama (PHO)",
-    href: "/asuransi-surety-bond/jaminan-pemeliharan",
+    href: "/asuransi-surety-bond/jaminan-pemeliharaan",
     warnaBadge: "bg-purple-50 text-purple-700 border-purple-200",
     warnaAksen: "border-purple-400",
     warnaBg: "bg-purple-50/30",

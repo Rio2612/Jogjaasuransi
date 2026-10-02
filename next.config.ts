@@ -10,7 +10,10 @@ const nextConfig: NextConfig = {
   // HAPUS redirect www — biarkan Vercel yang handle lewat Dashboard
   // Redirect di sini + Vercel redirect = ERR_TOO_MANY_REDIRECTS
 
-  // Fix typo 404 dari sitemap lama
+  // Fix typo 404 dari sitemap lama.
+  // CATATAN: penanganan "?m=1" ada di src/middleware.ts. Jangan dibuat lagi
+  // sebagai redirect di sini: Next.js mempertahankan query string saat redirect,
+  // sehingga destination "/:path*" tetap membawa ?m=1 dan menyebabkan loop.
   async redirects() {
     return [
       {
@@ -21,17 +24,6 @@ const nextConfig: NextConfig = {
       {
         source: "/artikel/artikel_rental_mobil_wisata",
         destination: "/artikel/asuransi-rental-mobil-jogja",
-        permanent: true,
-      },
-      // Sisa parameter mobile-view "?m=1" dari platform lama (Blogger-style).
-      // Google masih mencoba crawl URL ini dan gagal (GSC: "Kesalahan pengalihan").
-      // Redirect 301 generik ini menghapus query string ini secara definitif
-      // di SELURUH path sekaligus, jauh lebih baik daripada membiarkan
-      // Next.js men-serve 200 duplikat untuk setiap URL berbeda.
-      {
-        source: "/:path*",
-        has: [{ type: "query", key: "m", value: "1" }],
-        destination: "/:path*",
         permanent: true,
       },
     ];
