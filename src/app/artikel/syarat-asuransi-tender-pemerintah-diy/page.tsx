@@ -171,7 +171,7 @@ const jaminanWajib = [
     icon: "🔧",
     warna: "border-purple-200 bg-purple-50/60",
     warnaLabel: "bg-purple-100 text-purple-700",
-    link: "/asuransi-surety-bond/jaminan-pemeliharan",
+    link: "/asuransi-surety-bond/jaminan-pemeliharaan",
     catatan: "Berfungsi menggantikan dana retensi 5% yang ditahan PPK. Dengan menyerahkan jaminan ini, kontraktor bisa menerima pembayaran penuh.",
   },
 ];

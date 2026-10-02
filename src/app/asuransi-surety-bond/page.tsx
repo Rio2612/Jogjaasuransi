@@ -117,7 +117,7 @@ const schemaSuretyBond = {
             itemOffered: {
               "@type": "Service",
               name: "Jaminan Pemeliharaan (Maintenance Bond)",
-              url: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-pemeliharan",
+              url: "https://asuransijogja.biz.id/asuransi-surety-bond/jaminan-pemeliharaan",
             },
           },
         ],

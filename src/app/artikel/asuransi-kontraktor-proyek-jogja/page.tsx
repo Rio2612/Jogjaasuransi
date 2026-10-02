@@ -156,7 +156,7 @@ const matriksKebutuhan = [
     proyekSwastaKecil: false,
     proyekIndustri: false,
     keterangan: "Diserahkan saat PHO, menggantikan retensi 5% yang ditahan PPK.",
-    href: "/asuransi-surety-bond/jaminan-pemeliharan",
+    href: "/asuransi-surety-bond/jaminan-pemeliharaan",
     warnaBadge: "bg-purple-50 text-purple-700",
   },
   {
@@ -358,7 +358,7 @@ const timelineProyek = [
     aksi: "Serahkan Jaminan Pemeliharaan",
     detail: "Tukar dengan retensi 5% yang ditahan PPK. Nilai jaminan = 5% nilai kontrak.",
     produk: "Jaminan Pemeliharaan",
-    hrefProduk: "/asuransi-surety-bond/jaminan-pemeliharan",
+    hrefProduk: "/asuransi-surety-bond/jaminan-pemeliharaan",
     warna: "border-l-green-400",
   },
   {
