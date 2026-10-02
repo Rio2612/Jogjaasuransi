@@ -3,6 +3,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { KONTAK } from "@/lib/data";
+import DeepDive from "@/components/ui/DeepDive";
+import { armadaFleet } from "@/lib/deepDive";
 
 export const metadata: Metadata = {
   title: "Asuransi Armada / Fleet Perusahaan di Jogja – Panduan Konsolidasi Polis",
@@ -115,6 +117,8 @@ export default function ArtikelAsuransiArmadaFleetJogja() {
                 <div className="text-xs text-[#475569]">Praktisi Asuransi Independen · 8 Tahun Pengalaman · Berbasis di Yogyakarta</div>
               </div>
             </div>
+
+            <DeepDive content={armadaFleet} />
 
             {/* CTA Inline */}
             <div className="bg-gold/8 border border-gold/25 rounded-card p-6 mb-10">

@@ -1,5 +1,6 @@
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
+import ClusterLinks from "@/components/ui/ClusterLinks";
 import Link from "next/link";
 
 interface Breadcrumb { label: string; href?: string }
@@ -25,6 +26,7 @@ export default function KargoLayout({ children, breadcrumbs }: Props) {
         </div>
         <main>{children}</main>
       </div>
+      <ClusterLinks />
       <Footer />
     </>
   );

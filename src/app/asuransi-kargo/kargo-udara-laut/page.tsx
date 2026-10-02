@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import KargoLayout from "@/components/kargo/KargoLayout";
 import { KONTAK } from "@/lib/data";
+import DeepDive from "@/components/ui/DeepDive";
+import { kargoUdaraLaut } from "@/lib/deepDive";
 
 export const metadata: Metadata = {
   title: "Asuransi Kargo Udara & Laut Jogja – Marine Cargo & Air Freight",
@@ -136,6 +138,8 @@ export default function KargoUdaraLautPage() {
           <a href={`https://wa.me/${KONTAK.wa}`} className="inline-block bg-gold text-navy px-6 py-2.5 rounded-lg font-bold text-sm no-underline hover:bg-gold2 transition-all">Konsultasi Kargo Ekspor</a>
         </div>
       </section>
+
+      <DeepDive content={kargoUdaraLaut} variant="section" />
 
       {/* INTERNAL LINKS */}
       <section className="py-10 px-[5vw] bg-white border-t border-black/5">
