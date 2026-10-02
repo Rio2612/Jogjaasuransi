@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { KONTAK } from "@/lib/data";
+import DeepDive from "@/components/ui/DeepDive";
+import { mobilBanjir } from "@/lib/deepDive";
 
 export const metadata: Metadata = {
   title: "Asuransi Mobil Kena Banjir di Jogja – Klaim, Cakupan & Cara Mencegah Ditolak",
@@ -430,6 +432,8 @@ export default function AsuransiMobilBanjirPage() {
             pilihan — ini adalah keharusan.
           </div>
         </section>
+
+        <DeepDive content={mobilBanjir} />
 
         {/* FAQ */}
         <section className="py-12 border-b border-black/8">

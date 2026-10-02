@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SuretyLayout from "@/components/surety/SuretyLayout";
 import { KONTAK } from "@/lib/data";
+import DeepDive from "@/components/ui/DeepDive";
+import { jaminanPenawaran } from "@/lib/deepDive";
 
 export const metadata: Metadata = {
   title: "Jaminan Penawaran (Bid Bond) Jogja – Syarat Tender LPSE DIY",
@@ -222,6 +224,8 @@ export default function JaminanPenawaranPage() {
         </div>
       </section>
 
-    </SuretyLayout>
+      <DeepDive content={jaminanPenawaran} variant="section" />
+
+      </SuretyLayout>
   );
 }
