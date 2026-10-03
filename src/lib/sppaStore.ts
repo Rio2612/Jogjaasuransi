@@ -54,18 +54,50 @@ function getRedisUrl(): string {
   return url;
 }
 
+const REDIS_CONNECT_TIMEOUT_MS = 5000;
+const REDIS_OP_TIMEOUT_MS = 8000;
+
+/** Batasi waktu tunggu sebuah promise agar request tidak menggantung. */
+function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise<T> {
+  let timer: ReturnType<typeof setTimeout>;
+  const timeout = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`${label} timeout setelah ${ms}ms`)), ms);
+  });
+  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
+}
+
 async function getClient(): Promise<RedisClientType> {
   if (global.__sppaRedisClient?.isOpen) {
     return global.__sppaRedisClient;
   }
 
   if (!global.__sppaRedisConnectPromise) {
-    const client = createClient({ url: getRedisUrl() }) as RedisClientType;
+    const client = createClient({
+      url: getRedisUrl(),
+      socket: {
+        connectTimeout: REDIS_CONNECT_TIMEOUT_MS,
+        // Default node-redis mencoba konek ulang SELAMANYA sehingga connect()
+        // tidak pernah reject jika URL/kredensial/TLS salah -> request menggantung.
+        // Menyerah setelah 2 percobaan agar error cepat terlihat.
+        reconnectStrategy: (retries: number) =>
+          retries >= 2 ? new Error("Redis: gagal terhubung") : Math.min(retries * 200, 1000),
+      },
+    }) as RedisClientType;
     client.on("error", (err) => console.error("[sppaStore] Redis client error:", err));
 
-    global.__sppaRedisConnectPromise = client.connect().then(() => {
-      global.__sppaRedisClient = client;
-      return client;
+    global.__sppaRedisConnectPromise = withTimeout(
+      client.connect().then(() => {
+        global.__sppaRedisClient = client;
+        return client;
+      }),
+      REDIS_CONNECT_TIMEOUT_MS + 2000,
+      "Redis connect"
+    ).catch((err) => {
+      // Jangan cache kegagalan: request berikutnya boleh mencoba lagi
+      global.__sppaRedisConnectPromise = undefined;
+      global.__sppaRedisClient = undefined;
+      client.disconnect().catch(() => {});
+      throw err;
     });
   }
 
@@ -78,8 +110,14 @@ export async function addSubmission(sub: SPPASubmission): Promise<void> {
   const client = await getClient();
   const score = new Date(sub.submittedAt).getTime() || Date.now();
 
-  await client.set(itemKey(sub.id), JSON.stringify(sub));
-  await client.zAdd(INDEX_KEY, [{ score, value: sub.id }]);
+  await withTimeout(
+    Promise.all([
+      client.set(itemKey(sub.id), JSON.stringify(sub)),
+      client.zAdd(INDEX_KEY, [{ score, value: sub.id }]),
+    ]),
+    REDIS_OP_TIMEOUT_MS,
+    "Redis simpan"
+  );
 }
 
 export async function getSubmissions(): Promise<SPPASubmission[]> {

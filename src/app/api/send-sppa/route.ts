@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, after } from "next/server";
 import {
   getSubmissions,
   addSubmission,
@@ -7,6 +7,18 @@ import {
 } from "@/lib/sppaStore";
 import { buildEmailHtml, buildEmailText } from "@/lib/emailTemplate";
 import { generatePDFBuffer } from "@/lib/pdfGenerator";
+
+export const runtime = "nodejs";
+export const maxDuration = 60; // detik — cukup untuk generate PDF (Chromium) di background
+
+const FETCH_TIMEOUT_MS = 15000;
+const PDF_TIMEOUT_MS = 30000;
+
+function timeoutAfter<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T> {
+  let timer: ReturnType<typeof setTimeout>;
+  const t = new Promise<T>((resolve) => { timer = setTimeout(() => resolve(fallback), ms); });
+  return Promise.race([promise, t]).finally(() => clearTimeout(timer));
+}
 
 // ─── Fonnte WA Sender ─────────────────────────────────────────────────────────
 async function sendWA(target: string, message: string): Promise<boolean> {
@@ -27,6 +39,7 @@ async function sendWA(target: string, message: string): Promise<boolean> {
         message,
         countryCode: "62",
       }),
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });
 
     const text = await res.text();
@@ -62,7 +75,7 @@ async function sendEmail(sub: SPPASubmission): Promise<boolean> {
     // Generate PDF buffer (jika gagal, email tetap terkirim tanpa attachment)
     const safeNama  = sub.nama.replace(/\s+/g, "-").replace(/[^a-zA-Z0-9-]/g, "");
     const fileName  = `Simulasi-dan-Estimasi-Premi-${safeNama}.pdf`;
-    const pdfBuffer = await generatePDFBuffer(sub);
+    const pdfBuffer = await timeoutAfter(generatePDFBuffer(sub).catch(() => null), PDF_TIMEOUT_MS, null);
 
     // Bangun attachment jika PDF berhasil digenerate
     const attachments = pdfBuffer
@@ -88,6 +101,7 @@ async function sendEmail(sub: SPPASubmission): Promise<boolean> {
         text:        buildEmailText(sub),
         attachments, // array kosong jika PDF gagal → email tetap terkirim
       }),
+      signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });
 
     const json = await res.json() as Record<string, unknown>;
@@ -200,30 +214,46 @@ export async function POST(req: NextRequest) {
       status:       "baru",
     };
 
-    // 1. Simpan ke Redis dulu — ini harus berhasil
-    await addSubmission(submission);
-    console.log("[send-sppa] Tersimpan ke Redis:", submission.id);
+    // 1. Simpan ke Redis (dibatasi timeout). Jika Redis bermasalah, lead JANGAN hilang:
+    //    tetap kirim notifikasi ke admin via WA berisi seluruh data.
+    let saved = true;
+    try {
+      await addSubmission(submission);
+      console.log("[send-sppa] Tersimpan ke Redis:", submission.id);
+    } catch (err) {
+      saved = false;
+      console.error("[send-sppa] GAGAL simpan ke Redis:", err);
+    }
 
-    // 2. Kirim WA + Email bersamaan — semua di-await agar tidak mati di Vercel serverless
+    // 2. Notifikasi WA + Email dijalankan SETELAH respons dikirim (after = waitUntil di Vercel),
+    //    sehingga user tidak menunggu layanan pihak ketiga yang lambat.
     const adminWA = process.env.ADMIN_WA || "628131556592";
-    const [adminSent, clientSent, emailSent] = await Promise.all([
-      sendWA(adminWA, buildAdminMessage(submission)),
-      sendWA(submission.whatsapp, buildClientMessage(submission)),
-      sendEmail(submission),
-    ]);
+    const notify = async () => {
+      const adminMsg = saved
+        ? buildAdminMessage(submission)
+        : "⚠️ *DATA TIDAK TERSIMPAN DI DASHBOARD (Redis error)*\n\n" + buildAdminMessage(submission);
+      const [adminSent, clientSent, emailSent] = await Promise.all([
+        saved ? sendWA(adminWA, adminMsg) : Promise.resolve(true), // jika !saved, admin sudah dikirim di atas
+        sendWA(submission.whatsapp, buildClientMessage(submission)),
+        sendEmail(submission),
+      ]);
+      console.log("[send-sppa] WA admin:", adminSent, "| WA client:", clientSent, "| Email:", emailSent);
+    };
 
-    console.log(
-      "[send-sppa] WA admin:", adminSent,
-      "| WA client:", clientSent,
-      "| Email:", emailSent
-    );
+    if (!saved) {
+      // Tanpa Redis, pastikan minimal admin menerima data sebelum menjawab sukses
+      const adminSent = await sendWA(adminWA, "⚠️ *DATA TIDAK TERSIMPAN DI DASHBOARD (Redis error)*\n\n" + buildAdminMessage(submission));
+      if (!adminSent) {
+        return NextResponse.json(
+          { error: "Layanan sedang bermasalah. Silakan hubungi kami via WhatsApp." },
+          { status: 503 }
+        );
+      }
+    }
 
-    return NextResponse.json({
-      success: true,
-      id: submission.id,
-      wa:    { admin: adminSent, client: clientSent },
-      email: emailSent,
-    });
+    after(() => notify().catch((e) => console.error("[send-sppa] notify error:", e)));
+
+    return NextResponse.json({ success: true, id: submission.id, saved });
   } catch (err) {
     console.error("[send-sppa] POST error:", err);
     return NextResponse.json(
