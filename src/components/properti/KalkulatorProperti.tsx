@@ -21,7 +21,18 @@ const RATE_PROPERTI_ALL: Record<string, Record<string, number>> = {
   ruko:   { kelas1: 0.069,  kelas2: 0.098,  kelas3: 0.490 },
   gudang: { kelas1: 0.075,  kelas2: 0.105,  kelas3: 0.525 },
   kantor: { kelas1: 0.055,  kelas2: 0.078,  kelas3: 0.390 },
+  // Vila / Homestay → SE OJK 6/SEOJK.05/2017 Tabel I.A, kode okupasi 29411
+  // (Hotels, motels, inns and the like — certified below 3 star), TARIF BAWAH:
+  // Kelas 1: 0,886‰ · Kelas 2: 1,329‰ · Kelas 3: 1,772‰  (dalam % = ‰ ÷ 10)
+  // Tarif atas (jika ingin konservatif): 0,0990 / 0,1485 / 0,1980
+  vila:   { kelas1: 0.0886, kelas2: 0.1329, kelas3: 0.1772 },
 };
+
+// Perluasan Huru-hara (RSMDCC / SRCC) — dalam persen (%) dari total pertanggungan.
+// CATATAN: SE OJK 6/SEOJK.05/2017 TIDAK menetapkan angka tarif RSMDCC (diserahkan ke
+// kebijakan perusahaan asuransi). Angka di bawah adalah tarif referensi, ubah sesuai
+// tarif insurer yang dipakai. Kisaran RIPLAY publik: 0,005% s/d 0,05%.
+const RATE_HURUHARA = 0.025; // 0,025% = 0,25‰
 
 // Rate gempa per zona dan jenis properti (dalam persen %)
 // Zona 4: Gunungkidul, Sleman, Kulon Progo, Kota Yogyakarta
@@ -33,6 +44,7 @@ const RATE_GEMPA_ZONA: Record<string, Record<string, number>> = {
     ruko:    0.143, // 1.43‰
     gudang:  0.143, // 1.43‰
     kantor:  0.143, // 1.43‰
+    vila:    0.143, // sama dengan kategori komersial lain (rate gempa tidak diubah)
   },
   zona5: {
     rumah:   0.160, // 1.60‰
@@ -40,6 +52,7 @@ const RATE_GEMPA_ZONA: Record<string, Record<string, number>> = {
     ruko:    0.190, // 1.90‰
     gudang:  0.190, // 1.90‰
     kantor:  0.190, // 1.90‰
+    vila:    0.190, // sama dengan kategori komersial lain (rate gempa tidak diubah)
   },
 };
 
@@ -59,17 +72,21 @@ interface ParamsKalkulator {
   nilaiPerabotan: number;
   pilihGempa: boolean;
   wilayahGempa: string;
+  pilihHuruhara: boolean;
 }
 
 function hitungEstimasiFinal(params: ParamsKalkulator) {
-  const { jenisProperti, kelasKonstruksi, nilaiBangunan, nilaiPerabotan, pilihGempa, wilayahGempa } = params;
+  const { jenisProperti, kelasKonstruksi, nilaiBangunan, nilaiPerabotan, pilihGempa, wilayahGempa, pilihHuruhara } = params;
 
   const totalPertanggungan = nilaiBangunan + nilaiPerabotan;
 
   // POLIS 1: Kebakaran + Perluasan
   const rateKebakaran = RATE_PROPERTI_ALL[jenisProperti][kelasKonstruksi];
   const premiKebakaran = (totalPertanggungan * rateKebakaran) / 100;
-  const adminPolis1 = premiKebakaran < 5_000_000 ? 30_000 : 40_000;
+  // Perluasan huru-hara (RSMDCC) masuk ke Polis 1
+  const premiHuruhara = pilihHuruhara ? (totalPertanggungan * RATE_HURUHARA) / 100 : 0;
+  const premiPolis1 = premiKebakaran + premiHuruhara;
+  const adminPolis1 = premiPolis1 < 5_000_000 ? 30_000 : 40_000;
 
   // POLIS 2: Gempa Bumi (hanya jika dicentang DAN kelas 1 DAN wilayah dipilih)
   const gempaTersedia = kelasKonstruksi === 'kelas1';
@@ -82,15 +99,16 @@ function hitungEstimasiFinal(params: ParamsKalkulator) {
     adminPolis2 = premiGempa < 5_000_000 ? 30_000 : 40_000;
   }
 
-  const totalPremiTahun = premiKebakaran + premiGempa;
+  const totalPremiTahun = premiPolis1 + premiGempa;
   const totalBiayaAdmin = adminPolis1 + adminPolis2;
   const totalPremiAkhir = totalPremiTahun + totalBiayaAdmin;
 
   return {
     totalPertanggungan,
     premiKebakaran,
+    premiHuruhara,
     adminPolis1,
-    subtotalPolis1: premiKebakaran + adminPolis1,
+    subtotalPolis1: premiPolis1 + adminPolis1,
     premiGempa,
     adminPolis2,
     subtotalPolis2: premiGempa > 0 ? premiGempa + adminPolis2 : 0,
@@ -112,6 +130,7 @@ export default function KalkulatorProperti() {
   const [prabotan,  setPrabotan]  = useState("");
   const [banjir,    setBanjir]    = useState(false);
   const [gempa,     setGempa]     = useState(false);
+  const [huruhara, setHuruhara] = useState(false);
   const [wilayah,   setWilayah]   = useState("");
 
   // Result & UI states
@@ -152,6 +171,7 @@ export default function KalkulatorProperti() {
       nilaiPerabotan,
       pilihGempa:      gempa,
       wilayahGempa:    wilayah,
+      pilihHuruhara:   huruhara,
     });
 
     setHasil(result);
@@ -162,11 +182,11 @@ export default function KalkulatorProperti() {
 
   const buildWaMsg = () => {
     if (!hasil) return "";
-    const jenisLabel   = { rumah:"Rumah Tinggal", kos:"Kos-kosan", ruko:"Ruko / Toko", gudang:"Gudang", kantor:"Kantor" }[jenis] ?? jenis;
+    const jenisLabel   = { rumah:"Rumah Tinggal", kos:"Kos-kosan", ruko:"Ruko / Toko", gudang:"Gudang", kantor:"Kantor", vila:"Vila / Homestay" }[jenis] ?? jenis;
     const kelasLabel   = { kelas1:"Kelas 1 (Beton/Bata)", kelas2:"Kelas 2 (Semi Permanen)", kelas3:"Kelas 3 (Kayu/Bambu)" }[kelas] ?? kelas;
     const wilayahLabel = WILAYAH_OPTIONS.find(w => w.value === wilayah)?.label ?? "";
     const nilaiPrabot  = parseInput(prabotan);
-    const perluasanList = [banjir && "Banjir", gempa && hasil.duaPolis && `Gempa Bumi - ${wilayahLabel} (Polis Terpisah)`].filter(Boolean).join(" + ") || "Tidak ada";
+    const perluasanList = [banjir && "Banjir", huruhara && "Huru-hara (RSMDCC)", gempa && hasil.duaPolis && `Gempa Bumi - ${wilayahLabel} (Polis Terpisah)`].filter(Boolean).join(" + ") || "Tidak ada";
 
     let msg = `Halo Pak Rio, saya ingin konsultasi asuransi properti.\n\n`;
     msg += `*Data Properti:*\n`;
@@ -181,6 +201,7 @@ export default function KalkulatorProperti() {
 
     msg += `*Estimasi Polis Kebakaran:*\n`;
     msg += `- Premi: ${formatRp(hasil.premiKebakaran)}/tahun\n`;
+    if (hasil.premiHuruhara > 0) msg += `- Perluasan Huru-hara: ${formatRp(hasil.premiHuruhara)}/tahun\n`;
     msg += `- Biaya Admin: ${formatRp(hasil.adminPolis1)}\n`;
     msg += `- Subtotal: ${formatRp(hasil.subtotalPolis1)}\n`;
 
@@ -229,6 +250,7 @@ export default function KalkulatorProperti() {
               <option value="ruko"   style={{background:"#163352"}}>🏪 Ruko / Toko</option>
               <option value="gudang" style={{background:"#163352"}}>🏭 Gudang</option>
               <option value="kantor" style={{background:"#163352"}}>🏢 Kantor</option>
+              <option value="vila"   style={{background:"#163352"}}>🏝️ Vila / Homestay</option>
             </select>
           </div>
           <div>
@@ -281,6 +303,16 @@ export default function KalkulatorProperti() {
                 className="accent-gold w-4 h-4"
               />
               🌊 Banjir
+            </label>
+
+            <label className="flex items-center gap-2 cursor-pointer text-white text-sm">
+              <input
+                type="checkbox"
+                checked={huruhara}
+                onChange={e => setHuruhara(e.target.checked)}
+                className="accent-gold w-4 h-4"
+              />
+              🔥 Huru-hara (RSMDCC)
             </label>
 
             <label className={`flex items-center gap-2 text-sm ${gempaBisaDipilih ? "cursor-pointer text-white" : "cursor-not-allowed text-white/55"}`}>
@@ -358,13 +390,19 @@ export default function KalkulatorProperti() {
             <div className={hasil.duaPolis ? "mb-4" : ""}>
               {hasil.duaPolis && (
                 <div className="text-white/75 text-[0.7rem] font-bold tracking-widest uppercase mb-2">
-                  Polis 1 — Kebakaran{banjir ? " + Banjir" : ""}
+                  Polis 1 — Kebakaran{banjir ? " + Banjir" : ""}{huruhara ? " + Huru-hara" : ""}
                 </div>
               )}
               <div className="flex justify-between items-center py-1.5 border-t border-gold/15">
                 <span className="text-white/90 text-sm">Premi / Tahun</span>
                 <span className="text-white font-semibold">{formatRp(hasil.premiKebakaran)}</span>
               </div>
+              {hasil.premiHuruhara > 0 && (
+                <div className="flex justify-between items-center py-1.5 border-t border-gold/15">
+                  <span className="text-white/90 text-sm">Perluasan Huru-hara (RSMDCC)</span>
+                  <span className="text-white font-semibold">{formatRp(hasil.premiHuruhara)}</span>
+                </div>
+              )}
               <div className="flex justify-between items-center py-1.5 border-t border-gold/15">
                 <span className="text-white/90 text-sm">Biaya Administrasi</span>
                 <span className="text-white font-semibold">{formatRp(hasil.adminPolis1)}</span>
