@@ -558,11 +558,20 @@ function SPPAFormInner() {
         submittedAt: new Date().toISOString(),
       };
 
-      const res = await fetch("/api/send-sppa", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      // Timeout sisi klien: jangan biarkan tombol loading selamanya
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 30000);
+      let res: Response;
+      try {
+        res = await fetch("/api/send-sppa", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+          signal: controller.signal,
+        });
+      } finally {
+        clearTimeout(timer);
+      }
 
       if (!res.ok) throw new Error(await res.text());
       setStatus("success");
