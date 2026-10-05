@@ -42,9 +42,9 @@ const RATE_HURUHARA = 0.025; // 0,025% = 0,25‰
 //   Zona 2 (pernah banjir dalam 6 tahun terakhir)                  : 0,050% s/d 0,055%
 //   Zona 3 & 4 (banjir dalam 3 / 1 tahun terakhir)                 : Tarif Zona 2 + faktor loading
 //                                                                    (loading ditentukan underwriter)
-// Kalkulator memakai batas atas Zona 1 sebagai estimasi default. Untuk lokasi yang pernah
+// Kalkulator memakai batas bawah Zona 1 (0,045%) sebagai estimasi default. Untuk lokasi yang pernah
 // banjir, tarif final mengikuti penilaian underwriter.
-const RATE_BANJIR = 0.050; // 0,050% = 0,50‰
+const RATE_BANJIR = 0.045; // 0,045% = 0,45‰
 
 // Rate gempa per zona dan jenis properti (dalam persen %)
 // Zona 4: Gunungkidul, Sleman, Kulon Progo, Kota Yogyakarta
