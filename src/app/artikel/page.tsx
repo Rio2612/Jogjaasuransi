@@ -296,9 +296,27 @@ const ARTIKEL = [
     ringkasan: "Sebelum polis event musik bisa diproses, EO/promotor perlu menyiapkan sejumlah data dan dokumen. Panduan lengkap dari data acara hingga nilai pertanggungan tiap komponen.",
     menit: "7 menit",
   },
+
+  // ── Kesehatan ──────────────────────────────────────────────────────────────
+  {
+    slug: "bpjs-vs-asuransi-kesehatan-karyawan-jogja",
+    icon: "⚖️",
+    kategori: "Kesehatan",
+    judul: "BPJS Kesehatan vs Asuransi Swasta untuk Karyawan: Mana untuk Perusahaan di Jogja?",
+    ringkasan: "BPJS wajib, asuransi swasta tambahan. Hitung iuran dengan UMK Jogja 2026, pahami COB, dan pelajari kasus tunggakan iuran di Sleman.",
+    menit: "8 menit",
+  },
+  {
+    slug: "cara-klaim-asuransi-kesehatan-karyawan-jogja",
+    icon: "📋",
+    kategori: "Kesehatan",
+    judul: "Cara Klaim Asuransi Kesehatan Karyawan: Cashless vs Reimbursement",
+    ringkasan: "Alur klaim, checklist dokumen, penyebab tagihan melebihi jaminan, dan jalur sengketa bila klaim ditolak.",
+    menit: "9 menit",
+  },
 ];
 
-const KATEGORI_LIST = ["Semua", "Kendaraan", "Properti", "Engineering", "Liability", "Event", "Surety Bond", "Bisnis", "Panduan"];
+const KATEGORI_LIST = ["Semua", "Kendaraan", "Properti", "Engineering", "Liability", "Event", "Surety Bond", "Kesehatan", "Bisnis", "Panduan"];
 
 const schemaArtikelList = {
   "@context": "https://schema.org",
@@ -326,6 +344,7 @@ const INTERNAL_LINKS: Record<string, { href: string; label: string }[]> = {
   Liability:   [{ href: "/asuransi-liability", label: "Liability Insurance" }, { href: "/asuransi-liability/public-liability", label: "Public Liability" }, { href: "/asuransi-liability/limbah-b3", label: "Limbah B3" }],
   Event:       [{ href: "/asuransi-event", label: "Asuransi Event" }, { href: "/asuransi-event/konser-festival-musik", label: "Konser & Festival Musik" }],
   "Surety Bond":[{ href: "/asuransi-surety-bond", label: "Surety Bond" }, { href: "/asuransi-surety-bond/jaminan-penawaran", label: "Jaminan Penawaran" }, { href: "/asuransi-surety-bond/jaminan-pelaksanaan", label: "Jaminan Pelaksanaan" }],
+  Kesehatan:   [{ href: "/asuransi-kesehatan-karyawan", label: "Kesehatan Karyawan" }, { href: "/asuransi-kesehatan-karyawan#paket", label: "Paket & Manfaat" }, { href: "/asuransi-kesehatan-karyawan#rs-rekanan", label: "RS Rekanan Jogja" }],
   Bisnis:      [{ href: "/asuransi-properti", label: "Asuransi Properti" }, { href: "/asuransi-kargo", label: "Asuransi Kargo" }, { href: "/asuransi-liability", label: "Liability Insurance" }],
   Panduan:     [{ href: "/asuransi-kendaraan", label: "Asuransi Kendaraan" }, { href: "/asuransi-properti", label: "Asuransi Properti" }, { href: "/asuransi-engineering", label: "Engineering Insurance" }],
 };

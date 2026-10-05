@@ -56,6 +56,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ─── KESEHATAN KARYAWAN ──────────────────────────────────────────────────
     { url: `${base}/asuransi-kesehatan-karyawan`,                    lastModified: new Date("2026-10-05"), changeFrequency: "monthly", priority: 0.9  },
 
+    { url: `${base}/artikel/bpjs-vs-asuransi-kesehatan-karyawan-jogja`,      lastModified: new Date("2026-10-06"), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${base}/artikel/cara-klaim-asuransi-kesehatan-karyawan-jogja`,    lastModified: new Date("2026-10-06"), changeFrequency: "monthly", priority: 0.85 },
+
     // ─── ARTIKEL — INDUK ─────────────────────────────────────────────────────
     { url: `${base}/artikel`, lastModified: new Date("2026-10-02"), changeFrequency: "weekly", priority: 0.8 },
 

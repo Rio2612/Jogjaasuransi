@@ -290,6 +290,23 @@ export default function Page() {
           </div>
         </section>
 
+        {/* PANDUAN TERKAIT */}
+        <section className="bg-cream px-[5vw] py-12">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="font-heading text-2xl font-bold text-navy">Panduan untuk HR dan pemilik usaha</h2>
+            <div className="mt-5 grid gap-4 md:grid-cols-2">
+              <Link href="/artikel/bpjs-vs-asuransi-kesehatan-karyawan-jogja" className="rounded-card border border-black/10 bg-white p-5 no-underline hover:border-gold/40">
+                <div className="font-heading font-bold text-navy">⚖️ BPJS vs Asuransi Swasta</div>
+                <p className="mt-1 text-sm text-[#475569]">Hitung iuran BPJS dengan UMK Jogja 2026 dan pahami skema COB.</p>
+              </Link>
+              <Link href="/artikel/cara-klaim-asuransi-kesehatan-karyawan-jogja" className="rounded-card border border-black/10 bg-white p-5 no-underline hover:border-gold/40">
+                <div className="font-heading font-bold text-navy">📋 Cara Klaim Asuransi Kesehatan</div>
+                <p className="mt-1 text-sm text-[#475569]">Cashless atau reimbursement, dokumen, dan penyebab klaim bermasalah.</p>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* CTA AKHIR */}
         <section className="bg-navy px-[5vw] py-12 text-center text-white">
           <h2 className="font-heading text-2xl font-bold">Ingin tahu paket yang cocok untuk perusahaan Anda?</h2>
@@ -312,4 +329,4 @@ export default function Page() {
       <Footer />
     </>
   );
-                  }
+}

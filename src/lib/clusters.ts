@@ -51,6 +51,11 @@ const engineering = [
   I("/artikel/asuransi-kontraktor-proyek-jogja", "Asuransi Kontraktor & Proyek", "Apa saja yang perlu dilindungi"),
   I("/artikel/premi-asuransi-car-jogja", "Premi Asuransi CAR", "Faktor penentu dan estimasi"),
 ];
+const kesehatan = [
+  I("/asuransi-kesehatan-karyawan", "Asuransi Kesehatan Karyawan Jogja", "Paket, RS rekanan, dan minta penawaran"),
+  I("/artikel/bpjs-vs-asuransi-kesehatan-karyawan-jogja", "BPJS vs Asuransi Swasta", "Iuran UMK Jogja 2026 dan skema COB"),
+  I("/artikel/cara-klaim-asuransi-kesehatan-karyawan-jogja", "Cara Klaim Asuransi Kesehatan Karyawan", "Cashless, reimbursement, dan dokumen"),
+];
 const penginapan = [
   I("/asuransi-properti/vila-homestay", "Asuransi Vila & Homestay", "Halaman utama untuk vila dan homestay"),
   I("/asuransi-properti/hotel-vila", "Asuransi Hotel & Guest House", "Halaman utama untuk hotel dan guest house"),
@@ -59,7 +64,7 @@ const penginapan = [
   I("/asuransi-properti/kebakaran", "Asuransi Kebakaran", "Dasar perlindungan bangunan"),
 ];
 
-export const CLUSTERS: ClusterItem[][] = [kendaraanNiaga, mobil, kargo, liability, surety, engineering, penginapan];
+export const CLUSTERS: ClusterItem[][] = [kendaraanNiaga, mobil, kargo, liability, surety, engineering, penginapan, kesehatan];
 
 /** Anggota klaster untuk path tertentu (tanpa halaman itu sendiri), maksimal `max` item. */
 export function clusterFor(path: string, max = 5): ClusterItem[] {
