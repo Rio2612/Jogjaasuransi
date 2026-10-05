@@ -105,6 +105,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Asuransi Kargo", "url": `${BASE_URL}/asuransi-kargo` } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Asuransi Liability", "url": `${BASE_URL}/asuransi-liability` } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Surety Bond", "url": `${BASE_URL}/asuransi-surety-bond` } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Asuransi Kesehatan Karyawan", "url": `${BASE_URL}/asuransi-kesehatan-karyawan` } },
           ],
         },
         "sameAs": [`https://wa.me/628131556592`],
