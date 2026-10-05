@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import Trust from "@/components/sections/Trust";
+import QuickActions from "@/components/sections/QuickActions";
 import Produk from "@/components/sections/Produk";
 import ArtikelPreview from "@/components/sections/ArtikelPreview";
 import Kalkulator from "@/components/sections/Kalkulator";
@@ -12,7 +13,6 @@ import Testimonial from "@/components/sections/Testimonial";
 import FAQ from "@/components/sections/FAQ";
 import ContactCTA from "@/components/sections/ContactCTA";
 import Footer from "@/components/sections/Footer";
-import CTAPenawaran from "@/components/ui/CTAPenawaran";
 
 export const metadata: Metadata = {
   title: "Asuransi Jogja – Praktisi Asuransi Terpercaya di Yogyakarta",
@@ -40,6 +40,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <Trust />
+        <QuickActions />
         <Produk />
         <ArtikelPreview />
         <Kalkulator />

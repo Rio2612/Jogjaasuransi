@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { KONTAK } from "@/lib/data";
 
 export default function Footer() {
@@ -24,8 +25,13 @@ export default function Footer() {
               { href: "#faq", lbl: "FAQ Asuransi" },
               { href: "#about", lbl: "Profil Praktisi" },
               { href: "#contact", lbl: "Konsultasi Gratis" },
+              { href: "/sppa", lbl: "Formulir SPPA" },
             ].map(l => (
-              <li key={l.lbl}><a href={l.href} className="text-sm text-white/50 no-underline hover:text-gold2 transition-colors">{l.lbl}</a></li>
+              <li key={l.lbl}>
+                {l.href.startsWith("/")
+                  ? <Link href={l.href} className="text-sm text-white/50 no-underline hover:text-gold2 transition-colors">{l.lbl}</Link>
+                  : <a href={l.href} className="text-sm text-white/50 no-underline hover:text-gold2 transition-colors">{l.lbl}</a>}
+              </li>
             ))}
           </ul>
         </div>

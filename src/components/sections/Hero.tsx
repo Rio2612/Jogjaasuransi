@@ -1,6 +1,4 @@
 import Link from "next/link";
-import CTAPenawaran from "@/components/ui/CTAPenawaran";
-import { KONTAK } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -17,20 +15,9 @@ export default function Hero() {
             <em className="not-italic text-gold">Aset & Bisnis</em><br />
             Anda di Jogja
           </h1>
-          <p className="animate-fadeUp-d3 text-white/85 text-base leading-[1.8] max-w-[460px] mb-8">
+          <p className="animate-fadeUp-d3 text-white/85 text-base leading-[1.8] max-w-[460px]">
             Kami membantu Anda memilih perlindungan asuransi kerugian yang paling sesuai — kendaraan, properti, kargo, engineering, hingga liability — dengan analisis risiko yang jujur dan pendampingan klaim penuh.
           </p>
-          <div className="animate-fadeUp-d4 flex gap-4 flex-wrap mb-4">
-            <a href={`https://wa.me/${KONTAK.wa}`} className="bg-gold text-navy px-7 py-[13px] rounded-lg font-bold text-[0.92rem] hover:bg-gold2 hover:-translate-y-0.5 transition-all no-underline">
-              💬 Konsultasi via WhatsApp
-            </a>
-            <a href="#kalkulator" className="border border-white/25 text-white px-7 py-[13px] rounded-lg font-medium text-[0.92rem] hover:border-gold2 hover:bg-gold/8 transition-all no-underline">
-              Hitung Premi Mobil
-            </a>
-          </div>
-          <div className="animate-fadeUp-d4">
-            <CTAPenawaran produk="kendaraan" variant="white" size="md" label="📄 Dapatkan Simulasi Gratis" />
-          </div>
         </div>
         <div className="animate-fadeUp-d5">
           <div className="bg-white/5 border border-gold/20 rounded-[20px] p-8 backdrop-blur-sm">

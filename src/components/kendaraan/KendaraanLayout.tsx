@@ -1,6 +1,7 @@
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import ClusterLinks from "@/components/ui/ClusterLinks";
+import KalkulatorCTA from "@/components/ui/KalkulatorCTA";
 import Link from "next/link";
 
 interface Breadcrumb { label: string; href?: string }
@@ -26,6 +27,7 @@ export default function KendaraanLayout({ children, breadcrumbs }: Props) {
         </div>
         <main>{children}</main>
       </div>
+      <KalkulatorCTA />
       <ClusterLinks />
       <Footer />
     </>

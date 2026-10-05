@@ -1,6 +1,7 @@
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import ClusterLinks from "@/components/ui/ClusterLinks";
+import KalkulatorCTA from "@/components/ui/KalkulatorCTA";
 import Link from "next/link";
 
 export default function ArtikelLayout({ children }: { children: React.ReactNode }) {
@@ -10,6 +11,7 @@ export default function ArtikelLayout({ children }: { children: React.ReactNode 
       <div className="pt-[68px]">
         <main>{children}</main>
       </div>
+      <KalkulatorCTA />
       <ClusterLinks />
       <Footer />
     </>
