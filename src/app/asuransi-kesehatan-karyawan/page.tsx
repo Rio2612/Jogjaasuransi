@@ -141,7 +141,7 @@ export default function Page() {
         </section>
 
         {/* PAKET */}
-        <section className="bg-white px-[5vw] py-12">
+        <section id="paket" className="scroll-mt-24 bg-white px-[5vw] py-12">
           <div className="mx-auto max-w-4xl">
             <h2 className="font-heading text-2xl font-bold text-navy">Contoh pilihan paket</h2>
             <p className="mt-2 text-sm text-[#475569]">
@@ -213,7 +213,7 @@ export default function Page() {
         </section>
 
         {/* KLAIM */}
-        <section className="bg-cream px-[5vw] py-12">
+        <section id="klaim" className="scroll-mt-24 bg-cream px-[5vw] py-12">
           <div className="mx-auto max-w-4xl">
             <h2 className="font-heading text-2xl font-bold text-navy">Cashless atau bayar dulu?</h2>
             <div className="mt-5 grid gap-4 md:grid-cols-2">
@@ -244,7 +244,7 @@ export default function Page() {
         </section>
 
         {/* RS */}
-        <section className="bg-white px-[5vw] py-12">
+        <section id="rs-rekanan" className="scroll-mt-24 bg-white px-[5vw] py-12">
           <div className="mx-auto max-w-4xl">
             <h2 className="font-heading text-2xl font-bold text-navy">RS rekanan di Jogja dan sekitarnya</h2>
             <div className="mt-5 space-y-3">
@@ -312,4 +312,4 @@ export default function Page() {
       <Footer />
     </>
   );
-}
+                  }
