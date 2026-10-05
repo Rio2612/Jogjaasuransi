@@ -15,6 +15,7 @@ export default function Footer() {
             {["Asuransi Kendaraan","Asuransi Properti","Engineering Insurance","Asuransi Kargo","Liability Insurance","Surety Bond"].map(p => (
               <li key={p}><a href="#produk" className="text-sm text-white/50 no-underline hover:text-gold2 transition-colors">{p}</a></li>
             ))}
+            <li><Link href="/asuransi-kesehatan-karyawan" className="text-sm text-white/50 no-underline hover:text-gold2 transition-colors">Kesehatan Karyawan</Link></li>
           </ul>
         </div>
         <div>
