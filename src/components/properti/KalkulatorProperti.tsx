@@ -34,6 +34,18 @@ const RATE_PROPERTI_ALL: Record<string, Record<string, number>> = {
 // tarif insurer yang dipakai. Kisaran RIPLAY publik: 0,005% s/d 0,05%.
 const RATE_HURUHARA = 0.025; // 0,025% = 0,25‰
 
+// Perluasan Banjir (endorsement 4.3A: banjir, angin topan, badai, kerusakan akibat air)
+// — dalam persen (%) dari total pertanggungan.
+// Sumber: SE OJK 6/SEOJK.05/2017 Lampiran II, Tabel II.A (Jaminan Banjir, Harta Benda),
+// kolom "Luar Jakarta, Banten, Jabar" (berlaku untuk wilayah DIY):
+//   Zona 1 (belum pernah banjir / terakhir banjir > 6 tahun lalu) : 0,045% s/d 0,050%
+//   Zona 2 (pernah banjir dalam 6 tahun terakhir)                  : 0,050% s/d 0,055%
+//   Zona 3 & 4 (banjir dalam 3 / 1 tahun terakhir)                 : Tarif Zona 2 + faktor loading
+//                                                                    (loading ditentukan underwriter)
+// Kalkulator memakai batas atas Zona 1 sebagai estimasi default. Untuk lokasi yang pernah
+// banjir, tarif final mengikuti penilaian underwriter.
+const RATE_BANJIR = 0.050; // 0,050% = 0,50‰
+
 // Rate gempa per zona dan jenis properti (dalam persen %)
 // Zona 4: Gunungkidul, Sleman, Kulon Progo, Kota Yogyakarta
 // Zona 5: Bantul
@@ -73,10 +85,11 @@ interface ParamsKalkulator {
   pilihGempa: boolean;
   wilayahGempa: string;
   pilihHuruhara: boolean;
+  pilihBanjir: boolean;
 }
 
 function hitungEstimasiFinal(params: ParamsKalkulator) {
-  const { jenisProperti, kelasKonstruksi, nilaiBangunan, nilaiPerabotan, pilihGempa, wilayahGempa, pilihHuruhara } = params;
+  const { jenisProperti, kelasKonstruksi, nilaiBangunan, nilaiPerabotan, pilihGempa, wilayahGempa, pilihHuruhara, pilihBanjir } = params;
 
   const totalPertanggungan = nilaiBangunan + nilaiPerabotan;
 
@@ -85,7 +98,9 @@ function hitungEstimasiFinal(params: ParamsKalkulator) {
   const premiKebakaran = (totalPertanggungan * rateKebakaran) / 100;
   // Perluasan huru-hara (RSMDCC) masuk ke Polis 1
   const premiHuruhara = pilihHuruhara ? (totalPertanggungan * RATE_HURUHARA) / 100 : 0;
-  const premiPolis1 = premiKebakaran + premiHuruhara;
+  // Perluasan banjir (endorsement 4.3A) juga masuk ke Polis 1
+  const premiBanjir = pilihBanjir ? (totalPertanggungan * RATE_BANJIR) / 100 : 0;
+  const premiPolis1 = premiKebakaran + premiHuruhara + premiBanjir;
   const adminPolis1 = premiPolis1 < 5_000_000 ? 30_000 : 40_000;
 
   // POLIS 2: Gempa Bumi (hanya jika dicentang DAN kelas 1 DAN wilayah dipilih)
@@ -107,6 +122,7 @@ function hitungEstimasiFinal(params: ParamsKalkulator) {
     totalPertanggungan,
     premiKebakaran,
     premiHuruhara,
+    premiBanjir,
     adminPolis1,
     subtotalPolis1: premiPolis1 + adminPolis1,
     premiGempa,
@@ -172,6 +188,7 @@ export default function KalkulatorProperti() {
       pilihGempa:      gempa,
       wilayahGempa:    wilayah,
       pilihHuruhara:   huruhara,
+      pilihBanjir:     banjir,
     });
 
     setHasil(result);
@@ -201,6 +218,7 @@ export default function KalkulatorProperti() {
 
     msg += `*Estimasi Polis Kebakaran:*\n`;
     msg += `- Premi: ${formatRp(hasil.premiKebakaran)}/tahun\n`;
+    if (hasil.premiBanjir > 0) msg += `- Perluasan Banjir: ${formatRp(hasil.premiBanjir)}/tahun\n`;
     if (hasil.premiHuruhara > 0) msg += `- Perluasan Huru-hara: ${formatRp(hasil.premiHuruhara)}/tahun\n`;
     msg += `- Biaya Admin: ${formatRp(hasil.adminPolis1)}\n`;
     msg += `- Subtotal: ${formatRp(hasil.subtotalPolis1)}\n`;
@@ -397,6 +415,12 @@ export default function KalkulatorProperti() {
                 <span className="text-white/90 text-sm">Premi / Tahun</span>
                 <span className="text-white font-semibold">{formatRp(hasil.premiKebakaran)}</span>
               </div>
+              {hasil.premiBanjir > 0 && (
+                <div className="flex justify-between items-center py-1.5 border-t border-gold/15">
+                  <span className="text-white/90 text-sm">Perluasan Banjir</span>
+                  <span className="text-white font-semibold">{formatRp(hasil.premiBanjir)}</span>
+                </div>
+              )}
               {hasil.premiHuruhara > 0 && (
                 <div className="flex justify-between items-center py-1.5 border-t border-gold/15">
                   <span className="text-white/90 text-sm">Perluasan Huru-hara (RSMDCC)</span>
