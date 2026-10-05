@@ -11,6 +11,7 @@ const PILLAR_HREFS: Record<string, string> = {
   liability: "/asuransi-liability",
   event: "/asuransi-event",
   surety: "/asuransi-surety-bond",
+  kesehatan: "/asuransi-kesehatan-karyawan",
 };
 
 export default function Produk() {
@@ -78,7 +79,7 @@ export default function Produk() {
       {/* ALL CLUSTER QUICK LINKS */}
       <div className="mt-12 pt-10 border-t border-black/6">
         <div className="text-xs font-bold tracking-[2.5px] uppercase text-[#5A6472] mb-5">Semua Cluster Produk</div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
           {Object.entries(PILLAR_HREFS).map(([id, href]) => {
             const cluster = CLUSTERS.find(c => c.id === id)!;
             return (
