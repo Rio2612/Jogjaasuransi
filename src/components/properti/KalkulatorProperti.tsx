@@ -26,6 +26,12 @@ const RATE_PROPERTI_ALL: Record<string, Record<string, number>> = {
   // Kelas 1: 0,886‰ · Kelas 2: 1,329‰ · Kelas 3: 1,772‰  (dalam % = ‰ ÷ 10)
   // Tarif atas (jika ingin konservatif): 0,0990 / 0,1485 / 0,1980
   vila:   { kelas1: 0.0886, kelas2: 0.1329, kelas3: 0.1772 },
+  // Sekolah / Universitas -> SE OJK 6/SEOJK.05/2017 Tabel I.A, kode okupasi 2953
+  // (Schools, universities and the like), TARIF BAWAH:
+  // Kelas 1: 0,386‰ · Kelas 2: 0,521‰ · Kelas 3: 0,656‰  (dalam % = ‰ ÷ 10)
+  // Tarif atas (jika ingin konservatif): 0,0483 / 0,0651 / 0,0820
+  // Rate kelas 1 sama dengan Simulasi Penawaran PAR & Gempa Bumi AYWS (Bumida): 0,0386%
+  sekolah: { kelas1: 0.0386, kelas2: 0.0521, kelas3: 0.0656 },
 };
 
 // Perluasan Huru-hara (RSMDCC / SRCC) — dalam persen (%) dari total pertanggungan.
@@ -57,6 +63,7 @@ const RATE_GEMPA_ZONA: Record<string, Record<string, number>> = {
     gudang:  0.143, // 1.43‰
     kantor:  0.143, // 1.43‰
     vila:    0.143, // sama dengan kategori komersial lain (rate gempa tidak diubah)
+    sekolah: 0.143, // 1.43‰ - sama dengan Simulasi AYWS (Gempa Bumi Zona IV)
   },
   zona5: {
     rumah:   0.160, // 1.60‰
@@ -65,6 +72,7 @@ const RATE_GEMPA_ZONA: Record<string, Record<string, number>> = {
     gudang:  0.190, // 1.90‰
     kantor:  0.190, // 1.90‰
     vila:    0.190, // sama dengan kategori komersial lain (rate gempa tidak diubah)
+    sekolah: 0.190, // 1.90‰ - sama dengan kategori komersial lain
   },
 };
 
@@ -199,7 +207,7 @@ export default function KalkulatorProperti() {
 
   const buildWaMsg = () => {
     if (!hasil) return "";
-    const jenisLabel   = { rumah:"Rumah Tinggal", kos:"Kos-kosan", ruko:"Ruko / Toko", gudang:"Gudang", kantor:"Kantor", vila:"Vila / Homestay" }[jenis] ?? jenis;
+    const jenisLabel   = { rumah:"Rumah Tinggal", kos:"Kos-kosan", ruko:"Ruko / Toko", gudang:"Gudang", kantor:"Kantor", vila:"Vila / Homestay", sekolah:"Sekolah / Universitas" }[jenis] ?? jenis;
     const kelasLabel   = { kelas1:"Kelas 1 (Beton/Bata)", kelas2:"Kelas 2 (Semi Permanen)", kelas3:"Kelas 3 (Kayu/Bambu)" }[kelas] ?? kelas;
     const wilayahLabel = WILAYAH_OPTIONS.find(w => w.value === wilayah)?.label ?? "";
     const nilaiPrabot  = parseInput(prabotan);
@@ -269,6 +277,7 @@ export default function KalkulatorProperti() {
               <option value="gudang" style={{background:"#163352"}}>🏭 Gudang</option>
               <option value="kantor" style={{background:"#163352"}}>🏢 Kantor</option>
               <option value="vila"   style={{background:"#163352"}}>🏝️ Vila / Homestay</option>
+              <option value="sekolah" style={{background:"#163352"}}>🏫 Sekolah / Universitas</option>
             </select>
           </div>
           <div>
