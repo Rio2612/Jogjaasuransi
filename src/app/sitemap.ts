@@ -53,6 +53,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/asuransi-surety-bond/jaminan-uang-muka`,         lastModified: new Date("2026-07-17"), changeFrequency: "monthly", priority: 0.8  },
     { url: `${base}/asuransi-surety-bond/jaminan-pemeliharaan`,     lastModified: new Date("2026-07-17"), changeFrequency: "monthly", priority: 0.8  },
 
+    // ─── KESEHATAN KARYAWAN ──────────────────────────────────────────────────
+    { url: `${base}/asuransi-kesehatan-karyawan`,                    lastModified: new Date("2026-10-05"), changeFrequency: "monthly", priority: 0.9  },
+
     // ─── ARTIKEL — INDUK ─────────────────────────────────────────────────────
     { url: `${base}/artikel`, lastModified: new Date("2026-10-02"), changeFrequency: "weekly", priority: 0.8 },
 
