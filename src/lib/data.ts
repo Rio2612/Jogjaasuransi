@@ -70,6 +70,14 @@ export const CLUSTERS: Cluster[] = [
       { icon: "💰", name: "Jaminan Uang Muka (Advance Payment Bond)", desc: "Jaminan atas uang muka yang diberikan pemberi kerja kepada kontraktor. Melindungi pengguna jasa dari risiko penyalahgunaan dana awal proyek.", href: "/asuransi-surety-bond/jaminan-uang-muka" },
     ],
   },
+  {
+    id: "kesehatan", label: "Kesehatan Karyawan", icon: "🏥",
+    produk: [
+      { icon: "🏥", name: "Asuransi Kesehatan Karyawan", desc: "Biaya berobat karyawan, pasangan, dan anak ditanggung sesuai paket (Simas Sehat Corporate, PT Asuransi Sinar Mas). Anggaran perusahaan lebih mudah diperkirakan.", href: "/asuransi-kesehatan-karyawan" },
+      { icon: "🛏️", name: "Paket Rawat Inap & Rawat Jalan", desc: "Pilih paket rawat inap (kamar, ICU, operasi) dan rawat jalan (dokter, obat, lab) sesuai kebutuhan dan jumlah karyawan perusahaan Anda.", href: "/asuransi-kesehatan-karyawan#paket" },
+      { icon: "💳", name: "Cashless di RS Rekanan Jogja", desc: "Berobat tanpa bayar dulu di RS rekanan di Kota Yogyakarta, Sleman, Bantul, dan Kulon Progo, atau bayar dulu lalu klaim lewat reimbursement.", href: "/asuransi-kesehatan-karyawan#rs-rekanan" },
+    ],
+  },
 ];
 
 // ─── KALKULATOR OJK ───────────────────────────────────────────────────────────
@@ -238,3 +246,4 @@ export const TESTIMONI = [
     teks: "Kami butuh Surety Bond untuk proyek pemerintah dalam waktu singkat. Pak Rio bisa memproses dengan cepat dan menjelaskan semua persyaratan dengan sangat detail. Sangat profesional dan membantu.",
   },
 ];
+
