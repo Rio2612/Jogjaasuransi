@@ -46,12 +46,15 @@ function formatRp(n: number) {
 // Golongan II : Vila, Homestay, Motel, Hotel, Gudang non-hazardous
 // Golongan III: Gudang kimia/hazardous, pabrik (tidak disupport di form ini)
 const ZONA_GEMPA_RATE: Record<string, { gol1: number; gol2: number }> = {
-  "Kota Yogyakarta":        { gol1: 1.350, gol2: 1.600 },
-  "Kabupaten Sleman":       { gol1: 1.350, gol2: 1.600 },
-  "Kabupaten Gunung Kidul": { gol1: 1.350, gol2: 1.600 },
-  "Kabupaten Kulon Progo":  { gol1: 1.350, gol2: 1.600 },
-  "Kabupaten Bantul":       { gol1: 1.600, gol2: 2.150 },
+  "Kota Yogyakarta":        { gol1: 1.350, gol2: 1.430 },
+  "Kabupaten Sleman":       { gol1: 1.350, gol2: 1.430 },
+  "Kabupaten Gunung Kidul": { gol1: 1.350, gol2: 1.430 },
+  "Kabupaten Kulon Progo":  { gol1: 1.350, gol2: 1.430 },
+  "Kabupaten Bantul":       { gol1: 1.600, gol2: 1.900 },
 };
+
+// Biaya polis + materai: flat per polis (Polis Kebakaran dan Polis Gempa Bumi masing-masing)
+const BIAYA_POLIS = 25_000;
 
 const ZONA_GEMPA_NOMOR: Record<string, number> = {
   "Kota Yogyakarta":        4,
@@ -110,7 +113,6 @@ interface PropertiCalc {
   totalNilai: number;
   ratePermilDasar: number;
   premiDasar: number;
-  adaBanjir: boolean; premiBanjir: number; rateBanjirPermil: number;
   adaHuru: boolean;   premiHuru: number;   rateHuruPermil: number;
   adaBurglary: boolean; premiBurglary: number; rateBurglaryPermil: number;
   adaTabrakan: boolean; premiTabrakan: number; rateTabrakanPermil: number;
@@ -147,7 +149,7 @@ function computePropertiCalc(sub: Submission): PropertiCalc {
     { match: ["ruko", "toko", "retail"],        data: { label: "Ruko / Toko",              kk1: 0.594, kk2: 0.802, kk3: 1.011 } },
     { match: ["gudang", "warehouse", "pabrik"], data: { label: "Gudang / Pabrik",           kk1: 0.764, kk2: 1.031, kk3: 1.299 } },
     { match: ["kantor", "office"],              data: { label: "Kantor",                   kk1: 0.368, kk2: 0.497, kk3: 0.625 } },
-    { match: ["vila", "villa", "homestay", "motel", "hotel"], data: { label: "Hotel / Vila / Homestay", kk1: 0.478, kk2: 0.645, kk3: 0.812 } },
+    { match: ["vila", "villa", "homestay", "motel", "hotel"], data: { label: "Hotel / Vila / Homestay", kk1: 0.886, kk2: 1.329, kk3: 1.772 } },
   ];
   const matched     = RATE_TABLE.find(r => r.match.some(m => okupasiStr.includes(m)));
   const okupasiData = matched ? matched.data : RATE_TABLE[0].data;
@@ -158,12 +160,8 @@ function computePropertiCalc(sub: Submission): PropertiCalc {
     ? f.risikoTambahan as string[]
     : f.risikoTambahan ? [String(f.risikoTambahan)] : [];
 
-  const adaBanjir = risikoTambahan.some(r => /banjir|longsor|topan/i.test(r));
-  const rateBanjirPermil = 0.450;
-  const premiBanjir = adaBanjir ? Math.round(totalNilai * rateBanjirPermil / 1000) : 0;
-
   const adaHuru = risikoTambahan.some(r => /huru|rsmd|srcc|kerusuhan/i.test(r));
-  const rateHuruPermil = 0.010;
+  const rateHuruPermil = 0.100; // 0,1‰ = 0,01% (Rp 1 M -> Rp 100.000)
   const premiHuru = adaHuru ? Math.round(totalNilai * rateHuruPermil / 1000) : 0;
 
   const isRumah = !matched || matched.match.includes("rumah");
@@ -175,8 +173,8 @@ function computePropertiCalc(sub: Submission): PropertiCalc {
   const rateTabrakanPermil = 0.010;
   const premiTabrakan = adaTabrakan ? Math.round(totalNilai * rateTabrakanPermil / 1000) : 0;
 
-  const subtotalKebakaran   = premiDasar + premiBanjir + premiHuru + premiBurglary + premiTabrakan;
-  const biayaAdminKebakaran = subtotalKebakaran < 5_000_000 ? 30_000 : 40_000;
+  const subtotalKebakaran   = premiDasar + premiHuru + premiBurglary + premiTabrakan;
+  const biayaAdminKebakaran = BIAYA_POLIS;
   const totalKebakaran      = subtotalKebakaran + biayaAdminKebakaran;
 
   const wGempa    = fStr(f.wilayahGempa);
@@ -186,7 +184,7 @@ function computePropertiCalc(sub: Submission): PropertiCalc {
   const rGempaPermil = rateZona ? (isGol2 ? rateZona.gol2 : rateZona.gol1) : 0;
   const golLabel  = isGol2 ? "Golongan II (Vila/Hotel/Gudang)" : "Golongan I (Rumah/Kos/Kantor/Ruko)";
   const premiGempa = rGempaPermil && totalNilai ? Math.round(totalNilai * rGempaPermil / 1000) : 0;
-  const biayaAdminGempa = premiGempa < 5_000_000 ? 30_000 : 40_000;
+  const biayaAdminGempa = BIAYA_POLIS;
   const totalGempa = premiGempa > 0 ? premiGempa + biayaAdminGempa : 0;
 
   return {
@@ -198,7 +196,6 @@ function computePropertiCalc(sub: Submission): PropertiCalc {
     jenisPertanggungan: `${okupasiRaw !== "—" ? okupasiRaw : okupasiData.label} / ${kkLabel}`,
     nilaiBangunan, nilaiIsi, totalNilai,
     ratePermilDasar, premiDasar,
-    adaBanjir, premiBanjir, rateBanjirPermil,
     adaHuru, premiHuru, rateHuruPermil,
     adaBurglary, premiBurglary, rateBurglaryPermil,
     adaTabrakan, premiTabrakan, rateTabrakanPermil,
@@ -383,7 +380,6 @@ function kebakaranPageHTML(sub: Submission, c: PropertiCalc, docNo: string, tang
   const rows: string[] = [];
   rows.push(`<tr><td class="item">Premi Dasar Kebakaran (FLEXAS)</td><td class="rate">${fmtPct(c.ratePermilDasar)}</td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiDasar)}</td></tr>`);
   if (c.adaHuru)     rows.push(`<tr><td class="item">RSMDCC (Kerusuhan &amp; Huru-Hara)</td><td class="rate">${fmtPct(c.rateHuruPermil)}</td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiHuru)}</td></tr>`);
-  if (c.adaBanjir)   rows.push(`<tr><td class="item">TSWD (Banjir, Angin Topan)</td><td class="rate">${fmtPct(c.rateBanjirPermil)}</td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiBanjir)}</td></tr>`);
   if (c.adaBurglary || c.adaTabrakan) {
     const rateGab = c.rateBurglaryPermil + c.rateTabrakanPermil;
     rows.push(`<tr><td class="item">Other (Burglary, Vehicle Impact)</td><td class="rate">${fmtPct(rateGab)}</td><td class="rp-lbl">Rp</td><td class="rp-val">${fmtRpPlain(c.premiBurglary + c.premiTabrakan)}</td></tr>`);
@@ -424,7 +420,7 @@ function kebakaranPageHTML(sub: Submission, c: PropertiCalc, docNo: string, tang
 
         <div style="margin-top:12px;">
           <div class="sum-row"><span>Premi / Tahun</span><span>${fmtRpPlain(c.subtotalKebakaran)}</span></div>
-          <div class="sum-row"><span>Biaya ADM</span><span>${fmtRpPlain(c.biayaAdminKebakaran)}</span></div>
+          <div class="sum-row"><span>Biaya Polis + Materai</span><span>${fmtRpPlain(c.biayaAdminKebakaran)}</span></div>
           <div class="sum-row final"><span>Total Premi Akhir</span><span>${fmtRpPlain(c.totalKebakaran)} <i>(Per tahun)</i></span></div>
         </div>
       </div>
@@ -475,7 +471,7 @@ function gempaPageHTML(sub: Submission, c: PropertiCalc, docNo: string, tanggal:
 
         <div style="margin-top:12px;">
           <div class="sum-row"><span>Premi / Tahun</span><span>${fmtRpPlain(c.premiGempa)}</span></div>
-          <div class="sum-row"><span>Biaya ADM</span><span>${fmtRpPlain(c.biayaAdminGempa)}</span></div>
+          <div class="sum-row"><span>Biaya Polis + Materai</span><span>${fmtRpPlain(c.biayaAdminGempa)}</span></div>
           <div class="sum-row final"><span>Total Premi Akhir</span><span>${fmtRpPlain(c.totalGempa)} <i>(Per tahun)</i></span></div>
         </div>
       </div>

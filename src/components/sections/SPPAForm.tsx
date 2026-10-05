@@ -136,7 +136,7 @@ const FIELD_CONFIGS: Record<ProductId, FieldConfig[]> = {
     { id: "nilaiBangunan", label: "Nilai Bangunan (Rp)", type: "currency", placeholder: "cth: 500.000.000" },
     { id: "nilaiIsi", label: "Nilai Isi / Perabot (Rp)", type: "currency", placeholder: "Kosongkan jika tidak dipertanggungkan" },
     { id: "risikoTambahan", label: "Perluasan Risiko", type: "multicheck",
-      options: ["Banjir", "Gempa Bumi", "Huru-hara (RSMD)", "Tanah Longsor"] },
+      options: ["Gempa Bumi", "Huru-hara (RSMD)"] },
   ],
   liability: [
     { id: "jenisLiability", label: "Jenis Tanggung Gugat", type: "select",
@@ -185,16 +185,16 @@ const FIELD_CONFIGS: Record<ProductId, FieldConfig[]> = {
 // Zona 4 (Jogja Kota, Sleman, Gunung Kidul, Kulon Progo): 1,350‰
 // Zona 5 (Bantul): 1,600‰
 const ZONA_GEMPA: { label: string; zona: number; rate: number; rateGol2: number }[] = [
-  { label: "Kota Yogyakarta",        zona: 4, rate: 1.350, rateGol2: 1.600 },
-  { label: "Kabupaten Sleman",       zona: 4, rate: 1.350, rateGol2: 1.600 },
-  { label: "Kabupaten Gunung Kidul", zona: 4, rate: 1.350, rateGol2: 1.600 },
-  { label: "Kabupaten Kulon Progo",  zona: 4, rate: 1.350, rateGol2: 1.600 },
-  { label: "Kabupaten Bantul",       zona: 5, rate: 1.600, rateGol2: 2.150 },
+  { label: "Kota Yogyakarta",        zona: 4, rate: 1.350, rateGol2: 1.430 },
+  { label: "Kabupaten Sleman",       zona: 4, rate: 1.350, rateGol2: 1.430 },
+  { label: "Kabupaten Gunung Kidul", zona: 4, rate: 1.350, rateGol2: 1.430 },
+  { label: "Kabupaten Kulon Progo",  zona: 4, rate: 1.350, rateGol2: 1.430 },
+  { label: "Kabupaten Bantul",       zona: 5, rate: 1.600, rateGol2: 1.900 },
 ];
 
-// Biaya admin properti berdasarkan total premi
-function biayaAdminProperti(totalPremi: number): number {
-  return totalPremi < 5_000_000 ? 30_000 : 40_000;
+// Biaya polis + materai properti: flat Rp 25.000 per polis
+function biayaAdminProperti(_totalPremi: number): number {
+  return 25_000;
 }
 
 /* ─── Helpers ────────────────────────────────────────────── */
