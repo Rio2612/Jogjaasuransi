@@ -43,6 +43,11 @@ const NAV_CLUSTERS = [
     { href: "/asuransi-surety-bond/jaminan-uang-muka", label: "Jaminan Uang Muka" },
     { href: "/asuransi-surety-bond/jaminan-pemeliharaan", label: "Jaminan Pemeliharaan" },
   ]},
+  { href: "/asuransi-kesehatan-karyawan", icon: "🏥", label: "Kesehatan Karyawan", sub: [
+    { href: "/asuransi-kesehatan-karyawan#paket", label: "Paket Rawat Inap & Jalan" },
+    { href: "/asuransi-kesehatan-karyawan#klaim", label: "Cara Klaim" },
+    { href: "/asuransi-kesehatan-karyawan#rs-rekanan", label: "RS Rekanan Jogja" },
+  ]},
 ];
 
 export default function Header() {
@@ -221,4 +226,4 @@ export default function Header() {
       )}
     </header>
   );
-}
+      }
