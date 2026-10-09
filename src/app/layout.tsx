@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Syne, DM_Sans } from "next/font/google";
 import "./globals.css";
+import PenawaranFloating from "@/components/penawaran/PenawaranFloating";
 
 const BASE_URL = "https://asuransijogja.biz.id";
 
@@ -132,7 +133,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </>
         )}
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <PenawaranFloating />
+      </body>
     </html>
   );
 }

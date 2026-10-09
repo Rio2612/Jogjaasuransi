@@ -7,6 +7,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
+import PenawaranCTA from "@/components/penawaran/PenawaranCTA";
 import { KONTAK } from "@/lib/data";
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
@@ -782,6 +783,7 @@ export default function ClientPage() {
         </section>
 
       </div>
+      <PenawaranCTA />
       <Footer />
     </>
   );
