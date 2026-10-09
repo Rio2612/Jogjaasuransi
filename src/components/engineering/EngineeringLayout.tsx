@@ -1,5 +1,6 @@
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
+import PenawaranCTA from "@/components/penawaran/PenawaranCTA";
 import ClusterLinks from "@/components/ui/ClusterLinks";
 import Link from "next/link";
 
@@ -26,6 +27,7 @@ export default function EngineeringLayout({ children, breadcrumbs }: Props) {
         </div>
         <main>{children}</main>
       </div>
+      <PenawaranCTA />
       <ClusterLinks />
       <Footer />
     </>
