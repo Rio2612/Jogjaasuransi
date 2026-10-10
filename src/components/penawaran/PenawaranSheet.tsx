@@ -354,7 +354,7 @@ export default function PenawaranSheet({ cluster: key, defaultType, path, onClos
               {/* Jenis produk */}
               <fieldset>
                 <legend className="mb-2 text-xs font-bold uppercase tracking-wider text-[#475569]">{c.typeLegend}</legend>
-                <div role="radiogroup" aria-label={c.typeLegend} className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                <div role="radiogroup" aria-label={c.typeLegend} className="grid grid-cols-2 gap-2">
                   {c.types.map((t) => {
                     const on = t.key === type;
                     return (
@@ -367,10 +367,15 @@ export default function PenawaranSheet({ cluster: key, defaultType, path, onClos
                           setType(t.key);
                           setErrors({});
                         }}
-                        className={`rounded-xl border p-3 text-left transition ${on ? "border-navy bg-navy text-white shadow-md" : "border-black/15 bg-white text-navy hover:border-gold"}`}
+                        className={`relative rounded-xl border px-3 py-2.5 pr-8 text-left transition ${on ? "border-gold bg-gold/10 text-navy shadow-sm" : "border-black/15 bg-white text-navy hover:border-gold/70"}`}
                       >
-                        <span className="block text-sm font-bold">{t.label}</span>
-                        <span className={`mt-0.5 block text-xs leading-snug ${on ? "text-white/75" : "text-[#475569]"}`}>{t.hint}</span>
+                        {on && (
+                          <span aria-hidden="true" className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-gold text-[11px] font-bold leading-none text-navy">
+                            ✓
+                          </span>
+                        )}
+                        <span className="block text-[13px] font-bold leading-tight">{t.label}</span>
+                        <span className="mt-0.5 block text-[11px] leading-snug text-[#475569]">{t.hint}</span>
                       </button>
                     );
                   })}
