@@ -67,12 +67,12 @@ export const PROPERTI: PenawaranCluster = {
     { key: "industry", kind: "text", showFor: ["pabrik"], label: "Jenis industri / produksi", placeholder: "mis. garmen, kerajinan, pengolahan makanan" },
   ],
   flags: [
+    { key: "quake", label: "Perlu perluasan gempa bumi / huru-hara (dinilai sesuai lokasi)" },
     { key: "mortgage", showFor: ["rumah", "kos", "ruko", "vila"], label: "Dipersyaratkan bank (KPR / kredit)" },
     { key: "protection", showFor: ["hotel", "gudang", "pabrik"], label: "Ada proteksi kebakaran (APAR / hydrant / sprinkler)" },
     { key: "bi", showFor: COMMERCIAL, label: "Perlu perlindungan kehilangan laba (business interruption)" },
     { key: "pl", showFor: ["kos", "ruko", "vila", "hotel"], label: "Perlu tanggung gugat pihak ketiga / tamu (liability)" },
     { key: "declaration", showFor: ["gudang"], label: "Stok fluktuatif, tertarik Declaration Policy" },
-    { key: "quake", label: "Perlu perluasan gempa bumi / huru-hara (dinilai sesuai lokasi)" },
     { key: "claim", label: "Pernah klaim dalam 3 tahun terakhir" },
     { key: "renewal", label: "Perpanjangan polis yang sudah ada" },
   ],
