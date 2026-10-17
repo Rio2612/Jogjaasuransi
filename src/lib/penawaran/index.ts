@@ -177,7 +177,8 @@ export function buildPesan(clusterKey: ClusterKey, s: PenawaranState, path: stri
     const text = formatField(f, s.values);
     if (text) lines.push(`${f.label}: ${text}`);
   }
-  if (date) lines.push(`${c.copy.dateLabel}: ${date}`);
+  if (s.geo) lines.push(`Titik lokasi (peta): https://maps.google.com/?q=${s.geo.lat.toFixed(6)},${s.geo.lng.toFixed(6)}`);
+  if (date && c.copy.dateLabel) lines.push(`${c.copy.dateLabel}: ${date}`);
   if (s.client.trim()) lines.push(`${c.copy.clientLabel.replace(/\s*\(opsional\)/i, "")}: ${s.client.trim()}`);
 
   lines.push("", "*Pemohon*", `Nama: ${s.name.trim()}`);

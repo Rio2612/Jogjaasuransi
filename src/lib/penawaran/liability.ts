@@ -30,7 +30,6 @@ export const LIABILITY: PenawaranCluster = {
   fields: [
     { key: "business", kind: "text", label: "Bidang usaha / ruang lingkup pekerjaan", placeholder: "mis. hotel & restoran, bengkel, pabrik tahu" },
     { key: "limit", kind: "money", label: "Limit pertanggungan yang diinginkan", placeholder: "mis. 5.000.000.000" },
-    { key: "period", kind: "period", label: "Periode polis", placeholder: "mis. 12", defaultUnit: "month" },
     // ── Public / Employer / Product ──
     { key: "employees", kind: "number", showFor: ["public", "employer", "product", "konsultasi"], optional: true, label: "Jumlah karyawan", placeholder: "mis. 40", suffix: "orang" },
     { key: "principal", kind: "text", showFor: PUBLIC, optional: true, label: "Principal / pemberi kerja (Additional Insured)", placeholder: "Nama principal, bila diminta" },
@@ -71,7 +70,6 @@ export const LIABILITY: PenawaranCluster = {
     { key: "coi", label: "Perlu Certificate of Insurance (COI)" },
     { key: "contract", label: "Polis jadi syarat kontrak / kualifikasi vendor" },
     { key: "claims", label: "Ada riwayat klaim 3 tahun terakhir" },
-    { key: "urgent", label: "Dibutuhkan mendesak (mobilisasi proyek)" },
   ],
   general: [
     r("Legalitas perusahaan", "NIB, SIUP/TDP, NPWP, dan Akta Pendirian"),
@@ -104,7 +102,6 @@ export const LIABILITY: PenawaranCluster = {
   disclaimer:
     "Daftar bersifat umum. Waktu proses menyesuaikan kelengkapan dokumen dan penanggung; underwriting limbah B3 biasanya lebih panjang karena memerlukan dokumen lingkungan.",
   copy: {
-    dateLabel: "Tanggal mulai polis",
     clientLabel: "Proyek / principal (opsional)",
     clientPh: "mis. proyek pembangunan hotel untuk PT ABC",
     companyLabel: "Nama perusahaan",

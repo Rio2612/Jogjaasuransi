@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { Fragment, useEffect, useId, useMemo, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import { createPortal } from "react-dom";
 import {
   PENAWARAN,
@@ -15,6 +16,13 @@ import {
   type ClusterKey,
   type FieldDef,
 } from "@/lib/penawaran";
+
+// Peta (Leaflet) hanya dimuat saat opsi "bagikan titik lokasi" dicentang.
+const LokasiPicker = dynamic(() => import("./LokasiPicker"), {
+  ssr: false,
+  loading: () => <p className="mt-2 text-xs text-[#475569]">Memuat peta…</p>,
+});
+type Geo = { lat: number; lng: number };
 
 interface Props {
   cluster: ClusterKey;
@@ -200,6 +208,8 @@ export default function PenawaranSheet({ cluster: key, defaultType, path, onClos
   const [phone, setPhone] = useState("");
   const [flags, setFlags] = useState<string[]>([]);
   const [note, setNote] = useState("");
+  const [shareLoc, setShareLoc] = useState(false);
+  const [geo, setGeo] = useState<Geo | null>(null);
   const [docsOpen, setDocsOpen] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [waUrl, setWaUrl] = useState<string | null>(null);
@@ -278,7 +288,7 @@ export default function PenawaranSheet({ cluster: key, defaultType, path, onClos
     if (!validHp(phone)) err.phone = "Nomor WhatsApp belum valid (contoh: 08123456789).";
     setErrors(err);
     if (Object.keys(err).length) return focusFirstInvalid();
-    const url = penawaranWaUrl(buildPesan(key, { type, values, name, company, phone, targetDate, client, flags, note }, path));
+    const url = penawaranWaUrl(buildPesan(key, { type, values, name, company, phone, targetDate, client, flags, note, geo }, path));
     setWaUrl(url);
     window.open(url, "_blank", "noopener,noreferrer");
   };
@@ -383,27 +393,52 @@ export default function PenawaranSheet({ cluster: key, defaultType, path, onClos
               </fieldset>
 
               {/* Kolom sesuai jenis */}
-              {fields.length > 0 && (
+              {(fields.length > 0 || c.copy.dateLabel) && (
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   {fields.map((f) => {
                     const wide = f.kind === "text" || f.kind === "money" || f.kind === "segmented" || f.kind === "period";
                     const id = `${uid}-${f.key}`;
                     return (
-                      <div key={f.key} className={wide ? "sm:col-span-2" : ""}>
-                        <Label htmlFor={f.kind === "segmented" ? undefined : id} optional={f.optional}>
-                          {f.label}
-                        </Label>
-                        <FieldControl f={f} id={id} values={values} set={setVal} invalid={!!err(f.key)} describedBy={err(f.key) ? errId(f.key) : undefined} />
-                        <ErrorText id={errId(f.key)}>{err(f.key)}</ErrorText>
-                      </div>
+                      <Fragment key={f.key}>
+                        <div className={wide ? "sm:col-span-2" : ""}>
+                          <Label htmlFor={f.kind === "segmented" ? undefined : id} optional={f.optional}>
+                            {f.label}
+                          </Label>
+                          <FieldControl f={f} id={id} values={values} set={setVal} invalid={!!err(f.key)} describedBy={err(f.key) ? errId(f.key) : undefined} />
+                          <ErrorText id={errId(f.key)}>{err(f.key)}</ErrorText>
+                        </div>
+                        {c.geoShare === f.key && (
+                          <div className="-mt-1 sm:col-span-2">
+                            <label
+                              className={`flex cursor-pointer items-start gap-3 rounded-xl border px-3.5 py-2.5 text-sm transition ${shareLoc ? "border-gold bg-gold/10 text-navy" : "border-black/10 bg-white text-[#334155] hover:border-gold/60"}`}
+                            >
+                              <input
+                                type="checkbox"
+                                checked={shareLoc}
+                                onChange={(e) => {
+                                  setShareLoc(e.target.checked);
+                                  if (!e.target.checked) setGeo(null);
+                                }}
+                                className="mt-0.5 h-4 w-4 shrink-0 accent-gold"
+                              />
+                              <span className="leading-snug">
+                                Bagikan titik lokasi <span className="text-[#475569]">(GPS / pilih di peta)</span>
+                              </span>
+                            </label>
+                            {shareLoc && <LokasiPicker value={geo} onChange={setGeo} />}
+                          </div>
+                        )}
+                      </Fragment>
                     );
                   })}
-                  <div className="sm:col-span-2">
-                    <Label htmlFor={`${uid}-date`} optional>
-                      {c.copy.dateLabel}
-                    </Label>
-                    <input id={`${uid}-date`} type="date" value={targetDate} onChange={(e) => setTargetDate(e.target.value)} className={inputCls} />
-                  </div>
+                  {c.copy.dateLabel && (
+                    <div className="sm:col-span-2">
+                      <Label htmlFor={`${uid}-date`} optional>
+                        {c.copy.dateLabel}
+                      </Label>
+                      <input id={`${uid}-date`} type="date" value={targetDate} onChange={(e) => setTargetDate(e.target.value)} className={inputCls} />
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -516,6 +551,13 @@ export default function PenawaranSheet({ cluster: key, defaultType, path, onClos
                 </fieldset>
               )}
 
+              <div>
+                <Label htmlFor={`${uid}-note`} optional>
+                  Catatan tambahan
+                </Label>
+                <textarea id={`${uid}-note`} rows={3} value={note} onChange={(e) => setNote(e.target.value)} placeholder={c.copy.notePh} className={inputCls} />
+              </div>
+
               {/* Checklist dokumen */}
               {(docs.general.length > 0 || docs.specific.length > 0) && (
                 <div className="rounded-xl border border-black/10 bg-white">
@@ -562,13 +604,6 @@ export default function PenawaranSheet({ cluster: key, defaultType, path, onClos
                   )}
                 </div>
               )}
-
-              <div>
-                <Label htmlFor={`${uid}-note`} optional>
-                  Catatan tambahan
-                </Label>
-                <textarea id={`${uid}-note`} rows={3} value={note} onChange={(e) => setNote(e.target.value)} placeholder={c.copy.notePh} className={inputCls} />
-              </div>
 
               <div className="space-y-3">
                 <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">

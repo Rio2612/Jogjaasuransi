@@ -42,6 +42,8 @@ export interface PenawaranCluster {
   rules: { type: string; re: RegExp }[];
   /** Jenis produk yang nama perusahaannya tidak wajib diisi (mis. perorangan). */
   companyOptionalFor?: string[];
+  /** Key kolom yang diikuti opsi "bagikan titik lokasi" (hanya properti). */
+  geoShare?: string;
   fields: FieldDef[];
   /** Pilihan "bahan analisa awal" (centang). */
   flags: { key: string; label: string; showFor?: string[] }[];
@@ -51,7 +53,8 @@ export interface PenawaranCluster {
   specific: Record<string, Requirement[]>;
   disclaimer: string;
   copy: {
-    dateLabel: string;
+    /** Kosong = kolom tanggal tidak ditampilkan. */
+    dateLabel?: string;
     clientLabel: string;
     clientPh: string;
     companyLabel: string;
@@ -69,6 +72,8 @@ export interface PenawaranState {
   client: string;
   flags: string[];
   note: string;
+  /** Titik lokasi dari GPS / peta (opsional). */
+  geo?: { lat: number; lng: number } | null;
 }
 
 export const r = (doc: string, note: string, must = true, showFor?: string[]): Requirement => ({ doc, note, must, showFor });

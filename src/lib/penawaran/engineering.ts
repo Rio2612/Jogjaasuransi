@@ -82,7 +82,6 @@ export const ENGINEERING: PenawaranCluster = {
     { key: "fleet", showFor: MB, label: "Banyak unit, minta penawaran program" },
     { key: "claim", showFor: MB, label: "Pernah klaim dalam 3 tahun terakhir" },
     { key: "renewal", showFor: MB, label: "Perpanjangan polis yang sudah ada" },
-    { key: "urgent", label: "Dibutuhkan mendesak" },
   ],
   general: [
     r("Legalitas perusahaan", "Akta, NIB, dan NPWP kontraktor / pemilik proyek / pemilik mesin"),
@@ -114,7 +113,6 @@ export const ENGINEERING: PenawaranCluster = {
   disclaimer:
     "Daftar bersifat umum; setiap proyek dan mesin dinilai satu per satu. Mesin berusia lebih dari 5 tahun atau bernilai besar biasanya memerlukan appraisal atau survei sebelum polis terbit.",
   copy: {
-    dateLabel: "Target polis mulai berlaku",
     clientLabel: "Nama proyek / pemilik proyek (opsional)",
     clientPh: "mis. Pembangunan Gudang PT ABC",
     companyLabel: "Nama kontraktor / perusahaan",
