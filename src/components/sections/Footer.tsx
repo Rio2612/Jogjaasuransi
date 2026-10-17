@@ -12,20 +12,28 @@ export default function Footer() {
         <div>
           <h3 className="text-[0.82rem] font-bold tracking-[1.2px] uppercase text-gold2 mb-4">Produk</h3>
           <ul className="flex flex-col gap-2">
-            {["Asuransi Kendaraan","Asuransi Properti","Engineering Insurance","Asuransi Kargo","Liability Insurance","Surety Bond"].map(p => (
-              <li key={p}><a href="#produk" className="text-sm text-white/50 no-underline hover:text-gold2 transition-colors">{p}</a></li>
+            {[
+              { href: "/asuransi-kendaraan", lbl: "Asuransi Kendaraan" },
+              { href: "/asuransi-properti", lbl: "Asuransi Properti" },
+              { href: "/asuransi-engineering", lbl: "Engineering Insurance" },
+              { href: "/asuransi-kargo", lbl: "Asuransi Kargo" },
+              { href: "/asuransi-liability", lbl: "Liability Insurance" },
+              { href: "/asuransi-surety-bond", lbl: "Surety Bond" },
+              { href: "/asuransi-event", lbl: "Asuransi Event" },
+              { href: "/asuransi-kesehatan-karyawan", lbl: "Kesehatan Karyawan" },
+            ].map(l => (
+              <li key={l.href}><Link href={l.href} className="text-sm text-white/50 no-underline hover:text-gold2 transition-colors">{l.lbl}</Link></li>
             ))}
-            <li><Link href="/asuransi-kesehatan-karyawan" className="text-sm text-white/50 no-underline hover:text-gold2 transition-colors">Kesehatan Karyawan</Link></li>
           </ul>
         </div>
         <div>
           <h3 className="text-[0.82rem] font-bold tracking-[1.2px] uppercase text-gold2 mb-4">Layanan</h3>
           <ul className="flex flex-col gap-2">
             {[
-              { href: "#kalkulator", lbl: "Kalkulator Premi Mobil" },
-              { href: "#faq", lbl: "FAQ Asuransi" },
-              { href: "#about", lbl: "Profil Praktisi" },
-              { href: "#contact", lbl: "Konsultasi Gratis" },
+              { href: "/asuransi-kendaraan#kalkulator", lbl: "Kalkulator Premi Mobil" },
+              { href: "/#faq", lbl: "FAQ Asuransi" },
+              { href: "/#about", lbl: "Profil Praktisi" },
+              { href: "/#contact", lbl: "Konsultasi Gratis" },
               { href: "/sppa", lbl: "Formulir SPPA" },
             ].map(l => (
               <li key={l.lbl}>
