@@ -20,6 +20,10 @@ const mobil = [
   I("/artikel/perbedaan-all-risk-tlo", "Perbedaan All Risk dan TLO", "Memilih jenis perlindungan mobil"),
   I("/asuransi-kendaraan/mobil", "Produk Asuransi Mobil", "All Risk dan TLO untuk mobil pribadi"),
   I("/artikel/asuransi-kendaraan-jogja", "Asuransi Kendaraan Jogja", "Kenapa memilih praktisi independen"),
+  I("/artikel/asuransi-mobil-bekas", "Asuransi Mobil Bekas", "Batas usia All Risk, survei, dan nilai pertanggungan"),
+  I("/artikel/asuransi-mobil-listrik", "Asuransi Mobil Listrik", "Baterai, charger, dan cakupan khusus EV"),
+  I("/artikel/asuransi-rental-mobil-jogja", "Asuransi Rental Mobil", "Perlindungan armada rental dan wisata"),
+  I("/artikel/bengkel-rekanan-asuransi-jogja", "Bengkel Rekanan Asuransi", "Bengkel resmi vs non-resmi saat klaim"),
 ];
 const kargo = [
   I("/artikel/asuransi-kargo-ekspor-impor-jogja", "Kargo Ekspor-Impor: Incoterms & L/C", "Panduan untuk eksportir dan importir"),
@@ -35,6 +39,8 @@ const liability = [
   I("/artikel/cara-klaim-asuransi-liability", "Cara Klaim Asuransi Liability", "Prosedur klaim tanggung gugat"),
   I("/asuransi-liability/limbah-b3", "Produk Liability Limbah B3", "Detail produk dan cakupan"),
   I("/asuransi-liability/employer-liability", "Produk Employer's Liability", "Detail produk dan cakupan"),
+  I("/asuransi-liability/public-liability", "Produk Public Liability", "Tuntutan pihak ketiga di lokasi usaha"),
+  I("/asuransi-liability/product-liability", "Produk Product Liability", "Gugatan akibat produk yang dijual"),
 ];
 const surety = [
   I("/asuransi-surety-bond/jaminan-penawaran", "Jaminan Penawaran (Bid Bond)", "Syarat ikut tender pemerintah"),
@@ -43,6 +49,8 @@ const surety = [
   I("/artikel/perbedaan-surety-bond-bank-garansi", "Surety Bond vs Bank Garansi", "Mana yang lebih sesuai untuk kontraktor"),
   I("/asuransi-surety-bond/jaminan-pelaksanaan", "Jaminan Pelaksanaan", "Performance bond setelah menang tender"),
   I("/artikel/jaminan-pelaksanaan-pemeliharaan-uang-muka", "Siklus Jaminan Proyek", "Pelaksanaan, pemeliharaan, uang muka"),
+  I("/asuransi-surety-bond/jaminan-uang-muka", "Jaminan Uang Muka", "Advance payment bond untuk kontraktor"),
+  I("/asuransi-surety-bond/jaminan-pemeliharaan", "Jaminan Pemeliharaan", "Maintenance bond setelah serah terima"),
 ];
 const engineering = [
   I("/artikel/asuransi-mesin-pabrik-jogja", "Asuransi Mesin Pabrik", "Machinery breakdown untuk industri DIY"),
@@ -50,6 +58,21 @@ const engineering = [
   I("/artikel/perbedaan-car-ear-asuransi-engineering", "Perbedaan CAR dan EAR", "Memilih asuransi engineering proyek"),
   I("/artikel/asuransi-kontraktor-proyek-jogja", "Asuransi Kontraktor & Proyek", "Apa saja yang perlu dilindungi"),
   I("/artikel/premi-asuransi-car-jogja", "Premi Asuransi CAR", "Faktor penentu dan estimasi"),
+  I("/asuransi-engineering/erection-all-risk", "Erection All Risk (EAR)", "Pemasangan mesin dan instalasi industri"),
+  I("/asuransi-engineering/contractor-all-risk", "Contractor All Risk (CAR)", "Perlindungan proyek konstruksi"),
+];
+const event = [
+  I("/asuransi-event", "Asuransi Event Jogja", "Public liability dan perlindungan penyelenggara"),
+  I("/asuransi-event/konser-festival-musik", "Konser & Festival Musik", "Cakupan untuk acara musik skala besar"),
+  I("/asuransi-event/motocross-grasstrack", "Motocross & Grasstrack", "Risiko event balap dan olahraga motor"),
+  I("/artikel/syarat-dokumen-asuransi-event-musik-jogja", "Syarat Dokumen Asuransi Event", "Dokumen yang diminta untuk acara musik"),
+];
+const umkm = [
+  I("/artikel/asuransi-umkm-jogja", "Asuransi untuk UMKM Jogja", "Prioritas perlindungan usaha kecil"),
+  I("/artikel/pentingnya-asuransi-dunia-usaha-jogja", "Pentingnya Asuransi Dunia Usaha", "Risiko yang sering diabaikan pelaku usaha"),
+  I("/artikel/cara-menghitung-nilai-asuransi", "Cara Menghitung Nilai Asuransi", "Menentukan nilai pertanggungan yang pas"),
+  I("/artikel/asuransi-kargo-umkm-jogja", "Asuransi Kargo untuk UMKM", "Pengiriman skala kecil dan menengah"),
+  I("/asuransi-properti/kebakaran", "Asuransi Kebakaran", "Dasar perlindungan bangunan usaha"),
 ];
 const kesehatan = [
   I("/asuransi-kesehatan-karyawan", "Asuransi Kesehatan Karyawan Jogja", "Paket, RS rekanan, dan minta penawaran"),
@@ -64,16 +87,20 @@ const penginapan = [
   I("/asuransi-properti/kebakaran", "Asuransi Kebakaran", "Dasar perlindungan bangunan"),
 ];
 
-export const CLUSTERS: ClusterItem[][] = [kendaraanNiaga, mobil, kargo, liability, surety, engineering, penginapan, kesehatan];
+export const CLUSTERS: ClusterItem[][] = [kendaraanNiaga, mobil, kargo, liability, surety, engineering, penginapan, kesehatan, event, umkm];
 
-/** Anggota klaster untuk path tertentu (tanpa halaman itu sendiri), maksimal `max` item. */
+/** Anggota klaster untuk path tertentu (tanpa halaman itu sendiri), maksimal `max` item.
+ *  Urutan berputar mulai dari anggota setelah halaman ini, sehingga setiap anggota
+ *  klaster (termasuk yang di urutan akhir) mendapat tautan masuk dari tetangganya. */
 export function clusterFor(path: string, max = 5): ClusterItem[] {
   const clean = path.replace(/\/+$/, "") || "/";
   const out: ClusterItem[] = [];
   const seen = new Set<string>([clean]);
   for (const c of CLUSTERS) {
-    if (!c.some((i) => i.href === clean)) continue;
-    for (const i of c) {
+    const idx = c.findIndex((i) => i.href === clean);
+    if (idx === -1) continue;
+    for (let k = 1; k < c.length; k++) {
+      const i = c[(idx + k) % c.length];
       if (seen.has(i.href)) continue;
       seen.add(i.href);
       out.push(i);

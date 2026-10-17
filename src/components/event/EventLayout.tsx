@@ -1,6 +1,7 @@
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import PenawaranCTA from "@/components/penawaran/PenawaranCTA";
+import ClusterLinks from "@/components/ui/ClusterLinks";
 import Link from "next/link";
 
 interface Breadcrumb { label: string; href?: string }
@@ -27,6 +28,7 @@ export default function EventLayout({ children, breadcrumbs }: Props) {
         <main>{children}</main>
       </div>
       <PenawaranCTA />
+      <ClusterLinks />
       <Footer />
     </>
   );
