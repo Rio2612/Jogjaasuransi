@@ -423,6 +423,7 @@ export default function PenawaranSheet({ cluster: key, defaultType, path, onClos
                               />
                               <span className="leading-snug">
                                 Bagikan titik lokasi <span className="text-[#475569]">(GPS / pilih di peta)</span>
+                                <span className="ml-2 rounded bg-black/5 px-1.5 py-0.5 align-middle text-[10px] font-bold uppercase text-[#475569]">Opsional</span>
                               </span>
                             </label>
                             {shareLoc && <LokasiPicker value={geo} onChange={setGeo} />}
