@@ -68,7 +68,6 @@ export const KARGO: PenawaranCluster = {
     { key: "lc", showFor: ["udaralaut"], label: "Ada syarat asuransi dari L/C atau pembeli" },
     { key: "claim", label: "Pernah klaim dalam 3 tahun terakhir" },
     { key: "renewal", label: "Perpanjangan polis yang sudah ada" },
-    { key: "urgent", label: "Dibutuhkan mendesak (≤ 3 hari kerja)" },
   ],
   general: [
     r("Identitas pemohon", "KTP (perorangan) atau akta & SK Kemenkumham (perusahaan)"),

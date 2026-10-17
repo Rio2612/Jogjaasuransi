@@ -73,7 +73,6 @@ export const KENDARAAN: PenawaranCluster = {
     { key: "financed", label: "Masih leasing / kredit (syarat lembaga pembiayaan)" },
     { key: "claim", label: "Pernah klaim dalam 3 tahun terakhir" },
     { key: "renewal", label: "Perpanjangan polis yang sudah ada" },
-    { key: "urgent", label: "Dibutuhkan mendesak (≤ 3 hari kerja)" },
   ],
   general: [
     r("Identitas pemilik", "KTP (perorangan) atau akta, NIB & NPWP (perusahaan)"),
@@ -102,7 +101,6 @@ export const KENDARAAN: PenawaranCluster = {
   disclaimer:
     "Daftar bersifat umum. Premi mengikuti tarif OJK per kategori harga dan wilayah; survei kendaraan dapat diminta sebelum polis aktif, terutama untuk kendaraan lama atau bernilai besar.",
   copy: {
-    dateLabel: "Tanggal mulai pertanggungan",
     clientLabel: "Nomor polisi (opsional)",
     clientPh: "mis. AB 1234 XY",
     companyLabel: "Nama perusahaan",

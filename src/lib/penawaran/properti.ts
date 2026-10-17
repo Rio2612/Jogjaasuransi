@@ -33,6 +33,8 @@ export const PROPERTI: PenawaranCluster = {
     { type: "pabrik", re: /property-all-risk/ },
   ],
   companyOptionalFor: ["rumah", "kos", "vila", "konsultasi"],
+  /** Opsi "bagikan titik lokasi" (GPS / pilih di peta) muncul tepat di bawah kolom ini. */
+  geoShare: "location",
   fields: [
     { key: "location", kind: "text", label: "Lokasi properti", placeholder: "mis. Seturan, Depok, Sleman / Kotagede / Bantul" },
     { key: "buildingValue", kind: "money", showFor: BUILDING, label: "Nilai bangunan (biaya bangun ulang)", placeholder: "mis. 1.500.000.000" },
@@ -63,7 +65,6 @@ export const PROPERTI: PenawaranCluster = {
     },
     { key: "goodsType", kind: "text", showFor: ["gudang"], label: "Jenis barang yang disimpan", placeholder: "mis. elektronik, bahan baku, barang FMCG" },
     { key: "industry", kind: "text", showFor: ["pabrik"], label: "Jenis industri / produksi", placeholder: "mis. garmen, kerajinan, pengolahan makanan" },
-    { key: "period", kind: "period", optional: true, label: "Periode polis", placeholder: "mis. 12", defaultUnit: "month" },
   ],
   flags: [
     { key: "mortgage", showFor: ["rumah", "kos", "ruko", "vila"], label: "Dipersyaratkan bank (KPR / kredit)" },
@@ -71,10 +72,9 @@ export const PROPERTI: PenawaranCluster = {
     { key: "bi", showFor: COMMERCIAL, label: "Perlu perlindungan kehilangan laba (business interruption)" },
     { key: "pl", showFor: ["kos", "ruko", "vila", "hotel"], label: "Perlu tanggung gugat pihak ketiga / tamu (liability)" },
     { key: "declaration", showFor: ["gudang"], label: "Stok fluktuatif, tertarik Declaration Policy" },
-    { key: "flood", label: "Perlu perluasan gempa bumi / banjir / huru-hara (dinilai sesuai lokasi)" },
+    { key: "quake", label: "Perlu perluasan gempa bumi / huru-hara (dinilai sesuai lokasi)" },
     { key: "claim", label: "Pernah klaim dalam 3 tahun terakhir" },
     { key: "renewal", label: "Perpanjangan polis yang sudah ada" },
-    { key: "urgent", label: "Dibutuhkan mendesak (≤ 3 hari kerja)" },
   ],
   general: [
     r("Identitas pemilik / penanggung jawab", "KTP (perorangan) atau akta, NIB & NPWP (perusahaan)"),
@@ -125,9 +125,8 @@ export const PROPERTI: PenawaranCluster = {
     konsultasi: [],
   },
   disclaimer:
-    "Daftar bersifat umum. Nilai pertanggungan yang ideal dihitung dari biaya bangun ulang (replacement cost), bukan harga pasar. Perluasan gempa bumi dan banjir dinilai sesuai lokasi. Survei lokasi dapat diminta untuk properti bernilai besar atau berisiko tinggi.",
+    "Daftar bersifat umum. Nilai pertanggungan yang ideal dihitung dari biaya bangun ulang (replacement cost), bukan harga pasar. Perluasan gempa bumi dan huru-hara dinilai sesuai lokasi. Survei lokasi dapat diminta untuk properti bernilai besar atau berisiko tinggi.",
   copy: {
-    dateLabel: "Tanggal mulai pertanggungan",
     clientLabel: "Nama properti / bangunan (opsional)",
     clientPh: "mis. Kos Putri Seturan / Gudang PT ABC",
     companyLabel: "Nama perusahaan",

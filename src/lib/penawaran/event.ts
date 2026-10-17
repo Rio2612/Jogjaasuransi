@@ -47,7 +47,6 @@ export const EVENT: PenawaranCluster = {
     { key: "medic", showFor: ["motocross", "lain"], label: "Tim medis / ambulans disiapkan" },
     { key: "coi", label: "Perlu Certificate of Insurance (izin keramaian / venue / sponsor)" },
     { key: "recurring", label: "Event rutin / berulang" },
-    { key: "urgent", label: "Event kurang dari 2 minggu lagi" },
   ],
   general: [
     r("Identitas penyelenggara", "Akta/NIB (EO atau panitia) atau KTP penanggung jawab"),

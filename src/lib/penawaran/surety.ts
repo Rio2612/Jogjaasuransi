@@ -45,7 +45,6 @@ export const SURETY: PenawaranCluster = {
     { key: "fin2y", label: "Laporan keuangan 2 tahun terakhir tersedia" },
     { key: "license", label: "Izin usaha / SBU sesuai bidang tersedia" },
     { key: "noCollateral", label: "Ingin tanpa agunan tunai" },
-    { key: "urgent", label: "Dibutuhkan mendesak (≤ 3 hari kerja)" },
     { key: "multi", label: "Perlu lebih dari satu jenis bond" },
   ],
   general: [
