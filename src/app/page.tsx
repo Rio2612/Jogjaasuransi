@@ -8,7 +8,6 @@ import ArtikelPreview from "@/components/sections/ArtikelPreview";
 import Kalkulator from "@/components/sections/Kalkulator";
 import ProblemSolution from "@/components/sections/ProblemSolution";
 import Why from "@/components/sections/Why";
-import About from "@/components/sections/About";
 import Testimonial from "@/components/sections/Testimonial";
 import FAQ from "@/components/sections/FAQ";
 import ContactCTA from "@/components/sections/ContactCTA";
@@ -46,7 +45,6 @@ export default function HomePage() {
         <Kalkulator />
         <ProblemSolution />
         <Why />
-        <About />
         <Testimonial />
         <FAQ />
         <ContactCTA />

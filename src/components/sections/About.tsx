@@ -36,9 +36,9 @@ export default function About() {
         {/* TEKS */}
         <div>
           <div className="text-xs font-bold tracking-[2.5px] uppercase text-goldtext mb-2">Tentang Praktisi</div>
-          <h2 className="font-heading text-[clamp(1.9rem,3vw,2.9rem)] leading-[1.22] text-navy">
+          <h1 className="font-heading text-[clamp(1.9rem,3vw,2.9rem)] leading-[1.22] text-navy">
             Kenali Rio Mardiansyah,<br />Praktisi Asuransi Anda
-          </h2>
+          </h1>
           <p className="text-lg leading-[1.85] text-[#475569] max-w-[560px] mt-3">
             Delapan tahun berkecimpung di dunia asuransi kerugian — dari Account Officer hingga Branch Manager — mengajarkan Rio satu hal: klien butuh mitra yang berpihak pada mereka, bukan agen yang sekadar mengejar komisi penjualan polis.
           </p>

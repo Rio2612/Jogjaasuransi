@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     // ─── BERANDA ─────────────────────────────────────────────────────────────
     { url: base, lastModified: new Date("2026-07-07"), changeFrequency: "monthly", priority: 1 },
+    { url: `${base}/tentang-kami`, lastModified: new Date("2026-10-18"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/sppa`, lastModified: new Date("2026-07-13"), changeFrequency: "monthly", priority: 0.6 },
 
     // ─── PROPERTI ────────────────────────────────────────────────────────────

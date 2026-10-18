@@ -32,7 +32,7 @@ export default function Footer() {
             {[
               { href: "/asuransi-kendaraan#kalkulator", lbl: "Kalkulator Premi Mobil" },
               { href: "/#faq", lbl: "FAQ Asuransi" },
-              { href: "/#about", lbl: "Profil Praktisi" },
+              { href: "/tentang-kami", lbl: "Tentang Kami" },
               { href: "/#contact", lbl: "Konsultasi Gratis" },
               { href: "/sppa", lbl: "Formulir SPPA" },
             ].map(l => (

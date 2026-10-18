@@ -80,7 +80,6 @@ export default function Header() {
   const homeLinks = [
     { href: "#kalkulator", label: "Kalkulator Premi" },
     { href: "#why", label: "Keunggulan" },
-    { href: "#about", label: "Tentang" },
   ];
 
   return (
@@ -149,6 +148,10 @@ export default function Header() {
           </a>
         ))}
 
+        <Link href="/tentang-kami" className="text-white/75 text-sm font-medium hover:text-gold2 transition-colors no-underline">
+          Tentang Kami
+        </Link>
+
         <Link href="/artikel" className="text-white/75 text-sm font-medium hover:text-gold2 transition-colors no-underline">
           Artikel
         </Link>
@@ -214,6 +217,10 @@ export default function Header() {
               {l.label}
             </a>
           ))}
+
+          <Link href="/tentang-kami" onClick={() => setMenuOpen(false)} className="text-white/75 px-[5vw] py-3 text-sm font-medium hover:text-gold no-underline border-b border-white/5">
+            👤 Tentang Kami
+          </Link>
 
           <Link href="/artikel" onClick={() => setMenuOpen(false)} className="text-white/75 px-[5vw] py-3 text-sm font-medium hover:text-gold no-underline border-b border-white/5">
             📚 Artikel Edukasi
