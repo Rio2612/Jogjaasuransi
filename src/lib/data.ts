@@ -15,67 +15,67 @@ export const CLUSTERS: Cluster[] = [
   {
     id: "kendaraan", label: "Kendaraan", icon: "🚗",
     produk: [
-      { icon: "🚗", name: "Asuransi Mobil Jogja", desc: "Perlindungan All Risk maupun TLO untuk kendaraan pribadi Anda. Tersedia untuk mobil konvensional dan listrik dengan premi sesuai tarif OJK. Klaim mudah, proses cepat.", href: "#kalkulator" },
-      { icon: "🚛", name: "Asuransi Dump Truk & Kendaraan Niaga", desc: "Proteksi kendaraan berat seperti dump truk, tronton, dan armada angkutan material. Cocok untuk kontraktor, pengusaha tambang, dan perusahaan logistik.", href: "/asuransi-kendaraan/dump-truk-niaga" },
-      { icon: "🚐", name: "Asuransi Armada Kendaraan", desc: "Paket asuransi fleet untuk perusahaan dengan banyak kendaraan operasional. Pengelolaan polis lebih mudah, premi lebih efisien dibanding polis satuan.", href: "/asuransi-kendaraan/armada-fleet" },
+      { icon: "🚗", name: "Asuransi Mobil Jogja", desc: "Proteksi All Risk atau TLO untuk mobil pribadi, termasuk mobil listrik. Premi sesuai tarif OJK.", href: "#kalkulator" },
+      { icon: "🚛", name: "Asuransi Dump Truk & Kendaraan Niaga", desc: "Proteksi dump truk, tronton, dan armada material untuk kontraktor, tambang, dan logistik.", href: "/asuransi-kendaraan/dump-truk-niaga" },
+      { icon: "🚐", name: "Asuransi Armada Kendaraan", desc: "Asuransi fleet untuk banyak kendaraan operasional. Polis lebih praktis, premi lebih efisien.", href: "/asuransi-kendaraan/armada-fleet" },
     ],
   },
   {
     id: "properti", label: "Properti", icon: "🏠",
     produk: [
-      { icon: "🏡", name: "Asuransi Kebakaran Rumah Tinggal Jogja", desc: "Lindungi rumah tinggal Anda dari risiko kebakaran, petir, ledakan, dan asap. Premi terjangkau dengan manfaat penggantian yang memadai untuk hunian di Yogyakarta.", href: "/asuransi-properti/kebakaran" },
-      { icon: "🏘️", name: "Asuransi Kebakaran Kos Jogja", desc: "Solusi khusus bagi pemilik kos-kosan di Yogyakarta. Proteksi bangunan dari kebakaran dengan pilihan pertanggungan fleksibel sesuai jumlah kamar dan nilai properti.", href: "/asuransi-properti/kebakaran" },
-      { icon: "🏪", name: "Asuransi Kebakaran Ruko Jogja", desc: "Perlindungan menyeluruh untuk ruko dan bangunan komersial dari kebakaran dan risiko perluasan. Menjaga aset bisnis Anda tetap aman dan operasional.", href: "/asuransi-properti/kebakaran" },
-      { icon: "🏢", name: "Property All Risk (PAR)", desc: "Perlindungan komprehensif untuk properti komersial dan industri dari berbagai risiko fisik. Ideal untuk gedung perkantoran, hotel, pabrik, dan fasilitas bisnis skala besar.", href: "/asuransi-properti/property-all-risk" },
-      { icon: "🌊", name: "Perluasan Banjir & Gempa Bumi", desc: "Jaminan tambahan untuk properti Anda dari banjir, gempa bumi, letusan gunung berapi, dan angin topan — sangat relevan mengingat kondisi geografis Yogyakarta.", href: "/asuransi-properti/banjir-gempa" },
-      { icon: "🔒", name: "Asuransi Risiko Kejahatan", desc: "Proteksi terhadap pencurian, perampokan, dan vandalisme pada properti dan isi bangunan bisnis Anda. Ketenangan pikiran untuk pemilik usaha di Yogyakarta.", href: "/asuransi-properti/property-all-risk" },
+      { icon: "🏡", name: "Asuransi Kebakaran Rumah Tinggal Jogja", desc: "Lindungi rumah tinggal di Yogyakarta dari kebakaran, petir, ledakan, dan asap dengan premi terjangkau.", href: "/asuransi-properti/kebakaran" },
+      { icon: "🏘️", name: "Asuransi Kebakaran Kos Jogja", desc: "Proteksi bangunan kos-kosan dari kebakaran, dengan pertanggungan fleksibel sesuai jumlah kamar.", href: "/asuransi-properti/kebakaran" },
+      { icon: "🏪", name: "Asuransi Kebakaran Ruko Jogja", desc: "Lindungi ruko dan bangunan komersial dari kebakaran dan risiko perluasannya.", href: "/asuransi-properti/kebakaran" },
+      { icon: "🏢", name: "Property All Risk (PAR)", desc: "Perlindungan komprehensif untuk gedung perkantoran, hotel, pabrik, dan properti komersial.", href: "/asuransi-properti/property-all-risk" },
+      { icon: "🌊", name: "Perluasan Banjir & Gempa Bumi", desc: "Jaminan tambahan dari banjir, gempa bumi, letusan gunung berapi, dan angin topan di Yogyakarta.", href: "/asuransi-properti/banjir-gempa" },
+      { icon: "🔒", name: "Asuransi Risiko Kejahatan", desc: "Proteksi pencurian, perampokan, dan vandalisme pada properti dan isi bangunan usaha Anda.", href: "/asuransi-properti/property-all-risk" },
     ],
   },
   {
     id: "engineering", label: "Engineering", icon: "⚙️",
     produk: [
-      { icon: "🏗️", name: "Contractor All Risk (CAR)", desc: "Perlindungan menyeluruh untuk proyek konstruksi sipil dari awal hingga serah terima. Melindungi pekerjaan, material, peralatan, dan tanggung jawab terhadap pihak ketiga.", href: "/asuransi-engineering/contractor-all-risk" },
-      { icon: "⚙️", name: "Erection All Risk (EAR)", desc: "Asuransi untuk pekerjaan instalasi mesin, peralatan pabrik, dan proyek mekanikal-elektrikal. Cocok untuk kontraktor MEP dan perusahaan manufaktur di Yogyakarta.", href: "/asuransi-engineering/erection-all-risk" },
-      { icon: "🔧", name: "Machinery Breakdown (MB)", desc: "Perlindungan mesin dan peralatan produksi dari kerusakan mendadak akibat gangguan mekanis atau elektris. Menjaga kelangsungan operasional bisnis Anda.", href: "/asuransi-engineering/machinery-breakdown" },
+      { icon: "🏗️", name: "Contractor All Risk (CAR)", desc: "Perlindungan proyek konstruksi dari awal hingga serah terima: pekerjaan, material, peralatan, dan pihak ketiga.", href: "/asuransi-engineering/contractor-all-risk" },
+      { icon: "⚙️", name: "Erection All Risk (EAR)", desc: "Asuransi pekerjaan instalasi mesin, peralatan pabrik, dan proyek MEP di Yogyakarta.", href: "/asuransi-engineering/erection-all-risk" },
+      { icon: "🔧", name: "Machinery Breakdown (MB)", desc: "Lindungi mesin produksi dari kerusakan mendadak akibat gangguan mekanis atau elektris.", href: "/asuransi-engineering/machinery-breakdown" },
     ],
   },
   {
     id: "kargo", label: "Kargo", icon: "📦",
     produk: [
-      { icon: "📦", name: "Asuransi Kargo Darat", desc: "Perlindungan barang kiriman via truk dan kereta api dari risiko kecelakaan, pencurian, dan kerusakan selama perjalanan. Tersedia untuk pengiriman lokal maupun antar kota.", href: "/asuransi-kargo/pengiriman-barang" },
-      { icon: "✈️", name: "Asuransi Kargo Udara", desc: "Jaminan perlindungan kargo yang dikirim via jalur udara. Cocok untuk pengiriman barang bernilai tinggi yang membutuhkan kecepatan dan keamanan ekstra.", href: "/asuransi-kargo/kargo-udara-laut" },
-      { icon: "🚢", name: "Marine Cargo Insurance", desc: "Proteksi pengiriman barang melalui jalur laut untuk importir dan eksportir. Tersedia untuk pengiriman domestik antar pulau maupun perdagangan internasional.", href: "/asuransi-kargo/kargo-udara-laut" },
+      { icon: "📦", name: "Asuransi Kargo Darat", desc: "Perlindungan barang kiriman via truk dan kereta api dari kecelakaan, pencurian, dan kerusakan.", href: "/asuransi-kargo/pengiriman-barang" },
+      { icon: "✈️", name: "Asuransi Kargo Udara", desc: "Perlindungan kargo jalur udara untuk barang bernilai tinggi yang butuh kecepatan dan keamanan.", href: "/asuransi-kargo/kargo-udara-laut" },
+      { icon: "🚢", name: "Marine Cargo Insurance", desc: "Proteksi pengiriman via laut untuk importir dan eksportir, domestik antar pulau maupun internasional.", href: "/asuransi-kargo/kargo-udara-laut" },
     ],
   },
   {
     id: "liability", label: "Liability", icon: "🛡️",
     produk: [
-      { icon: "⚗️", name: "Liability Limbah B3", desc: "Perlindungan tanggung jawab hukum bagi perusahaan yang menghasilkan, mengangkut, atau mengelola limbah B3 sesuai regulasi lingkungan hidup yang berlaku.", href: "/asuransi-liability/limbah-b3" },
-      { icon: "👥", name: "Public Liability", desc: "Lindungi bisnis dari klaim pihak ketiga akibat cedera badan atau kerusakan properti yang terjadi di lokasi usaha atau akibat operasional perusahaan Anda.", href: "/asuransi-liability/public-liability" },
-      { icon: "🏭", name: "Product Liability", desc: "Perlindungan bagi produsen dan distributor dari tuntutan hukum akibat kerugian yang disebabkan oleh produk yang diproduksi atau didistribusikan ke pasaran.", href: "/asuransi-liability/product-liability" },
+      { icon: "⚗️", name: "Liability Limbah B3", desc: "Perlindungan tanggung jawab hukum bagi perusahaan penghasil, pengangkut, atau pengelola limbah B3.", href: "/asuransi-liability/limbah-b3" },
+      { icon: "👥", name: "Public Liability", desc: "Lindungi bisnis dari klaim pihak ketiga atas cedera badan atau kerusakan properti akibat operasional usaha.", href: "/asuransi-liability/public-liability" },
+      { icon: "🏭", name: "Product Liability", desc: "Perlindungan produsen dan distributor dari tuntutan akibat kerugian yang disebabkan produknya.", href: "/asuransi-liability/product-liability" },
     ],
   },
   {
     id: "event", label: "Event", icon: "🎪",
     produk: [
-      { icon: "🎤", name: "Asuransi Konser & Festival Musik", desc: "Paket 4-in-1 — Public Liability, Event Cancellation, Personal Accident, dan Property All Risk — disusun mengikuti standar rider kontrak artis internasional.", href: "/asuransi-event/konser-festival-musik" },
-      { icon: "🏍️", name: "Asuransi Event Motocross & Grasstrack", desc: "Personal Accident pembalap, Public Liability, Personal Accident panitia/marshal, dan Property — untuk event resmi IMI maupun grasstrack komunitas.", href: "/asuransi-event/motocross-grasstrack" },
+      { icon: "🎤", name: "Asuransi Konser & Festival Musik", desc: "Paket 4-in-1: Public Liability, Event Cancellation, Personal Accident, dan Property All Risk sesuai rider artis internasional.", href: "/asuransi-event/konser-festival-musik" },
+      { icon: "🏍️", name: "Asuransi Event Motocross & Grasstrack", desc: "Personal Accident pembalap dan panitia, Public Liability, dan Property untuk event IMI maupun grasstrack.", href: "/asuransi-event/motocross-grasstrack" },
     ],
   },
   {
     id: "surety", label: "Surety Bond", icon: "📋",
     produk: [
-      { icon: "📋", name: "Jaminan Penawaran (Bid Bond)", desc: "Jaminan bagi peserta tender bahwa kontraktor akan melaksanakan kontrak jika menang. Wajib untuk mengikuti lelang proyek pemerintah maupun swasta.", href: "/asuransi-surety-bond/jaminan-penawaran" },
-      { icon: "🤝", name: "Jaminan Pelaksanaan (Performance Bond)", desc: "Menjamin kontraktor menyelesaikan proyek sesuai kontrak. Wajib bagi kontraktor yang mengerjakan proyek pemerintah, BUMN, maupun proyek swasta berskala besar.", href: "/asuransi-surety-bond/jaminan-pelaksanaan" },
-      { icon: "💰", name: "Jaminan Uang Muka (Advance Payment Bond)", desc: "Jaminan atas uang muka yang diberikan pemberi kerja kepada kontraktor. Melindungi pengguna jasa dari risiko penyalahgunaan dana awal proyek.", href: "/asuransi-surety-bond/jaminan-uang-muka" },
+      { icon: "📋", name: "Jaminan Penawaran (Bid Bond)", desc: "Jaminan bahwa peserta tender akan melaksanakan kontrak jika menang. Wajib untuk lelang proyek.", href: "/asuransi-surety-bond/jaminan-penawaran" },
+      { icon: "🤝", name: "Jaminan Pelaksanaan (Performance Bond)", desc: "Menjamin kontraktor menyelesaikan proyek sesuai kontrak. Wajib untuk proyek pemerintah, BUMN, dan swasta besar.", href: "/asuransi-surety-bond/jaminan-pelaksanaan" },
+      { icon: "💰", name: "Jaminan Uang Muka (Advance Payment Bond)", desc: "Jaminan atas uang muka proyek, melindungi pemberi kerja dari risiko penyalahgunaan dana awal.", href: "/asuransi-surety-bond/jaminan-uang-muka" },
     ],
   },
   {
     id: "kesehatan", label: "Kesehatan Karyawan", icon: "🏥",
     produk: [
-      { icon: "🏥", name: "Asuransi Kesehatan Karyawan", desc: "Biaya berobat karyawan, pasangan, dan anak ditanggung sesuai paket (Simas Sehat Corporate, PT Asuransi Sinar Mas). Anggaran perusahaan lebih mudah diperkirakan.", href: "/asuransi-kesehatan-karyawan" },
-      { icon: "🛏️", name: "Paket Rawat Inap & Rawat Jalan", desc: "Pilih paket rawat inap (kamar, ICU, operasi) dan rawat jalan (dokter, obat, lab) sesuai kebutuhan dan jumlah karyawan perusahaan Anda.", href: "/asuransi-kesehatan-karyawan#paket" },
-      { icon: "💳", name: "Cashless di RS Rekanan Jogja", desc: "Berobat tanpa bayar dulu di RS rekanan di Kota Yogyakarta, Sleman, Bantul, dan Kulon Progo, atau bayar dulu lalu klaim lewat reimbursement.", href: "/asuransi-kesehatan-karyawan#rs-rekanan" },
+      { icon: "🏥", name: "Asuransi Kesehatan Karyawan", desc: "Biaya berobat karyawan, pasangan, dan anak sesuai paket Simas Sehat Corporate (PT Asuransi Sinar Mas).", href: "/asuransi-kesehatan-karyawan" },
+      { icon: "🛏️", name: "Paket Rawat Inap & Rawat Jalan", desc: "Pilih paket rawat inap (kamar, ICU, operasi) dan rawat jalan (dokter, obat, lab) sesuai kebutuhan.", href: "/asuransi-kesehatan-karyawan#paket" },
+      { icon: "💳", name: "Cashless di RS Rekanan Jogja", desc: "Berobat tanpa bayar dulu di RS rekanan Yogyakarta, Sleman, Bantul, dan Kulon Progo, atau lewat reimbursement.", href: "/asuransi-kesehatan-karyawan#rs-rekanan" },
     ],
   },
 ];
