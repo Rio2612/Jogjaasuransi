@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Syne, DM_Sans } from "next/font/google";
 import "./globals.css";
 import PenawaranFloating from "@/components/penawaran/PenawaranFloating";
+import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 
 const BASE_URL = "https://asuransijogja.biz.id";
 
@@ -136,6 +137,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className="antialiased">
         {children}
         <PenawaranFloating />
+        <WhatsAppFloat />
       </body>
     </html>
   );
